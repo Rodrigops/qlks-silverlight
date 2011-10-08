@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Phong.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" />
+  <xs:element name="Phong_Add">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LoaiPhongId" type="xs:int" />
+        <xs:element minOccurs="0" name="PhongName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TienNghiID" type="xs:int" />
+        <xs:element minOccurs="0" name="SoGiuong" type="xs:int" />
+        <xs:element minOccurs="0" name="SoNguoi" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Phong_AddResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Phong_Edit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PhongID" type="xs:int" />
+        <xs:element minOccurs="0" name="LoaiPhongId" type="xs:int" />
+        <xs:element minOccurs="0" name="PhongName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TienNghiID" type="xs:int" />
+        <xs:element minOccurs="0" name="SoGiuong" type="xs:int" />
+        <xs:element minOccurs="0" name="SoNguoi" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Phong_EditResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Phong_Delete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PhongID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Phong_DeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Phong_GetItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PhongID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Phong_GetItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" minOccurs="0" name="Phong_GetItemResult" nillable="true" type="q1:PhongInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Phong_GetItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PhongID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Phong_GetItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" minOccurs="0" name="Phong_GetItemsResult" nillable="true" type="q2:ArrayOfPhongInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Phong_SoDoCay">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Phong_SoDoCayResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Phong_SoDoCayResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Phong_GetItems_ByTinhTrang">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Phong_GetItems_ByTinhTrangResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" minOccurs="0" name="Phong_GetItems_ByTinhTrangResult" nillable="true" type="q3:ArrayOfTinhTrang_PhongInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
