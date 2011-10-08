@@ -1,0 +1,26 @@
+﻿<controls:ChildWindow x:Class="QuanLyKhachSan.Form.QuanLyPhong.frmLoaiPhongEdit"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           Width="400" Height="150" 
+           Title="Cập nhật thông tin loại phòng" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" Foreground="#FF0D0D0D">
+    <sdk:ChildWindow.BorderBrush>
+        <LinearGradientBrush>
+            <GradientStop Color="#FFA3AEB9" Offset="0" />
+            <GradientStop Color="#FF8399A9" Offset="0.375" />
+            <GradientStop Color="#FF718597" Offset="0.375" />
+            <GradientStop Color="#FF051927" Offset="1" />
+        </LinearGradientBrush>
+    </sdk:ChildWindow.BorderBrush>
+    <Grid x:Name="LayoutRoot" Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Button x:Name="CancelButton" Content="Cancel" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,0,0" Grid.Row="1" />
+        <Button x:Name="OKButton" Content="OK" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,79,0" Grid.Row="1" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="80,5,0,0" Name="txtLoaiPhong" VerticalAlignment="Top" Width="286" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="3,8,0,0" Name="textBlock1" Text="Loại Phòng :" VerticalAlignment="Top" />        
+    </Grid>
+</controls:ChildWindow>
