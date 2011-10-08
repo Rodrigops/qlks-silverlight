@@ -413,3 +413,14 @@ F:\Projects\qlksprojects.SL\qlksSL\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.dll
 F:\Projects\qlksprojects.SL\qlksSL\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
 F:\Projects\qlksprojects.SL\qlksSL\QuanLyKhachSan\obj\Debug\XapCacheFile.xml
 F:\Projects\qlksprojects.SL\qlksSL\QuanLyKhachSan\obj\Debug\Form\QuanLyPhong\frmTienNghiEdit.g.i.cs
+F:\Projects\qlksprojects.SL\qlksSL\QuanLyKhachSan\Bin\Debug\System.Xml.Serialization.dll
+F:\Projects\qlksprojects.SL\qlksSL\QuanLyKhachSan\Bin\Debug\System.Xml.Serialization.xml
+F:\Projects\qlksprojects.SL\qlksSL\QuanLyKhachSan\Bin\Debug\de\System.Xml.Serialization.resources.dll
+F:\Projects\qlksprojects.SL\qlksSL\QuanLyKhachSan\Bin\Debug\es\System.Xml.Serialization.resources.dll
+F:\Projects\qlksprojects.SL\qlksSL\QuanLyKhachSan\Bin\Debug\fr\System.Xml.Serialization.resources.dll
+F:\Projects\qlksprojects.SL\qlksSL\QuanLyKhachSan\Bin\Debug\it\System.Xml.Serialization.resources.dll
+F:\Projects\qlksprojects.SL\qlksSL\QuanLyKhachSan\Bin\Debug\ja\System.Xml.Serialization.resources.dll
+F:\Projects\qlksprojects.SL\qlksSL\QuanLyKhachSan\Bin\Debug\ko\System.Xml.Serialization.resources.dll
+F:\Projects\qlksprojects.SL\qlksSL\QuanLyKhachSan\Bin\Debug\ru\System.Xml.Serialization.resources.dll
+F:\Projects\qlksprojects.SL\qlksSL\QuanLyKhachSan\Bin\Debug\zh-Hans\System.Xml.Serialization.resources.dll
+F:\Projects\qlksprojects.SL\qlksSL\QuanLyKhachSan\Bin\Debug\zh-Hant\System.Xml.Serialization.resources.dll

@@ -13,12 +13,14 @@ using System.Windows.Navigation;
 using System.ServiceModel;
 using QuanLyKhachSan.LoaiPhongSVC;
 using QuanLyKhachSan.TienNghiSVC;
+using QuanLyKhachSan.PhongSVC;
 namespace QuanLyKhachSan.Form.QuanLyPhong
 {
     public partial class frmLoaiPhong : Page
     {
         private LoaiPhongSVCClient LoaiPhongClient = new LoaiPhongSVCClient();
         private TienNghiSVCClient TienNghiClient = new TienNghiSVCClient();
+        private PhongSVCClient PhongClient = new PhongSVCClient();
         public frmLoaiPhong()
         {
             InitializeComponent();            
@@ -34,6 +36,14 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
 
             TienNghiClient.TienNghi_GetItemsCompleted += new EventHandler<TienNghi_GetItemsCompletedEventArgs>(TienNghiClient_TienNghi_GetItemsCompleted);
             TienNghiClient.TienNghi_GetItemsAsync();
+
+            PhongClient.Phong_GetItemsCompleted += new EventHandler<Phong_GetItemsCompletedEventArgs>(PhongClient_Phong_GetItemsCompleted);
+            PhongClient.Phong_GetItemsAsync(0);
+        }
+
+        void PhongClient_Phong_GetItemsCompleted(object sender, Phong_GetItemsCompletedEventArgs e)
+        {
+            grvPhong.ItemsSource = e.Result;
         }
         #region LoaiPhong
         void LoaiPhongClient_LoaiPhong_GetItemsCompleted(object sender, LoaiPhong_GetItemsCompletedEventArgs e)
@@ -147,5 +157,17 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                 TienNghiEdit.Show();
             }
         #endregion
+            #region Phong
+
+            #endregion
+            private void cmdSuaPhong_Click(object sender, RoutedEventArgs e)
+            {
+
+            }
+
+            private void cmdXoaPhong_Click(object sender, RoutedEventArgs e)
+            {
+
+            }
     }
 }
