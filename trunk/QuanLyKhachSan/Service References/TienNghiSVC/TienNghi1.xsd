@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/TienNghi.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" />
+  <xs:element name="TienNghi_Add">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TienNghiName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TienNghi_UuTien" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TienNghi_AddResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TienNghi_Edit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TienNghiID" type="xs:int" />
+        <xs:element minOccurs="0" name="TienNghiName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TienNghi_UuTien" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TienNghi_EditResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TienNghi_Delete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TienNghiID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TienNghi_DeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TienNghi_GetItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TienNghiID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TienNghi_GetItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" minOccurs="0" name="TienNghi_GetItemResult" nillable="true" type="q1:TienNghiInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TienNghi_GetItems">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TienNghi_GetItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" minOccurs="0" name="TienNghi_GetItemsResult" nillable="true" type="q2:ArrayOfTienNghiInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TienNghi_SapXep">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ListTienNghiID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TienNghi_SapXepResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

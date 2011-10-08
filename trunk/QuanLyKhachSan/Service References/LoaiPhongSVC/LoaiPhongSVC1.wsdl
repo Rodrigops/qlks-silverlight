@@ -8,7 +8,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsdl:import namespace="" location="http://localhost:6246/QuanLyKhachSan.WebServices/Services/LoaiPhong.svc?wsdl=wsdl0" />
+  <wsdl:import namespace="" location="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/LoaiPhong.svc?wsdl=wsdl0" />
   <wsdl:types />
   <wsdl:binding name="CustomBinding_LoaiPhongSVC" type="LoaiPhongSVC">
     <wsp:PolicyReference URI="#CustomBinding_LoaiPhongSVC_policy" />
@@ -61,9 +61,9 @@
   </wsdl:binding>
   <wsdl:service name="LoaiPhongSVC">
     <wsdl:port name="CustomBinding_LoaiPhongSVC" binding="tns:CustomBinding_LoaiPhongSVC">
-      <soap12:address location="http://localhost:6246/QuanLyKhachSan.WebServices/Services/LoaiPhong.svc" />
+      <soap12:address location="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/LoaiPhong.svc" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:6246/QuanLyKhachSan.WebServices/Services/LoaiPhong.svc</wsa10:Address>
+        <wsa10:Address>http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/LoaiPhong.svc</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>

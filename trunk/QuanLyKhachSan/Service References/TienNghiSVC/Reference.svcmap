@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e505caf7-1815-4384-a66d-103a1cfc220a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/TienNghi.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TienNghi.xsd" MetadataType="Schema" ID="97c39ade-36ce-4910-9946-e3ba295aceb6" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/TienNghi.svc?xsd=xsd1" />
+    <MetadataFile FileName="TienNghi1.xsd" MetadataType="Schema" ID="8c9ab6ce-5f54-4824-9eb6-ee331cba0064" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/TienNghi.svc?xsd=xsd0" />
+    <MetadataFile FileName="TienNghi.wsdl" MetadataType="Wsdl" ID="2c82c706-ff30-40d7-9eab-6f03fb5b853d" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/TienNghi.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="TienNghi2.xsd" MetadataType="Schema" ID="1913306f-635a-4436-9937-903b255ed72c" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/TienNghi.svc?xsd=xsd2" />
+    <MetadataFile FileName="TienNghi.disco" MetadataType="Disco" ID="cdcdece6-40ab-49d8-906a-73f39cf20a0c" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/TienNghi.svc?disco" />
+    <MetadataFile FileName="TienNghiSVC.wsdl" MetadataType="Wsdl" ID="b3ab4fe3-5d42-4006-9093-bbc2ada52578" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/TienNghi.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

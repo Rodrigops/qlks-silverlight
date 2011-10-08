@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="/Imports">
+      <xsd:import schemaLocation="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/TienNghi.svc?xsd=xsd0" />
+      <xsd:import schemaLocation="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/TienNghi.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/TienNghi.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="TienNghiSVC_TienNghi_Add_InputMessage">
+    <wsdl:part name="parameters" element="TienNghi_Add" />
+  </wsdl:message>
+  <wsdl:message name="TienNghiSVC_TienNghi_Add_OutputMessage">
+    <wsdl:part name="parameters" element="TienNghi_AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="TienNghiSVC_TienNghi_Edit_InputMessage">
+    <wsdl:part name="parameters" element="TienNghi_Edit" />
+  </wsdl:message>
+  <wsdl:message name="TienNghiSVC_TienNghi_Edit_OutputMessage">
+    <wsdl:part name="parameters" element="TienNghi_EditResponse" />
+  </wsdl:message>
+  <wsdl:message name="TienNghiSVC_TienNghi_Delete_InputMessage">
+    <wsdl:part name="parameters" element="TienNghi_Delete" />
+  </wsdl:message>
+  <wsdl:message name="TienNghiSVC_TienNghi_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="TienNghi_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="TienNghiSVC_TienNghi_GetItem_InputMessage">
+    <wsdl:part name="parameters" element="TienNghi_GetItem" />
+  </wsdl:message>
+  <wsdl:message name="TienNghiSVC_TienNghi_GetItem_OutputMessage">
+    <wsdl:part name="parameters" element="TienNghi_GetItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="TienNghiSVC_TienNghi_GetItems_InputMessage">
+    <wsdl:part name="parameters" element="TienNghi_GetItems" />
+  </wsdl:message>
+  <wsdl:message name="TienNghiSVC_TienNghi_GetItems_OutputMessage">
+    <wsdl:part name="parameters" element="TienNghi_GetItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="TienNghiSVC_TienNghi_SapXep_InputMessage">
+    <wsdl:part name="parameters" element="TienNghi_SapXep" />
+  </wsdl:message>
+  <wsdl:message name="TienNghiSVC_TienNghi_SapXep_OutputMessage">
+    <wsdl:part name="parameters" element="TienNghi_SapXepResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TienNghiSVC">
+    <wsdl:operation name="TienNghi_Add">
+      <wsdl:input wsaw:Action="urn:TienNghiSVC/TienNghi_Add" message="TienNghiSVC_TienNghi_Add_InputMessage" />
+      <wsdl:output wsaw:Action="urn:TienNghiSVC/TienNghi_AddResponse" message="TienNghiSVC_TienNghi_Add_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TienNghi_Edit">
+      <wsdl:input wsaw:Action="urn:TienNghiSVC/TienNghi_Edit" message="TienNghiSVC_TienNghi_Edit_InputMessage" />
+      <wsdl:output wsaw:Action="urn:TienNghiSVC/TienNghi_EditResponse" message="TienNghiSVC_TienNghi_Edit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TienNghi_Delete">
+      <wsdl:input wsaw:Action="urn:TienNghiSVC/TienNghi_Delete" message="TienNghiSVC_TienNghi_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="urn:TienNghiSVC/TienNghi_DeleteResponse" message="TienNghiSVC_TienNghi_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TienNghi_GetItem">
+      <wsdl:input wsaw:Action="urn:TienNghiSVC/TienNghi_GetItem" message="TienNghiSVC_TienNghi_GetItem_InputMessage" />
+      <wsdl:output wsaw:Action="urn:TienNghiSVC/TienNghi_GetItemResponse" message="TienNghiSVC_TienNghi_GetItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TienNghi_GetItems">
+      <wsdl:input wsaw:Action="urn:TienNghiSVC/TienNghi_GetItems" message="TienNghiSVC_TienNghi_GetItems_InputMessage" />
+      <wsdl:output wsaw:Action="urn:TienNghiSVC/TienNghi_GetItemsResponse" message="TienNghiSVC_TienNghi_GetItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TienNghi_SapXep">
+      <wsdl:input wsaw:Action="urn:TienNghiSVC/TienNghi_SapXep" message="TienNghiSVC_TienNghi_SapXep_InputMessage" />
+      <wsdl:output wsaw:Action="urn:TienNghiSVC/TienNghi_SapXepResponse" message="TienNghiSVC_TienNghi_SapXep_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
