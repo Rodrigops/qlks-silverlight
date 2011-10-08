@@ -10,6 +10,10 @@
                     maxReceivedMessageSize="2147483647">
                     <security mode="None" />
                 </binding>
+                <binding name="BasicHttpBinding_DichVuSVC" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
             </basicHttpBinding>
             <customBinding>
                 <binding name="CustomBinding_LoaiPhongSVC">
@@ -28,6 +32,9 @@
             <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Phong.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_PhongSVC"
                 contract="PhongSVC.PhongSVC" name="BasicHttpBinding_PhongSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/DichVu.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_DichVuSVC"
+                contract="DichVuSVC.DichVuSVC" name="BasicHttpBinding_DichVuSVC" />
         </client>
     </system.serviceModel>
 </configuration>

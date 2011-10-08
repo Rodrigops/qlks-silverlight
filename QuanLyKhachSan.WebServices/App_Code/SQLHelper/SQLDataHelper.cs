@@ -15,8 +15,8 @@ namespace QuanLyKhachSan
         public SQLDataHelper()
         {
             //string strSqlConnection = @"Data Source=DN-PTPM-PM-018\DOSOFT;Initial Catalog=IOFFICE;User ID=sa;Password=123";
-            //string strSqlConnection = "Data Source=123.30.187.3;Initial Catalog=ttewjkqv_qlks;User ID=ttewjkqv_groupqlks;Password=gqlks@2011";
-            string strSqlConnection = @"Data Source=NHOCCUNG-PC\SQLEXPRESS;Initial Catalog=ttewjkqv_qlks;User ID=sa;Password=ng0ctr@m!@#";
+            string strSqlConnection = "Data Source=123.30.187.3;Initial Catalog=ttewjkqv_qlks;User ID=ttewjkqv_groupqlks;Password=gqlks@2011";
+            //string strSqlConnection = @"Data Source=SE7EN-PC\SE7EN;Initial Catalog=ttewjkqv_qlks;User ID=sa;Password=123456";
             SqlConnection conn = new SqlConnection(strSqlConnection);
             this.cmd = conn.CreateCommand();
         }
