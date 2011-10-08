@@ -88,6 +88,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Form\QuanLyPhong\frmTienNghiEdit.xaml.cs">
+      <DependentUpon>frmTienNghiEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Form\QuanLyPhong\frmCaiDatGia.xaml.cs">
       <DependentUpon>frmCaiDatGia.xaml</DependentUpon>
     </Compile>
@@ -109,12 +112,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\TienNghiSVC\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Form\QuanLyPhong\frmTienNghiEdit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Form\QuanLyPhong\frmCaiDatGia.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -138,12 +150,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AppManifest.xml" />
-    <None Include="Service References\LoaiPhongSVC\LoaiPhong.disco" />
     <None Include="Service References\LoaiPhongSVC\configuration91.svcinfo" />
     <None Include="Service References\LoaiPhongSVC\configuration.svcinfo" />
-    <None Include="Service References\LoaiPhongSVC\LoaiPhong2.xsd">
+    <None Include="Service References\LoaiPhongSVC\LoaiPhong1.wsdl" />
+    <None Include="Service References\LoaiPhongSVC\LoaiPhong3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\LoaiPhongSVC\LoaiPhong31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LoaiPhongSVC\LoaiPhong32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LoaiPhongSVC\LoaiPhongSVC1.wsdl" />
     <None Include="Service References\LoaiPhongSVC\QuanLyKhachSan.LoaiPhongSVC.LoaiPhongInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -151,15 +170,29 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\LoaiPhongSVC\LoaiPhong.wsdl" />
-    <None Include="Service References\LoaiPhongSVC\LoaiPhong.xsd">
-      <SubType>Designer</SubType>
+    <None Include="Service References\LoaiPhongSVC\LoaiPhong1.disco" />
+    <None Include="Service References\TienNghiSVC\QuanLyKhachSan.TienNghiSVC.TienNghiInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\LoaiPhongSVC\LoaiPhong1.xsd">
-      <SubType>Designer</SubType>
+    <None Include="Service References\TienNghiSVC\TienNghi.disco" />
+    <None Include="Service References\TienNghiSVC\configuration91.svcinfo" />
+    <None Include="Service References\TienNghiSVC\configuration.svcinfo" />
+    <None Include="Service References\TienNghiSVC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\LoaiPhongSVC\LoaiPhongSVC.wsdl" />
     <Content Include="ServiceReferences.ClientConfig" />
+    <None Include="Service References\TienNghiSVC\TienNghi.wsdl" />
+    <None Include="Service References\TienNghiSVC\TienNghi.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TienNghiSVC\TienNghi1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TienNghiSVC\TienNghi2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TienNghiSVC\TienNghiSVC.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Form\QuanLyUsers\" />
@@ -176,6 +209,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\LoaiPhongSVC\" />
+    <WCFMetadataStorage Include="Service References\TienNghiSVC\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
