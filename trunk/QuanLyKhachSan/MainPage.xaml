@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="QuanLyKhachSan.MainPage"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation" 
+        xmlns:uriMapper="clr-namespace:System.Windows.Navigation;assembly=System.Windows.Controls.Navigation"
+		mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="800" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
+	<Grid x:Name="LayoutRoot">
+        <telerik:RadRibbonBar Height="146" HorizontalAlignment="Stretch" Name="mainRibbonBar" ApplicationName="Quản Lý Khách Sạn" VerticalAlignment="Top" Width="Auto" telerik:StyleManager.Theme="Vista">
+            <telerik:RadRibbonTab Header="Trang Chủ">
+                <telerik:RadRibbonGroup Header="RibbonGroup" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
+                    
+                </telerik:RadRibbonGroup>
+            </telerik:RadRibbonTab>
+            <telerik:RadRibbonTab Header="Quản Lý Phòng">
+                <telerik:RadRibbonGroup Header="Thông Tin Phòng" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">                    
+                    <telerik:RadRibbonButton Name="cmdThongTinPhong" Click="cmdThongTinPhong_Click" >
+                        <StackPanel>
+                            <Image Source="Images/LoaiPhong.png"></Image>
+                        </StackPanel>
+                    </telerik:RadRibbonButton>
+                </telerik:RadRibbonGroup>
+                <telerik:RadRibbonGroup Header="Giá Phòng" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
+                    <telerik:RadRibbonButton Name="cmdGiaPhong" Click="cmdGiaPhong_Click">
+                        <StackPanel>
+                            <Image Source="Images/GiaPhong.png"></Image>
+                        </StackPanel>
+                    </telerik:RadRibbonButton>
+                </telerik:RadRibbonGroup>
+                <telerik:RadRibbonGroup Header="Cài Đặt Giá" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
+                    <telerik:RadRibbonButton Name="cmdCaiDatGia" Click="cmdCaiDatGia_Click">
+                        <StackPanel>
+                            <Image Source="Images/CaiDatGia.png"></Image>
+                        </StackPanel>
+                    </telerik:RadRibbonButton>
+                </telerik:RadRibbonGroup>
+            </telerik:RadRibbonTab>
+            <telerik:RadRibbonTab Header="Thống Kê">
+                <telerik:RadRibbonGroup Header="RibbonGroup" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
+
+                </telerik:RadRibbonGroup>
+            </telerik:RadRibbonTab>
+            <telerik:RadRibbonTab Header="Thông Tin">
+                <telerik:RadRibbonGroup Header="RibbonGroup" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
+
+                </telerik:RadRibbonGroup>
+            </telerik:RadRibbonTab>
+            <telerik:RadRibbonTab Header="Admin">
+                <telerik:RadRibbonGroup Header="RibbonGroup" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
+
+                </telerik:RadRibbonGroup>
+            </telerik:RadRibbonTab>
+        </telerik:RadRibbonBar>
+        <navigation:Frame Height="Auto" HorizontalAlignment="Left" Name="ContentFrame" VerticalAlignment="Top" Width="Auto" Margin="0,144,0,0">
+            <navigation:Frame.UriMapper>
+                <uriMapper:UriMapper>                    
+                    <uriMapper:UriMapping Uri="ThongTinPhong" MappedUri="/Form/QuanLyPhong/frmThongTinPhong.xaml"/>
+                    <uriMapper:UriMapping Uri="GiaPhong" MappedUri="/Form/QuanLyPhong/frmGiaPhong.xaml"/>
+                    <uriMapper:UriMapping Uri="CaiDatGia" MappedUri="/Form/QuanLyPhong/frmCaiDatGia.xaml"/>
+                </uriMapper:UriMapper>
+            </navigation:Frame.UriMapper>
+        </navigation:Frame>
+    </Grid>
+</UserControl>

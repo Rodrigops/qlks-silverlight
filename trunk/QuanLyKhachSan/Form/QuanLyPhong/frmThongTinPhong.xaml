@@ -1,0 +1,39 @@
+﻿<navigation:Page x:Class="QuanLyKhachSan.Form.QuanLyPhong.frmLoaiPhong" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           d:DesignWidth="1000" d:DesignHeight="800"
+           Title="frmLoaiPhong Page" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*">                
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.Resources>
+            <DataTemplate x:Key="CustomTemplate">
+                <StackPanel Orientation="Horizontal">
+                    <HyperlinkButton CommandParameter="{Binding LoaiPhongID}" Content="Sửa" Margin="2" Name="cmdSuaLoaiPhong" Click="cmdSuaLoaiPhong_Click"></HyperlinkButton>
+                    <TextBlock Text="|" Margin="2" />
+                    <HyperlinkButton CommandParameter="{Binding LoaiPhongID}" Content="Xóa" Margin="2" Name="cmdXoaLoaiPhong" Click="cmdXoaLoaiPhong_Click"></HyperlinkButton>
+                </StackPanel>
+            </DataTemplate>
+        </Grid.Resources>
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <telerik:RadGridView Height="Auto" AutoGenerateColumns="False" HorizontalAlignment="Left" IsFilteringAllowed="False" ShowGroupPanel="False" Name="grvLoaiPhong" VerticalAlignment="Top" RowIndicatorVisibility="Collapsed" telerik:StyleManager.Theme="Office_Blue">
+                <telerik:RadGridView.Columns>
+                    <telerik:GridViewDataColumn Header="Loại Phòng" DataMemberBinding="{Binding Path=LoaiPhongName}" Width="*"></telerik:GridViewDataColumn>
+                    <telerik:GridViewColumn Header="Chỉnh Sửa" Width="80" CellTemplate="{StaticResource CustomTemplate}">
+                    </telerik:GridViewColumn>                    
+                </telerik:RadGridView.Columns>
+                
+            </telerik:RadGridView>
+            <telerik:RadButton Content="Thêm Loại Phòng" Height="20" Name="cmdThemLoaiPhong" Click="cmdThemLoaiPhong_Click" Width="100" Margin="10"/>
+        </StackPanel>
+    </Grid>
+</navigation:Page>
