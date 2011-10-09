@@ -1,0 +1,42 @@
+﻿<navigation:Page xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"  x:Class="QuanLyKhachSan.Form.QuanLyPhong.frmPhongTheoTinhTrang" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           d:DesignWidth="1000" d:DesignHeight="480"
+           Title="frmPhongTheoTinhTrang Page" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" xmlns:my="clr-namespace:QuanLyKhachSan.PhongSVC" Loaded="Page_Loaded">
+    <Grid x:Name="LayoutRoot">
+        <Grid.Resources>
+        </Grid.Resources>
+        <StackPanel Name="pnlMain" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal" Margin="20,0,50,0" Background="White">
+                <Border Width="20" Height="20" BorderThickness="1" BorderBrush="Black">
+                    
+                </Border>
+                <TextBlock Text="Còn trống" VerticalAlignment="Center" Margin="10,0,0,0"></TextBlock>
+                <Border Width="20" Height="20" Margin="5,0,0,0"  BorderThickness="1"  BorderBrush="Black" Background="#4A8BAF">
+
+                </Border>
+                <TextBlock Text="Đã đặt" Margin="5,0,0,0" VerticalAlignment="Center" ></TextBlock>
+                <Border Width="20" Height="20" Margin="5,0,0,0"  BorderThickness="1"  BorderBrush="Black" Background="Green">
+
+                </Border>
+                <TextBlock Text="Đang ở" Margin="5,0,0,0" VerticalAlignment="Center" ></TextBlock>
+                <Border Width="20" Height="20" Margin="5,0,0,0"  BorderThickness="1"  BorderBrush="Black" Background="Red">
+
+                </Border>
+                <TextBlock Text="Cần sửa" Margin="5,0,0,0" VerticalAlignment="Center" ></TextBlock>
+                <Border Width="20" Height="20" Margin="5,0,0,0"  BorderThickness="1"  BorderBrush="Black" Background="Yellow">
+
+                </Border>
+                <TextBlock Text="Chưa dọn" Margin="5,0,0,0" VerticalAlignment="Center" ></TextBlock>
+                <Border Width="20" Height="20" Margin="5,0,0,0"  BorderThickness="1"  BorderBrush="Black" Background="Pink">
+
+                </Border>
+                <TextBlock Text="Rời phòng" Margin="5,0,0,0" VerticalAlignment="Center" ></TextBlock>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</navigation:Page>

@@ -32,5 +32,25 @@ namespace QuanLyKhachSan
         {
             ContentFrame.Navigate(new Uri("CaiDatGia", UriKind.Relative));   
         }
+
+        private void cmdTinhTrangPhong_Click(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(new Uri("", UriKind.Relative));   
+        }
+
+        private void cmdKhachHang_Click(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(new Uri("KhachHang", UriKind.Relative));   
+        }
+
+        private void cmdDatPhong_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cmdNhanPhong_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

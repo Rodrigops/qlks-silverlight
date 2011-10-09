@@ -69,8 +69,10 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Net" />
     <Reference Include="System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="System.Windows.Controls.Data.Input, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="System.Windows.Controls.Navigation, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Windows.Browser" />
     <Reference Include="System.Xml.Linq, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
@@ -90,11 +92,17 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Form\QuanLyKhachHang\frmKhachHang.xaml.cs">
+      <DependentUpon>frmKhachHang.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Form\QuanLyPhong\frmDichVuEdit.xaml.cs">
       <DependentUpon>frmDichVuEdit.xaml</DependentUpon>
     </Compile>
     <Compile Include="Form\QuanLyPhong\frmPhongEdit.xaml.cs">
       <DependentUpon>frmPhongEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\QuanLyPhong\frmPhongTheoTinhTrang.xaml.cs">
+      <DependentUpon>frmPhongTheoTinhTrang.xaml</DependentUpon>
     </Compile>
     <Compile Include="Form\QuanLyPhong\frmTienNghiEdit.xaml.cs">
       <DependentUpon>frmTienNghiEdit.xaml</DependentUpon>
@@ -120,6 +128,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\KhachHangSVC\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\LoaiPhongSVC\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -141,11 +154,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Form\QuanLyKhachHang\frmKhachHang.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Form\QuanLyPhong\frmDichVuEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Form\QuanLyPhong\frmPhongEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\QuanLyPhong\frmPhongTheoTinhTrang.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -188,6 +209,20 @@
     </None>
     <None Include="Service References\DichVuSVC\DichVuSVC.wsdl" />
     <None Include="Service References\DichVuSVC\QuanLyKhachSan.DichVuSVC.DichVuInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\KhachHangSVC\KhachHang.wsdl" />
+    <None Include="Service References\KhachHangSVC\KhachHang.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KhachHangSVC\KhachHang1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KhachHangSVC\KhachHang2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\KhachHangSVC\KhachHangSVC.wsdl" />
+    <None Include="Service References\KhachHangSVC\QuanLyKhachSan.KhachHangSVC.KhachHangInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\LoaiPhongSVC\configuration91.svcinfo" />
@@ -267,7 +302,17 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Service References\TienNghiSVC\TienNghi.svc" />
+    <Resource Include="Images\DatPhong.png" />
+    <Resource Include="Images\GiaoPhong.png" />
+    <Resource Include="Images\KhachHang.png" />
+    <Resource Include="Images\TinhTrang.png" />
+    <None Include="Service References\KhachHangSVC\KhachHang.disco" />
+    <None Include="Service References\KhachHangSVC\configuration91.svcinfo" />
+    <None Include="Service References\KhachHangSVC\configuration.svcinfo" />
+    <None Include="Service References\KhachHangSVC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="ServiceReferences.ClientConfig" />
     <None Include="Service References\TienNghiSVC\TienNghi.wsdl" />
     <None Include="Service References\TienNghiSVC\TienNghi.xsd">
@@ -296,6 +341,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\DichVuSVC\" />
+    <WCFMetadataStorage Include="Service References\KhachHangSVC\" />
     <WCFMetadataStorage Include="Service References\LoaiPhongSVC\" />
     <WCFMetadataStorage Include="Service References\PhongSVC\" />
     <WCFMetadataStorage Include="Service References\TienNghiSVC\" />

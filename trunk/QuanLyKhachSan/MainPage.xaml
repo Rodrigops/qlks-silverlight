@@ -10,9 +10,34 @@
 	<Grid x:Name="LayoutRoot">
         <telerik:RadRibbonBar Height="146" HorizontalAlignment="Stretch" Name="mainRibbonBar" ApplicationName="Quản Lý Khách Sạn" VerticalAlignment="Top" Width="Auto" telerik:StyleManager.Theme="Vista">
             <telerik:RadRibbonTab Header="Trang Chủ">
-                <telerik:RadRibbonGroup Header="RibbonGroup" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
-                    
+                <telerik:RadRibbonGroup Header="Tình Trạng Phòng"  Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
+                    <telerik:RadRibbonButton Name="cmdTinhTrangPhong" Click="cmdTinhTrangPhong_Click" >
+                        <StackPanel>
+                            <Image Source="Images/TinhTrang.png"></Image>
+                        </StackPanel>
+                    </telerik:RadRibbonButton>
                 </telerik:RadRibbonGroup>
+                <telerik:RadRibbonGroup Header="Khách Hàng" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
+                    <telerik:RadRibbonButton Name="cmdKhachHang" Click="cmdKhachHang_Click" >
+                        <StackPanel>
+                            <Image Source="Images/KhachHang.png"></Image>
+                        </StackPanel>
+                    </telerik:RadRibbonButton>
+                </telerik:RadRibbonGroup>
+                <telerik:RadRibbonGroup Header="Đặt Phòng" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
+                    <telerik:RadRibbonButton Name="cmdDatPhong" Click="cmdDatPhong_Click" >
+                        <StackPanel>
+                            <Image Source="Images/DatPhong.png"></Image>
+                        </StackPanel>
+                    </telerik:RadRibbonButton>
+                </telerik:RadRibbonGroup>
+                <telerik:RadRibbonGroup Header="Nhận Phòng" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
+                        <telerik:RadRibbonButton Name="cmdNhanPhong" Click="cmdNhanPhong_Click" >
+                            <StackPanel>
+                                <Image Source="Images/GiaoPhong.png"></Image>
+                            </StackPanel>
+                        </telerik:RadRibbonButton>
+                    </telerik:RadRibbonGroup>
             </telerik:RadRibbonTab>
             <telerik:RadRibbonTab Header="Quản Lý Phòng">
                 <telerik:RadRibbonGroup Header="Thông Tin Phòng" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">                    
@@ -55,10 +80,12 @@
         </telerik:RadRibbonBar>
         <navigation:Frame Height="Auto" HorizontalAlignment="Left" Name="ContentFrame" VerticalAlignment="Top" Width="Auto" Margin="0,144,0,0">
             <navigation:Frame.UriMapper>
-                <uriMapper:UriMapper>                    
+                <uriMapper:UriMapper>
+                    <uriMapper:UriMapping Uri="" MappedUri="/Form/QuanLyPhong/frmPhongTheoTinhTrang.xaml"/>
                     <uriMapper:UriMapping Uri="ThongTinPhong" MappedUri="/Form/QuanLyPhong/frmThongTinPhong.xaml"/>
                     <uriMapper:UriMapping Uri="GiaPhong" MappedUri="/Form/QuanLyPhong/frmGiaPhong.xaml"/>
                     <uriMapper:UriMapping Uri="CaiDatGia" MappedUri="/Form/QuanLyPhong/frmCaiDatGia.xaml"/>
+                    <uriMapper:UriMapping Uri="KhachHang" MappedUri="/Form/QuanLyKhachHang/frmKhachHang.xaml"/>
                 </uriMapper:UriMapper>
             </navigation:Frame.UriMapper>
         </navigation:Frame>
