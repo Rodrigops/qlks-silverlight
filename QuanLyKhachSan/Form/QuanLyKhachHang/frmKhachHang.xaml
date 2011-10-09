@@ -1,0 +1,33 @@
+﻿<navigation:Page x:Class="QuanLyKhachSan.Form.KhachHang.frmKhachHang" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           d:DesignWidth="1000" d:DesignHeight="480"
+           Title="frmKhachHang Page" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+    <Grid x:Name="LayoutRoot">
+        <Grid.Resources>
+            <DataTemplate x:Key="Template_grvKhachHang_ColumnEdit">
+                <StackPanel Orientation="Horizontal">
+                    <HyperlinkButton CommandParameter="{Binding KhachHangID}" Content="Sửa" Margin="2" Name="cmdSuaKhachHang" Click="cmdSuaKhachHang_Click"></HyperlinkButton>
+                    <TextBlock Text="|" Margin="2" />
+                    <HyperlinkButton CommandParameter="{Binding KhachHangID}" Content="Xóa" Margin="2" Name="cmdXoaKhachHang" Click="cmdXoaKhachHang_Click"></HyperlinkButton>
+                </StackPanel>
+            </DataTemplate>
+        </Grid.Resources>
+        <ScrollViewer>
+            <telerik:RadGridView Height="Auto" AutoGenerateColumns="False" IsFilteringAllowed="False" ShowGroupPanel="False" Name="grvKhachHang" RowIndicatorVisibility="Collapsed" telerik:StyleManager.Theme="Office_Blue">
+                <telerik:RadGridView.Columns>
+                    <telerik:GridViewDataColumn Header="Họ Tên" DataMemberBinding="{Binding Path=HoTen}" Width="*"></telerik:GridViewDataColumn>
+                    <telerik:GridViewDataColumn Header="Giới Tính" DataMemberBinding="{Binding Path=GioiTinh}" Width="*"></telerik:GridViewDataColumn>
+                    <telerik:GridViewDataColumn Header="Địa Chỉ" DataMemberBinding="{Binding Path=DiaChi}" Width="*"></telerik:GridViewDataColumn>
+                    <telerik:GridViewDataColumn Header="CMND/PassPort" DataMemberBinding="{Binding Path=CMND}" Width="*"></telerik:GridViewDataColumn>
+                    <telerik:GridViewDataColumn Header="Điện Thoại" DataMemberBinding="{Binding Path=DienThoai}" Width="*"></telerik:GridViewDataColumn>
+                    <telerik:GridViewColumn Header="Chỉnh Sửa" Width="80" CellTemplate="{StaticResource Template_grvKhachHang_ColumnEdit}"></telerik:GridViewColumn>
+                </telerik:RadGridView.Columns>
+            </telerik:RadGridView>
+        </ScrollViewer>
+    </Grid>
+</navigation:Page>

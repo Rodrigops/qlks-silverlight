@@ -46,49 +46,52 @@
                 </StackPanel>
             </DataTemplate>
         </Grid.Resources>
-        <StackPanel Grid.Row="0" Grid.Column="0">            
-            <telerik:RadGridView Height="Auto" AutoGenerateColumns="False" IsFilteringAllowed="False" ShowGroupPanel="False" Name="grvLoaiPhong" RowIndicatorVisibility="Collapsed" telerik:StyleManager.Theme="Office_Blue">                
-                    <telerik:RadGridView.Columns>
-                    <telerik:GridViewDataColumn Header="Loại Phòng" DataMemberBinding="{Binding Path=LoaiPhongName}" Width="*"></telerik:GridViewDataColumn>
-                    <telerik:GridViewColumn Header="Chỉnh Sửa" Width="80" CellTemplate="{StaticResource Template_grvLoaiPhong_ColumnEdit}"></telerik:GridViewColumn>
-                </telerik:RadGridView.Columns>
-            </telerik:RadGridView>
-            <telerik:RadButton Content="Thêm Loại Phòng" Height="20" Name="cmdThemLoaiPhong" Click="cmdThemLoaiPhong_Click" Width="100" telerik:StyleManager.Theme="Office_Blue" Margin="10" />
-            
-            <telerik:RadGridView AutoGenerateColumns="False" Height="Auto" IsFilteringAllowed="False" Name="grvTienNghi" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" telerik:StyleManager.Theme="Office_Blue">
-                <telerik:RadGridView.Columns>
-                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=TienNghiName}" Header="Tiện Nghi" Width="*" />
-                    <telerik:GridViewColumn CellTemplate="{StaticResource Template_grvTienNghi_ColumnEdit}" Header="Chỉnh Sửa" Width="80" />
-                </telerik:RadGridView.Columns>
-            </telerik:RadGridView>
-            <telerik:RadButton Content="Thêm Tiện Nghi" Height="20" Name="cmdThemTienNghi" Click="cmdThemTienNghi_Click" telerik:StyleManager.Theme="Office_Blue" Width="100" Margin="10" />
-            
-            <telerik:RadGridView AutoGenerateColumns="False" Height="Auto" IsFilteringAllowed="False" Name="grvDichVu" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" telerik:StyleManager.Theme="Office_Blue">
-                <telerik:RadGridView.Columns>
-                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=DichVuName}" Header="Dịch vụ" Width="*" />
-                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=GiaTien}" Header="Giá tiền" Width="*" />
-                    <telerik:GridViewColumn CellTemplate="{StaticResource Template_grvDichVu_ColumnEdit}" Header="Chỉnh Sửa" Width="80" />
-                </telerik:RadGridView.Columns>
-            </telerik:RadGridView>
-            <telerik:RadButton Content="Thêm Dịch Vụ" Height="20" Name="cmdThemDichVu" telerik:StyleManager.Theme="Office_Blue" Width="100" Margin="10" Click="cmdThemDichVu_Click" />
+        <ScrollViewer Grid.Row="0" Grid.Column="0">
+                <StackPanel Grid.Row="0" Grid.Column="0">
+                    <telerik:RadGridView Height="Auto" AutoGenerateColumns="False" IsFilteringAllowed="False" ShowGroupPanel="False" Name="grvLoaiPhong" RowIndicatorVisibility="Collapsed" telerik:StyleManager.Theme="Office_Blue">
+                        <telerik:RadGridView.Columns>
+                            <telerik:GridViewDataColumn Header="Loại Phòng" DataMemberBinding="{Binding Path=LoaiPhongName}" Width="*"></telerik:GridViewDataColumn>
+                            <telerik:GridViewColumn Header="Chỉnh Sửa" Width="80" CellTemplate="{StaticResource Template_grvLoaiPhong_ColumnEdit}"></telerik:GridViewColumn>
+                        </telerik:RadGridView.Columns>
+                    </telerik:RadGridView>
+                    <telerik:RadButton Content="Thêm Loại Phòng" Height="20" Name="cmdThemLoaiPhong" Click="cmdThemLoaiPhong_Click" Width="100" telerik:StyleManager.Theme="Office_Blue" Margin="10" />
 
-            <telerik:RadBusyIndicator Height="83" HorizontalAlignment="Left" Margin="474,139,0,0" Name="radLoading" BusyContent="Đang tải dữ liệu" VerticalAlignment="Top" Width="300" telerik:StyleManager.Theme="Metro" />
-        </StackPanel>
-        <StackPanel Grid.Row="0" Grid.Column="1" Margin="10,0,0,0">
-            <telerik:RadGridView AutoGenerateColumns="False" AutoExpandGroups="True" IsFilteringAllowed="False" Name="grvPhong" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" telerik:StyleManager.Theme="Office_Blue" Height="500" DataLoading="grvPhong_DataLoading" DataLoaded="grvPhong_DataLoaded">
-                <telerik:RadGridView.GroupDescriptors>
-                    <telerik:GroupDescriptor Member="LoaiPhongName" DisplayContent="{Binding Path=LoaiPhongName}"></telerik:GroupDescriptor>                    
-                </telerik:RadGridView.GroupDescriptors>
-                <telerik:RadGridView.Columns>
-                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=PhongName}" Header="Phòng" Width="80" />
-                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=TienNghiName}" Header="Tiện Nghi" Width="*" />
-                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=SoGiuong}" Header="Số Giường" Width="80" />
-                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=SoNguoi}" Header="Số Người" Width="80" />
-                    <telerik:GridViewColumn CellTemplate="{StaticResource Template_grvPhong_ColumnEdit}" Header="Chỉnh Sửa" Width="80" />
-                </telerik:RadGridView.Columns>               
-            </telerik:RadGridView>
-            <telerik:RadButton Content="Thêm Phòng" Height="20" Name="cmdThemPhong" telerik:StyleManager.Theme="Office_Blue" Width="100" Margin="10" Click="cmdThemPhong_Click" />
-        </StackPanel>
-        
+                    <telerik:RadGridView AutoGenerateColumns="False" Height="Auto" IsFilteringAllowed="False" Name="grvTienNghi" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" telerik:StyleManager.Theme="Office_Blue">
+                        <telerik:RadGridView.Columns>
+                            <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=TienNghiName}" Header="Tiện Nghi" Width="*" />
+                            <telerik:GridViewColumn CellTemplate="{StaticResource Template_grvTienNghi_ColumnEdit}" Header="Chỉnh Sửa" Width="80" />
+                        </telerik:RadGridView.Columns>
+                    </telerik:RadGridView>
+                    <telerik:RadButton Content="Thêm Tiện Nghi" Height="20" Name="cmdThemTienNghi" Click="cmdThemTienNghi_Click" telerik:StyleManager.Theme="Office_Blue" Width="100" Margin="10" />
+
+                    <telerik:RadGridView AutoGenerateColumns="False" Height="Auto" IsFilteringAllowed="False" Name="grvDichVu" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" telerik:StyleManager.Theme="Office_Blue">
+                        <telerik:RadGridView.Columns>
+                            <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=DichVuName}" Header="Dịch vụ" Width="*" />
+                            <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=GiaTien}" Header="Giá tiền" Width="*" />
+                            <telerik:GridViewColumn CellTemplate="{StaticResource Template_grvDichVu_ColumnEdit}" Header="Chỉnh Sửa" Width="80" />
+                        </telerik:RadGridView.Columns>
+                    </telerik:RadGridView>
+                    <telerik:RadButton Content="Thêm Dịch Vụ" Height="20" Name="cmdThemDichVu" telerik:StyleManager.Theme="Office_Blue" Width="100" Margin="10" Click="cmdThemDichVu_Click" />
+
+                    <telerik:RadBusyIndicator Height="83" HorizontalAlignment="Left" Margin="474,139,0,0" Name="radLoading" BusyContent="Đang tải dữ liệu" VerticalAlignment="Top" Width="300" telerik:StyleManager.Theme="Metro" />
+                </StackPanel>
+        </ScrollViewer>
+        <ScrollViewer Grid.Row="0" Grid.Column="1">
+                <StackPanel Grid.Row="0" Grid.Column="1" Margin="10,0,10,0">
+                <telerik:RadButton Content="Thêm Phòng" Height="20" Name="cmdThemPhong" telerik:StyleManager.Theme="Office_Blue" Width="100" Margin="10" Click="cmdThemPhong_Click" HorizontalAlignment="Left" />
+                <telerik:RadGridView AutoGenerateColumns="False" Margin="10,0,10,0" AutoExpandGroups="True" IsFilteringAllowed="False" Name="grvPhong" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" telerik:StyleManager.Theme="Office_Blue" Height="Auto" DataLoading="grvPhong_DataLoading" DataLoaded="grvPhong_DataLoaded">
+                        <telerik:RadGridView.GroupDescriptors>
+                            <telerik:GroupDescriptor Member="LoaiPhongName" DisplayContent="{Binding Path=LoaiPhongName}"></telerik:GroupDescriptor>                    
+                        </telerik:RadGridView.GroupDescriptors>
+                        <telerik:RadGridView.Columns>
+                            <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=PhongName}" Header="Phòng" Width="80" />
+                            <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=TienNghiName}" Header="Tiện Nghi" Width="*" />
+                            <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=SoGiuong}" Header="Số Giường" Width="80" />
+                            <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=SoNguoi}" Header="Số Người" Width="80" />
+                            <telerik:GridViewColumn CellTemplate="{StaticResource Template_grvPhong_ColumnEdit}" Header="Chỉnh Sửa" Width="80" />
+                        </telerik:RadGridView.Columns>               
+                    </telerik:RadGridView>
+                </StackPanel>
+        </ScrollViewer>
     </Grid>
 </navigation:Page>
