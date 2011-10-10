@@ -14,6 +14,10 @@
                     maxReceivedMessageSize="2147483647">
                     <security mode="None" />
                 </binding>
+                <binding name="BasicHttpBinding_QuocTichSVC" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
                 <binding name="BasicHttpBinding_KhachHangSVC" maxBufferSize="2147483647"
                     maxReceivedMessageSize="2147483647">
                     <security mode="None" />
@@ -39,6 +43,9 @@
             <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/DichVu.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_DichVuSVC"
                 contract="DichVuSVC.DichVuSVC" name="BasicHttpBinding_DichVuSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/QuocTich.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_QuocTichSVC"
+                contract="QuocTichSVC.QuocTichSVC" name="BasicHttpBinding_QuocTichSVC" />
             <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/KhachHang.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_KhachHangSVC"
                 contract="KhachHangSVC.KhachHangSVC" name="BasicHttpBinding_KhachHangSVC" />
