@@ -11,6 +11,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Navigation;
 using QuanLyKhachSan.KhachHangSVC;
+using System.Windows.Data;
 namespace QuanLyKhachSan.Form.QuanLyKhachHang
 {
     public partial class frmKhachHang : Page
@@ -24,13 +25,13 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
         // Executes when the user navigates to this page.
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            KhachHangClient.KhachHang_GetItemsCompleted+=new EventHandler<KhachHang_GetItemsCompletedEventArgs>(KhachHangClient_KhachHang_GetItemsCompleted);
+            KhachHangClient.KhachHang_GetItemsCompleted += new EventHandler<KhachHang_GetItemsCompletedEventArgs>(KhachHangClient_KhachHang_GetItemsCompleted);
             KhachHangClient.KhachHang_GetItemsAsync(0);
         }
 
-        void  KhachHangClient_KhachHang_GetItemsCompleted(object sender, KhachHang_GetItemsCompletedEventArgs e)
+        void KhachHangClient_KhachHang_GetItemsCompleted(object sender, KhachHang_GetItemsCompletedEventArgs e)
         {
- 	        grvKhachHang.ItemsSource = e.Result;
+            grvKhachHang.ItemsSource = e.Result;
         }
 
         void KhachHangClient_KhachHang_DeleteCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)

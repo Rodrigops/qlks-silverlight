@@ -3,10 +3,11 @@
            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           xmlns:local="clr-namespace:QuanLyKhachSan.Form.QuanLyKhachHang"
            mc:Ignorable="d"
            xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
            d:DesignWidth="1000" d:DesignHeight="480"
-           Title="frmKhachHang Page" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+           Title="frmKhachHang Page" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">    
     <Grid x:Name="LayoutRoot">
         <Grid.Resources>
             <DataTemplate x:Key="Template_grvKhachHang_ColumnEdit">
@@ -16,13 +17,16 @@
                     <HyperlinkButton CommandParameter="{Binding KhachHangID}" Content="Xóa" Margin="2" Name="cmdXoaKhachHang" Click="cmdXoaKhachHang_Click"></HyperlinkButton>
                 </StackPanel>
             </DataTemplate>
+            <local:SexFormater x:Key="SexFormater">
+
+            </local:SexFormater>
         </Grid.Resources>
         <ScrollViewer Grid.Row="0" Grid.Column="1">
             <StackPanel Grid.Row="0" Grid.Column="1" Margin="10,0,10,0">
                 <telerik:RadGridView Height="Auto" Margin="10,0,10,0"  AutoGenerateColumns="False" IsFilteringAllowed="False" ShowGroupPanel="False" Name="grvKhachHang" RowIndicatorVisibility="Collapsed" telerik:StyleManager.Theme="Office_Blue">
                 <telerik:RadGridView.Columns>
                     <telerik:GridViewDataColumn Header="Họ Tên" DataMemberBinding="{Binding Path=HoTen}" Width="*"></telerik:GridViewDataColumn>
-                    <telerik:GridViewDataColumn Header="Giới Tính" DataMemberBinding="{Binding Path=GioiTinh}" Width="*"></telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn Header="Giới Tính" DataMemberBinding="{Binding Path=GioiTinh, Converter={StaticResource SexFormater}}" Width="*"></telerik:GridViewDataColumn>
                     <telerik:GridViewDataColumn Header="Địa Chỉ" DataMemberBinding="{Binding Path=DiaChi}" Width="*"></telerik:GridViewDataColumn>
                     <telerik:GridViewDataColumn Header="CMND/PassPort" DataMemberBinding="{Binding Path=CMND}" Width="*"></telerik:GridViewDataColumn>
                     <telerik:GridViewDataColumn Header="Điện Thoại" DataMemberBinding="{Binding Path=DienThoai}" Width="*"></telerik:GridViewDataColumn>
