@@ -5,9 +5,13 @@
            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
            mc:Ignorable="d"
            xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
-           d:DesignWidth="640" d:DesignHeight="480"
-           Title="frmCaiDatGia Page">
+           d:DesignWidth="1000" d:DesignHeight="800"
+           Title="frmCaiDatGia Page" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
     <Grid x:Name="LayoutRoot">
-
+        <StackPanel Name="pnlMain" HorizontalAlignment="Center" VerticalAlignment="Top">
+        </StackPanel>
+        <Button Content="Get AllCheckBox Is Checked" Height="23" HorizontalAlignment="Left" Margin="360,429,0,0" Name="button1" VerticalAlignment="Top" Width="233" Click="button1_Click" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="252,458,0,0" Name="textBox1" VerticalAlignment="Top" Width="417" />
+        <telerik:RadBusyIndicator Height="155" HorizontalAlignment="Left" Margin="338,152,0,0" Name="LoadingPanel" VerticalAlignment="Top" Width="300" telerik:StyleManager.Theme="Metro" />
     </Grid>
 </navigation:Page>
