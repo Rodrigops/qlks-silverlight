@@ -28,8 +28,7 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
         {
             QuocTichClient = new QuocTichSVCClient();
             QuocTichClient.QuocTich_GetItemsCompleted += new EventHandler<QuocTich_GetItemsCompletedEventArgs>(QuocTichClient_QuocTich_GetItemsCompleted);
-            QuocTichClient.QuocTich_GetItemsAsync();
-            cbxQuocTich.SelectedValue = "1";
+            QuocTichClient.QuocTich_GetItemsAsync();            
 
             if (_KhachHangID != 0)
             {
@@ -42,6 +41,7 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
         void QuocTichClient_QuocTich_GetItemsCompleted(object sender, QuocTich_GetItemsCompletedEventArgs e)
         {
             cbxQuocTich.ItemsSource = e.Result;
+            cbxQuocTich.SelectedValue = "1";
         }
         void KhachHangClient_KhachHang_GetItemCompleted(object sender, KhachHang_GetItemCompletedEventArgs e)
         {
