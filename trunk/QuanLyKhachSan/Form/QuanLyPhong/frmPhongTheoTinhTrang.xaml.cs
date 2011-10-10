@@ -46,9 +46,10 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                 pnel = new StackPanel();
                 pnel.HorizontalAlignment = System.Windows.HorizontalAlignment.Center;
                 pnel.Orientation = Orientation.Horizontal;
+                pnel.HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
                 for (int j = 0; j < RepeatedColumns; j++)
                 {
-                    if (j + RepeatedColumns < TotalItems)
+                    if (j + RepeatedColumns*i < TotalItems)
                     {
                         pnel.Children.Add(Column((ListPhong[j + RepeatedColumns*i])));   
                     }

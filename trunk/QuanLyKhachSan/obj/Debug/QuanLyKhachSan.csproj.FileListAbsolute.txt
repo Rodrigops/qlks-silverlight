@@ -960,3 +960,4 @@ D:\Works\Works\Outsource\anhMinh\QLKS\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.g.
 D:\Works\Works\Outsource\anhMinh\QLKS\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.dll
 D:\Works\Works\Outsource\anhMinh\QLKS\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
 D:\Works\Works\Outsource\anhMinh\QLKS\QuanLyKhachSan\obj\Debug\XapCacheFile.xml
+F:\Projects\qlksprojects.SL\qlksSL\QuanLyKhachSan\obj\Debug\Form\QuanLyKhachHang\frmKhachHangEdit.g.i.cs
