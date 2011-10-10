@@ -22,10 +22,6 @@
                     maxReceivedMessageSize="2147483647">
                     <security mode="None" />
                 </binding>
-                <binding name="BasicHttpBinding_QuocTichSVC1" maxBufferSize="2147483647"
-                    maxReceivedMessageSize="2147483647">
-                    <security mode="None" />
-                </binding>
             </basicHttpBinding>
             <customBinding>
                 <binding name="CustomBinding_LoaiPhongSVC">
@@ -46,16 +42,13 @@
                 contract="PhongSVC.PhongSVC" name="BasicHttpBinding_PhongSVC" />
             <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/DichVu.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_DichVuSVC"
-                contract="DichVuSVC.DichVuSVC" name="BasicHttpBinding_DichVuSVC" />
-            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/QuocTich.svc"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_QuocTichSVC"
-                contract="QuocTichSVC.QuocTichSVC" name="BasicHttpBinding_QuocTichSVC" />
+                contract="DichVuSVC.DichVuSVC" name="BasicHttpBinding_DichVuSVC" />            
             <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/KhachHang.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_KhachHangSVC"
                 contract="KhachHangSVC.KhachHangSVC" name="BasicHttpBinding_KhachHangSVC" />
             <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/QuocTich.svc"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_QuocTichSVC1"
-                contract="QuocTichSVC.QuocTichSVC" name="BasicHttpBinding_QuocTichSVC1" />
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_QuocTichSVC"
+                contract="QuocTichSVC.QuocTichSVC" name="BasicHttpBinding_QuocTichSVC" />
         </client>
     </system.serviceModel>
 </configuration>
