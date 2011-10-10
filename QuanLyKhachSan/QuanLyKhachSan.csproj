@@ -95,6 +95,9 @@
     <Compile Include="Form\QuanLyKhachHang\frmKhachHang.xaml.cs">
       <DependentUpon>frmKhachHang.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Form\QuanLyKhachHang\frmKhachHangEdit.xaml.cs">
+      <DependentUpon>frmKhachHangEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Form\QuanLyPhong\frmDichVuEdit.xaml.cs">
       <DependentUpon>frmDichVuEdit.xaml</DependentUpon>
     </Compile>
@@ -157,6 +160,10 @@
     <Page Include="Form\QuanLyKhachHang\frmKhachHang.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\QuanLyKhachHang\frmKhachHangEdit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Form\QuanLyPhong\frmDichVuEdit.xaml">
       <SubType>Designer</SubType>
