@@ -28,7 +28,7 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
                     retGioiTinh = "Nữ";
                     break;
                 case "-1":
-                    retGioiTinh = "Chưa xác định";
+                    retGioiTinh = "---";
                     break;
             }
             return retGioiTinh;
