@@ -5,13 +5,75 @@
            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
            mc:Ignorable="d"
            xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           
+           xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
            d:DesignWidth="1000" d:DesignHeight="800"
-           Title="frmCaiDatGia Page" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+           Title="frmCaiDatGia Page" >
     <Grid x:Name="LayoutRoot">
-        <StackPanel Name="pnlMain" HorizontalAlignment="Center" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.Resources>
+            <DataTemplate x:Key="Template_grvTheoGio_ColumnEdit">
+                <StackPanel Orientation="Horizontal">
+                    <HyperlinkButton CommandParameter="{Binding Gio_PhongID}" Content="Thêm" Margin="2" Name="cmdThemGioPhong" Click="cmdThemGioPhong_Click"></HyperlinkButton>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Key="Template_grvTheoSoNguoi_ColumnEdit">
+                <StackPanel Orientation="Horizontal">
+                    <HyperlinkButton CommandParameter="{Binding Nguoi_PhongID}" Content="Thêm" Margin="2" Name="cmdThemNguoiPhong" Click="cmdThemNguoiPhong_Click"></HyperlinkButton>
+                </StackPanel>
+            </DataTemplate>
+        </Grid.Resources>
+        
+        
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+            <StackPanel Name="pnlMain" Height="Auto">
+            </StackPanel>
+
+            <telerik:RadBusyIndicator Height="Auto" Name="LoadingPanel" Width="300" telerik:StyleManager.Theme="Metro" />
+            <telerik:RadButton Content="Cập nhật giá phòng" Height="Auto" Width="Auto" Name="cmdCapNhat" Click="cmdCapNhat_Click" HorizontalAlignment="Center" VerticalAlignment="Bottom" telerik:StyleManager.Theme="Office_Blue" Visibility="Collapsed"/>
         </StackPanel>
-        <Button Content="Get AllCheckBox Is Checked" Height="23" HorizontalAlignment="Left" Margin="360,429,0,0" Name="button1" VerticalAlignment="Top" Width="233" Click="button1_Click" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="252,458,0,0" Name="textBox1" VerticalAlignment="Top" Width="417" />
-        <telerik:RadBusyIndicator Height="155" HorizontalAlignment="Left" Margin="338,152,0,0" Name="LoadingPanel" VerticalAlignment="Top" Width="300" telerik:StyleManager.Theme="Metro" />
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <telerik:RadGridView Name="grvTheoGio" telerik:StyleManager.Theme="Office_Blue" Height="Auto" Width="202" ShowColumnHeaders="False" Margin="50,10,0,0"
+                                 AutoGenerateColumns="False" IsFilteringAllowed="False" ShowGroupPanel="False" RowIndicatorVisibility="Collapsed">
+                <telerik:RadGridView.Columns>
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Gio_PhongID}" Width="*" IsVisible="False"></telerik:GridViewDataColumn>
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=GioPhongName}" Width="40" TextAlignment="Right" CellEditTemplate="{Binding Path=GioPhongName}"></telerik:GridViewDataColumn>
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=GiaTien}" Width="110"></telerik:GridViewDataColumn>
+                    <telerik:GridViewColumn Width="50" CellTemplate="{StaticResource Template_grvTheoGio_ColumnEdit}"></telerik:GridViewColumn>
+                </telerik:RadGridView.Columns>
+            </telerik:RadGridView>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <TextBlock Height="23" Name="textBlock1" Text="Theo ngày" Width="70" Margin="80,10,0,0" HorizontalAlignment="Left" />
+            <TextBox Height="23" Name="txtTheoNgay" Width="120" Margin="80,0,0,0"/>
+            <TextBlock Height="23" Name="textBlock2" Text="Theo tuần" Width="70" Margin="80,10,0,0" HorizontalAlignment="Left"/>
+            <TextBox Height="23" Name="txtTheoTuan" Width="120" Margin="80,0,0,0"/>
+            <TextBlock Height="23" Name="textBlock3" Text="Theo tháng" Width="70" Margin="80,10,0,0" HorizontalAlignment="Left" />
+            <TextBox Height="23" Name="txtTheoThang" Width="120" Margin="80,0,0,0"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="1" Grid.Column="2">
+            <telerik:RadGridView Name="grvTheoSoNguoi" telerik:StyleManager.Theme="Office_Blue" Height="Auto" Width="202" ShowColumnHeaders="False" Margin="0,10,50,0"
+                                 AutoGenerateColumns="False" IsFilteringAllowed="False" ShowGroupPanel="False" RowIndicatorVisibility="Collapsed">
+                <telerik:RadGridView.Columns>
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Nguoi_PhongID}" Width="*" IsVisible="False"></telerik:GridViewDataColumn>
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=NguoiPhongName}" Width="40" TextAlignment="Right"></telerik:GridViewDataColumn>
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=CongThem}" Width="110"></telerik:GridViewDataColumn>
+                    <telerik:GridViewColumn Width="50" CellTemplate="{StaticResource Template_grvTheoSoNguoi_ColumnEdit}"></telerik:GridViewColumn>
+                </telerik:RadGridView.Columns>
+            </telerik:RadGridView>
+            <TextBlock Height="23" Name="textBlock4" Text="Cộng thêm" Width="70" Margin="45,10,0,0" HorizontalAlignment="Left" />
+            <TextBox Height="23" Name="txtCongThem" Width="120" Margin="45,0,0,0"/>
+        </StackPanel>
     </Grid>
 </navigation:Page>
+<!--xmlns:my="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.RibbonView"-->
