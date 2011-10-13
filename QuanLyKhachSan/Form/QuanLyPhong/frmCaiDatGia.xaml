@@ -5,7 +5,7 @@
            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
            mc:Ignorable="d"
            xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
-           
+           xmlns:local="clr-namespace:QuanLyKhachSan.Form.QuanLyPhong"
            xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
            d:DesignWidth="1000" d:DesignHeight="800"
            Title="frmCaiDatGia Page" >
@@ -22,16 +22,17 @@
         <Grid.Resources>
             <DataTemplate x:Key="Template_grvTheoGio_ColumnEdit">
                 <StackPanel Orientation="Horizontal">
-                    <HyperlinkButton CommandParameter="{Binding Gio_PhongID}" Content="Thêm" Margin="2" Name="cmdThemGioPhong" Click="cmdThemGioPhong_Click"></HyperlinkButton>
+                    <HyperlinkButton CommandParameter="{Binding Gio_PhongID}" Content="{Binding ImageUrl}" Margin="2" Name="cmdThemGioPhong" Click="cmdThemGioPhong_Click"></HyperlinkButton>
                 </StackPanel>
             </DataTemplate>
             <DataTemplate x:Key="Template_grvTheoSoNguoi_ColumnEdit">
                 <StackPanel Orientation="Horizontal">
-                    <HyperlinkButton CommandParameter="{Binding Nguoi_PhongID}" Content="Thêm" Margin="2" Name="cmdThemNguoiPhong" Click="cmdThemNguoiPhong_Click"></HyperlinkButton>
+                    <HyperlinkButton CommandParameter="{Binding Nguoi_PhongID}" Content="{Binding ImageUrl}" Margin="2" Name="cmdThemNguoiPhong" Click="cmdThemNguoiPhong_Click"></HyperlinkButton>
                 </StackPanel>
             </DataTemplate>
+            <local:NumberVietnameseFormater x:Key="NumberVietnameseFormater">
+            </local:NumberVietnameseFormater>
         </Grid.Resources>
-        
         
         <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
             <StackPanel Name="pnlMain" Height="Auto">
@@ -46,33 +47,54 @@
                 <telerik:RadGridView.Columns>
                     <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Gio_PhongID}" Width="*" IsVisible="False"></telerik:GridViewDataColumn>
                     <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=GioPhongName}" Width="40" TextAlignment="Right" CellEditTemplate="{Binding Path=GioPhongName}"></telerik:GridViewDataColumn>
-                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=GiaTien}" Width="110"></telerik:GridViewDataColumn>
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=GiaTien, Converter={StaticResource NumberVietnameseFormater}}" Width="110"></telerik:GridViewDataColumn>
                     <telerik:GridViewColumn Width="50" CellTemplate="{StaticResource Template_grvTheoGio_ColumnEdit}"></telerik:GridViewColumn>
                 </telerik:RadGridView.Columns>
             </telerik:RadGridView>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <TextBlock Height="23" Name="textBlock1" Text="Theo ngày" Width="70" Margin="80,10,0,0" HorizontalAlignment="Left" />
-            <TextBox Height="23" Name="txtTheoNgay" Width="120" Margin="80,0,0,0"/>
-            <TextBlock Height="23" Name="textBlock2" Text="Theo tuần" Width="70" Margin="80,10,0,0" HorizontalAlignment="Left"/>
-            <TextBox Height="23" Name="txtTheoTuan" Width="120" Margin="80,0,0,0"/>
-            <TextBlock Height="23" Name="textBlock3" Text="Theo tháng" Width="70" Margin="80,10,0,0" HorizontalAlignment="Left" />
-            <TextBox Height="23" Name="txtTheoThang" Width="120" Margin="80,0,0,0"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="29"></RowDefinition>
+                    <RowDefinition Height="29"></RowDefinition>
+                    <RowDefinition Height="29"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150*"></ColumnDefinition>
+                    <ColumnDefinition Width="184*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Height="23" Name="textBlock1" Text="Theo ngày" Margin="66,12,14,23" Grid.RowSpan="2" />
+                <TextBlock Height="23" Name="textBlock2" Text="Theo tuần" Margin="66,10,14,25" Grid.Row="1" Grid.RowSpan="2" />
+                <TextBlock Height="23" Name="textBlock3" Text="Theo tháng" Margin="66,10,14,-4" Grid.Row="2" />
+                <TextBox Height="23" Name="txtTheoTuan" Grid.Column="1" Margin="0,6,64,0" Grid.Row="1" />
+                <TextBox Height="23" Name="txtTheoNgay" Grid.Column="1" Margin="0,6,64,0" />
+                <TextBox Height="23" Name="txtTheoThang" Grid.Column="1" Margin="0,6,64,0" Grid.Row="2" />
+            </Grid>
         </StackPanel>
         
         <StackPanel Grid.Row="1" Grid.Column="2">
-            <telerik:RadGridView Name="grvTheoSoNguoi" telerik:StyleManager.Theme="Office_Blue" Height="Auto" Width="202" ShowColumnHeaders="False" Margin="0,10,50,0"
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="29*"></RowDefinition>
+                    <RowDefinition Height="29"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="115*"></ColumnDefinition>
+                    <ColumnDefinition Width="218*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <telerik:RadGridView Grid.ColumnSpan="2" Name="grvTheoSoNguoi" telerik:StyleManager.Theme="Office_Blue" Height="Auto" Width="202" ShowColumnHeaders="False" Margin="0,10,50,0"
                                  AutoGenerateColumns="False" IsFilteringAllowed="False" ShowGroupPanel="False" RowIndicatorVisibility="Collapsed">
-                <telerik:RadGridView.Columns>
-                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Nguoi_PhongID}" Width="*" IsVisible="False"></telerik:GridViewDataColumn>
-                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=NguoiPhongName}" Width="40" TextAlignment="Right"></telerik:GridViewDataColumn>
-                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=CongThem}" Width="110"></telerik:GridViewDataColumn>
-                    <telerik:GridViewColumn Width="50" CellTemplate="{StaticResource Template_grvTheoSoNguoi_ColumnEdit}"></telerik:GridViewColumn>
-                </telerik:RadGridView.Columns>
-            </telerik:RadGridView>
-            <TextBlock Height="23" Name="textBlock4" Text="Cộng thêm" Width="70" Margin="45,10,0,0" HorizontalAlignment="Left" />
-            <TextBox Height="23" Name="txtCongThem" Width="120" Margin="45,0,0,0"/>
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Nguoi_PhongID}" Width="*" IsVisible="False"></telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=NguoiPhongName}" Width="40" TextAlignment="Right"></telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=CongThem, Converter={StaticResource NumberVietnameseFormater}}" Width="110"></telerik:GridViewDataColumn>
+                        <telerik:GridViewColumn Width="50" CellTemplate="{StaticResource Template_grvTheoSoNguoi_ColumnEdit}"></telerik:GridViewColumn>
+                    </telerik:RadGridView.Columns>
+                </telerik:RadGridView>
+            <TextBlock Height="23" Name="textBlock4" Text="Cộng thêm" HorizontalAlignment="Left" Margin="40,10,0,-4" Grid.Row="1" />
+            <TextBox Height="23" Name="txtCongThem" Grid.Column="1" Margin="0,6,88,0" Grid.Row="1" />
+            </Grid>
         </StackPanel>
     </Grid>
 </navigation:Page>
