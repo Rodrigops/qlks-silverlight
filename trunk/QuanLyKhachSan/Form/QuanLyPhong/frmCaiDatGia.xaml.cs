@@ -21,6 +21,8 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
     public partial class frmCaiDatGia : Page
     {
         public int PhongID = -1;
+        public int GioPhongNextID = -1;
+        public int NguoiPhongNextID = -1;
 
         PhongSVCClient PhongClient = new PhongSVCClient();
         Gio_PhongSVCClient Gio_PhongClient = new Gio_PhongSVCClient();
@@ -32,6 +34,8 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
             PhongClient.Phong_GetItemsCompleted += new EventHandler<Phong_GetItemsCompletedEventArgs>(PhongClient_Phong_GetItemsCompleted);
             LoadingPanel.IsBusy = true;
             PhongClient.Phong_GetItemsAsync(0);
+            Gio_Phong_Load();
+            Nguoi_Phong_Load();
         }
         void PhongClient_Phong_GetItemsCompleted(object sender, Phong_GetItemsCompletedEventArgs e)
         {
@@ -44,19 +48,52 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         {
             //Gio_PhongInfo Gio_Phong = e.Result;
             grvTheoGio.ItemsSource = e.Result;
+
+            List<Gio_PhongInfo> Gio_Phong = e.Result;
+            List<Gio_PhongInfo> Gio_PhongNew = new List<Gio_PhongInfo>();
+            Gio_PhongInfo Item = null;
+            if (Gio_Phong.Count > 0)
+            {
+                for (int i = 0; i < Gio_Phong.Count; i++)
+                {
+                    Item = new Gio_PhongInfo();
+                    Item.Gio_PhongID = Gio_Phong[i].Gio_PhongID;
+                    Item.GiaTien = Gio_Phong[i].GiaTien;
+                    Item.GioPhongName = Gio_Phong[i].GioPhongName;
+                    Item.GiaTien = Gio_Phong[i].GiaTien;
+                    Item.PhanTram = Gio_Phong[i].PhanTram;
+                    if (i == 0)
+                        Item.ImageUrl = "Thêm";
+                    else
+                        Item.ImageUrl = "Xóa";
+                    Gio_PhongNew.Add(Item);
+                }
+                grvTheoGio.ItemsSource = Gio_PhongNew;
+            }
         }
         void Ngay_PhongClient_Ngay_Phong_GetItemByPhongIDCompleted(object sender, Ngay_Phong_GetItemByPhongIDCompletedEventArgs e)
         {
             Ngay_PhongInfo Ngay_Phong = e.Result;
 
-            txtTheoNgay.Text = Ngay_Phong.GiaNgay.ToString();
-            txtTheoTuan.Text = Ngay_Phong.GiaTuan.ToString();
-            txtTheoThang.Text = Ngay_Phong.GiaThang.ToString();
+            txtTheoNgay.Text = Format_NumberVietnamese(Ngay_Phong.GiaNgay.ToString());
+            txtTheoTuan.Text = Format_NumberVietnamese(Ngay_Phong.GiaTuan.ToString());
+            txtTheoThang.Text = Format_NumberVietnamese(Ngay_Phong.GiaThang.ToString());
         }
         void Nguoi_PhongClient_Nguoi_Phong_GetItemByPhongIDCompleted(object sender, Nguoi_Phong_GetItemByPhongIDCompletedEventArgs e)
         {
-            //Nguoi_PhongInfo Nguoi_Phong = e.Result;
-            grvTheoSoNguoi.ItemsSource = e.Result;
+            List<Nguoi_PhongInfo> Nguoi_Phong = e.Result;
+            List<Nguoi_PhongInfo> Nguoi_PhongNew = new List<Nguoi_PhongInfo>();
+            foreach (Nguoi_PhongInfo item in Nguoi_Phong)
+            {
+                if (item.status.Trim().Equals("GiaCuoi"))
+                    txtCongThem.Text = item.CongThem;
+                else
+                {
+                    item.ImageUrl = "Thêm";
+                    Nguoi_PhongNew.Add(item);
+                }
+            }
+            grvTheoSoNguoi.ItemsSource = Nguoi_PhongNew;
         }
         protected void GenerateRepeateColumn(int RepeatedColumns, List<PhongInfo> ListPhong)
         {
@@ -131,6 +168,26 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                 doList.AddRange(GetCheckBoxControls(VisualTreeHelper.GetChild(root, i)));
 
             return doList;
+        }
+        public string Format_NumberVietnamese(string Gia)
+        {
+            try
+            {
+                if (Gia.IndexOf("%") > 0 || Gia == "")
+                {
+                    return Gia;
+                }
+                else
+                {
+                    decimal value = decimal.Parse(Gia);
+                    string retGia = value.ToString("N", System.Globalization.CultureInfo.CurrentCulture);
+                    return retGia.Replace(".00", "");
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
         void GetData(int PhongID)
         {
@@ -250,15 +307,138 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         void Nguoi_PhongClient_Nguoi_Phong_AddCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
         }
-
+        protected void Nguoi_Phong_Load()
+        {
+            try
+            {
+                //Tao Du Lieu Trong
+                List<Nguoi_PhongInfo> GioPhong = new List<Nguoi_PhongInfo>();
+                Nguoi_PhongInfo Item = new Nguoi_PhongInfo();
+                Item.Nguoi_PhongID = 1;
+                Item.NguoiPhongName = "1";
+                Item.GiaTien = 0;
+                Item.PhanTram = 0;
+                Item.CongThem = "";
+                Item.ImageUrl = "Thêm";
+                GioPhong.Add(Item);
+                NguoiPhongNextID = 2;
+                grvTheoSoNguoi.ItemsSource = GioPhong;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        protected void Gio_Phong_Load()
+        {
+            try
+            {
+                //Tao Du Lieu Trong
+                List<Gio_PhongInfo> GioPhong = new List<Gio_PhongInfo>();
+                Gio_PhongInfo Item = new Gio_PhongInfo();
+                Item.Gio_PhongID = 1;
+                Item.GioPhongName = "1";
+                Item.GiaTien = 0;
+                Item.PhanTram = 0;
+                Item.ImageUrl = "Thêm";
+                GioPhong.Add(Item);
+                GioPhongNextID = 2;
+                grvTheoGio.ItemsSource = GioPhong;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         private void cmdThemGioPhong_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                HyperlinkButton cmdThemGioPhong = (HyperlinkButton)sender;
+                List<Gio_PhongInfo> ListGioPhong = new List<Gio_PhongInfo>();
+                ListGioPhong = (List<Gio_PhongInfo>)grvTheoGio.ItemsSource;
+                
+                //add new row
+                int Gio_PhongID = 0;
+                Gio_PhongInfo GioPhong = null;
+                if (cmdThemGioPhong.Content.Equals("Thêm"))
+                {
+                    if (GioPhongNextID != -1)
+                    {
+                        Gio_PhongID = GioPhongNextID;
+                    }
+                    GioPhong = new Gio_PhongInfo();
+                    GioPhong.Gio_PhongID = Gio_PhongID;
+                    GioPhong.GiaTien = 0;
+                    GioPhong.GioPhongName = "";
+                    GioPhong.ImageUrl = "Xóa";
+                    ListGioPhong.Add(GioPhong);
+                }
+                else
+                {
+                    Gio_PhongID = int.Parse(cmdThemGioPhong.CommandParameter.ToString());
+                    for (int i = 0; i < ListGioPhong.Count; i++)
+                    {
+                        if (ListGioPhong[i].Gio_PhongID == Gio_PhongID)
+                        {
+                            ListGioPhong.RemoveAt(i);
+                            break;
+                        }
+                    }
+                }
+                GioPhongNextID = Gio_PhongID + 1;
+                grvTheoGio.ItemsSource = null;
+                grvTheoGio.ItemsSource = ListGioPhong;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
-
         private void cmdThemNguoiPhong_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                HyperlinkButton cmdThemNguoiPhong = (HyperlinkButton)sender;
+                List<Nguoi_PhongInfo> ListNguoiPhong = new List<Nguoi_PhongInfo>();
+                ListNguoiPhong = (List<Nguoi_PhongInfo>)grvTheoSoNguoi.ItemsSource;
 
+                //add new row
+                int Nguoi_PhongID = 0;
+                Nguoi_PhongInfo NguoiPhong = null;
+                if (cmdThemNguoiPhong.Content.Equals("Thêm"))
+                {
+                    if (NguoiPhongNextID != -1)
+                    {
+                        Nguoi_PhongID = NguoiPhongNextID;
+                    }
+                    NguoiPhong = new Nguoi_PhongInfo();
+                    NguoiPhong.Nguoi_PhongID = Nguoi_PhongID;
+                    NguoiPhong.NguoiPhongName = "";
+                    NguoiPhong.CongThem = "";
+                    NguoiPhong.ImageUrl = "Xóa";
+                    ListNguoiPhong.Add(NguoiPhong);
+                }
+                else
+                {
+                    Nguoi_PhongID = int.Parse(cmdThemNguoiPhong.CommandParameter.ToString());
+                    for (int i = 0; i < ListNguoiPhong.Count; i++)
+                    {
+                        if (ListNguoiPhong[i].Nguoi_PhongID == Nguoi_PhongID)
+                        {
+                            ListNguoiPhong.RemoveAt(i);
+                            break;
+                        }
+                    }
+                }
+                NguoiPhongNextID = Nguoi_PhongID + 1;
+                grvTheoSoNguoi.ItemsSource = null;
+                grvTheoSoNguoi.ItemsSource = ListNguoiPhong;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
