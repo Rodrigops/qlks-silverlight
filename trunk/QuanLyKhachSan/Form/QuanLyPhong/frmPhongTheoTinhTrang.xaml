@@ -38,5 +38,6 @@
                 <TextBlock Text="Rời phòng" Margin="5,0,0,0" VerticalAlignment="Center" ></TextBlock>
             </StackPanel>
         </StackPanel>
+        <telerik:RadBusyIndicator HorizontalAlignment="Center" Width="300" Height="300" telerik:StyleManager.Theme="Metro" BusyContent="Đang tại dữ liệu.Vui lòng chờ..." Margin="367,76,0,0" Name="LoadingPanel" VerticalAlignment="Center"/>
     </Grid>
 </navigation:Page>

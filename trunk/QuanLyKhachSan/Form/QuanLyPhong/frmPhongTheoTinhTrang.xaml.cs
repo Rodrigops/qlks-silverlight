@@ -20,8 +20,10 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         public frmPhongTheoTinhTrang()
         {
             InitializeComponent();
+            LoadingPanel.IsBusy = true;
             PhongClient.Phong_GetItems_ByTinhTrangCompleted += new EventHandler<Phong_GetItems_ByTinhTrangCompletedEventArgs>(PhongClient_Phong_GetItems_ByTinhTrangCompleted);
             PhongClient.Phong_GetItems_ByTinhTrangAsync();
+
         }
 
         void PhongClient_Phong_GetItems_ByTinhTrangCompleted(object sender, Phong_GetItems_ByTinhTrangCompletedEventArgs e)
@@ -29,6 +31,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
             List<TinhTrang_PhongInfo> ListPhong = new List<TinhTrang_PhongInfo>();
             ListPhong = e.Result.ToList<TinhTrang_PhongInfo>();
             GenerateRepeateColumn(15, ListPhong);
+            LoadingPanel.IsBusy = false;
         }
 
         protected void GenerateRepeateColumn(int RepeatedColumns,List<TinhTrang_PhongInfo> ListPhong)

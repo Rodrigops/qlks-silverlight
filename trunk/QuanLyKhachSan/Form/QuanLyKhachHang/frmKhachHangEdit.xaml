@@ -30,14 +30,14 @@
         <TextBox Height="23" HorizontalAlignment="Left" Margin="133,37,0,0" Name="txtDiaChi" VerticalAlignment="Top" Width="280" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="133,66,0,0" Name="txtDienThoai" VerticalAlignment="Top" Width="120" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="133,95,0,0" Name="txtCMND" VerticalAlignment="Top" Width="120" />
-        <telerik:RadDateTimePicker HorizontalAlignment="Left" Margin="133,125,0,0" Name="rdpNgaySinh" VerticalAlignment="Top" Width="120" telerik:StyleManager.Theme="Office_Blue" InputMode="DatePicker"/>
+        <telerik:RadDateTimePicker HorizontalAlignment="Left" Margin="133,125,0,0" Name="rdpNgaySinh" VerticalAlignment="Top" Width="120" telerik:StyleManager.Theme="Office_Blue" InputMode="DatePicker" Culture="vi-VN" DateTimeWatermarkContent="Chọn ngày"  />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="133,153,0,0" Name="txtNoiSinh" VerticalAlignment="Top" Width="280" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="133,182,0,0" Name="txtSoVisa" VerticalAlignment="Top" Width="120" />
-        <telerik:RadDateTimePicker HorizontalAlignment="Left" Margin="133,212,0,0" Name="rdpThoiHanVisa" VerticalAlignment="Top" Width="120" telerik:StyleManager.Theme="Office_Blue" InputMode="DatePicker"/>
+        <telerik:RadDateTimePicker HorizontalAlignment="Left" Margin="133,212,0,0" Name="rdpThoiHanVisa" VerticalAlignment="Top" Width="120" telerik:StyleManager.Theme="Office_Blue" InputMode="DatePicker" Culture="vi-VN" DateTimeWatermarkContent="Chọn ngày"/>
         <TextBox Height="23" HorizontalAlignment="Left" Margin="133,240,0,0" Name="txtNguoiTiepNhan" VerticalAlignment="Top" Width="280" />
-        <telerik:RadDateTimePicker HorizontalAlignment="Left" Margin="133,270,0,0" Name="rdpNgayNhapCanh" VerticalAlignment="Top" Width="120" telerik:StyleManager.Theme="Office_Blue" InputMode="DatePicker"/>
-        <telerik:RadDateTimePicker HorizontalAlignment="Left" Margin="133,299,0,0" Name="rdpTuNgay" VerticalAlignment="Top" Width="120" telerik:StyleManager.Theme="Office_Blue" InputMode="DatePicker"/>
-        <telerik:RadDateTimePicker HorizontalAlignment="Left" Margin="293,299,0,0" Name="rdpDenNgay" VerticalAlignment="Top" Width="120" telerik:StyleManager.Theme="Office_Blue" InputMode="DatePicker"/>
+        <telerik:RadDateTimePicker HorizontalAlignment="Left" Margin="133,270,0,0" Name="rdpNgayNhapCanh" VerticalAlignment="Top" Width="120" telerik:StyleManager.Theme="Office_Blue" InputMode="DatePicker" Culture="vi-VN" DateTimeWatermarkContent="Chọn ngày"/>
+        <telerik:RadDateTimePicker HorizontalAlignment="Left" Margin="133,299,0,0" Name="rdpTuNgay" VerticalAlignment="Top" Width="120" telerik:StyleManager.Theme="Office_Blue" InputMode="DatePicker" Culture="vi-VN" DateTimeWatermarkContent="Chọn ngày"/>
+        <telerik:RadDateTimePicker HorizontalAlignment="Left" Margin="293,299,0,0" Name="rdpDenNgay" VerticalAlignment="Top" Width="120" telerik:StyleManager.Theme="Office_Blue" InputMode="DatePicker" Culture="vi-VN" DateTimeWatermarkContent="Chọn ngày"/>
         <telerik:RadComboBox HorizontalAlignment="Left" Margin="133,327,0,0" Name="cbxQuocTich" VerticalAlignment="Top" Width="120" DisplayMemberPath="TenQuocTich" SelectedValuePath="QuocTichID" telerik:StyleManager.Theme="Office_Blue">
         </telerik:RadComboBox>
         <telerik:RadComboBox HorizontalAlignment="Left" Margin="133,355,0,0" Name="cbxGioiTinh" VerticalAlignment="Top" Width="120" telerik:StyleManager.Theme="Office_Blue">

@@ -46,7 +46,6 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
         void KhachHangClient_KhachHang_GetItemCompleted(object sender, KhachHang_GetItemCompletedEventArgs e)
         {
             KhachHangInfo KhachHang = e.Result;
-
             txtHoTen.Text = KhachHang.HoTen;
             txtDiaChi.Text = KhachHang.DiaChi;
             txtDienThoai.Text = KhachHang.DienThoai;
@@ -100,10 +99,10 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
                 denngay = rdpDenNgay.SelectedDate.Value.ToString("MM/dd/yyyy");
             if (cbxGioiTinh.SelectedIndex == -1)
                 gioitinh = int.Parse(cbxGioiTinh.SelectedIndex.ToString());
-
+            KhachHangClient = new KhachHangSVCClient();
             if (KhachHangID == -1)
             {
-                KhachHangClient.KhachHang_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(KhachHangClient_KhachHang_AddCompleted);
+                KhachHangClient.KhachHang_AddCompleted+=new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(KhachHangClient_KhachHang_AddCompleted);
                 KhachHangClient.KhachHang_AddAsync(txtHoTen.Text, txtDiaChi.Text, txtDienThoai.Text, txtCMND.Text, ngaysinh, txtNoiSinh.Text, txtSoVisa.Text,
                     thoihanvisa, txtNguoiTiepNhan.Text, ngaynhapcanh, tungay, denngay, int.Parse(cbxQuocTich.SelectedValue.ToString()),
                     gioitinh, 0, DateTime.Now.ToString("MM/dd/yyyy"));
