@@ -115,10 +115,10 @@ namespace QuanLyKhachSan
             }
             return list;
         }
-        public List<KhachHangInfo> KhachHang_GetItemsInPhong([Optional, DefaultParameterValue(0)] int KhachHangID)
+        public List<KhachHangInfo> KhachHang_GetItemsInPhong([Optional, DefaultParameterValue(0)] int PhongID)
         {
             SQLDataHelper SQLDB = new SQLDataHelper();
-            SQLDB.Addparameter("@KhachHangID", KhachHangID);
+            SQLDB.Addparameter("@PhongID", PhongID);
             SqlDataReader rd = SQLDB.executereader("sp_KhachHang_GetItemsInPhong", CommandType.StoredProcedure);
             List<KhachHangInfo> list = new List<KhachHangInfo>();
             KhachHangInfo item = null;
