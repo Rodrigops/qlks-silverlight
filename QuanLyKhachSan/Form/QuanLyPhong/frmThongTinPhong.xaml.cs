@@ -33,7 +33,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         // Executes when the user navigates to this page.
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            radLoading.IsBusy = true;
+            LoadingPanel.IsBusy = true;
             LoaiPhongClient.LoaiPhong_GetItemsCompleted += new EventHandler<LoaiPhong_GetItemsCompletedEventArgs>(LoaiPhongClient_LoaiPhong_GetItemsCompleted);
             LoaiPhongClient.LoaiPhong_GetItemsAsync();
 
@@ -51,7 +51,6 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         void LoaiPhongClient_LoaiPhong_GetItemsCompleted(object sender, LoaiPhong_GetItemsCompletedEventArgs e)
         {
             grvLoaiPhong.ItemsSource = e.Result;
-            radLoading.IsBusy = false;
         }
         void LoaiPhongClient_LoaiPhong_DeleteCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
@@ -201,6 +200,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         void PhongClient_Phong_GetItemsCompleted(object sender, Phong_GetItemsCompletedEventArgs e)
         {
             grvPhong.ItemsSource = e.Result;
+            LoadingPanel.IsBusy = false;
         }
         void PhongClient_Phong_DeleteCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
