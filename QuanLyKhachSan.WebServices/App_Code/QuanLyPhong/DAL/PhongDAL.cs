@@ -175,6 +175,26 @@ namespace QuanLyKhachSan
             //}
             return retList;
         }
+        public List<PhongInfo> Phong_GetItemsOnService()
+        {
+            SQLDataHelper SQLDB = new SQLDataHelper();
+            SqlDataReader rd = SQLDB.executereader("sp_Phong_GetItemsOnService", CommandType.StoredProcedure);
+            List<PhongInfo> list = new List<PhongInfo>();
+            PhongInfo item = null;
+            while (rd.Read())
+            {
+                item = new PhongInfo();
+                item.PhongID = int.Parse(rd["PhongID"].ToString());
+                item.PhongName = rd["PhongName"].ToString();
+                item.LoaiPhongID = int.Parse(rd["LoaiPhongID"].ToString());
+                item.LoaiPhongName = rd["LoaiPhongName"].ToString();
+                item.SoGiuong = int.Parse(rd["SoGiuong"].ToString());
+                item.SoNguoi = int.Parse(rd["SoNguoi"].ToString());
+                item.TienNghiName = rd["TienNghiName"].ToString();
+                list.Add(item);
+            }
+            return list;
+        }
     }
 }
 
