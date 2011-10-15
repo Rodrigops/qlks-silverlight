@@ -57,6 +57,7 @@
                         <telerik:GridViewColumn Header="Chỉnh Sửa" Width="80" CellTemplate="{StaticResource Template_grvKhachHang_ColumnEdit}"></telerik:GridViewColumn>
                     </telerik:RadGridView.Columns>
                 </telerik:RadGridView>
+                <telerik:RadBusyIndicator Name="LoadingPanel" Height="300" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center" BusyContent="Đang tại dữ liệu.Vui lòng chờ..." telerik:StyleManager.Theme="Metro"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>
