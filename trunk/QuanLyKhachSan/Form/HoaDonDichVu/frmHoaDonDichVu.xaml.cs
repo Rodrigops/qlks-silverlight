@@ -25,12 +25,14 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
         // Executes when the user navigates to this page.
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            LoadingPanel.IsBusy = true;
             HoaDonDichVuClient.HoaDonDichVu_GetItemsCompleted += new EventHandler<HoaDonDichVu_GetItemsCompletedEventArgs>(HoaDonDichVuClient_HoaDonDichVu_GetItemsCompleted);
             HoaDonDichVuClient.HoaDonDichVu_GetItemsAsync(0);
         }
         void HoaDonDichVuClient_HoaDonDichVu_GetItemsCompleted(object sender, HoaDonDichVu_GetItemsCompletedEventArgs e)
         {
             grvHoaDonDichVu.ItemsSource = e.Result;
+            LoadingPanel.IsBusy = false;
         }
         void HoaDonDichVuClient_HoaDonDichVu_DeleteCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
