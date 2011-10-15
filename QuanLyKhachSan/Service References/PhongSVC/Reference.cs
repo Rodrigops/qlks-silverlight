@@ -395,6 +395,8 @@ namespace QuanLyKhachSan.PhongSVC {
         
         private bool tinhTrangPhongIDFieldSpecified;
         
+        private string tinhTrangPhongNameField;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public int GioBatDau {
@@ -584,6 +586,18 @@ namespace QuanLyKhachSan.PhongSVC {
             set {
                 this.tinhTrangPhongIDFieldSpecified = value;
                 this.RaisePropertyChanged("TinhTrangPhongIDSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=9)]
+        public string TinhTrangPhongName {
+            get {
+                return this.tinhTrangPhongNameField;
+            }
+            set {
+                this.tinhTrangPhongNameField = value;
+                this.RaisePropertyChanged("TinhTrangPhongName");
             }
         }
         

@@ -13,6 +13,7 @@ namespace QuanLyKhachSan
         private int _PhutBatDau;
         private long _NgayGioPhut_So;
         private bool _IsDeleted;
+        private string _TinhTrangPhongName;
         #region TinhTrang_PhongInfo
         public int PhongID
         {
@@ -58,6 +59,11 @@ namespace QuanLyKhachSan
         {
             get { return _NgayGioPhut_So; }
             set { _NgayGioPhut_So = value; }
+        }
+        public string TinhTrangPhongName
+        {
+            get { return _TinhTrangPhongName; }
+            set { _TinhTrangPhongName = value; }
         }
         #endregion
     }

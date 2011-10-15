@@ -19,7 +19,7 @@
             </DataTemplate>
             <DataTemplate x:Key="Template_grvKhachHang_HoTenCheckBox">
                 <StackPanel Orientation="Horizontal">
-                    <CheckBox CommandParameter="{Binding KhachHangID}"></CheckBox>
+                    <CheckBox CommandParameter="{Binding}"></CheckBox>
                     <TextBlock Text="{Binding HoTen}"></TextBlock>
                 </StackPanel>
             </DataTemplate>
@@ -37,18 +37,19 @@
                 <ColumnDefinition Width="200"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <telerik:RadButton Content="Thêm Khách Hàng" Name="cmdThemKhachHang" Click="cmdThemKhachHang_Click"  Height="25" Width="154" telerik:StyleManager.Theme="Office_Blue" Grid.Column="1" HorizontalAlignment="Right" Margin="0,6,22,4" />
-            <telerik:RadComboBox Name="cbxThaoTac" Width="250" HorizontalAlignment="Left" Height="25" Margin="6,5,0,5">
+            <telerik:RadComboBox Name="cbxThaoTac" Width="136" HorizontalAlignment="Left" Height="25" Margin="6,5,0,5" telerik:StyleManager.Theme="Office_Blue" SelectionChanged="cbxThaoTac_SelectionChanged">
                 <telerik:RadComboBoxItem Content="Đặt phòng" Tag="0" />
                 <telerik:RadComboBoxItem Content="Nhận phòng" Tag="1" />
                 <telerik:RadComboBoxItem Content="Thêm vào phòng" Tag="2" />
             </telerik:RadComboBox>
+            <telerik:RadButton Content="Thực hiện" Height="26" HorizontalAlignment="Left" telerik:StyleManager.Theme="Office_Blue" Margin="148,8,0,0" Name="cmdThucHien" VerticalAlignment="Top" Width="111" Click="cmdThucHien_Click" />
         </Grid>
         <ScrollViewer Grid.Row="1" HorizontalAlignment="Left">
             <StackPanel>
                 <StackPanel Orientation="Horizontal"></StackPanel>
                 <telerik:RadGridView Height="Auto" AutoGenerateColumns="False" IsFilteringAllowed="False" ShowGroupPanel="False" Name="grvKhachHang" RowIndicatorVisibility="Collapsed" telerik:StyleManager.Theme="Office_Blue">
                     <telerik:RadGridView.Columns>
-                        <telerik:GridViewColumn Header="Họ Tên" Width="200" CellTemplate="{StaticResource Template_grvKhachHang_HoTenCheckBox}"></telerik:GridViewColumn>
+                        <telerik:GridViewColumn Header="Họ Tên" UniqueName="HoTen" Width="200" CellTemplate="{StaticResource Template_grvKhachHang_HoTenCheckBox}"></telerik:GridViewColumn>
                         <telerik:GridViewDataColumn Header="Giới Tính" DataMemberBinding="{Binding Path=GioiTinh, Converter={StaticResource SexFormater}}" Width="100"></telerik:GridViewDataColumn>
                         <telerik:GridViewDataColumn Header="Địa Chỉ" DataMemberBinding="{Binding Path=DiaChi}" Width="*"></telerik:GridViewDataColumn>
                         <telerik:GridViewDataColumn Header="CMND/PassPort" DataMemberBinding="{Binding Path=CMND}" Width="100"></telerik:GridViewDataColumn>

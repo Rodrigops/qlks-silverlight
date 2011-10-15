@@ -22,10 +22,6 @@
                     maxReceivedMessageSize="2147483647">
                     <security mode="None" />
                 </binding>
-                <binding name="BasicHttpBinding_Gio_PhongSVC" maxBufferSize="2147483647"
-                    maxReceivedMessageSize="2147483647">
-                    <security mode="None" />
-                </binding>
                 <binding name="BasicHttpBinding_Ngay_PhongSVC" maxBufferSize="2147483647"
                     maxReceivedMessageSize="2147483647">
                     <security mode="None" />
@@ -34,7 +30,19 @@
                     maxReceivedMessageSize="2147483647">
                     <security mode="None" />
                 </binding>
+                <binding name="BasicHttpBinding_Gio_PhongSVC" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
                 <binding name="BasicHttpBinding_HoaDonDichVuSVC" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_HoaDonSVC" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_HoaDon_KhachHangSVC" maxBufferSize="2147483647"
                     maxReceivedMessageSize="2147483647">
                     <security mode="None" />
                 </binding>
@@ -77,6 +85,12 @@
             <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDonDichVu.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_HoaDonDichVuSVC"
                 contract="HoaDonDichVuSVC.HoaDonDichVuSVC" name="BasicHttpBinding_HoaDonDichVuSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDon/HoaDon.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_HoaDonSVC"
+                contract="HoaDonSVC.HoaDonSVC" name="BasicHttpBinding_HoaDonSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDon/HoaDon_KhachHang.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_HoaDon_KhachHangSVC"
+                contract="HoaDon_KhachHangSVC.HoaDon_KhachHangSVC" name="BasicHttpBinding_HoaDon_KhachHangSVC" />
         </client>
     </system.serviceModel>
 </configuration>

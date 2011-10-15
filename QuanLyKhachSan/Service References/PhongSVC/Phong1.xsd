@@ -36,6 +36,7 @@
       <xs:element minOccurs="0" name="PhutBatDau" type="xs:int" />
       <xs:element minOccurs="0" name="TinhTrangPhong" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TinhTrangPhongID" type="xs:int" />
+      <xs:element minOccurs="0" name="TinhTrangPhongName" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TinhTrang_PhongInfo" nillable="true" type="tns:TinhTrang_PhongInfo" />

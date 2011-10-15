@@ -12,6 +12,8 @@ using System.Windows.Shapes;
 using System.Windows.Navigation;
 using QuanLyKhachSan.KhachHangSVC;
 using System.Windows.Data;
+using Telerik.Windows.Controls;
+using Telerik.Windows.Controls.GridView;
 namespace QuanLyKhachSan.Form.QuanLyKhachHang
 {
     public partial class frmKhachHang : Page
@@ -76,6 +78,38 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
                 KhachHangClient.KhachHang_DeleteCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(KhachHangClient_KhachHang_DeleteCompleted);
                 KhachHangClient.KhachHang_DeleteAsync(KhachHangID, 0, DateTime.Now.ToString("MM/dd/yyyy"));
             }
+        }
+
+        private void cbxThaoTac_SelectionChanged(object sender, Telerik.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            try
+            {
+               
+            }
+            catch (Exception ex)
+            {                
+                throw ex;
+            }
+        }
+
+        private void cmdThucHien_Click(object sender, RoutedEventArgs e)
+        {
+            var cells = grvKhachHang.ChildrenOfType<GridViewCell>().Where(c => c.Column.UniqueName == "HoTen").ToList();
+            //cells.ForEach(c => c.ChildrenOfType<CheckBox>().First().IsChecked = true);
+            List<KhachHangInfo> listKhachHang = new List<KhachHangInfo>();            
+            for (int i = 0; i < cells.Count; i++)
+            {
+                CheckBox cbx = cells[i].ChildrenOfType<CheckBox>().First();
+                if (cbx.IsChecked == true)
+                {
+                    KhachHangInfo item = cbx.CommandParameter as KhachHangInfo;
+                    listKhachHang.Add(item);
+                }
+            }
+            frmDatPhong DatPhong = new frmDatPhong();
+            DatPhong.Load_DanhSach(listKhachHang);
+            DatPhong.Show();
+
         }
     }
 }

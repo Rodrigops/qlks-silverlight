@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6a802a1c-43ee-42dc-9ed1-0bbeff5dd198" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3da735b8-2b25-45c0-8726-169fa418d36b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -23,12 +23,12 @@
     <MetadataSource Address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Ngay_Phong.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Ngay_Phong.wsdl" MetadataType="Wsdl" ID="4b0f2b08-d3d3-4200-8626-7ae7f622d3ec" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Ngay_Phong.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="Ngay_PhongSVC.wsdl" MetadataType="Wsdl" ID="c2f6023f-42d6-4468-a99a-0f7dc917a321" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Ngay_Phong.svc?wsdl" />
-    <MetadataFile FileName="Ngay_Phong.xsd" MetadataType="Schema" ID="2ba14a9d-79a0-4e50-ae3e-7f1360f63803" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Ngay_Phong.svc?xsd=xsd0" />
-    <MetadataFile FileName="Ngay_Phong1.xsd" MetadataType="Schema" ID="e59fdda9-9a03-4601-b7c0-53ec17a9da7f" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Ngay_Phong.svc?xsd=xsd1" />
-    <MetadataFile FileName="Ngay_Phong2.xsd" MetadataType="Schema" ID="3c68c239-8bed-4555-9a48-3fab1ab7202c" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Ngay_Phong.svc?xsd=xsd2" />
-    <MetadataFile FileName="Ngay_Phong.disco" MetadataType="Disco" ID="d1b83e7c-d3bb-40f3-8d57-24ab179ba425" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Ngay_Phong.svc?disco" />
+    <MetadataFile FileName="Ngay_Phong.wsdl" MetadataType="Wsdl" ID="dd81a3b0-faf0-49fe-ada2-4ab064c0296a" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Ngay_Phong.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Ngay_PhongSVC.wsdl" MetadataType="Wsdl" ID="dc4d0d88-5a43-422e-b388-ccf9639a7ed9" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Ngay_Phong.svc?wsdl" />
+    <MetadataFile FileName="Ngay_Phong.xsd" MetadataType="Schema" ID="920e790a-b949-404e-b925-b94b97412375" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Ngay_Phong.svc?xsd=xsd0" />
+    <MetadataFile FileName="Ngay_Phong1.xsd" MetadataType="Schema" ID="c1a9e5bc-e122-4aff-b1d1-f663a5b0eff5" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Ngay_Phong.svc?xsd=xsd1" />
+    <MetadataFile FileName="Ngay_Phong2.xsd" MetadataType="Schema" ID="55dd0b15-a3a7-45ad-8f49-e38c788392c5" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Ngay_Phong.svc?xsd=xsd2" />
+    <MetadataFile FileName="Ngay_Phong.disco" MetadataType="Disco" ID="06e5ac67-fd81-4903-b948-aa2cf5883ca8" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Ngay_Phong.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
