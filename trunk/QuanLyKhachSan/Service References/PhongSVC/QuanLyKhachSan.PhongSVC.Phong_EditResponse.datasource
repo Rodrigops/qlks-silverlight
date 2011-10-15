@@ -6,5 +6,5 @@
     cause the file to be unrecognizable by the program.
 -->
 <GenericObjectDataSource DisplayName="Phong_EditResponse" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>QuanLyKhachSan.PhongSVC.Phong_EditResponse</TypeInfo>
+   <TypeInfo>QuanLyKhachSan.PhongSVC.Phong_EditResponse, Service References.PhongSVC.Reference.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
 </GenericObjectDataSource>

@@ -50,6 +50,12 @@
   <wsdl:message name="PhongSVC_Phong_GetItems_ByTinhTrang_OutputMessage">
     <wsdl:part name="parameters" element="Phong_GetItems_ByTinhTrangResponse" />
   </wsdl:message>
+  <wsdl:message name="PhongSVC_Phong_GetItemsOnService_InputMessage">
+    <wsdl:part name="parameters" element="Phong_GetItemsOnService" />
+  </wsdl:message>
+  <wsdl:message name="PhongSVC_Phong_GetItemsOnService_OutputMessage">
+    <wsdl:part name="parameters" element="Phong_GetItemsOnServiceResponse" />
+  </wsdl:message>
   <wsdl:portType name="PhongSVC">
     <wsdl:operation name="Phong_Add">
       <wsdl:input wsaw:Action="urn:PhongSVC/Phong_Add" message="PhongSVC_Phong_Add_InputMessage" />
@@ -78,6 +84,10 @@
     <wsdl:operation name="Phong_GetItems_ByTinhTrang">
       <wsdl:input wsaw:Action="urn:PhongSVC/Phong_GetItems_ByTinhTrang" message="PhongSVC_Phong_GetItems_ByTinhTrang_InputMessage" />
       <wsdl:output wsaw:Action="urn:PhongSVC/Phong_GetItems_ByTinhTrangResponse" message="PhongSVC_Phong_GetItems_ByTinhTrang_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Phong_GetItemsOnService">
+      <wsdl:input wsaw:Action="urn:PhongSVC/Phong_GetItemsOnService" message="PhongSVC_Phong_GetItemsOnService_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PhongSVC/Phong_GetItemsOnServiceResponse" message="PhongSVC_Phong_GetItemsOnService_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>
