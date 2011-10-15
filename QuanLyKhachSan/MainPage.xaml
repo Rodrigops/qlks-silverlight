@@ -8,7 +8,7 @@
         xmlns:uriMapper="clr-namespace:System.Windows.Navigation;assembly=System.Windows.Controls.Navigation"
 		mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="800" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
 	<Grid x:Name="LayoutRoot">
-        <telerik:RadRibbonBar Height="146" HorizontalAlignment="Stretch" Name="mainRibbonBar" ApplicationName="Quản Lý Khách Sạn" VerticalAlignment="Top" Width="Auto" telerik:StyleManager.Theme="Vista">
+        <telerik:RadRibbonBar Height="146" HorizontalAlignment="Stretch" Name="mainRibbonBar" ApplicationName="Phần Mềm Quản Lý Khách Sạn Hàng Đầu Việt Nam Từ Hàng Trăm Năm Qua" VerticalAlignment="Top" Width="Auto" telerik:StyleManager.Theme="Vista">
             <telerik:RadRibbonTab Header="Trang Chủ">
                 <telerik:RadRibbonGroup Header="Tình Trạng Phòng"  Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
                     <telerik:RadRibbonButton Name="cmdTinhTrangPhong" Click="cmdTinhTrangPhong_Click" >
@@ -41,7 +41,7 @@
                 <telerik:RadRibbonGroup Header="Dịch Vụ Phòng">
                     <telerik:RadRibbonButton Name="cmdDichVuPhong" Click="cmdDichVuPhong_Click">
                         <StackPanel>
-                            <Image Source="Images/GiaoPhong.png"></Image>
+                            <Image Source="Images/DichVu.png"></Image>
                         </StackPanel>
                     </telerik:RadRibbonButton>
                 </telerik:RadRibbonGroup>
