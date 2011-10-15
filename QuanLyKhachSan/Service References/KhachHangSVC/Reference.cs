@@ -427,7 +427,7 @@ namespace QuanLyKhachSan.KhachHangSVC {
         System.Collections.Generic.List<QuanLyKhachSan.KhachHangSVC.KhachHangInfo> EndKhachHang_GetItems(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:KhachHangSVC/KhachHang_GetItemsInPhong", ReplyAction="urn:KhachHangSVC/KhachHang_GetItemsInPhongResponse")]
-        System.IAsyncResult BeginKhachHang_GetItemsInPhong(int KhachHangID, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginKhachHang_GetItemsInPhong(int PhongID, System.AsyncCallback callback, object asyncState);
         
         System.Collections.Generic.List<QuanLyKhachSan.KhachHangSVC.KhachHangInfo> EndKhachHang_GetItemsInPhong(System.IAsyncResult result);
     }
@@ -1001,8 +1001,8 @@ namespace QuanLyKhachSan.KhachHangSVC {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult QuanLyKhachSan.KhachHangSVC.KhachHangSVC.BeginKhachHang_GetItemsInPhong(int KhachHangID, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginKhachHang_GetItemsInPhong(KhachHangID, callback, asyncState);
+        System.IAsyncResult QuanLyKhachSan.KhachHangSVC.KhachHangSVC.BeginKhachHang_GetItemsInPhong(int PhongID, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginKhachHang_GetItemsInPhong(PhongID, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1011,8 +1011,8 @@ namespace QuanLyKhachSan.KhachHangSVC {
         }
         
         private System.IAsyncResult OnBeginKhachHang_GetItemsInPhong(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int KhachHangID = ((int)(inValues[0]));
-            return ((QuanLyKhachSan.KhachHangSVC.KhachHangSVC)(this)).BeginKhachHang_GetItemsInPhong(KhachHangID, callback, asyncState);
+            int PhongID = ((int)(inValues[0]));
+            return ((QuanLyKhachSan.KhachHangSVC.KhachHangSVC)(this)).BeginKhachHang_GetItemsInPhong(PhongID, callback, asyncState);
         }
         
         private object[] OnEndKhachHang_GetItemsInPhong(System.IAsyncResult result) {
@@ -1028,11 +1028,11 @@ namespace QuanLyKhachSan.KhachHangSVC {
             }
         }
         
-        public void KhachHang_GetItemsInPhongAsync(int KhachHangID) {
-            this.KhachHang_GetItemsInPhongAsync(KhachHangID, null);
+        public void KhachHang_GetItemsInPhongAsync(int PhongID) {
+            this.KhachHang_GetItemsInPhongAsync(PhongID, null);
         }
         
-        public void KhachHang_GetItemsInPhongAsync(int KhachHangID, object userState) {
+        public void KhachHang_GetItemsInPhongAsync(int PhongID, object userState) {
             if ((this.onBeginKhachHang_GetItemsInPhongDelegate == null)) {
                 this.onBeginKhachHang_GetItemsInPhongDelegate = new BeginOperationDelegate(this.OnBeginKhachHang_GetItemsInPhong);
             }
@@ -1043,7 +1043,7 @@ namespace QuanLyKhachSan.KhachHangSVC {
                 this.onKhachHang_GetItemsInPhongCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnKhachHang_GetItemsInPhongCompleted);
             }
             base.InvokeAsync(this.onBeginKhachHang_GetItemsInPhongDelegate, new object[] {
-                        KhachHangID}, this.onEndKhachHang_GetItemsInPhongDelegate, this.onKhachHang_GetItemsInPhongCompletedDelegate, userState);
+                        PhongID}, this.onEndKhachHang_GetItemsInPhongDelegate, this.onKhachHang_GetItemsInPhongCompletedDelegate, userState);
         }
         
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
@@ -1254,9 +1254,9 @@ namespace QuanLyKhachSan.KhachHangSVC {
                 return _result;
             }
             
-            public System.IAsyncResult BeginKhachHang_GetItemsInPhong(int KhachHangID, System.AsyncCallback callback, object asyncState) {
+            public System.IAsyncResult BeginKhachHang_GetItemsInPhong(int PhongID, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[1];
-                _args[0] = KhachHangID;
+                _args[0] = PhongID;
                 System.IAsyncResult _result = base.BeginInvoke("KhachHang_GetItemsInPhong", _args, callback, asyncState);
                 return _result;
             }
