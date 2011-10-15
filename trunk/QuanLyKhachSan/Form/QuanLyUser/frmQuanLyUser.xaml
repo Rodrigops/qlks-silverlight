@@ -63,7 +63,7 @@
         <ScrollViewer Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left">
             <StackPanel>
                 <StackPanel Orientation="Horizontal"></StackPanel>
-                <telerik:RadGridView AutoGenerateColumns="False" Margin="10,0,10,0" AutoExpandGroups="True" IsFilteringAllowed="False" Name="grUserGroup" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" telerik:StyleManager.Theme="Office_Blue" Height="Auto">
+                <telerik:RadGridView AutoGenerateColumns="False" Margin="10,0,10,0" AutoExpandGroups="True" IsFilteringAllowed="False" Name="grvUserGroup" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" telerik:StyleManager.Theme="Office_Blue" Height="Auto">
                     <telerik:RadGridView.GroupDescriptors>
                         <telerik:GroupDescriptor Member="GroupName" DisplayContent="{Binding Path=GroupName}"></telerik:GroupDescriptor>
                     </telerik:RadGridView.GroupDescriptors>
