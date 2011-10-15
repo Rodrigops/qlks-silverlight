@@ -98,6 +98,9 @@
     <Compile Include="Form\HoaDonDichVu\frmHoaDonDichVuEdit.xaml.cs">
       <DependentUpon>frmHoaDonDichVuEdit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Form\QuanLyKhachHang\frmDatPhong.xaml.cs">
+      <DependentUpon>frmDatPhong.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Form\QuanLyKhachHang\frmKhachHang.xaml.cs">
       <DependentUpon>frmKhachHang.xaml</DependentUpon>
     </Compile>
@@ -145,6 +148,16 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Service References\HoaDonDichVuSVC\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\HoaDonSVC\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\HoaDon_KhachHangSVC\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -197,6 +210,10 @@
     <Page Include="Form\HoaDonDichVu\frmHoaDonDichVuEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\QuanLyKhachHang\frmDatPhong.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Form\QuanLyKhachHang\frmKhachHang.xaml">
       <SubType>Designer</SubType>
@@ -287,6 +304,22 @@
     <None Include="Service References\HoaDonDichVuSVC\QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\HoaDonSVC\HoaDon.wsdl" />
+    <None Include="Service References\HoaDonSVC\HoaDon.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HoaDonSVC\HoaDon1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HoaDonSVC\HoaDonSVC.wsdl" />
+    <None Include="Service References\HoaDon_KhachHangSVC\HoaDon_KhachHang.wsdl" />
+    <None Include="Service References\HoaDon_KhachHangSVC\HoaDon_KhachHang.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HoaDon_KhachHangSVC\HoaDon_KhachHang1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HoaDon_KhachHangSVC\HoaDon_KhachHangSVC.wsdl" />
     <None Include="Service References\KhachHangSVC\KhachHang.wsdl" />
     <None Include="Service References\KhachHangSVC\KhachHang.xsd">
       <SubType>Designer</SubType>
@@ -451,6 +484,20 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\HoaDonSVC\HoaDon.disco" />
+    <None Include="Service References\HoaDonSVC\configuration91.svcinfo" />
+    <None Include="Service References\HoaDonSVC\configuration.svcinfo" />
+    <None Include="Service References\HoaDonSVC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\HoaDon_KhachHangSVC\HoaDon_KhachHang.disco" />
+    <None Include="Service References\HoaDon_KhachHangSVC\configuration91.svcinfo" />
+    <None Include="Service References\HoaDon_KhachHangSVC\configuration.svcinfo" />
+    <None Include="Service References\HoaDon_KhachHangSVC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="ServiceReferences.ClientConfig" />
     <Resource Include="Images\DatPhong.png" />
     <Resource Include="Images\GiaoPhong.png" />
@@ -499,6 +546,8 @@
     <WCFMetadataStorage Include="Service References\DichVuSVC\" />
     <WCFMetadataStorage Include="Service References\Gio_PhongSVC\" />
     <WCFMetadataStorage Include="Service References\HoaDonDichVuSVC\" />
+    <WCFMetadataStorage Include="Service References\HoaDonSVC\" />
+    <WCFMetadataStorage Include="Service References\HoaDon_KhachHangSVC\" />
     <WCFMetadataStorage Include="Service References\KhachHangSVC\" />
     <WCFMetadataStorage Include="Service References\LoaiPhongSVC\" />
     <WCFMetadataStorage Include="Service References\Ngay_PhongSVC\" />

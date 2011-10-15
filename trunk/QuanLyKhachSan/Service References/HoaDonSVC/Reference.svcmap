@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5dde7fba-3605-4ab7-9416-e5ee881f0f0c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDon/HoaDon.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="HoaDonSVC.wsdl" MetadataType="Wsdl" ID="fdb4dc81-ba62-4665-a509-f51ba30383d1" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDon/HoaDon.svc?wsdl" />
+    <MetadataFile FileName="HoaDon.xsd" MetadataType="Schema" ID="514f9a25-71b1-4f1a-a243-641b98bb84a6" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDon/HoaDon.svc?xsd=xsd1" />
+    <MetadataFile FileName="HoaDon.disco" MetadataType="Disco" ID="770e64c0-dab0-4bfd-85e4-4ff7c12c7eef" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDon/HoaDon.svc?disco" />
+    <MetadataFile FileName="HoaDon1.xsd" MetadataType="Schema" ID="d7922b36-9924-4123-9329-6784b9941bf2" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDon/HoaDon.svc?xsd=xsd0" />
+    <MetadataFile FileName="HoaDon.wsdl" MetadataType="Wsdl" ID="fdf7383c-2cdd-46a4-a632-f7a994838214" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDon/HoaDon.svc?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
