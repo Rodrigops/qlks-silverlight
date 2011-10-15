@@ -42,5 +42,10 @@ namespace QuanLyKhachSan
             PhongDAL doit = new PhongDAL();
             return doit.Phong_GetItems_ByTinhTrang();
         }
+        public static List<PhongInfo> Phong_GetItemsOnService()
+        {
+            PhongDAL doit = new PhongDAL();
+            return doit.Phong_GetItemsOnService();
+        }
     }
 }
