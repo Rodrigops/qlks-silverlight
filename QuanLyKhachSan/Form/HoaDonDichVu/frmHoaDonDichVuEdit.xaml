@@ -10,7 +10,7 @@
             <RowDefinition Height="29*" />
             <RowDefinition Height="29*" />
             <RowDefinition Height="29*" />
-            <RowDefinition Height="29" />
+            <RowDefinition Height="29*" />
             <RowDefinition Height="29*" />
             <RowDefinition Height="29*" />
             <RowDefinition Height="Auto" />
@@ -30,9 +30,9 @@
         <TextBlock Grid.Row="4" Height="23" HorizontalAlignment="Left" Margin="3,10,0,0" Name="textBlock7" Text="Ngày Sử Dụng:" VerticalAlignment="Top" />
         <TextBlock Grid.Row="5" Height="23" HorizontalAlignment="Left" Margin="48,10,0,0" Name="textBlock5" Text="Phòng:" VerticalAlignment="Top" />
         <TextBlock Grid.Row="6" Height="23" HorizontalAlignment="Left" Margin="49,9,0,0" Name="textBlock6" Text="Khách:" VerticalAlignment="Top" />
-        <telerik:RadComboBox Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="0,12,0,0" SelectionChanged="cbxDichVu_SelectionChanged" Name="cbxDichVu" DisplayMemberPath="DichVuName" SelectedValuePath="DichVuID" VerticalAlignment="Top" Width="120" telerik:StyleManager.Theme="Office_Blue"></telerik:RadComboBox>
-        <TextBox Grid.Column="1" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="0,10,0,0" TextChanged="txtSoLuong_TextChanged" Name="txtSoLuong" VerticalAlignment="Top" Width="120" TextAlignment="Right"/>
-        <TextBox Grid.Column="1" Grid.Row="2" Height="23" HorizontalAlignment="Left" Margin="0,10,0,0" Name="txtDonGia" VerticalAlignment="Top" Width="120" TextAlignment="Right" IsReadOnly="True"/>
+        <telerik:RadComboBox Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="0,9,0,0" SelectionChanged="cbxDichVu_SelectionChanged" Name="cbxDichVu" DisplayMemberPath="DichVuName" SelectedValuePath="DichVuID" VerticalAlignment="Top" Width="120" telerik:StyleManager.Theme="Office_Blue"></telerik:RadComboBox>
+        <TextBox Grid.Column="1" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="0,9,0,0" TextChanged="txtSoLuong_TextChanged" Name="txtSoLuong" VerticalAlignment="Top" Width="120" TextAlignment="Right"/>
+        <TextBox Grid.Column="1" Grid.Row="2" Height="23" HorizontalAlignment="Left" Margin="0,9,0,0" Name="txtDonGia" VerticalAlignment="Top" Width="120" TextAlignment="Right" IsReadOnly="True"/>
         <TextBox Grid.Column="1" Grid.Row="3" Height="23" HorizontalAlignment="Left" Margin="0,10,0,0" Name="txtTongTien" VerticalAlignment="Top" Width="120" TextAlignment="Right" IsReadOnly="True"/>
         <telerik:RadDateTimePicker Grid.Column="1" Grid.Row="4" Height="23" HorizontalAlignment="Left" Width="120" Margin="0,6,0,0" Name="rdpNgaySuDung" VerticalAlignment="Top" telerik:StyleManager.Theme="Office_Blue" InputMode="DatePicker" Culture="vi-VN" DateTimeWatermarkContent="Chọn ngày" />
         <telerik:RadComboBox Grid.Column="1" Grid.Row="5" Height="23" HorizontalAlignment="Left" Margin="0,10,0,0" SelectionChanged="cbxPhong_SelectionChanged" Name="cbxPhong" DisplayMemberPath="PhongName" SelectedValuePath="PhongID" VerticalAlignment="Top" Width="120" telerik:StyleManager.Theme="Office_Blue"></telerik:RadComboBox>
