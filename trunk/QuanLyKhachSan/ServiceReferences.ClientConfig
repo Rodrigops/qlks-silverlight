@@ -22,6 +22,22 @@
                     maxReceivedMessageSize="2147483647">
                     <security mode="None" />
                 </binding>
+                <binding name="BasicHttpBinding_Gio_PhongSVC" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_Ngay_PhongSVC" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_Nguoi_PhongSVC" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_HoaDonDichVuSVC" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
             </basicHttpBinding>
             <customBinding>
                 <binding name="CustomBinding_LoaiPhongSVC">
@@ -42,13 +58,25 @@
                 contract="PhongSVC.PhongSVC" name="BasicHttpBinding_PhongSVC" />
             <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/DichVu.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_DichVuSVC"
-                contract="DichVuSVC.DichVuSVC" name="BasicHttpBinding_DichVuSVC" />            
+                contract="DichVuSVC.DichVuSVC" name="BasicHttpBinding_DichVuSVC" />
             <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/KhachHang.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_KhachHangSVC"
                 contract="KhachHangSVC.KhachHangSVC" name="BasicHttpBinding_KhachHangSVC" />
             <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/QuocTich.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_QuocTichSVC"
                 contract="QuocTichSVC.QuocTichSVC" name="BasicHttpBinding_QuocTichSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Gio_Phong.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_Gio_PhongSVC"
+                contract="Gio_PhongSVC.Gio_PhongSVC" name="BasicHttpBinding_Gio_PhongSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Ngay_Phong.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_Ngay_PhongSVC"
+                contract="Ngay_PhongSVC.Ngay_PhongSVC" name="BasicHttpBinding_Ngay_PhongSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Nguoi_Phong.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_Nguoi_PhongSVC"
+                contract="Nguoi_PhongSVC.Nguoi_PhongSVC" name="BasicHttpBinding_Nguoi_PhongSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDonDichVu.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_HoaDonDichVuSVC"
+                contract="HoaDonDichVuSVC.HoaDonDichVuSVC" name="BasicHttpBinding_HoaDonDichVuSVC" />
         </client>
     </system.serviceModel>
 </configuration>
