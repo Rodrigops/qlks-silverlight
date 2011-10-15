@@ -67,6 +67,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Phong_GetItemsOnService">
+      <soap:operation soapAction="urn:PhongSVC/Phong_GetItemsOnService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="PhongSVC">
     <wsdl:port name="BasicHttpBinding_PhongSVC" binding="tns:BasicHttpBinding_PhongSVC">

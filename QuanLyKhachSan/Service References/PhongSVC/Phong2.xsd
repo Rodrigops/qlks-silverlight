@@ -110,4 +110,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Phong_GetItemsOnService">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Phong_GetItemsOnServiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" minOccurs="0" name="Phong_GetItemsOnServiceResult" nillable="true" type="q4:ArrayOfPhongInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

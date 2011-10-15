@@ -98,4 +98,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="KhachHang_GetItemsInPhong">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="KhachHangID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KhachHang_GetItemsInPhongResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" minOccurs="0" name="KhachHang_GetItemsInPhongResult" nillable="true" type="q3:ArrayOfKhachHangInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
