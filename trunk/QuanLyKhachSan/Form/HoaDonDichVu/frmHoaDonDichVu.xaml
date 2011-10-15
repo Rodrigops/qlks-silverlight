@@ -4,6 +4,7 @@
            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
            mc:Ignorable="d"
+           xmlns:local="clr-namespace:QuanLyKhachSan.Form.QuanLyPhong"
            xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
            d:DesignWidth="1000" d:DesignHeight="480"
            Title="frmHoaDonDichVu Page" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
@@ -22,6 +23,8 @@
                     <TextBlock Text="{Binding DichVuName}"></TextBlock>
                 </StackPanel>
             </DataTemplate>-->
+            <local:NumberVietnameseFormater x:Key="NumberVietnameseFormater">
+            </local:NumberVietnameseFormater>
         </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"></RowDefinition>
@@ -36,11 +39,11 @@
                         <telerik:GroupDescriptor Member="PhongName" DisplayContent="{Binding Path=PhongName}"></telerik:GroupDescriptor>
                     </telerik:RadGridView.GroupDescriptors>
                     <telerik:RadGridView.Columns>
-                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Left" Header="Dịch Vụ" DataMemberBinding="{Binding Path=DichVuName}" Width="200" ></telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Left" Header="Dịch Vụ" DataMemberBinding="{Binding Path=DichVuName}" Width="175" ></telerik:GridViewDataColumn>
                         <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Ngày Sử Dụng" DataMemberBinding="{Binding Path=NgaySuDung}" Width="120"></telerik:GridViewDataColumn>
                         <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Số Lượng" DataMemberBinding="{Binding Path=SoLuong}" Width="100"></telerik:GridViewDataColumn>
-                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Right" Header="Đơn Giá" DataMemberBinding="{Binding Path=DonGia}" Width="100"></telerik:GridViewDataColumn>
-                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Right" Header="Thành Tiền" DataMemberBinding="{Binding Path=TongTien}" Width="150"></telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Right" Header="Đơn Giá" DataMemberBinding="{Binding Path=DonGia, Converter={StaticResource NumberVietnameseFormater}}" Width="100"></telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Right" Header="Thành Tiền" DataMemberBinding="{Binding Path=TongTien, Converter={StaticResource NumberVietnameseFormater}}" Width="150"></telerik:GridViewDataColumn>
                         <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Left" Header="Khách Hàng" DataMemberBinding="{Binding Path=HoTen}" Width="200"></telerik:GridViewDataColumn>
                         <telerik:GridViewColumn Header="Chỉnh Sửa" Width="80" CellTemplate="{StaticResource Template_grvHoaDonDichVu_ColumnEdit}"></telerik:GridViewColumn>
                     </telerik:RadGridView.Columns>
