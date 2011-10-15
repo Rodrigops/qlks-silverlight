@@ -18,9 +18,9 @@ namespace QuanLyKhachSan.Form.QuanLyUser
     {
         private int UserID = -1;
         private string ListGroupID = "";
-        private GroupSVCClient GroupClient = null;
-        private UserSVCClient UserClient = null;
-        private UserGroupSVCClient UserGroupClient = null;
+        private GroupSVCClient GroupClient = new GroupSVCClient();
+        private UserSVCClient UserClient = new UserSVCClient();
+        private UserGroupSVCClient UserGroupClient = new UserGroupSVCClient();
         public frmUserGroupEdit()
         {
             InitializeComponent();
