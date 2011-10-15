@@ -52,5 +52,10 @@ namespace QuanLyKhachSan
         {
 
         }
+
+        private void cmdDichVuPhong_Click(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(new Uri("HoaDonDichVu", UriKind.Relative));   
+        }
     }
 }
