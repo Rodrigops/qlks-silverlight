@@ -89,6 +89,7 @@ namespace QuanLyKhachSan
                 item.KhachHangID = int.Parse(rd["KhachHangID"].ToString());
                 item.HoTen = rd["HoTen"].ToString();
                 item.PhongName = rd["PhongName"].ToString();
+                item.DichVuName = rd["DichVuName"].ToString();
                 item.NgaySuDung = rd["NgaySuDung"].ToString();
                 item.SoLuong = int.Parse(rd["SoLuong"].ToString());
                 item.DonGia = decimal.Parse(rd["DonGia"].ToString());
