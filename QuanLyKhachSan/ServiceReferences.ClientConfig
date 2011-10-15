@@ -46,6 +46,18 @@
                     maxReceivedMessageSize="2147483647">
                     <security mode="None" />
                 </binding>
+                <binding name="BasicHttpBinding_GroupSVC" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_UserSVC" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_UserGroupSVC" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
             </basicHttpBinding>
             <customBinding>
                 <binding name="CustomBinding_LoaiPhongSVC">
@@ -91,6 +103,15 @@
             <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDon/HoaDon_KhachHang.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_HoaDon_KhachHangSVC"
                 contract="HoaDon_KhachHangSVC.HoaDon_KhachHangSVC" name="BasicHttpBinding_HoaDon_KhachHangSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyUser/Group.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_GroupSVC"
+                contract="GroupSVC.GroupSVC" name="BasicHttpBinding_GroupSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyUser/User.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_UserSVC"
+                contract="UserSVC.UserSVC" name="BasicHttpBinding_UserSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyUser/UserGroup.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_UserGroupSVC"
+                contract="UserGroupSVC.UserGroupSVC" name="BasicHttpBinding_UserGroupSVC" />
         </client>
     </system.serviceModel>
 </configuration>
