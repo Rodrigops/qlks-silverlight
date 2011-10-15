@@ -98,9 +98,6 @@
     <Compile Include="Form\HoaDonDichVu\frmHoaDonDichVuEdit.xaml.cs">
       <DependentUpon>frmHoaDonDichVuEdit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Form\QuanLyKhachHang\frmDatPhong.xaml.cs">
-      <DependentUpon>frmDatPhong.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Form\QuanLyKhachHang\frmKhachHang.xaml.cs">
       <DependentUpon>frmKhachHang.xaml</DependentUpon>
     </Compile>
@@ -133,6 +130,18 @@
       <DependentUpon>frmThongTinPhong.xaml</DependentUpon>
     </Compile>
     <Compile Include="Form\QuanLyPhong\NumberVietnameseFormater.cs" />
+    <Compile Include="Form\QuanLyUser\frmGroupEdit.xaml.cs">
+      <DependentUpon>frmGroupEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\QuanLyUser\frmQuanLyUser.xaml.cs">
+      <DependentUpon>frmQuanLyUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\QuanLyUser\frmUserEdit.xaml.cs">
+      <DependentUpon>frmUserEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\QuanLyUser\frmUserGroupEdit.xaml.cs">
+      <DependentUpon>frmUserGroupEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -143,6 +152,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Service References\Gio_PhongSVC\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\GroupSVC\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -197,6 +211,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\UserGroupSVC\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\UserSVC\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -210,10 +234,6 @@
     <Page Include="Form\HoaDonDichVu\frmHoaDonDichVuEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Form\QuanLyKhachHang\frmDatPhong.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Form\QuanLyKhachHang\frmKhachHang.xaml">
       <SubType>Designer</SubType>
@@ -255,6 +275,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Form\QuanLyUser\frmGroupEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\QuanLyUser\frmQuanLyUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\QuanLyUser\frmUserEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\QuanLyUser\frmUserGroupEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -288,6 +324,20 @@
     </None>
     <None Include="Service References\Gio_PhongSVC\Gio_PhongSVC.wsdl" />
     <None Include="Service References\Gio_PhongSVC\QuanLyKhachSan.Gio_PhongSVC.Gio_PhongInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GroupSVC\Group.wsdl" />
+    <None Include="Service References\GroupSVC\Group.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GroupSVC\Group1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GroupSVC\Group2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GroupSVC\GroupSVC.wsdl" />
+    <None Include="Service References\GroupSVC\QuanLyKhachSan.GroupSVC.GroupInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\HoaDonDichVuSVC\HoaDonDichVu.wsdl" />
@@ -498,7 +548,56 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\GroupSVC\Group.disco" />
+    <None Include="Service References\GroupSVC\configuration91.svcinfo" />
+    <None Include="Service References\GroupSVC\configuration.svcinfo" />
+    <None Include="Service References\GroupSVC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\UserGroupSVC\QuanLyKhachSan.UserGroupSVC.UserGroupInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserGroupSVC\UserGroup.wsdl" />
+    <None Include="Service References\UserGroupSVC\UserGroup.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserGroupSVC\UserGroup1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserGroupSVC\UserGroup2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserGroupSVC\UserGroupSVC.wsdl" />
+    <None Include="Service References\UserSVC\QuanLyKhachSan.UserSVC.UserInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserSVC\User.disco" />
+    <None Include="Service References\UserSVC\configuration91.svcinfo" />
+    <None Include="Service References\UserSVC\configuration.svcinfo" />
+    <None Include="Service References\UserSVC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\UserGroupSVC\UserGroup.disco" />
+    <None Include="Service References\UserGroupSVC\configuration91.svcinfo" />
+    <None Include="Service References\UserGroupSVC\configuration.svcinfo" />
+    <None Include="Service References\UserGroupSVC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="ServiceReferences.ClientConfig" />
+    <None Include="Service References\UserSVC\User.wsdl" />
+    <None Include="Service References\UserSVC\User.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserSVC\User1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserSVC\User2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserSVC\UserSVC.wsdl" />
     <Resource Include="Images\DatPhong.png" />
     <Resource Include="Images\GiaoPhong.png" />
     <Resource Include="Images\KhachHang.png" />
@@ -529,9 +628,7 @@
     </None>
     <None Include="Service References\TienNghiSVC\TienNghiSVC.wsdl" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Form\QuanLyUsers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\LoaiPhong.png" />
   </ItemGroup>
@@ -545,6 +642,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\DichVuSVC\" />
     <WCFMetadataStorage Include="Service References\Gio_PhongSVC\" />
+    <WCFMetadataStorage Include="Service References\GroupSVC\" />
     <WCFMetadataStorage Include="Service References\HoaDonDichVuSVC\" />
     <WCFMetadataStorage Include="Service References\HoaDonSVC\" />
     <WCFMetadataStorage Include="Service References\HoaDon_KhachHangSVC\" />
@@ -555,6 +653,8 @@
     <WCFMetadataStorage Include="Service References\PhongSVC\" />
     <WCFMetadataStorage Include="Service References\QuocTichSVC\" />
     <WCFMetadataStorage Include="Service References\TienNghiSVC\" />
+    <WCFMetadataStorage Include="Service References\UserGroupSVC\" />
+    <WCFMetadataStorage Include="Service References\UserSVC\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
