@@ -38,6 +38,13 @@
                             </StackPanel>
                         </telerik:RadRibbonButton>
                     </telerik:RadRibbonGroup>
+                <telerik:RadRibbonGroup Header="Dịch Vụ Phòng">
+                    <telerik:RadRibbonButton Name="cmdDichVuPhong" Click="cmdDichVuPhong_Click">
+                        <StackPanel>
+                            <Image Source="Images/GiaoPhong.png"></Image>
+                        </StackPanel>
+                    </telerik:RadRibbonButton>
+                </telerik:RadRibbonGroup>
             </telerik:RadRibbonTab>
             <telerik:RadRibbonTab Header="Quản Lý Phòng">
                 <telerik:RadRibbonGroup Header="Thông Tin Phòng" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">                    
@@ -86,6 +93,7 @@
                     <uriMapper:UriMapping Uri="GiaPhong" MappedUri="/Form/QuanLyPhong/frmGiaPhong.xaml"/>
                     <uriMapper:UriMapping Uri="CaiDatGia" MappedUri="/Form/QuanLyPhong/frmCaiDatGia.xaml"/>
                     <uriMapper:UriMapping Uri="KhachHang" MappedUri="/Form/QuanLyKhachHang/frmKhachHang.xaml"/>
+                    <uriMapper:UriMapping Uri="HoaDonDichVu" MappedUri="/Form/HoaDonDichVu/frmHoaDonDichVu.xaml"/>
                 </uriMapper:UriMapper>
             </navigation:Frame.UriMapper>
         </navigation:Frame>
