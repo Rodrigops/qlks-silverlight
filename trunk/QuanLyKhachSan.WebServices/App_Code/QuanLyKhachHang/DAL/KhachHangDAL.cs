@@ -115,6 +115,27 @@ namespace QuanLyKhachSan
             }
             return list;
         }
+        public List<KhachHangInfo> KhachHang_GetItemsInPhong([Optional, DefaultParameterValue(0)] int KhachHangID)
+        {
+            SQLDataHelper SQLDB = new SQLDataHelper();
+            SQLDB.Addparameter("@KhachHangID", KhachHangID);
+            SqlDataReader rd = SQLDB.executereader("sp_KhachHang_GetItemsInPhong", CommandType.StoredProcedure);
+            List<KhachHangInfo> list = new List<KhachHangInfo>();
+            KhachHangInfo item = null;
+            while (rd.Read())
+            {
+                item = new KhachHangInfo();
+                item.KhachHangID = int.Parse(rd["KhachHangID"].ToString());
+                item.HoTen = rd["HoTen"].ToString();
+                item.DiaChi = rd["DiaChi"].ToString();
+                item.DienThoai = rd["DienThoai"].ToString();
+                item.CMND = rd["CMND"].ToString();
+                item.GioiTinh = int.Parse(rd["GioiTinh"].ToString());
+
+                list.Add(item);
+            }
+            return list;
+        }
     }
 }
 

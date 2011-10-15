@@ -37,5 +37,10 @@ namespace QuanLyKhachSan
             KhachHangDAL doit = new KhachHangDAL();
             return doit.KhachHang_GetItems(KhachHangID);
         }
+        public static List<KhachHangInfo> KhachHang_GetItemsInPhong([Optional, DefaultParameterValue(0)] int KhachHangID)
+        {
+            KhachHangDAL doit = new KhachHangDAL();
+            return doit.KhachHang_GetItemsInPhong(KhachHangID);
+        }
     }
 }
