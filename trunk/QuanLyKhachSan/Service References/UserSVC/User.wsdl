@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="/Imports">
+      <xsd:import schemaLocation="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyUser/User.svc?xsd=xsd0" />
+      <xsd:import schemaLocation="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyUser/User.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyUser/User.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="UserSVC_User_Add_InputMessage">
+    <wsdl:part name="parameters" element="User_Add" />
+  </wsdl:message>
+  <wsdl:message name="UserSVC_User_Add_OutputMessage">
+    <wsdl:part name="parameters" element="User_AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserSVC_User_Edit_InputMessage">
+    <wsdl:part name="parameters" element="User_Edit" />
+  </wsdl:message>
+  <wsdl:message name="UserSVC_User_Edit_OutputMessage">
+    <wsdl:part name="parameters" element="User_EditResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserSVC_User_Delete_InputMessage">
+    <wsdl:part name="parameters" element="User_Delete" />
+  </wsdl:message>
+  <wsdl:message name="UserSVC_User_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="User_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserSVC_User_GetItem_InputMessage">
+    <wsdl:part name="parameters" element="User_GetItem" />
+  </wsdl:message>
+  <wsdl:message name="UserSVC_User_GetItem_OutputMessage">
+    <wsdl:part name="parameters" element="User_GetItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserSVC_User_GetItems_InputMessage">
+    <wsdl:part name="parameters" element="User_GetItems" />
+  </wsdl:message>
+  <wsdl:message name="UserSVC_User_GetItems_OutputMessage">
+    <wsdl:part name="parameters" element="User_GetItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserSVC_User_GetActivedItems_InputMessage">
+    <wsdl:part name="parameters" element="User_GetActivedItems" />
+  </wsdl:message>
+  <wsdl:message name="UserSVC_User_GetActivedItems_OutputMessage">
+    <wsdl:part name="parameters" element="User_GetActivedItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserSVC_Users_Login_InputMessage">
+    <wsdl:part name="parameters" element="Users_Login" />
+  </wsdl:message>
+  <wsdl:message name="UserSVC_Users_Login_OutputMessage">
+    <wsdl:part name="parameters" element="Users_LoginResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UserSVC">
+    <wsdl:operation name="User_Add">
+      <wsdl:input wsaw:Action="urn:UserSVC/User_Add" message="UserSVC_User_Add_InputMessage" />
+      <wsdl:output wsaw:Action="urn:UserSVC/User_AddResponse" message="UserSVC_User_Add_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="User_Edit">
+      <wsdl:input wsaw:Action="urn:UserSVC/User_Edit" message="UserSVC_User_Edit_InputMessage" />
+      <wsdl:output wsaw:Action="urn:UserSVC/User_EditResponse" message="UserSVC_User_Edit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="User_Delete">
+      <wsdl:input wsaw:Action="urn:UserSVC/User_Delete" message="UserSVC_User_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="urn:UserSVC/User_DeleteResponse" message="UserSVC_User_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="User_GetItem">
+      <wsdl:input wsaw:Action="urn:UserSVC/User_GetItem" message="UserSVC_User_GetItem_InputMessage" />
+      <wsdl:output wsaw:Action="urn:UserSVC/User_GetItemResponse" message="UserSVC_User_GetItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="User_GetItems">
+      <wsdl:input wsaw:Action="urn:UserSVC/User_GetItems" message="UserSVC_User_GetItems_InputMessage" />
+      <wsdl:output wsaw:Action="urn:UserSVC/User_GetItemsResponse" message="UserSVC_User_GetItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="User_GetActivedItems">
+      <wsdl:input wsaw:Action="urn:UserSVC/User_GetActivedItems" message="UserSVC_User_GetActivedItems_InputMessage" />
+      <wsdl:output wsaw:Action="urn:UserSVC/User_GetActivedItemsResponse" message="UserSVC_User_GetActivedItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Users_Login">
+      <wsdl:input wsaw:Action="urn:UserSVC/Users_Login" message="UserSVC_Users_Login_InputMessage" />
+      <wsdl:output wsaw:Action="urn:UserSVC/Users_LoginResponse" message="UserSVC_Users_Login_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
