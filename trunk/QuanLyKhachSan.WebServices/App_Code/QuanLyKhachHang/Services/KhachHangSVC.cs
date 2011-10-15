@@ -48,10 +48,10 @@ namespace QuanLyKhachSan
             return doit.KhachHang_GetItems(KhachHangID);
         }
         [OperationContract]
-        public List<KhachHangInfo> KhachHang_GetItemsInPhong([Optional, DefaultParameterValue(0)] int KhachHangID)
+        public List<KhachHangInfo> KhachHang_GetItemsInPhong([Optional, DefaultParameterValue(0)] int PhongID)
         {
             KhachHangDAL doit = new KhachHangDAL();
-            return doit.KhachHang_GetItemsInPhong(KhachHangID);
+            return doit.KhachHang_GetItemsInPhong(PhongID);
         }
     }
 }
