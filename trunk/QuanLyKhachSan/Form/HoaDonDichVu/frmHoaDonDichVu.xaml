@@ -1,0 +1,51 @@
+﻿<navigation:Page x:Class="QuanLyKhachSan.Form.HoaDonDichVu.frmHoaDonDichVu" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           d:DesignWidth="1000" d:DesignHeight="480"
+           Title="frmHoaDonDichVu Page" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+    <Grid x:Name="LayoutRoot">
+        <Grid.Resources>
+            <DataTemplate x:Key="Template_grvHoaDonDichVu_ColumnEdit">
+                <StackPanel Orientation="Horizontal">
+                    <HyperlinkButton CommandParameter="{Binding HoaDon_DichVuID}" Content="Sửa" Margin="2" Name="cmdSuaHoaDon" Click="cmdSuaHoaDon_Click"></HyperlinkButton>
+                    <TextBlock Text="|" Margin="2" />
+                    <HyperlinkButton CommandParameter="{Binding HoaDon_DichVuID}" Content="Xóa" Margin="2" Name="cmdXoaHoaDon" Click="cmdXoaHoaDon_Click"></HyperlinkButton>
+                </StackPanel>
+            </DataTemplate>
+            <!--<DataTemplate x:Key="Template_grvHoaDonDichVu_CheckBox">
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox CommandParameter="{Binding HoaDon_DichVuID}"></CheckBox>
+                    <TextBlock Text="{Binding DichVuName}"></TextBlock>
+                </StackPanel>
+            </DataTemplate>-->
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+            <telerik:RadButton Grid.Row="0" Content="Thêm Hóa Đơn" Name="cmdThemHoaDon" Click="cmdThemHoaDon_Click" Height="25" Width="154" telerik:StyleManager.Theme="Office_Blue" HorizontalAlignment="Left" Margin="22,6,0,4" />
+        <ScrollViewer Grid.Row="1" HorizontalAlignment="Left">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal"></StackPanel>
+                <telerik:RadGridView AutoGenerateColumns="False" Margin="10,0,10,0" AutoExpandGroups="True" IsFilteringAllowed="False" Name="grvHoaDonDichVu" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" telerik:StyleManager.Theme="Office_Blue" Height="Auto">
+                    <telerik:RadGridView.GroupDescriptors>
+                        <telerik:GroupDescriptor Member="PhongName" DisplayContent="{Binding Path=PhongName}"></telerik:GroupDescriptor>
+                    </telerik:RadGridView.GroupDescriptors>
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Left" Header="Dịch Vụ" DataMemberBinding="{Binding Path=DichVuName}" Width="200" ></telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Ngày Sử Dụng" DataMemberBinding="{Binding Path=NgaySuDung}" Width="120"></telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Số Lượng" DataMemberBinding="{Binding Path=SoLuong}" Width="100"></telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Right" Header="Đơn Giá" DataMemberBinding="{Binding Path=DonGia}" Width="100"></telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Right" Header="Thành Tiền" DataMemberBinding="{Binding Path=TongTien}" Width="150"></telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Left" Header="Khách Hàng" DataMemberBinding="{Binding Path=HoTen}" Width="200"></telerik:GridViewDataColumn>
+                        <telerik:GridViewColumn Header="Chỉnh Sửa" Width="80" CellTemplate="{StaticResource Template_grvHoaDonDichVu_ColumnEdit}"></telerik:GridViewColumn>
+                    </telerik:RadGridView.Columns>
+                </telerik:RadGridView>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</navigation:Page>
