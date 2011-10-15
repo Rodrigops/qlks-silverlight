@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="/Imports">
+      <xsd:import schemaLocation="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDonDichVu.svc?xsd=xsd0" />
+      <xsd:import schemaLocation="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDonDichVu.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDonDichVu.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="HoaDonDichVuSVC_HoaDonDichVu_Add_InputMessage">
+    <wsdl:part name="parameters" element="HoaDonDichVu_Add" />
+  </wsdl:message>
+  <wsdl:message name="HoaDonDichVuSVC_HoaDonDichVu_Add_OutputMessage">
+    <wsdl:part name="parameters" element="HoaDonDichVu_AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="HoaDonDichVuSVC_HoaDonDichVu_Edit_InputMessage">
+    <wsdl:part name="parameters" element="HoaDonDichVu_Edit" />
+  </wsdl:message>
+  <wsdl:message name="HoaDonDichVuSVC_HoaDonDichVu_Edit_OutputMessage">
+    <wsdl:part name="parameters" element="HoaDonDichVu_EditResponse" />
+  </wsdl:message>
+  <wsdl:message name="HoaDonDichVuSVC_HoaDonDichVu_Delete_InputMessage">
+    <wsdl:part name="parameters" element="HoaDonDichVu_Delete" />
+  </wsdl:message>
+  <wsdl:message name="HoaDonDichVuSVC_HoaDonDichVu_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="HoaDonDichVu_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="HoaDonDichVuSVC_HoaDonDichVu_GetItem_InputMessage">
+    <wsdl:part name="parameters" element="HoaDonDichVu_GetItem" />
+  </wsdl:message>
+  <wsdl:message name="HoaDonDichVuSVC_HoaDonDichVu_GetItem_OutputMessage">
+    <wsdl:part name="parameters" element="HoaDonDichVu_GetItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="HoaDonDichVuSVC_HoaDonDichVu_GetItems_InputMessage">
+    <wsdl:part name="parameters" element="HoaDonDichVu_GetItems" />
+  </wsdl:message>
+  <wsdl:message name="HoaDonDichVuSVC_HoaDonDichVu_GetItems_OutputMessage">
+    <wsdl:part name="parameters" element="HoaDonDichVu_GetItemsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="HoaDonDichVuSVC">
+    <wsdl:operation name="HoaDonDichVu_Add">
+      <wsdl:input wsaw:Action="urn:HoaDonDichVuSVC/HoaDonDichVu_Add" message="HoaDonDichVuSVC_HoaDonDichVu_Add_InputMessage" />
+      <wsdl:output wsaw:Action="urn:HoaDonDichVuSVC/HoaDonDichVu_AddResponse" message="HoaDonDichVuSVC_HoaDonDichVu_Add_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HoaDonDichVu_Edit">
+      <wsdl:input wsaw:Action="urn:HoaDonDichVuSVC/HoaDonDichVu_Edit" message="HoaDonDichVuSVC_HoaDonDichVu_Edit_InputMessage" />
+      <wsdl:output wsaw:Action="urn:HoaDonDichVuSVC/HoaDonDichVu_EditResponse" message="HoaDonDichVuSVC_HoaDonDichVu_Edit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HoaDonDichVu_Delete">
+      <wsdl:input wsaw:Action="urn:HoaDonDichVuSVC/HoaDonDichVu_Delete" message="HoaDonDichVuSVC_HoaDonDichVu_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="urn:HoaDonDichVuSVC/HoaDonDichVu_DeleteResponse" message="HoaDonDichVuSVC_HoaDonDichVu_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HoaDonDichVu_GetItem">
+      <wsdl:input wsaw:Action="urn:HoaDonDichVuSVC/HoaDonDichVu_GetItem" message="HoaDonDichVuSVC_HoaDonDichVu_GetItem_InputMessage" />
+      <wsdl:output wsaw:Action="urn:HoaDonDichVuSVC/HoaDonDichVu_GetItemResponse" message="HoaDonDichVuSVC_HoaDonDichVu_GetItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HoaDonDichVu_GetItems">
+      <wsdl:input wsaw:Action="urn:HoaDonDichVuSVC/HoaDonDichVu_GetItems" message="HoaDonDichVuSVC_HoaDonDichVu_GetItems_InputMessage" />
+      <wsdl:output wsaw:Action="urn:HoaDonDichVuSVC/HoaDonDichVu_GetItemsResponse" message="HoaDonDichVuSVC_HoaDonDichVu_GetItems_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
