@@ -27,6 +27,7 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
         // Executes when the user navigates to this page.
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            LoadingPanel.IsBusy = true;
             KhachHangClient.KhachHang_GetItemsCompleted += new EventHandler<KhachHang_GetItemsCompletedEventArgs>(KhachHangClient_KhachHang_GetItemsCompleted);
             KhachHangClient.KhachHang_GetItemsAsync(0);
         }
@@ -34,6 +35,7 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
         void KhachHangClient_KhachHang_GetItemsCompleted(object sender, KhachHang_GetItemsCompletedEventArgs e)
         {
             grvKhachHang.ItemsSource = e.Result;
+            LoadingPanel.IsBusy = false;
         }
 
         void KhachHangClient_KhachHang_DeleteCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
