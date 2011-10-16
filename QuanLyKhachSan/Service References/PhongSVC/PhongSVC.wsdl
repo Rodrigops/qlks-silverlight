@@ -76,6 +76,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="TinhTrang_Phong_Add">
+      <soap:operation soapAction="urn:PhongSVC/TinhTrang_Phong_Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="PhongSVC">
     <wsdl:port name="BasicHttpBinding_PhongSVC" binding="tns:BasicHttpBinding_PhongSVC">

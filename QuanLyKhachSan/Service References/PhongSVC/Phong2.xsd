@@ -122,4 +122,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="TinhTrang_Phong_Add">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PhongID" type="xs:int" />
+        <xs:element minOccurs="0" name="TinhTrangPhongID" type="xs:int" />
+        <xs:element minOccurs="0" name="NgayBatDau_So" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TinhTrang_Phong_AddResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

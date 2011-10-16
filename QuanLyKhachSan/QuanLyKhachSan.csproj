@@ -92,11 +92,15 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Form\QuanLyKhachHang\DateToNumberConverter.cs" />
     <Compile Include="Form\HoaDonDichVu\frmHoaDonDichVu.xaml.cs">
       <DependentUpon>frmHoaDonDichVu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Form\HoaDonDichVu\frmHoaDonDichVuEdit.xaml.cs">
       <DependentUpon>frmHoaDonDichVuEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\QuanLyKhachHang\frmDatPhong.xaml.cs">
+      <DependentUpon>frmDatPhong.xaml</DependentUpon>
     </Compile>
     <Compile Include="Form\QuanLyKhachHang\frmKhachHang.xaml.cs">
       <DependentUpon>frmKhachHang.xaml</DependentUpon>
@@ -234,6 +238,10 @@
     <Page Include="Form\HoaDonDichVu\frmHoaDonDichVuEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\QuanLyKhachHang\frmDatPhong.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Form\QuanLyKhachHang\frmKhachHang.xaml">
       <SubType>Designer</SubType>
@@ -548,6 +556,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Resource Include="Images\DichVu.png" />
     <None Include="Service References\GroupSVC\Group.disco" />
     <None Include="Service References\GroupSVC\configuration91.svcinfo" />
     <None Include="Service References\GroupSVC\configuration.svcinfo" />
