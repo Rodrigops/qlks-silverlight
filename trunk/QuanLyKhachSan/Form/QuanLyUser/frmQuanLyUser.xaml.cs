@@ -39,6 +39,52 @@ namespace QuanLyKhachSan.Form.QuanLyUser
             UserGroupClient.UserGroup_GetItemsAsync();
         }
 
+        #region Group
+        void GroupClient_Group_GetItemsCompleted(object sender, Group_GetItemsCompletedEventArgs e)
+        {
+            grvGroup.ItemsSource = e.Result;
+        }
+        void GroupClient_Group_DeleteCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            GroupClient.Group_GetItemsAsync(0);
+        }
+        void GroupEdit_Closed(object sender, EventArgs e)
+        {
+            frmGroupEdit GroupEdit = sender as frmGroupEdit;
+            if (GroupEdit.DialogResult == true)
+            {
+                GroupClient.Group_GetItemsAsync(0);
+            }
+        }
+        private void cmdThemGroup_Click(object sender, RoutedEventArgs e)
+        {
+            frmGroupEdit GroupEdit = new frmGroupEdit();
+            GroupEdit.Closed += new EventHandler(GroupEdit_Closed);
+            GroupEdit.Group_Load(0);
+            GroupEdit.Show();
+        }
+        private void cmdSuaGroup_Click(object sender, RoutedEventArgs e)
+        {
+            HyperlinkButton cmdSuaGroup = sender as HyperlinkButton;
+            int GroupID = int.Parse(cmdSuaGroup.CommandParameter.ToString());
+            frmGroupEdit GroupEdit = new frmGroupEdit();
+            GroupEdit.Closed += new EventHandler(GroupEdit_Closed);
+            GroupEdit.Group_Load(GroupID);
+            GroupEdit.Show();
+        }
+        private void cmdXoaGroup_Click(object sender, RoutedEventArgs e)
+        {
+            HyperlinkButton cmdXoaGroup = sender as HyperlinkButton;
+            int GroupID = int.Parse(cmdXoaGroup.CommandParameter.ToString());
+            MessageBoxResult msgResult = MessageBox.Show("Bạn muốn xóa mục này", "Thông báo", MessageBoxButton.OKCancel);
+            if (msgResult == MessageBoxResult.OK)
+            {
+                GroupClient.Group_DeleteCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(GroupClient_Group_DeleteCompleted);
+                GroupClient.Group_DeleteAsync(GroupID);
+            }
+        }
+        #endregion
+
         #region User
         void UserClient_User_GetItemsCompleted(object sender, User_GetItemsCompletedEventArgs e)
         {
@@ -128,52 +174,6 @@ namespace QuanLyKhachSan.Form.QuanLyUser
             {
                 UserGroupClient.UserGroup_DeleteCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(UserGroupClient_UserGroup_DeleteCompleted);
                 UserGroupClient.UserGroup_DeleteAsync(UserGroupID);
-            }
-        }
-        #endregion
-
-        #region Group
-        void GroupClient_Group_GetItemsCompleted(object sender, Group_GetItemsCompletedEventArgs e)
-        {
-            grvGroup.ItemsSource = e.Result;
-        }
-        void GroupClient_Group_DeleteCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
-        {
-            GroupClient.Group_GetItemsAsync(0);
-        }
-        void GroupEdit_Closed(object sender, EventArgs e)
-        {
-            frmGroupEdit GroupEdit = sender as frmGroupEdit;
-            if (GroupEdit.DialogResult == true)
-            {
-                GroupClient.Group_GetItemsAsync(0);
-            }
-        }
-        private void cmdThemGroup_Click(object sender, RoutedEventArgs e)
-        {
-            frmGroupEdit GroupEdit = new frmGroupEdit();
-            GroupEdit.Closed += new EventHandler(GroupEdit_Closed);
-            GroupEdit.Group_Load(0);
-            GroupEdit.Show();
-        }
-        private void cmdSuaGroup_Click(object sender, RoutedEventArgs e)
-        {
-            HyperlinkButton cmdSuaGroup = sender as HyperlinkButton;
-            int GroupID = int.Parse(cmdSuaGroup.CommandParameter.ToString());
-            frmGroupEdit GroupEdit = new frmGroupEdit();
-            GroupEdit.Closed += new EventHandler(GroupEdit_Closed);
-            GroupEdit.Group_Load(GroupID);
-            GroupEdit.Show();
-        }
-        private void cmdXoaGroup_Click(object sender, RoutedEventArgs e)
-        {
-            HyperlinkButton cmdXoaGroup = sender as HyperlinkButton;
-            int GroupID = int.Parse(cmdXoaGroup.CommandParameter.ToString());
-            MessageBoxResult msgResult = MessageBox.Show("Bạn muốn xóa mục này", "Thông báo", MessageBoxButton.OKCancel);
-            if (msgResult == MessageBoxResult.OK)
-            {
-                GroupClient.Group_DeleteCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(GroupClient_Group_DeleteCompleted);
-                GroupClient.Group_DeleteAsync(GroupID);
             }
         }
         #endregion
