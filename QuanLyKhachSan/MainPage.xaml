@@ -81,7 +81,9 @@
             </telerik:RadRibbonTab>
             <telerik:RadRibbonTab Header="Admin">
                 <telerik:RadRibbonGroup Header="RibbonGroup" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
-
+                    <telerik:RadRibbonButton Name="cmdQuanLyUser" Click="cmdQuanLyUser_Click">
+                        
+                    </telerik:RadRibbonButton>
                 </telerik:RadRibbonGroup>
             </telerik:RadRibbonTab>
         </telerik:RadRibbonBar>
@@ -94,6 +96,7 @@
                     <uriMapper:UriMapping Uri="CaiDatGia" MappedUri="/Form/QuanLyPhong/frmCaiDatGia.xaml"/>
                     <uriMapper:UriMapping Uri="KhachHang" MappedUri="/Form/QuanLyKhachHang/frmKhachHang.xaml"/>
                     <uriMapper:UriMapping Uri="HoaDonDichVu" MappedUri="/Form/HoaDonDichVu/frmHoaDonDichVu.xaml"/>
+                    <uriMapper:UriMapping Uri="QuanLyUser" MappedUri="/Form/QuanLyUser/frmQuanLyUser.xaml"/>
                 </uriMapper:UriMapper>
             </navigation:Frame.UriMapper>
         </navigation:Frame>
