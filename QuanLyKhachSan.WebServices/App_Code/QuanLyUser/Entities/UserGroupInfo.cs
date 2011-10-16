@@ -9,6 +9,8 @@ namespace QuanLyKhachSan
         private int _GroupID;
         private string _ListGroupID;
         private string _UserName;
+        private string _FullName;
+        private string _DisplayName;
         private string _GroupName;
         private string _ExpiryDate;
         private string _EffectiveDate;
@@ -43,6 +45,16 @@ namespace QuanLyKhachSan
         {
             get { return _UserName; }
             set { _UserName = value; }
+        }
+        public string FullName
+        {
+            get { return _FullName; }
+            set { _FullName = value; }
+        }
+        public string DisplayName
+        {
+            get { return _DisplayName; }
+            set { _DisplayName = value; }
         }
         public string GroupName
         {
