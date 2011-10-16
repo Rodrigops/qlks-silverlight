@@ -80,7 +80,7 @@
                 </telerik:RadRibbonGroup>
             </telerik:RadRibbonTab>
             <telerik:RadRibbonTab Header="Admin">
-                <telerik:RadRibbonGroup Header="RibbonGroup" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
+                <telerik:RadRibbonGroup Header="Quản lý người dùng" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
                     <telerik:RadRibbonButton Name="cmdQuanLyUser" Click="cmdQuanLyUser_Click">
                         
                     </telerik:RadRibbonButton>
