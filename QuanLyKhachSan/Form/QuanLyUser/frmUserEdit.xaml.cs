@@ -23,10 +23,13 @@ namespace QuanLyKhachSan.Form.QuanLyUser
 
         public void User_Load(int _UserID)
         {
-            UserID = _UserID;
-            UserClient = new UserSVCClient();
-            UserClient.User_GetItemCompleted += new EventHandler<User_GetItemCompletedEventArgs>(UserClient_User_GetItemCompleted);
-            UserClient.User_GetItemAsync(UserID);
+            if (_UserID > 0)
+            {
+                UserID = _UserID;
+                UserClient = new UserSVCClient();
+                UserClient.User_GetItemCompleted += new EventHandler<User_GetItemCompletedEventArgs>(UserClient_User_GetItemCompleted);
+                UserClient.User_GetItemAsync(UserID);
+            }
         }
 
         void UserClient_User_GetItemCompleted(object sender, User_GetItemCompletedEventArgs e)
@@ -49,23 +52,29 @@ namespace QuanLyKhachSan.Form.QuanLyUser
             int IsActived = 0;
             if ((bool)chkIsActived.IsChecked)
                 IsActived = 1;
-
-            //Common com = new Common();
-            if (UserID == -1)
+            if (txtPassword.Password.CompareTo(txtConfirm.Password) == 0)
             {
-                UserClient.User_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(UserClient_User_AddCompleted);
-                //UserClient.User_AddAsync(txUserName.Text, com.Encrypt(txtPassWord.Text), txtFullName.Text, txtDisplayName.Text, IsActived, 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                if (UserID == -1)
+                {
+                    UserClient.User_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(UserClient_User_AddCompleted);
+                    UserClient.User_AddAsync(txUserName.Text, txtPassword.Password, txtFullName.Text, txtDisplayName.Text, IsActived, 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                }
+                else
+                {
+                    UserClient.User_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(UserClient_User_EditCompleted);
+                    UserClient.User_EditAsync(UserID, txUserName.Text, txtPassword.Password, txtFullName.Text, txtDisplayName.Text, IsActived, 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                }
             }
             else
             {
-                UserClient.User_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(UserClient_User_EditCompleted);
-                //UserClient.User_EditAsync(UserID, txUserName.Text, com.Encrypt(txtPassWord.Text), txtFullName.Text, txtDisplayName.Text, IsActived, 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                MessageBox.Show("Mật khẩu không chính xác", "Thông báo", MessageBoxButton.OK);
             }
         }
 
         void UserClient_User_EditCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
-            throw new NotImplementedException();
+            UserID = -1;
+            this.DialogResult = true;
         }
 
         void UserClient_User_AddCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)

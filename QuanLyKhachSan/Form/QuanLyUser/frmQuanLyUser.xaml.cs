@@ -159,10 +159,10 @@ namespace QuanLyKhachSan.Form.QuanLyUser
         private void cmdSuaUserGroup_Click(object sender, RoutedEventArgs e)
         {
             HyperlinkButton cmdSuaUserGroup = sender as HyperlinkButton;
-            int UserGroupID = int.Parse(cmdSuaUserGroup.CommandParameter.ToString());
+            int UserID = int.Parse(cmdSuaUserGroup.CommandParameter.ToString());
             frmUserGroupEdit UserGroupEdit = new frmUserGroupEdit();
             UserGroupEdit.Closed += new EventHandler(UserGroupEdit_Closed);
-            UserGroupEdit.UserGroup_Load(UserGroupID);
+            UserGroupEdit.UserGroup_Load(UserID);
             UserGroupEdit.Show();
         }
         private void cmdXoaUserGroup_Click(object sender, RoutedEventArgs e)

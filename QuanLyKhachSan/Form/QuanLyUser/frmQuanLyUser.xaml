@@ -17,18 +17,18 @@
                     <HyperlinkButton CommandParameter="{Binding UserID}" Content="Xóa" Margin="2" Name="cmdXoaUser" Click="cmdXoaUser_Click"></HyperlinkButton>
                 </StackPanel>
             </DataTemplate>
-            <DataTemplate x:Key="Template_grvUserGroup_ColumnEdit">
-                <StackPanel Orientation="Horizontal">
-                    <HyperlinkButton CommandParameter="{Binding UserGroupID}" Content="Sửa" Margin="2" Name="cmdSuaUserGroup" Click="cmdSuaUserGroup_Click"></HyperlinkButton>
-                    <TextBlock Text="|" Margin="2" />
-                    <HyperlinkButton CommandParameter="{Binding UserGroupID}" Content="Xóa" Margin="2" Name="cmdXoaUserGroup" Click="cmdXoaUserGroup_Click"></HyperlinkButton>
-                </StackPanel>
-            </DataTemplate>
             <DataTemplate x:Key="Template_grvGroup_ColumnEdit">
                 <StackPanel Orientation="Horizontal">
                     <HyperlinkButton CommandParameter="{Binding GroupID}" Content="Sửa" Margin="2" Name="cmdSuaGroup" Click="cmdSuaGroup_Click"></HyperlinkButton>
                     <TextBlock Text="|" Margin="2" />
                     <HyperlinkButton CommandParameter="{Binding GroupID}" Content="Xóa" Margin="2" Name="cmdXoaGroup" Click="cmdXoaGroup_Click"></HyperlinkButton>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Key="Template_grvUserGroup_ColumnEdit">
+                <StackPanel Orientation="Horizontal">
+                    <HyperlinkButton CommandParameter="{Binding UserID}" Content="Sửa" Margin="2" Name="cmdSuaUserGroup" Click="cmdSuaUserGroup_Click"></HyperlinkButton>
+                    <TextBlock Text="|" Margin="2" />
+                    <HyperlinkButton CommandParameter="{Binding UserGroupID}" Content="Xóa" Margin="2" Name="cmdXoaUserGroup" Click="cmdXoaUserGroup_Click"></HyperlinkButton>
                 </StackPanel>
             </DataTemplate>
         </Grid.Resources>
