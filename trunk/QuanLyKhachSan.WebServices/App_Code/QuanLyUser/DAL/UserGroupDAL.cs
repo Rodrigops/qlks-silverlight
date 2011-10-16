@@ -76,6 +76,8 @@ namespace QuanLyKhachSan
                 item.UserGroupID = int.Parse(rd["UserGroupID"].ToString());
                 item.UserID = int.Parse(rd["UserID"].ToString());
                 item.UserName = rd["UserName"].ToString();
+                item.FullName = rd["FullName"].ToString();
+                item.DisplayName = rd["DisplayName"].ToString();
                 item.GroupID = int.Parse(rd["GroupID"].ToString());
                 item.GroupName = rd["GroupName"].ToString();
                 item.ExpiryDate = rd["ExpiryDate"].ToString();
