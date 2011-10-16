@@ -93,7 +93,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                     retBorder.Background = new SolidColorBrush(Colors.Green);
                     RadContextMenu.SetContextMenu(retBorder, FullMenu(item));
                     break;
-                case 4:
+                case 3:
                     retBorder.Background = new SolidColorBrush(Colors.Red);
                     RadContextMenu.SetContextMenu(retBorder, TinyMenu(item));
                     break;

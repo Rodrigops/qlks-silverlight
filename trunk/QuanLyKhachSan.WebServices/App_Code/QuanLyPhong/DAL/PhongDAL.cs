@@ -124,6 +124,7 @@ namespace QuanLyKhachSan
                 item.TinhTrangPhongID = int.Parse(rd["TinhTrangPhongID"].ToString());
                 item.NgayBatDau_So = int.Parse(rd["NgayBatDau_So"].ToString());                
                 item.NgayGioPhut_So = long.Parse( rd["NgayBatDau_So"].ToString() + rd["GioBatDau"].ToString() + rd["PhutBatDau"].ToString());
+                item.TinhTrangPhongName = rd["TinhTrangPhongName"].ToString(); 
                 list.Add(item);
             }
             //xu ly 
@@ -153,26 +154,6 @@ namespace QuanLyKhachSan
                 }
                 retList.Add(itemMin);
             }
-                
-                //temp = new List<TinhTrang_PhongInfo>();
-                //for (var j = i + 1; j < list.Count; j++)
-                //{
-                //    if (itemTemp.PhongID == list[j].PhongID)
-                //    {
-                //        temp.Add(list[j]);
-                //    }
-                //}
-                //temp.Add(itemTemp);
-                //itemMin = temp[0];     
-                //for (int k = 1; k < temp.Count; k++)
-                //{
-                //    if (temp[i].NgayBatDau_So < itemMin.NgayBatDau_So)
-                //    {
-                //        itemMin = temp[i];
-                //    }
-                //}
-                //retList.Add(itemMin);
-            //}
             return retList;
         }
         public List<PhongInfo> Phong_GetItemsOnService()
@@ -189,6 +170,14 @@ namespace QuanLyKhachSan
                 list.Add(item);
             }
             return list;
+        }
+        public void TinhTrang_Phong_Add(int PhongID, int TinhTrangPhongID, int NgayBatDau_So)
+        {
+            SQLDataHelper SQLDB = new SQLDataHelper();
+            SQLDB.Addparameter("@PhongID", PhongID);
+            SQLDB.Addparameter("@TinhTrangPhongID", TinhTrangPhongID);
+            SQLDB.Addparameter("@NgayBatDau_So", NgayBatDau_So);
+            SQLDB.executenonquery("sp_TinhTrang_Phong_Add", CommandType.StoredProcedure);
         }
     }
 }
