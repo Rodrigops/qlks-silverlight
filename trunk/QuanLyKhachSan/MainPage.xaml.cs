@@ -57,5 +57,10 @@ namespace QuanLyKhachSan
         {
             ContentFrame.Navigate(new Uri("HoaDonDichVu", UriKind.Relative));   
         }
+
+        private void cmdQuanLyUser_Click(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(new Uri("QuanLyUser", UriKind.Relative));   
+        }
     }
 }
