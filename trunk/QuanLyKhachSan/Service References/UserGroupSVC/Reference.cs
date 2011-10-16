@@ -24,9 +24,13 @@ namespace QuanLyKhachSan.UserGroupSVC {
         
         private string CreatedDateField;
         
+        private string DisplayNameField;
+        
         private string EffectiveDateField;
         
         private string ExpiryDateField;
+        
+        private string FullNameField;
         
         private int GroupIDField;
         
@@ -73,6 +77,19 @@ namespace QuanLyKhachSan.UserGroupSVC {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DisplayName {
+            get {
+                return this.DisplayNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DisplayNameField, value) != true)) {
+                    this.DisplayNameField = value;
+                    this.RaisePropertyChanged("DisplayName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string EffectiveDate {
             get {
                 return this.EffectiveDateField;
@@ -94,6 +111,19 @@ namespace QuanLyKhachSan.UserGroupSVC {
                 if ((object.ReferenceEquals(this.ExpiryDateField, value) != true)) {
                     this.ExpiryDateField = value;
                     this.RaisePropertyChanged("ExpiryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FullName {
+            get {
+                return this.FullNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FullNameField, value) != true)) {
+                    this.FullNameField = value;
+                    this.RaisePropertyChanged("FullName");
                 }
             }
         }

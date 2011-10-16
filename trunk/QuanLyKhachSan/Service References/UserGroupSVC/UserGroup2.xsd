@@ -10,8 +10,10 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="CreatedByUser" type="xs:int" />
       <xs:element minOccurs="0" name="CreatedDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="EffectiveDate" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ExpiryDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="GroupID" type="xs:int" />
       <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="IsTrialUsed" type="xs:int" />
