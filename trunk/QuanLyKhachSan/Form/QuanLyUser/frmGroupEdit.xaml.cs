@@ -23,10 +23,13 @@ namespace QuanLyKhachSan.Form.QuanLyUser
 
         public void Group_Load(int _GroupID)
         {
-            GroupID = _GroupID;
-            GroupClient = new GroupSVCClient();
-            GroupClient.Group_GetItemCompleted += new EventHandler<Group_GetItemCompletedEventArgs>(GroupClient_Group_GetItemCompleted);
-            GroupClient.Group_GetItemAsync(GroupID);
+            if (_GroupID > 0)
+            {
+                GroupID = _GroupID;
+                GroupClient = new GroupSVCClient();
+                GroupClient.Group_GetItemCompleted += new EventHandler<Group_GetItemCompletedEventArgs>(GroupClient_Group_GetItemCompleted);
+                GroupClient.Group_GetItemAsync(GroupID);
+            }
         }
 
         void GroupClient_Group_GetItemCompleted(object sender, Group_GetItemCompletedEventArgs e)

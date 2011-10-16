@@ -2,13 +2,13 @@
            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
            xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
-           Width="350" Height="300" 
+           Width="350" Height="350" 
            Title="Cập nhật Danh sách Tài Khoản trong Nhóm" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" Foreground="#FF0D0D0D">
     <Grid x:Name="LayoutRoot" Margin="2">
         <Grid.Resources>
             <DataTemplate x:Key="Template_grvGroup_GroupNameCheckBox">
                 <StackPanel Orientation="Horizontal">
-                    <CheckBox CommandParameter="{Binding}"></CheckBox>
+                    <CheckBox CommandParameter="{Binding GroupID}"></CheckBox>
                     <TextBlock Text="{Binding GroupName}"></TextBlock>
                 </StackPanel>
             </DataTemplate>
@@ -40,8 +40,8 @@
         <TextBlock Grid.Row="4" Height="23" HorizontalAlignment="Left" Margin="45,10,0,0" Name="textBlock4" Text="Dùng thử:" VerticalAlignment="Top" Grid.RowSpan="2" />
         <telerik:RadComboBox Grid.Column="1" Grid.Row="1" DisplayMemberPath="UserName" SelectedValuePath="UserID" HorizontalAlignment="Left" Name="cbxUser" VerticalAlignment="Top" Width="173" Margin="0,7,0,0" telerik:StyleManager.Theme="Office_Blue">
         </telerik:RadComboBox>
-        <telerik:RadDateTimePicker Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Margin="0,7,0,0" Name="rdpEffectiveDate" VerticalAlignment="Top" Width="173" telerik:StyleManager.Theme="Office_Blue"/>
-        <telerik:RadDateTimePicker Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" Margin="0,7,0,0" Name="rdpExpiryDate" VerticalAlignment="Top" Width="173" telerik:StyleManager.Theme="Office_Blue"/>
+        <telerik:RadDateTimePicker Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Margin="0,7,0,0" Name="rdpEffectiveDate" VerticalAlignment="Top" Width="173" telerik:StyleManager.Theme="Office_Blue" InputMode="DatePicker" Culture="vi-VN" DateTimeWatermarkContent="Chọn ngày" />
+        <telerik:RadDateTimePicker Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" Margin="0,7,0,0" Name="rdpExpiryDate" VerticalAlignment="Top" Width="173" telerik:StyleManager.Theme="Office_Blue" InputMode="DatePicker" Culture="vi-VN" DateTimeWatermarkContent="Chọn ngày" />
         <CheckBox Grid.Column="1" Grid.Row="4" Height="16" HorizontalAlignment="Left" Margin="0,10,0,0" Name="chkIsTrialUsed" VerticalAlignment="Top" IsThreeState="False" IsChecked="True" />
     </Grid>
 </controls:ChildWindow>

@@ -26,11 +26,11 @@
         <TextBlock Grid.Row="3" Height="23" HorizontalAlignment="Left" Margin="27,14,0,0" Name="textBlock4" Text="Tên người dùng:" VerticalAlignment="Top" />
         <TextBlock Grid.Row="4" Height="23" HorizontalAlignment="Left" Margin="48,15,0,0" Name="textBlock5" Text="Tên hiển thị:" VerticalAlignment="Top" />
         <TextBlock Grid.Row="5" Height="23" HorizontalAlignment="Left" Margin="56,14,0,0" Name="textBlock6" Text="Hoạt động:" VerticalAlignment="Top" />
-        <TextBox Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="0,11,0,0" Name="txUserName" VerticalAlignment="Top" Width="227" />
-        <TextBox Grid.Column="1" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="0,11,0,0" Name="txtPassWord" VerticalAlignment="Top" Width="227" />
-        <TextBox Grid.Column="1" Grid.Row="2" Height="23" HorizontalAlignment="Left" Margin="0,11,0,0" Name="txtConfirm" VerticalAlignment="Top" Width="227" />
-        <TextBox Grid.Column="1" Grid.Row="3" Height="23" HorizontalAlignment="Left" Margin="0,10,0,0" Name="txtFullName" VerticalAlignment="Top" Width="227" />
-        <TextBox Grid.Column="1" Grid.Row="4" Height="23" HorizontalAlignment="Left" Margin="0,11,0,0" Name="txtDisplayName" VerticalAlignment="Top" Width="227" />
-        <CheckBox Grid.Column="1" Grid.Row="5" Height="16" HorizontalAlignment="Left" Margin="0,14,0,0" Name="chkIsActived" VerticalAlignment="Top" IsChecked="True" />
+        <TextBox Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="0,11,0,0" Name="txUserName" VerticalAlignment="Top" Width="227" TabIndex="1" />
+        <TextBox Grid.Column="1" Grid.Row="3" Height="23" HorizontalAlignment="Left" Margin="0,10,0,0" Name="txtFullName" VerticalAlignment="Top" Width="227" TabIndex="4" />
+        <TextBox Grid.Column="1" Grid.Row="4" Height="23" HorizontalAlignment="Left" Margin="0,11,0,0" Name="txtDisplayName" VerticalAlignment="Top" Width="227" TabIndex="5" />
+        <CheckBox Grid.Column="1" Grid.Row="5" Height="16" HorizontalAlignment="Left" Margin="0,14,0,0" Name="chkIsActived" VerticalAlignment="Top" IsChecked="True" TabIndex="6" />
+        <PasswordBox Grid.Column="1" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="0,11,0,0" Name="txtPassword" VerticalAlignment="Top" Width="227" TabIndex="2" />
+        <PasswordBox Grid.Column="1" Grid.Row="2" Height="23" HorizontalAlignment="Left" Margin="0,11,0,0" Name="txtConfirm" VerticalAlignment="Top" Width="227" TabIndex="3" />
     </Grid>
 </controls:ChildWindow>
