@@ -31,6 +31,11 @@
                     <HyperlinkButton CommandParameter="{Binding UserGroupID}" Content="Xóa" Margin="2" Name="cmdXoaUserGroup" Click="cmdXoaUserGroup_Click"></HyperlinkButton>
                 </StackPanel>
             </DataTemplate>
+            <DataTemplate x:Key="Template_grvUserGroup_CheckBox">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <CheckBox CommandParameter="{Binding IsTrialUsed}" IsChecked="{Binding IsTrialUsed}" IsEnabled="False"></CheckBox>
+                </StackPanel>
+            </DataTemplate>
         </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"></RowDefinition>
@@ -72,8 +77,9 @@
                         <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Left" Header="Tên người dùng" DataMemberBinding="{Binding Path=FullName}" Width="150" ></telerik:GridViewDataColumn>
                         <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Ngày bắt đầu" DataMemberBinding="{Binding Path=EffectiveDate}" Width="120"></telerik:GridViewDataColumn>
                         <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Ngày hết hạn" DataMemberBinding="{Binding Path=ExpiryDate}" Width="120"></telerik:GridViewDataColumn>
-                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Dùng thử" DataMemberBinding="{Binding Path=IsTrialUsed}" Width="70"></telerik:GridViewDataColumn>
-                        <telerik:GridViewColumn Header="Chỉnh Sửa" Width="80" CellTemplate="{StaticResource Template_grvUserGroup_ColumnEdit}"></telerik:GridViewColumn>
+                        <!--<telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Dùng thử" DataMemberBinding="{Binding Path=IsTrialUsed}" Width="70"></telerik:GridViewDataColumn>-->
+                        <telerik:GridViewColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Dùng thử" Width="70" CellTemplate="{StaticResource Template_grvUserGroup_CheckBox}" UniqueName="IsTrialUsed"></telerik:GridViewColumn>
+                        <telerik:GridViewColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Chỉnh Sửa" Width="80" CellTemplate="{StaticResource Template_grvUserGroup_ColumnEdit}"></telerik:GridViewColumn>
                     </telerik:RadGridView.Columns>
                 </telerik:RadGridView>
                 <telerik:RadBusyIndicator Name="LoadingPanel" Height="300" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center" BusyContent="Đang tại dữ liệu.Vui lòng chờ..." telerik:StyleManager.Theme="Metro"/>
