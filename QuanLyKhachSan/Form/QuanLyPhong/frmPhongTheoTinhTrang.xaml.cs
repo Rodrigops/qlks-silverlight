@@ -207,6 +207,10 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                     DanhSachKhachHang_DatPhong.Phong_KhachHang_DatPhong_Load(item.HoaDonID, item.PhongID);
                     DanhSachKhachHang_DatPhong.Show();
                     break;
+                case "TraPhong":
+                    frmPhong_KhachHang_TraPhong DanhSachKhachHang_TraPhong = new frmPhong_KhachHang_TraPhong();
+                    DanhSachKhachHang_TraPhong.Show();
+                    break;
             }
 
         }

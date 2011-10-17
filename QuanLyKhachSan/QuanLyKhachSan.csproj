@@ -130,6 +130,9 @@
     <Compile Include="Form\QuanLyPhong\frmPhong_KhachHang_NhanPhong.xaml.cs">
       <DependentUpon>frmPhong_KhachHang_NhanPhong.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Form\QuanLyPhong\frmPhong_KhachHang_TraPhong.xaml.cs">
+      <DependentUpon>frmPhong_KhachHang_TraPhong.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Form\QuanLyPhong\frmTienNghiEdit.xaml.cs">
       <DependentUpon>frmTienNghiEdit.xaml</DependentUpon>
     </Compile>
@@ -288,6 +291,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Form\QuanLyPhong\frmPhong_KhachHang_NhanPhong.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\QuanLyPhong\frmPhong_KhachHang_TraPhong.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
