@@ -28,6 +28,7 @@
   <xs:complexType name="TinhTrang_PhongInfo">
     <xs:sequence>
       <xs:element minOccurs="0" name="GioBatDau" type="xs:int" />
+      <xs:element minOccurs="0" name="HoaDonID" type="xs:int" />
       <xs:element minOccurs="0" name="IsDeleted" type="xs:boolean" />
       <xs:element minOccurs="0" name="NgayBatDau_So" type="xs:int" />
       <xs:element minOccurs="0" name="NgayGioPhut_So" type="xs:long" />

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDon/HoaDon_KhachHang.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" />
   <xs:element name="HoaDon_KhachHang_Add">
     <xs:complexType>
       <xs:sequence>
+        <xs:element minOccurs="0" name="LoaiHoaDon" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="KhachHangId" type="xs:int" />
         <xs:element minOccurs="0" name="PhongID" type="xs:int" />
         <xs:element minOccurs="0" name="NgayBatDau" nillable="true" type="xs:string" />
@@ -18,6 +20,48 @@
   <xs:element name="HoaDon_KhachHang_AddResponse">
     <xs:complexType>
       <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Phong_KhachHang_GetItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HoaDonID" type="xs:int" />
+        <xs:element minOccurs="0" name="PhongID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Phong_KhachHang_GetItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" minOccurs="0" name="Phong_KhachHang_GetItemsResult" nillable="true" type="q1:ArrayOfPhong_KhachHangInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Phong_KhachHang_Delete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HoaDonID" type="xs:int" />
+        <xs:element minOccurs="0" name="KhachHangID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Phong_KhachHang_DeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Phong_KhachHang_DatPhong">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PhongID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Phong_KhachHang_DatPhongResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" minOccurs="0" name="Phong_KhachHang_DatPhongResult" nillable="true" type="q2:ArrayOfPhong_KhachHangInfo" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
 </xs:schema>

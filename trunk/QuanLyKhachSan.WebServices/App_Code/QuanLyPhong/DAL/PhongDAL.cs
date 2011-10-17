@@ -124,7 +124,8 @@ namespace QuanLyKhachSan
                 item.TinhTrangPhongID = int.Parse(rd["TinhTrangPhongID"].ToString());
                 item.NgayBatDau_So = int.Parse(rd["NgayBatDau_So"].ToString());                
                 item.NgayGioPhut_So = long.Parse( rd["NgayBatDau_So"].ToString() + rd["GioBatDau"].ToString() + rd["PhutBatDau"].ToString());
-                item.TinhTrangPhongName = rd["TinhTrangPhongName"].ToString(); 
+                item.TinhTrangPhongName = rd["TinhTrangPhongName"].ToString();
+                item.HoaDonID = int.Parse(rd["HoaDonID"].ToString()); 
                 list.Add(item);
             }
             //xu ly 
@@ -171,7 +172,7 @@ namespace QuanLyKhachSan
             }
             return list;
         }
-        public void TinhTrang_Phong_Add(int PhongID, int TinhTrangPhongID, int NgayBatDau_So)
+        public void TinhTrang_Phong_Add(int PhongID, int TinhTrangPhongID,int NgayBatDau_So)
         {
             SQLDataHelper SQLDB = new SQLDataHelper();
             SQLDB.Addparameter("@PhongID", PhongID);

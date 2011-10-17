@@ -47,10 +47,10 @@ namespace QuanLyKhachSan
             PhongDAL doit = new PhongDAL();
             return doit.Phong_GetItemsOnService();
         }
-        public static void TinhTrang_Phong_Add(int PhongID, int TinhTrangPhongID, int NgayBatDau_So)
+        public static void TinhTrang_Phong_Add(int PhongID, int TinhTrangPhongID,int NgayBatDau_So)
         {
             PhongDAL doit = new PhongDAL();
-            doit.TinhTrang_Phong_Add(PhongID, TinhTrangPhongID, NgayBatDau_So);
+            doit.TinhTrang_Phong_Add(PhongID, TinhTrangPhongID,NgayBatDau_So);
         }
     }
 }
