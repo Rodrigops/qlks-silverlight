@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="55b0037b-df4a-426a-b0b0-51101bff4517" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Gia_Phong.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Gia_Phong.disco" MetadataType="Disco" ID="7d57508a-ed9d-4ed9-b4e0-c1593b849b57" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Gia_Phong.svc?disco" />
+    <MetadataFile FileName="Gia_Phong.xsd" MetadataType="Schema" ID="4b61142d-f484-499c-a2d7-ea641b643bda" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Gia_Phong.svc?xsd=xsd0" />
+    <MetadataFile FileName="Gia_Phong1.xsd" MetadataType="Schema" ID="0cec0f5c-7793-431d-8c25-2c9eefcb0249" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Gia_Phong.svc?xsd=xsd2" />
+    <MetadataFile FileName="Gia_Phong.wsdl" MetadataType="Wsdl" ID="c644ba3f-ede2-448b-896a-acafb783aafa" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Gia_Phong.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Gia_PhongSVC.wsdl" MetadataType="Wsdl" ID="5c7700fd-3a4f-426c-9fde-8bfc61e7e9e7" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Gia_Phong.svc?wsdl" />
+    <MetadataFile FileName="Gia_Phong2.xsd" MetadataType="Schema" ID="839ba90c-a1b9-4ec5-ae47-6f59c137dee5" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Gia_Phong.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
