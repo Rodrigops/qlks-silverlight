@@ -10,14 +10,24 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Navigation;
-
+using QuanLyKhachSan.Gia_PhongSVC;
 namespace QuanLyKhachSan.Form.QuanLyPhong
 {
     public partial class frmGiaPhong : Page
     {
+        Gia_PhongSVCClient Gia_PhongClient = new Gia_PhongSVCClient();
         public frmGiaPhong()
         {
             InitializeComponent();
+            LoadingPanel.IsBusy = true;
+            Gia_PhongClient.Phong_GiaPhongCompleted += new EventHandler<Phong_GiaPhongCompletedEventArgs>(Gia_PhongClient_Phong_GiaPhongCompleted);
+            Gia_PhongClient.Phong_GiaPhongAsync();
+        }
+
+        void Gia_PhongClient_Phong_GiaPhongCompleted(object sender, Phong_GiaPhongCompletedEventArgs e)
+        {
+            grvGiaPhong.ItemsSource = e.Result;
+            LoadingPanel.IsBusy = false;
         }
 
         // Executes when the user navigates to this page.

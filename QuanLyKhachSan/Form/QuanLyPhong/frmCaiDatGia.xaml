@@ -8,7 +8,7 @@
            xmlns:local="clr-namespace:QuanLyKhachSan.Form.QuanLyPhong"
            xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
            d:DesignWidth="1000" d:DesignHeight="800"
-           Title="frmCaiDatGia Page" >
+           Title="Cài đặt giá" >
     <Grid x:Name="LayoutRoot">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
