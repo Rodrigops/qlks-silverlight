@@ -12,18 +12,28 @@ using System.Windows.Shapes;
 using System.Windows.Navigation;
 using Telerik.Windows.Controls;
 using QuanLyKhachSan.PhongSVC;
+using QuanLyKhachSan.KhachHangSVC;
+using QuanLyKhachSan.Form.QuanLyKhachHang;
+using Telerik.Windows.Controls.GridView;
 namespace QuanLyKhachSan.Form.QuanLyPhong
 {
     public partial class frmPhongTheoTinhTrang : Page
     {
         PhongSVCClient PhongClient = new PhongSVCClient();
+        KhachHangSVCClient KhachHangClient = new KhachHangSVCClient();
         public frmPhongTheoTinhTrang()
         {
             InitializeComponent();
             LoadingPanel.IsBusy = true;
             PhongClient.Phong_GetItems_ByTinhTrangCompleted += new EventHandler<Phong_GetItems_ByTinhTrangCompletedEventArgs>(PhongClient_Phong_GetItems_ByTinhTrangCompleted);
             PhongClient.Phong_GetItems_ByTinhTrangAsync();
+            KhachHangClient.KhachHang_GetItemsCompleted += new EventHandler<KhachHang_GetItemsCompletedEventArgs>(KhachHangClient_KhachHang_GetItemsCompleted);
+            KhachHangClient.KhachHang_GetItemsAsync(0);
+        }
 
+        void KhachHangClient_KhachHang_GetItemsCompleted(object sender, KhachHang_GetItemsCompletedEventArgs e)
+        {
+            grvKhachHang.ItemsSource = e.Result;
         }
 
         void PhongClient_Phong_GetItems_ByTinhTrangCompleted(object sender, Phong_GetItems_ByTinhTrangCompletedEventArgs e)
@@ -44,6 +54,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                 Row = Row + 1;
             }
             StackPanel pnel = null;
+            pnlMain.Children.Clear();
             for (int i = 0; i < Row; i++)
             {
                 pnel = new StackPanel();
@@ -85,16 +96,28 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
             retBorder.BorderBrush = new SolidColorBrush(Colors.Black);            
             switch (item.TinhTrangPhongID)
             { 
-                case 1:
+                case 1://còn trống
                     retBorder.Background = new SolidColorBrush(Colors.White);
                     RadContextMenu.SetContextMenu(retBorder, TinyMenu(item));
                     break;
-                case 2:
+                case 2://đã đặt
+                    retBorder.Background = new SolidColorBrush(Colors.Brown);
+                    RadContextMenu.SetContextMenu(retBorder, CustomMenu(item));
+                    break;
+                case 3://đang ở
                     retBorder.Background = new SolidColorBrush(Colors.Green);
                     RadContextMenu.SetContextMenu(retBorder, FullMenu(item));
                     break;
-                case 3:
+                case 4://cần sửa
                     retBorder.Background = new SolidColorBrush(Colors.Red);
+                    RadContextMenu.SetContextMenu(retBorder, TinyMenu(item));
+                    break;
+                case 5://chưa dọn
+                    retBorder.Background = new SolidColorBrush(Colors.Yellow);
+                    RadContextMenu.SetContextMenu(retBorder, TinyMenu(item));
+                    break;
+                case 6://Rời phòng
+                    retBorder.Background = new SolidColorBrush(Colors.Purple);
                     RadContextMenu.SetContextMenu(retBorder, TinyMenu(item));
                     break;
             }
@@ -115,7 +138,34 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
             retBorder.Child = txtContent;
             return retBorder;
         }
-
+        private RadContextMenu CustomMenu(TinhTrang_PhongInfo item)
+        {
+            RadContextMenu retContextMenu = new RadContextMenu();
+            retContextMenu.Cursor = Cursors.Hand;
+            retContextMenu.EventName = "MouseLeftButtonUp";
+            retContextMenu.IconColumnWidth = 0;
+            StyleManager.SetTheme(retContextMenu, new Office_BlueTheme());
+            RadMenuItem menuItem = null;
+            menuItem = new RadMenuItem();
+            menuItem.Tag = "ThongTinPhong";
+            menuItem.CommandParameter = item;
+            menuItem.Header = "Thông tin phòng";
+            menuItem.Click += new Telerik.Windows.RadRoutedEventHandler(menuItem_Click);
+            retContextMenu.Items.Add(menuItem);
+            menuItem = new RadMenuItem();
+            menuItem.Header = "Danh sách khách hàng";
+            menuItem.Tag = "DanhSachKhachHang";
+            menuItem.CommandParameter = item;
+            menuItem.Click += new Telerik.Windows.RadRoutedEventHandler(menuItem_Click);
+            retContextMenu.Items.Add(menuItem);
+            menuItem = new RadMenuItem();
+            menuItem.Header = "Danh sách đặt phòng";
+            menuItem.Tag = "DanhSachDatPhong";
+            menuItem.CommandParameter = item;
+            menuItem.Click += new Telerik.Windows.RadRoutedEventHandler(menuItem_Click);
+            retContextMenu.Items.Add(menuItem);
+            return retContextMenu;
+        }
         private RadContextMenu TinyMenu(TinhTrang_PhongInfo item)
         {
             RadContextMenu retContextMenu = new RadContextMenu();
@@ -137,7 +187,37 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         {
             RadMenuItem menuItem = sender as RadMenuItem;
             TinhTrang_PhongInfo item = menuItem.CommandParameter as TinhTrang_PhongInfo;
-            MessageBox.Show(menuItem.Tag.ToString() + "_" + item.PhongID);
+            switch (menuItem.Tag.ToString())
+            { 
+                case "ThongTinPhong":
+                    frmChiTietPhong ChiTietPhong = new frmChiTietPhong();
+                    ChiTietPhong.Closed += new EventHandler(ChiTietPhong_Closed);
+                    ChiTietPhong.Show();
+                    ChiTietPhong.Phong_Load(item.PhongID,item.TinhTrangPhongID);
+                    break;
+                case "DanhSachKhachHang":
+                    frmPhong_KhachHang_NhanPhong DanhSachKhachHang_NhanPhong = new frmPhong_KhachHang_NhanPhong();
+                    DanhSachKhachHang_NhanPhong.Title = "Danh sách khách hàng phòng " + item.PhongName;
+                    DanhSachKhachHang_NhanPhong.Phong_KhachHang_Load(item.HoaDonID, item.PhongID);
+                    DanhSachKhachHang_NhanPhong.Show();
+                    break;
+                case "DanhSachDatPhong":
+                    frmPhong_KhachHang_DatPhong DanhSachKhachHang_DatPhong = new frmPhong_KhachHang_DatPhong();
+                    DanhSachKhachHang_DatPhong.Title = "Danh sách khách hàng đặt phòng " + item.PhongName;
+                    DanhSachKhachHang_DatPhong.Phong_KhachHang_DatPhong_Load(item.HoaDonID, item.PhongID);
+                    DanhSachKhachHang_DatPhong.Show();
+                    break;
+            }
+
+        }
+
+        void ChiTietPhong_Closed(object sender, EventArgs e)
+        {
+            frmChiTietPhong ChiTietPhong = sender as frmChiTietPhong;
+            if (ChiTietPhong.DialogResult == true)
+            {
+                PhongClient.Phong_GetItems_ByTinhTrangAsync();
+            }
         }
         private RadContextMenu FullMenu( TinhTrang_PhongInfo item )
         {
@@ -156,6 +236,12 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
             menuItem = new RadMenuItem();
             menuItem.Header = "Danh sách khách hàng";
             menuItem.Tag = "DanhSachKhachHang";
+            menuItem.CommandParameter = item;
+            menuItem.Click += new Telerik.Windows.RadRoutedEventHandler(menuItem_Click);
+            retContextMenu.Items.Add(menuItem);
+            menuItem = new RadMenuItem();
+            menuItem.Header = "Danh sách đặt phòng";
+            menuItem.Tag = "DanhSachDatPhong";
             menuItem.CommandParameter = item;
             menuItem.Click += new Telerik.Windows.RadRoutedEventHandler(menuItem_Click);
             retContextMenu.Items.Add(menuItem);
@@ -185,5 +271,110 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
             retContextMenu.Items.Add(menuItem);
             return retContextMenu;
         }
+        #region KhachHang
+        void KhachHangEdit_Closed(object sender, EventArgs e)
+        {
+            frmKhachHangEdit KhachHangEdit = sender as frmKhachHangEdit;
+            if (KhachHangEdit.DialogResult == true)
+            {
+                KhachHangClient.KhachHang_GetItemsAsync(0);
+            }
+        }
+
+        private void cmdThemKhachHang_Click(object sender, RoutedEventArgs e)
+        {
+            frmKhachHangEdit KhachHangEdit = new frmKhachHangEdit();
+            KhachHangEdit.Closed += new EventHandler(KhachHangEdit_Closed);
+            KhachHangEdit.KhachHang_Load(0);
+            KhachHangEdit.Show();
+        }
+
+        private void cmdSuaKhachHang_Click(object sender, RoutedEventArgs e)
+        {
+            HyperlinkButton cmdSuaKhachHang = sender as HyperlinkButton;
+            int KhachHangID = int.Parse(cmdSuaKhachHang.CommandParameter.ToString());
+            frmKhachHangEdit KhachHangEdit = new frmKhachHangEdit();
+            KhachHangEdit.Closed += new EventHandler(KhachHangEdit_Closed);
+            KhachHangEdit.KhachHang_Load(KhachHangID);
+            KhachHangEdit.Show();
+        }
+
+        private void cmdXoaKhachHang_Click(object sender, RoutedEventArgs e)
+        {
+            HyperlinkButton cmdXoaKhachHang = sender as HyperlinkButton;
+            int KhachHangID = int.Parse(cmdXoaKhachHang.CommandParameter.ToString());
+            MessageBoxResult msgResult = MessageBox.Show("Bạn muốn xóa mục này", "Thông báo", MessageBoxButton.OKCancel);
+            if (msgResult == MessageBoxResult.OK)
+            {
+                KhachHangClient.KhachHang_DeleteCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(KhachHangClient_KhachHang_DeleteCompleted);
+                KhachHangClient.KhachHang_DeleteAsync(KhachHangID, 0, DateTime.Now.ToString("MM/dd/yyyy"));
+            }
+        }
+        void KhachHangClient_KhachHang_DeleteCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            KhachHangClient.KhachHang_GetItemsAsync(0);
+        }
+        #endregion
+        #region DatPhong
+        private void cmdThucHien_Click(object sender, RoutedEventArgs e)
+        {
+            var cells = grvKhachHang.ChildrenOfType<GridViewCell>().Where(c => c.Column.UniqueName == "HoTen").ToList();
+            //cells.ForEach(c => c.ChildrenOfType<CheckBox>().First().IsChecked = true);
+            List<KhachHangInfo> listKhachHang = new List<KhachHangInfo>();
+            for (int i = 0; i < cells.Count; i++)
+            {
+                CheckBox cbx = cells[i].ChildrenOfType<CheckBox>().First();
+                if (cbx.IsChecked == true)
+                {
+                    KhachHangInfo item = cbx.CommandParameter as KhachHangInfo;
+                    listKhachHang.Add(item);
+                }
+            }
+            if (listKhachHang.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn khách hàng trước khi thao tác!");                
+            }
+            else
+            {
+                RadComboBoxItem SelectedItem = cbxThaoTac.SelectedValue as RadComboBoxItem;
+                if (SelectedItem.Tag.ToString() == "0")
+                {
+                    frmDatPhong DatPhong = new frmDatPhong();
+                    DatPhong.KhachHang_Load(listKhachHang);
+                    DatPhong.Closed += new EventHandler(DatPhong_Closed);
+                    DatPhong.Show();
+                }
+                else if (SelectedItem.Tag.ToString() == "1")
+                {
+                    frmNhanPhong NhanPhong = new frmNhanPhong();
+                    NhanPhong.KhachHang_Load(listKhachHang);
+                    NhanPhong.Closed += new EventHandler(NhanPhong_Closed);
+                    NhanPhong.Show();
+                }
+                else if (SelectedItem.Tag.ToString() == "2")
+                {
+
+                }
+            }
+        }
+
+        void NhanPhong_Closed(object sender, EventArgs e)
+        {
+            frmNhanPhong NhanPhong = sender as frmNhanPhong;
+            if (NhanPhong.DialogResult == true)
+            {
+                PhongClient.Phong_GetItems_ByTinhTrangAsync();
+            }
+        }
+
+        void DatPhong_Closed(object sender, EventArgs e)
+        {
+            frmDatPhong DatPhong = sender as frmDatPhong;
+            if (DatPhong.DialogResult == true)
+            {
+                PhongClient.Phong_GetItems_ByTinhTrangAsync();
+            }
+        }
+        #endregion
     }
 }

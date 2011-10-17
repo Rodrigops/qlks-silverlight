@@ -4,6 +4,7 @@
     <xsd:schema targetNamespace="/Imports">
       <xsd:import schemaLocation="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDon/HoaDon_KhachHang.svc?xsd=xsd0" />
       <xsd:import schemaLocation="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDon/HoaDon_KhachHang.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDon/HoaDon_KhachHang.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="HoaDon_KhachHangSVC_HoaDon_KhachHang_Add_InputMessage">
@@ -12,10 +13,40 @@
   <wsdl:message name="HoaDon_KhachHangSVC_HoaDon_KhachHang_Add_OutputMessage">
     <wsdl:part name="parameters" element="HoaDon_KhachHang_AddResponse" />
   </wsdl:message>
+  <wsdl:message name="HoaDon_KhachHangSVC_Phong_KhachHang_GetItems_InputMessage">
+    <wsdl:part name="parameters" element="Phong_KhachHang_GetItems" />
+  </wsdl:message>
+  <wsdl:message name="HoaDon_KhachHangSVC_Phong_KhachHang_GetItems_OutputMessage">
+    <wsdl:part name="parameters" element="Phong_KhachHang_GetItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="HoaDon_KhachHangSVC_Phong_KhachHang_Delete_InputMessage">
+    <wsdl:part name="parameters" element="Phong_KhachHang_Delete" />
+  </wsdl:message>
+  <wsdl:message name="HoaDon_KhachHangSVC_Phong_KhachHang_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="Phong_KhachHang_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="HoaDon_KhachHangSVC_Phong_KhachHang_DatPhong_InputMessage">
+    <wsdl:part name="parameters" element="Phong_KhachHang_DatPhong" />
+  </wsdl:message>
+  <wsdl:message name="HoaDon_KhachHangSVC_Phong_KhachHang_DatPhong_OutputMessage">
+    <wsdl:part name="parameters" element="Phong_KhachHang_DatPhongResponse" />
+  </wsdl:message>
   <wsdl:portType name="HoaDon_KhachHangSVC">
     <wsdl:operation name="HoaDon_KhachHang_Add">
       <wsdl:input wsaw:Action="urn:HoaDon_KhachHangSVC/HoaDon_KhachHang_Add" message="HoaDon_KhachHangSVC_HoaDon_KhachHang_Add_InputMessage" />
       <wsdl:output wsaw:Action="urn:HoaDon_KhachHangSVC/HoaDon_KhachHang_AddResponse" message="HoaDon_KhachHangSVC_HoaDon_KhachHang_Add_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Phong_KhachHang_GetItems">
+      <wsdl:input wsaw:Action="urn:HoaDon_KhachHangSVC/Phong_KhachHang_GetItems" message="HoaDon_KhachHangSVC_Phong_KhachHang_GetItems_InputMessage" />
+      <wsdl:output wsaw:Action="urn:HoaDon_KhachHangSVC/Phong_KhachHang_GetItemsResponse" message="HoaDon_KhachHangSVC_Phong_KhachHang_GetItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Phong_KhachHang_Delete">
+      <wsdl:input wsaw:Action="urn:HoaDon_KhachHangSVC/Phong_KhachHang_Delete" message="HoaDon_KhachHangSVC_Phong_KhachHang_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="urn:HoaDon_KhachHangSVC/Phong_KhachHang_DeleteResponse" message="HoaDon_KhachHangSVC_Phong_KhachHang_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Phong_KhachHang_DatPhong">
+      <wsdl:input wsaw:Action="urn:HoaDon_KhachHangSVC/Phong_KhachHang_DatPhong" message="HoaDon_KhachHangSVC_Phong_KhachHang_DatPhong_InputMessage" />
+      <wsdl:output wsaw:Action="urn:HoaDon_KhachHangSVC/Phong_KhachHang_DatPhongResponse" message="HoaDon_KhachHangSVC_Phong_KhachHang_DatPhong_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

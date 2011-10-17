@@ -15,11 +15,11 @@ using QuanLyKhachSan.HoaDonSVC;
 using QuanLyKhachSan.HoaDon_KhachHangSVC;
 namespace QuanLyKhachSan.Form.QuanLyKhachHang
 {
-    public partial class frmDatPhong : ChildWindow
+    public partial class frmNhanPhong : ChildWindow
     {
         PhongSVCClient PhongClient = new PhongSVCClient();
         private List<KhachHangInfo> listKhachHang;
-        public frmDatPhong()
+        public frmNhanPhong()
         {
             InitializeComponent();
             PhongClient.Phong_GetItems_ByTinhTrangCompleted += new EventHandler<Phong_GetItems_ByTinhTrangCompletedEventArgs>(PhongClient_Phong_GetItems_ByTinhTrangCompleted);
@@ -67,10 +67,10 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
 
             foreach (KhachHangInfo item in listKhachHang)
             {                   
-                HoaDon_KhachHangClient.HoaDon_KhachHang_AddAsync("DatPhong",item.KhachHangID, PhongID, sNgayBatDau, iGioBatDau, iPhutBatDau, iNgayBatDau_So, iThangBatDau, iNamBatDau, sNgayKetThuc);                
+                HoaDon_KhachHangClient.HoaDon_KhachHang_AddAsync("NhanPhong",item.KhachHangID, PhongID, sNgayBatDau, iGioBatDau, iPhutBatDau, iNgayBatDau_So, iThangBatDau, iNamBatDau, sNgayKetThuc);                
             }
             PhongClient.TinhTrang_Phong_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(PhongClient_TinhTrang_Phong_AddCompleted);
-            PhongClient.TinhTrang_Phong_AddAsync(PhongID, 2, iNgayBatDau_So);            
+            PhongClient.TinhTrang_Phong_AddAsync(PhongID, 3, iNgayBatDau_So);
         }
 
         void PhongClient_TinhTrang_Phong_AddCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)

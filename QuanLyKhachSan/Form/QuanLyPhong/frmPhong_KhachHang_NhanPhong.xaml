@@ -1,0 +1,25 @@
+﻿<controls:ChildWindow x:Class="QuanLyKhachSan.Form.QuanLyPhong.frmPhong_KhachHang_NhanPhong"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           Width="473" Height="300" 
+           Title="Danh sách khách hàng" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+    <Grid x:Name="LayoutRoot" Margin="2" Height="264">
+        <Grid.RowDefinitions>
+        </Grid.RowDefinitions>
+        <telerik:RadGridView AutoGenerateColumns="False" IsFilteringAllowed="False" Margin="6,0,0,37" Name="grvKhachHang" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" telerik:StyleManager.Theme="Office_Blue" VerticalAlignment="Stretch">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=HoTen}" Header="Họ Tên" Width="*" />
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=CMND}" Header="CMND/Passport" Width="130" />
+                <telerik:GridViewDataColumn Header="Chỉnh sửa" Width="80">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <HyperlinkButton Content="[Xóa]" CommandParameter="{Binding}" Name="cmdXoa" Click="cmdXoa_Click" Width="80" VerticalContentAlignment="Center"></HyperlinkButton>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+        <telerik:RadButton Content="Đóng" Height="26" HorizontalAlignment="Left" Margin="366,233,0,0" Name="cmdDong" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="83" Click="cmdDong_Click" telerik:StyleManager.Theme="Office_Blue" />
+    </Grid>
+</controls:ChildWindow>

@@ -92,6 +92,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Form\QuanLyKhachHang\frmDatPhong.xaml.cs">
+      <DependentUpon>frmDatPhong.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Form\QuanLyKhachHang\DateToNumberConverter.cs" />
     <Compile Include="Form\HoaDonDichVu\frmHoaDonDichVu.xaml.cs">
       <DependentUpon>frmHoaDonDichVu.xaml</DependentUpon>
@@ -99,16 +102,22 @@
     <Compile Include="Form\HoaDonDichVu\frmHoaDonDichVuEdit.xaml.cs">
       <DependentUpon>frmHoaDonDichVuEdit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Form\QuanLyKhachHang\frmDatPhong.xaml.cs">
-      <DependentUpon>frmDatPhong.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Form\QuanLyKhachHang\frmKhachHang.xaml.cs">
       <DependentUpon>frmKhachHang.xaml</DependentUpon>
     </Compile>
     <Compile Include="Form\QuanLyKhachHang\frmKhachHangEdit.xaml.cs">
       <DependentUpon>frmKhachHangEdit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Form\QuanLyKhachHang\frmNhanPhong.xaml.cs">
+      <DependentUpon>frmNhanPhong.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Form\QuanLyKhachHang\SexFormater.cs" />
+    <Compile Include="Form\QuanLyPhong\frmPhong_KhachHang_DatPhong.xaml.cs">
+      <DependentUpon>frmPhong_KhachHang_DatPhong.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\QuanLyPhong\frmChiTietPhong.xaml.cs">
+      <DependentUpon>frmChiTietPhong.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Form\QuanLyPhong\frmDichVuEdit.xaml.cs">
       <DependentUpon>frmDichVuEdit.xaml</DependentUpon>
     </Compile>
@@ -117,6 +126,9 @@
     </Compile>
     <Compile Include="Form\QuanLyPhong\frmPhongTheoTinhTrang.xaml.cs">
       <DependentUpon>frmPhongTheoTinhTrang.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\QuanLyPhong\frmPhong_KhachHang_NhanPhong.xaml.cs">
+      <DependentUpon>frmPhong_KhachHang_NhanPhong.xaml</DependentUpon>
     </Compile>
     <Compile Include="Form\QuanLyPhong\frmTienNghiEdit.xaml.cs">
       <DependentUpon>frmTienNghiEdit.xaml</DependentUpon>
@@ -251,6 +263,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Form\QuanLyKhachHang\frmNhanPhong.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\QuanLyPhong\frmPhong_KhachHang_DatPhong.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Form\QuanLyPhong\frmChiTietPhong.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Form\QuanLyPhong\frmDichVuEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -260,6 +284,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Form\QuanLyPhong\frmPhongTheoTinhTrang.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\QuanLyPhong\frmPhong_KhachHang_NhanPhong.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -377,7 +405,13 @@
     <None Include="Service References\HoaDon_KhachHangSVC\HoaDon_KhachHang1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\HoaDon_KhachHangSVC\HoaDon_KhachHang2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\HoaDon_KhachHangSVC\HoaDon_KhachHangSVC.wsdl" />
+    <None Include="Service References\HoaDon_KhachHangSVC\QuanLyKhachSan.HoaDon_KhachHangSVC.Phong_KhachHangInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\KhachHangSVC\KhachHang.wsdl" />
     <None Include="Service References\KhachHangSVC\KhachHang.xsd">
       <SubType>Designer</SubType>

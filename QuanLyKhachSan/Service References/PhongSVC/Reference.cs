@@ -373,6 +373,10 @@ namespace QuanLyKhachSan.PhongSVC {
         
         private bool gioBatDauFieldSpecified;
         
+        private int hoaDonIDField;
+        
+        private bool hoaDonIDFieldSpecified;
+        
         private bool isDeletedField;
         
         private bool isDeletedFieldSpecified;
@@ -429,6 +433,30 @@ namespace QuanLyKhachSan.PhongSVC {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int HoaDonID {
+            get {
+                return this.hoaDonIDField;
+            }
+            set {
+                this.hoaDonIDField = value;
+                this.RaisePropertyChanged("HoaDonID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool HoaDonIDSpecified {
+            get {
+                return this.hoaDonIDFieldSpecified;
+            }
+            set {
+                this.hoaDonIDFieldSpecified = value;
+                this.RaisePropertyChanged("HoaDonIDSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public bool IsDeleted {
             get {
                 return this.isDeletedField;
@@ -452,7 +480,7 @@ namespace QuanLyKhachSan.PhongSVC {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public int NgayBatDau_So {
             get {
                 return this.ngayBatDau_SoField;
@@ -476,7 +504,7 @@ namespace QuanLyKhachSan.PhongSVC {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public long NgayGioPhut_So {
             get {
                 return this.ngayGioPhut_SoField;
@@ -500,7 +528,7 @@ namespace QuanLyKhachSan.PhongSVC {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public int PhongID {
             get {
                 return this.phongIDField;
@@ -524,7 +552,7 @@ namespace QuanLyKhachSan.PhongSVC {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
         public string PhongName {
             get {
                 return this.phongNameField;
@@ -536,7 +564,7 @@ namespace QuanLyKhachSan.PhongSVC {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public int PhutBatDau {
             get {
                 return this.phutBatDauField;
@@ -560,7 +588,7 @@ namespace QuanLyKhachSan.PhongSVC {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=8)]
         public string TinhTrangPhong {
             get {
                 return this.tinhTrangPhongField;
@@ -572,7 +600,7 @@ namespace QuanLyKhachSan.PhongSVC {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
         public int TinhTrangPhongID {
             get {
                 return this.tinhTrangPhongIDField;
@@ -596,7 +624,7 @@ namespace QuanLyKhachSan.PhongSVC {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=10)]
         public string TinhTrangPhongName {
             get {
                 return this.tinhTrangPhongNameField;
