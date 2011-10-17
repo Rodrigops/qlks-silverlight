@@ -148,6 +148,7 @@
     <Compile Include="Form\QuanLyPhong\frmThongTinPhong.xaml.cs">
       <DependentUpon>frmThongTinPhong.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Form\QuanLyPhong\GiaGioFormater.cs" />
     <Compile Include="Form\QuanLyPhong\NumberVietnameseFormater.cs" />
     <Compile Include="Form\QuanLyUser\frmGroupEdit.xaml.cs">
       <DependentUpon>frmGroupEdit.xaml</DependentUpon>
@@ -166,6 +167,11 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\DichVuSVC\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Gia_PhongSVC\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -353,6 +359,20 @@
     </None>
     <None Include="Service References\DichVuSVC\DichVuSVC.wsdl" />
     <None Include="Service References\DichVuSVC\QuanLyKhachSan.DichVuSVC.DichVuInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Gia_PhongSVC\Gia_Phong.wsdl" />
+    <None Include="Service References\Gia_PhongSVC\Gia_Phong.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Gia_PhongSVC\Gia_Phong1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Gia_PhongSVC\Gia_Phong2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Gia_PhongSVC\Gia_PhongSVC.wsdl" />
+    <None Include="Service References\Gia_PhongSVC\QuanLyKhachSan.Gia_PhongSVC.Gia_PhongInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\Gio_PhongSVC\Gio_Phong.wsdl" />
@@ -636,6 +656,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\Gia_PhongSVC\Gia_Phong.disco" />
+    <None Include="Service References\Gia_PhongSVC\configuration91.svcinfo" />
+    <None Include="Service References\Gia_PhongSVC\configuration.svcinfo" />
+    <None Include="Service References\Gia_PhongSVC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="ServiceReferences.ClientConfig" />
     <None Include="Service References\UserSVC\User.wsdl" />
     <None Include="Service References\UserSVC\User.xsd">
@@ -691,6 +718,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\DichVuSVC\" />
+    <WCFMetadataStorage Include="Service References\Gia_PhongSVC\" />
     <WCFMetadataStorage Include="Service References\Gio_PhongSVC\" />
     <WCFMetadataStorage Include="Service References\GroupSVC\" />
     <WCFMetadataStorage Include="Service References\HoaDonDichVuSVC\" />
