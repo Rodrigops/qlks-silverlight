@@ -10,17 +10,15 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using QuanLyKhachSan.HoaDonDichVuSVC;
-using QuanLyKhachSan.PhongSVC;
-using QuanLyKhachSan.KhachHangSVC;
 using QuanLyKhachSan.DichVuSVC;
 namespace QuanLyKhachSan.Form.HoaDonDichVu
 {
     public partial class frmHoaDonDichVuEdit : ChildWindow
     {
         public int HoaDonDichVuID = -1;
+        public int HoaDonID = -1;
+        public int PhongID = -1;
         private HoaDonDichVuSVCClient HoaDonDichVuClient = null;
-        private PhongSVCClient PhongClient = new PhongSVCClient();
-        private KhachHangSVCClient KhachHangClient = new KhachHangSVCClient();
         private DichVuSVCClient DichVuClient = new DichVuSVCClient();
         public frmHoaDonDichVuEdit()
         {
@@ -28,8 +26,18 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
         }
         //Load DichVu Theo HoaDonID | PhongID
         public void DichVu_Load(int _HoaDonID, int _PhongID)
-        { 
-            // your code here
+        {
+            DichVuClient = new DichVuSVCClient();
+            DichVuClient.DichVu_GetItemsCompleted += new EventHandler<DichVu_GetItemsCompletedEventArgs>(DichVuClient_DichVu_GetItemsCompleted);
+            DichVuClient.DichVu_GetItemsAsync();
+            cbxDichVu.SelectedIndex = 0;
+
+            HoaDonID = _HoaDonID;
+            PhongID = _PhongID;
+
+            HoaDonDichVuClient = new HoaDonDichVuSVCClient();
+            HoaDonDichVuClient.HoaDonDichVu_GetItemsByIDCompleted += new EventHandler<HoaDonDichVu_GetItemsByIDCompletedEventArgs>(HoaDonDichVuClient_HoaDonDichVu_GetItemsByIDCompleted);
+            HoaDonDichVuClient.HoaDonDichVu_GetItemsByIDAsync(HoaDonID, PhongID);
         }
         public void HoaDonDichVu_Load(int _HoaDonDichVuID)
         {
@@ -37,11 +45,6 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
             DichVuClient.DichVu_GetItemsCompleted += new EventHandler<DichVu_GetItemsCompletedEventArgs>(DichVuClient_DichVu_GetItemsCompleted);
             DichVuClient.DichVu_GetItemsAsync();
             cbxDichVu.SelectedIndex = 0;
-
-            //lay danh sach phong dang su dung
-            PhongClient = new PhongSVCClient();
-            PhongClient.Phong_GetItemsOnServiceCompleted += new EventHandler<Phong_GetItemsOnServiceCompletedEventArgs>(PhongClient_Phong_GetItemsOnServiceCompleted);
-            PhongClient.Phong_GetItemsOnServiceAsync();
 
             if (_HoaDonDichVuID != 0)
             {
@@ -51,7 +54,10 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
                 HoaDonDichVuClient.HoaDonDichVu_GetItemAsync(HoaDonDichVuID);
             }
         }
-
+        void HoaDonDichVuClient_HoaDonDichVu_GetItemsByIDCompleted(object sender, HoaDonDichVu_GetItemsByIDCompletedEventArgs e)
+        {
+            grvHoaDonDichVu.ItemsSource = e.Result;
+        }
         void HoaDonDichVuClient_HoaDonDichVu_GetItemCompleted(object sender, HoaDonDichVu_GetItemCompletedEventArgs e)
         {
             HoaDonDichVuInfo HDDV = e.Result;
@@ -61,8 +67,6 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
             txtTongTien.Text = Format_NumberVietnamese(HDDV.TongTien.ToString());
             if (!string.IsNullOrEmpty(HDDV.NgaySuDung))
                 rdpNgaySuDung.SelectedDate = DateTime.Parse(HDDV.NgaySuDung);
-            cbxPhong.SelectedValue = HDDV.PhongID;
-            cbxKhachHang.SelectedValue = HDDV.KhachHangID;
         }
         void HoaDonDichVuClient_HoaDonDichVu_EditCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
@@ -72,16 +76,6 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
         void HoaDonDichVuClient_HoaDonDichVu_AddCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
             this.DialogResult = true;
-        }
-        private void cbxPhong_SelectionChanged(object sender, Telerik.Windows.Controls.SelectionChangedEventArgs e)
-        {
-            if (cbxPhong.SelectedValue != null)
-            {
-                KhachHangClient = new KhachHangSVCClient();
-                KhachHangClient.KhachHang_GetItemsInPhongCompleted += new EventHandler<KhachHang_GetItemsInPhongCompletedEventArgs>(KhachHangClient_KhachHang_GetItemsInPhongCompleted);
-                //KhachHangClient.KhachHang_GetItemsInPhongAsync((int)cbxPhong.SelectedValue);
-                KhachHangClient.KhachHang_GetItemsInPhongAsync(0);
-            }
         }
         private void cbxDichVu_SelectionChanged(object sender, Telerik.Windows.Controls.SelectionChangedEventArgs e)
         {
@@ -119,15 +113,6 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
         {
             cbxDichVu.ItemsSource = e.Result;
         }
-        void PhongClient_Phong_GetItemsOnServiceCompleted(object sender, Phong_GetItemsOnServiceCompletedEventArgs e)
-        {
-            cbxPhong.ItemsSource = e.Result;
-        }
-        void KhachHangClient_KhachHang_GetItemsInPhongCompleted(object sender, KhachHang_GetItemsInPhongCompletedEventArgs e)
-        {
-            cbxKhachHang.ItemsSource = e.Result;
-        }
-        
         private void OKButton_Click(object sender, RoutedEventArgs e)
         {
             string ngaysudung = string.Empty;
@@ -138,14 +123,14 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
             {
                 HoaDonDichVuClient = new HoaDonDichVuSVCClient();
                 HoaDonDichVuClient.HoaDonDichVu_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(HoaDonDichVuClient_HoaDonDichVu_AddCompleted);
-                HoaDonDichVuClient.HoaDonDichVu_AddAsync(1, (int)cbxPhong.SelectedValue, (int)cbxDichVu.SelectedValue, (int)cbxKhachHang.SelectedValue, ngaysudung,
+                HoaDonDichVuClient.HoaDonDichVu_AddAsync(HoaDonID, PhongID, (int)cbxDichVu.SelectedValue, -1, ngaysudung,
                     int.Parse(txtSoLuong.Text.ToString()), decimal.Parse(txtDonGia.Text.ToString()), decimal.Parse(txtTongTien.Text.ToString()), 0, DateTime.Now.ToString("MM/dd/yyyy"));
             }
             else
             {
                 HoaDonDichVuClient = new HoaDonDichVuSVCClient();
                 HoaDonDichVuClient.HoaDonDichVu_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(HoaDonDichVuClient_HoaDonDichVu_EditCompleted);
-                HoaDonDichVuClient.HoaDonDichVu_EditAsync(HoaDonDichVuID, 1, (int)cbxPhong.SelectedValue, (int)cbxDichVu.SelectedValue, (int)cbxKhachHang.SelectedValue, ngaysudung,
+                HoaDonDichVuClient.HoaDonDichVu_EditAsync(HoaDonDichVuID, HoaDonID, PhongID, (int)cbxDichVu.SelectedValue, -1, ngaysudung,
                     int.Parse(txtSoLuong.Text.ToString()), decimal.Parse(txtDonGia.Text.ToString()), decimal.Parse(txtTongTien.Text.ToString()), 0, DateTime.Now.ToString("MM/dd/yyyy"));
             }
         }
