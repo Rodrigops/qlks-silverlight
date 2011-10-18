@@ -49,5 +49,17 @@ namespace QuanLyKhachSan
             HoaDonDichVuDAL doit = new HoaDonDichVuDAL();
             return doit.HoaDonDichVu_GetItemsByID(HoaDonID, PhongID);
         }
+        [OperationContract]
+        public HoaDonNgayVaoRaInfo HoaDonDichVu_GetItem_NgayVao([Optional, DefaultParameterValue(0)] int HoaDonID)
+        {
+            HoaDonDichVuDAL doit = new HoaDonDichVuDAL();
+            return doit.HoaDonDichVu_GetItem_NgayVao(HoaDonID);
+        }
+        [OperationContract]
+        public void HoaDonNgayRa_Add(int HoaDonID, string NgayRa, int GioRa, int PhutRa, int NgayRa_So, int ThangRa, int NamRa)
+        {
+            HoaDonDichVuDAL doit = new HoaDonDichVuDAL();
+            doit.HoaDonNgayRa_Add(HoaDonID, NgayRa, GioRa, PhutRa, NgayRa_So, ThangRa, NamRa);
+        }
     }
 }
