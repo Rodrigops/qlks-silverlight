@@ -26,6 +26,11 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
         {
             InitializeComponent();
         }
+        //Load DichVu Theo HoaDonID | PhongID
+        public void DichVu_Load(int _HoaDonID, int _PhongID)
+        { 
+            // your code here
+        }
         public void HoaDonDichVu_Load(int _HoaDonDichVuID)
         {
             DichVuClient = new DichVuSVCClient();
