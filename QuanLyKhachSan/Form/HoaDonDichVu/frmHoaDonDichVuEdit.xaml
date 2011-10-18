@@ -2,40 +2,53 @@
            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
            xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
-           Width="280" Height="300" 
+           Width="500" Height="300" 
+           xmlns:local="clr-namespace:QuanLyKhachSan.Form.QuanLyPhong"
            Title="Cập nhật Dịch Vụ Phòng" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" Foreground="#FF0D0D0D">
     <Grid x:Name="LayoutRoot" Margin="2">
+        <Grid.Resources>
+            <local:NumberVietnameseFormater x:Key="NumberVietnameseFormater">
+            </local:NumberVietnameseFormater>
+        </Grid.Resources>
         <Grid.RowDefinitions>
-            <RowDefinition Height="29*" />
-            <RowDefinition Height="29*" />
-            <RowDefinition Height="29*" />
-            <RowDefinition Height="29*" />
-            <RowDefinition Height="29*" />
-            <RowDefinition Height="29*" />
+            <RowDefinition Height="29" />
+            <RowDefinition Height="29" />
+            <RowDefinition Height="29" />
             <RowDefinition Height="29*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="110*"></ColumnDefinition>
-            <ColumnDefinition Width="170*"></ColumnDefinition>
+            <ColumnDefinition Width="90*"></ColumnDefinition>
+            <ColumnDefinition Width="125*"></ColumnDefinition>
+            <ColumnDefinition Width="90*"></ColumnDefinition>
+            <ColumnDefinition Width="125*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Button x:Name="CancelButton" Content="Cancel" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,0,0" Grid.Row="7" Grid.Column="1"/>
-        <Button x:Name="OKButton" Content="OK" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,79,0" Grid.Row="7" Grid.Column="1"/>
+        <Button x:Name="CancelButton" Grid.Row="5" Grid.ColumnSpan="4" Content="Cancel" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,0,0" />
+        <Button x:Name="OKButton" Grid.Row="5" Grid.ColumnSpan="4" Content="OK" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,79,0" />
 
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="40,15,0,0" Name="textBlock1" Text="Dịch Vụ:" VerticalAlignment="Top" />
-        <TextBlock Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="31,15,0,0" Name="textBlock2" Text="Số Lượng:" VerticalAlignment="Top" />
-        <TextBlock Grid.Row="2" Height="23" HorizontalAlignment="Left" Margin="38,15,0,0" Name="textBlock3" Text="Đơn Giá:" VerticalAlignment="Top" />
-        <TextBlock Grid.Row="3" Height="23" HorizontalAlignment="Left" Margin="28,15,0,0" Name="textBlock4" Text="Tổng Tiền:" VerticalAlignment="Top" />
-        <TextBlock Grid.Row="4" Height="23" HorizontalAlignment="Left" Margin="3,10,0,0" Name="textBlock7" Text="Ngày Sử Dụng:" VerticalAlignment="Top" />
-        <TextBlock Grid.Row="5" Height="23" HorizontalAlignment="Left" Margin="48,10,0,0" Name="textBlock5" Text="Phòng:" VerticalAlignment="Top" />
-        <TextBlock Grid.Row="6" Height="23" HorizontalAlignment="Left" Margin="49,9,0,0" Name="textBlock6" Text="Khách:" VerticalAlignment="Top" />
-        <telerik:RadComboBox Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="0,9,0,0" SelectionChanged="cbxDichVu_SelectionChanged" Name="cbxDichVu" DisplayMemberPath="DichVuName" SelectedValuePath="DichVuID" VerticalAlignment="Top" Width="120" telerik:StyleManager.Theme="Office_Blue"></telerik:RadComboBox>
-        <TextBox Grid.Column="1" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="0,9,0,0" TextChanged="txtSoLuong_TextChanged" Name="txtSoLuong" VerticalAlignment="Top" Width="120" TextAlignment="Right"/>
-        <TextBox Grid.Column="1" Grid.Row="2" Height="23" HorizontalAlignment="Left" Margin="0,9,0,0" Name="txtDonGia" VerticalAlignment="Top" Width="120" TextAlignment="Right" IsReadOnly="True"/>
-        <TextBox Grid.Column="1" Grid.Row="3" Height="23" HorizontalAlignment="Left" Margin="0,10,0,0" Name="txtTongTien" VerticalAlignment="Top" Width="120" TextAlignment="Right" IsReadOnly="True"/>
-        <telerik:RadDateTimePicker Grid.Column="1" Grid.Row="4" Height="23" HorizontalAlignment="Left" Width="120" Margin="0,6,0,0" Name="rdpNgaySuDung" VerticalAlignment="Top" telerik:StyleManager.Theme="Office_Blue" InputMode="DatePicker" Culture="vi-VN" DateTimeWatermarkContent="Chọn ngày" />
-        <telerik:RadComboBox Grid.Column="1" Grid.Row="5" Height="23" HorizontalAlignment="Left" Margin="0,10,0,0" SelectionChanged="cbxPhong_SelectionChanged" Name="cbxPhong" DisplayMemberPath="PhongName" SelectedValuePath="PhongID" VerticalAlignment="Top" Width="120" telerik:StyleManager.Theme="Office_Blue"></telerik:RadComboBox>
-        <telerik:RadComboBox Grid.Column="1" Grid.Row="6" Height="23" HorizontalAlignment="Left" Margin="0,9,0,0" Name="cbxKhachHang" DisplayMemberPath="HoTen" SelectedValuePath="KhachHangID" VerticalAlignment="Top" Width="120" telerik:StyleManager.Theme="Office_Blue"></telerik:RadComboBox>
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="28,10,0,0" Name="textBlock1" Text="Dịch Vụ:" VerticalAlignment="Top" Grid.RowSpan="2" />
+        <TextBlock Grid.Column="2" Height="23" HorizontalAlignment="Left" Margin="22,10,0,0" Name="textBlock2" Text="Số Lượng:" VerticalAlignment="Top" Grid.RowSpan="2" />
+        <TextBlock Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="28,10,0,0" Name="textBlock3" Text="Đơn Giá:" VerticalAlignment="Top" Grid.RowSpan="2" />
+        <TextBlock Grid.Row="1" Grid.Column="2" Height="23" HorizontalAlignment="Left" Margin="19,10,0,0" Name="textBlock4" Text="Tổng Tiền:" VerticalAlignment="Top" Grid.RowSpan="2" />
+        <TextBlock Grid.Row="2" Height="23" HorizontalAlignment="Left" Margin="5,10,0,0" Name="textBlock7" Text="Ngày Sử Dụng:" VerticalAlignment="Top" Grid.RowSpan="2" />
+        <telerik:RadComboBox Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="0,6,0,0" SelectionChanged="cbxDichVu_SelectionChanged" Name="cbxDichVu" DisplayMemberPath="DichVuName" SelectedValuePath="DichVuID" VerticalAlignment="Top" Width="120" telerik:StyleManager.Theme="Office_Blue"></telerik:RadComboBox>
+        <TextBox Grid.Column="3" Height="23" HorizontalAlignment="Left" Margin="0,6,0,0" TextChanged="txtSoLuong_TextChanged" Name="txtSoLuong" VerticalAlignment="Top" Width="120" TextAlignment="Right"/>
+        <TextBox Grid.Column="1" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="0,6,0,0" Name="txtDonGia" VerticalAlignment="Top" Width="120" TextAlignment="Right" IsReadOnly="True"/>
+        <TextBox Grid.Column="3" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="0,6,0,0" Name="txtTongTien" VerticalAlignment="Top" Width="120" TextAlignment="Right" IsReadOnly="True"/>
+        <telerik:RadDateTimePicker Grid.Row="2" Grid.Column="1" Height="23" HorizontalAlignment="Left" Width="120" Margin="0,6,0,0" Name="rdpNgaySuDung" VerticalAlignment="Top" telerik:StyleManager.Theme="Office_Blue" InputMode="DatePicker" Culture="vi-VN" DateTimeWatermarkContent="Chọn ngày" />
+        <ScrollViewer Grid.Row="3" Grid.ColumnSpan="4" HorizontalAlignment="Left">
+            <StackPanel>
+                <telerik:RadGridView AutoGenerateColumns="False" AutoExpandGroups="True" IsFilteringAllowed="False" Name="grvHoaDonDichVu" RowIndicatorVisibility="Collapsed" ShowColumnHeaders="True" ShowGroupPanel="False" telerik:StyleManager.Theme="Office_Blue" Height="Auto">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Left" Header="Dịch Vụ" DataMemberBinding="{Binding Path=DichVuName}" Width="100" ></telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="SL" DataMemberBinding="{Binding Path=SoLuong}" Width="50"></telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Right" Header="Đơn Giá" DataMemberBinding="{Binding Path=DonGia, Converter={StaticResource NumberVietnameseFormater}}" Width="98"></telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Right" Header="Tiền" DataMemberBinding="{Binding Path=TongTien, Converter={StaticResource NumberVietnameseFormater}}" Width="100"></telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Ngày Sử Dụng" DataMemberBinding="{Binding Path=NgaySuDung}" Width="100"></telerik:GridViewDataColumn>
+                    </telerik:RadGridView.Columns>
+                </telerik:RadGridView>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </controls:ChildWindow>
