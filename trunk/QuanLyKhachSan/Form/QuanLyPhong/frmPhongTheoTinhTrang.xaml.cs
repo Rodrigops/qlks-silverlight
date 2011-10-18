@@ -15,6 +15,7 @@ using QuanLyKhachSan.PhongSVC;
 using QuanLyKhachSan.KhachHangSVC;
 using QuanLyKhachSan.Form.QuanLyKhachHang;
 using Telerik.Windows.Controls.GridView;
+using QuanLyKhachSan.Form.HoaDonDichVu;
 namespace QuanLyKhachSan.Form.QuanLyPhong
 {
     public partial class frmPhongTheoTinhTrang : Page
@@ -210,6 +211,11 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                 case "TraPhong":
                     frmPhong_KhachHang_TraPhong DanhSachKhachHang_TraPhong = new frmPhong_KhachHang_TraPhong();
                     DanhSachKhachHang_TraPhong.Show();
+                    break;
+                case "XemThemDichVu":
+                    frmHoaDonDichVuEdit HoaDonDichVu = new frmHoaDonDichVuEdit();
+                    HoaDonDichVu.DichVu_Load(item.HoaDonID, item.PhongID);
+                    HoaDonDichVu.Show();
                     break;
             }
 
