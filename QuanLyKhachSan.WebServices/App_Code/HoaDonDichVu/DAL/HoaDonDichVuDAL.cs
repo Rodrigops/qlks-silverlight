@@ -99,6 +99,34 @@ namespace QuanLyKhachSan
             }
             return list;
         }
+        public List<HoaDonDichVuInfo> HoaDonDichVu_GetItemsByID([Optional, DefaultParameterValue(0)] int HoaDonID, [Optional, DefaultParameterValue(0)] int PhongID)
+        {
+            SQLDataHelper SQLDB = new SQLDataHelper();
+            SQLDB.Addparameter("@HoaDonID", HoaDonID);
+            SQLDB.Addparameter("@PhongID", PhongID);
+            SqlDataReader rd = SQLDB.executereader("sp_HoaDonDichVu_GetItemsByID", CommandType.StoredProcedure);
+            List<HoaDonDichVuInfo> list = new List<HoaDonDichVuInfo>();
+            HoaDonDichVuInfo item = null;
+            while (rd.Read())
+            {
+                item = new HoaDonDichVuInfo();
+                item.HoaDon_DichVuID = int.Parse(rd["HoaDon_DichVuID"].ToString());
+                item.HoaDonID = int.Parse(rd["HoaDonID"].ToString());
+                item.PhongID = int.Parse(rd["PhongID"].ToString());
+                item.DichVuID = int.Parse(rd["DichVuID"].ToString());
+                item.KhachHangID = int.Parse(rd["KhachHangID"].ToString());
+                item.HoTen = rd["HoTen"].ToString();
+                item.PhongName = rd["PhongName"].ToString();
+                item.DichVuName = rd["DichVuName"].ToString();
+                item.NgaySuDung = rd["NgaySuDung"].ToString();
+                item.SoLuong = int.Parse(rd["SoLuong"].ToString());
+                item.DonGia = decimal.Parse(rd["DonGia"].ToString());
+                item.TongTien = decimal.Parse(rd["TongTien"].ToString());
+
+                list.Add(item);
+            }
+            return list;
+        }
     }
 }
 
