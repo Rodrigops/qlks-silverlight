@@ -27,4 +27,22 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfHoaDonDichVuInfo" nillable="true" type="tns:ArrayOfHoaDonDichVuInfo" />
+  <xs:complexType name="HoaDonNgayVaoRaInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GioRa" type="xs:int" />
+      <xs:element minOccurs="0" name="GioVao" type="xs:int" />
+      <xs:element minOccurs="0" name="HoaDonID" type="xs:int" />
+      <xs:element minOccurs="0" name="NamRa" type="xs:int" />
+      <xs:element minOccurs="0" name="NamVao" type="xs:int" />
+      <xs:element minOccurs="0" name="NgayRa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NgayRa_So" type="xs:int" />
+      <xs:element minOccurs="0" name="NgayVao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NgayVao_So" type="xs:int" />
+      <xs:element minOccurs="0" name="PhutRa" type="xs:int" />
+      <xs:element minOccurs="0" name="PhutVao" type="xs:int" />
+      <xs:element minOccurs="0" name="ThangRa" type="xs:int" />
+      <xs:element minOccurs="0" name="ThangVao" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HoaDonNgayVaoRaInfo" nillable="true" type="tns:HoaDonNgayVaoRaInfo" />
 </xs:schema>

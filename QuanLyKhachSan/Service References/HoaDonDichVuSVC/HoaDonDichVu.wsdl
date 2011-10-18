@@ -43,6 +43,18 @@
   <wsdl:message name="HoaDonDichVuSVC_HoaDonDichVu_GetItemsByID_OutputMessage">
     <wsdl:part name="parameters" element="HoaDonDichVu_GetItemsByIDResponse" />
   </wsdl:message>
+  <wsdl:message name="HoaDonDichVuSVC_HoaDonDichVu_GetItem_NgayVao_InputMessage">
+    <wsdl:part name="parameters" element="HoaDonDichVu_GetItem_NgayVao" />
+  </wsdl:message>
+  <wsdl:message name="HoaDonDichVuSVC_HoaDonDichVu_GetItem_NgayVao_OutputMessage">
+    <wsdl:part name="parameters" element="HoaDonDichVu_GetItem_NgayVaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="HoaDonDichVuSVC_HoaDonNgayRa_Add_InputMessage">
+    <wsdl:part name="parameters" element="HoaDonNgayRa_Add" />
+  </wsdl:message>
+  <wsdl:message name="HoaDonDichVuSVC_HoaDonNgayRa_Add_OutputMessage">
+    <wsdl:part name="parameters" element="HoaDonNgayRa_AddResponse" />
+  </wsdl:message>
   <wsdl:portType name="HoaDonDichVuSVC">
     <wsdl:operation name="HoaDonDichVu_Add">
       <wsdl:input wsaw:Action="urn:HoaDonDichVuSVC/HoaDonDichVu_Add" message="HoaDonDichVuSVC_HoaDonDichVu_Add_InputMessage" />
@@ -67,6 +79,14 @@
     <wsdl:operation name="HoaDonDichVu_GetItemsByID">
       <wsdl:input wsaw:Action="urn:HoaDonDichVuSVC/HoaDonDichVu_GetItemsByID" message="HoaDonDichVuSVC_HoaDonDichVu_GetItemsByID_InputMessage" />
       <wsdl:output wsaw:Action="urn:HoaDonDichVuSVC/HoaDonDichVu_GetItemsByIDResponse" message="HoaDonDichVuSVC_HoaDonDichVu_GetItemsByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HoaDonDichVu_GetItem_NgayVao">
+      <wsdl:input wsaw:Action="urn:HoaDonDichVuSVC/HoaDonDichVu_GetItem_NgayVao" message="HoaDonDichVuSVC_HoaDonDichVu_GetItem_NgayVao_InputMessage" />
+      <wsdl:output wsaw:Action="urn:HoaDonDichVuSVC/HoaDonDichVu_GetItem_NgayVaoResponse" message="HoaDonDichVuSVC_HoaDonDichVu_GetItem_NgayVao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HoaDonNgayRa_Add">
+      <wsdl:input wsaw:Action="urn:HoaDonDichVuSVC/HoaDonNgayRa_Add" message="HoaDonDichVuSVC_HoaDonNgayRa_Add_InputMessage" />
+      <wsdl:output wsaw:Action="urn:HoaDonDichVuSVC/HoaDonNgayRa_AddResponse" message="HoaDonDichVuSVC_HoaDonNgayRa_Add_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

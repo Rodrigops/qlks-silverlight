@@ -270,6 +270,216 @@ namespace QuanLyKhachSan.HoaDonDichVuSVC {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HoaDonNgayVaoRaInfo", Namespace="http://schemas.datacontract.org/2004/07/QuanLyKhachSan")]
+    public partial class HoaDonNgayVaoRaInfo : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int GioRaField;
+        
+        private int GioVaoField;
+        
+        private int HoaDonIDField;
+        
+        private int NamRaField;
+        
+        private int NamVaoField;
+        
+        private string NgayRaField;
+        
+        private int NgayRa_SoField;
+        
+        private string NgayVaoField;
+        
+        private int NgayVao_SoField;
+        
+        private int PhutRaField;
+        
+        private int PhutVaoField;
+        
+        private int ThangRaField;
+        
+        private int ThangVaoField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int GioRa {
+            get {
+                return this.GioRaField;
+            }
+            set {
+                if ((this.GioRaField.Equals(value) != true)) {
+                    this.GioRaField = value;
+                    this.RaisePropertyChanged("GioRa");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int GioVao {
+            get {
+                return this.GioVaoField;
+            }
+            set {
+                if ((this.GioVaoField.Equals(value) != true)) {
+                    this.GioVaoField = value;
+                    this.RaisePropertyChanged("GioVao");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int HoaDonID {
+            get {
+                return this.HoaDonIDField;
+            }
+            set {
+                if ((this.HoaDonIDField.Equals(value) != true)) {
+                    this.HoaDonIDField = value;
+                    this.RaisePropertyChanged("HoaDonID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int NamRa {
+            get {
+                return this.NamRaField;
+            }
+            set {
+                if ((this.NamRaField.Equals(value) != true)) {
+                    this.NamRaField = value;
+                    this.RaisePropertyChanged("NamRa");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int NamVao {
+            get {
+                return this.NamVaoField;
+            }
+            set {
+                if ((this.NamVaoField.Equals(value) != true)) {
+                    this.NamVaoField = value;
+                    this.RaisePropertyChanged("NamVao");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NgayRa {
+            get {
+                return this.NgayRaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NgayRaField, value) != true)) {
+                    this.NgayRaField = value;
+                    this.RaisePropertyChanged("NgayRa");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int NgayRa_So {
+            get {
+                return this.NgayRa_SoField;
+            }
+            set {
+                if ((this.NgayRa_SoField.Equals(value) != true)) {
+                    this.NgayRa_SoField = value;
+                    this.RaisePropertyChanged("NgayRa_So");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NgayVao {
+            get {
+                return this.NgayVaoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NgayVaoField, value) != true)) {
+                    this.NgayVaoField = value;
+                    this.RaisePropertyChanged("NgayVao");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int NgayVao_So {
+            get {
+                return this.NgayVao_SoField;
+            }
+            set {
+                if ((this.NgayVao_SoField.Equals(value) != true)) {
+                    this.NgayVao_SoField = value;
+                    this.RaisePropertyChanged("NgayVao_So");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PhutRa {
+            get {
+                return this.PhutRaField;
+            }
+            set {
+                if ((this.PhutRaField.Equals(value) != true)) {
+                    this.PhutRaField = value;
+                    this.RaisePropertyChanged("PhutRa");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PhutVao {
+            get {
+                return this.PhutVaoField;
+            }
+            set {
+                if ((this.PhutVaoField.Equals(value) != true)) {
+                    this.PhutVaoField = value;
+                    this.RaisePropertyChanged("PhutVao");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ThangRa {
+            get {
+                return this.ThangRaField;
+            }
+            set {
+                if ((this.ThangRaField.Equals(value) != true)) {
+                    this.ThangRaField = value;
+                    this.RaisePropertyChanged("ThangRa");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ThangVao {
+            get {
+                return this.ThangVaoField;
+            }
+            set {
+                if ((this.ThangVaoField.Equals(value) != true)) {
+                    this.ThangVaoField = value;
+                    this.RaisePropertyChanged("ThangVao");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="", ConfigurationName="HoaDonDichVuSVC.HoaDonDichVuSVC")]
     public interface HoaDonDichVuSVC {
@@ -303,6 +513,16 @@ namespace QuanLyKhachSan.HoaDonDichVuSVC {
         System.IAsyncResult BeginHoaDonDichVu_GetItemsByID(int HoaDonID, int PhongID, System.AsyncCallback callback, object asyncState);
         
         System.Collections.Generic.List<QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuInfo> EndHoaDonDichVu_GetItemsByID(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:HoaDonDichVuSVC/HoaDonDichVu_GetItem_NgayVao", ReplyAction="urn:HoaDonDichVuSVC/HoaDonDichVu_GetItem_NgayVaoResponse")]
+        System.IAsyncResult BeginHoaDonDichVu_GetItem_NgayVao(int HoaDonID, System.AsyncCallback callback, object asyncState);
+        
+        QuanLyKhachSan.HoaDonDichVuSVC.HoaDonNgayVaoRaInfo EndHoaDonDichVu_GetItem_NgayVao(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:HoaDonDichVuSVC/HoaDonNgayRa_Add", ReplyAction="urn:HoaDonDichVuSVC/HoaDonNgayRa_AddResponse")]
+        System.IAsyncResult BeginHoaDonNgayRa_Add(int HoaDonID, string NgayRa, int GioRa, int PhutRa, int NgayRa_So, int ThangRa, int NamRa, System.AsyncCallback callback, object asyncState);
+        
+        void EndHoaDonNgayRa_Add(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -368,6 +588,25 @@ namespace QuanLyKhachSan.HoaDonDichVuSVC {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class HoaDonDichVu_GetItem_NgayVaoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public HoaDonDichVu_GetItem_NgayVaoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public QuanLyKhachSan.HoaDonDichVuSVC.HoaDonNgayVaoRaInfo Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((QuanLyKhachSan.HoaDonDichVuSVC.HoaDonNgayVaoRaInfo)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class HoaDonDichVuSVCClient : System.ServiceModel.ClientBase<QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuSVC>, QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuSVC {
         
         private BeginOperationDelegate onBeginHoaDonDichVu_AddDelegate;
@@ -405,6 +644,18 @@ namespace QuanLyKhachSan.HoaDonDichVuSVC {
         private EndOperationDelegate onEndHoaDonDichVu_GetItemsByIDDelegate;
         
         private System.Threading.SendOrPostCallback onHoaDonDichVu_GetItemsByIDCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginHoaDonDichVu_GetItem_NgayVaoDelegate;
+        
+        private EndOperationDelegate onEndHoaDonDichVu_GetItem_NgayVaoDelegate;
+        
+        private System.Threading.SendOrPostCallback onHoaDonDichVu_GetItem_NgayVaoCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginHoaDonNgayRa_AddDelegate;
+        
+        private EndOperationDelegate onEndHoaDonNgayRa_AddDelegate;
+        
+        private System.Threading.SendOrPostCallback onHoaDonNgayRa_AddCompletedDelegate;
         
         private BeginOperationDelegate onBeginOpenDelegate;
         
@@ -470,6 +721,10 @@ namespace QuanLyKhachSan.HoaDonDichVuSVC {
         public event System.EventHandler<HoaDonDichVu_GetItemsCompletedEventArgs> HoaDonDichVu_GetItemsCompleted;
         
         public event System.EventHandler<HoaDonDichVu_GetItemsByIDCompletedEventArgs> HoaDonDichVu_GetItemsByIDCompleted;
+        
+        public event System.EventHandler<HoaDonDichVu_GetItem_NgayVaoCompletedEventArgs> HoaDonDichVu_GetItem_NgayVaoCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> HoaDonNgayRa_AddCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
@@ -788,6 +1043,109 @@ namespace QuanLyKhachSan.HoaDonDichVuSVC {
                         PhongID}, this.onEndHoaDonDichVu_GetItemsByIDDelegate, this.onHoaDonDichVu_GetItemsByIDCompletedDelegate, userState);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuSVC.BeginHoaDonDichVu_GetItem_NgayVao(int HoaDonID, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginHoaDonDichVu_GetItem_NgayVao(HoaDonID, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        QuanLyKhachSan.HoaDonDichVuSVC.HoaDonNgayVaoRaInfo QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuSVC.EndHoaDonDichVu_GetItem_NgayVao(System.IAsyncResult result) {
+            return base.Channel.EndHoaDonDichVu_GetItem_NgayVao(result);
+        }
+        
+        private System.IAsyncResult OnBeginHoaDonDichVu_GetItem_NgayVao(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int HoaDonID = ((int)(inValues[0]));
+            return ((QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuSVC)(this)).BeginHoaDonDichVu_GetItem_NgayVao(HoaDonID, callback, asyncState);
+        }
+        
+        private object[] OnEndHoaDonDichVu_GetItem_NgayVao(System.IAsyncResult result) {
+            QuanLyKhachSan.HoaDonDichVuSVC.HoaDonNgayVaoRaInfo retVal = ((QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuSVC)(this)).EndHoaDonDichVu_GetItem_NgayVao(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnHoaDonDichVu_GetItem_NgayVaoCompleted(object state) {
+            if ((this.HoaDonDichVu_GetItem_NgayVaoCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.HoaDonDichVu_GetItem_NgayVaoCompleted(this, new HoaDonDichVu_GetItem_NgayVaoCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void HoaDonDichVu_GetItem_NgayVaoAsync(int HoaDonID) {
+            this.HoaDonDichVu_GetItem_NgayVaoAsync(HoaDonID, null);
+        }
+        
+        public void HoaDonDichVu_GetItem_NgayVaoAsync(int HoaDonID, object userState) {
+            if ((this.onBeginHoaDonDichVu_GetItem_NgayVaoDelegate == null)) {
+                this.onBeginHoaDonDichVu_GetItem_NgayVaoDelegate = new BeginOperationDelegate(this.OnBeginHoaDonDichVu_GetItem_NgayVao);
+            }
+            if ((this.onEndHoaDonDichVu_GetItem_NgayVaoDelegate == null)) {
+                this.onEndHoaDonDichVu_GetItem_NgayVaoDelegate = new EndOperationDelegate(this.OnEndHoaDonDichVu_GetItem_NgayVao);
+            }
+            if ((this.onHoaDonDichVu_GetItem_NgayVaoCompletedDelegate == null)) {
+                this.onHoaDonDichVu_GetItem_NgayVaoCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnHoaDonDichVu_GetItem_NgayVaoCompleted);
+            }
+            base.InvokeAsync(this.onBeginHoaDonDichVu_GetItem_NgayVaoDelegate, new object[] {
+                        HoaDonID}, this.onEndHoaDonDichVu_GetItem_NgayVaoDelegate, this.onHoaDonDichVu_GetItem_NgayVaoCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuSVC.BeginHoaDonNgayRa_Add(int HoaDonID, string NgayRa, int GioRa, int PhutRa, int NgayRa_So, int ThangRa, int NamRa, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginHoaDonNgayRa_Add(HoaDonID, NgayRa, GioRa, PhutRa, NgayRa_So, ThangRa, NamRa, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        void QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuSVC.EndHoaDonNgayRa_Add(System.IAsyncResult result) {
+            base.Channel.EndHoaDonNgayRa_Add(result);
+        }
+        
+        private System.IAsyncResult OnBeginHoaDonNgayRa_Add(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int HoaDonID = ((int)(inValues[0]));
+            string NgayRa = ((string)(inValues[1]));
+            int GioRa = ((int)(inValues[2]));
+            int PhutRa = ((int)(inValues[3]));
+            int NgayRa_So = ((int)(inValues[4]));
+            int ThangRa = ((int)(inValues[5]));
+            int NamRa = ((int)(inValues[6]));
+            return ((QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuSVC)(this)).BeginHoaDonNgayRa_Add(HoaDonID, NgayRa, GioRa, PhutRa, NgayRa_So, ThangRa, NamRa, callback, asyncState);
+        }
+        
+        private object[] OnEndHoaDonNgayRa_Add(System.IAsyncResult result) {
+            ((QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuSVC)(this)).EndHoaDonNgayRa_Add(result);
+            return null;
+        }
+        
+        private void OnHoaDonNgayRa_AddCompleted(object state) {
+            if ((this.HoaDonNgayRa_AddCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.HoaDonNgayRa_AddCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void HoaDonNgayRa_AddAsync(int HoaDonID, string NgayRa, int GioRa, int PhutRa, int NgayRa_So, int ThangRa, int NamRa) {
+            this.HoaDonNgayRa_AddAsync(HoaDonID, NgayRa, GioRa, PhutRa, NgayRa_So, ThangRa, NamRa, null);
+        }
+        
+        public void HoaDonNgayRa_AddAsync(int HoaDonID, string NgayRa, int GioRa, int PhutRa, int NgayRa_So, int ThangRa, int NamRa, object userState) {
+            if ((this.onBeginHoaDonNgayRa_AddDelegate == null)) {
+                this.onBeginHoaDonNgayRa_AddDelegate = new BeginOperationDelegate(this.OnBeginHoaDonNgayRa_Add);
+            }
+            if ((this.onEndHoaDonNgayRa_AddDelegate == null)) {
+                this.onEndHoaDonNgayRa_AddDelegate = new EndOperationDelegate(this.OnEndHoaDonNgayRa_Add);
+            }
+            if ((this.onHoaDonNgayRa_AddCompletedDelegate == null)) {
+                this.onHoaDonNgayRa_AddCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnHoaDonNgayRa_AddCompleted);
+            }
+            base.InvokeAsync(this.onBeginHoaDonNgayRa_AddDelegate, new object[] {
+                        HoaDonID,
+                        NgayRa,
+                        GioRa,
+                        PhutRa,
+                        NgayRa_So,
+                        ThangRa,
+                        NamRa}, this.onEndHoaDonNgayRa_AddDelegate, this.onHoaDonNgayRa_AddCompletedDelegate, userState);
+        }
+        
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
             return ((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(callback, asyncState);
         }
@@ -957,6 +1315,37 @@ namespace QuanLyKhachSan.HoaDonDichVuSVC {
                 object[] _args = new object[0];
                 System.Collections.Generic.List<QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuInfo> _result = ((System.Collections.Generic.List<QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuInfo>)(base.EndInvoke("HoaDonDichVu_GetItemsByID", _args, result)));
                 return _result;
+            }
+            
+            public System.IAsyncResult BeginHoaDonDichVu_GetItem_NgayVao(int HoaDonID, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = HoaDonID;
+                System.IAsyncResult _result = base.BeginInvoke("HoaDonDichVu_GetItem_NgayVao", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public QuanLyKhachSan.HoaDonDichVuSVC.HoaDonNgayVaoRaInfo EndHoaDonDichVu_GetItem_NgayVao(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                QuanLyKhachSan.HoaDonDichVuSVC.HoaDonNgayVaoRaInfo _result = ((QuanLyKhachSan.HoaDonDichVuSVC.HoaDonNgayVaoRaInfo)(base.EndInvoke("HoaDonDichVu_GetItem_NgayVao", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginHoaDonNgayRa_Add(int HoaDonID, string NgayRa, int GioRa, int PhutRa, int NgayRa_So, int ThangRa, int NamRa, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[7];
+                _args[0] = HoaDonID;
+                _args[1] = NgayRa;
+                _args[2] = GioRa;
+                _args[3] = PhutRa;
+                _args[4] = NgayRa_So;
+                _args[5] = ThangRa;
+                _args[6] = NamRa;
+                System.IAsyncResult _result = base.BeginInvoke("HoaDonNgayRa_Add", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public void EndHoaDonNgayRa_Add(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                base.EndInvoke("HoaDonNgayRa_Add", _args, result);
             }
         }
     }
