@@ -127,6 +127,44 @@ namespace QuanLyKhachSan
             }
             return list;
         }
+        public HoaDonNgayVaoRaInfo HoaDonDichVu_GetItem_NgayVao([Optional, DefaultParameterValue(0)] int HoaDonID)
+        {
+            SQLDataHelper SQLDB = new SQLDataHelper();
+            SQLDB.Addparameter("@HoaDonID", HoaDonID);
+            SqlDataReader rd = SQLDB.executereader("sp_HoaDonDichVu_GetItem_NgayVao", CommandType.StoredProcedure);
+            HoaDonNgayVaoRaInfo item = null;
+            while (rd.Read())
+            {
+                item = new HoaDonNgayVaoRaInfo();
+                item.HoaDonID = int.Parse(rd["HoaDonID"].ToString());
+                item.NgayVao = rd["NgayVao"].ToString();
+                item.GioVao = int.Parse(rd["GioVao"].ToString());
+                item.PhutVao = int.Parse(rd["PhutVao"].ToString());
+                item.NgayVao_So = int.Parse(rd["NgayVao_So"].ToString());
+                item.ThangVao = int.Parse(rd["ThangVao"].ToString());
+                item.NamVao = int.Parse(rd["NamVao"].ToString());
+
+                item.NgayRa = rd["NgayRa"].ToString();
+                item.GioRa = int.Parse(rd["GioRa"].ToString());
+                item.PhutRa = int.Parse(rd["PhutRa"].ToString());
+                item.NgayRa_So = int.Parse(rd["NgayRa_So"].ToString());
+                item.ThangRa = int.Parse(rd["ThangRa"].ToString());
+                item.NamRa = int.Parse(rd["NamRa"].ToString());
+            }
+            return item;
+        }
+        public void HoaDonNgayRa_Add(int HoaDonID, string NgayRa, int GioRa, int PhutRa, int NgayRa_So, int ThangRa, int NamRa)
+        {
+            SQLDataHelper SQLDB = new SQLDataHelper();
+            SQLDB.Addparameter("@HoaDonID", HoaDonID);
+            SQLDB.Addparameter("@NgayRa", NgayRa);
+            SQLDB.Addparameter("@GioRa", GioRa);
+            SQLDB.Addparameter("@PhutRa", PhutRa);
+            SQLDB.Addparameter("@NgayRa_So", NgayRa_So);
+            SQLDB.Addparameter("@ThangRa", ThangRa);
+            SQLDB.Addparameter("@NamRa", NamRa);
+            SQLDB.executenonquery("sp_HoaDonNgayRa_Add", CommandType.StoredProcedure);
+        }
     }
 }
 
