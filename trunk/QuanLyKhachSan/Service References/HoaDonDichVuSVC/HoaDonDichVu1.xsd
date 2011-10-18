@@ -99,4 +99,36 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="HoaDonDichVu_GetItem_NgayVao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HoaDonID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HoaDonDichVu_GetItem_NgayVaoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" minOccurs="0" name="HoaDonDichVu_GetItem_NgayVaoResult" nillable="true" type="q4:HoaDonNgayVaoRaInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HoaDonNgayRa_Add">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HoaDonID" type="xs:int" />
+        <xs:element minOccurs="0" name="NgayRa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="GioRa" type="xs:int" />
+        <xs:element minOccurs="0" name="PhutRa" type="xs:int" />
+        <xs:element minOccurs="0" name="NgayRa_So" type="xs:int" />
+        <xs:element minOccurs="0" name="ThangRa" type="xs:int" />
+        <xs:element minOccurs="0" name="NamRa" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HoaDonNgayRa_AddResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
