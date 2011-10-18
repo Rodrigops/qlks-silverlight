@@ -217,6 +217,11 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                     HoaDonDichVu.DichVu_Load(item.HoaDonID, item.PhongID);
                     HoaDonDichVu.Show();
                     break;
+                case "CapNhatNgayRaDuTinh":
+                    frmPhong_CapNhatNgayRa Phong_CapNhatNgayRa = new frmPhong_CapNhatNgayRa();
+                    Phong_CapNhatNgayRa.HoaDon_Load(item.HoaDonID);
+                    Phong_CapNhatNgayRa.Show();
+                    break;
             }
 
         }
