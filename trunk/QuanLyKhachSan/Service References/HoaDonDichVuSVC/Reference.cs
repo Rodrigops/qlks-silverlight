@@ -298,6 +298,11 @@ namespace QuanLyKhachSan.HoaDonDichVuSVC {
         System.IAsyncResult BeginHoaDonDichVu_GetItems(int HoaDon_DichVuID, System.AsyncCallback callback, object asyncState);
         
         System.Collections.Generic.List<QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuInfo> EndHoaDonDichVu_GetItems(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:HoaDonDichVuSVC/HoaDonDichVu_GetItemsByID", ReplyAction="urn:HoaDonDichVuSVC/HoaDonDichVu_GetItemsByIDResponse")]
+        System.IAsyncResult BeginHoaDonDichVu_GetItemsByID(int HoaDonID, int PhongID, System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.Generic.List<QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuInfo> EndHoaDonDichVu_GetItemsByID(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -344,6 +349,25 @@ namespace QuanLyKhachSan.HoaDonDichVuSVC {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class HoaDonDichVu_GetItemsByIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public HoaDonDichVu_GetItemsByIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.Generic.List<QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuInfo> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.Generic.List<QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuInfo>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class HoaDonDichVuSVCClient : System.ServiceModel.ClientBase<QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuSVC>, QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuSVC {
         
         private BeginOperationDelegate onBeginHoaDonDichVu_AddDelegate;
@@ -375,6 +399,12 @@ namespace QuanLyKhachSan.HoaDonDichVuSVC {
         private EndOperationDelegate onEndHoaDonDichVu_GetItemsDelegate;
         
         private System.Threading.SendOrPostCallback onHoaDonDichVu_GetItemsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginHoaDonDichVu_GetItemsByIDDelegate;
+        
+        private EndOperationDelegate onEndHoaDonDichVu_GetItemsByIDDelegate;
+        
+        private System.Threading.SendOrPostCallback onHoaDonDichVu_GetItemsByIDCompletedDelegate;
         
         private BeginOperationDelegate onBeginOpenDelegate;
         
@@ -438,6 +468,8 @@ namespace QuanLyKhachSan.HoaDonDichVuSVC {
         public event System.EventHandler<HoaDonDichVu_GetItemCompletedEventArgs> HoaDonDichVu_GetItemCompleted;
         
         public event System.EventHandler<HoaDonDichVu_GetItemsCompletedEventArgs> HoaDonDichVu_GetItemsCompleted;
+        
+        public event System.EventHandler<HoaDonDichVu_GetItemsByIDCompletedEventArgs> HoaDonDichVu_GetItemsByIDCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
@@ -708,6 +740,54 @@ namespace QuanLyKhachSan.HoaDonDichVuSVC {
                         HoaDon_DichVuID}, this.onEndHoaDonDichVu_GetItemsDelegate, this.onHoaDonDichVu_GetItemsCompletedDelegate, userState);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuSVC.BeginHoaDonDichVu_GetItemsByID(int HoaDonID, int PhongID, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginHoaDonDichVu_GetItemsByID(HoaDonID, PhongID, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Collections.Generic.List<QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuInfo> QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuSVC.EndHoaDonDichVu_GetItemsByID(System.IAsyncResult result) {
+            return base.Channel.EndHoaDonDichVu_GetItemsByID(result);
+        }
+        
+        private System.IAsyncResult OnBeginHoaDonDichVu_GetItemsByID(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int HoaDonID = ((int)(inValues[0]));
+            int PhongID = ((int)(inValues[1]));
+            return ((QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuSVC)(this)).BeginHoaDonDichVu_GetItemsByID(HoaDonID, PhongID, callback, asyncState);
+        }
+        
+        private object[] OnEndHoaDonDichVu_GetItemsByID(System.IAsyncResult result) {
+            System.Collections.Generic.List<QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuInfo> retVal = ((QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuSVC)(this)).EndHoaDonDichVu_GetItemsByID(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnHoaDonDichVu_GetItemsByIDCompleted(object state) {
+            if ((this.HoaDonDichVu_GetItemsByIDCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.HoaDonDichVu_GetItemsByIDCompleted(this, new HoaDonDichVu_GetItemsByIDCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void HoaDonDichVu_GetItemsByIDAsync(int HoaDonID, int PhongID) {
+            this.HoaDonDichVu_GetItemsByIDAsync(HoaDonID, PhongID, null);
+        }
+        
+        public void HoaDonDichVu_GetItemsByIDAsync(int HoaDonID, int PhongID, object userState) {
+            if ((this.onBeginHoaDonDichVu_GetItemsByIDDelegate == null)) {
+                this.onBeginHoaDonDichVu_GetItemsByIDDelegate = new BeginOperationDelegate(this.OnBeginHoaDonDichVu_GetItemsByID);
+            }
+            if ((this.onEndHoaDonDichVu_GetItemsByIDDelegate == null)) {
+                this.onEndHoaDonDichVu_GetItemsByIDDelegate = new EndOperationDelegate(this.OnEndHoaDonDichVu_GetItemsByID);
+            }
+            if ((this.onHoaDonDichVu_GetItemsByIDCompletedDelegate == null)) {
+                this.onHoaDonDichVu_GetItemsByIDCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnHoaDonDichVu_GetItemsByIDCompleted);
+            }
+            base.InvokeAsync(this.onBeginHoaDonDichVu_GetItemsByIDDelegate, new object[] {
+                        HoaDonID,
+                        PhongID}, this.onEndHoaDonDichVu_GetItemsByIDDelegate, this.onHoaDonDichVu_GetItemsByIDCompletedDelegate, userState);
+        }
+        
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
             return ((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(callback, asyncState);
         }
@@ -862,6 +942,20 @@ namespace QuanLyKhachSan.HoaDonDichVuSVC {
             public System.Collections.Generic.List<QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuInfo> EndHoaDonDichVu_GetItems(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 System.Collections.Generic.List<QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuInfo> _result = ((System.Collections.Generic.List<QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuInfo>)(base.EndInvoke("HoaDonDichVu_GetItems", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginHoaDonDichVu_GetItemsByID(int HoaDonID, int PhongID, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
+                _args[0] = HoaDonID;
+                _args[1] = PhongID;
+                System.IAsyncResult _result = base.BeginInvoke("HoaDonDichVu_GetItemsByID", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public System.Collections.Generic.List<QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuInfo> EndHoaDonDichVu_GetItemsByID(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                System.Collections.Generic.List<QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuInfo> _result = ((System.Collections.Generic.List<QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuInfo>)(base.EndInvoke("HoaDonDichVu_GetItemsByID", _args, result)));
                 return _result;
             }
         }
