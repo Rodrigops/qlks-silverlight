@@ -14,11 +14,10 @@
             <RowDefinition Height="29" />
             <RowDefinition Height="29" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="68*" />
         </Grid.RowDefinitions>
 
-        <Button x:Name="CancelButton" Content="Cancel" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,0,0" Grid.Row="2" Grid.ColumnSpan="2" />
-        <Button x:Name="OKButton" Content="OK" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,79,0" Grid.Row="2" Grid.ColumnSpan="2" />
+        <Button x:Name="CancelButton" Content="Cancel" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,30,0,0" Grid.Row="2" Grid.Column="1" />
+        <Button x:Name="OKButton" Content="OK" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,30,79,0" Grid.Row="2" Grid.Column="1" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,6,0,0" Name="textBlock1" Text="Ngày vào" VerticalAlignment="Top" />
         <TextBlock Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="12,6,0,0" Name="textBlock2" Text="Ngày ra" VerticalAlignment="Top" />
         <TextBlock Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="0,6,0,0" Name="lblNgayVao" Text="" VerticalAlignment="Top" FontWeight="Bold" />
@@ -53,5 +52,6 @@
             <telerik:RadComboBoxItem Content="50" />
             <telerik:RadComboBoxItem Content="55" />
         </telerik:RadComboBox>
+        <telerik:RadBusyIndicator Grid.ColumnSpan="2" Grid.RowSpan="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Name="LoadingPanel" Height="100" Width="350" BusyContent="Đang tại dữ liệu.Vui lòng chờ..." telerik:StyleManager.Theme="Metro"/>
     </Grid>
 </controls:ChildWindow>

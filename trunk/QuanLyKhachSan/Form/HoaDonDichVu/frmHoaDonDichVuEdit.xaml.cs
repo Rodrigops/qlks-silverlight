@@ -27,6 +27,8 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
         //Load DichVu Theo HoaDonID | PhongID
         public void DichVu_Load(int _HoaDonID, int _PhongID)
         {
+            LoadingPanel.IsBusy = true;
+
             DichVuClient = new DichVuSVCClient();
             DichVuClient.DichVu_GetItemsCompleted += new EventHandler<DichVu_GetItemsCompletedEventArgs>(DichVuClient_DichVu_GetItemsCompleted);
             DichVuClient.DichVu_GetItemsAsync();
@@ -41,6 +43,8 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
         }
         public void HoaDonDichVu_Load(int _HoaDonDichVuID)
         {
+            LoadingPanel.IsBusy = true;
+
             DichVuClient = new DichVuSVCClient();
             DichVuClient.DichVu_GetItemsCompleted += new EventHandler<DichVu_GetItemsCompletedEventArgs>(DichVuClient_DichVu_GetItemsCompleted);
             DichVuClient.DichVu_GetItemsAsync();
@@ -57,6 +61,7 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
         void HoaDonDichVuClient_HoaDonDichVu_GetItemsByIDCompleted(object sender, HoaDonDichVu_GetItemsByIDCompletedEventArgs e)
         {
             grvHoaDonDichVu.ItemsSource = e.Result;
+            LoadingPanel.IsBusy = false;
         }
         void HoaDonDichVuClient_HoaDonDichVu_GetItemCompleted(object sender, HoaDonDichVu_GetItemCompletedEventArgs e)
         {
@@ -67,6 +72,8 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
             txtTongTien.Text = Format_NumberVietnamese(HDDV.TongTien.ToString());
             if (!string.IsNullOrEmpty(HDDV.NgaySuDung))
                 rdpNgaySuDung.SelectedDate = DateTime.Parse(HDDV.NgaySuDung);
+
+            LoadingPanel.IsBusy = false;
         }
         void HoaDonDichVuClient_HoaDonDichVu_EditCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
