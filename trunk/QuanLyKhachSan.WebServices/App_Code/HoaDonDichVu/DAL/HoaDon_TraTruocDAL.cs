@@ -39,10 +39,10 @@ namespace QuanLyKhachSan
             SQLDB.Addparameter("@HoaDon_TraTruocID", HoaDon_TraTruocID);
             SQLDB.executenonquery("sp_HoaDon_TraTruoc_Delete", CommandType.StoredProcedure);
         }
-        public HoaDon_TraTruocInfo HoaDon_TraTruoc_GetItem(int HoaDon_TraTruocID)
+        public HoaDon_TraTruocInfo HoaDon_TraTruoc_GetItem(int HoaDonID)
         {
             SQLDataHelper SQLDB = new SQLDataHelper();
-            SQLDB.Addparameter("@HoaDon_TraTruocID", HoaDon_TraTruocID);
+            SQLDB.Addparameter("@HoaDonID", HoaDonID);
             SqlDataReader rd = SQLDB.executereader("sp_HoaDon_TraTruoc_GetItem", CommandType.StoredProcedure);
             HoaDon_TraTruocInfo item = null;
             while (rd.Read())
@@ -55,10 +55,10 @@ namespace QuanLyKhachSan
             }
             return item;
         }
-        public List<HoaDon_TraTruocInfo> HoaDon_TraTruoc_GetItems([Optional, DefaultParameterValue(0)] int HoaDon_TraTruocID)
+        public List<HoaDon_TraTruocInfo> HoaDon_TraTruoc_GetItems([Optional, DefaultParameterValue(0)] int HoaDonID)
         {
             SQLDataHelper SQLDB = new SQLDataHelper();
-            SQLDB.Addparameter("@HoaDon_TraTruocID", HoaDon_TraTruocID);
+            SQLDB.Addparameter("@HoaDonID", HoaDonID);
             SqlDataReader rd = SQLDB.executereader("sp_HoaDon_TraTruoc_GetItems", CommandType.StoredProcedure);
             List<HoaDon_TraTruocInfo> list = new List<HoaDon_TraTruocInfo>();
             HoaDon_TraTruocInfo item = null;
@@ -69,6 +69,8 @@ namespace QuanLyKhachSan
                 item.HoaDonID = int.Parse(rd["HoaDonID"].ToString());
                 item.GhiChu = rd["GhiChu"].ToString();
                 item.TraTruoc = decimal.Parse(rd["TraTruoc"].ToString());
+                item.CreatedByUser = int.Parse(rd[""].ToString());
+                item.GhiChu = rd["GhiChu"].ToString();
 
                 list.Add(item);
             }
