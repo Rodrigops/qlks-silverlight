@@ -48,6 +48,7 @@
                         <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Ngày Sử Dụng" DataMemberBinding="{Binding Path=NgaySuDung}" Width="100"></telerik:GridViewDataColumn>
                     </telerik:RadGridView.Columns>
                 </telerik:RadGridView>
+                <telerik:RadBusyIndicator Name="LoadingPanel" Height="100" Width="300" BusyContent="Đang tại dữ liệu.Vui lòng chờ..." telerik:StyleManager.Theme="Metro"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

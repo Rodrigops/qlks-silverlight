@@ -24,6 +24,7 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
         }
         public void HoaDon_Load(int _HoaDonID)
         {
+            LoadingPanel.IsBusy = true;
             HoaDonID = _HoaDonID;
 
             HoaDonDichVuClient = new HoaDonDichVuSVCClient();
@@ -44,6 +45,7 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
                 if (item.Equals(HDDV.PhutRa.ToString()))
                     cbxPhutRa.SelectedIndex = i;
             }
+            LoadingPanel.IsBusy = false;
         }
         private void OKButton_Click(object sender, RoutedEventArgs e)
         {
