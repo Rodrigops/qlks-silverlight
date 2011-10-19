@@ -34,7 +34,8 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
         void HoaDonDichVuClient_HoaDonDichVu_GetItem_NgayVaoCompleted(object sender, HoaDonDichVu_GetItem_NgayVaoCompletedEventArgs e)
         {
             HoaDonNgayVaoRaInfo HDDV = e.Result;
-            lblNgayVao.Text = HDDV.NgayVao + " " + HDDV.GioVao.ToString() + "h" + HDDV.PhutVao.ToString();
+            DateTime dt = DateTime.Parse(HDDV.NgayVao);
+            lblNgayVao.Text = String.Format("{0:dd/MM/yyyy}", dt) + " " + HDDV.GioVao.ToString() + "h" + HDDV.PhutVao.ToString();
             rdpNgayRa.SelectedDate = DateTime.Parse(HDDV.NgayRa);
             cbxGioRa.SelectedIndex = HDDV.GioRa;
             for (int i = 0; i < cbxPhutRa.Items.Count; i++)
