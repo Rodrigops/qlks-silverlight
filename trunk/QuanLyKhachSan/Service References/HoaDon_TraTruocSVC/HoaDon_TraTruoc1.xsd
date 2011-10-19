@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDon_TraTruoc.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" />
+  <xs:element name="HoaDon_TraTruoc_Add">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HoaDonID" type="xs:int" />
+        <xs:element minOccurs="0" name="GhiChu" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TraTruoc" type="xs:decimal" />
+        <xs:element minOccurs="0" name="CreatedByUser" type="xs:int" />
+        <xs:element minOccurs="0" name="CreatedDate" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HoaDon_TraTruoc_AddResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HoaDon_TraTruoc_Edit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HoaDon_TraTruocID" type="xs:int" />
+        <xs:element minOccurs="0" name="HoaDonID" type="xs:int" />
+        <xs:element minOccurs="0" name="GhiChu" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TraTruoc" type="xs:decimal" />
+        <xs:element minOccurs="0" name="ModifiedByUser" type="xs:int" />
+        <xs:element minOccurs="0" name="ModifiedDate" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HoaDon_TraTruoc_EditResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HoaDon_TraTruoc_Delete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HoaDon_TraTruocID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HoaDon_TraTruoc_DeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HoaDon_TraTruoc_GetItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HoaDon_TraTruocID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HoaDon_TraTruoc_GetItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" minOccurs="0" name="HoaDon_TraTruoc_GetItemResult" nillable="true" type="q1:HoaDon_TraTruocInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HoaDon_TraTruoc_GetItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HoaDon_TraTruocID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HoaDon_TraTruoc_GetItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" minOccurs="0" name="HoaDon_TraTruoc_GetItemsResult" nillable="true" type="q2:ArrayOfHoaDon_TraTruocInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
