@@ -58,10 +58,6 @@
                     maxReceivedMessageSize="2147483647">
                     <security mode="None" />
                 </binding>
-                <binding name="BasicHttpBinding_Gia_PhongSVC" maxBufferSize="2147483647"
-                    maxReceivedMessageSize="2147483647">
-                    <security mode="None" />
-                </binding>
                 <binding name="BasicHttpBinding_HoaDon_TraTruocSVC" maxBufferSize="2147483647"
                     maxReceivedMessageSize="2147483647">
                     <security mode="None" />
@@ -120,9 +116,6 @@
             <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyUser/UserGroup.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_UserGroupSVC"
                 contract="UserGroupSVC.UserGroupSVC" name="BasicHttpBinding_UserGroupSVC" />
-            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Gia_Phong.svc"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_Gia_PhongSVC"
-                contract="Gia_PhongSVC.Gia_PhongSVC" name="BasicHttpBinding_Gia_PhongSVC" />
             <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDon_TraTruoc.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_HoaDon_TraTruocSVC"
                 contract="HoaDon_TraTruocSVC.HoaDon_TraTruocSVC" name="BasicHttpBinding_HoaDon_TraTruocSVC" />
