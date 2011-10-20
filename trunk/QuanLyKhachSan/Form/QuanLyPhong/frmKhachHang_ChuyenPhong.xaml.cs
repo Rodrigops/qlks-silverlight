@@ -14,11 +14,17 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
 {
     public partial class frmKhachHang_ChuyenPhong : ChildWindow
     {
+        private int HoaDonID;
+        private int PhongID;
         public frmKhachHang_ChuyenPhong()
         {
             InitializeComponent();
         }
-
+        public void ChuyenPhong_Load(int _HoaDonID, int _PhongID)
+        {
+            HoaDonID = _HoaDonID;
+            PhongID = _PhongID;
+        }
         private void OKButton_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = true;
