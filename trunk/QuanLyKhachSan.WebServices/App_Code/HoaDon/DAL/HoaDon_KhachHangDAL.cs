@@ -74,6 +74,13 @@ namespace QuanLyKhachSan
             SQLDB.Addparameter("@KhachHangID", KhachHangID);
             SQLDB.executenonquery("sp_Phong_KhachHang_Delete", CommandType.StoredProcedure);
         }
+        public void HoaDon_KhachHang_EditPhong(int HoaDonID, int PhongID)
+        {
+            SQLDataHelper SQLDB = new SQLDataHelper();
+            SQLDB.Addparameter("@HoaDonID", HoaDonID);
+            SQLDB.Addparameter("@PhongID", PhongID);
+            SQLDB.executenonquery("sp_HoaDon_KhachHang_EditPhong", CommandType.StoredProcedure);
+        }
     }
 }
 
