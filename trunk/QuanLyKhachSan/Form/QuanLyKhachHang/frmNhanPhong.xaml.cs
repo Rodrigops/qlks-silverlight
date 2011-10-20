@@ -36,10 +36,38 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
         }
 
         private void OKButton_Click(object sender, RoutedEventArgs e)
-        {
+        {            
+            decimal KhuyenMai = decimal.Parse(txtKhuyenMai.Text.ToString());
+            string GhiChu = txtGhiChu.Text;
+            string sNgayVao = "";            
+            int iNgayVao_So;
+            int iGioVao;
+            int iPhutVao;
+            int iThangVao;
+            int iNamVao;
+            string sNgayRa = "";
+            int iNgayRa_So;
+            int iGiora;
+            int iPhutRa;
+            int iThangRa;
+            int iNamRa;
+            if (!String.IsNullOrEmpty(calNgayVao.SelectedDate.ToString()))
+                sNgayVao = calNgayVao.SelectedDate.Value.ToString("MM/dd/yyyy");
+            iGioVao = int.Parse(cbxGioVao.Text.ToString());
+            iPhutVao = int.Parse(cbxPhutVao.Text.ToString());
+            iNgayVao_So = DateToNumberConverter.Date2Number(sNgayVao);
+            iThangVao = DateToNumberConverter.Date2Month(sNgayVao);
+            iNamVao = DateToNumberConverter.Date2Year(sNgayVao);
+            if (!String.IsNullOrEmpty(calNgayRa.SelectedDate.ToString()))
+                sNgayRa = calNgayRa.SelectedDate.Value.ToString("MM/dd/yyyy");
+            iGiora = int.Parse(cbxGioRa.Text.ToString());
+            iPhutRa = int.Parse(cbxPhutRa.Text.ToString());
+            iNgayRa_So = DateToNumberConverter.Date2Number(sNgayRa);
+            iThangRa = DateToNumberConverter.Date2Month(sNgayRa);
+            iNamRa = DateToNumberConverter.Date2Year(sNgayRa);
             HoaDonSVCClient HoaDonClient = new HoaDonSVCClient();
-            HoaDonClient.HoaDon_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(HoaDonClient_HoaDon_AddCompleted);
-            HoaDonClient.HoaDon_AddAsync(1);
+            HoaDonClient.HoaDon_AddCompleted+=new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(HoaDonClient_HoaDon_AddCompleted);
+            HoaDonClient.HoaDon_AddAsync("NhanPhong", KhuyenMai, GhiChu, sNgayVao, iNgayVao_So, iGioVao, iPhutVao, iThangVao, iNamVao, sNgayRa, iNgayRa_So, iGiora, iPhutRa, iThangRa, iNamRa, 0);
         }
 
         void HoaDonClient_HoaDon_AddCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
