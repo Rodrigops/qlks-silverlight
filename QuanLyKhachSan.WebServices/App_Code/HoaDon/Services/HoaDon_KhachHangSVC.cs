@@ -34,5 +34,11 @@ namespace QuanLyKhachSan
             HoaDon_KhachHangDAL doit = new HoaDon_KhachHangDAL();
             return doit.Phong_KhachHang_DatPhong(PhongID);
         }
+        [OperationContract]
+        public void HoaDon_KhachHang_EditPhong(int HoaDonID, int PhongID)
+        {
+            HoaDon_KhachHangDAL doit = new HoaDon_KhachHangDAL();
+            doit.HoaDon_KhachHang_EditPhong(HoaDonID, PhongID);
+        }
     }
 }
