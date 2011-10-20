@@ -92,6 +92,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Form\HoaDonDichVu\frmHoaDon_ThemTraTruoc.xaml.cs">
+      <DependentUpon>frmHoaDon_ThemTraTruoc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\HoaDonDichVu\frmPhong_CapNhatNgayRa.xaml.cs">
+      <DependentUpon>frmPhong_CapNhatNgayRa.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Form\QuanLyKhachHang\frmDatPhong.xaml.cs">
       <DependentUpon>frmDatPhong.xaml</DependentUpon>
     </Compile>
@@ -112,6 +118,9 @@
       <DependentUpon>frmNhanPhong.xaml</DependentUpon>
     </Compile>
     <Compile Include="Form\QuanLyKhachHang\SexFormater.cs" />
+    <Compile Include="Form\QuanLyPhong\frmKhachHang_ChuyenPhong.xaml.cs">
+      <DependentUpon>frmKhachHang_ChuyenPhong.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Form\QuanLyPhong\frmPhong_KhachHang_DatPhong.xaml.cs">
       <DependentUpon>frmPhong_KhachHang_DatPhong.xaml</DependentUpon>
     </Compile>
@@ -201,6 +210,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\HoaDon_TraTruocSVC\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\KhachHangSVC\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -260,6 +274,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Form\HoaDonDichVu\frmHoaDon_ThemTraTruoc.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Form\HoaDonDichVu\frmPhong_CapNhatNgayRa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Form\QuanLyKhachHang\frmDatPhong.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -275,6 +297,10 @@
     <Page Include="Form\QuanLyKhachHang\frmNhanPhong.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\QuanLyPhong\frmKhachHang_ChuyenPhong.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Form\QuanLyPhong\frmPhong_KhachHang_DatPhong.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -424,7 +450,13 @@
     <None Include="Service References\HoaDonSVC\HoaDon1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\HoaDonSVC\HoaDon2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\HoaDonSVC\HoaDonSVC.wsdl" />
+    <None Include="Service References\HoaDonSVC\QuanLyKhachSan.HoaDonSVC.HoaDonInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\HoaDon_KhachHangSVC\HoaDon_KhachHang.wsdl" />
     <None Include="Service References\HoaDon_KhachHangSVC\HoaDon_KhachHang.xsd">
       <SubType>Designer</SubType>
@@ -437,6 +469,20 @@
     </None>
     <None Include="Service References\HoaDon_KhachHangSVC\HoaDon_KhachHangSVC.wsdl" />
     <None Include="Service References\HoaDon_KhachHangSVC\QuanLyKhachSan.HoaDon_KhachHangSVC.Phong_KhachHangInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HoaDon_TraTruocSVC\HoaDon_TraTruoc.wsdl" />
+    <None Include="Service References\HoaDon_TraTruocSVC\HoaDon_TraTruoc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HoaDon_TraTruocSVC\HoaDon_TraTruoc1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HoaDon_TraTruocSVC\HoaDon_TraTruoc2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HoaDon_TraTruocSVC\HoaDon_TraTruocSVC.wsdl" />
+    <None Include="Service References\HoaDon_TraTruocSVC\QuanLyKhachSan.HoaDon_TraTruocSVC.HoaDon_TraTruocInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\KhachHangSVC\KhachHang.wsdl" />
@@ -663,6 +709,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\HoaDon_TraTruocSVC\HoaDon_TraTruoc.disco" />
+    <None Include="Service References\HoaDon_TraTruocSVC\configuration91.svcinfo" />
+    <None Include="Service References\HoaDon_TraTruocSVC\configuration.svcinfo" />
+    <None Include="Service References\HoaDon_TraTruocSVC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="ServiceReferences.ClientConfig" />
     <None Include="Service References\UserSVC\User.wsdl" />
     <None Include="Service References\UserSVC\User.xsd">
@@ -724,6 +777,7 @@
     <WCFMetadataStorage Include="Service References\HoaDonDichVuSVC\" />
     <WCFMetadataStorage Include="Service References\HoaDonSVC\" />
     <WCFMetadataStorage Include="Service References\HoaDon_KhachHangSVC\" />
+    <WCFMetadataStorage Include="Service References\HoaDon_TraTruocSVC\" />
     <WCFMetadataStorage Include="Service References\KhachHangSVC\" />
     <WCFMetadataStorage Include="Service References\LoaiPhongSVC\" />
     <WCFMetadataStorage Include="Service References\Ngay_PhongSVC\" />
