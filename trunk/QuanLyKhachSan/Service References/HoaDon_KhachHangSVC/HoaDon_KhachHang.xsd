@@ -64,4 +64,17 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="HoaDon_KhachHang_EditPhong">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HoaDonID" type="xs:int" />
+        <xs:element minOccurs="0" name="PhongID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HoaDon_KhachHang_EditPhongResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

@@ -40,6 +40,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="HoaDon_KhachHang_EditPhong">
+      <soap:operation soapAction="urn:HoaDon_KhachHangSVC/HoaDon_KhachHang_EditPhong" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="HoaDon_KhachHangSVC">
     <wsdl:port name="BasicHttpBinding_HoaDon_KhachHangSVC" binding="tns:BasicHttpBinding_HoaDon_KhachHangSVC">
