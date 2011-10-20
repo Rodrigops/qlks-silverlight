@@ -82,7 +82,15 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
         }
         void HoaDonDichVuClient_HoaDonDichVu_AddCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
-            this.DialogResult = true;
+            LoadingPanel.IsBusy = true;
+            cbxDichVu.SelectedIndex = 0;
+
+            txtSoLuong.Text = String.Empty;
+            rdpNgaySuDung.SelectedDate = null;
+
+            HoaDonDichVuClient = new HoaDonDichVuSVCClient();
+            HoaDonDichVuClient.HoaDonDichVu_GetItemsByIDCompleted += new EventHandler<HoaDonDichVu_GetItemsByIDCompletedEventArgs>(HoaDonDichVuClient_HoaDonDichVu_GetItemsByIDCompleted);
+            HoaDonDichVuClient.HoaDonDichVu_GetItemsByIDAsync(HoaDonID, PhongID);
         }
         private void cbxDichVu_SelectionChanged(object sender, Telerik.Windows.Controls.SelectionChangedEventArgs e)
         {
