@@ -13,11 +13,46 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
 {
     public class DateToNumberConverter
     {
+        public static string Date2Vietnamese(string Date)
+        {
+            try
+            {
+                string retInt="";
+                if (Date == "")
+                    return "";
+                string[] aDate = Date.Split("/".ToCharArray());
+                retInt = aDate[1].ToString() + "/" +  aDate[0].ToString() + "/" + aDate[2].ToString();
+                return retInt;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public static string NumberToDate(string Number)
+        {
+            try
+            {
+                string Nam = "";
+                string Thang = "";
+                string Ngay = "";
+                Nam = Number.Substring(0, 4);
+                Thang = Number.Substring(4, 2);
+                Ngay = Number.Substring(6, 2);
+                return Ngay + "/" + Thang + "/" + Nam;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
        public static int Date2Number(string Date)
         {
             try
             {
                 int retInt;
+                if (Date == "")
+                    return 0;
                 string[] aDate = Date.Split("/".ToCharArray());
                 retInt = int.Parse(aDate[2].ToString() + aDate[0].ToString() + aDate[1].ToString());
                 return retInt;
@@ -32,6 +67,8 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
             try
             {
                 int retInt;
+                if (Date == "")
+                    return 0;
                 string[] aDate = Date.Split("/".ToCharArray());
                 retInt = int.Parse(aDate[0].ToString());
                 return retInt;
@@ -46,6 +83,8 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
             try
             {
                 int retInt;
+                if (Date == "")
+                    return 0;
                 string[] aDate = Date.Split("/".ToCharArray());
                 retInt = int.Parse(aDate[2].ToString());
                 return retInt;

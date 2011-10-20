@@ -39,7 +39,7 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
         {
             HoaDonSVCClient HoaDonClient = new HoaDonSVCClient();
             HoaDonClient.HoaDon_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(HoaDonClient_HoaDon_AddCompleted);
-            HoaDonClient.HoaDon_AddAsync(1);
+            //HoaDonClient.HoaDon_AddAsync(1);
         }
 
         void HoaDonClient_HoaDon_AddCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
