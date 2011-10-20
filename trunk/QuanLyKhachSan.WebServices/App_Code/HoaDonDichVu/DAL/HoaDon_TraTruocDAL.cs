@@ -66,15 +66,21 @@ namespace QuanLyKhachSan
             {
                 item = new HoaDon_TraTruocInfo();
                 item.HoaDon_TraTruocID = int.Parse(rd["HoaDon_TraTruocID"].ToString());
-                item.HoaDonID = int.Parse(rd["HoaDonID"].ToString());
                 item.GhiChu = rd["GhiChu"].ToString();
                 item.TraTruoc = decimal.Parse(rd["TraTruoc"].ToString());
-                item.CreatedByUser = int.Parse(rd[""].ToString());
+                item.CreatedDate = rd["CreatedDate"].ToString();
+                item.CreatedByUser = int.Parse(rd["CreatedByUser"].ToString());
                 item.GhiChu = rd["GhiChu"].ToString();
 
                 list.Add(item);
             }
             return list;
+        }
+        public void TinhTrang_Phong_EditIsActive(int HoaDonID)
+        {
+            SQLDataHelper SQLDB = new SQLDataHelper();
+            SQLDB.Addparameter("@HoaDonID", HoaDonID);
+            SQLDB.executenonquery("sp_TinhTrang_Phong_EditIsActive", CommandType.StoredProcedure);
         }
     }
 }

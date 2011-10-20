@@ -41,5 +41,11 @@ namespace QuanLyKhachSan
             HoaDon_TraTruocDAL doit = new HoaDon_TraTruocDAL();
             return doit.HoaDon_TraTruoc_GetItems(HoaDon_TraTruocID);
         }
+        [OperationContract]
+        public void TinhTrang_Phong_EditIsActive(int HoaDonID)
+        {
+            HoaDon_TraTruocDAL doit = new HoaDon_TraTruocDAL();
+            doit.TinhTrang_Phong_EditIsActive(HoaDonID);
+        }
     }
 }
