@@ -247,6 +247,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         {
             frmHoaDon_ThemTraTruoc HoaDon_ThemTraTruoc = new frmHoaDon_ThemTraTruoc();
             HoaDon_ThemTraTruoc.HoaDonID = HoaDonID;
+            HoaDon_ThemTraTruoc.TraTruoc_Load(HoaDonID);
             HoaDon_ThemTraTruoc.Show();
         }
 
