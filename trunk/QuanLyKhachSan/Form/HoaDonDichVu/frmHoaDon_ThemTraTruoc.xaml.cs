@@ -20,7 +20,7 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
         {
             InitializeComponent();
         }
-        void TraTruoc_Load(int _HoaDonID)
+        public void TraTruoc_Load(int _HoaDonID)
         {
             HoaDonID = _HoaDonID;
             LoadingPanel.IsBusy = true;
