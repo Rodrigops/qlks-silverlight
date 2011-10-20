@@ -210,6 +210,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                     break;
                 case "TraPhong":
                     frmPhong_KhachHang_TraPhong DanhSachKhachHang_TraPhong = new frmPhong_KhachHang_TraPhong();
+                    DanhSachKhachHang_TraPhong.HoaDon_Load(item.HoaDonID,item.PhongID);
                     DanhSachKhachHang_TraPhong.Show();
                     break;
                 case "XemThemDichVu":

@@ -18,10 +18,14 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         Gia_PhongSVCClient Gia_PhongClient = new Gia_PhongSVCClient();
         public frmGiaPhong()
         {
-            InitializeComponent();
-            LoadingPanel.IsBusy = true;
-            Gia_PhongClient.Phong_GiaPhongCompleted += new EventHandler<Phong_GiaPhongCompletedEventArgs>(Gia_PhongClient_Phong_GiaPhongCompleted);
-            Gia_PhongClient.Phong_GiaPhongAsync();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (Exception)
+            {                
+                throw;
+            }            
         }
 
         void Gia_PhongClient_Phong_GiaPhongCompleted(object sender, Phong_GiaPhongCompletedEventArgs e)
@@ -33,6 +37,17 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         // Executes when the user navigates to this page.
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            try
+            {                
+                LoadingPanel.IsBusy = true;
+                Gia_PhongClient.Phong_GiaPhongCompleted += new EventHandler<Phong_GiaPhongCompletedEventArgs>(Gia_PhongClient_Phong_GiaPhongCompleted);
+                Gia_PhongClient.Phong_GiaPhongAsync();
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
         }
 
     }
