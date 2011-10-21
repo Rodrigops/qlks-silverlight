@@ -8,6 +8,11 @@
            Title="Cập Nhật Tiền Trả Trước">
     <Grid x:Name="LayoutRoot" Margin="2">
         <Grid.Resources>
+            <DataTemplate x:Key="Template_grvHoaDon_TraTruoc_ColumnEdit">
+                <StackPanel Orientation="Horizontal">
+                    <HyperlinkButton CommandParameter="{Binding HoaDon_TraTruocID}" Content="Xóa" Margin="2" Name="cmdXoaTraTruoc" Click="cmdXoaTraTruoc_Click"></HyperlinkButton>
+                </StackPanel>
+            </DataTemplate>
             <local:NumberVietnameseFormater x:Key="NumberVietnameseFormater">
             </local:NumberVietnameseFormater>
         </Grid.Resources>
@@ -34,9 +39,10 @@
                 <telerik:RadGridView AutoGenerateColumns="False" AutoExpandGroups="True" IsFilteringAllowed="False" Name="grvHoaDon_TraTruoc" RowIndicatorVisibility="Collapsed" ShowColumnHeaders="True" ShowGroupPanel="False" telerik:StyleManager.Theme="Office_Blue" Height="Auto" IsReadOnly="True">
                     <telerik:RadGridView.Columns>
                         <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Right" Header="Trả trước" DataMemberBinding="{Binding Path=TraTruoc, Converter={StaticResource NumberVietnameseFormater}}" Width="100" ></telerik:GridViewDataColumn>
-                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Left" Header="Ghi chú" DataMemberBinding="{Binding Path=GhiChu}" Width="147"></telerik:GridViewDataColumn>
-                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Thời gian" DataMemberBinding="{Binding Path=CreatedDate}" Width="100"></telerik:GridViewDataColumn>
-                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Nhân viên" DataMemberBinding="{Binding Path=CreatedByUser}" Width="100"></telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Left" Header="Ghi chú" DataMemberBinding="{Binding Path=GhiChu}" Width="127"></telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Thời gian" DataMemberBinding="{Binding Path=CreatedDate}" Width="90"></telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Nhân viên" DataMemberBinding="{Binding Path=CreatedByUser}" Width="80"></telerik:GridViewDataColumn>
+                        <telerik:GridViewColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Xóa" Width="50" CellTemplate="{StaticResource Template_grvHoaDon_TraTruoc_ColumnEdit}"></telerik:GridViewColumn>
                     </telerik:RadGridView.Columns>
                 </telerik:RadGridView>
                 <telerik:RadBusyIndicator Name="LoadingPanel" Height="150" Width="300" BusyContent="Đang tại dữ liệu.Vui lòng chờ..." telerik:StyleManager.Theme="Metro"/>

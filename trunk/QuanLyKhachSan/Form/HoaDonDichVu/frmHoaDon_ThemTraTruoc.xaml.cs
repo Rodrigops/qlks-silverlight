@@ -52,6 +52,23 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
         {
             this.DialogResult = false;
         }
+
+        private void cmdXoaTraTruoc_Click(object sender, RoutedEventArgs e)
+        {
+            HyperlinkButton cmdXoaTraTruoc = sender as HyperlinkButton;
+            int HoaDon_TraTruocID = int.Parse(cmdXoaTraTruoc.CommandParameter.ToString());
+            MessageBoxResult msgResult = MessageBox.Show("Bạn muốn xóa mục này", "Thông báo", MessageBoxButton.OKCancel);
+            if (msgResult == MessageBoxResult.OK)
+            {
+                HoaDon_TraTruocClient.HoaDon_TraTruoc_DeleteCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(HoaDon_TraTruocClient_HoaDon_TraTruoc_DeleteCompleted);
+                HoaDon_TraTruocClient.HoaDon_TraTruoc_DeleteAsync(HoaDon_TraTruocID);
+            }
+        }
+
+        void HoaDon_TraTruocClient_HoaDon_TraTruoc_DeleteCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            HoaDon_TraTruocClient.HoaDon_TraTruoc_GetItemsAsync(HoaDonID);
+        }
     }
 }
 
