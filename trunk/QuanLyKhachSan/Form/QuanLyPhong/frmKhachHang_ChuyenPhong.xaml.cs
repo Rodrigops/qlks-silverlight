@@ -94,7 +94,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
 
             PhongClient = new PhongSVCClient();
             PhongClient.TinhTrang_Phong_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(PhongClient_TinhTrang_Phong_AddCompleted);
-            PhongClient.TinhTrang_Phong_AddAsync((int)cbxPhong.SelectedValue, 3, HoaDon.NgayVao_So);
+            PhongClient.TinhTrang_Phong_AddAsync(HoaDonID,(int)cbxPhong.SelectedValue, 3, HoaDon.NgayVao_So);
         }
 
         void PhongClient_TinhTrang_Phong_AddCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)

@@ -74,7 +74,11 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         }
         // Executes when the user navigates to this page.
         protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
+        {            
+            //if (Authentication.isLogged == false)
+            //{
+            //    this.NavigationService.Navigate(new Uri("Login", UriKind.Relative));
+            //}
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -210,7 +214,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                     break;
                 case "TraPhong":
                     frmPhong_KhachHang_TraPhong DanhSachKhachHang_TraPhong = new frmPhong_KhachHang_TraPhong();
-                    DanhSachKhachHang_TraPhong.HoaDon_Load(item.HoaDonID,item.PhongID);
+                    DanhSachKhachHang_TraPhong.LoadData(item.HoaDonID, item.PhongID);
                     DanhSachKhachHang_TraPhong.Show();
                     break;
                 case "XemThemDichVu":
