@@ -37,6 +37,12 @@
   <wsdl:message name="DichVuSVC_DichVu_GetItems_OutputMessage">
     <wsdl:part name="parameters" element="DichVu_GetItemsResponse" />
   </wsdl:message>
+  <wsdl:message name="DichVuSVC_DichVu_Edit_SL_InputMessage">
+    <wsdl:part name="parameters" element="DichVu_Edit_SL" />
+  </wsdl:message>
+  <wsdl:message name="DichVuSVC_DichVu_Edit_SL_OutputMessage">
+    <wsdl:part name="parameters" element="DichVu_Edit_SLResponse" />
+  </wsdl:message>
   <wsdl:portType name="DichVuSVC">
     <wsdl:operation name="DichVu_Add">
       <wsdl:input wsaw:Action="urn:DichVuSVC/DichVu_Add" message="DichVuSVC_DichVu_Add_InputMessage" />
@@ -57,6 +63,10 @@
     <wsdl:operation name="DichVu_GetItems">
       <wsdl:input wsaw:Action="urn:DichVuSVC/DichVu_GetItems" message="DichVuSVC_DichVu_GetItems_InputMessage" />
       <wsdl:output wsaw:Action="urn:DichVuSVC/DichVu_GetItemsResponse" message="DichVuSVC_DichVu_GetItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DichVu_Edit_SL">
+      <wsdl:input wsaw:Action="urn:DichVuSVC/DichVu_Edit_SL" message="DichVuSVC_DichVu_Edit_SL_InputMessage" />
+      <wsdl:output wsaw:Action="urn:DichVuSVC/DichVu_Edit_SLResponse" message="DichVuSVC_DichVu_Edit_SL_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

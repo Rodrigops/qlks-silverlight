@@ -5,6 +5,7 @@
       <xs:element minOccurs="0" name="DichVuID" type="xs:int" />
       <xs:element minOccurs="0" name="DichVuName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="GiaTien" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SL" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DichVuInfo" nillable="true" type="tns:DichVuInfo" />
