@@ -169,6 +169,14 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                 DichVuClient.DichVu_GetItemsAsync();
             }
         }
+        void DichVuEditSL_Closed(object sender, EventArgs e)
+        {
+            frmDichVuEditSL DichVuEditSL = sender as frmDichVuEditSL;
+            if (DichVuEditSL.DialogResult == true)
+            {
+                DichVuClient.DichVu_GetItemsAsync();
+            }
+        }
         private void cmdThemDichVu_Click(object sender, RoutedEventArgs e)
         {
             frmDichVuEdit DichVuEdit = new frmDichVuEdit();
@@ -194,6 +202,12 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                 DichVuClient.DichVu_DeleteCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(DichVuClient_DichVu_DeleteCompleted);
                 DichVuClient.DichVu_DeleteAsync(DichVuID);
             }
+        }
+        private void cmdThemSLTon_Click(object sender, RoutedEventArgs e)
+        {
+            frmDichVuEditSL DichVuEditSL = new frmDichVuEditSL();
+            DichVuEditSL.Closed += new EventHandler(DichVuEditSL_Closed);
+            DichVuEditSL.Show();
         }
         #endregion
         #region Phong
