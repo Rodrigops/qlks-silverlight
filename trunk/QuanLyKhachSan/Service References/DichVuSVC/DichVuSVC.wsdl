@@ -49,6 +49,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="DichVu_Edit_SL">
+      <soap:operation soapAction="urn:DichVuSVC/DichVu_Edit_SL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="DichVuSVC">
     <wsdl:port name="BasicHttpBinding_DichVuSVC" binding="tns:BasicHttpBinding_DichVuSVC">
