@@ -149,7 +149,6 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
                     int.Parse(txtSoLuong.Text.ToString()), decimal.Parse(txtDonGia.Text.ToString()), decimal.Parse(txtTongTien.Text.ToString()), 0, DateTime.Now.ToString("MM/dd/yyyy"));
             }
         }
-
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = false;
@@ -173,6 +172,22 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
             {
                 throw;
             }
+        }
+        private void cmdXoaHDDV_Click(object sender, RoutedEventArgs e)
+        {
+            HyperlinkButton cmdXoaHDDV = sender as HyperlinkButton;
+            int HoaDonDichVuID = int.Parse(cmdXoaHDDV.CommandParameter.ToString());
+            MessageBoxResult msgResult = MessageBox.Show("Bạn muốn xóa mục này", "Thông báo", MessageBoxButton.OKCancel);
+            if (msgResult == MessageBoxResult.OK)
+            {
+                HoaDonDichVuClient.HoaDonDichVu_DeleteCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(HoaDonDichVuClient_HoaDonDichVu_DeleteCompleted);
+                HoaDonDichVuClient.HoaDonDichVu_DeleteAsync(HoaDonDichVuID);
+            }
+        }
+
+        void HoaDonDichVuClient_HoaDonDichVu_DeleteCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            HoaDonDichVuClient.HoaDonDichVu_GetItemsByIDAsync(HoaDonID, PhongID);
         }
     }
 }
