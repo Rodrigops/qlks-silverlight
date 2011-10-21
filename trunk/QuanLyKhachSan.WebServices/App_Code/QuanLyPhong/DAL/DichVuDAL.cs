@@ -44,6 +44,7 @@ namespace QuanLyKhachSan
                 item.DichVuID = int.Parse(rd["DichVuID"].ToString());
                 item.DichVuName = rd["DichVuName"].ToString();
                 item.GiaTien = decimal.Parse(rd["GiaTien"].ToString());
+                item.SL = int.Parse(rd["SL"].ToString());
             }
             return item;
         }
@@ -59,9 +60,17 @@ namespace QuanLyKhachSan
                 item.DichVuID = int.Parse(rd["DichVuID"].ToString());
                 item.DichVuName = rd["DichVuName"].ToString();
                 item.GiaTien = decimal.Parse(rd["GiaTien"].ToString());
+                item.SL = int.Parse(rd["SL"].ToString());
                 list.Add(item);
             }
             return list;
+        }
+        public void DichVu_Edit_SL(int DichVuID, int SL)
+        {
+            SQLDataHelper SQLDB = new SQLDataHelper();
+            SQLDB.Addparameter("@DichVuID", DichVuID);
+            SQLDB.Addparameter("@SL", SL);
+            SQLDB.executenonquery("sp_DichVu_Edit_SL", CommandType.StoredProcedure);
         }
     }
 }

@@ -7,6 +7,7 @@ namespace QuanLyKhachSan
         private int _DichVuID;
         private string _DichVuName = string.Empty;
         private decimal _GiaTien;
+        private int _SL;
         #region DichVuInfo
         public int DichVuID
         {
@@ -22,6 +23,11 @@ namespace QuanLyKhachSan
         {
             get { return _GiaTien; }
             set { _GiaTien = value; }
+        }
+        public int SL
+        {
+            get { return _SL; }
+            set { _SL = value; }
         }
         #endregion
     }

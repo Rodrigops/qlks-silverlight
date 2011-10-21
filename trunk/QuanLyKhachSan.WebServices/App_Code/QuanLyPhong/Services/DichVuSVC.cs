@@ -40,5 +40,11 @@ namespace QuanLyKhachSan
             DichVuDAL doit = new DichVuDAL();
             return doit.DichVu_GetItems();
         }
+        [OperationContract]
+        public void DichVu_Edit_SL(int DichVuID, int SL)
+        {
+            DichVuDAL doit = new DichVuDAL();
+            doit.DichVu_Edit_SL(DichVuID, SL);
+        }
     }
 }
