@@ -172,9 +172,10 @@ namespace QuanLyKhachSan
             }
             return list;
         }
-        public void TinhTrang_Phong_Add(int PhongID, int TinhTrangPhongID,int NgayBatDau_So)
+        public void TinhTrang_Phong_Add(int HoaDonID,int PhongID, int TinhTrangPhongID,int NgayBatDau_So)
         {
             SQLDataHelper SQLDB = new SQLDataHelper();
+            SQLDB.Addparameter("@HoaDonID", HoaDonID);
             SQLDB.Addparameter("@PhongID", PhongID);
             SQLDB.Addparameter("@TinhTrangPhongID", TinhTrangPhongID);
             SQLDB.Addparameter("@NgayBatDau_So", NgayBatDau_So);
