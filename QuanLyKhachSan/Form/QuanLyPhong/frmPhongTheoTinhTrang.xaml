@@ -65,7 +65,7 @@
         <StackPanel Name="pnlMain" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" Height="116" Width="1000">            
             
         </StackPanel>
-        <telerik:RadGridView AutoGenerateColumns="False" IsFilteringAllowed="False" Name="grvKhachHang" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" telerik:StyleManager.Theme="Office_Blue" Grid.Row="3">
+        <telerik:RadGridView AutoGenerateColumns="False" IsReadOnly="True" IsFilteringAllowed="False" Name="grvKhachHang" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" telerik:StyleManager.Theme="Office_Blue" Grid.Row="3">
             <telerik:RadGridView.Columns>
                 <telerik:GridViewColumn CellTemplate="{StaticResource Template_grvKhachHang_HoTenCheckBox}" Header="Họ Tên" UniqueName="HoTen" Width="200" />
                 <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=GioiTinh, Converter={StaticResource SexFormater}}" Header="Giới Tính" Width="100" />

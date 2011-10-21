@@ -13,6 +13,9 @@ using QuanLyKhachSan.Form.HoaDonDichVu;
 using QuanLyKhachSan.HoaDonSVC;
 using QuanLyKhachSan.Form.QuanLyKhachHang;
 using QuanLyKhachSan.HoaDonDichVuSVC;
+using QuanLyKhachSan.Gio_PhongSVC;
+using QuanLyKhachSan.Ngay_PhongSVC;
+using QuanLyKhachSan.HoaDon_TraTruocSVC;
 namespace QuanLyKhachSan.Form.QuanLyPhong
 {
     public partial class frmPhong_KhachHang_TraPhong : ChildWindow
@@ -36,6 +39,31 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         {
             this.DialogResult = false;
         }
+        public void LoadData(int _HoaDonID, int _PhongID)
+        {
+            HoaDonID = _HoaDonID;
+            PhongID = _PhongID;
+            LoadingPanel.IsBusy = true;
+            Gio_PhongSVCClient Gio_PhongClient = new Gio_PhongSVCClient();
+            Gio_PhongClient.Gio_Phong_GetItemByPhongIDCompleted += new EventHandler<Gio_Phong_GetItemByPhongIDCompletedEventArgs>(Gio_PhongClient_Gio_Phong_GetItemByPhongIDCompleted);
+            Gio_PhongClient.Gio_Phong_GetItemByPhongIDAsync(PhongID);
+                
+        }
+        private List<Gio_PhongInfo> listGio_Phong = null;
+        void Gio_PhongClient_Gio_Phong_GetItemByPhongIDCompleted(object sender, Gio_Phong_GetItemByPhongIDCompletedEventArgs e)
+        {
+            listGio_Phong = e.Result;
+            Ngay_PhongSVCClient Ngay_PhongClient = new Ngay_PhongSVCClient();
+            Ngay_PhongClient.Ngay_Phong_GetItemByPhongIDCompleted+=new EventHandler<Ngay_Phong_GetItemByPhongIDCompletedEventArgs>(Ngay_PhongClient_Ngay_Phong_GetItemByPhongIDCompleted);
+            Ngay_PhongClient.Ngay_Phong_GetItemByPhongIDAsync(PhongID);
+        }
+        private Ngay_PhongInfo itemNgay_Phong = null;
+        void Ngay_PhongClient_Ngay_Phong_GetItemByPhongIDCompleted(object sender, Ngay_Phong_GetItemByPhongIDCompletedEventArgs e)
+        {
+            itemNgay_Phong = e.Result;
+            HoaDon_Load(HoaDonID, PhongID);
+        }
+
         public void HoaDon_Load(int _HoaDonID,int _PhongID)
         {
             HoaDonID = _HoaDonID;
@@ -44,6 +72,21 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
             HoaDon.HoaDon_GetItemAsync(HoaDonID);
             HoaDon_DichVu.HoaDonDichVu_GetItemsByIDCompleted += new EventHandler<HoaDonDichVu_GetItemsByIDCompletedEventArgs>(HoaDon_DichVu_HoaDonDichVu_GetItemsByIDCompleted);
             HoaDon_DichVu.HoaDonDichVu_GetItemsByIDAsync(HoaDonID, PhongID);
+            HoaDon_TraTruocSVCClient HoaDon_TraTruocClient = new HoaDon_TraTruocSVCClient();
+            HoaDon_TraTruocClient.HoaDon_TraTruoc_GetItemsCompleted += new EventHandler<HoaDon_TraTruoc_GetItemsCompletedEventArgs>(HoaDon_TraTruocClient_HoaDon_TraTruoc_GetItemsCompleted);
+            HoaDon_TraTruocClient.HoaDon_TraTruoc_GetItemsAsync(HoaDonID);
+        }
+
+        void HoaDon_TraTruocClient_HoaDon_TraTruoc_GetItemsCompleted(object sender, HoaDon_TraTruoc_GetItemsCompletedEventArgs e)
+        {
+            decimal TongTraTruoc =0;
+            List<HoaDon_TraTruocInfo> listTraTruoc = e.Result;
+            foreach (HoaDon_TraTruocInfo item in listTraTruoc)
+            {
+                TongTraTruoc += item.TraTruoc;
+            }
+            txtTraTruoc.Text = Format_NumberVietnamese(TongTraTruoc.ToString());
+
         }
 
         void HoaDon_DichVu_HoaDonDichVu_GetItemsByIDCompleted(object sender, HoaDonDichVu_GetItemsByIDCompletedEventArgs e)
@@ -53,7 +96,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
             foreach (HoaDonDichVuInfo item in lstDichVu)
             {
                 txtContent = new TextBlock();
-                txtContent.Text = "-" + item.SoLuong + " " + item.DichVuName + " " + item.TongTien.ToString();
+                txtContent.Text = "- Ngày : " + item.NgaySuDung + " đã sử dụng : " + item.DichVuName + " số lượng : "  + item.SoLuong + " thành tiền : " + Format_NumberVietnamese(item.TongTien.ToString());
                 SPDichVu.Children.Add(txtContent);
             }
 
@@ -73,8 +116,6 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                 txtKhuyenMai.Text = item.KhuyenMai.ToString();
                 txtKhoanKhac.Text = item.KhoanKhac.ToString();
                 txtGhiChu.Text = item.GhiChu;
-                //Ngày vào:	11:35 - 04/10/2011
-                //Ngày ra:	19:55 - 19/10/2011
                 int GioVao_So = int.Parse(item.GioVao.ToString() + item.PhutVao.ToString());
                 int GioRa_So = int.Parse(item.GioRa.ToString() + item.PhutRa.ToString());
                 generateGiaPhong(item.NgayVao_So,item.NgayRa_So,GioVao_So,item.PhutVao,GioRa_So,item.PhutRa,item.GioVao,item.GioRa);
@@ -239,8 +280,74 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                 {
                     SoPhutDu = SoPhut;
                 }
-                txtGioDau.Text = "- " + GioDuDau.ToString() +"h" + SoPhutDu.ToString() + "':";
+                if (SoPhutDu > 30)
+                {
+                    GioDuDau = GioDuDau + 1;
+                }
+                txtGioDau.Text = "- Tổng số giờ :" + GioDuDau.ToString() + " Tổng tiền phòng : " + Format_NumberVietnamese(TinhTienTheoGio(GioDuDau).ToString());
                 SPTienPhong.Children.Add(txtGioDau);
+            }
+            LoadingPanel.IsBusy = false;
+        }
+        private decimal TinhTienTheoGio(int SoGio)
+        {
+            try
+            {
+                decimal TienTheoGio = 0;
+                for (int i = 1; i <= SoGio; i++)
+                {                    
+                    TienTheoGio += GiaTheoGio(i);
+                }
+                return TienTheoGio;
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }  
+        }
+        private decimal GiaTheoGio(int Gio)
+        {
+            decimal retGia=0;
+            retGia = GiaTheoGioGanNhat(Gio);
+            while (retGia == 0&&Gio>=0)
+            {
+                Gio--;
+                retGia = GiaTheoGioGanNhat(Gio);
+            }
+            return retGia;
+        }
+        private decimal GiaTheoGioGanNhat(int Gio)
+        {
+            decimal Gia = 0;
+            foreach (Gio_PhongInfo item in listGio_Phong)
+            {
+                if (item.GioPhongName.Trim() == Gio.ToString())
+                {
+                    Gia = item.GiaTien;
+                    break;
+                }
+            }
+            return Gia;
+        }
+        public string Format_NumberVietnamese(string Gia)
+        {
+            try
+            {
+                if (Gia.IndexOf("%") > 0 || Gia == "")
+                {
+                    return Gia;
+                }
+                else
+                {
+                    decimal value = decimal.Parse(Gia);
+                    string retGia = value.ToString("N", System.Globalization.CultureInfo.CurrentCulture);
+                    return retGia.Replace(".00", "");
+                }
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
         private void cmdThemTraTruoc_Click(object sender, RoutedEventArgs e)
@@ -248,7 +355,15 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
             frmHoaDon_ThemTraTruoc HoaDon_ThemTraTruoc = new frmHoaDon_ThemTraTruoc();
             HoaDon_ThemTraTruoc.HoaDonID = HoaDonID;
             HoaDon_ThemTraTruoc.TraTruoc_Load(HoaDonID);
+            HoaDon_ThemTraTruoc.Closed += new EventHandler(HoaDon_ThemTraTruoc_Closed);
             HoaDon_ThemTraTruoc.Show();
+        }
+
+        void HoaDon_ThemTraTruoc_Closed(object sender, EventArgs e)
+        {
+            HoaDon_TraTruocSVCClient HoaDon_TraTruocClient = new HoaDon_TraTruocSVCClient();
+            HoaDon_TraTruocClient.HoaDon_TraTruoc_GetItemsCompleted += new EventHandler<HoaDon_TraTruoc_GetItemsCompletedEventArgs>(HoaDon_TraTruocClient_HoaDon_TraTruoc_GetItemsCompleted);
+            HoaDon_TraTruocClient.HoaDon_TraTruoc_GetItemsAsync(HoaDonID);
         }
 
     }

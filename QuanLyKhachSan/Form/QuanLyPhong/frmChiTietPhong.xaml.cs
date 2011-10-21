@@ -88,7 +88,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
             {
                 _TinhTrangPhongID = 6;
             }
-            PhongClient.TinhTrang_Phong_AddAsync(PhongID, _TinhTrangPhongID, 0);
+            PhongClient.TinhTrang_Phong_AddAsync(0,PhongID, _TinhTrangPhongID, 0);
         }
 
         void PhongClient_TinhTrang_Phong_AddCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
