@@ -37,6 +37,17 @@
             <telerik:RadComboBoxItem Content="10" />
             <telerik:RadComboBoxItem Content="11" />
             <telerik:RadComboBoxItem Content="12" IsSelected="True" />
+            <telerik:RadComboBoxItem Content="13"/>
+            <telerik:RadComboBoxItem Content="14"/>
+            <telerik:RadComboBoxItem Content="15"/>
+            <telerik:RadComboBoxItem Content="16"/>
+            <telerik:RadComboBoxItem Content="17"/>
+            <telerik:RadComboBoxItem Content="18"/>
+            <telerik:RadComboBoxItem Content="19"/>
+            <telerik:RadComboBoxItem Content="20"/>
+            <telerik:RadComboBoxItem Content="21"/>
+            <telerik:RadComboBoxItem Content="22"/>
+            <telerik:RadComboBoxItem Content="23"/>
         </telerik:RadComboBox>
         <telerik:RadComboBox telerik:StyleManager.Theme="Office_Blue" HorizontalAlignment="Left" Margin="198,6,0,0" Name="cbxPhutRa" VerticalAlignment="Top" Width="44" Grid.Column="1" Grid.Row="1">
             <telerik:RadComboBoxItem Content="0" IsSelected="True" />

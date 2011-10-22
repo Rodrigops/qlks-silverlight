@@ -1,0 +1,15 @@
+﻿<navigation:Page x:Class="QuanLyKhachSan.frmLogin" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           d:DesignWidth="429" d:DesignHeight="262"
+           Title="frmLogin Page" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+    <Grid x:Name="LayoutRoot">
+        <Border BorderBrush="Silver" BorderThickness="1" Height="30" HorizontalAlignment="Left" Margin="116,54,0,0" Name="border1" VerticalAlignment="Top" Width="200" />
+        <telerik:RadButton Content="Button" Height="Auto" HorizontalAlignment="Left" Margin="160,168,0,0" Name="radButton1" VerticalAlignment="Top" Width="110" Click="radButton1_Click" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="122,116,0,0" Name="txtUserName" VerticalAlignment="Top" Width="218" />
+    </Grid>
+</navigation:Page>

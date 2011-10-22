@@ -49,6 +49,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="TinhTrang_Phong_EditIsActive">
+      <soap:operation soapAction="urn:HoaDon_TraTruocSVC/TinhTrang_Phong_EditIsActive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="HoaDon_TraTruocSVC">
     <wsdl:port name="BasicHttpBinding_HoaDon_TraTruocSVC" binding="tns:BasicHttpBinding_HoaDon_TraTruocSVC">
