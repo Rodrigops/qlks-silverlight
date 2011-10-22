@@ -37,6 +37,12 @@
   <wsdl:message name="HoaDon_TraTruocSVC_HoaDon_TraTruoc_GetItems_OutputMessage">
     <wsdl:part name="parameters" element="HoaDon_TraTruoc_GetItemsResponse" />
   </wsdl:message>
+  <wsdl:message name="HoaDon_TraTruocSVC_TinhTrang_Phong_EditIsActive_InputMessage">
+    <wsdl:part name="parameters" element="TinhTrang_Phong_EditIsActive" />
+  </wsdl:message>
+  <wsdl:message name="HoaDon_TraTruocSVC_TinhTrang_Phong_EditIsActive_OutputMessage">
+    <wsdl:part name="parameters" element="TinhTrang_Phong_EditIsActiveResponse" />
+  </wsdl:message>
   <wsdl:portType name="HoaDon_TraTruocSVC">
     <wsdl:operation name="HoaDon_TraTruoc_Add">
       <wsdl:input wsaw:Action="urn:HoaDon_TraTruocSVC/HoaDon_TraTruoc_Add" message="HoaDon_TraTruocSVC_HoaDon_TraTruoc_Add_InputMessage" />
@@ -57,6 +63,10 @@
     <wsdl:operation name="HoaDon_TraTruoc_GetItems">
       <wsdl:input wsaw:Action="urn:HoaDon_TraTruocSVC/HoaDon_TraTruoc_GetItems" message="HoaDon_TraTruocSVC_HoaDon_TraTruoc_GetItems_InputMessage" />
       <wsdl:output wsaw:Action="urn:HoaDon_TraTruocSVC/HoaDon_TraTruoc_GetItemsResponse" message="HoaDon_TraTruocSVC_HoaDon_TraTruoc_GetItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TinhTrang_Phong_EditIsActive">
+      <wsdl:input wsaw:Action="urn:HoaDon_TraTruocSVC/TinhTrang_Phong_EditIsActive" message="HoaDon_TraTruocSVC_TinhTrang_Phong_EditIsActive_InputMessage" />
+      <wsdl:output wsaw:Action="urn:HoaDon_TraTruocSVC/TinhTrang_Phong_EditIsActiveResponse" message="HoaDon_TraTruocSVC_TinhTrang_Phong_EditIsActive_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

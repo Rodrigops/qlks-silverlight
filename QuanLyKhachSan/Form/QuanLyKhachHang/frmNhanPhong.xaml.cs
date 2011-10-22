@@ -51,6 +51,12 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
             int iPhutRa;
             int iThangRa;
             int iNamRa;
+            //validate
+            if (String.IsNullOrEmpty(calNgayVao.SelectedDate.ToString()))
+            {
+                MessageBox.Show("Bạn chưa chọn ngày nhận phòng.Vui lòng kiểm tra lại");
+                return;
+            }
             if (!String.IsNullOrEmpty(calNgayVao.SelectedDate.ToString()))
                 sNgayVao = calNgayVao.SelectedDate.Value.ToString("MM/dd/yyyy");
             iGioVao = int.Parse(cbxGioVao.Text.ToString());
@@ -82,7 +88,7 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
             int iThangBatDau;
             int iNamBatDau;
             string sNgayKetThuc = "";
-
+            
             if (!String.IsNullOrEmpty(calNgayVao.SelectedDate.ToString()))
                 sNgayBatDau = calNgayVao.SelectedDate.Value.ToString("MM/dd/yyyy");
             iGioBatDau = int.Parse(cbxGioVao.Text.ToString());
@@ -98,7 +104,7 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
                 HoaDon_KhachHangClient.HoaDon_KhachHang_AddAsync("NhanPhong",item.KhachHangID, PhongID, sNgayBatDau, iGioBatDau, iPhutBatDau, iNgayBatDau_So, iThangBatDau, iNamBatDau, sNgayKetThuc);                
             }
             PhongClient.TinhTrang_Phong_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(PhongClient_TinhTrang_Phong_AddCompleted);
-            PhongClient.TinhTrang_Phong_AddAsync(PhongID, 3, iNgayBatDau_So);
+            PhongClient.TinhTrang_Phong_AddAsync(0,PhongID, 3, iNgayBatDau_So);
         }
 
         void PhongClient_TinhTrang_Phong_AddCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)

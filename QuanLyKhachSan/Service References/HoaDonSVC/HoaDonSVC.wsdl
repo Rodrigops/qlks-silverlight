@@ -13,6 +13,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="HoaDon_GetItem">
+      <soap:operation soapAction="urn:HoaDonSVC/HoaDon_GetItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="HoaDonSVC">
     <wsdl:port name="BasicHttpBinding_HoaDonSVC" binding="tns:BasicHttpBinding_HoaDonSVC">

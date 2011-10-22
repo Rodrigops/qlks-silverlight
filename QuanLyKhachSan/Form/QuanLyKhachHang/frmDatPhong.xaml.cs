@@ -70,7 +70,7 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
                 HoaDon_KhachHangClient.HoaDon_KhachHang_AddAsync("DatPhong",item.KhachHangID, PhongID, sNgayBatDau, iGioBatDau, iPhutBatDau, iNgayBatDau_So, iThangBatDau, iNamBatDau, sNgayKetThuc);                
             }
             PhongClient.TinhTrang_Phong_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(PhongClient_TinhTrang_Phong_AddCompleted);
-            PhongClient.TinhTrang_Phong_AddAsync(PhongID, 2, iNgayBatDau_So);            
+            PhongClient.TinhTrang_Phong_AddAsync(0,PhongID, 2, iNgayBatDau_So);            
         }
 
         void PhongClient_TinhTrang_Phong_AddCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)

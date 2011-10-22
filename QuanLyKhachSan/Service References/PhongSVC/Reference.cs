@@ -68,7 +68,7 @@ namespace QuanLyKhachSan.PhongSVC {
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:PhongSVC/TinhTrang_Phong_Add", ReplyAction="urn:PhongSVC/TinhTrang_Phong_AddResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.IAsyncResult BeginTinhTrang_Phong_Add(int PhongID, int TinhTrangPhongID, int NgayBatDau_So, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginTinhTrang_Phong_Add(int HoaDonID, int PhongID, int TinhTrangPhongID, int NgayBatDau_So, System.AsyncCallback callback, object asyncState);
         
         void EndTinhTrang_Phong_Add(System.IAsyncResult result);
     }
@@ -1551,8 +1551,8 @@ namespace QuanLyKhachSan.PhongSVC {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult QuanLyKhachSan.PhongSVC.PhongSVC.BeginTinhTrang_Phong_Add(int PhongID, int TinhTrangPhongID, int NgayBatDau_So, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginTinhTrang_Phong_Add(PhongID, TinhTrangPhongID, NgayBatDau_So, callback, asyncState);
+        System.IAsyncResult QuanLyKhachSan.PhongSVC.PhongSVC.BeginTinhTrang_Phong_Add(int HoaDonID, int PhongID, int TinhTrangPhongID, int NgayBatDau_So, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginTinhTrang_Phong_Add(HoaDonID, PhongID, TinhTrangPhongID, NgayBatDau_So, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1561,10 +1561,11 @@ namespace QuanLyKhachSan.PhongSVC {
         }
         
         private System.IAsyncResult OnBeginTinhTrang_Phong_Add(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int PhongID = ((int)(inValues[0]));
-            int TinhTrangPhongID = ((int)(inValues[1]));
-            int NgayBatDau_So = ((int)(inValues[2]));
-            return ((QuanLyKhachSan.PhongSVC.PhongSVC)(this)).BeginTinhTrang_Phong_Add(PhongID, TinhTrangPhongID, NgayBatDau_So, callback, asyncState);
+            int HoaDonID = ((int)(inValues[0]));
+            int PhongID = ((int)(inValues[1]));
+            int TinhTrangPhongID = ((int)(inValues[2]));
+            int NgayBatDau_So = ((int)(inValues[3]));
+            return ((QuanLyKhachSan.PhongSVC.PhongSVC)(this)).BeginTinhTrang_Phong_Add(HoaDonID, PhongID, TinhTrangPhongID, NgayBatDau_So, callback, asyncState);
         }
         
         private object[] OnEndTinhTrang_Phong_Add(System.IAsyncResult result) {
@@ -1579,11 +1580,11 @@ namespace QuanLyKhachSan.PhongSVC {
             }
         }
         
-        public void TinhTrang_Phong_AddAsync(int PhongID, int TinhTrangPhongID, int NgayBatDau_So) {
-            this.TinhTrang_Phong_AddAsync(PhongID, TinhTrangPhongID, NgayBatDau_So, null);
+        public void TinhTrang_Phong_AddAsync(int HoaDonID, int PhongID, int TinhTrangPhongID, int NgayBatDau_So) {
+            this.TinhTrang_Phong_AddAsync(HoaDonID, PhongID, TinhTrangPhongID, NgayBatDau_So, null);
         }
         
-        public void TinhTrang_Phong_AddAsync(int PhongID, int TinhTrangPhongID, int NgayBatDau_So, object userState) {
+        public void TinhTrang_Phong_AddAsync(int HoaDonID, int PhongID, int TinhTrangPhongID, int NgayBatDau_So, object userState) {
             if ((this.onBeginTinhTrang_Phong_AddDelegate == null)) {
                 this.onBeginTinhTrang_Phong_AddDelegate = new BeginOperationDelegate(this.OnBeginTinhTrang_Phong_Add);
             }
@@ -1594,6 +1595,7 @@ namespace QuanLyKhachSan.PhongSVC {
                 this.onTinhTrang_Phong_AddCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnTinhTrang_Phong_AddCompleted);
             }
             base.InvokeAsync(this.onBeginTinhTrang_Phong_AddDelegate, new object[] {
+                        HoaDonID,
                         PhongID,
                         TinhTrangPhongID,
                         NgayBatDau_So}, this.onEndTinhTrang_Phong_AddDelegate, this.onTinhTrang_Phong_AddCompletedDelegate, userState);
@@ -1778,11 +1780,12 @@ namespace QuanLyKhachSan.PhongSVC {
                 return _result;
             }
             
-            public System.IAsyncResult BeginTinhTrang_Phong_Add(int PhongID, int TinhTrangPhongID, int NgayBatDau_So, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[3];
-                _args[0] = PhongID;
-                _args[1] = TinhTrangPhongID;
-                _args[2] = NgayBatDau_So;
+            public System.IAsyncResult BeginTinhTrang_Phong_Add(int HoaDonID, int PhongID, int TinhTrangPhongID, int NgayBatDau_So, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[4];
+                _args[0] = HoaDonID;
+                _args[1] = PhongID;
+                _args[2] = TinhTrangPhongID;
+                _args[3] = NgayBatDau_So;
                 System.IAsyncResult _result = base.BeginInvoke("TinhTrang_Phong_Add", _args, callback, asyncState);
                 return _result;
             }

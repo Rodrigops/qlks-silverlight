@@ -97,6 +97,7 @@
                     <uriMapper:UriMapping Uri="KhachHang" MappedUri="/Form/QuanLyKhachHang/frmKhachHang.xaml"/>
                     <uriMapper:UriMapping Uri="HoaDonDichVu" MappedUri="/Form/HoaDonDichVu/frmHoaDonDichVu.xaml"/>
                     <uriMapper:UriMapping Uri="QuanLyUser" MappedUri="/Form/QuanLyUser/frmQuanLyUser.xaml"/>
+                    <uriMapper:UriMapping Uri="Login" MappedUri="/frmLogin.xaml"/>
                 </uriMapper:UriMapper>
             </navigation:Frame.UriMapper>
         </navigation:Frame>

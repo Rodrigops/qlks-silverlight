@@ -4,6 +4,7 @@
     <xsd:schema targetNamespace="/Imports">
       <xsd:import schemaLocation="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDon/HoaDon.svc?xsd=xsd0" />
       <xsd:import schemaLocation="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDon/HoaDon.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDon/HoaDon.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="HoaDonSVC_HoaDon_Add_InputMessage">
@@ -12,10 +13,20 @@
   <wsdl:message name="HoaDonSVC_HoaDon_Add_OutputMessage">
     <wsdl:part name="parameters" element="HoaDon_AddResponse" />
   </wsdl:message>
+  <wsdl:message name="HoaDonSVC_HoaDon_GetItem_InputMessage">
+    <wsdl:part name="parameters" element="HoaDon_GetItem" />
+  </wsdl:message>
+  <wsdl:message name="HoaDonSVC_HoaDon_GetItem_OutputMessage">
+    <wsdl:part name="parameters" element="HoaDon_GetItemResponse" />
+  </wsdl:message>
   <wsdl:portType name="HoaDonSVC">
     <wsdl:operation name="HoaDon_Add">
       <wsdl:input wsaw:Action="urn:HoaDonSVC/HoaDon_Add" message="HoaDonSVC_HoaDon_Add_InputMessage" />
       <wsdl:output wsaw:Action="urn:HoaDonSVC/HoaDon_AddResponse" message="HoaDonSVC_HoaDon_Add_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HoaDon_GetItem">
+      <wsdl:input wsaw:Action="urn:HoaDonSVC/HoaDon_GetItem" message="HoaDonSVC_HoaDon_GetItem_InputMessage" />
+      <wsdl:output wsaw:Action="urn:HoaDonSVC/HoaDon_GetItemResponse" message="HoaDonSVC_HoaDon_GetItem_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>
