@@ -34,7 +34,12 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
             {
                 DichVuClient = new DichVuSVCClient();
                 DichVuClient.DichVu_Edit_SLCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(DichVuClient_DichVu_Edit_SLCompleted);
-                DichVuClient.DichVu_Edit_SLAsync((int)cbxDichVu.SelectedValue, int.Parse(txtSL.Text.Trim().ToString()));
+                int SoLuongTon = 0;
+                if (txtSL.Text.Trim().ToString() != "")
+                { 
+                    SoLuongTon = int.Parse(txtSL.Text.Trim().ToString());
+                }
+                DichVuClient.DichVu_Edit_SLAsync((int)cbxDichVu.SelectedValue, SoLuongTon);
             }
         }
 

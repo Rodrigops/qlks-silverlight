@@ -71,12 +71,12 @@
                         <telerik:RadGridView.Columns>
                             <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=DichVuName}" Header="Dịch vụ" Width="*" />
                             <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=GiaTien, Converter={StaticResource NumberVietnameseFormater}}" Header="Giá tiền" Width="*" />
-                            <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=SL}" Header="SL" Width="50" />
+                            <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=SL}" Header="S.Lượng" Width="50" />
                             <telerik:GridViewColumn CellTemplate="{StaticResource Template_grvDichVu_ColumnEdit}" Header="Chỉnh Sửa" Width="80" />
                         </telerik:RadGridView.Columns>
                     </telerik:RadGridView>
                     <telerik:RadButton Content="Thêm Dịch Vụ" Height="20" Name="cmdThemDichVu" telerik:StyleManager.Theme="Office_Blue" Width="100" Margin="10" Click="cmdThemDichVu_Click" />
-                    <telerik:RadButton Content="Cập nhật SL Tồn" Height="20" Name="cmdThemSLTon" telerik:StyleManager.Theme="Office_Blue" Width="100" Margin="10" Click="cmdThemSLTon_Click" />
+                    <telerik:RadButton Content="Nhập kho" Height="20" Name="cmdThemSLTon" telerik:StyleManager.Theme="Office_Blue" Width="100" Margin="10" Click="cmdThemSLTon_Click" />
             </StackPanel>
         </ScrollViewer>
         <ScrollViewer Grid.Row="0" Grid.Column="1">
