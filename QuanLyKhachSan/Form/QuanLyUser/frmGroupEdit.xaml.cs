@@ -71,7 +71,7 @@ namespace QuanLyKhachSan.Form.QuanLyUser
 
         void GroupClient_Group_AddCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
-            this.DialogResult = false;
+            this.DialogResult = true;
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
