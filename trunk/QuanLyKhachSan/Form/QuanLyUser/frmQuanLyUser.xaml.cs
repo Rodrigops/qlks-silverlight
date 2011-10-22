@@ -53,7 +53,7 @@ namespace QuanLyKhachSan.Form.QuanLyUser
             frmGroupEdit GroupEdit = sender as frmGroupEdit;
             if (GroupEdit.DialogResult == true)
             {
-                GroupClient.Group_GetItemsAsync(0);
+                GroupClient.Group_GetItemsAsync();
             }
         }
         private void cmdThemGroup_Click(object sender, RoutedEventArgs e)
