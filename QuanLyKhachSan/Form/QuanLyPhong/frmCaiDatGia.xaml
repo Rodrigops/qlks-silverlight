@@ -11,9 +11,9 @@
            Title="Cài đặt giá" >
     <Grid x:Name="LayoutRoot">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="29" />
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="350*"></RowDefinition>
+            <RowDefinition Height="34" />
+            <RowDefinition Height="449*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition ></ColumnDefinition>
@@ -34,16 +34,15 @@
             <local:NumberVietnameseFormater x:Key="NumberVietnameseFormater">
             </local:NumberVietnameseFormater>
         </Grid.Resources>
-        
+        <telerik:RadBusyIndicator Grid.ColumnSpan="3" Name="LoadingPanel" Height="150" Width="300" BusyContent="Đang tại dữ liệu.Vui lòng chờ..." telerik:StyleManager.Theme="Metro" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
         <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
             <StackPanel Name="pnlMain" Height="Auto">
             </StackPanel>
-            <telerik:RadButton Content="Cập nhật giá phòng" Height="Auto" Width="Auto" Name="cmdCapNhat" Click="cmdCapNhat_Click" HorizontalAlignment="Center" VerticalAlignment="Bottom" telerik:StyleManager.Theme="Office_Blue" Visibility="Collapsed"/>
-            <telerik:RadBusyIndicator Name="LoadingPanel" Height="300" Width="300" BusyContent="Đang tại dữ liệu.Vui lòng chờ..." telerik:StyleManager.Theme="Metro" />
+            <telerik:RadButton Content="Cập nhật giá phòng" Height="Auto" Width="Auto" Name="cmdCapNhat" Click="cmdCapNhat_Click" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" telerik:StyleManager.Theme="Office_Blue" Visibility="Collapsed"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="0">
-            <telerik:RadGridView Name="grvTheoGio" telerik:StyleManager.Theme="Office_Blue" Height="Auto" Width="202" ShowColumnHeaders="False" Margin="50,10,0,0"
-                                 AutoGenerateColumns="False" IsFilteringAllowed="False" ShowGroupPanel="False" RowIndicatorVisibility="Collapsed">
+            <telerik:RadGridView Name="grvTheoGio" telerik:StyleManager.Theme="Office_Blue" Height="Auto" Width="202" ShowColumnHeaders="False" HorizontalAlignment="Center"
+                                 AutoGenerateColumns="False" IsFilteringAllowed="False" ShowGroupPanel="False" RowIndicatorVisibility="Collapsed" Margin="5">
                 <telerik:RadGridView.Columns>
                     <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Gio_PhongID}" Width="*" IsVisible="False"></telerik:GridViewDataColumn>
                     <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=GioPhongName}" Width="40" TextAlignment="Right" CellEditTemplate="{Binding Path=GioPhongName}"></telerik:GridViewDataColumn>
@@ -53,7 +52,7 @@
             </telerik:RadGridView>
         </StackPanel>
 
-        <StackPanel Grid.Row="2" Grid.Column="1">
+        <StackPanel Grid.Row="2" Grid.Column="1" >
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="29"></RowDefinition>
@@ -79,12 +78,8 @@
                     <RowDefinition Height="29*"></RowDefinition>
                     <RowDefinition Height="29"></RowDefinition>
                 </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="115*"></ColumnDefinition>
-                    <ColumnDefinition Width="218*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <telerik:RadGridView Grid.ColumnSpan="2" Name="grvTheoSoNguoi" telerik:StyleManager.Theme="Office_Blue" Height="Auto" Width="202" ShowColumnHeaders="False" Margin="0,10,50,0"
-                                 AutoGenerateColumns="False" IsFilteringAllowed="False" ShowGroupPanel="False" RowIndicatorVisibility="Collapsed">
+                <telerik:RadGridView Name="grvTheoSoNguoi" telerik:StyleManager.Theme="Office_Blue" Height="Auto" Width="202" ShowColumnHeaders="False" HorizontalAlignment="Center"
+                                 AutoGenerateColumns="False" IsFilteringAllowed="False" ShowGroupPanel="False" RowIndicatorVisibility="Collapsed" Margin="5">
                     <telerik:RadGridView.Columns>
                         <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=Nguoi_PhongID}" Width="*" IsVisible="False"></telerik:GridViewDataColumn>
                         <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=NguoiPhongName}" Width="40" TextAlignment="Right"></telerik:GridViewDataColumn>
@@ -92,13 +87,20 @@
                         <telerik:GridViewColumn Width="50" CellTemplate="{StaticResource Template_grvTheoSoNguoi_ColumnEdit}"></telerik:GridViewColumn>
                     </telerik:RadGridView.Columns>
                 </telerik:RadGridView>
-            <TextBlock Height="23" Name="textBlock4" Text="Cộng thêm" HorizontalAlignment="Left" Margin="40,10,0,-4" Grid.Row="1" />
-            <TextBox Height="23" Name="txtCongThem" Grid.Column="1" Margin="0,6,88,0" Grid.Row="1" />
+            <TextBlock Height="23" Name="textBlock4" Text="Cộng thêm" HorizontalAlignment="Left" Margin="89,10,0,-4" Grid.Row="1" />
+            <TextBox Height="23" Name="txtCongThem" Margin="156,6,77,0" Grid.Row="1" Width="100"/>
             </Grid>
         </StackPanel>
-        <TextBlock Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="127,6,0,0" Name="textBlock5" Text="Giá theo giờ" VerticalAlignment="Top" />
-        <TextBlock Grid.Column="1" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="123,6,0,0" Name="textBlock6" Text="Giá theo ngày" VerticalAlignment="Top" />
-        <TextBlock Grid.Column="2" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="115,6,0,0" Name="textBlock7" Text="Giá theo số người" VerticalAlignment="Top" />
+        <Border CornerRadius="10" BorderBrush="Silver" Background="BlanchedAlmond"  BorderThickness="1" Grid.Row="1" Height="34" Width="200" HorizontalAlignment="Stretch" VerticalAlignment="Center" Name="border1">
+            <TextBlock Height="23" HorizontalAlignment="Center" Name="textBlock5" Text="Giá theo giờ" VerticalAlignment="Center" />
+        </Border>
+        <Border CornerRadius="10" BorderBrush="Silver" Background="BlanchedAlmond"  BorderThickness="1" Grid.Column="1" Grid.Row="1" Height="34" Width="200" HorizontalAlignment="Stretch" VerticalAlignment="Center" Name="border2">
+            <TextBlock Height="23" HorizontalAlignment="Center" Name="textBlock6" Text="Giá theo ngày" VerticalAlignment="Center" />
+        </Border>
+        <Border CornerRadius="10" BorderBrush="Silver" Background="BlanchedAlmond"  BorderThickness="1" Grid.Column="2" Grid.Row="1" Height="34" Width="200" HorizontalAlignment="Stretch" VerticalAlignment="Center" Name="border3">
+            <TextBlock Height="23" HorizontalAlignment="Center" Name="textBlock7" Text="Giá theo số người" VerticalAlignment="Center" />
+        </Border>
+        
     </Grid>
 </navigation:Page>
 <!--xmlns:my="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.RibbonView"-->

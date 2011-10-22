@@ -199,9 +199,11 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
 
             Nguoi_PhongClient.Nguoi_Phong_GetItemByPhongIDCompleted += new EventHandler<Nguoi_Phong_GetItemByPhongIDCompletedEventArgs>(Nguoi_PhongClient_Nguoi_Phong_GetItemByPhongIDCompleted);
             Nguoi_PhongClient.Nguoi_Phong_GetItemByPhongIDAsync(PhongID);
+            LoadingPanel.IsBusy = false;
         }
         void cmdSua_Click(object sender, RoutedEventArgs e)
         {
+            LoadingPanel.IsBusy = true;
             HyperlinkButton cmdSua = sender as HyperlinkButton;
             PhongInfo item  = cmdSua.CommandParameter as PhongInfo;
             var cbxs = GetCheckBoxControls(LayoutRoot).OfType<CheckBox>();
@@ -222,6 +224,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         }
         void cmdXem_Click(object sender, RoutedEventArgs e)
         {
+            LoadingPanel.IsBusy = true;
             HyperlinkButton cmdXem = sender as HyperlinkButton;
             PhongInfo item = cmdXem.CommandParameter as PhongInfo;
             var cbxs = GetCheckBoxControls(LayoutRoot).OfType<CheckBox>();
@@ -230,6 +233,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                 CheckBox cbx = i as CheckBox;
                 if(cbx.Name == item.PhongID.ToString())
                 {
+                    
                     GetData(item.PhongID);
                     cbx.IsChecked = true;
                 }
@@ -306,6 +310,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         }
         void Nguoi_PhongClient_Nguoi_Phong_AddCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
+            MessageBox.Show("Cập nhật hoàn thành", "Thông Báo", MessageBoxButton.OK);
         }
         protected void Nguoi_Phong_Load()
         {
