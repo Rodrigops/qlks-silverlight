@@ -36,8 +36,17 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
         }
 
         private void OKButton_Click(object sender, RoutedEventArgs e)
-        {            
-            decimal KhuyenMai = decimal.Parse(txtKhuyenMai.Text.ToString());
+        {
+
+            decimal KhuyenMai;
+            if (String.IsNullOrEmpty(txtKhuyenMai.Text))
+            {
+                KhuyenMai=0;
+            }
+            else
+            {
+                KhuyenMai = decimal.Parse(txtKhuyenMai.Text.ToString());
+            }
             string GhiChu = txtGhiChu.Text;
             string sNgayVao = "";            
             int iNgayVao_So;
