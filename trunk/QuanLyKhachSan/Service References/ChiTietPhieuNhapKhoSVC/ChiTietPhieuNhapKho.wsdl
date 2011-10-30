@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="/Imports">
+      <xsd:import schemaLocation="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/ChiTietPhieuNhapKho.svc?xsd=xsd0" />
+      <xsd:import schemaLocation="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/ChiTietPhieuNhapKho.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/ChiTietPhieuNhapKho.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ChiTietPhieuNhapKhoSVC_ChiTietPhieuNhapKho_Add_InputMessage">
+    <wsdl:part name="parameters" element="ChiTietPhieuNhapKho_Add" />
+  </wsdl:message>
+  <wsdl:message name="ChiTietPhieuNhapKhoSVC_ChiTietPhieuNhapKho_Add_OutputMessage">
+    <wsdl:part name="parameters" element="ChiTietPhieuNhapKho_AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChiTietPhieuNhapKhoSVC_ChiTietPhieuNhapKho_Edit_InputMessage">
+    <wsdl:part name="parameters" element="ChiTietPhieuNhapKho_Edit" />
+  </wsdl:message>
+  <wsdl:message name="ChiTietPhieuNhapKhoSVC_ChiTietPhieuNhapKho_Edit_OutputMessage">
+    <wsdl:part name="parameters" element="ChiTietPhieuNhapKho_EditResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChiTietPhieuNhapKhoSVC_ChiTietPhieuNhapKho_Delete_InputMessage">
+    <wsdl:part name="parameters" element="ChiTietPhieuNhapKho_Delete" />
+  </wsdl:message>
+  <wsdl:message name="ChiTietPhieuNhapKhoSVC_ChiTietPhieuNhapKho_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="ChiTietPhieuNhapKho_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChiTietPhieuNhapKhoSVC_ChiTietPhieuNhapKho_GetItem_InputMessage">
+    <wsdl:part name="parameters" element="ChiTietPhieuNhapKho_GetItem" />
+  </wsdl:message>
+  <wsdl:message name="ChiTietPhieuNhapKhoSVC_ChiTietPhieuNhapKho_GetItem_OutputMessage">
+    <wsdl:part name="parameters" element="ChiTietPhieuNhapKho_GetItemResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ChiTietPhieuNhapKhoSVC">
+    <wsdl:operation name="ChiTietPhieuNhapKho_Add">
+      <wsdl:input wsaw:Action="urn:ChiTietPhieuNhapKhoSVC/ChiTietPhieuNhapKho_Add" message="ChiTietPhieuNhapKhoSVC_ChiTietPhieuNhapKho_Add_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ChiTietPhieuNhapKhoSVC/ChiTietPhieuNhapKho_AddResponse" message="ChiTietPhieuNhapKhoSVC_ChiTietPhieuNhapKho_Add_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChiTietPhieuNhapKho_Edit">
+      <wsdl:input wsaw:Action="urn:ChiTietPhieuNhapKhoSVC/ChiTietPhieuNhapKho_Edit" message="ChiTietPhieuNhapKhoSVC_ChiTietPhieuNhapKho_Edit_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ChiTietPhieuNhapKhoSVC/ChiTietPhieuNhapKho_EditResponse" message="ChiTietPhieuNhapKhoSVC_ChiTietPhieuNhapKho_Edit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChiTietPhieuNhapKho_Delete">
+      <wsdl:input wsaw:Action="urn:ChiTietPhieuNhapKhoSVC/ChiTietPhieuNhapKho_Delete" message="ChiTietPhieuNhapKhoSVC_ChiTietPhieuNhapKho_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ChiTietPhieuNhapKhoSVC/ChiTietPhieuNhapKho_DeleteResponse" message="ChiTietPhieuNhapKhoSVC_ChiTietPhieuNhapKho_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChiTietPhieuNhapKho_GetItem">
+      <wsdl:input wsaw:Action="urn:ChiTietPhieuNhapKhoSVC/ChiTietPhieuNhapKho_GetItem" message="ChiTietPhieuNhapKhoSVC_ChiTietPhieuNhapKho_GetItem_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ChiTietPhieuNhapKhoSVC/ChiTietPhieuNhapKho_GetItemResponse" message="ChiTietPhieuNhapKhoSVC_ChiTietPhieuNhapKho_GetItem_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
