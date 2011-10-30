@@ -118,6 +118,9 @@
       <DependentUpon>frmNhanPhong.xaml</DependentUpon>
     </Compile>
     <Compile Include="Form\QuanLyKhachHang\SexFormater.cs" />
+    <Compile Include="Form\QuanLyPhong\frmDichVuEditSL.xaml.cs">
+      <DependentUpon>frmDichVuEditSL.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Form\QuanLyPhong\frmKhachHang_ChuyenPhong.xaml.cs">
       <DependentUpon>frmKhachHang_ChuyenPhong.xaml</DependentUpon>
     </Compile>
@@ -174,10 +177,21 @@
     <Compile Include="frmLogin.xaml.cs">
       <DependentUpon>frmLogin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Libs\Authentication\Authentication.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\AuthenticationSVC\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ChiTietPhieuNhapKhoSVC\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\DichVuSVC\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -234,6 +248,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Service References\Nguoi_PhongSVC\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PhieuNhapKhoSVC\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -300,6 +319,10 @@
     <Page Include="Form\QuanLyKhachHang\frmNhanPhong.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\QuanLyPhong\frmDichVuEditSL.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Form\QuanLyPhong\frmKhachHang_ChuyenPhong.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -380,6 +403,28 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AppManifest.xml" />
+    <None Include="Service References\AuthenticationSVC\Authentication.wsdl" />
+    <None Include="Service References\AuthenticationSVC\Authentication.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AuthenticationSVC\Authentication1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AuthenticationSVC\AuthenticationSVC.wsdl" />
+    <None Include="Service References\ChiTietPhieuNhapKhoSVC\ChiTietPhieuNhapKho.wsdl" />
+    <None Include="Service References\ChiTietPhieuNhapKhoSVC\ChiTietPhieuNhapKho.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ChiTietPhieuNhapKhoSVC\ChiTietPhieuNhapKho1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ChiTietPhieuNhapKhoSVC\ChiTietPhieuNhapKho2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ChiTietPhieuNhapKhoSVC\ChiTietPhieuNhapKhoSVC.wsdl" />
+    <None Include="Service References\ChiTietPhieuNhapKhoSVC\QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\DichVuSVC\DichVu.wsdl" />
     <None Include="Service References\DichVuSVC\DichVu.xsd">
       <SubType>Designer</SubType>
@@ -555,6 +600,20 @@
     <None Include="Service References\Nguoi_PhongSVC\QuanLyKhachSan.Nguoi_PhongSVC.Nguoi_PhongInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\PhieuNhapKhoSVC\PhieuNhapKho.wsdl" />
+    <None Include="Service References\PhieuNhapKhoSVC\PhieuNhapKho.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PhieuNhapKhoSVC\PhieuNhapKho1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PhieuNhapKhoSVC\PhieuNhapKho2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PhieuNhapKhoSVC\PhieuNhapKhoSVC.wsdl" />
+    <None Include="Service References\PhieuNhapKhoSVC\QuanLyKhachSan.PhieuNhapKhoSVC.PhieuNhapKhoInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\PhongSVC\Phong.wsdl" />
     <None Include="Service References\PhongSVC\Phong.xsd">
       <SubType>Designer</SubType>
@@ -723,7 +782,31 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="ServiceReferences.ClientConfig" />
+    <None Include="Service References\AuthenticationSVC\Authentication.disco" />
+    <None Include="Service References\AuthenticationSVC\configuration91.svcinfo" />
+    <None Include="Service References\AuthenticationSVC\configuration.svcinfo" />
+    <None Include="Service References\AuthenticationSVC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Resource Include="Images\Login.png" />
+    <None Include="Service References\PhieuNhapKhoSVC\PhieuNhapKho.disco" />
+    <None Include="Service References\PhieuNhapKhoSVC\configuration91.svcinfo" />
+    <None Include="Service References\PhieuNhapKhoSVC\configuration.svcinfo" />
+    <None Include="Service References\PhieuNhapKhoSVC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ChiTietPhieuNhapKhoSVC\ChiTietPhieuNhapKho.disco" />
+    <None Include="Service References\ChiTietPhieuNhapKhoSVC\configuration91.svcinfo" />
+    <None Include="Service References\ChiTietPhieuNhapKhoSVC\configuration.svcinfo" />
+    <None Include="Service References\ChiTietPhieuNhapKhoSVC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="ServiceReferences.ClientConfig">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Service References\UserSVC\User.wsdl" />
     <None Include="Service References\UserSVC\User.xsd">
       <SubType>Designer</SubType>
@@ -777,6 +860,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AuthenticationSVC\" />
+    <WCFMetadataStorage Include="Service References\ChiTietPhieuNhapKhoSVC\" />
     <WCFMetadataStorage Include="Service References\DichVuSVC\" />
     <WCFMetadataStorage Include="Service References\Gia_PhongSVC\" />
     <WCFMetadataStorage Include="Service References\Gio_PhongSVC\" />
@@ -789,6 +874,7 @@
     <WCFMetadataStorage Include="Service References\LoaiPhongSVC\" />
     <WCFMetadataStorage Include="Service References\Ngay_PhongSVC\" />
     <WCFMetadataStorage Include="Service References\Nguoi_PhongSVC\" />
+    <WCFMetadataStorage Include="Service References\PhieuNhapKhoSVC\" />
     <WCFMetadataStorage Include="Service References\PhongSVC\" />
     <WCFMetadataStorage Include="Service References\QuocTichSVC\" />
     <WCFMetadataStorage Include="Service References\TienNghiSVC\" />
