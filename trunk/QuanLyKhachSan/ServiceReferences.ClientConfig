@@ -66,6 +66,18 @@
                     maxReceivedMessageSize="2147483647">
                     <security mode="None" />
                 </binding>
+                <binding name="BasicHttpBinding_AuthenticationSVC" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_PhieuNhapKhoSVC" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_ChiTietPhieuNhapKhoSVC" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
             </basicHttpBinding>
             <customBinding>
                 <binding name="CustomBinding_LoaiPhongSVC">
@@ -126,6 +138,15 @@
             <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDon_TraTruoc.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_HoaDon_TraTruocSVC"
                 contract="HoaDon_TraTruocSVC.HoaDon_TraTruocSVC" name="BasicHttpBinding_HoaDon_TraTruocSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/Authentication/Authentication.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_AuthenticationSVC"
+                contract="AuthenticationSVC.AuthenticationSVC" name="BasicHttpBinding_AuthenticationSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/PhieuNhapKho.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_PhieuNhapKhoSVC"
+                contract="PhieuNhapKhoSVC.PhieuNhapKhoSVC" name="BasicHttpBinding_PhieuNhapKhoSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/ChiTietPhieuNhapKho.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ChiTietPhieuNhapKhoSVC"
+                contract="ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoSVC" name="BasicHttpBinding_ChiTietPhieuNhapKhoSVC" />
         </client>
     </system.serviceModel>
 </configuration>
