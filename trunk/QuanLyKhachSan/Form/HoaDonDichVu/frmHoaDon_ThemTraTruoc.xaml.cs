@@ -35,9 +35,16 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
         }
         private void OKButton_Click(object sender, RoutedEventArgs e)
         {
-            HoaDon_TraTruocClient = new HoaDon_TraTruocSVCClient();
-            HoaDon_TraTruocClient.HoaDon_TraTruoc_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(HoaDon_TraTruocClient_HoaDon_TraTruoc_AddCompleted);
-            HoaDon_TraTruocClient.HoaDon_TraTruoc_AddAsync(HoaDonID, txtGhiChu.Text.Trim(), decimal.Parse(txtTraTruoc.Text.ToString()), 0, DateTime.Now.ToString("MM/dd/yyyy"));
+            if (!String.IsNullOrEmpty(txtTraTruoc.Text.Trim()))
+            {
+                HoaDon_TraTruocClient = new HoaDon_TraTruocSVCClient();
+                HoaDon_TraTruocClient.HoaDon_TraTruoc_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(HoaDon_TraTruocClient_HoaDon_TraTruoc_AddCompleted);
+                HoaDon_TraTruocClient.HoaDon_TraTruoc_AddAsync(HoaDonID, txtGhiChu.Text.Trim(), decimal.Parse(txtTraTruoc.Text.ToString()), 0, DateTime.Now.ToString("MM/dd/yyyy"));
+            }
+            else
+            {
+                MessageBox.Show("Kiểm tra lại cái trường bắt buộc nhập", "Thông báo", MessageBoxButton.OK);
+            }
         }
 
         void HoaDon_TraTruocClient_HoaDon_TraTruoc_AddCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
@@ -68,6 +75,15 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
         void HoaDon_TraTruocClient_HoaDon_TraTruoc_DeleteCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
             HoaDon_TraTruocClient.HoaDon_TraTruoc_GetItemsAsync(HoaDonID);
+        }
+        private void Number_KeyDown(object sender, KeyEventArgs e)
+        {
+            {
+                if (((e.Key > Key.D0 && e.Key <= Key.D9) || (e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9) || e.Key == Key.Back || e.Key == Key.Tab))
+                    e.Handled = false;
+                else
+                    e.Handled = true;
+            }
         }
     }
 }
