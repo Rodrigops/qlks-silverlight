@@ -40,6 +40,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ChiTietPhieuNhapKho_GetItems">
+      <soap:operation soapAction="urn:ChiTietPhieuNhapKhoSVC/ChiTietPhieuNhapKho_GetItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="ChiTietPhieuNhapKhoSVC">
     <wsdl:port name="BasicHttpBinding_ChiTietPhieuNhapKhoSVC" binding="tns:BasicHttpBinding_ChiTietPhieuNhapKhoSVC">

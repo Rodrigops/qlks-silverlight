@@ -7,7 +7,7 @@
         <xs:element minOccurs="0" name="NgayNhap" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="ThangNhap" type="xs:int" />
         <xs:element minOccurs="0" name="NamNhap" type="xs:int" />
-        <xs:element minOccurs="0" name="NgayNhapSo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NgayNhapSo" type="xs:int" />
         <xs:element minOccurs="0" name="GhiChu" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="CreatedByUser" type="xs:int" />
         <xs:element minOccurs="0" name="CreatedDate" nillable="true" type="xs:string" />
@@ -26,7 +26,7 @@
         <xs:element minOccurs="0" name="NgayNhap" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="ThangNhap" type="xs:int" />
         <xs:element minOccurs="0" name="NamNhap" type="xs:int" />
-        <xs:element minOccurs="0" name="NgayNhapSo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NgayNhapSo" type="xs:int" />
         <xs:element minOccurs="0" name="GhiChu" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="ModifiedByUser" type="xs:int" />
         <xs:element minOccurs="0" name="ModifiedDate" nillable="true" type="xs:string" />
@@ -68,15 +68,25 @@
   </xs:element>
   <xs:element name="PhieuNhapKho_GetItems">
     <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="PhieuNhapKhoID" type="xs:int" />
-      </xs:sequence>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
   <xs:element name="PhieuNhapKho_GetItemsResponse">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" minOccurs="0" name="PhieuNhapKho_GetItemsResult" nillable="true" type="q2:ArrayOfPhieuNhapKhoInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PhieuNhapKho_GetLatestItem">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PhieuNhapKho_GetLatestItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" minOccurs="0" name="PhieuNhapKho_GetLatestItemResult" nillable="true" type="q3:PhieuNhapKhoInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

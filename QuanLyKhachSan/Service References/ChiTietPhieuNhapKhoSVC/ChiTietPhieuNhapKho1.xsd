@@ -20,7 +20,7 @@
   <xs:element name="ChiTietPhieuNhapKho_Edit">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="ChiTietPhieuNhapKho" type="xs:int" />
+        <xs:element minOccurs="0" name="ChiTietPhieuNhapID" type="xs:int" />
         <xs:element minOccurs="0" name="PhieuNhapKhoID" type="xs:int" />
         <xs:element minOccurs="0" name="SoLuong" type="xs:int" />
         <xs:element minOccurs="0" name="DonGia" type="xs:decimal" />
@@ -37,7 +37,7 @@
   <xs:element name="ChiTietPhieuNhapKho_Delete">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="ChiTietPhieuNhapKho" type="xs:int" />
+        <xs:element minOccurs="0" name="ChiTietPhieuNhapID" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -49,7 +49,7 @@
   <xs:element name="ChiTietPhieuNhapKho_GetItem">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="ChiTietPhieuNhapKho" type="xs:int" />
+        <xs:element minOccurs="0" name="ChiTietPhieuNhapID" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -57,6 +57,20 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" minOccurs="0" name="ChiTietPhieuNhapKho_GetItemResult" nillable="true" type="q1:ChiTietPhieuNhapKhoInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChiTietPhieuNhapKho_GetItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PhieuNhapKhoID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChiTietPhieuNhapKho_GetItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" minOccurs="0" name="ChiTietPhieuNhapKho_GetItemsResult" nillable="true" type="q2:ArrayOfChiTietPhieuNhapKhoInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

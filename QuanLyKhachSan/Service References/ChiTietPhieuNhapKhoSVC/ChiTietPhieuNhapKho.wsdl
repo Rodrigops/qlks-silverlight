@@ -31,6 +31,12 @@
   <wsdl:message name="ChiTietPhieuNhapKhoSVC_ChiTietPhieuNhapKho_GetItem_OutputMessage">
     <wsdl:part name="parameters" element="ChiTietPhieuNhapKho_GetItemResponse" />
   </wsdl:message>
+  <wsdl:message name="ChiTietPhieuNhapKhoSVC_ChiTietPhieuNhapKho_GetItems_InputMessage">
+    <wsdl:part name="parameters" element="ChiTietPhieuNhapKho_GetItems" />
+  </wsdl:message>
+  <wsdl:message name="ChiTietPhieuNhapKhoSVC_ChiTietPhieuNhapKho_GetItems_OutputMessage">
+    <wsdl:part name="parameters" element="ChiTietPhieuNhapKho_GetItemsResponse" />
+  </wsdl:message>
   <wsdl:portType name="ChiTietPhieuNhapKhoSVC">
     <wsdl:operation name="ChiTietPhieuNhapKho_Add">
       <wsdl:input wsaw:Action="urn:ChiTietPhieuNhapKhoSVC/ChiTietPhieuNhapKho_Add" message="ChiTietPhieuNhapKhoSVC_ChiTietPhieuNhapKho_Add_InputMessage" />
@@ -47,6 +53,10 @@
     <wsdl:operation name="ChiTietPhieuNhapKho_GetItem">
       <wsdl:input wsaw:Action="urn:ChiTietPhieuNhapKhoSVC/ChiTietPhieuNhapKho_GetItem" message="ChiTietPhieuNhapKhoSVC_ChiTietPhieuNhapKho_GetItem_InputMessage" />
       <wsdl:output wsaw:Action="urn:ChiTietPhieuNhapKhoSVC/ChiTietPhieuNhapKho_GetItemResponse" message="ChiTietPhieuNhapKhoSVC_ChiTietPhieuNhapKho_GetItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChiTietPhieuNhapKho_GetItems">
+      <wsdl:input wsaw:Action="urn:ChiTietPhieuNhapKhoSVC/ChiTietPhieuNhapKho_GetItems" message="ChiTietPhieuNhapKhoSVC_ChiTietPhieuNhapKho_GetItems_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ChiTietPhieuNhapKhoSVC/ChiTietPhieuNhapKho_GetItemsResponse" message="ChiTietPhieuNhapKhoSVC_ChiTietPhieuNhapKho_GetItems_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

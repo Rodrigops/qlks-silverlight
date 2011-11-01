@@ -37,6 +37,12 @@
   <wsdl:message name="PhieuNhapKhoSVC_PhieuNhapKho_GetItems_OutputMessage">
     <wsdl:part name="parameters" element="PhieuNhapKho_GetItemsResponse" />
   </wsdl:message>
+  <wsdl:message name="PhieuNhapKhoSVC_PhieuNhapKho_GetLatestItem_InputMessage">
+    <wsdl:part name="parameters" element="PhieuNhapKho_GetLatestItem" />
+  </wsdl:message>
+  <wsdl:message name="PhieuNhapKhoSVC_PhieuNhapKho_GetLatestItem_OutputMessage">
+    <wsdl:part name="parameters" element="PhieuNhapKho_GetLatestItemResponse" />
+  </wsdl:message>
   <wsdl:portType name="PhieuNhapKhoSVC">
     <wsdl:operation name="PhieuNhapKho_Add">
       <wsdl:input wsaw:Action="urn:PhieuNhapKhoSVC/PhieuNhapKho_Add" message="PhieuNhapKhoSVC_PhieuNhapKho_Add_InputMessage" />
@@ -57,6 +63,10 @@
     <wsdl:operation name="PhieuNhapKho_GetItems">
       <wsdl:input wsaw:Action="urn:PhieuNhapKhoSVC/PhieuNhapKho_GetItems" message="PhieuNhapKhoSVC_PhieuNhapKho_GetItems_InputMessage" />
       <wsdl:output wsaw:Action="urn:PhieuNhapKhoSVC/PhieuNhapKho_GetItemsResponse" message="PhieuNhapKhoSVC_PhieuNhapKho_GetItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PhieuNhapKho_GetLatestItem">
+      <wsdl:input wsaw:Action="urn:PhieuNhapKhoSVC/PhieuNhapKho_GetLatestItem" message="PhieuNhapKhoSVC_PhieuNhapKho_GetLatestItem_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PhieuNhapKhoSVC/PhieuNhapKho_GetLatestItemResponse" message="PhieuNhapKhoSVC_PhieuNhapKho_GetLatestItem_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>
