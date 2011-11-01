@@ -37,16 +37,23 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         }
         private void OKButton_Click(object sender, RoutedEventArgs e)
         {
-            TienNghiClient = new TienNghiSVCClient();
-            if (TienNghiID == -1)
+            if (!String.IsNullOrEmpty(txtTienNghi.Text.Trim()))
             {
-                TienNghiClient.TienNghi_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(TienNghiClient_TienNghi_AddCompleted);
-                TienNghiClient.TienNghi_AddAsync(txtTienNghi.Text, 0);
+                TienNghiClient = new TienNghiSVCClient();
+                if (TienNghiID == -1)
+                {
+                    TienNghiClient.TienNghi_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(TienNghiClient_TienNghi_AddCompleted);
+                    TienNghiClient.TienNghi_AddAsync(txtTienNghi.Text, 0);
+                }
+                else
+                {
+                    TienNghiClient.TienNghi_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(TienNghiClient_TienNghi_EditCompleted);
+                    TienNghiClient.TienNghi_EditAsync(TienNghiID, txtTienNghi.Text, 0);
+                }
             }
             else
             {
-                TienNghiClient.TienNghi_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(TienNghiClient_TienNghi_EditCompleted);
-                TienNghiClient.TienNghi_EditAsync(TienNghiID, txtTienNghi.Text, 0);
+                MessageBox.Show("Kiểm tra lại các trường bắt buộc nhập", "Thông báo", MessageBoxButton.OK);
             }
         }
 

@@ -80,44 +80,60 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
         }
         private void OKButton_Click(object sender, RoutedEventArgs e)
         {
-            string ngaysinh = string.Empty;
-            string thoihanvisa = string.Empty;
-            string ngaynhapcanh = string.Empty;
-            string tungay = string.Empty;
-            string denngay = string.Empty;
-            int gioitinh = -1;
-
-            if (!String.IsNullOrEmpty(rdpNgaySinh.SelectedDate.ToString()))
-                ngaysinh = rdpNgaySinh.SelectedDate.Value.ToString("MM/dd/yyyy");
-            if (!String.IsNullOrEmpty(rdpThoiHanVisa.SelectedDate.ToString()))
-                thoihanvisa = rdpThoiHanVisa.SelectedDate.Value.ToString("MM/dd/yyyy");
-            if (!String.IsNullOrEmpty(rdpNgayNhapCanh.SelectedDate.ToString()))
-                ngaynhapcanh = rdpNgayNhapCanh.SelectedDate.Value.ToString("MM/dd/yyyy");
-            if (!String.IsNullOrEmpty(rdpTuNgay.SelectedDate.ToString()))
-                tungay = rdpTuNgay.SelectedDate.Value.ToString("MM/dd/yyyy");
-            if (!String.IsNullOrEmpty(rdpDenNgay.SelectedDate.ToString()))
-                denngay = rdpDenNgay.SelectedDate.Value.ToString("MM/dd/yyyy");
-            if (cbxGioiTinh.SelectedIndex == -1)
-                gioitinh = int.Parse(cbxGioiTinh.SelectedIndex.ToString());
-            KhachHangClient = new KhachHangSVCClient();
-            if (KhachHangID == -1)
+            if (!String.IsNullOrEmpty(txtHoTen.Text.Trim()) && !String.IsNullOrEmpty(txtCMND.Text.Trim()))
             {
-                KhachHangClient.KhachHang_AddCompleted+=new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(KhachHangClient_KhachHang_AddCompleted);
-                KhachHangClient.KhachHang_AddAsync(txtHoTen.Text, txtDiaChi.Text, txtDienThoai.Text, txtCMND.Text, ngaysinh, txtNoiSinh.Text, txtSoVisa.Text,
-                    thoihanvisa, txtNguoiTiepNhan.Text, ngaynhapcanh, tungay, denngay, int.Parse(cbxQuocTich.SelectedValue.ToString()),
-                    gioitinh, 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                string ngaysinh = string.Empty;
+                string thoihanvisa = string.Empty;
+                string ngaynhapcanh = string.Empty;
+                string tungay = string.Empty;
+                string denngay = string.Empty;
+                int gioitinh = -1;
+
+                if (!String.IsNullOrEmpty(rdpNgaySinh.SelectedDate.ToString()))
+                    ngaysinh = rdpNgaySinh.SelectedDate.Value.ToString("MM/dd/yyyy");
+                if (!String.IsNullOrEmpty(rdpThoiHanVisa.SelectedDate.ToString()))
+                    thoihanvisa = rdpThoiHanVisa.SelectedDate.Value.ToString("MM/dd/yyyy");
+                if (!String.IsNullOrEmpty(rdpNgayNhapCanh.SelectedDate.ToString()))
+                    ngaynhapcanh = rdpNgayNhapCanh.SelectedDate.Value.ToString("MM/dd/yyyy");
+                if (!String.IsNullOrEmpty(rdpTuNgay.SelectedDate.ToString()))
+                    tungay = rdpTuNgay.SelectedDate.Value.ToString("MM/dd/yyyy");
+                if (!String.IsNullOrEmpty(rdpDenNgay.SelectedDate.ToString()))
+                    denngay = rdpDenNgay.SelectedDate.Value.ToString("MM/dd/yyyy");
+                if (cbxGioiTinh.SelectedIndex == -1)
+                    gioitinh = int.Parse(cbxGioiTinh.SelectedIndex.ToString());
+                KhachHangClient = new KhachHangSVCClient();
+                if (KhachHangID == -1)
+                {
+                    KhachHangClient.KhachHang_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(KhachHangClient_KhachHang_AddCompleted);
+                    KhachHangClient.KhachHang_AddAsync(txtHoTen.Text, txtDiaChi.Text, txtDienThoai.Text, txtCMND.Text, ngaysinh, txtNoiSinh.Text, txtSoVisa.Text,
+                        thoihanvisa, txtNguoiTiepNhan.Text, ngaynhapcanh, tungay, denngay, int.Parse(cbxQuocTich.SelectedValue.ToString()),
+                        gioitinh, 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                }
+                else
+                {
+                    KhachHangClient.KhachHang_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(KhachHangClient_KhachHang_EditCompleted);
+                    KhachHangClient.KhachHang_EditAsync(KhachHangID, txtHoTen.Text, txtDiaChi.Text, txtDienThoai.Text, txtCMND.Text, ngaysinh, txtNoiSinh.Text, txtSoVisa.Text,
+                        thoihanvisa, txtNguoiTiepNhan.Text, ngaynhapcanh, tungay, denngay, int.Parse(cbxQuocTich.SelectedValue.ToString()),
+                        gioitinh, 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                }
             }
             else
             {
-                KhachHangClient.KhachHang_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(KhachHangClient_KhachHang_EditCompleted);
-                KhachHangClient.KhachHang_EditAsync(KhachHangID, txtHoTen.Text, txtDiaChi.Text, txtDienThoai.Text, txtCMND.Text, ngaysinh, txtNoiSinh.Text, txtSoVisa.Text,
-                    thoihanvisa, txtNguoiTiepNhan.Text, ngaynhapcanh, tungay, denngay, int.Parse(cbxQuocTich.SelectedValue.ToString()),
-                    gioitinh, 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                MessageBox.Show("Kiểm tra lại cái trường bắt buộc nhập", "Thông báo", MessageBoxButton.OK);
             }
         }
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = false;
+        }
+        private void Number_KeyDown(object sender, KeyEventArgs e)
+        {
+            {
+                if (((e.Key > Key.D0 && e.Key <= Key.D9) || (e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9) || e.Key == Key.Back || e.Key == Key.Tab))
+                    e.Handled = false;
+                else
+                    e.Handled = true;
+            }
         }
     }
 }

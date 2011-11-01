@@ -38,7 +38,6 @@
         <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
             <StackPanel Name="pnlMain" Height="Auto">
             </StackPanel>
-            <telerik:RadButton Content="Cập nhật giá phòng" Height="Auto" Width="Auto" Name="cmdCapNhat" Click="cmdCapNhat_Click" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" telerik:StyleManager.Theme="Office_Blue" Visibility="Collapsed"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="0">
             <telerik:RadGridView Name="grvTheoGio" telerik:StyleManager.Theme="Office_Blue" Height="Auto" Width="202" ShowColumnHeaders="False" HorizontalAlignment="Center"
@@ -58,6 +57,7 @@
                     <RowDefinition Height="29"></RowDefinition>
                     <RowDefinition Height="29"></RowDefinition>
                     <RowDefinition Height="29"></RowDefinition>
+                    <RowDefinition Height="29"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="150*"></ColumnDefinition>
@@ -66,9 +66,10 @@
                 <TextBlock Height="23" Name="textBlock1" Text="Theo ngày" Margin="66,12,14,23" Grid.RowSpan="2" />
                 <TextBlock Height="23" Name="textBlock2" Text="Theo tuần" Margin="66,10,14,25" Grid.Row="1" Grid.RowSpan="2" />
                 <TextBlock Height="23" Name="textBlock3" Text="Theo tháng" Margin="66,10,14,-4" Grid.Row="2" />
-                <TextBox Height="23" Name="txtTheoTuan" Grid.Column="1" Margin="0,6,64,0" Grid.Row="1" />
-                <TextBox Height="23" Name="txtTheoNgay" Grid.Column="1" Margin="0,6,64,0" />
-                <TextBox Height="23" Name="txtTheoThang" Grid.Column="1" Margin="0,6,64,0" Grid.Row="2" />
+                <TextBox Height="23" Name="txtTheoTuan" Grid.Column="1" Margin="0,6,64,0" Grid.Row="1" KeyDown="Number_KeyDown" />
+                <TextBox Height="23" Name="txtTheoNgay" Grid.Column="1" Margin="0,6,64,0" KeyDown="Number_KeyDown" />
+                <TextBox Height="23" Name="txtTheoThang" Grid.Column="1" Margin="0,6,64,0" Grid.Row="2" KeyDown="Number_KeyDown" />
+                <telerik:RadButton Grid.ColumnSpan="2" Grid.Row="3" Content="Cập nhật giá phòng" Height="Auto" Width="Auto" Name="cmdCapNhat" Click="cmdCapNhat_Click" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5" telerik:StyleManager.Theme="Office_Blue" Visibility="Collapsed"/>
             </Grid>
         </StackPanel>
         

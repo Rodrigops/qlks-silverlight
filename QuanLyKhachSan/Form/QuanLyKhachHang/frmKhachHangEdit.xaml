@@ -28,11 +28,11 @@
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="259,302,0,0" Name="textBlock14" Text="Đến:" VerticalAlignment="Top" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="133,8,0,0" Name="txtHoTen" VerticalAlignment="Top" Width="280" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="133,37,0,0" Name="txtDiaChi" VerticalAlignment="Top" Width="280" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="133,66,0,0" Name="txtDienThoai" VerticalAlignment="Top" Width="120" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="133,95,0,0" Name="txtCMND" VerticalAlignment="Top" Width="120" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="133,66,0,0" Name="txtDienThoai" VerticalAlignment="Top" Width="120" KeyDown="Number_KeyDown" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="133,95,0,0" Name="txtCMND" VerticalAlignment="Top" Width="120" KeyDown="Number_KeyDown" />
         <telerik:RadDateTimePicker HorizontalAlignment="Left" Margin="133,125,0,0" Name="rdpNgaySinh" VerticalAlignment="Top" Width="120" telerik:StyleManager.Theme="Office_Blue" InputMode="DatePicker" Culture="vi-VN" DateTimeWatermarkContent="Chọn ngày"  />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="133,153,0,0" Name="txtNoiSinh" VerticalAlignment="Top" Width="280" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="133,182,0,0" Name="txtSoVisa" VerticalAlignment="Top" Width="120" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="133,182,0,0" Name="txtSoVisa" VerticalAlignment="Top" Width="120" KeyDown="Number_KeyDown" />
         <telerik:RadDateTimePicker HorizontalAlignment="Left" Margin="133,212,0,0" Name="rdpThoiHanVisa" VerticalAlignment="Top" Width="120" telerik:StyleManager.Theme="Office_Blue" InputMode="DatePicker" Culture="vi-VN" DateTimeWatermarkContent="Chọn ngày"/>
         <TextBox Height="23" HorizontalAlignment="Left" Margin="133,240,0,0" Name="txtNguoiTiepNhan" VerticalAlignment="Top" Width="280" />
         <telerik:RadDateTimePicker HorizontalAlignment="Left" Margin="133,270,0,0" Name="rdpNgayNhapCanh" VerticalAlignment="Top" Width="120" telerik:StyleManager.Theme="Office_Blue" InputMode="DatePicker" Culture="vi-VN" DateTimeWatermarkContent="Chọn ngày"/>

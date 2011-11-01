@@ -76,19 +76,18 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
             HoaDon_TraTruocClient.HoaDon_TraTruoc_GetItemsCompleted += new EventHandler<HoaDon_TraTruoc_GetItemsCompletedEventArgs>(HoaDon_TraTruocClient_HoaDon_TraTruoc_GetItemsCompleted);
             HoaDon_TraTruocClient.HoaDon_TraTruoc_GetItemsAsync(HoaDonID);
         }
-
+        private decimal TongTraTruoc = 0;
         void HoaDon_TraTruocClient_HoaDon_TraTruoc_GetItemsCompleted(object sender, HoaDon_TraTruoc_GetItemsCompletedEventArgs e)
-        {
-            decimal TongTraTruoc =0;
+        {            
             List<HoaDon_TraTruocInfo> listTraTruoc = e.Result;
             foreach (HoaDon_TraTruocInfo item in listTraTruoc)
             {
                 TongTraTruoc += item.TraTruoc;
             }
             txtTraTruoc.Text = Format_NumberVietnamese(TongTraTruoc.ToString());
-
+            
         }
-
+        private decimal DichVu = 0;
         void HoaDon_DichVu_HoaDonDichVu_GetItemsByIDCompleted(object sender, HoaDonDichVu_GetItemsByIDCompletedEventArgs e)
         {
             lstDichVu = e.Result;
@@ -97,6 +96,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
             {
                 txtContent = new TextBlock();
                 txtContent.Text = "- Ngày : " + item.NgaySuDung + " đã sử dụng : " + item.DichVuName + " số lượng : "  + item.SoLuong + " thành tiền : " + Format_NumberVietnamese(item.TongTien.ToString());
+                DichVu += item.TongTien;
                 SPDichVu.Children.Add(txtContent);
             }
 
@@ -287,6 +287,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                 txtGioDau.Text = "- Tổng số giờ :" + GioDuDau.ToString() + " Tổng tiền phòng : " + Format_NumberVietnamese(TinhTienTheoGio(GioDuDau).ToString());
                 SPTienPhong.Children.Add(txtGioDau);
             }
+            txtTongThanhToan.Text = Format_NumberVietnamese((TinhTienTheoGio(GioDuDau) + DichVu + TongTraTruoc).ToString());
             LoadingPanel.IsBusy = false;
         }
         private decimal TinhTienTheoGio(int SoGio)

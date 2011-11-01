@@ -16,7 +16,7 @@ using QuanLyKhachSan.LoaiPhongSVC;
 using QuanLyKhachSan.TienNghiSVC;
 using QuanLyKhachSan.DichVuSVC;
 using QuanLyKhachSan.PhongSVC;
-
+using QuanLyKhachSan.Form.HoaDonDichVu;
 namespace QuanLyKhachSan.Form.QuanLyPhong
 {
     public partial class frmLoaiPhong : Page
@@ -169,10 +169,10 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                 DichVuClient.DichVu_GetItemsAsync();
             }
         }
-        void DichVuEditSL_Closed(object sender, EventArgs e)
+        void PhieuNhapKho_Closed(object sender, EventArgs e)
         {
-            frmDichVuEditSL DichVuEditSL = sender as frmDichVuEditSL;
-            if (DichVuEditSL.DialogResult == true)
+            frmPhieuNhapKho PhieuNhapKho = sender as frmPhieuNhapKho;
+            if (PhieuNhapKho.DialogResult == true)
             {
                 DichVuClient.DichVu_GetItemsAsync();
             }
@@ -205,9 +205,9 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         }
         private void cmdThemSLTon_Click(object sender, RoutedEventArgs e)
         {
-            frmDichVuEditSL DichVuEditSL = new frmDichVuEditSL();
-            DichVuEditSL.Closed += new EventHandler(DichVuEditSL_Closed);
-            DichVuEditSL.Show();
+            frmPhieuNhapKho PhieuNhapKho = new frmPhieuNhapKho();
+            PhieuNhapKho.Closed += new EventHandler(PhieuNhapKho_Closed);
+            PhieuNhapKho.Show();
         }
         #endregion
         #region Phong

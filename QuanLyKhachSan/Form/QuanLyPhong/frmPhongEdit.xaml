@@ -21,14 +21,14 @@
         <Button x:Name="CancelButton" Content="Cancel" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,0,0" Grid.Row="1" />
         <Button x:Name="OKButton" Content="OK" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,79,0" Grid.Row="1" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,12,0,0" Name="textBlock1" Text="Loại phòng:" VerticalAlignment="Top" />
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,41,0,0" Name="textBlock2" Text="Tên phòng:" VerticalAlignment="Top" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,41,0,0" Name="textBlock2" Text="Tên phòng(*):" VerticalAlignment="Top" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,70,0,0" Name="textBlock3" Text="Tiện nghi:" VerticalAlignment="Top" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,99,0,0" Name="textBlock4" Text="Số giường:" VerticalAlignment="Top" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,128,0,0" Name="textBlock5" Text="Số người:" VerticalAlignment="Top" />
-        <ComboBox Height="23" HorizontalAlignment="Left" Margin="84,8,0,0" Name="cbxLoaiPhong" VerticalAlignment="Top" Width="176" DisplayMemberPath="LoaiPhongName" SelectedValuePath="LoaiPhongID"/>
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="84,37,0,0" Name="txtTenPhong" VerticalAlignment="Top" Width="176" />
-        <ComboBox Height="23" HorizontalAlignment="Left" Margin="84,0,0,87" Name="cbxTienNghi" VerticalAlignment="Bottom" Width="176" DisplayMemberPath="TienNghiName" SelectedValuePath="TienNghiID"/>
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="84,95,0,0" Name="txtSoGiuong" VerticalAlignment="Top" Width="71" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="84,124,0,0" Name="txtSoNguoi" VerticalAlignment="Top" Width="71" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="99,8,0,0" Name="cbxLoaiPhong" VerticalAlignment="Top" Width="161" DisplayMemberPath="LoaiPhongName" SelectedValuePath="LoaiPhongID"/>
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="99,37,0,0" Name="txtTenPhong" VerticalAlignment="Top" Width="161" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="99,0,0,87" Name="cbxTienNghi" VerticalAlignment="Bottom" Width="161" DisplayMemberPath="TienNghiName" SelectedValuePath="TienNghiID"/>
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="99,95,0,0" Name="txtSoGiuong" VerticalAlignment="Top" Width="71" KeyDown="Number_KeyDown" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="99,124,0,0" Name="txtSoNguoi" VerticalAlignment="Top" Width="71" KeyDown="Number_KeyDown" />
     </Grid>
 </controls:ChildWindow>

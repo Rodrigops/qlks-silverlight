@@ -43,22 +43,38 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         }
         private void OKButton_Click(object sender, RoutedEventArgs e)
         {
-            DichVuClient = new DichVuSVCClient();
-            if (DichVuID == -1)
+            if (!String.IsNullOrEmpty(txtDichVu.Text.Trim()) && !String.IsNullOrEmpty(txtGiaTien.Text.Trim()))
             {
-                DichVuClient.DichVu_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(DichVuClient_DichVu_AddCompleted);
-                DichVuClient.DichVu_AddAsync(txtDichVu.Text, decimal.Parse(txtGiaTien.Text));
+                DichVuClient = new DichVuSVCClient();
+                if (DichVuID == -1)
+                {
+                    DichVuClient.DichVu_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(DichVuClient_DichVu_AddCompleted);
+                    DichVuClient.DichVu_AddAsync(txtDichVu.Text, decimal.Parse(txtGiaTien.Text));
+                }
+                else
+                {
+                    DichVuClient.DichVu_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(DichVuClient_DichVu_EditCompleted);
+                    DichVuClient.DichVu_EditAsync(DichVuID, txtDichVu.Text, decimal.Parse(txtGiaTien.Text));
+                }
             }
             else
             {
-                DichVuClient.DichVu_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(DichVuClient_DichVu_EditCompleted);
-                DichVuClient.DichVu_EditAsync(DichVuID, txtDichVu.Text, decimal.Parse(txtGiaTien.Text));
+                MessageBox.Show("Kiểm tra lại các trường bắt buộc nhập", "Thông báo", MessageBoxButton.OK);
             }
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = false;
+        }
+        private void Number_KeyDown(object sender, KeyEventArgs e)
+        {
+            {
+                if (((e.Key > Key.D0 && e.Key <= Key.D9) || (e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9) || e.Key == Key.Back || e.Key == Key.Tab))
+                    e.Handled = false;
+                else
+                    e.Handled = true;
+            }
         }
     }
 }
