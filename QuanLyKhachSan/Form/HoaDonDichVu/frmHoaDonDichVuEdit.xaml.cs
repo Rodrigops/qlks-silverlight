@@ -130,23 +130,30 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
         }
         private void OKButton_Click(object sender, RoutedEventArgs e)
         {
-            string ngaysudung = string.Empty;
-            if (!String.IsNullOrEmpty(rdpNgaySuDung.SelectedDate.ToString()))
-                ngaysudung = rdpNgaySuDung.SelectedDate.Value.ToString("MM/dd/yyyy");
-
-            if (HoaDonDichVuID == -1)
+            if (!String.IsNullOrEmpty(txtSoLuong.Text.Trim()))
             {
-                HoaDonDichVuClient = new HoaDonDichVuSVCClient();
-                HoaDonDichVuClient.HoaDonDichVu_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(HoaDonDichVuClient_HoaDonDichVu_AddCompleted);
-                HoaDonDichVuClient.HoaDonDichVu_AddAsync(HoaDonID, PhongID, (int)cbxDichVu.SelectedValue, -1, ngaysudung,
-                    int.Parse(txtSoLuong.Text.ToString()), decimal.Parse(txtDonGia.Text.ToString()), decimal.Parse(txtTongTien.Text.ToString()), 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                string ngaysudung = string.Empty;
+                if (!String.IsNullOrEmpty(rdpNgaySuDung.SelectedDate.ToString()))
+                    ngaysudung = rdpNgaySuDung.SelectedDate.Value.ToString("MM/dd/yyyy");
+
+                if (HoaDonDichVuID == -1)
+                {
+                    HoaDonDichVuClient = new HoaDonDichVuSVCClient();
+                    HoaDonDichVuClient.HoaDonDichVu_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(HoaDonDichVuClient_HoaDonDichVu_AddCompleted);
+                    HoaDonDichVuClient.HoaDonDichVu_AddAsync(HoaDonID, PhongID, (int)cbxDichVu.SelectedValue, -1, ngaysudung,
+                        int.Parse(txtSoLuong.Text.ToString()), decimal.Parse(txtDonGia.Text.ToString()), decimal.Parse(txtTongTien.Text.ToString()), 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                }
+                else
+                {
+                    HoaDonDichVuClient = new HoaDonDichVuSVCClient();
+                    HoaDonDichVuClient.HoaDonDichVu_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(HoaDonDichVuClient_HoaDonDichVu_EditCompleted);
+                    HoaDonDichVuClient.HoaDonDichVu_EditAsync(HoaDonDichVuID, HoaDonID, PhongID, (int)cbxDichVu.SelectedValue, -1, ngaysudung,
+                        int.Parse(txtSoLuong.Text.ToString()), decimal.Parse(txtDonGia.Text.ToString()), decimal.Parse(txtTongTien.Text.ToString()), 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                }
             }
             else
             {
-                HoaDonDichVuClient = new HoaDonDichVuSVCClient();
-                HoaDonDichVuClient.HoaDonDichVu_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(HoaDonDichVuClient_HoaDonDichVu_EditCompleted);
-                HoaDonDichVuClient.HoaDonDichVu_EditAsync(HoaDonDichVuID, HoaDonID, PhongID, (int)cbxDichVu.SelectedValue, -1, ngaysudung,
-                    int.Parse(txtSoLuong.Text.ToString()), decimal.Parse(txtDonGia.Text.ToString()), decimal.Parse(txtTongTien.Text.ToString()), 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                MessageBox.Show("Kiểm tra lại cái trường bắt buộc nhập", "Thông báo", MessageBoxButton.OK);
             }
         }
         private void CancelButton_Click(object sender, RoutedEventArgs e)
@@ -188,6 +195,15 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
         void HoaDonDichVuClient_HoaDonDichVu_DeleteCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
             HoaDonDichVuClient.HoaDonDichVu_GetItemsByIDAsync(HoaDonID, PhongID);
+        }
+        private void Number_KeyDown(object sender, KeyEventArgs e)
+        {
+            {
+                if (((e.Key > Key.D0 && e.Key <= Key.D9) || (e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9) || e.Key == Key.Back || e.Key == Key.Tab))
+                    e.Handled = false;
+                else
+                    e.Handled = true;
+            }
         }
     }
 }

@@ -1,0 +1,35 @@
+﻿<controls:ChildWindow x:Class="QuanLyKhachSan.Form.HoaDonDichVu.frmPhieuNhapKho_ChiTiet"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           Width="263" Height="199" 
+           xmlns:local="clr-namespace:QuanLyKhachSan.Form.QuanLyPhong"
+           xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+           Title="Cập nhật Chi tiết phiếu nhập kho">
+    <Grid x:Name="LayoutRoot" Margin="2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="106" />
+            <ColumnDefinition Width="120" />
+            <ColumnDefinition Width="15*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="29" />
+            <RowDefinition Height="29" />
+            <RowDefinition Height="29" />
+            <RowDefinition Height="29" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="9*" />
+        </Grid.RowDefinitions>
+
+        <Button x:Name="CancelButton" Content="Cancel" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,0,0" Grid.Row="4" Grid.ColumnSpan="2" />
+        <Button x:Name="OKButton" Content="OK" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,79,0" Grid.Row="4" Grid.ColumnSpan="2" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Name="textBlock3" Text="Sản phẩm:" Margin="22,12,0,23" Grid.RowSpan="2" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,10,0,0" Name="textBlock4" Text="Số Lượng(*):" VerticalAlignment="Top" Grid.Row="1" Grid.RowSpan="2" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="34,10,0,0" Name="textBlock5" Text="Đơn Giá:" VerticalAlignment="Top" Grid.Row="2" Grid.RowSpan="2" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="24,10,0,0" Name="textBlock6" Text="Tổng Tiền:" VerticalAlignment="Top" Grid.Row="3" Grid.RowSpan="2" />
+        <telerik:RadComboBox DisplayMemberPath="DichVuName" Height="23" HorizontalAlignment="Left" Name="cbxDichVu" SelectedValuePath="DichVuID" telerik:StyleManager.Theme="Office_Blue" VerticalAlignment="Top" Width="120" Grid.Column="1" Margin="0,6,0,0" SelectionChanged="cbxDichVu_SelectionChanged" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="0,6,0,0" Name="txtSoLuong" TextAlignment="Right" VerticalAlignment="Top" Width="120" Grid.Column="1" Grid.Row="1" TextChanged="txtSoLuong_TextChanged" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="0,6,0,0" Name="txtDonGia" TextAlignment="Right" VerticalAlignment="Top" Width="120" Grid.Row="2" Grid.Column="1" TextChanged="txtSoLuong_TextChanged" />
+        <TextBox Height="23" HorizontalAlignment="Left" IsReadOnly="True" Name="txtTongTien" TextAlignment="Right" VerticalAlignment="Top" Width="120" Grid.Row="3" Grid.Column="1" Margin="0,6,0,0" />
+    </Grid>
+</controls:ChildWindow>
