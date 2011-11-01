@@ -145,19 +145,24 @@ namespace QuanLyKhachSan.ChiTietPhieuNhapKhoSVC {
         void EndChiTietPhieuNhapKho_Add(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:ChiTietPhieuNhapKhoSVC/ChiTietPhieuNhapKho_Edit", ReplyAction="urn:ChiTietPhieuNhapKhoSVC/ChiTietPhieuNhapKho_EditResponse")]
-        System.IAsyncResult BeginChiTietPhieuNhapKho_Edit(int ChiTietPhieuNhapKho, int PhieuNhapKhoID, int SoLuong, decimal DonGia, decimal ThanhTien, int DichVuID, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginChiTietPhieuNhapKho_Edit(int ChiTietPhieuNhapID, int PhieuNhapKhoID, int SoLuong, decimal DonGia, decimal ThanhTien, int DichVuID, System.AsyncCallback callback, object asyncState);
         
         void EndChiTietPhieuNhapKho_Edit(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:ChiTietPhieuNhapKhoSVC/ChiTietPhieuNhapKho_Delete", ReplyAction="urn:ChiTietPhieuNhapKhoSVC/ChiTietPhieuNhapKho_DeleteResponse")]
-        System.IAsyncResult BeginChiTietPhieuNhapKho_Delete(int ChiTietPhieuNhapKho, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginChiTietPhieuNhapKho_Delete(int ChiTietPhieuNhapID, System.AsyncCallback callback, object asyncState);
         
         void EndChiTietPhieuNhapKho_Delete(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:ChiTietPhieuNhapKhoSVC/ChiTietPhieuNhapKho_GetItem", ReplyAction="urn:ChiTietPhieuNhapKhoSVC/ChiTietPhieuNhapKho_GetItemResponse")]
-        System.IAsyncResult BeginChiTietPhieuNhapKho_GetItem(int ChiTietPhieuNhapKho, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginChiTietPhieuNhapKho_GetItem(int ChiTietPhieuNhapID, System.AsyncCallback callback, object asyncState);
         
         QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoInfo EndChiTietPhieuNhapKho_GetItem(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:ChiTietPhieuNhapKhoSVC/ChiTietPhieuNhapKho_GetItems", ReplyAction="urn:ChiTietPhieuNhapKhoSVC/ChiTietPhieuNhapKho_GetItemsResponse")]
+        System.IAsyncResult BeginChiTietPhieuNhapKho_GetItems(int PhieuNhapKhoID, System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.Generic.List<QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoInfo> EndChiTietPhieuNhapKho_GetItems(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -179,6 +184,25 @@ namespace QuanLyKhachSan.ChiTietPhieuNhapKhoSVC {
             get {
                 base.RaiseExceptionIfNecessary();
                 return ((QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoInfo)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ChiTietPhieuNhapKho_GetItemsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public ChiTietPhieuNhapKho_GetItemsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.Generic.List<QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoInfo> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.Generic.List<QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoInfo>)(this.results[0]));
             }
         }
     }
@@ -210,6 +234,12 @@ namespace QuanLyKhachSan.ChiTietPhieuNhapKhoSVC {
         private EndOperationDelegate onEndChiTietPhieuNhapKho_GetItemDelegate;
         
         private System.Threading.SendOrPostCallback onChiTietPhieuNhapKho_GetItemCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginChiTietPhieuNhapKho_GetItemsDelegate;
+        
+        private EndOperationDelegate onEndChiTietPhieuNhapKho_GetItemsDelegate;
+        
+        private System.Threading.SendOrPostCallback onChiTietPhieuNhapKho_GetItemsCompletedDelegate;
         
         private BeginOperationDelegate onBeginOpenDelegate;
         
@@ -272,6 +302,8 @@ namespace QuanLyKhachSan.ChiTietPhieuNhapKhoSVC {
         
         public event System.EventHandler<ChiTietPhieuNhapKho_GetItemCompletedEventArgs> ChiTietPhieuNhapKho_GetItemCompleted;
         
+        public event System.EventHandler<ChiTietPhieuNhapKho_GetItemsCompletedEventArgs> ChiTietPhieuNhapKho_GetItemsCompleted;
+        
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
@@ -330,8 +362,8 @@ namespace QuanLyKhachSan.ChiTietPhieuNhapKhoSVC {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoSVC.BeginChiTietPhieuNhapKho_Edit(int ChiTietPhieuNhapKho, int PhieuNhapKhoID, int SoLuong, decimal DonGia, decimal ThanhTien, int DichVuID, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginChiTietPhieuNhapKho_Edit(ChiTietPhieuNhapKho, PhieuNhapKhoID, SoLuong, DonGia, ThanhTien, DichVuID, callback, asyncState);
+        System.IAsyncResult QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoSVC.BeginChiTietPhieuNhapKho_Edit(int ChiTietPhieuNhapID, int PhieuNhapKhoID, int SoLuong, decimal DonGia, decimal ThanhTien, int DichVuID, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginChiTietPhieuNhapKho_Edit(ChiTietPhieuNhapID, PhieuNhapKhoID, SoLuong, DonGia, ThanhTien, DichVuID, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -340,13 +372,13 @@ namespace QuanLyKhachSan.ChiTietPhieuNhapKhoSVC {
         }
         
         private System.IAsyncResult OnBeginChiTietPhieuNhapKho_Edit(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int ChiTietPhieuNhapKho = ((int)(inValues[0]));
+            int ChiTietPhieuNhapID = ((int)(inValues[0]));
             int PhieuNhapKhoID = ((int)(inValues[1]));
             int SoLuong = ((int)(inValues[2]));
             decimal DonGia = ((decimal)(inValues[3]));
             decimal ThanhTien = ((decimal)(inValues[4]));
             int DichVuID = ((int)(inValues[5]));
-            return ((QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoSVC)(this)).BeginChiTietPhieuNhapKho_Edit(ChiTietPhieuNhapKho, PhieuNhapKhoID, SoLuong, DonGia, ThanhTien, DichVuID, callback, asyncState);
+            return ((QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoSVC)(this)).BeginChiTietPhieuNhapKho_Edit(ChiTietPhieuNhapID, PhieuNhapKhoID, SoLuong, DonGia, ThanhTien, DichVuID, callback, asyncState);
         }
         
         private object[] OnEndChiTietPhieuNhapKho_Edit(System.IAsyncResult result) {
@@ -361,11 +393,11 @@ namespace QuanLyKhachSan.ChiTietPhieuNhapKhoSVC {
             }
         }
         
-        public void ChiTietPhieuNhapKho_EditAsync(int ChiTietPhieuNhapKho, int PhieuNhapKhoID, int SoLuong, decimal DonGia, decimal ThanhTien, int DichVuID) {
-            this.ChiTietPhieuNhapKho_EditAsync(ChiTietPhieuNhapKho, PhieuNhapKhoID, SoLuong, DonGia, ThanhTien, DichVuID, null);
+        public void ChiTietPhieuNhapKho_EditAsync(int ChiTietPhieuNhapID, int PhieuNhapKhoID, int SoLuong, decimal DonGia, decimal ThanhTien, int DichVuID) {
+            this.ChiTietPhieuNhapKho_EditAsync(ChiTietPhieuNhapID, PhieuNhapKhoID, SoLuong, DonGia, ThanhTien, DichVuID, null);
         }
         
-        public void ChiTietPhieuNhapKho_EditAsync(int ChiTietPhieuNhapKho, int PhieuNhapKhoID, int SoLuong, decimal DonGia, decimal ThanhTien, int DichVuID, object userState) {
+        public void ChiTietPhieuNhapKho_EditAsync(int ChiTietPhieuNhapID, int PhieuNhapKhoID, int SoLuong, decimal DonGia, decimal ThanhTien, int DichVuID, object userState) {
             if ((this.onBeginChiTietPhieuNhapKho_EditDelegate == null)) {
                 this.onBeginChiTietPhieuNhapKho_EditDelegate = new BeginOperationDelegate(this.OnBeginChiTietPhieuNhapKho_Edit);
             }
@@ -376,7 +408,7 @@ namespace QuanLyKhachSan.ChiTietPhieuNhapKhoSVC {
                 this.onChiTietPhieuNhapKho_EditCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnChiTietPhieuNhapKho_EditCompleted);
             }
             base.InvokeAsync(this.onBeginChiTietPhieuNhapKho_EditDelegate, new object[] {
-                        ChiTietPhieuNhapKho,
+                        ChiTietPhieuNhapID,
                         PhieuNhapKhoID,
                         SoLuong,
                         DonGia,
@@ -385,8 +417,8 @@ namespace QuanLyKhachSan.ChiTietPhieuNhapKhoSVC {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoSVC.BeginChiTietPhieuNhapKho_Delete(int ChiTietPhieuNhapKho, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginChiTietPhieuNhapKho_Delete(ChiTietPhieuNhapKho, callback, asyncState);
+        System.IAsyncResult QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoSVC.BeginChiTietPhieuNhapKho_Delete(int ChiTietPhieuNhapID, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginChiTietPhieuNhapKho_Delete(ChiTietPhieuNhapID, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -395,8 +427,8 @@ namespace QuanLyKhachSan.ChiTietPhieuNhapKhoSVC {
         }
         
         private System.IAsyncResult OnBeginChiTietPhieuNhapKho_Delete(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int ChiTietPhieuNhapKho = ((int)(inValues[0]));
-            return ((QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoSVC)(this)).BeginChiTietPhieuNhapKho_Delete(ChiTietPhieuNhapKho, callback, asyncState);
+            int ChiTietPhieuNhapID = ((int)(inValues[0]));
+            return ((QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoSVC)(this)).BeginChiTietPhieuNhapKho_Delete(ChiTietPhieuNhapID, callback, asyncState);
         }
         
         private object[] OnEndChiTietPhieuNhapKho_Delete(System.IAsyncResult result) {
@@ -411,11 +443,11 @@ namespace QuanLyKhachSan.ChiTietPhieuNhapKhoSVC {
             }
         }
         
-        public void ChiTietPhieuNhapKho_DeleteAsync(int ChiTietPhieuNhapKho) {
-            this.ChiTietPhieuNhapKho_DeleteAsync(ChiTietPhieuNhapKho, null);
+        public void ChiTietPhieuNhapKho_DeleteAsync(int ChiTietPhieuNhapID) {
+            this.ChiTietPhieuNhapKho_DeleteAsync(ChiTietPhieuNhapID, null);
         }
         
-        public void ChiTietPhieuNhapKho_DeleteAsync(int ChiTietPhieuNhapKho, object userState) {
+        public void ChiTietPhieuNhapKho_DeleteAsync(int ChiTietPhieuNhapID, object userState) {
             if ((this.onBeginChiTietPhieuNhapKho_DeleteDelegate == null)) {
                 this.onBeginChiTietPhieuNhapKho_DeleteDelegate = new BeginOperationDelegate(this.OnBeginChiTietPhieuNhapKho_Delete);
             }
@@ -426,12 +458,12 @@ namespace QuanLyKhachSan.ChiTietPhieuNhapKhoSVC {
                 this.onChiTietPhieuNhapKho_DeleteCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnChiTietPhieuNhapKho_DeleteCompleted);
             }
             base.InvokeAsync(this.onBeginChiTietPhieuNhapKho_DeleteDelegate, new object[] {
-                        ChiTietPhieuNhapKho}, this.onEndChiTietPhieuNhapKho_DeleteDelegate, this.onChiTietPhieuNhapKho_DeleteCompletedDelegate, userState);
+                        ChiTietPhieuNhapID}, this.onEndChiTietPhieuNhapKho_DeleteDelegate, this.onChiTietPhieuNhapKho_DeleteCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoSVC.BeginChiTietPhieuNhapKho_GetItem(int ChiTietPhieuNhapKho, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginChiTietPhieuNhapKho_GetItem(ChiTietPhieuNhapKho, callback, asyncState);
+        System.IAsyncResult QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoSVC.BeginChiTietPhieuNhapKho_GetItem(int ChiTietPhieuNhapID, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginChiTietPhieuNhapKho_GetItem(ChiTietPhieuNhapID, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -440,8 +472,8 @@ namespace QuanLyKhachSan.ChiTietPhieuNhapKhoSVC {
         }
         
         private System.IAsyncResult OnBeginChiTietPhieuNhapKho_GetItem(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int ChiTietPhieuNhapKho = ((int)(inValues[0]));
-            return ((QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoSVC)(this)).BeginChiTietPhieuNhapKho_GetItem(ChiTietPhieuNhapKho, callback, asyncState);
+            int ChiTietPhieuNhapID = ((int)(inValues[0]));
+            return ((QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoSVC)(this)).BeginChiTietPhieuNhapKho_GetItem(ChiTietPhieuNhapID, callback, asyncState);
         }
         
         private object[] OnEndChiTietPhieuNhapKho_GetItem(System.IAsyncResult result) {
@@ -457,11 +489,11 @@ namespace QuanLyKhachSan.ChiTietPhieuNhapKhoSVC {
             }
         }
         
-        public void ChiTietPhieuNhapKho_GetItemAsync(int ChiTietPhieuNhapKho) {
-            this.ChiTietPhieuNhapKho_GetItemAsync(ChiTietPhieuNhapKho, null);
+        public void ChiTietPhieuNhapKho_GetItemAsync(int ChiTietPhieuNhapID) {
+            this.ChiTietPhieuNhapKho_GetItemAsync(ChiTietPhieuNhapID, null);
         }
         
-        public void ChiTietPhieuNhapKho_GetItemAsync(int ChiTietPhieuNhapKho, object userState) {
+        public void ChiTietPhieuNhapKho_GetItemAsync(int ChiTietPhieuNhapID, object userState) {
             if ((this.onBeginChiTietPhieuNhapKho_GetItemDelegate == null)) {
                 this.onBeginChiTietPhieuNhapKho_GetItemDelegate = new BeginOperationDelegate(this.OnBeginChiTietPhieuNhapKho_GetItem);
             }
@@ -472,7 +504,53 @@ namespace QuanLyKhachSan.ChiTietPhieuNhapKhoSVC {
                 this.onChiTietPhieuNhapKho_GetItemCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnChiTietPhieuNhapKho_GetItemCompleted);
             }
             base.InvokeAsync(this.onBeginChiTietPhieuNhapKho_GetItemDelegate, new object[] {
-                        ChiTietPhieuNhapKho}, this.onEndChiTietPhieuNhapKho_GetItemDelegate, this.onChiTietPhieuNhapKho_GetItemCompletedDelegate, userState);
+                        ChiTietPhieuNhapID}, this.onEndChiTietPhieuNhapKho_GetItemDelegate, this.onChiTietPhieuNhapKho_GetItemCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoSVC.BeginChiTietPhieuNhapKho_GetItems(int PhieuNhapKhoID, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginChiTietPhieuNhapKho_GetItems(PhieuNhapKhoID, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Collections.Generic.List<QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoInfo> QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoSVC.EndChiTietPhieuNhapKho_GetItems(System.IAsyncResult result) {
+            return base.Channel.EndChiTietPhieuNhapKho_GetItems(result);
+        }
+        
+        private System.IAsyncResult OnBeginChiTietPhieuNhapKho_GetItems(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int PhieuNhapKhoID = ((int)(inValues[0]));
+            return ((QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoSVC)(this)).BeginChiTietPhieuNhapKho_GetItems(PhieuNhapKhoID, callback, asyncState);
+        }
+        
+        private object[] OnEndChiTietPhieuNhapKho_GetItems(System.IAsyncResult result) {
+            System.Collections.Generic.List<QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoInfo> retVal = ((QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoSVC)(this)).EndChiTietPhieuNhapKho_GetItems(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnChiTietPhieuNhapKho_GetItemsCompleted(object state) {
+            if ((this.ChiTietPhieuNhapKho_GetItemsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.ChiTietPhieuNhapKho_GetItemsCompleted(this, new ChiTietPhieuNhapKho_GetItemsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void ChiTietPhieuNhapKho_GetItemsAsync(int PhieuNhapKhoID) {
+            this.ChiTietPhieuNhapKho_GetItemsAsync(PhieuNhapKhoID, null);
+        }
+        
+        public void ChiTietPhieuNhapKho_GetItemsAsync(int PhieuNhapKhoID, object userState) {
+            if ((this.onBeginChiTietPhieuNhapKho_GetItemsDelegate == null)) {
+                this.onBeginChiTietPhieuNhapKho_GetItemsDelegate = new BeginOperationDelegate(this.OnBeginChiTietPhieuNhapKho_GetItems);
+            }
+            if ((this.onEndChiTietPhieuNhapKho_GetItemsDelegate == null)) {
+                this.onEndChiTietPhieuNhapKho_GetItemsDelegate = new EndOperationDelegate(this.OnEndChiTietPhieuNhapKho_GetItems);
+            }
+            if ((this.onChiTietPhieuNhapKho_GetItemsCompletedDelegate == null)) {
+                this.onChiTietPhieuNhapKho_GetItemsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnChiTietPhieuNhapKho_GetItemsCompleted);
+            }
+            base.InvokeAsync(this.onBeginChiTietPhieuNhapKho_GetItemsDelegate, new object[] {
+                        PhieuNhapKhoID}, this.onEndChiTietPhieuNhapKho_GetItemsDelegate, this.onChiTietPhieuNhapKho_GetItemsCompletedDelegate, userState);
         }
         
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
@@ -567,9 +645,9 @@ namespace QuanLyKhachSan.ChiTietPhieuNhapKhoSVC {
                 base.EndInvoke("ChiTietPhieuNhapKho_Add", _args, result);
             }
             
-            public System.IAsyncResult BeginChiTietPhieuNhapKho_Edit(int ChiTietPhieuNhapKho, int PhieuNhapKhoID, int SoLuong, decimal DonGia, decimal ThanhTien, int DichVuID, System.AsyncCallback callback, object asyncState) {
+            public System.IAsyncResult BeginChiTietPhieuNhapKho_Edit(int ChiTietPhieuNhapID, int PhieuNhapKhoID, int SoLuong, decimal DonGia, decimal ThanhTien, int DichVuID, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[6];
-                _args[0] = ChiTietPhieuNhapKho;
+                _args[0] = ChiTietPhieuNhapID;
                 _args[1] = PhieuNhapKhoID;
                 _args[2] = SoLuong;
                 _args[3] = DonGia;
@@ -584,9 +662,9 @@ namespace QuanLyKhachSan.ChiTietPhieuNhapKhoSVC {
                 base.EndInvoke("ChiTietPhieuNhapKho_Edit", _args, result);
             }
             
-            public System.IAsyncResult BeginChiTietPhieuNhapKho_Delete(int ChiTietPhieuNhapKho, System.AsyncCallback callback, object asyncState) {
+            public System.IAsyncResult BeginChiTietPhieuNhapKho_Delete(int ChiTietPhieuNhapID, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[1];
-                _args[0] = ChiTietPhieuNhapKho;
+                _args[0] = ChiTietPhieuNhapID;
                 System.IAsyncResult _result = base.BeginInvoke("ChiTietPhieuNhapKho_Delete", _args, callback, asyncState);
                 return _result;
             }
@@ -596,9 +674,9 @@ namespace QuanLyKhachSan.ChiTietPhieuNhapKhoSVC {
                 base.EndInvoke("ChiTietPhieuNhapKho_Delete", _args, result);
             }
             
-            public System.IAsyncResult BeginChiTietPhieuNhapKho_GetItem(int ChiTietPhieuNhapKho, System.AsyncCallback callback, object asyncState) {
+            public System.IAsyncResult BeginChiTietPhieuNhapKho_GetItem(int ChiTietPhieuNhapID, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[1];
-                _args[0] = ChiTietPhieuNhapKho;
+                _args[0] = ChiTietPhieuNhapID;
                 System.IAsyncResult _result = base.BeginInvoke("ChiTietPhieuNhapKho_GetItem", _args, callback, asyncState);
                 return _result;
             }
@@ -606,6 +684,19 @@ namespace QuanLyKhachSan.ChiTietPhieuNhapKhoSVC {
             public QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoInfo EndChiTietPhieuNhapKho_GetItem(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoInfo _result = ((QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoInfo)(base.EndInvoke("ChiTietPhieuNhapKho_GetItem", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginChiTietPhieuNhapKho_GetItems(int PhieuNhapKhoID, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = PhieuNhapKhoID;
+                System.IAsyncResult _result = base.BeginInvoke("ChiTietPhieuNhapKho_GetItems", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public System.Collections.Generic.List<QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoInfo> EndChiTietPhieuNhapKho_GetItems(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                System.Collections.Generic.List<QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoInfo> _result = ((System.Collections.Generic.List<QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoInfo>)(base.EndInvoke("ChiTietPhieuNhapKho_GetItems", _args, result)));
                 return _result;
             }
         }

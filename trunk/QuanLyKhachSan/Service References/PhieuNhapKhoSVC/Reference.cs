@@ -305,12 +305,12 @@ namespace QuanLyKhachSan.PhieuNhapKhoSVC {
     public interface PhieuNhapKhoSVC {
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:PhieuNhapKhoSVC/PhieuNhapKho_Add", ReplyAction="urn:PhieuNhapKhoSVC/PhieuNhapKho_AddResponse")]
-        System.IAsyncResult BeginPhieuNhapKho_Add(string NgayNhap, int ThangNhap, int NamNhap, string NgayNhapSo, string GhiChu, int CreatedByUser, string CreatedDate, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginPhieuNhapKho_Add(string NgayNhap, int ThangNhap, int NamNhap, int NgayNhapSo, string GhiChu, int CreatedByUser, string CreatedDate, System.AsyncCallback callback, object asyncState);
         
         void EndPhieuNhapKho_Add(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:PhieuNhapKhoSVC/PhieuNhapKho_Edit", ReplyAction="urn:PhieuNhapKhoSVC/PhieuNhapKho_EditResponse")]
-        System.IAsyncResult BeginPhieuNhapKho_Edit(int PhieuNhapKhoID, string NgayNhap, int ThangNhap, int NamNhap, string NgayNhapSo, string GhiChu, int ModifiedByUser, string ModifiedDate, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginPhieuNhapKho_Edit(int PhieuNhapKhoID, string NgayNhap, int ThangNhap, int NamNhap, int NgayNhapSo, string GhiChu, int ModifiedByUser, string ModifiedDate, System.AsyncCallback callback, object asyncState);
         
         void EndPhieuNhapKho_Edit(System.IAsyncResult result);
         
@@ -325,9 +325,14 @@ namespace QuanLyKhachSan.PhieuNhapKhoSVC {
         QuanLyKhachSan.PhieuNhapKhoSVC.PhieuNhapKhoInfo EndPhieuNhapKho_GetItem(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:PhieuNhapKhoSVC/PhieuNhapKho_GetItems", ReplyAction="urn:PhieuNhapKhoSVC/PhieuNhapKho_GetItemsResponse")]
-        System.IAsyncResult BeginPhieuNhapKho_GetItems(int PhieuNhapKhoID, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginPhieuNhapKho_GetItems(System.AsyncCallback callback, object asyncState);
         
         System.Collections.Generic.List<QuanLyKhachSan.PhieuNhapKhoSVC.PhieuNhapKhoInfo> EndPhieuNhapKho_GetItems(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:PhieuNhapKhoSVC/PhieuNhapKho_GetLatestItem", ReplyAction="urn:PhieuNhapKhoSVC/PhieuNhapKho_GetLatestItemResponse")]
+        System.IAsyncResult BeginPhieuNhapKho_GetLatestItem(System.AsyncCallback callback, object asyncState);
+        
+        QuanLyKhachSan.PhieuNhapKhoSVC.PhieuNhapKhoInfo EndPhieuNhapKho_GetLatestItem(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -374,6 +379,25 @@ namespace QuanLyKhachSan.PhieuNhapKhoSVC {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class PhieuNhapKho_GetLatestItemCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public PhieuNhapKho_GetLatestItemCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public QuanLyKhachSan.PhieuNhapKhoSVC.PhieuNhapKhoInfo Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((QuanLyKhachSan.PhieuNhapKhoSVC.PhieuNhapKhoInfo)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class PhieuNhapKhoSVCClient : System.ServiceModel.ClientBase<QuanLyKhachSan.PhieuNhapKhoSVC.PhieuNhapKhoSVC>, QuanLyKhachSan.PhieuNhapKhoSVC.PhieuNhapKhoSVC {
         
         private BeginOperationDelegate onBeginPhieuNhapKho_AddDelegate;
@@ -405,6 +429,12 @@ namespace QuanLyKhachSan.PhieuNhapKhoSVC {
         private EndOperationDelegate onEndPhieuNhapKho_GetItemsDelegate;
         
         private System.Threading.SendOrPostCallback onPhieuNhapKho_GetItemsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginPhieuNhapKho_GetLatestItemDelegate;
+        
+        private EndOperationDelegate onEndPhieuNhapKho_GetLatestItemDelegate;
+        
+        private System.Threading.SendOrPostCallback onPhieuNhapKho_GetLatestItemCompletedDelegate;
         
         private BeginOperationDelegate onBeginOpenDelegate;
         
@@ -469,12 +499,14 @@ namespace QuanLyKhachSan.PhieuNhapKhoSVC {
         
         public event System.EventHandler<PhieuNhapKho_GetItemsCompletedEventArgs> PhieuNhapKho_GetItemsCompleted;
         
+        public event System.EventHandler<PhieuNhapKho_GetLatestItemCompletedEventArgs> PhieuNhapKho_GetLatestItemCompleted;
+        
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult QuanLyKhachSan.PhieuNhapKhoSVC.PhieuNhapKhoSVC.BeginPhieuNhapKho_Add(string NgayNhap, int ThangNhap, int NamNhap, string NgayNhapSo, string GhiChu, int CreatedByUser, string CreatedDate, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult QuanLyKhachSan.PhieuNhapKhoSVC.PhieuNhapKhoSVC.BeginPhieuNhapKho_Add(string NgayNhap, int ThangNhap, int NamNhap, int NgayNhapSo, string GhiChu, int CreatedByUser, string CreatedDate, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginPhieuNhapKho_Add(NgayNhap, ThangNhap, NamNhap, NgayNhapSo, GhiChu, CreatedByUser, CreatedDate, callback, asyncState);
         }
         
@@ -487,7 +519,7 @@ namespace QuanLyKhachSan.PhieuNhapKhoSVC {
             string NgayNhap = ((string)(inValues[0]));
             int ThangNhap = ((int)(inValues[1]));
             int NamNhap = ((int)(inValues[2]));
-            string NgayNhapSo = ((string)(inValues[3]));
+            int NgayNhapSo = ((int)(inValues[3]));
             string GhiChu = ((string)(inValues[4]));
             int CreatedByUser = ((int)(inValues[5]));
             string CreatedDate = ((string)(inValues[6]));
@@ -506,11 +538,11 @@ namespace QuanLyKhachSan.PhieuNhapKhoSVC {
             }
         }
         
-        public void PhieuNhapKho_AddAsync(string NgayNhap, int ThangNhap, int NamNhap, string NgayNhapSo, string GhiChu, int CreatedByUser, string CreatedDate) {
+        public void PhieuNhapKho_AddAsync(string NgayNhap, int ThangNhap, int NamNhap, int NgayNhapSo, string GhiChu, int CreatedByUser, string CreatedDate) {
             this.PhieuNhapKho_AddAsync(NgayNhap, ThangNhap, NamNhap, NgayNhapSo, GhiChu, CreatedByUser, CreatedDate, null);
         }
         
-        public void PhieuNhapKho_AddAsync(string NgayNhap, int ThangNhap, int NamNhap, string NgayNhapSo, string GhiChu, int CreatedByUser, string CreatedDate, object userState) {
+        public void PhieuNhapKho_AddAsync(string NgayNhap, int ThangNhap, int NamNhap, int NgayNhapSo, string GhiChu, int CreatedByUser, string CreatedDate, object userState) {
             if ((this.onBeginPhieuNhapKho_AddDelegate == null)) {
                 this.onBeginPhieuNhapKho_AddDelegate = new BeginOperationDelegate(this.OnBeginPhieuNhapKho_Add);
             }
@@ -531,7 +563,7 @@ namespace QuanLyKhachSan.PhieuNhapKhoSVC {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult QuanLyKhachSan.PhieuNhapKhoSVC.PhieuNhapKhoSVC.BeginPhieuNhapKho_Edit(int PhieuNhapKhoID, string NgayNhap, int ThangNhap, int NamNhap, string NgayNhapSo, string GhiChu, int ModifiedByUser, string ModifiedDate, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult QuanLyKhachSan.PhieuNhapKhoSVC.PhieuNhapKhoSVC.BeginPhieuNhapKho_Edit(int PhieuNhapKhoID, string NgayNhap, int ThangNhap, int NamNhap, int NgayNhapSo, string GhiChu, int ModifiedByUser, string ModifiedDate, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginPhieuNhapKho_Edit(PhieuNhapKhoID, NgayNhap, ThangNhap, NamNhap, NgayNhapSo, GhiChu, ModifiedByUser, ModifiedDate, callback, asyncState);
         }
         
@@ -545,7 +577,7 @@ namespace QuanLyKhachSan.PhieuNhapKhoSVC {
             string NgayNhap = ((string)(inValues[1]));
             int ThangNhap = ((int)(inValues[2]));
             int NamNhap = ((int)(inValues[3]));
-            string NgayNhapSo = ((string)(inValues[4]));
+            int NgayNhapSo = ((int)(inValues[4]));
             string GhiChu = ((string)(inValues[5]));
             int ModifiedByUser = ((int)(inValues[6]));
             string ModifiedDate = ((string)(inValues[7]));
@@ -564,11 +596,11 @@ namespace QuanLyKhachSan.PhieuNhapKhoSVC {
             }
         }
         
-        public void PhieuNhapKho_EditAsync(int PhieuNhapKhoID, string NgayNhap, int ThangNhap, int NamNhap, string NgayNhapSo, string GhiChu, int ModifiedByUser, string ModifiedDate) {
+        public void PhieuNhapKho_EditAsync(int PhieuNhapKhoID, string NgayNhap, int ThangNhap, int NamNhap, int NgayNhapSo, string GhiChu, int ModifiedByUser, string ModifiedDate) {
             this.PhieuNhapKho_EditAsync(PhieuNhapKhoID, NgayNhap, ThangNhap, NamNhap, NgayNhapSo, GhiChu, ModifiedByUser, ModifiedDate, null);
         }
         
-        public void PhieuNhapKho_EditAsync(int PhieuNhapKhoID, string NgayNhap, int ThangNhap, int NamNhap, string NgayNhapSo, string GhiChu, int ModifiedByUser, string ModifiedDate, object userState) {
+        public void PhieuNhapKho_EditAsync(int PhieuNhapKhoID, string NgayNhap, int ThangNhap, int NamNhap, int NgayNhapSo, string GhiChu, int ModifiedByUser, string ModifiedDate, object userState) {
             if ((this.onBeginPhieuNhapKho_EditDelegate == null)) {
                 this.onBeginPhieuNhapKho_EditDelegate = new BeginOperationDelegate(this.OnBeginPhieuNhapKho_Edit);
             }
@@ -685,8 +717,8 @@ namespace QuanLyKhachSan.PhieuNhapKhoSVC {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult QuanLyKhachSan.PhieuNhapKhoSVC.PhieuNhapKhoSVC.BeginPhieuNhapKho_GetItems(int PhieuNhapKhoID, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginPhieuNhapKho_GetItems(PhieuNhapKhoID, callback, asyncState);
+        System.IAsyncResult QuanLyKhachSan.PhieuNhapKhoSVC.PhieuNhapKhoSVC.BeginPhieuNhapKho_GetItems(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginPhieuNhapKho_GetItems(callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -695,8 +727,7 @@ namespace QuanLyKhachSan.PhieuNhapKhoSVC {
         }
         
         private System.IAsyncResult OnBeginPhieuNhapKho_GetItems(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int PhieuNhapKhoID = ((int)(inValues[0]));
-            return ((QuanLyKhachSan.PhieuNhapKhoSVC.PhieuNhapKhoSVC)(this)).BeginPhieuNhapKho_GetItems(PhieuNhapKhoID, callback, asyncState);
+            return ((QuanLyKhachSan.PhieuNhapKhoSVC.PhieuNhapKhoSVC)(this)).BeginPhieuNhapKho_GetItems(callback, asyncState);
         }
         
         private object[] OnEndPhieuNhapKho_GetItems(System.IAsyncResult result) {
@@ -712,11 +743,11 @@ namespace QuanLyKhachSan.PhieuNhapKhoSVC {
             }
         }
         
-        public void PhieuNhapKho_GetItemsAsync(int PhieuNhapKhoID) {
-            this.PhieuNhapKho_GetItemsAsync(PhieuNhapKhoID, null);
+        public void PhieuNhapKho_GetItemsAsync() {
+            this.PhieuNhapKho_GetItemsAsync(null);
         }
         
-        public void PhieuNhapKho_GetItemsAsync(int PhieuNhapKhoID, object userState) {
+        public void PhieuNhapKho_GetItemsAsync(object userState) {
             if ((this.onBeginPhieuNhapKho_GetItemsDelegate == null)) {
                 this.onBeginPhieuNhapKho_GetItemsDelegate = new BeginOperationDelegate(this.OnBeginPhieuNhapKho_GetItems);
             }
@@ -726,8 +757,51 @@ namespace QuanLyKhachSan.PhieuNhapKhoSVC {
             if ((this.onPhieuNhapKho_GetItemsCompletedDelegate == null)) {
                 this.onPhieuNhapKho_GetItemsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnPhieuNhapKho_GetItemsCompleted);
             }
-            base.InvokeAsync(this.onBeginPhieuNhapKho_GetItemsDelegate, new object[] {
-                        PhieuNhapKhoID}, this.onEndPhieuNhapKho_GetItemsDelegate, this.onPhieuNhapKho_GetItemsCompletedDelegate, userState);
+            base.InvokeAsync(this.onBeginPhieuNhapKho_GetItemsDelegate, null, this.onEndPhieuNhapKho_GetItemsDelegate, this.onPhieuNhapKho_GetItemsCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult QuanLyKhachSan.PhieuNhapKhoSVC.PhieuNhapKhoSVC.BeginPhieuNhapKho_GetLatestItem(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginPhieuNhapKho_GetLatestItem(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        QuanLyKhachSan.PhieuNhapKhoSVC.PhieuNhapKhoInfo QuanLyKhachSan.PhieuNhapKhoSVC.PhieuNhapKhoSVC.EndPhieuNhapKho_GetLatestItem(System.IAsyncResult result) {
+            return base.Channel.EndPhieuNhapKho_GetLatestItem(result);
+        }
+        
+        private System.IAsyncResult OnBeginPhieuNhapKho_GetLatestItem(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return ((QuanLyKhachSan.PhieuNhapKhoSVC.PhieuNhapKhoSVC)(this)).BeginPhieuNhapKho_GetLatestItem(callback, asyncState);
+        }
+        
+        private object[] OnEndPhieuNhapKho_GetLatestItem(System.IAsyncResult result) {
+            QuanLyKhachSan.PhieuNhapKhoSVC.PhieuNhapKhoInfo retVal = ((QuanLyKhachSan.PhieuNhapKhoSVC.PhieuNhapKhoSVC)(this)).EndPhieuNhapKho_GetLatestItem(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnPhieuNhapKho_GetLatestItemCompleted(object state) {
+            if ((this.PhieuNhapKho_GetLatestItemCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.PhieuNhapKho_GetLatestItemCompleted(this, new PhieuNhapKho_GetLatestItemCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void PhieuNhapKho_GetLatestItemAsync() {
+            this.PhieuNhapKho_GetLatestItemAsync(null);
+        }
+        
+        public void PhieuNhapKho_GetLatestItemAsync(object userState) {
+            if ((this.onBeginPhieuNhapKho_GetLatestItemDelegate == null)) {
+                this.onBeginPhieuNhapKho_GetLatestItemDelegate = new BeginOperationDelegate(this.OnBeginPhieuNhapKho_GetLatestItem);
+            }
+            if ((this.onEndPhieuNhapKho_GetLatestItemDelegate == null)) {
+                this.onEndPhieuNhapKho_GetLatestItemDelegate = new EndOperationDelegate(this.OnEndPhieuNhapKho_GetLatestItem);
+            }
+            if ((this.onPhieuNhapKho_GetLatestItemCompletedDelegate == null)) {
+                this.onPhieuNhapKho_GetLatestItemCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnPhieuNhapKho_GetLatestItemCompleted);
+            }
+            base.InvokeAsync(this.onBeginPhieuNhapKho_GetLatestItemDelegate, null, this.onEndPhieuNhapKho_GetLatestItemDelegate, this.onPhieuNhapKho_GetLatestItemCompletedDelegate, userState);
         }
         
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
@@ -806,7 +880,7 @@ namespace QuanLyKhachSan.PhieuNhapKhoSVC {
                     base(client) {
             }
             
-            public System.IAsyncResult BeginPhieuNhapKho_Add(string NgayNhap, int ThangNhap, int NamNhap, string NgayNhapSo, string GhiChu, int CreatedByUser, string CreatedDate, System.AsyncCallback callback, object asyncState) {
+            public System.IAsyncResult BeginPhieuNhapKho_Add(string NgayNhap, int ThangNhap, int NamNhap, int NgayNhapSo, string GhiChu, int CreatedByUser, string CreatedDate, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[7];
                 _args[0] = NgayNhap;
                 _args[1] = ThangNhap;
@@ -824,7 +898,7 @@ namespace QuanLyKhachSan.PhieuNhapKhoSVC {
                 base.EndInvoke("PhieuNhapKho_Add", _args, result);
             }
             
-            public System.IAsyncResult BeginPhieuNhapKho_Edit(int PhieuNhapKhoID, string NgayNhap, int ThangNhap, int NamNhap, string NgayNhapSo, string GhiChu, int ModifiedByUser, string ModifiedDate, System.AsyncCallback callback, object asyncState) {
+            public System.IAsyncResult BeginPhieuNhapKho_Edit(int PhieuNhapKhoID, string NgayNhap, int ThangNhap, int NamNhap, int NgayNhapSo, string GhiChu, int ModifiedByUser, string ModifiedDate, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[8];
                 _args[0] = PhieuNhapKhoID;
                 _args[1] = NgayNhap;
@@ -870,9 +944,8 @@ namespace QuanLyKhachSan.PhieuNhapKhoSVC {
                 return _result;
             }
             
-            public System.IAsyncResult BeginPhieuNhapKho_GetItems(int PhieuNhapKhoID, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[1];
-                _args[0] = PhieuNhapKhoID;
+            public System.IAsyncResult BeginPhieuNhapKho_GetItems(System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[0];
                 System.IAsyncResult _result = base.BeginInvoke("PhieuNhapKho_GetItems", _args, callback, asyncState);
                 return _result;
             }
@@ -880,6 +953,18 @@ namespace QuanLyKhachSan.PhieuNhapKhoSVC {
             public System.Collections.Generic.List<QuanLyKhachSan.PhieuNhapKhoSVC.PhieuNhapKhoInfo> EndPhieuNhapKho_GetItems(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 System.Collections.Generic.List<QuanLyKhachSan.PhieuNhapKhoSVC.PhieuNhapKhoInfo> _result = ((System.Collections.Generic.List<QuanLyKhachSan.PhieuNhapKhoSVC.PhieuNhapKhoInfo>)(base.EndInvoke("PhieuNhapKho_GetItems", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginPhieuNhapKho_GetLatestItem(System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[0];
+                System.IAsyncResult _result = base.BeginInvoke("PhieuNhapKho_GetLatestItem", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public QuanLyKhachSan.PhieuNhapKhoSVC.PhieuNhapKhoInfo EndPhieuNhapKho_GetLatestItem(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                QuanLyKhachSan.PhieuNhapKhoSVC.PhieuNhapKhoInfo _result = ((QuanLyKhachSan.PhieuNhapKhoSVC.PhieuNhapKhoInfo)(base.EndInvoke("PhieuNhapKho_GetLatestItem", _args, result)));
                 return _result;
             }
         }
