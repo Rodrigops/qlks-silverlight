@@ -12,7 +12,7 @@ namespace QuanLyKhachSan
         {
 
         }
-        public void PhieuNhapKho_Add(string NgayNhap, int ThangNhap, int NamNhap, string NgayNhapSo, string GhiChu,
+        public void PhieuNhapKho_Add(string NgayNhap, int ThangNhap, int NamNhap, int NgayNhapSo, string GhiChu,
             int CreatedByUser, string CreatedDate)
         {
             SQLDataHelper SQLDB = new SQLDataHelper();
@@ -25,7 +25,7 @@ namespace QuanLyKhachSan
             SQLDB.Addparameter("@CreatedDate", CreatedDate);
             SQLDB.executenonquery("sp_PhieuNhapKho_Add", CommandType.StoredProcedure);
         }
-        public void PhieuNhapKho_Edit(int PhieuNhapKhoID, string NgayNhap, int ThangNhap, int NamNhap, string NgayNhapSo, string GhiChu,
+        public void PhieuNhapKho_Edit(int PhieuNhapKhoID, string NgayNhap, int ThangNhap, int NamNhap, int NgayNhapSo, string GhiChu,
             int ModifiedByUser, string ModifiedDate)
         {
             SQLDataHelper SQLDB = new SQLDataHelper();
@@ -65,10 +65,9 @@ namespace QuanLyKhachSan
             }
             return item;
         }
-        public List<PhieuNhapKhoInfo> PhieuNhapKho_GetItems([Optional, DefaultParameterValue(0)] int PhieuNhapKhoID)
+        public List<PhieuNhapKhoInfo> PhieuNhapKho_GetItems()
         {
             SQLDataHelper SQLDB = new SQLDataHelper();
-            SQLDB.Addparameter("@PhieuNhapKhoID", PhieuNhapKhoID);
             SqlDataReader rd = SQLDB.executereader("sp_PhieuNhapKho_GetItems", CommandType.StoredProcedure);
             List<PhieuNhapKhoInfo> list = new List<PhieuNhapKhoInfo>();
             PhieuNhapKhoInfo item = null;
@@ -77,22 +76,28 @@ namespace QuanLyKhachSan
                 item = new PhieuNhapKhoInfo();
                 item.PhieuNhapKhoID = int.Parse(rd["PhieuNhapKhoID"].ToString());
                 item.NgayNhap = rd["NgayNhap"].ToString();
-                item.ThangNhap = int.Parse(rd["ThangNhap"].ToString());
-                item.NamNhap = int.Parse(rd["NamNhap"].ToString());
-                item.NgayNhapSo = int.Parse(rd["NgayNhapSo"].ToString());
                 item.GhiChu = rd["GhiChu"].ToString();
 
-                item.ChiTietPhieuNhapID = int.Parse(rd["ChiTietPhieuNhapID"].ToString());
-                item.SoLuong = int.Parse(rd["SoLuong"].ToString());
-                item.DonGia = decimal.Parse(rd["DonGia"].ToString());
-                item.TongTien = decimal.Parse(rd["TongTien"].ToString());
-
-                item.DichVuID = int.Parse(rd["DichVuID"].ToString());
-                item.DichVuName = rd["DichVuName"].ToString();
+                if (!String.IsNullOrEmpty(rd["TongTien"].ToString()))
+                    item.TongTien = decimal.Parse(rd["TongTien"].ToString());
+                else
+                    item.TongTien = 0;
 
                 list.Add(item);
             }
             return list;
+        }
+        public PhieuNhapKhoInfo PhieuNhapKho_GetLatestItem()
+        {
+            SQLDataHelper SQLDB = new SQLDataHelper();
+            SqlDataReader rd = SQLDB.executereader("sp_PhieuNhapKho_GetLatestItem", CommandType.StoredProcedure);
+            PhieuNhapKhoInfo item = null;
+            while (rd.Read())
+            {
+                item = new PhieuNhapKhoInfo();
+                item.PhieuNhapKhoID = int.Parse(rd["PhieuNhapKhoID"].ToString());
+            }
+            return item;
         }
     }
 }
