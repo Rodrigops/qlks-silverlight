@@ -20,9 +20,9 @@
 
         <Button x:Name="CancelButton" Content="Cancel" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,0,0" Grid.Row="1" />
         <Button x:Name="OKButton" Content="OK" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,79,0" Grid.Row="1" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="72,8,0,0" Name="txtDichVu" VerticalAlignment="Top" Width="294" />
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,12,0,0" Name="textBlock1" Text="Dịch vụ:" VerticalAlignment="Top" />
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,41,0,0" Name="textBlock2" Text="Giá tiền:" VerticalAlignment="Top" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="72,37,0,0" Name="txtGiaTien" VerticalAlignment="Top" Width="120" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="82,8,0,0" Name="txtDichVu" VerticalAlignment="Top" Width="284" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,12,0,0" Name="textBlock1" Text="Dịch vụ(*):" VerticalAlignment="Top" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,41,0,0" Name="textBlock2" Text="Giá tiền(*):" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="82,37,0,0" Name="txtGiaTien" VerticalAlignment="Top" Width="110" KeyDown="Number_KeyDown" />
     </Grid>
 </controls:ChildWindow>

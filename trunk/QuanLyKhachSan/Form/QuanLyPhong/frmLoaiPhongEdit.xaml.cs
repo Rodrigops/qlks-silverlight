@@ -36,16 +36,23 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         }
         private void OKButton_Click(object sender, RoutedEventArgs e)
         {
-            LoaiPhongClient = new LoaiPhongSVCClient();
-            if (LoaiPhongID == -1)
+            if (!String.IsNullOrEmpty(txtLoaiPhong.Text.Trim()))
             {
-                LoaiPhongClient.LoaiPhong_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(LoaiPhongClient_LoaiPhong_AddCompleted);
-                LoaiPhongClient.LoaiPhong_AddAsync(txtLoaiPhong.Text);
+                LoaiPhongClient = new LoaiPhongSVCClient();
+                if (LoaiPhongID == -1)
+                {
+                    LoaiPhongClient.LoaiPhong_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(LoaiPhongClient_LoaiPhong_AddCompleted);
+                    LoaiPhongClient.LoaiPhong_AddAsync(txtLoaiPhong.Text);
+                }
+                else
+                {
+                    LoaiPhongClient.LoaiPhong_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(LoaiPhongClient_LoaiPhong_EditCompleted);
+                    LoaiPhongClient.LoaiPhong_EditAsync(LoaiPhongID, txtLoaiPhong.Text);
+                }
             }
             else
             {
-                LoaiPhongClient.LoaiPhong_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(LoaiPhongClient_LoaiPhong_EditCompleted);
-                LoaiPhongClient.LoaiPhong_EditAsync(LoaiPhongID, txtLoaiPhong.Text);
+                MessageBox.Show("Kiểm tra lại cái trường bắt buộc nhập", "Thông báo", MessageBoxButton.OK);
             }
         }
 

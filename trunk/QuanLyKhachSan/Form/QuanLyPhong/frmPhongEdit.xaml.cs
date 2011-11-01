@@ -29,11 +29,12 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
             LoaiPhongClient = new LoaiPhongSVCClient();
             LoaiPhongClient.LoaiPhong_GetItemsCompleted += new EventHandler<LoaiPhong_GetItemsCompletedEventArgs>(LoaiPhongClient_LoaiPhong_GetItemsCompleted);
             LoaiPhongClient.LoaiPhong_GetItemsAsync();
+            cbxLoaiPhong.SelectedIndex = 0;
 
             TienNghiClient = new TienNghiSVCClient();
             TienNghiClient.TienNghi_GetItemsCompleted += new EventHandler<TienNghi_GetItemsCompletedEventArgs>(TienNghiClient_TienNghi_GetItemsCompleted);
             TienNghiClient.TienNghi_GetItemsAsync();
-
+            cbxTienNghi.SelectedIndex = 0;
             if (_PhongID != 0)
             {
                 PhongID = _PhongID;
@@ -71,22 +72,38 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         }
         private void OKButton_Click(object sender, RoutedEventArgs e)
         {
-            PhongClient = new PhongSVCClient();
-            if (PhongID == -1)
+            if (!String.IsNullOrEmpty(txtTenPhong.Text.Trim()))
             {
-                PhongClient.Phong_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(PhongClient_Phong_AddCompleted);
-                PhongClient.Phong_AddAsync(int.Parse(cbxLoaiPhong.SelectedValue.ToString()), txtTenPhong.Text, int.Parse(cbxTienNghi.SelectedValue.ToString()), int.Parse(txtSoGiuong.Text.ToString()), int.Parse(txtSoNguoi.Text.ToString()));
+                PhongClient = new PhongSVCClient();
+                if (PhongID == -1)
+                {
+                    PhongClient.Phong_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(PhongClient_Phong_AddCompleted);
+                    PhongClient.Phong_AddAsync(int.Parse(cbxLoaiPhong.SelectedValue.ToString()), txtTenPhong.Text, int.Parse(cbxTienNghi.SelectedValue.ToString()), int.Parse(txtSoGiuong.Text.ToString()), int.Parse(txtSoNguoi.Text.ToString()));
+                }
+                else
+                {
+                    PhongClient.Phong_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(PhongClient_Phong_EditCompleted);
+                    PhongClient.Phong_EditAsync(PhongID, int.Parse(cbxLoaiPhong.SelectedValue.ToString()), txtTenPhong.Text, int.Parse(cbxTienNghi.SelectedValue.ToString()), int.Parse(txtSoGiuong.Text.ToString()), int.Parse(txtSoNguoi.Text.ToString()));
+                }
             }
             else
             {
-                PhongClient.Phong_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(PhongClient_Phong_EditCompleted);
-                PhongClient.Phong_EditAsync(PhongID, int.Parse(cbxLoaiPhong.SelectedValue.ToString()), txtTenPhong.Text, int.Parse(cbxTienNghi.SelectedValue.ToString()), int.Parse(txtSoGiuong.Text.ToString()), int.Parse(txtSoNguoi.Text.ToString()));
+                MessageBox.Show("Kiểm tra lại cái trường bắt buộc nhập", "Thông báo", MessageBoxButton.OK);
             }
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = false;
+        }
+        private void Number_KeyDown(object sender, KeyEventArgs e)
+        {
+            {
+                if (((e.Key > Key.D0 && e.Key <= Key.D9) || (e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9) || e.Key == Key.Back || e.Key == Key.Tab))
+                    e.Handled = false;
+                else
+                    e.Handled = true;
+            }
         }
     }
 }

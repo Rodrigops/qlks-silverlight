@@ -45,21 +45,28 @@ namespace QuanLyKhachSan.Form.QuanLyUser
 
         private void OKButton_Click(object sender, RoutedEventArgs e)
         {
-            GroupClient = new GroupSVCClient();
-
-            int IsActived = 0;
-            if ((bool)chkIsActived.IsChecked)
-                IsActived = 1;
-
-            if (GroupID == -1)
+            if (!String.IsNullOrEmpty(txtGroupName.Text.Trim()))
             {
-                GroupClient.Group_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(GroupClient_Group_AddCompleted);
-                GroupClient.Group_AddAsync(txtGroupName.Text.Trim(), txtDescriptions.Text, IsActived, 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                GroupClient = new GroupSVCClient();
+
+                int IsActived = 0;
+                if ((bool)chkIsActived.IsChecked)
+                    IsActived = 1;
+
+                if (GroupID == -1)
+                {
+                    GroupClient.Group_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(GroupClient_Group_AddCompleted);
+                    GroupClient.Group_AddAsync(txtGroupName.Text.Trim(), txtDescriptions.Text, IsActived, 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                }
+                else
+                {
+                    GroupClient.Group_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(GroupClient_Group_EditCompleted);
+                    GroupClient.Group_EditAsync(GroupID, txtGroupName.Text.Trim(), txtDescriptions.Text, IsActived, 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                }
             }
             else
             {
-                GroupClient.Group_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(GroupClient_Group_EditCompleted);
-                GroupClient.Group_EditAsync(GroupID, txtGroupName.Text.Trim(), txtDescriptions.Text, IsActived, 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                MessageBox.Show("Kiểm tra lại các trường bắt buộc nhập", "Thông báo", MessageBoxButton.OK);
             }
         }
 

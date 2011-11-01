@@ -36,7 +36,7 @@ namespace QuanLyKhachSan.Form.QuanLyUser
         {
             UserInfo User = e.Result;
 
-            txUserName.Text = User.UserName;
+            txtUserName.Text = User.UserName;
             txtFullName.Text = User.FullName;
             txtDisplayName.Text = User.DisplayName;
             if (User.IsActived == 1)
@@ -47,27 +47,34 @@ namespace QuanLyKhachSan.Form.QuanLyUser
 
         private void OKButton_Click(object sender, RoutedEventArgs e)
         {
-            UserClient = new UserSVCClient();
-
-            int IsActived = 0;
-            if ((bool)chkIsActived.IsChecked)
-                IsActived = 1;
-            if (txtPassword.Password.CompareTo(txtConfirm.Password) == 0)
+            if (!String.IsNullOrEmpty(txtUserName.Text.Trim()) && !String.IsNullOrEmpty(txtPassword.Password) && !String.IsNullOrEmpty(txtConfirm.Password))
             {
-                if (UserID == -1)
+                UserClient = new UserSVCClient();
+
+                int IsActived = 0;
+                if ((bool)chkIsActived.IsChecked)
+                    IsActived = 1;
+                if (txtPassword.Password.CompareTo(txtConfirm.Password) == 0)
                 {
-                    UserClient.User_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(UserClient_User_AddCompleted);
-                    UserClient.User_AddAsync(txUserName.Text, txtPassword.Password, txtFullName.Text, txtDisplayName.Text, IsActived, 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                    if (UserID == -1)
+                    {
+                        UserClient.User_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(UserClient_User_AddCompleted);
+                        UserClient.User_AddAsync(txtUserName.Text, txtPassword.Password, txtFullName.Text, txtDisplayName.Text, IsActived, 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                    }
+                    else
+                    {
+                        UserClient.User_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(UserClient_User_EditCompleted);
+                        UserClient.User_EditAsync(UserID, txtUserName.Text, txtPassword.Password, txtFullName.Text, txtDisplayName.Text, IsActived, 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                    }
                 }
                 else
                 {
-                    UserClient.User_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(UserClient_User_EditCompleted);
-                    UserClient.User_EditAsync(UserID, txUserName.Text, txtPassword.Password, txtFullName.Text, txtDisplayName.Text, IsActived, 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                    MessageBox.Show("Mật khẩu không chính xác", "Thông báo", MessageBoxButton.OK);
                 }
             }
             else
             {
-                MessageBox.Show("Mật khẩu không chính xác", "Thông báo", MessageBoxButton.OK);
+                MessageBox.Show("Kiểm tra lại cái trường bắt buộc nhập", "Thông báo", MessageBoxButton.OK);
             }
         }
 
