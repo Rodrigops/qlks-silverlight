@@ -11,20 +11,25 @@ namespace QuanLyKhachSan
             ChiTietPhieuNhapKhoDAL doit = new ChiTietPhieuNhapKhoDAL();
             doit.ChiTietPhieuNhapKho_Add(PhieuNhapKhoID, SoLuong, DonGia, ThanhTien, DichVuID);
         }
-        public static void ChiTietPhieuNhapKho_Edit(int ChiTietPhieuNhapKho, int PhieuNhapKhoID, int SoLuong, decimal DonGia, decimal ThanhTien, int DichVuID)
+        public static void ChiTietPhieuNhapKho_Edit(int ChiTietPhieuNhapID, int PhieuNhapKhoID, int SoLuong, decimal DonGia, decimal ThanhTien, int DichVuID)
         {
             ChiTietPhieuNhapKhoDAL doit = new ChiTietPhieuNhapKhoDAL();
-            doit.ChiTietPhieuNhapKho_Edit(ChiTietPhieuNhapKho, PhieuNhapKhoID, SoLuong, DonGia, ThanhTien, DichVuID);
+            doit.ChiTietPhieuNhapKho_Edit(ChiTietPhieuNhapID, PhieuNhapKhoID, SoLuong, DonGia, ThanhTien, DichVuID);
         }
-        public static void ChiTietPhieuNhapKho_Delete(int ChiTietPhieuNhapKho)
+        public static void ChiTietPhieuNhapKho_Delete(int ChiTietPhieuNhapID)
         {
             ChiTietPhieuNhapKhoDAL doit = new ChiTietPhieuNhapKhoDAL();
-            doit.ChiTietPhieuNhapKho_Delete(ChiTietPhieuNhapKho);
+            doit.ChiTietPhieuNhapKho_Delete(ChiTietPhieuNhapID);
         }
-        public static ChiTietPhieuNhapKhoInfo ChiTietPhieuNhapKho_GetItem(int ChiTietPhieuNhapKho)
+        public static ChiTietPhieuNhapKhoInfo ChiTietPhieuNhapKho_GetItem(int ChiTietPhieuNhapID)
         {
             ChiTietPhieuNhapKhoDAL doit = new ChiTietPhieuNhapKhoDAL();
-            return doit.ChiTietPhieuNhapKho_GetItem(ChiTietPhieuNhapKho);
+            return doit.ChiTietPhieuNhapKho_GetItem(ChiTietPhieuNhapID);
+        }
+        public static List<ChiTietPhieuNhapKhoInfo> ChiTietPhieuNhapKho_GetItems([Optional, DefaultParameterValue(0)] int PhieuNhapKhoID)
+        {
+            ChiTietPhieuNhapKhoDAL doit = new ChiTietPhieuNhapKhoDAL();
+            return doit.ChiTietPhieuNhapKho_GetItems(PhieuNhapKhoID);
         }
     }
 }

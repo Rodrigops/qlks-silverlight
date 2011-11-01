@@ -6,13 +6,13 @@ namespace QuanLyKhachSan
 {
     public class PhieuNhapKhoBLL
     {
-        public static void PhieuNhapKho_Add(string NgayNhap, int ThangNhap, int NamNhap, string NgayNhapSo, string GhiChu, 
+        public static void PhieuNhapKho_Add(string NgayNhap, int ThangNhap, int NamNhap, int NgayNhapSo, string GhiChu, 
             int CreatedByUser, string CreatedDate)
         {
             PhieuNhapKhoDAL doit = new PhieuNhapKhoDAL();
             doit.PhieuNhapKho_Add(NgayNhap, ThangNhap, NamNhap, NgayNhapSo, GhiChu, CreatedByUser, CreatedDate);
         }
-        public static void PhieuNhapKho_Edit(int PhieuNhapKhoID, string NgayNhap, int ThangNhap, int NamNhap, string NgayNhapSo, string GhiChu,
+        public static void PhieuNhapKho_Edit(int PhieuNhapKhoID, string NgayNhap, int ThangNhap, int NamNhap, int NgayNhapSo, string GhiChu,
             int ModifiedByUser, string ModifiedDate)
         {
             PhieuNhapKhoDAL doit = new PhieuNhapKhoDAL();
@@ -28,10 +28,15 @@ namespace QuanLyKhachSan
             PhieuNhapKhoDAL doit = new PhieuNhapKhoDAL();
             return doit.PhieuNhapKho_GetItem(PhieuNhapKhoID);
         }
-        public static List<PhieuNhapKhoInfo> PhieuNhapKho_GetItems([Optional, DefaultParameterValue(0)] int PhieuNhapKhoID)
+        public static List<PhieuNhapKhoInfo> PhieuNhapKho_GetItems()
         {
             PhieuNhapKhoDAL doit = new PhieuNhapKhoDAL();
-            return doit.PhieuNhapKho_GetItems(PhieuNhapKhoID);
+            return doit.PhieuNhapKho_GetItems();
+        }
+        public static PhieuNhapKhoInfo PhieuNhapKho_GetLatestItem()
+        {
+            PhieuNhapKhoDAL doit = new PhieuNhapKhoDAL();
+            return doit.PhieuNhapKho_GetLatestItem();
         }
     }
 }
