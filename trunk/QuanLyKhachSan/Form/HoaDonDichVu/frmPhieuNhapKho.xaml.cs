@@ -195,20 +195,22 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
             PhieuNhapKhoEdit.PhieuNhapKhoEdit_Load(PhieuNhapID);
             PhieuNhapKhoEdit.Show();
         }
+        void PhieuNhapKhoXacNhan_Closed(object sender, EventArgs e)
+        {
+            frmPhieuNhapKho_XacNhanXoa PhieuNhapKhoXacNhan = new frmPhieuNhapKho_XacNhanXoa();
+            if (PhieuNhapKhoXacNhan.DialogResult == true)
+            {
+                PhieuNhapKhoClient.PhieuNhapKho_GetItemsAsync();
+            }
+        }
         private void cmdXoaPhieuNhap_Click(object sender, RoutedEventArgs e)
         {
             HyperlinkButton cmdXoaPhieuNhap = sender as HyperlinkButton;
             int PhieuNhapID = int.Parse(cmdXoaPhieuNhap.CommandParameter.ToString());
-            MessageBoxResult msgResult = MessageBox.Show("Bạn muốn xóa mục này", "Thông báo", MessageBoxButton.OKCancel);
-            if (msgResult == MessageBoxResult.OK)
-            {
-                PhieuNhapKhoClient.PhieuNhapKho_DeleteCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(PhieuNhapKhoClient_PhieuNhapKho_DeleteCompleted);
-                PhieuNhapKhoClient.PhieuNhapKho_DeleteAsync(PhieuNhapID, 0, DateTime.Now.ToString("MM/dd/yyyy"));
-            }
-        }
-        void PhieuNhapKhoClient_PhieuNhapKho_DeleteCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
-        {
-            PhieuNhapKhoClient.PhieuNhapKho_GetItemsAsync();
+            frmPhieuNhapKho_XacNhanXoa PhieuNhapKhoXacNhan = new frmPhieuNhapKho_XacNhanXoa();
+            PhieuNhapKhoXacNhan.Closed += new EventHandler(PhieuNhapKhoXacNhan_Closed);
+            PhieuNhapKhoXacNhan.PhieuNhapID = PhieuNhapID;
+            PhieuNhapKhoXacNhan.Show();
         }
     }
 }

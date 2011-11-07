@@ -18,6 +18,7 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
         public int PhieuNhapKhoID = -1;
         public int CTPhieuNhapKhoID = -1;
         private int dichvuid = 0;
+        private int sl = 0;
         private ChiTietPhieuNhapKhoSVCClient ChiTietClient = null;
         private DichVuSVCClient DichVuClient = new DichVuSVCClient();
         public frmPhieuNhapKho_ChiTiet()
@@ -47,6 +48,7 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
             ChiTietPhieuNhapKhoInfo ChiTiet = e.Result;
             dichvuid = ChiTiet.DichVuID;
             cbxDichVu.SelectedValue = ChiTiet.DichVuID;
+            sl = ChiTiet.SoLuong;
             txtSoLuong.Text = ChiTiet.SoLuong.ToString();
             txtDonGia.Text = Format_NumberVietnamese(ChiTiet.DonGia.ToString());
             txtTongTien.Text = Format_NumberVietnamese(ChiTiet.TongTien.ToString());
@@ -100,6 +102,7 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
                     ChiTietClient.ChiTietPhieuNhapKho_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(ChiTietClient_ChiTietPhieuNhapKho_AddCompleted);
                     ChiTietClient.ChiTietPhieuNhapKho_AddAsync(PhieuNhapKhoID, int.Parse(txtSoLuong.Text.ToString()), decimal.Parse(txtDonGia.Text.ToString()), 
                         decimal.Parse(txtTongTien.Text.ToString()), (int)cbxDichVu.SelectedValue);
+                    sl = int.Parse(txtSoLuong.Text.ToString());
                 }
                 else
                 {
@@ -107,20 +110,29 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
                     ChiTietClient.ChiTietPhieuNhapKho_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(ChiTietClient_ChiTietPhieuNhapKho_EditCompleted);
                     ChiTietClient.ChiTietPhieuNhapKho_EditAsync(CTPhieuNhapKhoID, PhieuNhapKhoID, int.Parse(txtSoLuong.Text.ToString()), decimal.Parse(txtDonGia.Text.ToString()),
                         decimal.Parse(txtTongTien.Text.ToString()), (int)cbxDichVu.SelectedValue);
+                    sl = int.Parse(txtSoLuong.Text.ToString()) - sl; 
                 }
+
+                DichVuClient.DichVu_Edit_SLCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(DichVuClient_DichVu_Edit_SLCompleted);
+                DichVuClient.DichVu_Edit_SLAsync((int)cbxDichVu.SelectedValue, sl);
             }
             else
             {
                 MessageBox.Show("Kiểm tra lại cái trường bắt buộc nhập", "Thông báo", MessageBoxButton.OK);
             }
         }
-        void ChiTietClient_ChiTietPhieuNhapKho_EditCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+
+        void DichVuClient_DichVu_Edit_SLCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
             this.DialogResult = true;
         }
+        void ChiTietClient_ChiTietPhieuNhapKho_EditCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            
+        }
         void ChiTietClient_ChiTietPhieuNhapKho_AddCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
-            this.DialogResult = true;
+            
         }
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
