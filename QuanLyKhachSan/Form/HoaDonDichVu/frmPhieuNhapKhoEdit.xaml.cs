@@ -87,9 +87,18 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
             MessageBoxResult msgResult = MessageBox.Show("Bạn muốn xóa mục này", "Thông báo", MessageBoxButton.OKCancel);
             if (msgResult == MessageBoxResult.OK)
             {
+                ChiTietClient.ChiTietPhieuNhapKho_GetItemCompleted += new EventHandler<ChiTietPhieuNhapKho_GetItemCompletedEventArgs>(ChiTietClient_ChiTietPhieuNhapKho_GetItemCompleted);
+                ChiTietClient.ChiTietPhieuNhapKho_GetItemAsync(CTPhieuNhapID);
+                
                 ChiTietClient.ChiTietPhieuNhapKho_DeleteCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(ChiTietClient_ChiTietPhieuNhapKho_DeleteCompleted);
                 ChiTietClient.ChiTietPhieuNhapKho_DeleteAsync(CTPhieuNhapID);
             }
+        }
+
+        void ChiTietClient_ChiTietPhieuNhapKho_GetItemCompleted(object sender, ChiTietPhieuNhapKho_GetItemCompletedEventArgs e)
+        {
+            ChiTietPhieuNhapKhoInfo ChiTiet = e.Result;
+            DichVuClient.DichVu_Edit_SLAsync(ChiTiet.DichVuID, 0 - ChiTiet.SoLuong);
         }
         void ChiTietClient_ChiTietPhieuNhapKho_DeleteCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {

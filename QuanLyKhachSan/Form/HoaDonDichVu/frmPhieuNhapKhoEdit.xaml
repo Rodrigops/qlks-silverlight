@@ -49,6 +49,7 @@
             <StackPanel>
                 <telerik:RadGridView AutoGenerateColumns="False" IsReadOnly="True" Margin="10,0,10,0" AutoExpandGroups="True" IsFilteringAllowed="False" Name="grvChiTietPhieuNhap" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" telerik:StyleManager.Theme="Office_Blue" Height="Auto">
                     <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn Header="ID" DataMemberBinding="{Binding Path=DichVuID}" IsVisible="False" ></telerik:GridViewDataColumn>
                         <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Left" Header="Sản phẩm" DataMemberBinding="{Binding Path=DichVuName}" Width="150" ></telerik:GridViewDataColumn>
                         <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="SL" DataMemberBinding="{Binding Path=SoLuong}" Width="70"></telerik:GridViewDataColumn>
                         <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Right" Header="Đơn giá" DataMemberBinding="{Binding Path=DonGia, Converter={StaticResource NumberVietnameseFormater}}" Width="100"></telerik:GridViewDataColumn>
