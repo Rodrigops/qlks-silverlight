@@ -29,12 +29,11 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
             LoaiPhongClient = new LoaiPhongSVCClient();
             LoaiPhongClient.LoaiPhong_GetItemsCompleted += new EventHandler<LoaiPhong_GetItemsCompletedEventArgs>(LoaiPhongClient_LoaiPhong_GetItemsCompleted);
             LoaiPhongClient.LoaiPhong_GetItemsAsync();
-            cbxLoaiPhong.SelectedIndex = 0;
 
             TienNghiClient = new TienNghiSVCClient();
             TienNghiClient.TienNghi_GetItemsCompleted += new EventHandler<TienNghi_GetItemsCompletedEventArgs>(TienNghiClient_TienNghi_GetItemsCompleted);
             TienNghiClient.TienNghi_GetItemsAsync();
-            cbxTienNghi.SelectedIndex = 0;
+            
             if (_PhongID != 0)
             {
                 PhongID = _PhongID;
@@ -47,10 +46,12 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         void TienNghiClient_TienNghi_GetItemsCompleted(object sender, TienNghi_GetItemsCompletedEventArgs e)
         {
             cbxTienNghi.ItemsSource = e.Result;
+            cbxTienNghi.SelectedIndex = 0;
         }
         void LoaiPhongClient_LoaiPhong_GetItemsCompleted(object sender, LoaiPhong_GetItemsCompletedEventArgs e)
         {
             cbxLoaiPhong.ItemsSource = e.Result;
+            cbxLoaiPhong.SelectedIndex = 0;
         }
         void PhongClient_Phong_GetItemCompleted(object sender, Phong_GetItemCompletedEventArgs e)
         {
