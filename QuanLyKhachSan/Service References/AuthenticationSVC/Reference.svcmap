@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="01b6f90e-c081-4028-bd6f-4812f732a711" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/Authentication/Authentication.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Authentication.xsd" MetadataType="Schema" ID="f90b99f3-c023-4250-a6d2-b49f1166fde9" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/Authentication/Authentication.svc?xsd=xsd1" />
+    <MetadataFile FileName="AuthenticationSVC.wsdl" MetadataType="Wsdl" ID="b1d1e672-5691-4db4-93a7-d44e62344080" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/Authentication/Authentication.svc?wsdl" />
+    <MetadataFile FileName="Authentication1.xsd" MetadataType="Schema" ID="c42639cf-5e92-48be-9a1d-e263dbe35089" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/Authentication/Authentication.svc?xsd=xsd0" />
+    <MetadataFile FileName="Authentication.wsdl" MetadataType="Wsdl" ID="c9fd74af-7b59-466e-a1ce-e8db42bc4d2e" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/Authentication/Authentication.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Authentication.disco" MetadataType="Disco" ID="4000373d-1f7a-420c-ab5d-d0eefba4875d" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/Authentication/Authentication.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
