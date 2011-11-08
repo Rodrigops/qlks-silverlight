@@ -46,54 +46,74 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         }
         void Gio_PhongClient_Gio_Phong_GetItemByPhongIDCompleted(object sender, Gio_Phong_GetItemByPhongIDCompletedEventArgs e)
         {
-            //Gio_PhongInfo Gio_Phong = e.Result;
-            grvTheoGio.ItemsSource = e.Result;
-
-            List<Gio_PhongInfo> Gio_Phong = e.Result;
-            List<Gio_PhongInfo> Gio_PhongNew = new List<Gio_PhongInfo>();
-            Gio_PhongInfo Item = null;
-            if (Gio_Phong.Count > 0)
+            if (e.Result.Count > 0)
             {
-                for (int i = 0; i < Gio_Phong.Count; i++)
+                grvTheoGio.ItemsSource = e.Result;
+
+                List<Gio_PhongInfo> Gio_Phong = e.Result;
+                List<Gio_PhongInfo> Gio_PhongNew = new List<Gio_PhongInfo>();
+                Gio_PhongInfo Item = null;
+                if (Gio_Phong.Count > 0)
                 {
-                    Item = new Gio_PhongInfo();
-                    Item.Gio_PhongID = Gio_Phong[i].Gio_PhongID;
-                    Item.GiaTien = Gio_Phong[i].GiaTien;
-                    Item.GioPhongName = Gio_Phong[i].GioPhongName;
-                    Item.GiaTien = Gio_Phong[i].GiaTien;
-                    Item.PhanTram = Gio_Phong[i].PhanTram;
-                    if (i == 0)
-                        Item.ImageUrl = "Thêm";
-                    else
-                        Item.ImageUrl = "Xóa";
-                    Gio_PhongNew.Add(Item);
+                    for (int i = 0; i < Gio_Phong.Count; i++)
+                    {
+                        Item = new Gio_PhongInfo();
+                        Item.Gio_PhongID = Gio_Phong[i].Gio_PhongID;
+                        Item.GiaTien = Gio_Phong[i].GiaTien;
+                        Item.GioPhongName = Gio_Phong[i].GioPhongName;
+                        Item.GiaTien = Gio_Phong[i].GiaTien;
+                        Item.PhanTram = Gio_Phong[i].PhanTram;
+                        if (i == 0)
+                            Item.ImageUrl = "Thêm";
+                        else
+                            Item.ImageUrl = "Xóa";
+                        Gio_PhongNew.Add(Item);
+                    }
+                    grvTheoGio.ItemsSource = Gio_PhongNew;
                 }
-                grvTheoGio.ItemsSource = Gio_PhongNew;
             }
+            else
+                Gio_Phong_Load();
         }
         void Ngay_PhongClient_Ngay_Phong_GetItemByPhongIDCompleted(object sender, Ngay_Phong_GetItemByPhongIDCompletedEventArgs e)
         {
             Ngay_PhongInfo Ngay_Phong = e.Result;
-
-            txtTheoNgay.Text = Format_NumberVietnamese(Ngay_Phong.GiaNgay.ToString());
-            txtTheoTuan.Text = Format_NumberVietnamese(Ngay_Phong.GiaTuan.ToString());
-            txtTheoThang.Text = Format_NumberVietnamese(Ngay_Phong.GiaThang.ToString());
+            if (Ngay_Phong != null)
+            {
+                if (!String.IsNullOrEmpty(Ngay_Phong.GiaNgay.ToString()))
+                    txtTheoNgay.Text = Format_NumberVietnamese(Ngay_Phong.GiaNgay.ToString());
+                if (!String.IsNullOrEmpty(Ngay_Phong.GiaTuan.ToString()))
+                    txtTheoTuan.Text = Format_NumberVietnamese(Ngay_Phong.GiaTuan.ToString());
+                if (!String.IsNullOrEmpty(Ngay_Phong.GiaThang.ToString()))
+                    txtTheoThang.Text = Format_NumberVietnamese(Ngay_Phong.GiaThang.ToString());
+            }
+            else
+            {
+                txtTheoNgay.Text = "";
+                txtTheoTuan.Text = "";
+                txtTheoThang.Text = "";
+            }
         }
         void Nguoi_PhongClient_Nguoi_Phong_GetItemByPhongIDCompleted(object sender, Nguoi_Phong_GetItemByPhongIDCompletedEventArgs e)
         {
-            List<Nguoi_PhongInfo> Nguoi_Phong = e.Result;
-            List<Nguoi_PhongInfo> Nguoi_PhongNew = new List<Nguoi_PhongInfo>();
-            foreach (Nguoi_PhongInfo item in Nguoi_Phong)
+            if (e.Result.Count > 0)
             {
-                if (item.status.Trim().Equals("GiaCuoi"))
-                    txtCongThem.Text = item.CongThem;
-                else
+                List<Nguoi_PhongInfo> Nguoi_Phong = e.Result;
+                List<Nguoi_PhongInfo> Nguoi_PhongNew = new List<Nguoi_PhongInfo>();
+                foreach (Nguoi_PhongInfo item in Nguoi_Phong)
                 {
-                    item.ImageUrl = "Thêm";
-                    Nguoi_PhongNew.Add(item);
+                    if (item.status.Trim().Equals("GiaCuoi"))
+                        txtCongThem.Text = item.CongThem;
+                    else
+                    {
+                        item.ImageUrl = "Thêm";
+                        Nguoi_PhongNew.Add(item);
+                    }
                 }
+                grvTheoSoNguoi.ItemsSource = Nguoi_PhongNew;
             }
-            grvTheoSoNguoi.ItemsSource = Nguoi_PhongNew;
+            else
+                Nguoi_Phong_Load();
         }
         protected void GenerateRepeateColumn(int RepeatedColumns, List<PhongInfo> ListPhong)
         {
@@ -276,13 +296,11 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                     ListGiaTien += GiaTien + ";";
                 }
             }
-            Gio_PhongClient.Gio_Phong_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(Gio_PhongClient_Gio_Phong_AddCompleted);
             Gio_PhongClient.Gio_Phong_AddAsync(ListPhongID, ListGioPhongName, PhanTram, ListGiaTien, Status);
             //Ngay_Phong_Add
             decimal GiaNgay = decimal.Parse(txtTheoNgay.Text.ToString() == "" ? "0" : txtTheoNgay.Text.ToString());
             decimal GiaTuan = decimal.Parse(txtTheoTuan.Text.ToString() == "" ? "0" : txtTheoTuan.Text.ToString());
             decimal GiaThang = decimal.Parse(txtTheoThang.Text.ToString() == "" ? "0" : txtTheoThang.Text.ToString());
-            Ngay_PhongClient.Ngay_Phong_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(Ngay_PhongClient_Ngay_Phong_AddCompleted);
             Ngay_PhongClient.Ngay_Phong_AddAsync(ListPhongID, GiaNgay, GiaTuan, GiaThang);
             //Nguoi_Phong_Add
             string ListNguoiPhongName = "";
@@ -299,17 +317,8 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                     ListCongThem += Cong + ";";
                 }
             }
-            Nguoi_PhongClient.Nguoi_Phong_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(Nguoi_PhongClient_Nguoi_Phong_AddCompleted);
             Nguoi_PhongClient.Nguoi_Phong_AddAsync(ListPhongID, ListNguoiPhongName, ListCongThem, CongThemTiepTheo);
-        }
-        void Gio_PhongClient_Gio_Phong_AddCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
-        {
-        }
-        void Ngay_PhongClient_Ngay_Phong_AddCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
-        {
-        }
-        void Nguoi_PhongClient_Nguoi_Phong_AddCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
-        {
+
             MessageBox.Show("Cập nhật hoàn thành", "Thông Báo", MessageBoxButton.OK);
         }
         protected void Nguoi_Phong_Load()
@@ -328,6 +337,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                 GioPhong.Add(Item);
                 NguoiPhongNextID = 2;
                 grvTheoSoNguoi.ItemsSource = GioPhong;
+                txtCongThem.Text = "";
             }
             catch (Exception)
             {
