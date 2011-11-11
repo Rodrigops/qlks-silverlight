@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a11caec9-5497-4db9-b63d-1eb255f4980d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKChiTieu.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GroupSVC.wsdl" MetadataType="Wsdl" ID="9f9bb3d0-62c2-4336-82c9-e4e85799f235" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKChiTieu.svc?wsdl" />
+    <MetadataFile FileName="TKChiTieu.xsd" MetadataType="Schema" ID="dfaac065-cfda-4af0-b344-5729ea0edf84" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKChiTieu.svc?xsd=xsd2" />
+    <MetadataFile FileName="TKChiTieu.wsdl" MetadataType="Wsdl" ID="fe601c83-ffdd-4288-b72e-5d5150dd4816" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKChiTieu.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="TKChiTieu1.xsd" MetadataType="Schema" ID="76b46f38-5bb0-486a-9a23-7651130792de" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKChiTieu.svc?xsd=xsd1" />
+    <MetadataFile FileName="TKChiTieu2.xsd" MetadataType="Schema" ID="ffea1fa6-1135-44e8-a1f9-1e6310c6f7a9" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKChiTieu.svc?xsd=xsd0" />
+    <MetadataFile FileName="TKChiTieu.disco" MetadataType="Disco" ID="8c74865b-8270-464a-a97b-000c0c059dda" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKChiTieu.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
