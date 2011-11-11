@@ -13,6 +13,7 @@ using QuanLyKhachSan.PhongSVC;
 using QuanLyKhachSan.KhachHangSVC;
 using QuanLyKhachSan.HoaDonSVC;
 using QuanLyKhachSan.HoaDon_KhachHangSVC;
+using Telerik.Windows.Controls;
 namespace QuanLyKhachSan.Form.QuanLyKhachHang
 {
     public partial class frmNhanPhong : ChildWindow
@@ -22,6 +23,8 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
         public frmNhanPhong()
         {
             InitializeComponent();
+            LoaiThue_Load();
+            Ca_Load();
             PhongClient.Phong_GetItems_ByTinhTrangCompleted += new EventHandler<Phong_GetItems_ByTinhTrangCompletedEventArgs>(PhongClient_Phong_GetItems_ByTinhTrangCompleted);
             PhongClient.Phong_GetItems_ByTinhTrangAsync();
         }
@@ -37,7 +40,8 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
 
         private void OKButton_Click(object sender, RoutedEventArgs e)
         {
-
+            int LoaiThue=int.Parse(cbxLoaiThue.SelectedValue.ToString());
+            int Ca = int.Parse(cbxCa.SelectedValue.ToString());
             decimal KhuyenMai;
             if (String.IsNullOrEmpty(txtKhuyenMai.Text))
             {
@@ -82,7 +86,7 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
             iNamRa = DateToNumberConverter.Date2Year(sNgayRa);
             HoaDonSVCClient HoaDonClient = new HoaDonSVCClient();
             HoaDonClient.HoaDon_AddCompleted+=new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(HoaDonClient_HoaDon_AddCompleted);
-            HoaDonClient.HoaDon_AddAsync("NhanPhong", KhuyenMai, GhiChu, sNgayVao, iNgayVao_So, iGioVao, iPhutVao, iThangVao, iNamVao, sNgayRa, iNgayRa_So, iGiora, iPhutRa, iThangRa, iNamRa, 0);
+            HoaDonClient.HoaDon_AddAsync(LoaiThue,Ca, "NhanPhong", KhuyenMai, GhiChu, sNgayVao, iNgayVao_So, iGioVao, iPhutVao, iThangVao, iNamVao, sNgayRa, iNgayRa_So, iGiora, iPhutRa, iThangRa, iNamRa, 0);
         }
 
         void HoaDonClient_HoaDon_AddCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
@@ -125,10 +129,44 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
         {
             this.DialogResult = false;
         }
+        private void LoaiThue_Load()
+        {
+            LoaiThueInfo item = null;
+            List<LoaiThueInfo> listLoaiThue = new List<LoaiThueInfo>();
+            item = new LoaiThueInfo();
+            item.LoaiThueID = 0;
+            item.LoaiThue = "Theo giờ";
+            listLoaiThue.Add(item);
+            item = new LoaiThueInfo();
+            item.LoaiThueID = 1;
+            item.LoaiThue = "Theo ngày";
+            listLoaiThue.Add(item);
+            item = new LoaiThueInfo();
+            item.LoaiThueID = 2;
+            item.LoaiThue = "Qua đêm";
+            listLoaiThue.Add(item);
+            item = new LoaiThueInfo();
+            item.LoaiThueID = 3;
+            item.LoaiThue = "Theo tháng";
+            listLoaiThue.Add(item);
+            cbxLoaiThue.ItemsSource = listLoaiThue;
+        }
+        private void Ca_Load()
+        {
+            CaInfo item = null;
+            List<CaInfo> listCa = new List<CaInfo>();
+            item = new CaInfo();
+            item.CaID = 0;
+            item.TenCa = "Ca ngày";
+            listCa.Add(item);
+            item = new CaInfo();
+            item.CaID = 1;
+            item.TenCa = "Ca đêm";
+            listCa.Add(item);
+            cbxCa.ItemsSource = listCa;    
+            
+        }
 
-        
-
-        
     }
 }
 

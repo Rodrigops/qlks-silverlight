@@ -30,9 +30,10 @@
         <Button x:Name="CancelButton" Content="Cancel" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,6" Grid.Row="12" Grid.Column="2" />
         <Button x:Name="OKButton" Content="OK" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,6,79,6" Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2" />
         <sdk:Label Grid.ColumnSpan="2" Height="17" HorizontalAlignment="Left" Margin="7,12,0,0" VerticalAlignment="Top" Width="245" Content="Danh sách khách hàng" />
-        <telerik:RadGridView Grid.ColumnSpan="4" Grid.Row="1" Height="Auto" VerticalAlignment="Stretch" AutoGenerateColumns="False" IsFilteringAllowed="False" ShowGroupPanel="False" Name="grvKhachHang" RowIndicatorVisibility="Collapsed" telerik:StyleManager.Theme="Office_Blue" Margin="7,0,119,0">
+        <telerik:RadGridView Grid.ColumnSpan="4" Grid.Row="1" Height="Auto" VerticalAlignment="Stretch" AutoGenerateColumns="False" IsFilteringAllowed="False" ShowGroupPanel="False" Name="grvKhachHang" RowIndicatorVisibility="Collapsed" telerik:StyleManager.Theme="Office_Blue" Margin="7,0,69,0">
             <telerik:RadGridView.Columns>
                 <telerik:GridViewDataColumn Header="Họ Tên" DataMemberBinding="{Binding Path=HoTen}" Width="*"></telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Header="CMND/Passport" DataMemberBinding="{Binding Path=CMND}" Width="150"></telerik:GridViewDataColumn>
             </telerik:RadGridView.Columns>
         </telerik:RadGridView>
         <sdk:Label Height="17" HorizontalAlignment="Left" Margin="7,5,0,0" Name="label2" VerticalAlignment="Top" Width="75" Grid.Row="3" Content="Ngày vào" />
@@ -133,5 +134,13 @@
         <TextBox Grid.Column="1" Grid.Row="7" Height="110" HorizontalAlignment="Left" Margin="10,6,0,0" Name="txtGhiChu" VerticalAlignment="Top" Width="305" Grid.ColumnSpan="2" Grid.RowSpan="4" />
         <TextBox Grid.Column="1" Grid.Row="5" Height="23" HorizontalAlignment="Left" Margin="9,4,0,0" Name="txtTraTruoc" VerticalAlignment="Top" Width="120" />
         <TextBox Grid.Column="1" Grid.Row="6" Height="23" HorizontalAlignment="Left" Margin="10,4,0,0" Name="txtKhuyenMai" VerticalAlignment="Top" Width="120" />
+        <sdk:Label Content="Thuê theo" Height="17" HorizontalAlignment="Left" Margin="133,11,0,0" Name="label11" VerticalAlignment="Top" Width="55" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" />
+        <telerik:RadComboBox HorizontalAlignment="Left" SelectedValuePath="LoaiThueID" DisplayMemberPath="LoaiThue" Margin="23,6,0,0" Name="cbxLoaiThue" SelectedIndex="0" telerik:StyleManager.Theme="Office_Blue" VerticalAlignment="Top" Width="76" Grid.Column="2" Grid.Row="2">
+           
+        </telerik:RadComboBox>
+        <sdk:Label Content="Ca" Grid.Column="2" Height="17" HorizontalAlignment="Left" Margin="106,11,0,0" Name="label12" VerticalAlignment="Top" Width="14" Grid.Row="2" />
+        <telerik:RadComboBox Grid.Column="2" HorizontalAlignment="Left" SelectedValuePath="CaID" DisplayMemberPath="TenCa" Margin="126,6,0,0" Name="cbxCa" SelectedIndex="0" telerik:StyleManager.Theme="Office_Blue" VerticalAlignment="Top" Width="76" Grid.ColumnSpan="2" Grid.Row="2">
+            
+        </telerik:RadComboBox>
     </Grid>
 </controls:ChildWindow>
