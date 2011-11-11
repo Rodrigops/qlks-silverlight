@@ -8,7 +8,7 @@
         xmlns:uriMapper="clr-namespace:System.Windows.Navigation;assembly=System.Windows.Controls.Navigation"
 		mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="800" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
 	<Grid x:Name="LayoutRoot">
-        <telerik:RadRibbonBar Height="146" HorizontalAlignment="Stretch" Name="mainRibbonBar" ApplicationName="Phần Mềm Quản Lý Khách Sạn Hàng Đầu Việt Nam Từ Hàng Trăm Năm Qua" VerticalAlignment="Top" Width="Auto" telerik:StyleManager.Theme="Vista">
+        <telerik:RadRibbonBar Height="146" HorizontalAlignment="Stretch" Name="mainRibbonBar" ApplicationName="Phần Mềm Quản Lý Khách Sạn" VerticalAlignment="Top" Width="Auto" telerik:StyleManager.Theme="Vista">
             <telerik:RadRibbonTab Header="Trang Chủ">
                 <telerik:RadRibbonGroup Header="Tình Trạng Phòng"  Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
                     <telerik:RadRibbonButton Name="cmdTinhTrangPhong" Click="cmdTinhTrangPhong_Click" >
@@ -70,8 +70,26 @@
                 </telerik:RadRibbonGroup>
             </telerik:RadRibbonTab>
             <telerik:RadRibbonTab Header="Thống Kê">
-                <telerik:RadRibbonGroup Header="RibbonGroup" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
-
+                <telerik:RadRibbonGroup Header="Thống kê doanh thu" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
+                    <telerik:RadRibbonButton Name="cmdThongKeDoanhThu" Click="cmdThongKeDoanhThu_Click">
+                        <StackPanel>
+                            <Image Source="Images/CaiDatGia.png"></Image>
+                        </StackPanel>
+                    </telerik:RadRibbonButton>
+                </telerik:RadRibbonGroup>
+                <telerik:RadRibbonGroup Header="Thống kê chi tiêu" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
+                    <telerik:RadRibbonButton Name="cmdThongKeChiTieu" Click="cmdThongKeChiTieu_Click">
+                        <StackPanel>
+                            <Image Source="Images/CaiDatGia.png"></Image>
+                        </StackPanel>
+                    </telerik:RadRibbonButton>
+                </telerik:RadRibbonGroup>
+                <telerik:RadRibbonGroup Header="Thống kê doanh thu dịch vụ" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
+                    <telerik:RadRibbonButton Name="cmdThongKeDoanhThuDichVu" Click="cmdThongKeDoanhThuDichVu_Click">
+                        <StackPanel>
+                            <Image Source="Images/CaiDatGia.png"></Image>
+                        </StackPanel>
+                    </telerik:RadRibbonButton>
                 </telerik:RadRibbonGroup>
             </telerik:RadRibbonTab>
             <telerik:RadRibbonTab Header="Thông Tin">
@@ -82,7 +100,16 @@
             <telerik:RadRibbonTab Header="Admin">
                 <telerik:RadRibbonGroup Header="Quản lý người dùng" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
                     <telerik:RadRibbonButton Name="cmdQuanLyUser" Click="cmdQuanLyUser_Click">
-                        
+                        <StackPanel>
+                            <Image Source="Images/Users.png"></Image>
+                        </StackPanel>
+                    </telerik:RadRibbonButton>
+                </telerik:RadRibbonGroup>
+                <telerik:RadRibbonGroup Header="Phân quyền" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
+                    <telerik:RadRibbonButton Name="cmdPhanQuyenUser" Click="cmdPhanQuyenUser_Click">
+                        <StackPanel>
+                            <Image Source="Images/PermissionUser.png"></Image>
+                        </StackPanel>
                     </telerik:RadRibbonButton>
                 </telerik:RadRibbonGroup>
             </telerik:RadRibbonTab>
@@ -97,9 +124,14 @@
                     <uriMapper:UriMapping Uri="KhachHang" MappedUri="/Form/QuanLyKhachHang/frmKhachHang.xaml"/>
                     <uriMapper:UriMapping Uri="HoaDonDichVu" MappedUri="/Form/HoaDonDichVu/frmHoaDonDichVu.xaml"/>
                     <uriMapper:UriMapping Uri="QuanLyUser" MappedUri="/Form/QuanLyUser/frmQuanLyUser.xaml"/>
+                    <uriMapper:UriMapping Uri="PhanQuyenUser" MappedUri="/Form/QuanLyUser/frmPhanQuyenUser.xaml"/>
                     <uriMapper:UriMapping Uri="Login" MappedUri="/frmLogin.xaml"/>
+                    <uriMapper:UriMapping Uri="ThongKeDoanhThu" MappedUri="Form/ThongKeBaoCao/frmThongKeDoanhThu.xaml"/>
+                    <uriMapper:UriMapping Uri="ThongKeChiTieu" MappedUri="Form/ThongKeBaoCao/frmThongKeChiTieu.xaml"/>
+                    <uriMapper:UriMapping Uri="ThongKeDoanhThuDichVu" MappedUri="Form/ThongKeBaoCao/frmThongKeDoanhThuDichVu.xaml"/>
                 </uriMapper:UriMapper>
             </navigation:Frame.UriMapper>
         </navigation:Frame>
+        <HyperlinkButton Content="HyperlinkButton" Height="23" HorizontalAlignment="Right" Margin="899,34,0,0" Name="cmdLogout" VerticalAlignment="Top" Width="100" Visibility="Collapsed" Click="cmdLogout_Click" />
     </Grid>
 </UserControl>
