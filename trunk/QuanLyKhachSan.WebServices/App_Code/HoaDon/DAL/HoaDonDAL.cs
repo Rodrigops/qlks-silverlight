@@ -11,9 +11,11 @@ namespace QuanLyKhachSan
         {
 
         }
-        public void HoaDon_Add(string LoaiHoaDon,decimal KhuyenMai,string GhiChu,string NgayVao,int NgayVao_So,int GioVao,int PhutVao, int ThangVao,int NamVao,string NgayRa,int NgayRa_So,int GioRa,int PhutRa,int ThangRa,int NamRa,int UserID)
+        public void HoaDon_Add(int LoaiThue,int Ca, string LoaiHoaDon,decimal KhuyenMai,string GhiChu,string NgayVao,int NgayVao_So,int GioVao,int PhutVao, int ThangVao,int NamVao,string NgayRa,int NgayRa_So,int GioRa,int PhutRa,int ThangRa,int NamRa,int UserID)
         {
             SQLDataHelper SQLDB = new SQLDataHelper();
+            SQLDB.Addparameter("@LoaiThue", LoaiThue);
+            SQLDB.Addparameter("@Ca", Ca);
             SQLDB.Addparameter("@LoaiHoaDon", LoaiHoaDon);
             SQLDB.Addparameter("@KhuyenMai", KhuyenMai);
             SQLDB.Addparameter("@GhiChu", GhiChu);
