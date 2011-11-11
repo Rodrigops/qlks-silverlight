@@ -108,10 +108,6 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
                     listKhachHang.Add(item);
                 }
             }
-            //frmDatPhong DatPhong = new frmDatPhong();
-            //DatPhong.Load_DanhSach(listKhachHang);
-            //DatPhong.Show();
-
         }
     }
 }
