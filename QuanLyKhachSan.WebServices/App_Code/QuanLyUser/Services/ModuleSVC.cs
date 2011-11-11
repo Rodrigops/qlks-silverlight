@@ -12,10 +12,16 @@ namespace QuanLyKhachSan
     public class ModuleSVC
     {
         [OperationContract]
-        public List<ModuleInfo> Module_GetItems()
+        public List<ModuleInfo> Module_GetItems(int GroupID)
         {
             ModuleDAL doit = new ModuleDAL();
-            return doit.Module_GetItems();
+            return doit.Module_GetItems(GroupID);
+        }
+        [OperationContract]
+        public void ModulePermission_Add(int GroupID, string ListModulePermission)
+        {
+            ModuleDAL doit = new ModuleDAL();
+            doit.ModulePermission_Add(GroupID, ListModulePermission);
         }
     }
 }

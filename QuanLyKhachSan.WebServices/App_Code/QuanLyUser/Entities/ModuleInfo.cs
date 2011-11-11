@@ -14,6 +14,8 @@ namespace QuanLyKhachSan
         private string _CreatedDate;
         private int _ModifiedByUser;
         private string _ModifiedDate;
+        private int _IsView;
+        private int _IsEdit;
         #region ModuleInfo
         public int ModuleID
         {
@@ -64,6 +66,16 @@ namespace QuanLyKhachSan
         {
             get { return _ModifiedDate; }
             set { _ModifiedDate = value; }
+        }
+        public int IsView
+        {
+            get { return _IsView; }
+            set { _IsView = value; }
+        }
+        public int IsEdit
+        {
+            get { return _IsEdit; }
+            set { _IsEdit = value; }
         }
         #endregion
     }
