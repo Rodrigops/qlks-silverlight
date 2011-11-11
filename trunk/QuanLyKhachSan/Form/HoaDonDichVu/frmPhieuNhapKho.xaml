@@ -62,7 +62,7 @@
                 <telerik:RadDateTimePicker Grid.Column="3" Grid.Row="1" HorizontalAlignment="Left" Margin="0,11,0,0" Name="rdpDenNgay" VerticalAlignment="Top" 
                                            telerik:StyleManager.Theme="Office_Blue" Width="110" IsEnabled="False" 
                                            InputMode="DatePicker" Culture="vi-VN" DateTimeWatermarkContent="Chọn ngày" />
-                <Button Content="Thống kê" Grid.ColumnSpan="5" Grid.Row="1" Height="23" HorizontalAlignment="Center" Margin="10" Name="btnThongKe" VerticalAlignment="Bottom" Width="75" />
+                <Button Content="Thống kê" Grid.ColumnSpan="5" Grid.Row="1" Click="btnThongKe_Click"  Height="23" HorizontalAlignment="Center" Margin="10" Name="btnThongKe" VerticalAlignment="Bottom" Width="75" />
             </Grid>
         </telerik:GroupBox>
         <ScrollViewer Grid.Row="2" HorizontalAlignment="Center">

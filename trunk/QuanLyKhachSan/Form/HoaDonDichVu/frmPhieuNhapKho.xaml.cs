@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using QuanLyKhachSan.PhieuNhapKhoSVC;
+using QuanLyKhachSan.TKChiTieuSVC;
 namespace QuanLyKhachSan.Form.HoaDonDichVu
 {
     public partial class frmPhieuNhapKho : ChildWindow
@@ -211,6 +212,11 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
             PhieuNhapKhoXacNhan.Closed += new EventHandler(PhieuNhapKhoXacNhan_Closed);
             PhieuNhapKhoXacNhan.PhieuNhapID = PhieuNhapID;
             PhieuNhapKhoXacNhan.Show();
+        }
+
+        private void btnThongKe_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
