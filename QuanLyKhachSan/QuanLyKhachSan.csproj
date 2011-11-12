@@ -309,6 +309,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\TKDoanhThuDichVuSVC\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\UserGroupSVC\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -562,6 +567,9 @@
     </None>
     <None Include="Service References\HoaDonDichVuSVC\HoaDonDichVuSVC.wsdl" />
     <None Include="Service References\HoaDonDichVuSVC\QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HoaDonDichVuSVC\QuanLyKhachSan.HoaDonDichVuSVC.HoaDonNgayVaoRaInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\HoaDonSVC\HoaDon.wsdl" />
@@ -834,6 +842,20 @@
     <None Include="Service References\TKChiTieuSVC\TKChiTieu2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\TKDoanhThuDichVuSVC\QuanLyKhachSan.TKDoanhThuDichVuSVC.TKDoanhThuDichVuInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TKDoanhThuDichVuSVC\TKDoanhThuDichVu.wsdl" />
+    <None Include="Service References\TKDoanhThuDichVuSVC\TKDoanhThuDichVu.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TKDoanhThuDichVuSVC\TKDoanhThuDichVu1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TKDoanhThuDichVuSVC\TKDoanhThuDichVu2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TKDoanhThuDichVuSVC\TKDoanhThuDichVuSVC.wsdl" />
     <None Include="Service References\UserGroupSVC\QuanLyKhachSan.UserGroupSVC.UserGroupInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -915,6 +937,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\TKDoanhThuDichVuSVC\TKDoanhThuDichVu.disco" />
+    <None Include="Service References\TKDoanhThuDichVuSVC\configuration91.svcinfo" />
+    <None Include="Service References\TKDoanhThuDichVuSVC\configuration.svcinfo" />
+    <None Include="Service References\TKDoanhThuDichVuSVC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="ServiceReferences.ClientConfig">
       <SubType>Designer</SubType>
     </Content>
@@ -991,6 +1020,7 @@
     <WCFMetadataStorage Include="Service References\QuocTichSVC\" />
     <WCFMetadataStorage Include="Service References\TienNghiSVC\" />
     <WCFMetadataStorage Include="Service References\TKChiTieuSVC\" />
+    <WCFMetadataStorage Include="Service References\TKDoanhThuDichVuSVC\" />
     <WCFMetadataStorage Include="Service References\UserGroupSVC\" />
     <WCFMetadataStorage Include="Service References\UserSVC\" />
   </ItemGroup>
