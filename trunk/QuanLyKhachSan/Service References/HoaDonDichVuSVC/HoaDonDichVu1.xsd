@@ -9,6 +9,9 @@
         <xs:element minOccurs="0" name="DichVuID" type="xs:int" />
         <xs:element minOccurs="0" name="KhachHangID" type="xs:int" />
         <xs:element minOccurs="0" name="NgaySuDung" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Thang" type="xs:int" />
+        <xs:element minOccurs="0" name="Nam" type="xs:int" />
+        <xs:element minOccurs="0" name="NgaySo" type="xs:int" />
         <xs:element minOccurs="0" name="SoLuong" type="xs:int" />
         <xs:element minOccurs="0" name="DonGia" type="xs:decimal" />
         <xs:element minOccurs="0" name="TongTien" type="xs:decimal" />
@@ -31,6 +34,9 @@
         <xs:element minOccurs="0" name="DichVuID" type="xs:int" />
         <xs:element minOccurs="0" name="KhachHangID" type="xs:int" />
         <xs:element minOccurs="0" name="NgaySuDung" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Thang" type="xs:int" />
+        <xs:element minOccurs="0" name="Nam" type="xs:int" />
+        <xs:element minOccurs="0" name="NgaySo" type="xs:int" />
         <xs:element minOccurs="0" name="SoLuong" type="xs:int" />
         <xs:element minOccurs="0" name="DonGia" type="xs:decimal" />
         <xs:element minOccurs="0" name="TongTien" type="xs:decimal" />
