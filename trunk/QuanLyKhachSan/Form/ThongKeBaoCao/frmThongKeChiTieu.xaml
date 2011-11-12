@@ -7,7 +7,7 @@
            xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
            Width="800" Height="600" 
            xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
-           Title="Phiếu nhập kho" xmlns:my="clr-namespace:QuanLyKhachSan.Form.QuanLyPhong">
+           Title="Thống Kê Chi Tiêu" xmlns:my="clr-namespace:QuanLyKhachSan.Form.QuanLyPhong">
     <Grid x:Name="LayoutRoot">
         <Grid Margin="10,10,8,25" Name="grid1">
             <Grid.ColumnDefinitions>
@@ -36,16 +36,16 @@
                         <RowDefinition Height="88" />
                     </Grid.RowDefinitions>
                     <RadioButton Checked="rdbTheoNgay_Checked" Content="Theo ngày" GroupName="ThongKe" Height="16" HorizontalAlignment="Left" Margin="17,16,0,0" Name="rdbTheoNgay" VerticalAlignment="Top" />
-                    <telerik:RadDateTimePicker Culture="vi-VN" DateTimeWatermarkContent="Chọn ngày" Grid.Column="1" HorizontalAlignment="Left" InputMode="DatePicker" IsEnabled="False" Margin="0,14,0,0" Name="rdpTheoNgay" telerik:StyleManager.Theme="Office_Blue" VerticalAlignment="Top" Width="110" />
+                    <telerik:RadDateTimePicker Culture="vi-VN" DateTimeWatermarkContent="Chọn ngày" Grid.Column="1" HorizontalAlignment="Left" InputMode="DatePicker" IsEnabled="False" Margin="0,14,0,0" Name="rdpTheoNgay" telerik:StyleManager.Theme="Office_Blue" VerticalAlignment="Top" Width="116" />
                     <RadioButton Checked="rdbTheoThang_Checked" Content="Theo tháng" Grid.Column="2" GroupName="ThongKe" Height="16" HorizontalAlignment="Left" Margin="28,16,0,0" Name="rdbTheoThang" VerticalAlignment="Top" />
-                    <telerik:RadComboBox Grid.Column="3" HorizontalAlignment="Left" IsEnabled="False" Margin="0,14,0,0" Name="cbxTheoThang" telerik:StyleManager.Theme="Office_Blue" VerticalAlignment="Top" Width="80" />
-                    <telerik:RadComboBox Grid.Column="3" HorizontalAlignment="Left" IsEnabled="False" Margin="86,14,0,0" Name="cbxTheoThangNam" telerik:StyleManager.Theme="Office_Blue" VerticalAlignment="Top" Width="80" />
+                    <telerik:RadComboBox Grid.Column="3" HorizontalAlignment="Left" IsEnabled="False" Margin="0,14,0,0" Name="cbxTheoThang" telerik:StyleManager.Theme="Office_Blue" VerticalAlignment="Top" Width="50" />
+                    <telerik:RadComboBox Grid.Column="3" HorizontalAlignment="Left" IsEnabled="False" Margin="56,14,0,0" Name="cbxTheoThangNam" telerik:StyleManager.Theme="Office_Blue" VerticalAlignment="Top" Width="60" />
                     <RadioButton Checked="rdbTheoNam_Checked" Content="Theo năm" Grid.Column="4" GroupName="ThongKe" Height="16" HorizontalAlignment="Left" Margin="23,16,0,0" Name="rdbTheoNam" VerticalAlignment="Top" />
-                    <telerik:RadComboBox Grid.Column="5" HorizontalAlignment="Left" IsEnabled="False" Margin="0,14,0,0" Name="cbxTheoNam" telerik:StyleManager.Theme="Office_Blue" VerticalAlignment="Top" Width="80" />
+                    <telerik:RadComboBox Grid.Column="5" HorizontalAlignment="Left" IsEnabled="False" Margin="0,14,0,0" Name="cbxTheoNam" telerik:StyleManager.Theme="Office_Blue" VerticalAlignment="Top" Width="60" />
                     <RadioButton Checked="rdbTuNgay_Checked" Content="Từ ngày" Grid.Row="1" GroupName="ThongKe" Height="16" HorizontalAlignment="Left" Margin="17,13,0,0" Name="rdbTuNgay" VerticalAlignment="Top" />
                     <TextBlock Grid.Column="2" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="58,13,0,0" Name="lblDenNgay" Text="Ðến ngày" VerticalAlignment="Top" />
-                    <telerik:RadDateTimePicker Culture="vi-VN" DateTimeWatermarkContent="Chọn ngày" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" InputMode="DatePicker" IsEnabled="False" Margin="0,11,0,0" Name="rdpTuNgay" telerik:StyleManager.Theme="Office_Blue" VerticalAlignment="Top" Width="110" />
-                    <telerik:RadDateTimePicker Culture="vi-VN" DateTimeWatermarkContent="Chọn ngày" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Left" InputMode="DatePicker" IsEnabled="False" Margin="0,11,0,0" Name="rdpDenNgay" telerik:StyleManager.Theme="Office_Blue" VerticalAlignment="Top" Width="110" />
+                    <telerik:RadDateTimePicker Culture="vi-VN" DateTimeWatermarkContent="Chọn ngày" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" InputMode="DatePicker" IsEnabled="False" Margin="0,11,0,0" Name="rdpTuNgay" telerik:StyleManager.Theme="Office_Blue" VerticalAlignment="Top" Width="116" />
+                    <telerik:RadDateTimePicker Culture="vi-VN" DateTimeWatermarkContent="Chọn ngày" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Left" InputMode="DatePicker" IsEnabled="False" Margin="0,11,0,0" Name="rdpDenNgay" telerik:StyleManager.Theme="Office_Blue" VerticalAlignment="Top" Width="116" />
                     <Button Content="Thống kê" Grid.ColumnSpan="5" Grid.Row="1" Height="23" HorizontalAlignment="Center" Margin="10" Name="btnThongKe" Click="btnThongKe_Click" VerticalAlignment="Bottom" Width="75" />
                 </Grid>
             </telerik:GroupBox>

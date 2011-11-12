@@ -61,6 +61,8 @@ namespace QuanLyKhachSan.Form.ThongKeBaoCao
                 cbxTheoNam.IsEnabled = false;
                 cbxTheoThang.IsEnabled = true;
                 cbxTheoThangNam.IsEnabled = true;
+                cbxTheoThang.SelectedValue = DateTime.Now.Month;
+                cbxTheoThangNam.SelectedValue = DateTime.Now.Year;
             }
         }
         private void rdbTheoNam_Checked(object sender, RoutedEventArgs e)
@@ -73,6 +75,7 @@ namespace QuanLyKhachSan.Form.ThongKeBaoCao
                 cbxTheoNam.IsEnabled = true;
                 cbxTheoThang.IsEnabled = false;
                 cbxTheoThangNam.IsEnabled = false;
+                cbxTheoNam.SelectedValue = DateTime.Now.Year;
             }
         }
         private void rdbTuNgay_Checked(object sender, RoutedEventArgs e)
@@ -96,8 +99,8 @@ namespace QuanLyKhachSan.Form.ThongKeBaoCao
             {
                 while ((currentYear >= 2000))
                 {
-                    cbxTheoNam.Items.Add(new YearInfo(currentYear, currentYear.ToString()));
-                    cbxTheoThangNam.Items.Add(new YearInfo(currentYear, currentYear.ToString()));
+                    cbxTheoNam.Items.Add(currentYear);
+                    cbxTheoThangNam.Items.Add(currentYear);
                     currentYear = currentYear - 1;
                 }
             }
@@ -114,59 +117,13 @@ namespace QuanLyKhachSan.Form.ThongKeBaoCao
             {
                 while ((currentMonth <= 12))
                 {
-                    cbxTheoThang.Items.Add(new MonthInfo(currentMonth, currentMonth.ToString()));
+                    cbxTheoThang.Items.Add(currentMonth);
                     currentMonth = currentMonth + 1;
                 }
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-        }
-        #endregion
-        #region "Sub Class"
-        private class YearInfo
-        {
-            int _Nam;
-            string _TenNam;
-            public YearInfo(int Nam, string TenNam)
-            {
-                _Nam = Nam;
-                _TenNam = TenNam;
-            }
-            public int Nam()
-            {
-                return _Nam;
-            }
-            public string TenNam()
-            {
-                return _TenNam;
-            }
-            public override string ToString()
-            {
-                return _TenNam;
-            }
-        }
-        private class MonthInfo
-        {
-            int _Thang;
-            string _TenThang;
-            public MonthInfo(int Thang, string TenThang)
-            {
-                _Thang = Thang;
-                _TenThang = TenThang;
-            }
-            public int Thang()
-            {
-                return _Thang;
-            }
-            public string TenThang()
-            {
-                return _TenThang;
-            }
-            public override string ToString()
-            {
-                return _TenThang;
             }
         }
         #endregion
@@ -185,7 +142,7 @@ namespace QuanLyKhachSan.Form.ThongKeBaoCao
             }
             else if ((bool)rdbTheoThang.IsChecked)
             {
-                if (cbxTheoThang.SelectedIndex == -1 && cbxTheoThangNam.SelectedIndex == -1)
+                if (cbxTheoThang.SelectedIndex != -1 && cbxTheoThangNam.SelectedIndex != -1)
                 {
                     LoadingPanel.IsBusy = true;
                     TKChiTieuClient = new TKChiTieuSVCClient();
@@ -195,7 +152,7 @@ namespace QuanLyKhachSan.Form.ThongKeBaoCao
             }
             else if ((bool)rdbTheoNam.IsChecked)
             {
-                if (cbxTheoNam.SelectedIndex == -1)
+                if (cbxTheoNam.SelectedIndex != -1)
                 {
                     LoadingPanel.IsBusy = true;
                     TKChiTieuClient = new TKChiTieuSVCClient();
