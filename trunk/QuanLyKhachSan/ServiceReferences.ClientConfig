@@ -78,6 +78,18 @@
                     maxReceivedMessageSize="2147483647">
                     <security mode="None" />
                 </binding>
+                <binding name="BasicHttpBinding_ModuleSVC" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_TKChiTieuSVC" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_TKDoanhThuDichVuSVC" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
             </basicHttpBinding>
             <customBinding>
                 <binding name="CustomBinding_LoaiPhongSVC">
@@ -147,6 +159,15 @@
             <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/ChiTietPhieuNhapKho.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ChiTietPhieuNhapKhoSVC"
                 contract="ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoSVC" name="BasicHttpBinding_ChiTietPhieuNhapKhoSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyUser/Module.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ModuleSVC"
+                contract="ModuleSVC.ModuleSVC" name="BasicHttpBinding_ModuleSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKChiTieu.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_TKChiTieuSVC"
+                contract="TKChiTieuSVC.TKChiTieuSVC" name="BasicHttpBinding_TKChiTieuSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKDoanhThuDichVu.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_TKDoanhThuDichVuSVC"
+                contract="TKDoanhThuDichVuSVC.TKDoanhThuDichVuSVC" name="BasicHttpBinding_TKDoanhThuDichVuSVC" />
         </client>
     </system.serviceModel>
 </configuration>

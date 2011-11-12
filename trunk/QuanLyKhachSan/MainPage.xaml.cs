@@ -24,14 +24,14 @@ namespace QuanLyKhachSan
         private string KeyMapping = "";
         void Authentication_Authentication_GetSessionCompleted(object sender, Authentication_GetSessionCompletedEventArgs e)
         {
-            if (e.Result.ToString() == "")
-            {
-                cmdLogout.Visibility = System.Windows.Visibility.Collapsed;
-                cmdLogout.Content = "";
-                ContentFrame.Navigate(new Uri("Login", UriKind.Relative));
-            }
-            else
-            {
+            //if (e.Result.ToString() == "")
+            //{
+            //    cmdLogout.Visibility = System.Windows.Visibility.Collapsed;
+            //    cmdLogout.Content = "";
+            //    ContentFrame.Navigate(new Uri("Login", UriKind.Relative));
+            //}
+            //else
+            //{
                 cmdLogout.Visibility = System.Windows.Visibility.Visible;
                 cmdLogout.Content = "[" + e.Result.ToString() + " - Thoát]"; 
                 //PhanQuyen
@@ -71,7 +71,7 @@ namespace QuanLyKhachSan
                         ContentFrame.Navigate(new Uri("ThongKeDoanhThuDichVu", UriKind.Relative));
                         break;
                 }
-            }            
+            //}            
         }
         private void cmdThongTinPhong_Click(object sender, RoutedEventArgs e)
         {
