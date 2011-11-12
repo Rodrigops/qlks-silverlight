@@ -77,6 +77,8 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
             frmPhieuNhapKho_ChiTiet PhieuNhapKho_ChiTiet = sender as frmPhieuNhapKho_ChiTiet;
             if (PhieuNhapKho_ChiTiet.DialogResult == true)
             {
+                ChiTietClient = new ChiTietPhieuNhapKhoSVCClient();
+                ChiTietClient.ChiTietPhieuNhapKho_GetItemsCompleted += new EventHandler<ChiTietPhieuNhapKho_GetItemsCompletedEventArgs>(ChiTietClient_ChiTietPhieuNhapKho_GetItemsCompleted);
                 ChiTietClient.ChiTietPhieuNhapKho_GetItemsAsync(PhieuNhapKhoID);
             }
         }
@@ -142,14 +144,10 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
             else
             {
                 PhieuNhapKhoClient = new PhieuNhapKhoSVCClient();
-                PhieuNhapKhoClient.PhieuNhapKho_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(PhieuNhapKhoClient_PhieuNhapKho_EditCompleted);
                 PhieuNhapKhoClient.PhieuNhapKho_EditAsync(PhieuNhapKhoID, ngaynhap, thangnhap, namnhap, ngaynhapso, txtGhiChu.Text.Trim(), 0, DateTime.Now.ToString("MM/dd/yyyy"));
             }
         }
-        void PhieuNhapKhoClient_PhieuNhapKho_EditCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
-        {
-        }
-        void PhieuNhapKhoClient_PhieuNhapKho_AddCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+         void PhieuNhapKhoClient_PhieuNhapKho_AddCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
             btnThemPhieuNhap.Content = "Cập nhật phiếu nhập";
             btnAddDichVu.IsEnabled = true;
