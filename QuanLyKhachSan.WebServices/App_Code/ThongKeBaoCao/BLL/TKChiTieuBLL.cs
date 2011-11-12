@@ -11,7 +11,7 @@ namespace QuanLyKhachSan
             TKChiTieuDAL doit = new TKChiTieuDAL();
             return doit.PhieuNhapKho_GetItems_TheoNgay(NgayNhapSo);
         }
-        public List<TKChiTieuInfo> PhieuNhapKho_GetItems_TheoThang(int ThangNhap, int NamNhap)
+        public static List<TKChiTieuInfo> PhieuNhapKho_GetItems_TheoThang(int ThangNhap, int NamNhap)
         {
             TKChiTieuDAL doit = new TKChiTieuDAL();
             return doit.PhieuNhapKho_GetItems_TheoThang(ThangNhap, NamNhap);
