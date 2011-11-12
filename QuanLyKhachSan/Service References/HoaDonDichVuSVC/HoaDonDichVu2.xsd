@@ -13,10 +13,13 @@
       <xs:element minOccurs="0" name="KhachHangID" type="xs:int" />
       <xs:element minOccurs="0" name="ModifiedByUser" type="xs:int" />
       <xs:element minOccurs="0" name="ModifiedDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nam" type="xs:int" />
+      <xs:element minOccurs="0" name="NgaySo" type="xs:int" />
       <xs:element minOccurs="0" name="NgaySuDung" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PhongID" type="xs:int" />
       <xs:element minOccurs="0" name="PhongName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SoLuong" type="xs:int" />
+      <xs:element minOccurs="0" name="Thang" type="xs:int" />
       <xs:element minOccurs="0" name="TongTien" type="xs:decimal" />
     </xs:sequence>
   </xs:complexType>

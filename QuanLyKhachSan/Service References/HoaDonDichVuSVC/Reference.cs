@@ -42,6 +42,10 @@ namespace QuanLyKhachSan.HoaDonDichVuSVC {
         
         private string ModifiedDateField;
         
+        private int NamField;
+        
+        private int NgaySoField;
+        
         private string NgaySuDungField;
         
         private int PhongIDField;
@@ -49,6 +53,8 @@ namespace QuanLyKhachSan.HoaDonDichVuSVC {
         private string PhongNameField;
         
         private int SoLuongField;
+        
+        private int ThangField;
         
         private decimal TongTienField;
         
@@ -196,6 +202,32 @@ namespace QuanLyKhachSan.HoaDonDichVuSVC {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Nam {
+            get {
+                return this.NamField;
+            }
+            set {
+                if ((this.NamField.Equals(value) != true)) {
+                    this.NamField = value;
+                    this.RaisePropertyChanged("Nam");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int NgaySo {
+            get {
+                return this.NgaySoField;
+            }
+            set {
+                if ((this.NgaySoField.Equals(value) != true)) {
+                    this.NgaySoField = value;
+                    this.RaisePropertyChanged("NgaySo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string NgaySuDung {
             get {
                 return this.NgaySuDungField;
@@ -243,6 +275,19 @@ namespace QuanLyKhachSan.HoaDonDichVuSVC {
                 if ((this.SoLuongField.Equals(value) != true)) {
                     this.SoLuongField = value;
                     this.RaisePropertyChanged("SoLuong");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Thang {
+            get {
+                return this.ThangField;
+            }
+            set {
+                if ((this.ThangField.Equals(value) != true)) {
+                    this.ThangField = value;
+                    this.RaisePropertyChanged("Thang");
                 }
             }
         }
@@ -485,12 +530,28 @@ namespace QuanLyKhachSan.HoaDonDichVuSVC {
     public interface HoaDonDichVuSVC {
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:HoaDonDichVuSVC/HoaDonDichVu_Add", ReplyAction="urn:HoaDonDichVuSVC/HoaDonDichVu_AddResponse")]
-        System.IAsyncResult BeginHoaDonDichVu_Add(int HoaDonID, int PhongID, int DichVuID, int KhachHangID, string NgaySuDung, int SoLuong, decimal DonGia, decimal TongTien, int CreatedByUser, string CreatedDate, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginHoaDonDichVu_Add(int HoaDonID, int PhongID, int DichVuID, int KhachHangID, string NgaySuDung, int Thang, int Nam, int NgaySo, int SoLuong, decimal DonGia, decimal TongTien, int CreatedByUser, string CreatedDate, System.AsyncCallback callback, object asyncState);
         
         void EndHoaDonDichVu_Add(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:HoaDonDichVuSVC/HoaDonDichVu_Edit", ReplyAction="urn:HoaDonDichVuSVC/HoaDonDichVu_EditResponse")]
-        System.IAsyncResult BeginHoaDonDichVu_Edit(int HoaDon_DichVuID, int HoaDonID, int PhongID, int DichVuID, int KhachHangID, string NgaySuDung, int SoLuong, decimal DonGia, decimal TongTien, int ModifiedByUser, string ModifiedDate, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginHoaDonDichVu_Edit(
+                    int HoaDon_DichVuID, 
+                    int HoaDonID, 
+                    int PhongID, 
+                    int DichVuID, 
+                    int KhachHangID, 
+                    string NgaySuDung, 
+                    int Thang, 
+                    int Nam, 
+                    int NgaySo, 
+                    int SoLuong, 
+                    decimal DonGia, 
+                    decimal TongTien, 
+                    int ModifiedByUser, 
+                    string ModifiedDate, 
+                    System.AsyncCallback callback, 
+                    object asyncState);
         
         void EndHoaDonDichVu_Edit(System.IAsyncResult result);
         
@@ -731,8 +792,8 @@ namespace QuanLyKhachSan.HoaDonDichVuSVC {
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuSVC.BeginHoaDonDichVu_Add(int HoaDonID, int PhongID, int DichVuID, int KhachHangID, string NgaySuDung, int SoLuong, decimal DonGia, decimal TongTien, int CreatedByUser, string CreatedDate, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginHoaDonDichVu_Add(HoaDonID, PhongID, DichVuID, KhachHangID, NgaySuDung, SoLuong, DonGia, TongTien, CreatedByUser, CreatedDate, callback, asyncState);
+        System.IAsyncResult QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuSVC.BeginHoaDonDichVu_Add(int HoaDonID, int PhongID, int DichVuID, int KhachHangID, string NgaySuDung, int Thang, int Nam, int NgaySo, int SoLuong, decimal DonGia, decimal TongTien, int CreatedByUser, string CreatedDate, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginHoaDonDichVu_Add(HoaDonID, PhongID, DichVuID, KhachHangID, NgaySuDung, Thang, Nam, NgaySo, SoLuong, DonGia, TongTien, CreatedByUser, CreatedDate, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -746,12 +807,15 @@ namespace QuanLyKhachSan.HoaDonDichVuSVC {
             int DichVuID = ((int)(inValues[2]));
             int KhachHangID = ((int)(inValues[3]));
             string NgaySuDung = ((string)(inValues[4]));
-            int SoLuong = ((int)(inValues[5]));
-            decimal DonGia = ((decimal)(inValues[6]));
-            decimal TongTien = ((decimal)(inValues[7]));
-            int CreatedByUser = ((int)(inValues[8]));
-            string CreatedDate = ((string)(inValues[9]));
-            return ((QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuSVC)(this)).BeginHoaDonDichVu_Add(HoaDonID, PhongID, DichVuID, KhachHangID, NgaySuDung, SoLuong, DonGia, TongTien, CreatedByUser, CreatedDate, callback, asyncState);
+            int Thang = ((int)(inValues[5]));
+            int Nam = ((int)(inValues[6]));
+            int NgaySo = ((int)(inValues[7]));
+            int SoLuong = ((int)(inValues[8]));
+            decimal DonGia = ((decimal)(inValues[9]));
+            decimal TongTien = ((decimal)(inValues[10]));
+            int CreatedByUser = ((int)(inValues[11]));
+            string CreatedDate = ((string)(inValues[12]));
+            return ((QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuSVC)(this)).BeginHoaDonDichVu_Add(HoaDonID, PhongID, DichVuID, KhachHangID, NgaySuDung, Thang, Nam, NgaySo, SoLuong, DonGia, TongTien, CreatedByUser, CreatedDate, callback, asyncState);
         }
         
         private object[] OnEndHoaDonDichVu_Add(System.IAsyncResult result) {
@@ -766,11 +830,11 @@ namespace QuanLyKhachSan.HoaDonDichVuSVC {
             }
         }
         
-        public void HoaDonDichVu_AddAsync(int HoaDonID, int PhongID, int DichVuID, int KhachHangID, string NgaySuDung, int SoLuong, decimal DonGia, decimal TongTien, int CreatedByUser, string CreatedDate) {
-            this.HoaDonDichVu_AddAsync(HoaDonID, PhongID, DichVuID, KhachHangID, NgaySuDung, SoLuong, DonGia, TongTien, CreatedByUser, CreatedDate, null);
+        public void HoaDonDichVu_AddAsync(int HoaDonID, int PhongID, int DichVuID, int KhachHangID, string NgaySuDung, int Thang, int Nam, int NgaySo, int SoLuong, decimal DonGia, decimal TongTien, int CreatedByUser, string CreatedDate) {
+            this.HoaDonDichVu_AddAsync(HoaDonID, PhongID, DichVuID, KhachHangID, NgaySuDung, Thang, Nam, NgaySo, SoLuong, DonGia, TongTien, CreatedByUser, CreatedDate, null);
         }
         
-        public void HoaDonDichVu_AddAsync(int HoaDonID, int PhongID, int DichVuID, int KhachHangID, string NgaySuDung, int SoLuong, decimal DonGia, decimal TongTien, int CreatedByUser, string CreatedDate, object userState) {
+        public void HoaDonDichVu_AddAsync(int HoaDonID, int PhongID, int DichVuID, int KhachHangID, string NgaySuDung, int Thang, int Nam, int NgaySo, int SoLuong, decimal DonGia, decimal TongTien, int CreatedByUser, string CreatedDate, object userState) {
             if ((this.onBeginHoaDonDichVu_AddDelegate == null)) {
                 this.onBeginHoaDonDichVu_AddDelegate = new BeginOperationDelegate(this.OnBeginHoaDonDichVu_Add);
             }
@@ -786,6 +850,9 @@ namespace QuanLyKhachSan.HoaDonDichVuSVC {
                         DichVuID,
                         KhachHangID,
                         NgaySuDung,
+                        Thang,
+                        Nam,
+                        NgaySo,
                         SoLuong,
                         DonGia,
                         TongTien,
@@ -794,8 +861,24 @@ namespace QuanLyKhachSan.HoaDonDichVuSVC {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuSVC.BeginHoaDonDichVu_Edit(int HoaDon_DichVuID, int HoaDonID, int PhongID, int DichVuID, int KhachHangID, string NgaySuDung, int SoLuong, decimal DonGia, decimal TongTien, int ModifiedByUser, string ModifiedDate, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginHoaDonDichVu_Edit(HoaDon_DichVuID, HoaDonID, PhongID, DichVuID, KhachHangID, NgaySuDung, SoLuong, DonGia, TongTien, ModifiedByUser, ModifiedDate, callback, asyncState);
+        System.IAsyncResult QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuSVC.BeginHoaDonDichVu_Edit(
+                    int HoaDon_DichVuID, 
+                    int HoaDonID, 
+                    int PhongID, 
+                    int DichVuID, 
+                    int KhachHangID, 
+                    string NgaySuDung, 
+                    int Thang, 
+                    int Nam, 
+                    int NgaySo, 
+                    int SoLuong, 
+                    decimal DonGia, 
+                    decimal TongTien, 
+                    int ModifiedByUser, 
+                    string ModifiedDate, 
+                    System.AsyncCallback callback, 
+                    object asyncState) {
+            return base.Channel.BeginHoaDonDichVu_Edit(HoaDon_DichVuID, HoaDonID, PhongID, DichVuID, KhachHangID, NgaySuDung, Thang, Nam, NgaySo, SoLuong, DonGia, TongTien, ModifiedByUser, ModifiedDate, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -810,12 +893,15 @@ namespace QuanLyKhachSan.HoaDonDichVuSVC {
             int DichVuID = ((int)(inValues[3]));
             int KhachHangID = ((int)(inValues[4]));
             string NgaySuDung = ((string)(inValues[5]));
-            int SoLuong = ((int)(inValues[6]));
-            decimal DonGia = ((decimal)(inValues[7]));
-            decimal TongTien = ((decimal)(inValues[8]));
-            int ModifiedByUser = ((int)(inValues[9]));
-            string ModifiedDate = ((string)(inValues[10]));
-            return ((QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuSVC)(this)).BeginHoaDonDichVu_Edit(HoaDon_DichVuID, HoaDonID, PhongID, DichVuID, KhachHangID, NgaySuDung, SoLuong, DonGia, TongTien, ModifiedByUser, ModifiedDate, callback, asyncState);
+            int Thang = ((int)(inValues[6]));
+            int Nam = ((int)(inValues[7]));
+            int NgaySo = ((int)(inValues[8]));
+            int SoLuong = ((int)(inValues[9]));
+            decimal DonGia = ((decimal)(inValues[10]));
+            decimal TongTien = ((decimal)(inValues[11]));
+            int ModifiedByUser = ((int)(inValues[12]));
+            string ModifiedDate = ((string)(inValues[13]));
+            return ((QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuSVC)(this)).BeginHoaDonDichVu_Edit(HoaDon_DichVuID, HoaDonID, PhongID, DichVuID, KhachHangID, NgaySuDung, Thang, Nam, NgaySo, SoLuong, DonGia, TongTien, ModifiedByUser, ModifiedDate, callback, asyncState);
         }
         
         private object[] OnEndHoaDonDichVu_Edit(System.IAsyncResult result) {
@@ -830,11 +916,11 @@ namespace QuanLyKhachSan.HoaDonDichVuSVC {
             }
         }
         
-        public void HoaDonDichVu_EditAsync(int HoaDon_DichVuID, int HoaDonID, int PhongID, int DichVuID, int KhachHangID, string NgaySuDung, int SoLuong, decimal DonGia, decimal TongTien, int ModifiedByUser, string ModifiedDate) {
-            this.HoaDonDichVu_EditAsync(HoaDon_DichVuID, HoaDonID, PhongID, DichVuID, KhachHangID, NgaySuDung, SoLuong, DonGia, TongTien, ModifiedByUser, ModifiedDate, null);
+        public void HoaDonDichVu_EditAsync(int HoaDon_DichVuID, int HoaDonID, int PhongID, int DichVuID, int KhachHangID, string NgaySuDung, int Thang, int Nam, int NgaySo, int SoLuong, decimal DonGia, decimal TongTien, int ModifiedByUser, string ModifiedDate) {
+            this.HoaDonDichVu_EditAsync(HoaDon_DichVuID, HoaDonID, PhongID, DichVuID, KhachHangID, NgaySuDung, Thang, Nam, NgaySo, SoLuong, DonGia, TongTien, ModifiedByUser, ModifiedDate, null);
         }
         
-        public void HoaDonDichVu_EditAsync(int HoaDon_DichVuID, int HoaDonID, int PhongID, int DichVuID, int KhachHangID, string NgaySuDung, int SoLuong, decimal DonGia, decimal TongTien, int ModifiedByUser, string ModifiedDate, object userState) {
+        public void HoaDonDichVu_EditAsync(int HoaDon_DichVuID, int HoaDonID, int PhongID, int DichVuID, int KhachHangID, string NgaySuDung, int Thang, int Nam, int NgaySo, int SoLuong, decimal DonGia, decimal TongTien, int ModifiedByUser, string ModifiedDate, object userState) {
             if ((this.onBeginHoaDonDichVu_EditDelegate == null)) {
                 this.onBeginHoaDonDichVu_EditDelegate = new BeginOperationDelegate(this.OnBeginHoaDonDichVu_Edit);
             }
@@ -851,6 +937,9 @@ namespace QuanLyKhachSan.HoaDonDichVuSVC {
                         DichVuID,
                         KhachHangID,
                         NgaySuDung,
+                        Thang,
+                        Nam,
+                        NgaySo,
                         SoLuong,
                         DonGia,
                         TongTien,
@@ -1222,18 +1311,21 @@ namespace QuanLyKhachSan.HoaDonDichVuSVC {
                     base(client) {
             }
             
-            public System.IAsyncResult BeginHoaDonDichVu_Add(int HoaDonID, int PhongID, int DichVuID, int KhachHangID, string NgaySuDung, int SoLuong, decimal DonGia, decimal TongTien, int CreatedByUser, string CreatedDate, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[10];
+            public System.IAsyncResult BeginHoaDonDichVu_Add(int HoaDonID, int PhongID, int DichVuID, int KhachHangID, string NgaySuDung, int Thang, int Nam, int NgaySo, int SoLuong, decimal DonGia, decimal TongTien, int CreatedByUser, string CreatedDate, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[13];
                 _args[0] = HoaDonID;
                 _args[1] = PhongID;
                 _args[2] = DichVuID;
                 _args[3] = KhachHangID;
                 _args[4] = NgaySuDung;
-                _args[5] = SoLuong;
-                _args[6] = DonGia;
-                _args[7] = TongTien;
-                _args[8] = CreatedByUser;
-                _args[9] = CreatedDate;
+                _args[5] = Thang;
+                _args[6] = Nam;
+                _args[7] = NgaySo;
+                _args[8] = SoLuong;
+                _args[9] = DonGia;
+                _args[10] = TongTien;
+                _args[11] = CreatedByUser;
+                _args[12] = CreatedDate;
                 System.IAsyncResult _result = base.BeginInvoke("HoaDonDichVu_Add", _args, callback, asyncState);
                 return _result;
             }
@@ -1243,19 +1335,38 @@ namespace QuanLyKhachSan.HoaDonDichVuSVC {
                 base.EndInvoke("HoaDonDichVu_Add", _args, result);
             }
             
-            public System.IAsyncResult BeginHoaDonDichVu_Edit(int HoaDon_DichVuID, int HoaDonID, int PhongID, int DichVuID, int KhachHangID, string NgaySuDung, int SoLuong, decimal DonGia, decimal TongTien, int ModifiedByUser, string ModifiedDate, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[11];
+            public System.IAsyncResult BeginHoaDonDichVu_Edit(
+                        int HoaDon_DichVuID, 
+                        int HoaDonID, 
+                        int PhongID, 
+                        int DichVuID, 
+                        int KhachHangID, 
+                        string NgaySuDung, 
+                        int Thang, 
+                        int Nam, 
+                        int NgaySo, 
+                        int SoLuong, 
+                        decimal DonGia, 
+                        decimal TongTien, 
+                        int ModifiedByUser, 
+                        string ModifiedDate, 
+                        System.AsyncCallback callback, 
+                        object asyncState) {
+                object[] _args = new object[14];
                 _args[0] = HoaDon_DichVuID;
                 _args[1] = HoaDonID;
                 _args[2] = PhongID;
                 _args[3] = DichVuID;
                 _args[4] = KhachHangID;
                 _args[5] = NgaySuDung;
-                _args[6] = SoLuong;
-                _args[7] = DonGia;
-                _args[8] = TongTien;
-                _args[9] = ModifiedByUser;
-                _args[10] = ModifiedDate;
+                _args[6] = Thang;
+                _args[7] = Nam;
+                _args[8] = NgaySo;
+                _args[9] = SoLuong;
+                _args[10] = DonGia;
+                _args[11] = TongTien;
+                _args[12] = ModifiedByUser;
+                _args[13] = ModifiedDate;
                 System.IAsyncResult _result = base.BeginInvoke("HoaDonDichVu_Edit", _args, callback, asyncState);
                 return _result;
             }
