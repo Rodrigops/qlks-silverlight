@@ -113,7 +113,7 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
                     sl = int.Parse(txtSoLuong.Text.ToString()) - sl; 
                 }
 
-                DichVuClient.DichVu_Edit_SLCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(DichVuClient_DichVu_Edit_SLCompleted);
+                //DichVuClient.DichVu_Edit_SLCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(DichVuClient_DichVu_Edit_SLCompleted);
                 DichVuClient.DichVu_Edit_SLAsync((int)cbxDichVu.SelectedValue, sl);
             }
             else
@@ -128,11 +128,11 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
         }
         void ChiTietClient_ChiTietPhieuNhapKho_EditCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
-            
+            this.DialogResult = true;
         }
         void ChiTietClient_ChiTietPhieuNhapKho_AddCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
-            
+            this.DialogResult = true;
         }
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {

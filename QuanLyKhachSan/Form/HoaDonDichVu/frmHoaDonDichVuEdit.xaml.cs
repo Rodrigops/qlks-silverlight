@@ -133,23 +133,31 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
             if (!String.IsNullOrEmpty(txtSoLuong.Text.Trim()))
             {
                 string ngaysudung = string.Empty;
+                int thang, nam, ngayso;
                 if (!String.IsNullOrEmpty(rdpNgaySuDung.SelectedDate.ToString()))
-                    ngaysudung = rdpNgaySuDung.SelectedDate.Value.ToString("MM/dd/yyyy");
-
-                if (HoaDonDichVuID == -1)
                 {
-                    HoaDonDichVuClient = new HoaDonDichVuSVCClient();
-                    HoaDonDichVuClient.HoaDonDichVu_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(HoaDonDichVuClient_HoaDonDichVu_AddCompleted);
-                    HoaDonDichVuClient.HoaDonDichVu_AddAsync(HoaDonID, PhongID, (int)cbxDichVu.SelectedValue, -1, ngaysudung,
-                        int.Parse(txtSoLuong.Text.ToString()), decimal.Parse(txtDonGia.Text.ToString()), decimal.Parse(txtTongTien.Text.ToString()), 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                    ngaysudung = rdpNgaySuDung.SelectedDate.Value.ToString("MM/dd/yyyy");
+                    thang = rdpNgaySuDung.SelectedDate.Value.Month;
+                    nam = rdpNgaySuDung.SelectedDate.Value.Year;
+                    ngayso = int.Parse(rdpNgaySuDung.SelectedDate.Value.ToString("yyyyMMdd"));
+
+                    if (HoaDonDichVuID == -1)
+                    {
+                        HoaDonDichVuClient = new HoaDonDichVuSVCClient();
+                        HoaDonDichVuClient.HoaDonDichVu_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(HoaDonDichVuClient_HoaDonDichVu_AddCompleted);
+                        HoaDonDichVuClient.HoaDonDichVu_AddAsync(HoaDonID, PhongID, (int)cbxDichVu.SelectedValue, -1, ngaysudung, thang, nam, ngayso,
+                            int.Parse(txtSoLuong.Text.ToString()), decimal.Parse(txtDonGia.Text.ToString()), decimal.Parse(txtTongTien.Text.ToString()), 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                    }
+                    else
+                    {
+                        HoaDonDichVuClient = new HoaDonDichVuSVCClient();
+                        HoaDonDichVuClient.HoaDonDichVu_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(HoaDonDichVuClient_HoaDonDichVu_EditCompleted);
+                        HoaDonDichVuClient.HoaDonDichVu_EditAsync(HoaDonDichVuID, HoaDonID, PhongID, (int)cbxDichVu.SelectedValue, -1, ngaysudung, thang, nam, ngayso,
+                            int.Parse(txtSoLuong.Text.ToString()), decimal.Parse(txtDonGia.Text.ToString()), decimal.Parse(txtTongTien.Text.ToString()), 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                    }
                 }
                 else
-                {
-                    HoaDonDichVuClient = new HoaDonDichVuSVCClient();
-                    HoaDonDichVuClient.HoaDonDichVu_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(HoaDonDichVuClient_HoaDonDichVu_EditCompleted);
-                    HoaDonDichVuClient.HoaDonDichVu_EditAsync(HoaDonDichVuID, HoaDonID, PhongID, (int)cbxDichVu.SelectedValue, -1, ngaysudung,
-                        int.Parse(txtSoLuong.Text.ToString()), decimal.Parse(txtDonGia.Text.ToString()), decimal.Parse(txtTongTien.Text.ToString()), 0, DateTime.Now.ToString("MM/dd/yyyy"));
-                }
+                    MessageBox.Show("Kiểm tra lại ngày sử dụng dịch vụ", "Thông báo", MessageBoxButton.OK);
             }
             else
             {

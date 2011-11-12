@@ -16,6 +16,7 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
     public partial class frmPhieuNhapKho : ChildWindow
     {
         private PhieuNhapKhoSVCClient PhieuNhapKhoClient = null;
+        private TKChiTieuSVCClient TKChiTieuClient = null;
         public frmPhieuNhapKho()
         {
             InitializeComponent();
@@ -63,6 +64,8 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
                 cbxTheoNam.IsEnabled = false;
                 cbxTheoThang.IsEnabled = true;
                 cbxTheoThangNam.IsEnabled = true;
+                cbxTheoThang.SelectedValue = DateTime.Now.Month;
+                cbxTheoThangNam.SelectedValue = DateTime.Now.Year;
             }
         }
         private void rdbTheoNam_Checked(object sender, RoutedEventArgs e)
@@ -75,6 +78,7 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
                 cbxTheoNam.IsEnabled = true;
                 cbxTheoThang.IsEnabled = false;
                 cbxTheoThangNam.IsEnabled = false;
+                cbxTheoNam.SelectedValue = DateTime.Now.Year;
             }
         }
         private void rdbTuNgay_Checked(object sender, RoutedEventArgs e)
@@ -98,8 +102,8 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
             {
                 while ((currentYear >= 2000))
                 {
-                    cbxTheoNam.Items.Add(new YearInfo(currentYear, currentYear.ToString()));
-                    cbxTheoThangNam.Items.Add(new YearInfo(currentYear, currentYear.ToString()));
+                    cbxTheoNam.Items.Add(currentYear);
+                    cbxTheoThangNam.Items.Add(currentYear);
                     currentYear = currentYear - 1;
                 }
             }
@@ -116,59 +120,13 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
             {
                 while ((currentMonth <= 12))
                 {
-                    cbxTheoThang.Items.Add(new MonthInfo(currentMonth, currentMonth.ToString()));
+                    cbxTheoThang.Items.Add(currentMonth);
                     currentMonth = currentMonth + 1;
                 }
             }
             catch (Exception ex)
             {
                 throw ex;
-            }
-        }
-        #endregion
-        #region "Sub Class"
-        private class YearInfo
-        {
-            int _Nam;
-            string _TenNam;
-            public YearInfo(int Nam, string TenNam)
-            {
-                _Nam = Nam;
-                _TenNam = TenNam;
-            }
-            public int Nam()
-            {
-                return _Nam;
-            }
-            public string TenNam()
-            {
-                return _TenNam;
-            }
-            public override string ToString()
-            {
-                return _TenNam;
-            }
-        }
-        private class MonthInfo
-        {
-            int _Thang;
-            string _TenThang;
-            public MonthInfo(int Thang, string TenThang)
-            {
-                _Thang = Thang;
-                _TenThang = TenThang;
-            }
-            public int Thang()
-            {
-                return _Thang;
-            }
-            public string TenThang()
-            {
-                return _TenThang;
-            }
-            public override string ToString()
-            {
-                return _TenThang;
             }
         }
         #endregion
@@ -216,7 +174,72 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
 
         private void btnThongKe_Click(object sender, RoutedEventArgs e)
         {
+            if ((bool)rdbTheoNgay.IsChecked)
+            {
+                if (!String.IsNullOrEmpty(rdpTheoNgay.SelectedDate.ToString()))
+                {
+                    LoadingPanel.IsBusy = true;
+                    TKChiTieuClient = new TKChiTieuSVCClient();
+                    TKChiTieuClient.PhieuNhapKho_GetItems_TheoNgayCompleted += new EventHandler<PhieuNhapKho_GetItems_TheoNgayCompletedEventArgs>(TKChiTieuClient_PhieuNhapKho_GetItems_TheoNgayCompleted);
+                    TKChiTieuClient.PhieuNhapKho_GetItems_TheoNgayAsync(int.Parse(rdpTheoNgay.SelectedDate.Value.ToString("yyyyMMdd")));
+                }
+            }
+            else if ((bool)rdbTheoThang.IsChecked)
+            {
+                if (cbxTheoThang.SelectedIndex != -1 && cbxTheoThangNam.SelectedIndex != -1)
+                {
+                    LoadingPanel.IsBusy = true;
+                    TKChiTieuClient = new TKChiTieuSVCClient();
+                    TKChiTieuClient.PhieuNhapKho_GetItems_TheoThangCompleted += new EventHandler<PhieuNhapKho_GetItems_TheoThangCompletedEventArgs>(TKChiTieuClient_PhieuNhapKho_GetItems_TheoThangCompleted);
+                    TKChiTieuClient.PhieuNhapKho_GetItems_TheoThangAsync((int)cbxTheoThang.SelectedValue, (int)cbxTheoThangNam.SelectedValue);
+                }
+            }
+            else if ((bool)rdbTheoNam.IsChecked)
+            {
+                if (cbxTheoNam.SelectedIndex != -1)
+                {
+                    LoadingPanel.IsBusy = true;
+                    TKChiTieuClient = new TKChiTieuSVCClient();
+                    TKChiTieuClient.PhieuNhapKho_GetItems_TheoNamCompleted += new EventHandler<PhieuNhapKho_GetItems_TheoNamCompletedEventArgs>(TKChiTieuClient_PhieuNhapKho_GetItems_TheoNamCompleted);
+                    TKChiTieuClient.PhieuNhapKho_GetItems_TheoNamAsync((int)cbxTheoNam.SelectedValue);
+                }
+            }
+            else if ((bool)rdbTuNgay.IsChecked)
+            {
+                if (!String.IsNullOrEmpty(rdpTuNgay.SelectedDate.ToString()) && !String.IsNullOrEmpty(rdpDenNgay.SelectedDate.ToString()))
+                {
+                    if (rdpTuNgay.SelectedDate < rdpDenNgay.SelectedDate)
+                    {
+                        LoadingPanel.IsBusy = true;
+                        TKChiTieuClient = new TKChiTieuSVCClient();
+                        TKChiTieuClient.PhieuNhapKho_GetItems_TuNgayDenNgayCompleted += new EventHandler<PhieuNhapKho_GetItems_TuNgayDenNgayCompletedEventArgs>(TKChiTieuClient_PhieuNhapKho_GetItems_TuNgayDenNgayCompleted);
+                        TKChiTieuClient.PhieuNhapKho_GetItems_TuNgayDenNgayAsync(int.Parse(rdpTuNgay.SelectedDate.Value.ToString("yyyyMMdd")), int.Parse(rdpDenNgay.SelectedDate.Value.ToString("yyyyMMdd")));
+                    }
+                }
+            }
+        }
+        void TKChiTieuClient_PhieuNhapKho_GetItems_TuNgayDenNgayCompleted(object sender, PhieuNhapKho_GetItems_TuNgayDenNgayCompletedEventArgs e)
+        {
+            grvPhieuNhapKho.ItemsSource = e.Result;
+            LoadingPanel.IsBusy = false;
+        }
 
+        void TKChiTieuClient_PhieuNhapKho_GetItems_TheoNamCompleted(object sender, PhieuNhapKho_GetItems_TheoNamCompletedEventArgs e)
+        {
+            grvPhieuNhapKho.ItemsSource = e.Result;
+            LoadingPanel.IsBusy = false;
+        }
+
+        void TKChiTieuClient_PhieuNhapKho_GetItems_TheoThangCompleted(object sender, PhieuNhapKho_GetItems_TheoThangCompletedEventArgs e)
+        {
+            grvPhieuNhapKho.ItemsSource = e.Result;
+            LoadingPanel.IsBusy = false;
+        }
+
+        void TKChiTieuClient_PhieuNhapKho_GetItems_TheoNgayCompleted(object sender, PhieuNhapKho_GetItems_TheoNgayCompletedEventArgs e)
+        {
+            grvPhieuNhapKho.ItemsSource = e.Result;
+            LoadingPanel.IsBusy = false;
         }
     }
 }
