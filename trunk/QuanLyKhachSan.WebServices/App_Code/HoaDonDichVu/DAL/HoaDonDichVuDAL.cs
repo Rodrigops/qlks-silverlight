@@ -12,8 +12,8 @@ namespace QuanLyKhachSan
         {
 
         }
-        public void HoaDonDichVu_Add(int HoaDonID, int PhongID, int DichVuID, int KhachHangID, string NgaySuDung, int SoLuong,
-            decimal DonGia, decimal TongTien, int CreatedByUser, string CreatedDate)
+        public void HoaDonDichVu_Add(int HoaDonID, int PhongID, int DichVuID, int KhachHangID, string NgaySuDung, int Thang, int Nam, int NgaySo,
+            int SoLuong, decimal DonGia, decimal TongTien, int CreatedByUser, string CreatedDate)
         {
             SQLDataHelper SQLDB = new SQLDataHelper();
             SQLDB.Addparameter("@HoaDonID", HoaDonID);
@@ -21,6 +21,9 @@ namespace QuanLyKhachSan
             SQLDB.Addparameter("@DichVuID", DichVuID);
             SQLDB.Addparameter("@KhachHangID", KhachHangID);
             SQLDB.Addparameter("@NgaySuDung", NgaySuDung);
+            SQLDB.Addparameter("@Thang", Thang);
+            SQLDB.Addparameter("@Nam", Nam);
+            SQLDB.Addparameter("@NgaySo", NgaySo);
             SQLDB.Addparameter("@SoLuong", SoLuong);
             SQLDB.Addparameter("@DonGia", DonGia);
             SQLDB.Addparameter("@TongTien", TongTien);
@@ -28,8 +31,8 @@ namespace QuanLyKhachSan
             SQLDB.Addparameter("@CreatedDate", CreatedDate);
             SQLDB.executenonquery("sp_HoaDonDichVu_Add", CommandType.StoredProcedure);
         }
-        public void HoaDonDichVu_Edit(int HoaDon_DichVuID, int HoaDonID, int PhongID, int DichVuID, int KhachHangID, string NgaySuDung, int SoLuong,
-            decimal DonGia, decimal TongTien, int ModifiedByUser, string ModifiedDate)
+        public void HoaDonDichVu_Edit(int HoaDon_DichVuID, int HoaDonID, int PhongID, int DichVuID, int KhachHangID, string NgaySuDung, int Thang, int Nam, int NgaySo,
+            int SoLuong, decimal DonGia, decimal TongTien, int ModifiedByUser, string ModifiedDate)
         {
             SQLDataHelper SQLDB = new SQLDataHelper();
             SQLDB.Addparameter("@HoaDon_DichVuID", HoaDon_DichVuID);
@@ -38,6 +41,9 @@ namespace QuanLyKhachSan
             SQLDB.Addparameter("@DichVuID", DichVuID);
             SQLDB.Addparameter("@KhachHangID", KhachHangID);
             SQLDB.Addparameter("@NgaySuDung", NgaySuDung);
+            SQLDB.Addparameter("@Thang", Thang);
+            SQLDB.Addparameter("@Nam", Nam);
+            SQLDB.Addparameter("@NgaySo", NgaySo);
             SQLDB.Addparameter("@SoLuong", SoLuong);
             SQLDB.Addparameter("@DonGia", DonGia);
             SQLDB.Addparameter("@TongTien", TongTien);

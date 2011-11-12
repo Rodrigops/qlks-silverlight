@@ -12,18 +12,18 @@ namespace QuanLyKhachSan
     public class HoaDonDichVuSVC
     {
         [OperationContract]
-        public void HoaDonDichVu_Add(int HoaDonID, int PhongID, int DichVuID, int KhachHangID, string NgaySuDung, int SoLuong,
-            decimal DonGia, decimal TongTien, int CreatedByUser, string CreatedDate)
+        public void HoaDonDichVu_Add(int HoaDonID, int PhongID, int DichVuID, int KhachHangID, string NgaySuDung, int Thang, int Nam, int NgaySo,
+            int SoLuong, decimal DonGia, decimal TongTien, int CreatedByUser, string CreatedDate)
         {
             HoaDonDichVuDAL doit = new HoaDonDichVuDAL();
-            doit.HoaDonDichVu_Add(HoaDonID, PhongID, DichVuID, KhachHangID, NgaySuDung, SoLuong, DonGia, TongTien, CreatedByUser, CreatedDate);
+            doit.HoaDonDichVu_Add(HoaDonID, PhongID, DichVuID, KhachHangID, NgaySuDung, Thang, Nam, NgaySo, SoLuong, DonGia, TongTien, CreatedByUser, CreatedDate);
         }
         [OperationContract]
-        public void HoaDonDichVu_Edit(int HoaDon_DichVuID, int HoaDonID, int PhongID, int DichVuID, int KhachHangID, string NgaySuDung, int SoLuong,
-            decimal DonGia, decimal TongTien, int ModifiedByUser, string ModifiedDate)
+        public void HoaDonDichVu_Edit(int HoaDon_DichVuID, int HoaDonID, int PhongID, int DichVuID, int KhachHangID, string NgaySuDung, int Thang, int Nam, int NgaySo,
+            int SoLuong, decimal DonGia, decimal TongTien, int ModifiedByUser, string ModifiedDate)
         {
             HoaDonDichVuDAL doit = new HoaDonDichVuDAL();
-            doit.HoaDonDichVu_Edit(HoaDon_DichVuID, HoaDonID, PhongID, DichVuID, KhachHangID, NgaySuDung, SoLuong, DonGia, TongTien, ModifiedByUser, ModifiedDate);
+            doit.HoaDonDichVu_Edit(HoaDon_DichVuID, HoaDonID, PhongID, DichVuID, KhachHangID, NgaySuDung, Thang, Nam, NgaySo, SoLuong, DonGia, TongTien, ModifiedByUser, ModifiedDate);
         }
         [OperationContract]
         public void HoaDonDichVu_Delete(int HoaDon_DichVuID)

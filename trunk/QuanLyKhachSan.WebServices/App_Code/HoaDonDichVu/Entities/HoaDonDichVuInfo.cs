@@ -13,6 +13,9 @@ namespace QuanLyKhachSan
         private string _PhongName;
         private string _DichVuName;
         private string _NgaySuDung;
+        private int _Thang;
+        private int _Nam;
+        private int _NgaySo;
         private int _SoLuong;
         private decimal _DonGia;
         private decimal _TongTien;
@@ -67,6 +70,21 @@ namespace QuanLyKhachSan
         {
             get { return _NgaySuDung; }
             set { _NgaySuDung = value; }
+        }
+        public int Thang
+        {
+            get { return _Thang; }
+            set { _Thang = value; }
+        }
+        public int Nam
+        {
+            get { return _Nam; }
+            set { _Nam = value; }
+        }
+        public int NgaySo
+        {
+            get { return _NgaySo; }
+            set { _NgaySo = value; }
         }
         public int SoLuong
         {
