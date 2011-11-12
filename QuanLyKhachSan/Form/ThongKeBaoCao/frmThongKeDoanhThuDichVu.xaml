@@ -5,9 +5,68 @@
            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
            mc:Ignorable="d"
            xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
-           d:DesignWidth="640" d:DesignHeight="480"
-           Title="frmThongKeDoanhThuDichVu Page">
+           Width="800" Height="600" 
+           xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+           Title="Thống Kê Doanh Thu Dịch Vụ" xmlns:my="clr-namespace:QuanLyKhachSan.Form.QuanLyPhong">
     <Grid x:Name="LayoutRoot">
-
+        <Grid Margin="10,10,8,25" Name="grid1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.Resources>
+                <my:NumberVietnameseFormater x:Key="NumberVietnameseFormater" />
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="146" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="384*" />
+            </Grid.RowDefinitions>
+            <telerik:GroupBox Header="Thống kê phiếu nhập kho" Height="146" HorizontalAlignment="Left" Margin="12,0,0,0" Name="grFilter" VerticalAlignment="Top" Width="758">
+                <Grid Height="125" HorizontalAlignment="Left" Name="grid2" VerticalAlignment="Top" Width="747">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="105*" />
+                        <ColumnDefinition Width="126" />
+                        <ColumnDefinition Width="125" />
+                        <ColumnDefinition Width="186" />
+                        <ColumnDefinition Width="111" />
+                        <ColumnDefinition Width="95" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="49*" />
+                        <RowDefinition Height="88" />
+                    </Grid.RowDefinitions>
+                    <RadioButton Checked="rdbTheoNgay_Checked" Content="Theo ngày" GroupName="ThongKe" Height="16" HorizontalAlignment="Left" Margin="17,16,0,0" Name="rdbTheoNgay" VerticalAlignment="Top" />
+                    <telerik:RadDateTimePicker Culture="vi-VN" DateTimeWatermarkContent="Chọn ngày" Grid.Column="1" HorizontalAlignment="Left" InputMode="DatePicker" IsEnabled="False" Margin="0,14,0,0" Name="rdpTheoNgay" telerik:StyleManager.Theme="Office_Blue" VerticalAlignment="Top" Width="116" />
+                    <RadioButton Checked="rdbTheoThang_Checked" Content="Theo tháng" Grid.Column="2" GroupName="ThongKe" Height="16" HorizontalAlignment="Left" Margin="28,16,0,0" Name="rdbTheoThang" VerticalAlignment="Top" />
+                    <telerik:RadComboBox Grid.Column="3" HorizontalAlignment="Left" IsEnabled="False" Margin="0,14,0,0" Name="cbxTheoThang" telerik:StyleManager.Theme="Office_Blue" VerticalAlignment="Top" Width="50" />
+                    <telerik:RadComboBox Grid.Column="3" HorizontalAlignment="Left" IsEnabled="False" Margin="56,14,0,0" Name="cbxTheoThangNam" telerik:StyleManager.Theme="Office_Blue" VerticalAlignment="Top" Width="60" />
+                    <RadioButton Checked="rdbTheoNam_Checked" Content="Theo năm" Grid.Column="4" GroupName="ThongKe" Height="16" HorizontalAlignment="Left" Margin="23,16,0,0" Name="rdbTheoNam" VerticalAlignment="Top" />
+                    <telerik:RadComboBox Grid.Column="5" HorizontalAlignment="Left" IsEnabled="False" Margin="0,14,0,0" Name="cbxTheoNam" telerik:StyleManager.Theme="Office_Blue" VerticalAlignment="Top" Width="60" />
+                    <RadioButton Checked="rdbTuNgay_Checked" Content="Từ ngày" Grid.Row="1" GroupName="ThongKe" Height="16" HorizontalAlignment="Left" Margin="17,13,0,0" Name="rdbTuNgay" VerticalAlignment="Top" />
+                    <TextBlock Grid.Column="2" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="58,13,0,0" Name="lblDenNgay" Text="Ðến ngày" VerticalAlignment="Top" />
+                    <telerik:RadDateTimePicker Culture="vi-VN" DateTimeWatermarkContent="Chọn ngày" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" InputMode="DatePicker" IsEnabled="False" Margin="0,11,0,0" Name="rdpTuNgay" telerik:StyleManager.Theme="Office_Blue" VerticalAlignment="Top" Width="116" />
+                    <telerik:RadDateTimePicker Culture="vi-VN" DateTimeWatermarkContent="Chọn ngày" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Left" InputMode="DatePicker" IsEnabled="False" Margin="0,11,0,0" Name="rdpDenNgay" telerik:StyleManager.Theme="Office_Blue" VerticalAlignment="Top" Width="116" />
+                    <Button Click="btnThongKe_Click" Content="Thống kê" Grid.ColumnSpan="5" Grid.Row="1" Height="23" HorizontalAlignment="Center" Margin="10" Name="btnThongKe" VerticalAlignment="Bottom" Width="75" />
+                </Grid>
+            </telerik:GroupBox>
+            <ScrollViewer Grid.Row="2" HorizontalAlignment="Center">
+                <StackPanel>
+                    <telerik:RadGridView AutoGenerateColumns="False" Margin="10,0,10,0" AutoExpandGroups="True" IsFilteringAllowed="False" Name="grvHoaDonDichVu" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" telerik:StyleManager.Theme="Office_Blue" Height="Auto">
+                        <telerik:RadGridView.GroupDescriptors>
+                            <telerik:GroupDescriptor Member="PhongName" DisplayContent="{Binding Path=PhongName}"></telerik:GroupDescriptor>
+                        </telerik:RadGridView.GroupDescriptors>
+                        <telerik:RadGridView.Columns>
+                            <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Left" Header="Dịch Vụ" DataMemberBinding="{Binding Path=DichVuName}" Width="175" ></telerik:GridViewDataColumn>
+                            <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Ngày Sử Dụng" DataMemberBinding="{Binding Path=NgaySuDung}" Width="120"></telerik:GridViewDataColumn>
+                            <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Số Lượng" DataMemberBinding="{Binding Path=SoLuong}" Width="80"></telerik:GridViewDataColumn>
+                            <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Right" Header="Đơn Giá" DataMemberBinding="{Binding Path=DonGia, Converter={StaticResource NumberVietnameseFormater}}" Width="80"></telerik:GridViewDataColumn>
+                            <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Right" Header="Thành Tiền" DataMemberBinding="{Binding Path=TongTien, Converter={StaticResource NumberVietnameseFormater}}" Width="100"></telerik:GridViewDataColumn>
+                            <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Left" Header="Khách Hàng" DataMemberBinding="{Binding Path=HoTen}" Width="150"></telerik:GridViewDataColumn>
+                        </telerik:RadGridView.Columns>
+                    </telerik:RadGridView>
+                    <telerik:RadBusyIndicator Name="LoadingPanel" Height="300" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center" BusyContent="Đang tại dữ liệu.Vui lòng chờ..." telerik:StyleManager.Theme="Metro"/>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
     </Grid>
 </navigation:Page>
