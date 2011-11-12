@@ -4,64 +4,87 @@ namespace QuanLyKhachSan
 {
     public class TKDoanhThuDichVuInfo 
     {
-        private int _PhieuNhapKhoID;
-        private string _NgayNhap;
-        private int _ThangNhap;
-        private int _NamNhap;
-        private int _NgayNhapSo;
-        private string _GhiChu;
-
-        private int _ChiTietPhieuNhapID;
+        private int _HoaDon_DichVuID;
+        private int _HoaDonID;
+        private int _PhongID;
+        private int _KhachHangID;
+        private int _DichVuID;
+        private string _HoTen;
+        private string _PhongName;
+        private string _DichVuName;
+        private string _NgaySuDung;
+        private int _Thang;
+        private int _Nam;
+        private int _NgaySo;
         private int _SoLuong;
         private decimal _DonGia;
         private decimal _TongTien;
-
-        private int _DichVuID;
-        private string _DichVuName;
 
         private int _CreatedByUser;
         private string _CreatedDate;//DateTime
         private int _ModifiedByUser;
         private string _ModifiedDate;//DateTime
-        private int _DeletedByUser;
-        private string _DeletedDate;//DateTime
 
-        #region PhieuNhapKhoInfo
-        public int PhieuNhapKhoID
+        #region HoaDonDichVuInfo
+        public int HoaDon_DichVuID
         {
-            get { return _PhieuNhapKhoID; }
-            set { _PhieuNhapKhoID = value; }
+            get { return _HoaDon_DichVuID; }
+            set { _HoaDon_DichVuID = value; }
         }
-        public string NgayNhap
+        public int HoaDonID
         {
-            get { return _NgayNhap; }
-            set { _NgayNhap = value; }
+            get { return _HoaDonID; }
+            set { _HoaDonID = value; }
         }
-        public int ThangNhap
+        public int PhongID
         {
-            get { return _ThangNhap; }
-            set { _ThangNhap = value; }
+            get { return _PhongID; }
+            set { _PhongID = value; }
         }
-        public int NamNhap
+        public int KhachHangID
         {
-            get { return _NamNhap; }
-            set { _NamNhap = value; }
+            get { return _KhachHangID; }
+            set { _KhachHangID = value; }
         }
-        public int NgayNhapSo
+        public int DichVuID
         {
-            get { return _NgayNhapSo; }
-            set { _NgayNhapSo = value; }
+            get { return _DichVuID; }
+            set { _DichVuID = value; }
         }
-        public string GhiChu
+        public string HoTen
         {
-            get { return _GhiChu; }
-            set { _GhiChu = value; }
+            get { return _HoTen; }
+            set { _HoTen = value; }
         }
-
-        public int ChiTietPhieuNhapID
+        public string PhongName
         {
-            get { return _ChiTietPhieuNhapID; }
-            set { _ChiTietPhieuNhapID = value; }
+            get { return _PhongName; }
+            set { _PhongName = value; }
+        }
+        public string DichVuName
+        {
+            get { return _DichVuName; }
+            set { _DichVuName = value; }
+        }
+        public string NgaySuDung
+        {
+            get { return _NgaySuDung; }
+            set { _NgaySuDung = value; }
+        }
+        public int Thang
+        {
+            get { return _Thang; }
+            set { _Thang = value; }
+        }
+        public int Nam
+        {
+            get { return _Nam; }
+            set { _Nam = value; }
+        }
+        public int NgaySo
+        {
+            get { return _NgaySo; }
+            set { _NgaySo = value; }
         }
         public int SoLuong
         {
@@ -78,18 +101,6 @@ namespace QuanLyKhachSan
             get { return _TongTien; }
             set { _TongTien = value; }
         }
-
-        public int DichVuID
-        {
-            get { return _DichVuID; }
-            set { _DichVuID = value; }
-        }
-        public string DichVuName
-        {
-            get { return _DichVuName; }
-            set { _DichVuName = value; }
-        }
-
         public int CreatedByUser
         {
             get { return _CreatedByUser; }
@@ -109,16 +120,6 @@ namespace QuanLyKhachSan
         {
             get { return _ModifiedDate; }
             set { _ModifiedDate = value; }
-        }
-        public int DeletedByUser
-        {
-            get { return _DeletedByUser; }
-            set { _DeletedByUser = value; }
-        }
-        public string DeletedDate
-        {
-            get { return _DeletedDate; }
-            set { _DeletedDate = value; }
         }
         #endregion
     }
