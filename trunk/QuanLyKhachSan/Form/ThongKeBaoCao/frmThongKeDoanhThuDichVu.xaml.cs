@@ -11,27 +11,21 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Navigation;
 using QuanLyKhachSan.TKDoanhThuDichVuSVC;
-using QuanLyKhachSan.HoaDonDichVuSVC;
 namespace QuanLyKhachSan.Form.ThongKeBaoCao
 {
     public partial class frmThongKeDoanhThuDichVu : Page
     {
         private TKDoanhThuDichVuSVCClient TKDoanhThuDichVuClient = null;
-        private HoaDonDichVuSVCClient HoaDonDichVuClient = null;
         public frmThongKeDoanhThuDichVu()
         {
             InitializeComponent();
             Nam_Load();
             Thang_Load();
+            LoadingPanel.Visibility = Visibility.Visible;
             LoadingPanel.IsBusy = true;
-            HoaDonDichVuClient = new HoaDonDichVuSVCClient();
-            HoaDonDichVuClient.HoaDonDichVu_GetItemsCompleted += new EventHandler<HoaDonDichVu_GetItemsCompletedEventArgs>(HoaDonDichVuClient_HoaDonDichVu_GetItemsCompleted);
-            HoaDonDichVuClient.HoaDonDichVu_GetItemsAsync(0);
-        }
-        void HoaDonDichVuClient_HoaDonDichVu_GetItemsCompleted(object sender, HoaDonDichVu_GetItemsCompletedEventArgs e)
-        {
-            grvHoaDonDichVu.ItemsSource = e.Result;
-            LoadingPanel.IsBusy = false;
+            TKDoanhThuDichVuClient = new TKDoanhThuDichVuSVCClient();
+            TKDoanhThuDichVuClient.HoaDonDichVu_GetItems_TheoNgayCompleted += new EventHandler<HoaDonDichVu_GetItems_TheoNgayCompletedEventArgs>(TKDoanhThuDichVuClient_HoaDonDichVu_GetItems_TheoNgayCompleted);
+            TKDoanhThuDichVuClient.HoaDonDichVu_GetItems_TheoNgayAsync(int.Parse(DateTime.Now.ToString("yyyyMMdd")));
         }
         // Executes when the user navigates to this page.
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -134,7 +128,7 @@ namespace QuanLyKhachSan.Form.ThongKeBaoCao
             {
                 if (!String.IsNullOrEmpty(rdpTheoNgay.SelectedDate.ToString()))
                 {
-                    LoadingPanel.IsBusy = true;
+                    LoadingPanel.Visibility = Visibility.Visible;LoadingPanel.Visibility = Visibility.Visible;LoadingPanel.IsBusy = true;
                     TKDoanhThuDichVuClient = new TKDoanhThuDichVuSVCClient();
                     TKDoanhThuDichVuClient.HoaDonDichVu_GetItems_TheoNgayCompleted += new EventHandler<HoaDonDichVu_GetItems_TheoNgayCompletedEventArgs>(TKDoanhThuDichVuClient_HoaDonDichVu_GetItems_TheoNgayCompleted);
                     TKDoanhThuDichVuClient.HoaDonDichVu_GetItems_TheoNgayAsync(int.Parse(rdpTheoNgay.SelectedDate.Value.ToString("yyyyMMdd")));
@@ -144,7 +138,7 @@ namespace QuanLyKhachSan.Form.ThongKeBaoCao
             {
                 if (cbxTheoThang.SelectedIndex != -1 && cbxTheoThangNam.SelectedIndex != -1)
                 {
-                    LoadingPanel.IsBusy = true;
+                    LoadingPanel.Visibility = Visibility.Visible;LoadingPanel.Visibility = Visibility.Visible;LoadingPanel.IsBusy = true;
                     TKDoanhThuDichVuClient = new TKDoanhThuDichVuSVCClient();
                     TKDoanhThuDichVuClient.HoaDonDichVu_GetItems_TheoThangCompleted += new EventHandler<HoaDonDichVu_GetItems_TheoThangCompletedEventArgs>(TKDoanhThuDichVuClient_HoaDonDichVu_GetItems_TheoThangCompleted);
                     TKDoanhThuDichVuClient.HoaDonDichVu_GetItems_TheoThangAsync((int)cbxTheoThang.SelectedValue, (int)cbxTheoThangNam.SelectedValue);
@@ -154,7 +148,7 @@ namespace QuanLyKhachSan.Form.ThongKeBaoCao
             {
                 if (cbxTheoNam.SelectedIndex != -1)
                 {
-                    LoadingPanel.IsBusy = true;
+                    LoadingPanel.Visibility = Visibility.Visible;LoadingPanel.Visibility = Visibility.Visible;LoadingPanel.IsBusy = true;
                     TKDoanhThuDichVuClient = new TKDoanhThuDichVuSVCClient();
                     TKDoanhThuDichVuClient.HoaDonDichVu_GetItems_TheoNamCompleted += new EventHandler<HoaDonDichVu_GetItems_TheoNamCompletedEventArgs>(TKDoanhThuDichVuClient_HoaDonDichVu_GetItems_TheoNamCompleted);
                     TKDoanhThuDichVuClient.HoaDonDichVu_GetItems_TheoNamAsync((int)cbxTheoNam.SelectedValue);
@@ -166,7 +160,7 @@ namespace QuanLyKhachSan.Form.ThongKeBaoCao
                 {
                     if (rdpTuNgay.SelectedDate < rdpDenNgay.SelectedDate)
                     {
-                        LoadingPanel.IsBusy = true;
+                        LoadingPanel.Visibility = Visibility.Visible;LoadingPanel.Visibility = Visibility.Visible;LoadingPanel.IsBusy = true;
                         TKDoanhThuDichVuClient = new TKDoanhThuDichVuSVCClient();
                         TKDoanhThuDichVuClient.HoaDonDichVu_GetItems_TuNgayDenNgayCompleted += new EventHandler<HoaDonDichVu_GetItems_TuNgayDenNgayCompletedEventArgs>(TKDoanhThuDichVuClient_HoaDonDichVu_GetItems_TuNgayDenNgayCompleted);
                         TKDoanhThuDichVuClient.HoaDonDichVu_GetItems_TuNgayDenNgayAsync(int.Parse(rdpTuNgay.SelectedDate.Value.ToString("yyyyMMdd")), int.Parse(rdpDenNgay.SelectedDate.Value.ToString("yyyyMMdd")));
@@ -178,24 +172,28 @@ namespace QuanLyKhachSan.Form.ThongKeBaoCao
         void TKDoanhThuDichVuClient_HoaDonDichVu_GetItems_TuNgayDenNgayCompleted(object sender, HoaDonDichVu_GetItems_TuNgayDenNgayCompletedEventArgs e)
         {
             grvHoaDonDichVu.ItemsSource = e.Result;
+            LoadingPanel.Visibility = Visibility.Collapsed;
             LoadingPanel.IsBusy = false;
         }
 
         void TKDoanhThuDichVuClient_HoaDonDichVu_GetItems_TheoNamCompleted(object sender, HoaDonDichVu_GetItems_TheoNamCompletedEventArgs e)
         {
             grvHoaDonDichVu.ItemsSource = e.Result;
+            LoadingPanel.Visibility = Visibility.Collapsed;
             LoadingPanel.IsBusy = false;
         }
 
         void TKDoanhThuDichVuClient_HoaDonDichVu_GetItems_TheoThangCompleted(object sender, HoaDonDichVu_GetItems_TheoThangCompletedEventArgs e)
         {
             grvHoaDonDichVu.ItemsSource = e.Result;
+            LoadingPanel.Visibility = Visibility.Collapsed;
             LoadingPanel.IsBusy = false;
         }
 
         void TKDoanhThuDichVuClient_HoaDonDichVu_GetItems_TheoNgayCompleted(object sender, HoaDonDichVu_GetItems_TheoNgayCompletedEventArgs e)
         {
             grvHoaDonDichVu.ItemsSource = e.Result;
+            LoadingPanel.Visibility = Visibility.Collapsed;
             LoadingPanel.IsBusy = false;
         }
     }
