@@ -90,6 +90,10 @@
                     maxReceivedMessageSize="2147483647">
                     <security mode="None" />
                 </binding>
+                <binding name="BasicHttpBinding_TKDoanhThuSVC" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
             </basicHttpBinding>
             <customBinding>
                 <binding name="CustomBinding_LoaiPhongSVC">
@@ -168,6 +172,9 @@
             <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKDoanhThuDichVu.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_TKDoanhThuDichVuSVC"
                 contract="TKDoanhThuDichVuSVC.TKDoanhThuDichVuSVC" name="BasicHttpBinding_TKDoanhThuDichVuSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKDoanhThu.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_TKDoanhThuSVC"
+                contract="TKDoanhThuSVC.TKDoanhThuSVC" name="BasicHttpBinding_TKDoanhThuSVC" />
         </client>
     </system.serviceModel>
 </configuration>
