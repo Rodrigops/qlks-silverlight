@@ -28,7 +28,7 @@ namespace QuanLyKhachSan.Form.QuanLyUser
         // Executes when the user navigates to this page.
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            LoadingPanel.IsBusy = true;
+            LoadingPanel.Visibility = Visibility.Visible;LoadingPanel.IsBusy = true;
             GroupClient.Group_GetItemsCompleted += new EventHandler<Group_GetItemsCompletedEventArgs>(GroupClient_Group_GetItemsCompleted);
             GroupClient.Group_GetItemsAsync();
 
@@ -135,7 +135,7 @@ namespace QuanLyKhachSan.Form.QuanLyUser
         void UserGroupClient_UserGroup_GetItemsCompleted(object sender, UserGroup_GetItemsCompletedEventArgs e)
         {
             grvUserGroup.ItemsSource = e.Result;
-            LoadingPanel.IsBusy = false;
+            LoadingPanel.Visibility = Visibility.Collapsed;LoadingPanel.IsBusy = false;
         }
         void UserGroupClient_UserGroup_DeleteCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
