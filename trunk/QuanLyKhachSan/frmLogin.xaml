@@ -5,11 +5,13 @@
            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
            mc:Ignorable="d"
            xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
-           d:DesignWidth="429" d:DesignHeight="262"
-           Title="frmLogin Page" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+           d:DesignWidth="1000" d:DesignHeight="800"
+           Title="frmLogin Page" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
     <Grid x:Name="LayoutRoot">
-        <Border BorderBrush="Silver" BorderThickness="1" Height="30" HorizontalAlignment="Left" Margin="116,54,0,0" Name="border1" VerticalAlignment="Top" Width="200" />
-        <telerik:RadButton Content="Button" Height="Auto" HorizontalAlignment="Left" Margin="160,168,0,0" Name="radButton1" VerticalAlignment="Top" Width="110" Click="radButton1_Click" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="122,116,0,0" Name="txtUserName" VerticalAlignment="Top" Width="218" />
+        <telerik:RadButton Content="Đăng nhập" Height="Auto" telerik:StyleManager.Theme="Metro" HorizontalAlignment="Left" Margin="535,313,0,0" Name="radButton1" VerticalAlignment="Top" Width="83" Click="radButton1_Click" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="468,255,0,0" Name="txtUserName" VerticalAlignment="Top" Width="216" TabIndex="0" />
+        <sdk:Label Height="28" HorizontalAlignment="Left" Margin="391,259,0,0" Name="label1" VerticalAlignment="Top" Width="71" Content="User Name" />
+        <sdk:Label Height="28" HorizontalAlignment="Left" Margin="391,288,0,0" Name="label2" VerticalAlignment="Top" Width="71" Content="Password" />
+        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="468,284,0,0" Name="txtPassword" TabIndex="1" VerticalAlignment="Top" Width="216" />
     </Grid>
 </navigation:Page>
