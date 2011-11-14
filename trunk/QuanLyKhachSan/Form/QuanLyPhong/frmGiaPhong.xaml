@@ -21,7 +21,7 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
         </Grid>
-        <ScrollViewer Background="Transparent" Grid.Row="0" Grid.Column="1" >
+        <ScrollViewer HorizontalAlignment="Center" Background="Transparent" Grid.Row="0" Grid.Column="1" >
             <StackPanel>
                 <telerik:RadGridView AutoGenerateColumns="False" IsReadOnly="True" IsFilteringAllowed="False" Name="grvGiaPhong" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" telerik:StyleManager.Theme="Office_Blue" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                     <telerik:RadGridView.Columns>
@@ -32,7 +32,7 @@
                         <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Giá theo tháng" DataMemberBinding="{Binding Path=GiaThang, Converter={StaticResource NumberVietnameseFormater}}" Width="200"></telerik:GridViewDataColumn>
                     </telerik:RadGridView.Columns>
                 </telerik:RadGridView>
-                <telerik:RadBusyIndicator Name="LoadingPanel" Height="300" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center" BusyContent="Đang tại dữ liệu.Vui lòng chờ..." telerik:StyleManager.Theme="Metro"/>
+                <telerik:RadBusyIndicator Name="LoadingPanel" Height="100" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center" BusyContent="Đang tại dữ liệu.Vui lòng chờ..." telerik:StyleManager.Theme="Metro"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

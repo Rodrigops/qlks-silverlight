@@ -31,7 +31,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         void Gia_PhongClient_Phong_GiaPhongCompleted(object sender, Phong_GiaPhongCompletedEventArgs e)
         {
             grvGiaPhong.ItemsSource = e.Result;
-            LoadingPanel.IsBusy = false;
+            LoadingPanel.Visibility = Visibility.Collapsed;LoadingPanel.IsBusy = false;
         }
 
         // Executes when the user navigates to this page.
@@ -39,7 +39,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         {
             try
             {                
-                LoadingPanel.IsBusy = true;
+                LoadingPanel.Visibility = Visibility.Visible;LoadingPanel.IsBusy = true;
                 Gia_PhongClient.Phong_GiaPhongCompleted += new EventHandler<Phong_GiaPhongCompletedEventArgs>(Gia_PhongClient_Phong_GiaPhongCompleted);
                 Gia_PhongClient.Phong_GiaPhongAsync();
             }
