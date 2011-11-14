@@ -10,18 +10,22 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Navigation;
-
+using QuanLyKhachSan.TKDoanhThuSVC;
 namespace QuanLyKhachSan.Form.ThongKeBaoCao
 {
     public partial class frmThongKeDoanhThu : Page
     {
+        private TKDoanhThuSVCClient TKDoanhThuClient = null;
         public frmThongKeDoanhThu()
         {
             InitializeComponent();
             Nam_Load();
             Thang_Load();
+            LoadingPanel.Visibility = Visibility.Visible;LoadingPanel.IsBusy = true;
+            TKDoanhThuClient = new TKDoanhThuSVCClient();
+            TKDoanhThuClient.HoaDon_GetItems_TheoNgayCompleted += new EventHandler<HoaDon_GetItems_TheoNgayCompletedEventArgs>(TKDoanhThuClient_HoaDon_GetItems_TheoNgayCompleted);
+            TKDoanhThuClient.HoaDon_GetItems_TheoNgayAsync(int.Parse(DateTime.Now.ToString("yyyyMMdd")));
         }
-
         // Executes when the user navigates to this page.
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -119,73 +123,73 @@ namespace QuanLyKhachSan.Form.ThongKeBaoCao
 
         private void btnThongKe_Click(object sender, RoutedEventArgs e)
         {
-            //if ((bool)rdbTheoNgay.IsChecked)
-            //{
-            //    if (!String.IsNullOrEmpty(rdpTheoNgay.SelectedDate.ToString()))
-            //    {
-            //        LoadingPanel.IsBusy = true;
-            //        TKDoanhThuDichVuClient = new TKDoanhThuDichVuSVCClient();
-            //        TKDoanhThuDichVuClient.HoaDonDichVu_GetItems_TheoNgayCompleted += new EventHandler<HoaDonDichVu_GetItems_TheoNgayCompletedEventArgs>(TKDoanhThuDichVuClient_HoaDonDichVu_GetItems_TheoNgayCompleted);
-            //        TKDoanhThuDichVuClient.HoaDonDichVu_GetItems_TheoNgayAsync(int.Parse(rdpTheoNgay.SelectedDate.Value.ToString("yyyyMMdd")));
-            //    }
-            //}
-            //else if ((bool)rdbTheoThang.IsChecked)
-            //{
-            //    if (cbxTheoThang.SelectedIndex != -1 && cbxTheoThangNam.SelectedIndex != -1)
-            //    {
-            //        LoadingPanel.IsBusy = true;
-            //        TKDoanhThuDichVuClient = new TKDoanhThuDichVuSVCClient();
-            //        TKDoanhThuDichVuClient.HoaDonDichVu_GetItems_TheoThangCompleted += new EventHandler<HoaDonDichVu_GetItems_TheoThangCompletedEventArgs>(TKDoanhThuDichVuClient_HoaDonDichVu_GetItems_TheoThangCompleted);
-            //        TKDoanhThuDichVuClient.HoaDonDichVu_GetItems_TheoThangAsync((int)cbxTheoThang.SelectedValue, (int)cbxTheoThangNam.SelectedValue);
-            //    }
-            //}
-            //else if ((bool)rdbTheoNam.IsChecked)
-            //{
-            //    if (cbxTheoNam.SelectedIndex != -1)
-            //    {
-            //        LoadingPanel.IsBusy = true;
-            //        TKDoanhThuDichVuClient = new TKDoanhThuDichVuSVCClient();
-            //        TKDoanhThuDichVuClient.HoaDonDichVu_GetItems_TheoNamCompleted += new EventHandler<HoaDonDichVu_GetItems_TheoNamCompletedEventArgs>(TKDoanhThuDichVuClient_HoaDonDichVu_GetItems_TheoNamCompleted);
-            //        TKDoanhThuDichVuClient.HoaDonDichVu_GetItems_TheoNamAsync((int)cbxTheoNam.SelectedValue);
-            //    }
-            //}
-            //else if ((bool)rdbTuNgay.IsChecked)
-            //{
-            //    if (!String.IsNullOrEmpty(rdpTuNgay.SelectedDate.ToString()) && !String.IsNullOrEmpty(rdpDenNgay.SelectedDate.ToString()))
-            //    {
-            //        if (rdpTuNgay.SelectedDate < rdpDenNgay.SelectedDate)
-            //        {
-            //            LoadingPanel.IsBusy = true;
-            //            TKDoanhThuDichVuClient = new TKDoanhThuDichVuSVCClient();
-            //            TKDoanhThuDichVuClient.HoaDonDichVu_GetItems_TuNgayDenNgayCompleted += new EventHandler<HoaDonDichVu_GetItems_TuNgayDenNgayCompletedEventArgs>(TKDoanhThuDichVuClient_HoaDonDichVu_GetItems_TuNgayDenNgayCompleted);
-            //            TKDoanhThuDichVuClient.HoaDonDichVu_GetItems_TuNgayDenNgayAsync(int.Parse(rdpTuNgay.SelectedDate.Value.ToString("yyyyMMdd")), int.Parse(rdpDenNgay.SelectedDate.Value.ToString("yyyyMMdd")));
-            //        }
-            //    }
-            //}
+            if ((bool)rdbTheoNgay.IsChecked)
+            {
+                if (!String.IsNullOrEmpty(rdpTheoNgay.SelectedDate.ToString()))
+                {
+                    LoadingPanel.Visibility = Visibility.Visible;LoadingPanel.IsBusy = true;
+                    TKDoanhThuClient = new TKDoanhThuSVCClient();
+                    TKDoanhThuClient.HoaDon_GetItems_TheoNgayCompleted += new EventHandler<HoaDon_GetItems_TheoNgayCompletedEventArgs>(TKDoanhThuClient_HoaDon_GetItems_TheoNgayCompleted);
+                    TKDoanhThuClient.HoaDon_GetItems_TheoNgayAsync(int.Parse(rdpTheoNgay.SelectedDate.Value.ToString("yyyyMMdd")));
+                }
+            }
+            else if ((bool)rdbTheoThang.IsChecked)
+            {
+                if (cbxTheoThang.SelectedIndex != -1 && cbxTheoThangNam.SelectedIndex != -1)
+                {
+                    LoadingPanel.Visibility = Visibility.Visible;LoadingPanel.IsBusy = true;
+                    TKDoanhThuClient = new TKDoanhThuSVCClient();
+                    TKDoanhThuClient.HoaDon_GetItems_TheoThangCompleted += new EventHandler<HoaDon_GetItems_TheoThangCompletedEventArgs>(TKDoanhThuClient_HoaDon_GetItems_TheoThangCompleted);
+                    TKDoanhThuClient.HoaDon_GetItems_TheoThangAsync((int)cbxTheoThang.SelectedValue, (int)cbxTheoThangNam.SelectedValue);
+                }
+            }
+            else if ((bool)rdbTheoNam.IsChecked)
+            {
+                if (cbxTheoNam.SelectedIndex != -1)
+                {
+                    LoadingPanel.Visibility = Visibility.Visible;LoadingPanel.IsBusy = true;
+                    TKDoanhThuClient = new TKDoanhThuSVCClient();
+                    TKDoanhThuClient.HoaDon_GetItems_TheoNamCompleted += new EventHandler<HoaDon_GetItems_TheoNamCompletedEventArgs>(TKDoanhThuClient_HoaDon_GetItems_TheoNamCompleted);
+                    TKDoanhThuClient.HoaDon_GetItems_TheoNamAsync((int)cbxTheoNam.SelectedValue);
+                }
+            }
+            else if ((bool)rdbTuNgay.IsChecked)
+            {
+                if (!String.IsNullOrEmpty(rdpTuNgay.SelectedDate.ToString()) && !String.IsNullOrEmpty(rdpDenNgay.SelectedDate.ToString()))
+                {
+                    if (rdpTuNgay.SelectedDate < rdpDenNgay.SelectedDate)
+                    {
+                        LoadingPanel.Visibility = Visibility.Visible;LoadingPanel.IsBusy = true;
+                        TKDoanhThuClient = new TKDoanhThuSVCClient();
+                        TKDoanhThuClient.HoaDon_GetItems_TuNgayDenNgayCompleted += new EventHandler<HoaDon_GetItems_TuNgayDenNgayCompletedEventArgs>(TKDoanhThuClient_HoaDon_GetItems_TuNgayDenNgayCompleted);
+                        TKDoanhThuClient.HoaDon_GetItems_TuNgayDenNgayAsync(int.Parse(rdpTuNgay.SelectedDate.Value.ToString("yyyyMMdd")), int.Parse(rdpDenNgay.SelectedDate.Value.ToString("yyyyMMdd")));
+                    }
+                }
+            }
         }
 
-        //void TKDoanhThuDichVuClient_HoaDonDichVu_GetItems_TuNgayDenNgayCompleted(object sender, HoaDonDichVu_GetItems_TuNgayDenNgayCompletedEventArgs e)
-        //{
-        //    grvHoaDonDichVu.ItemsSource = e.Result;
-        //    LoadingPanel.IsBusy = false;
-        //}
+        void TKDoanhThuClient_HoaDon_GetItems_TuNgayDenNgayCompleted(object sender, HoaDon_GetItems_TuNgayDenNgayCompletedEventArgs e)
+        {
+            grvHoaDon.ItemsSource = e.Result;
+            LoadingPanel.Visibility = Visibility.Collapsed;LoadingPanel.IsBusy = false;
+        }
 
-        //void TKDoanhThuDichVuClient_HoaDonDichVu_GetItems_TheoNamCompleted(object sender, HoaDonDichVu_GetItems_TheoNamCompletedEventArgs e)
-        //{
-        //    grvHoaDonDichVu.ItemsSource = e.Result;
-        //    LoadingPanel.IsBusy = false;
-        //}
+        void TKDoanhThuClient_HoaDon_GetItems_TheoNamCompleted(object sender, HoaDon_GetItems_TheoNamCompletedEventArgs e)
+        {
+            grvHoaDon.ItemsSource = e.Result;
+            LoadingPanel.Visibility = Visibility.Collapsed;LoadingPanel.IsBusy = false;
+        }
 
-        //void TKDoanhThuDichVuClient_HoaDonDichVu_GetItems_TheoThangCompleted(object sender, HoaDonDichVu_GetItems_TheoThangCompletedEventArgs e)
-        //{
-        //    grvHoaDonDichVu.ItemsSource = e.Result;
-        //    LoadingPanel.IsBusy = false;
-        //}
+        void TKDoanhThuClient_HoaDon_GetItems_TheoThangCompleted(object sender, HoaDon_GetItems_TheoThangCompletedEventArgs e)
+        {
+            grvHoaDon.ItemsSource = e.Result;
+            LoadingPanel.Visibility = Visibility.Collapsed;LoadingPanel.IsBusy = false;
+        }
 
-        //void TKDoanhThuDichVuClient_HoaDonDichVu_GetItems_TheoNgayCompleted(object sender, HoaDonDichVu_GetItems_TheoNgayCompletedEventArgs e)
-        //{
-        //    grvHoaDonDichVu.ItemsSource = e.Result;
-        //    LoadingPanel.IsBusy = false;
-        //}
+        void TKDoanhThuClient_HoaDon_GetItems_TheoNgayCompleted(object sender, HoaDon_GetItems_TheoNgayCompletedEventArgs e)
+        {
+            grvHoaDon.ItemsSource = e.Result;
+            LoadingPanel.Visibility = Visibility.Collapsed;LoadingPanel.IsBusy = false;
+        }
     }
 }

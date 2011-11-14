@@ -9,7 +9,7 @@
            xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
            Title="Thống Kê Doanh Thu" xmlns:my="clr-namespace:QuanLyKhachSan.Form.QuanLyPhong">
     <Grid x:Name="LayoutRoot">
-        <Grid Margin="10,10,8,25" Name="grid1">
+        <Grid Margin="10,10,8,25" Name="grid1" HorizontalAlignment="Center" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
@@ -21,8 +21,8 @@
                 <RowDefinition Height="10" />
                 <RowDefinition Height="384*" />
             </Grid.RowDefinitions>
-            <telerik:GroupBox Header="Thống kê phiếu nhập kho" Height="146" HorizontalAlignment="Left" Margin="12,0,0,0" Name="grFilter" VerticalAlignment="Top" Width="758">
-                <Grid Height="125" HorizontalAlignment="Left" Name="grid2" VerticalAlignment="Top" Width="747">
+            <telerik:GroupBox Header="Thống kê phiếu nhập kho" Height="146" HorizontalAlignment="Center" Margin="12,0,0,0" Name="grFilter" VerticalAlignment="Top" Width="758">
+                <Grid Height="125" HorizontalAlignment="Center" Name="grid2" VerticalAlignment="Top" Width="747">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="105*" />
                         <ColumnDefinition Width="126" />
@@ -51,20 +51,16 @@
             </telerik:GroupBox>
             <ScrollViewer Grid.Row="2" HorizontalAlignment="Center">
                 <StackPanel>
-                    <telerik:RadGridView AutoExpandGroups="True" AutoGenerateColumns="False" Height="Auto" IsFilteringAllowed="False" Margin="10,0,10,0" Name="grvHoaDonDichVu" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" telerik:StyleManager.Theme="Office_Blue">
+                    <telerik:RadGridView AutoGenerateColumns="False" Margin="10,0,10,0" AutoExpandGroups="True" IsFilteringAllowed="False" Name="grvHoaDon" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" telerik:StyleManager.Theme="Office_Blue" Height="Auto">
                         <telerik:RadGridView.Columns>
-                            <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=DichVuName}" Header="Dịch Vụ" HeaderTextAlignment="Center" TextAlignment="Left" Width="175" />
-                            <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=NgaySuDung}" Header="Ngày Sử Dụng" HeaderTextAlignment="Center" TextAlignment="Center" Width="120" />
-                            <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=SoLuong}" Header="Số Lượng" HeaderTextAlignment="Center" TextAlignment="Center" Width="80" />
-                            <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=DonGia, Converter={StaticResource NumberVietnameseFormater}}" Header="Đơn Giá" HeaderTextAlignment="Center" TextAlignment="Right" Width="80" />
-                            <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=TongTien, Converter={StaticResource NumberVietnameseFormater}}" Header="Thành Tiền" HeaderTextAlignment="Center" TextAlignment="Right" Width="100" />
-                            <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=HoTen}" Header="Khách Hàng" HeaderTextAlignment="Center" TextAlignment="Left" Width="150" />
+                            <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Ngày vào" DataMemberBinding="{Binding Path=NgayVao}" Width="150*" ></telerik:GridViewDataColumn>
+                            <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Ngày ra" DataMemberBinding="{Binding Path=NgayRa}" Width="150*"></telerik:GridViewDataColumn>
+                            <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Loại thuê" DataMemberBinding="{Binding Path=LoaiThue}" Width="120"></telerik:GridViewDataColumn>
+                            <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Ca" DataMemberBinding="{Binding Path=Ca}" Width="80"></telerik:GridViewDataColumn>
+                            <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Right" Header="Tổng Tiền" DataMemberBinding="{Binding Path=TongTien, Converter={StaticResource NumberVietnameseFormater}}" Width="150"></telerik:GridViewDataColumn>
                         </telerik:RadGridView.Columns>
-                        <telerik:RadGridView.GroupDescriptors>
-                            <telerik:GroupDescriptor DisplayContent="{Binding Path=PhongName}" Member="PhongName" />
-                        </telerik:RadGridView.GroupDescriptors>
                     </telerik:RadGridView>
-                    <telerik:RadBusyIndicator BusyContent="Đang tại dữ liệu.Vui lòng chờ..." Height="300" HorizontalAlignment="Center" Name="LoadingPanel" telerik:StyleManager.Theme="Metro" VerticalAlignment="Center" Width="300" />
+                    <telerik:RadBusyIndicator Name="LoadingPanel" Height="100" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center" BusyContent="Đang tại dữ liệu.Vui lòng chờ..." telerik:StyleManager.Theme="Metro"/>
                 </StackPanel>
             </ScrollViewer>
         </Grid>

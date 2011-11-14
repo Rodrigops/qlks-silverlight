@@ -10,28 +10,21 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Navigation;
-using QuanLyKhachSan.PhieuNhapKhoSVC;
 using QuanLyKhachSan.TKChiTieuSVC;
 namespace QuanLyKhachSan.Form.ThongKeBaoCao
 {
     public partial class frmThongKeChiTieu : Page
     {
-        private PhieuNhapKhoSVCClient PhieuNhapKhoClient = null;
         private TKChiTieuSVCClient TKChiTieuClient = null;
         public frmThongKeChiTieu()
         {
             InitializeComponent();
             Nam_Load();
             Thang_Load();
-            LoadingPanel.IsBusy = true;
-            PhieuNhapKhoClient = new PhieuNhapKhoSVCClient();
-            PhieuNhapKhoClient.PhieuNhapKho_GetItemsCompleted += new EventHandler<PhieuNhapKho_GetItemsCompletedEventArgs>(PhieuNhapKhoClient_PhieuNhapKho_GetItemsCompleted);
-            PhieuNhapKhoClient.PhieuNhapKho_GetItemsAsync();
-        }
-        void PhieuNhapKhoClient_PhieuNhapKho_GetItemsCompleted(object sender, PhieuNhapKho_GetItemsCompletedEventArgs e)
-        {
-            grvPhieuNhapKho.ItemsSource = e.Result;
-            LoadingPanel.IsBusy = false;
+            LoadingPanel.Visibility = Visibility.Visible;LoadingPanel.IsBusy = true;
+            TKChiTieuClient = new TKChiTieuSVCClient();
+            TKChiTieuClient.PhieuNhapKho_GetItems_TheoNgayCompleted += new EventHandler<PhieuNhapKho_GetItems_TheoNgayCompletedEventArgs>(TKChiTieuClient_PhieuNhapKho_GetItems_TheoNgayCompleted);
+            TKChiTieuClient.PhieuNhapKho_GetItems_TheoNgayAsync(int.Parse(DateTime.Now.ToString("yyyyMMdd")));
         }
         // Executes when the user navigates to this page.
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -134,7 +127,7 @@ namespace QuanLyKhachSan.Form.ThongKeBaoCao
             {
                 if (!String.IsNullOrEmpty(rdpTheoNgay.SelectedDate.ToString()))
                 {
-                    LoadingPanel.IsBusy = true;
+                    LoadingPanel.Visibility = Visibility.Visible;LoadingPanel.IsBusy = true;
                     TKChiTieuClient = new TKChiTieuSVCClient();
                     TKChiTieuClient.PhieuNhapKho_GetItems_TheoNgayCompleted += new EventHandler<PhieuNhapKho_GetItems_TheoNgayCompletedEventArgs>(TKChiTieuClient_PhieuNhapKho_GetItems_TheoNgayCompleted);
                     TKChiTieuClient.PhieuNhapKho_GetItems_TheoNgayAsync(int.Parse(rdpTheoNgay.SelectedDate.Value.ToString("yyyyMMdd")));
@@ -144,7 +137,7 @@ namespace QuanLyKhachSan.Form.ThongKeBaoCao
             {
                 if (cbxTheoThang.SelectedIndex != -1 && cbxTheoThangNam.SelectedIndex != -1)
                 {
-                    LoadingPanel.IsBusy = true;
+                    LoadingPanel.Visibility = Visibility.Visible;LoadingPanel.IsBusy = true;
                     TKChiTieuClient = new TKChiTieuSVCClient();
                     TKChiTieuClient.PhieuNhapKho_GetItems_TheoThangCompleted += new EventHandler<PhieuNhapKho_GetItems_TheoThangCompletedEventArgs>(TKChiTieuClient_PhieuNhapKho_GetItems_TheoThangCompleted);
                     TKChiTieuClient.PhieuNhapKho_GetItems_TheoThangAsync((int)cbxTheoThang.SelectedValue, (int)cbxTheoThangNam.SelectedValue);
@@ -154,7 +147,7 @@ namespace QuanLyKhachSan.Form.ThongKeBaoCao
             {
                 if (cbxTheoNam.SelectedIndex != -1)
                 {
-                    LoadingPanel.IsBusy = true;
+                    LoadingPanel.Visibility = Visibility.Visible;LoadingPanel.IsBusy = true;
                     TKChiTieuClient = new TKChiTieuSVCClient();
                     TKChiTieuClient.PhieuNhapKho_GetItems_TheoNamCompleted += new EventHandler<PhieuNhapKho_GetItems_TheoNamCompletedEventArgs>(TKChiTieuClient_PhieuNhapKho_GetItems_TheoNamCompleted);
                     TKChiTieuClient.PhieuNhapKho_GetItems_TheoNamAsync((int)cbxTheoNam.SelectedValue);
@@ -166,7 +159,7 @@ namespace QuanLyKhachSan.Form.ThongKeBaoCao
                 {
                     if (rdpTuNgay.SelectedDate < rdpDenNgay.SelectedDate)
                     {
-                        LoadingPanel.IsBusy = true;
+                        LoadingPanel.Visibility = Visibility.Visible;LoadingPanel.IsBusy = true;
                         TKChiTieuClient = new TKChiTieuSVCClient();
                         TKChiTieuClient.PhieuNhapKho_GetItems_TuNgayDenNgayCompleted += new EventHandler<PhieuNhapKho_GetItems_TuNgayDenNgayCompletedEventArgs>(TKChiTieuClient_PhieuNhapKho_GetItems_TuNgayDenNgayCompleted);
                         TKChiTieuClient.PhieuNhapKho_GetItems_TuNgayDenNgayAsync(int.Parse(rdpTuNgay.SelectedDate.Value.ToString("yyyyMMdd")), int.Parse(rdpDenNgay.SelectedDate.Value.ToString("yyyyMMdd")));
@@ -178,25 +171,25 @@ namespace QuanLyKhachSan.Form.ThongKeBaoCao
         void TKChiTieuClient_PhieuNhapKho_GetItems_TuNgayDenNgayCompleted(object sender, PhieuNhapKho_GetItems_TuNgayDenNgayCompletedEventArgs e)
         {
             grvPhieuNhapKho.ItemsSource = e.Result;
-            LoadingPanel.IsBusy = false;
+            LoadingPanel.Visibility = Visibility.Collapsed;LoadingPanel.IsBusy = false;
         }
 
         void TKChiTieuClient_PhieuNhapKho_GetItems_TheoNamCompleted(object sender, PhieuNhapKho_GetItems_TheoNamCompletedEventArgs e)
         {
             grvPhieuNhapKho.ItemsSource = e.Result;
-            LoadingPanel.IsBusy = false;
+            LoadingPanel.Visibility = Visibility.Collapsed;LoadingPanel.IsBusy = false;
         }
 
         void TKChiTieuClient_PhieuNhapKho_GetItems_TheoThangCompleted(object sender, PhieuNhapKho_GetItems_TheoThangCompletedEventArgs e)
         {
             grvPhieuNhapKho.ItemsSource = e.Result;
-            LoadingPanel.IsBusy = false;
+            LoadingPanel.Visibility = Visibility.Collapsed;LoadingPanel.IsBusy = false;
         }
 
         void TKChiTieuClient_PhieuNhapKho_GetItems_TheoNgayCompleted(object sender, PhieuNhapKho_GetItems_TheoNgayCompletedEventArgs e)
         {
             grvPhieuNhapKho.ItemsSource = e.Result;
-            LoadingPanel.IsBusy = false;
+            LoadingPanel.Visibility = Visibility.Collapsed;LoadingPanel.IsBusy = false;
         }
     }
 }
