@@ -35,8 +35,10 @@ namespace QuanLyKhachSan
         void Authentication_Authentication_CheckAccountCompleted(object sender, Authentication_CheckAccountCompletedEventArgs e)
         {
             if (e.Result.ToString() == "Success")
-            {                
-                this.NavigationService.Navigate(new Uri("", UriKind.Relative));
+            {               
+                AuthenticationSVCClient Authentication = new AuthenticationSVCClient();
+                Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
+                Authentication.Authentication_GetSessionAsync();
             }
             else
             {             
@@ -49,15 +51,28 @@ namespace QuanLyKhachSan
             Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
             Authentication.Authentication_GetSessionAsync();
         }
-
+        private MainPage mainParent = null;
         void Authentication_Authentication_GetSessionCompleted(object sender, Authentication_GetSessionCompletedEventArgs e)
         {
             if (e.Result.ToString() != "")
             {
-                Authentication.isLogged = true;                
-            
+                mainParent = FindParentOfType<MainPage>(this);
+                mainParent.cmdLogout.Visibility = System.Windows.Visibility.Visible;
+                mainParent.cmdLogout.Content = "[" + e.Result.ToString() + " - Thoát]";
+                this.NavigationService.Navigate(new Uri("", UriKind.Relative));                            
             }
         }
+        public static T FindParentOfType<T>(FrameworkElement element)
+        {
+            var parent = element.Parent as FrameworkElement;
+            while (parent != null)
+            {
+                if (parent is T)
+                    return (T)(object)parent;
+                parent = parent.Parent as FrameworkElement;
+            }
+            return default(T);
 
+        }
     }
 }

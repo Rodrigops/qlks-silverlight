@@ -24,6 +24,10 @@ namespace QuanLyKhachSan.ModuleSVC {
         
         private string CreatedDateField;
         
+        private int IsEditField;
+        
+        private int IsViewField;
+        
         private int ModifiedByUserField;
         
         private string ModifiedDateField;
@@ -62,6 +66,32 @@ namespace QuanLyKhachSan.ModuleSVC {
                 if ((object.ReferenceEquals(this.CreatedDateField, value) != true)) {
                     this.CreatedDateField = value;
                     this.RaisePropertyChanged("CreatedDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IsEdit {
+            get {
+                return this.IsEditField;
+            }
+            set {
+                if ((this.IsEditField.Equals(value) != true)) {
+                    this.IsEditField = value;
+                    this.RaisePropertyChanged("IsEdit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IsView {
+            get {
+                return this.IsViewField;
+            }
+            set {
+                if ((this.IsViewField.Equals(value) != true)) {
+                    this.IsViewField = value;
+                    this.RaisePropertyChanged("IsView");
                 }
             }
         }
@@ -185,9 +215,14 @@ namespace QuanLyKhachSan.ModuleSVC {
     public interface ModuleSVC {
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:ModuleSVC/Module_GetItems", ReplyAction="urn:ModuleSVC/Module_GetItemsResponse")]
-        System.IAsyncResult BeginModule_GetItems(System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginModule_GetItems(int GroupID, System.AsyncCallback callback, object asyncState);
         
         System.Collections.Generic.List<QuanLyKhachSan.ModuleSVC.ModuleInfo> EndModule_GetItems(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:ModuleSVC/ModulePermission_Add", ReplyAction="urn:ModuleSVC/ModulePermission_AddResponse")]
+        System.IAsyncResult BeginModulePermission_Add(int GroupID, string ListModulePermission, System.AsyncCallback callback, object asyncState);
+        
+        void EndModulePermission_Add(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -222,6 +257,12 @@ namespace QuanLyKhachSan.ModuleSVC {
         private EndOperationDelegate onEndModule_GetItemsDelegate;
         
         private System.Threading.SendOrPostCallback onModule_GetItemsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginModulePermission_AddDelegate;
+        
+        private EndOperationDelegate onEndModulePermission_AddDelegate;
+        
+        private System.Threading.SendOrPostCallback onModulePermission_AddCompletedDelegate;
         
         private BeginOperationDelegate onBeginOpenDelegate;
         
@@ -278,13 +319,15 @@ namespace QuanLyKhachSan.ModuleSVC {
         
         public event System.EventHandler<Module_GetItemsCompletedEventArgs> Module_GetItemsCompleted;
         
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> ModulePermission_AddCompleted;
+        
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult QuanLyKhachSan.ModuleSVC.ModuleSVC.BeginModule_GetItems(System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginModule_GetItems(callback, asyncState);
+        System.IAsyncResult QuanLyKhachSan.ModuleSVC.ModuleSVC.BeginModule_GetItems(int GroupID, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginModule_GetItems(GroupID, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -293,7 +336,8 @@ namespace QuanLyKhachSan.ModuleSVC {
         }
         
         private System.IAsyncResult OnBeginModule_GetItems(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return ((QuanLyKhachSan.ModuleSVC.ModuleSVC)(this)).BeginModule_GetItems(callback, asyncState);
+            int GroupID = ((int)(inValues[0]));
+            return ((QuanLyKhachSan.ModuleSVC.ModuleSVC)(this)).BeginModule_GetItems(GroupID, callback, asyncState);
         }
         
         private object[] OnEndModule_GetItems(System.IAsyncResult result) {
@@ -309,11 +353,11 @@ namespace QuanLyKhachSan.ModuleSVC {
             }
         }
         
-        public void Module_GetItemsAsync() {
-            this.Module_GetItemsAsync(null);
+        public void Module_GetItemsAsync(int GroupID) {
+            this.Module_GetItemsAsync(GroupID, null);
         }
         
-        public void Module_GetItemsAsync(object userState) {
+        public void Module_GetItemsAsync(int GroupID, object userState) {
             if ((this.onBeginModule_GetItemsDelegate == null)) {
                 this.onBeginModule_GetItemsDelegate = new BeginOperationDelegate(this.OnBeginModule_GetItems);
             }
@@ -323,7 +367,55 @@ namespace QuanLyKhachSan.ModuleSVC {
             if ((this.onModule_GetItemsCompletedDelegate == null)) {
                 this.onModule_GetItemsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnModule_GetItemsCompleted);
             }
-            base.InvokeAsync(this.onBeginModule_GetItemsDelegate, null, this.onEndModule_GetItemsDelegate, this.onModule_GetItemsCompletedDelegate, userState);
+            base.InvokeAsync(this.onBeginModule_GetItemsDelegate, new object[] {
+                        GroupID}, this.onEndModule_GetItemsDelegate, this.onModule_GetItemsCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult QuanLyKhachSan.ModuleSVC.ModuleSVC.BeginModulePermission_Add(int GroupID, string ListModulePermission, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginModulePermission_Add(GroupID, ListModulePermission, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        void QuanLyKhachSan.ModuleSVC.ModuleSVC.EndModulePermission_Add(System.IAsyncResult result) {
+            base.Channel.EndModulePermission_Add(result);
+        }
+        
+        private System.IAsyncResult OnBeginModulePermission_Add(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int GroupID = ((int)(inValues[0]));
+            string ListModulePermission = ((string)(inValues[1]));
+            return ((QuanLyKhachSan.ModuleSVC.ModuleSVC)(this)).BeginModulePermission_Add(GroupID, ListModulePermission, callback, asyncState);
+        }
+        
+        private object[] OnEndModulePermission_Add(System.IAsyncResult result) {
+            ((QuanLyKhachSan.ModuleSVC.ModuleSVC)(this)).EndModulePermission_Add(result);
+            return null;
+        }
+        
+        private void OnModulePermission_AddCompleted(object state) {
+            if ((this.ModulePermission_AddCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.ModulePermission_AddCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void ModulePermission_AddAsync(int GroupID, string ListModulePermission) {
+            this.ModulePermission_AddAsync(GroupID, ListModulePermission, null);
+        }
+        
+        public void ModulePermission_AddAsync(int GroupID, string ListModulePermission, object userState) {
+            if ((this.onBeginModulePermission_AddDelegate == null)) {
+                this.onBeginModulePermission_AddDelegate = new BeginOperationDelegate(this.OnBeginModulePermission_Add);
+            }
+            if ((this.onEndModulePermission_AddDelegate == null)) {
+                this.onEndModulePermission_AddDelegate = new EndOperationDelegate(this.OnEndModulePermission_Add);
+            }
+            if ((this.onModulePermission_AddCompletedDelegate == null)) {
+                this.onModulePermission_AddCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnModulePermission_AddCompleted);
+            }
+            base.InvokeAsync(this.onBeginModulePermission_AddDelegate, new object[] {
+                        GroupID,
+                        ListModulePermission}, this.onEndModulePermission_AddDelegate, this.onModulePermission_AddCompletedDelegate, userState);
         }
         
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
@@ -402,8 +494,9 @@ namespace QuanLyKhachSan.ModuleSVC {
                     base(client) {
             }
             
-            public System.IAsyncResult BeginModule_GetItems(System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[0];
+            public System.IAsyncResult BeginModule_GetItems(int GroupID, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = GroupID;
                 System.IAsyncResult _result = base.BeginInvoke("Module_GetItems", _args, callback, asyncState);
                 return _result;
             }
@@ -412,6 +505,19 @@ namespace QuanLyKhachSan.ModuleSVC {
                 object[] _args = new object[0];
                 System.Collections.Generic.List<QuanLyKhachSan.ModuleSVC.ModuleInfo> _result = ((System.Collections.Generic.List<QuanLyKhachSan.ModuleSVC.ModuleInfo>)(base.EndInvoke("Module_GetItems", _args, result)));
                 return _result;
+            }
+            
+            public System.IAsyncResult BeginModulePermission_Add(int GroupID, string ListModulePermission, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
+                _args[0] = GroupID;
+                _args[1] = ListModulePermission;
+                System.IAsyncResult _result = base.BeginInvoke("ModulePermission_Add", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public void EndModulePermission_Add(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                base.EndInvoke("ModulePermission_Add", _args, result);
             }
         }
     }

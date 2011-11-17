@@ -8,7 +8,7 @@
         xmlns:uriMapper="clr-namespace:System.Windows.Navigation;assembly=System.Windows.Controls.Navigation"
 		mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="800" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
 	<Grid x:Name="LayoutRoot">
-        <telerik:RadRibbonBar Height="146" HorizontalAlignment="Stretch" Name="mainRibbonBar" ApplicationName="Phần Mềm Quản Lý Khách Sạn" VerticalAlignment="Top" Width="Auto" telerik:StyleManager.Theme="Vista">
+        <telerik:RadRibbonBar Height="146" HorizontalAlignment="Stretch" Name="mainRibbonBar" ApplicationName="Khách Sạn Cao Thăng" VerticalAlignment="Top" Width="Auto" telerik:StyleManager.Theme="Vista">
             <telerik:RadRibbonTab Header="Trang Chủ">
                 <telerik:RadRibbonGroup Header="Tình Trạng Phòng"  Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
                     <telerik:RadRibbonButton Name="cmdTinhTrangPhong" Click="cmdTinhTrangPhong_Click" >
@@ -73,21 +73,21 @@
                 <telerik:RadRibbonGroup Header="Thống kê doanh thu" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
                     <telerik:RadRibbonButton Name="cmdThongKeDoanhThu" Click="cmdThongKeDoanhThu_Click">
                         <StackPanel>
-                            <Image Source="Images/CaiDatGia.png"></Image>
+                            <Image Source="Images/ThongKeDoanhThu.png" Height="64" Width="64"></Image>
                         </StackPanel>
                     </telerik:RadRibbonButton>
                 </telerik:RadRibbonGroup>
                 <telerik:RadRibbonGroup Header="Thống kê chi tiêu" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
                     <telerik:RadRibbonButton Name="cmdThongKeChiTieu" Click="cmdThongKeChiTieu_Click">
                         <StackPanel>
-                            <Image Source="Images/CaiDatGia.png"></Image>
+                            <Image Source="Images/ThongKeChiTieu.png" Height="64" Width="64"></Image>
                         </StackPanel>
                     </telerik:RadRibbonButton>
                 </telerik:RadRibbonGroup>
                 <telerik:RadRibbonGroup Header="Thống kê doanh thu dịch vụ" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
                     <telerik:RadRibbonButton Name="cmdThongKeDoanhThuDichVu" Click="cmdThongKeDoanhThuDichVu_Click">
                         <StackPanel>
-                            <Image Source="Images/CaiDatGia.png"></Image>
+                            <Image Source="Images/ThongKeDoanhThuDichVu.png" Height="64" Width="64"></Image>
                         </StackPanel>
                     </telerik:RadRibbonButton>
                 </telerik:RadRibbonGroup>

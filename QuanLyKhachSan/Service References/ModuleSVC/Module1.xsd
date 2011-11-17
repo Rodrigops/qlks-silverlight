@@ -10,6 +10,8 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="CreatedByUser" type="xs:int" />
       <xs:element minOccurs="0" name="CreatedDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsEdit" type="xs:int" />
+      <xs:element minOccurs="0" name="IsView" type="xs:int" />
       <xs:element minOccurs="0" name="ModifiedByUser" type="xs:int" />
       <xs:element minOccurs="0" name="ModifiedDate" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ModuleID" type="xs:int" />

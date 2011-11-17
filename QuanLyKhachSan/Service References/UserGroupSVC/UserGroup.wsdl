@@ -37,6 +37,12 @@
   <wsdl:message name="UserGroupSVC_UserGroup_GetItems_OutputMessage">
     <wsdl:part name="parameters" element="UserGroup_GetItemsResponse" />
   </wsdl:message>
+  <wsdl:message name="UserGroupSVC_GroupIDByUserName_InputMessage">
+    <wsdl:part name="parameters" element="GroupIDByUserName" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupSVC_GroupIDByUserName_OutputMessage">
+    <wsdl:part name="parameters" element="GroupIDByUserNameResponse" />
+  </wsdl:message>
   <wsdl:portType name="UserGroupSVC">
     <wsdl:operation name="UserGroup_Add">
       <wsdl:input wsaw:Action="urn:UserGroupSVC/UserGroup_Add" message="UserGroupSVC_UserGroup_Add_InputMessage" />
@@ -57,6 +63,10 @@
     <wsdl:operation name="UserGroup_GetItems">
       <wsdl:input wsaw:Action="urn:UserGroupSVC/UserGroup_GetItems" message="UserGroupSVC_UserGroup_GetItems_InputMessage" />
       <wsdl:output wsaw:Action="urn:UserGroupSVC/UserGroup_GetItemsResponse" message="UserGroupSVC_UserGroup_GetItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupIDByUserName">
+      <wsdl:input wsaw:Action="urn:UserGroupSVC/GroupIDByUserName" message="UserGroupSVC_GroupIDByUserName_InputMessage" />
+      <wsdl:output wsaw:Action="urn:UserGroupSVC/GroupIDByUserNameResponse" message="UserGroupSVC_GroupIDByUserName_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

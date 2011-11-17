@@ -8,6 +8,7 @@
            xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
            d:DesignWidth="640" d:DesignHeight="800"
            Title="frmPhanQuyenUser Page" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
+    <ScrollViewer Background="Transparent">
     <Grid x:Name="LayoutRoot" Height="Auto" >
         <Grid.Resources>
             <local:CheckBoxFormater x:Key="CheckBoxFormater">
@@ -48,4 +49,5 @@
         <telerik:RadButton Content="Lưu" Grid.Row="3" Height="Auto" HorizontalAlignment="Center" Margin="221,7,353,0" Name="cmdLuu" VerticalAlignment="Top" Width="66" telerik:StyleManager.Theme="Office_Blue" Click="cmdLuu_Click"/>
         <telerik:RadBusyIndicator Grid.Row="1" Grid.RowSpan="4" Height="300" HorizontalAlignment="Left" Margin="34,0,0,0" Name="BusyLoading" BusyContent="Đang tải dữ liệu..." VerticalAlignment="Top" Width="419" telerik:StyleManager.Theme="Office_Blue" />
     </Grid>
+    </ScrollViewer>
 </navigation:Page>

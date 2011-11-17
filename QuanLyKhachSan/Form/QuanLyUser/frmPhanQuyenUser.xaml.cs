@@ -14,16 +14,19 @@ using QuanLyKhachSan.ModuleSVC;
 using Telerik.Windows.Data;
 using QuanLyKhachSan.GroupSVC;
 using Telerik.Windows.Controls.GridView;
+using QuanLyKhachSan.AuthenticationSVC;
+using QuanLyKhachSan.UserGroupSVC;
 namespace QuanLyKhachSan.Form.QuanLyUser
 {
     public partial class frmPhanQuyenUser : Page
     {
         ModuleSVCClient module = new ModuleSVCClient();
         GroupSVCClient group = new GroupSVCClient();
+
         public frmPhanQuyenUser()
         {
             InitializeComponent();
-            BusyLoading.IsBusy = true;            
+            BusyLoading.IsBusy = true;
             group.Group_GetActivedItemsCompleted += new EventHandler<Group_GetActivedItemsCompletedEventArgs>(group_Group_GetActivedItemsCompleted);
             group.Group_GetActivedItemsAsync();
         }
@@ -69,9 +72,8 @@ namespace QuanLyKhachSan.Form.QuanLyUser
             grvModules.DataLoaded += new EventHandler<EventArgs>(grvModules_DataLoaded);
             grvModules.ItemsSource = e.Result;
             BusyLoading.IsBusy = false;
-            //
         }
-
+        
         // Executes when the user navigates to this page.
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -125,10 +127,95 @@ namespace QuanLyKhachSan.Form.QuanLyUser
             module.ModulePermission_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(module_ModulePermission_AddCompleted);
             module.ModulePermission_AddAsync(GroupID, ListModulePermission);
         }
-
+        private MainPage mainParent = null;
+        private AuthenticationSVCClient Authentication = new AuthenticationSVCClient();
+        private ModuleSVCClient Permission = new ModuleSVCClient();
         void module_ModulePermission_AddCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
-        {
+        {          
             BusyLoading.IsBusy = false;
+            Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
+            Authentication.Authentication_GetSessionAsync();
+
+        }
+        public static T FindParentOfType<T>(FrameworkElement element)
+        {
+            var parent = element.Parent as FrameworkElement;
+            while (parent != null)
+            {
+                if (parent is T)
+                    return (T)(object)parent;
+                parent = parent.Parent as FrameworkElement;
+            }
+            return default(T);
+
+        }
+        void Authentication_Authentication_GetSessionCompleted(object sender, Authentication_GetSessionCompletedEventArgs e)
+        {
+            UserGroupSVCClient UserGroup = new UserGroupSVCClient();
+            UserGroup.GroupIDByUserNameCompleted += new EventHandler<GroupIDByUserNameCompletedEventArgs>(UserGroup_GroupIDByUserNameCompleted);
+            UserGroup.GroupIDByUserNameAsync(e.Result);            
+        }
+
+        void UserGroup_GroupIDByUserNameCompleted(object sender, GroupIDByUserNameCompletedEventArgs e)
+        {
+            Permission.Module_GetItemsCompleted += new EventHandler<Module_GetItemsCompletedEventArgs>(Permission_Module_GetItemsCompleted);
+            Permission.Module_GetItemsAsync(int.Parse(e.Result.ToString()));
+        }
+
+        void Permission_Module_GetItemsCompleted(object sender, Module_GetItemsCompletedEventArgs e)
+        {
+            List<ModuleInfo> _moduleInfo = e.Result;
+            mainParent = FindParentOfType<MainPage>(this);
+            foreach (ModuleInfo item in _moduleInfo)
+            {
+                bool Permission = item.IsView == 1 ? true : false;
+                SetPermission(item.ModuleKey, Permission);
+            }
+        }
+        public void SetPermission(string ModuleKey, bool Permission)
+        {
+            switch (ModuleKey)
+            {
+                case "frmTinhTrangPhong":
+                    mainParent.cmdTinhTrangPhong.IsEnabled = Permission;
+                    break;
+                case "frmKhachHang":
+                    mainParent.cmdKhachHang.IsEnabled = Permission;
+                    break;
+                case "frmDatPhong":
+                    mainParent.cmdDatPhong.IsEnabled = Permission;
+                    break;
+                case "frmNhanPhong":
+                    mainParent.cmdNhanPhong.IsEnabled = Permission;
+                    break;
+                case "frmDichVuPhong":
+                    mainParent.cmdDichVuPhong.IsEnabled = Permission;
+                    break;
+                case "frmThongTinPhong":
+                    mainParent.cmdThongTinPhong.IsEnabled = Permission;
+                    break;
+                case "frmGiaPhong":
+                    mainParent.cmdGiaPhong.IsEnabled = Permission;
+                    break;
+                case "frmCaiDatGia":
+                    mainParent.cmdCaiDatGia.IsEnabled = Permission;
+                    break;
+                case "frmThongKeDoanhThu":
+                    mainParent.cmdThongKeDoanhThu.IsEnabled = Permission;
+                    break;
+                case "frmThongKeChiTieu":
+                    mainParent.cmdThongKeChiTieu.IsEnabled = Permission;
+                    break;
+                case "frmThongKeDoanhThuDichVu":
+                    mainParent.cmdThongKeDoanhThuDichVu.IsEnabled = Permission;
+                    break;
+                case "frmQuanLyUser":
+                    mainParent.cmdQuanLyUser.IsEnabled = Permission;
+                    break;
+                case "frmPhanQuyen":
+                    mainParent.cmdPhanQuyenUser.IsEnabled = Permission;
+                    break;
+            }
         }
         IEnumerable<DependencyObject> GetCheckBoxControls(DependencyObject root)
         {

@@ -5,6 +5,7 @@
            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
            mc:Ignorable="d"
            xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           xmlns:local="clr-namespace:QuanLyKhachSan.Form.ThongKeBaoCao"
            Width="800" Height="600" 
            xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
            Title="Thống Kê Doanh Thu" xmlns:my="clr-namespace:QuanLyKhachSan.Form.QuanLyPhong">
@@ -15,6 +16,8 @@
             </Grid.ColumnDefinitions>
             <Grid.Resources>
                 <my:NumberVietnameseFormater x:Key="NumberVietnameseFormater" />
+                <local:CaFormater x:Key="CaFormater"></local:CaFormater>
+                <local:LoaiThueFormater x:Key="LoaiThueFormater"></local:LoaiThueFormater>
             </Grid.Resources>
             <Grid.RowDefinitions>
                 <RowDefinition Height="146" />
@@ -55,8 +58,8 @@
                         <telerik:RadGridView.Columns>
                             <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Ngày vào" DataMemberBinding="{Binding Path=NgayVao}" Width="150*" ></telerik:GridViewDataColumn>
                             <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Ngày ra" DataMemberBinding="{Binding Path=NgayRa}" Width="150*"></telerik:GridViewDataColumn>
-                            <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Loại thuê" DataMemberBinding="{Binding Path=LoaiThue}" Width="120"></telerik:GridViewDataColumn>
-                            <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Ca" DataMemberBinding="{Binding Path=Ca}" Width="80"></telerik:GridViewDataColumn>
+                            <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Loại thuê" DataMemberBinding="{Binding Path=LoaiThue, Converter={StaticResource LoaiThueFormater}}" Width="120"></telerik:GridViewDataColumn>
+                            <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Ca" DataMemberBinding="{Binding Path=Ca, Converter={StaticResource CaFormater}}" Width="80"></telerik:GridViewDataColumn>
                             <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Right" Header="Tổng Tiền" DataMemberBinding="{Binding Path=TongTien, Converter={StaticResource NumberVietnameseFormater}}" Width="150"></telerik:GridViewDataColumn>
                         </telerik:RadGridView.Columns>
                     </telerik:RadGridView>

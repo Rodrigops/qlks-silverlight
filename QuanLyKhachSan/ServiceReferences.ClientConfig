@@ -103,76 +103,76 @@
             </customBinding>
         </bindings>
         <client>
-            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/LoaiPhong.svc"
-                binding="customBinding" bindingConfiguration="CustomBinding_LoaiPhongSVC"
-                contract="LoaiPhongSVC.LoaiPhongSVC" name="CustomBinding_LoaiPhongSVC" />
-            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/TienNghi.svc"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_TienNghiSVC"
-                contract="TienNghiSVC.TienNghiSVC" name="BasicHttpBinding_TienNghiSVC" />
-            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Phong.svc"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_PhongSVC"
-                contract="PhongSVC.PhongSVC" name="BasicHttpBinding_PhongSVC" />
-            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/DichVu.svc"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_DichVuSVC"
-                contract="DichVuSVC.DichVuSVC" name="BasicHttpBinding_DichVuSVC" />
-            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/KhachHang.svc"
+            <endpoint address="../Services/QuanLyPhong/LoaiPhong.svc" binding="customBinding"
+                bindingConfiguration="CustomBinding_LoaiPhongSVC" contract="LoaiPhongSVC.LoaiPhongSVC"
+                name="CustomBinding_LoaiPhongSVC" />
+            <endpoint address="../Services/QuanLyPhong/TienNghi.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_TienNghiSVC" contract="TienNghiSVC.TienNghiSVC"
+                name="BasicHttpBinding_TienNghiSVC" />
+            <endpoint address="../Services/QuanLyPhong/Phong.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_PhongSVC" contract="PhongSVC.PhongSVC"
+                name="BasicHttpBinding_PhongSVC" />
+            <endpoint address="../Services/QuanLyPhong/DichVu.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_DichVuSVC" contract="DichVuSVC.DichVuSVC"
+                name="BasicHttpBinding_DichVuSVC" />
+            <endpoint address="../Services/QuanLyKhachHang/KhachHang.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_KhachHangSVC"
                 contract="KhachHangSVC.KhachHangSVC" name="BasicHttpBinding_KhachHangSVC" />
-            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/QuocTich.svc"
+            <endpoint address="../Services/QuanLyKhachHang/QuocTich.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_QuocTichSVC"
                 contract="QuocTichSVC.QuocTichSVC" name="BasicHttpBinding_QuocTichSVC" />
-            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Gio_Phong.svc"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_Gio_PhongSVC"
-                contract="Gio_PhongSVC.Gio_PhongSVC" name="BasicHttpBinding_Gio_PhongSVC" />
-            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Ngay_Phong.svc"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_Ngay_PhongSVC"
-                contract="Ngay_PhongSVC.Ngay_PhongSVC" name="BasicHttpBinding_Ngay_PhongSVC" />
-            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Nguoi_Phong.svc"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_Nguoi_PhongSVC"
-                contract="Nguoi_PhongSVC.Nguoi_PhongSVC" name="BasicHttpBinding_Nguoi_PhongSVC" />
-            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDonDichVu.svc"
+            <endpoint address="../Services/QuanLyPhong/Gio_Phong.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_Gio_PhongSVC" contract="Gio_PhongSVC.Gio_PhongSVC"
+                name="BasicHttpBinding_Gio_PhongSVC" />
+            <endpoint address="../Services/QuanLyPhong/Ngay_Phong.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_Ngay_PhongSVC" contract="Ngay_PhongSVC.Ngay_PhongSVC"
+                name="BasicHttpBinding_Ngay_PhongSVC" />
+            <endpoint address="../Services/QuanLyPhong/Nguoi_Phong.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_Nguoi_PhongSVC" contract="Nguoi_PhongSVC.Nguoi_PhongSVC"
+                name="BasicHttpBinding_Nguoi_PhongSVC" />
+            <endpoint address="../Services/HoaDonDichVu/HoaDonDichVu.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_HoaDonDichVuSVC"
                 contract="HoaDonDichVuSVC.HoaDonDichVuSVC" name="BasicHttpBinding_HoaDonDichVuSVC" />
-            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDon/HoaDon.svc"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_HoaDonSVC"
-                contract="HoaDonSVC.HoaDonSVC" name="BasicHttpBinding_HoaDonSVC" />
-            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDon/HoaDon_KhachHang.svc"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_HoaDon_KhachHangSVC"
+            <endpoint address="../Services/HoaDon/HoaDon.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_HoaDonSVC" contract="HoaDonSVC.HoaDonSVC"
+                name="BasicHttpBinding_HoaDonSVC" />
+            <endpoint address="../Services/HoaDon/HoaDon_KhachHang.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_HoaDon_KhachHangSVC"
                 contract="HoaDon_KhachHangSVC.HoaDon_KhachHangSVC" name="BasicHttpBinding_HoaDon_KhachHangSVC" />
-            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyUser/Group.svc"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_GroupSVC"
-                contract="GroupSVC.GroupSVC" name="BasicHttpBinding_GroupSVC" />
-            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyUser/User.svc"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_UserSVC"
-                contract="UserSVC.UserSVC" name="BasicHttpBinding_UserSVC" />
-            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyUser/UserGroup.svc"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_UserGroupSVC"
-                contract="UserGroupSVC.UserGroupSVC" name="BasicHttpBinding_UserGroupSVC" />
-            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Gia_Phong.svc"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_Gia_PhongSVC"
-                contract="Gia_PhongSVC.Gia_PhongSVC" name="BasicHttpBinding_Gia_PhongSVC" />
-            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDon_TraTruoc.svc"
+            <endpoint address="../Services/QuanLyUser/Group.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_GroupSVC" contract="GroupSVC.GroupSVC"
+                name="BasicHttpBinding_GroupSVC" />
+            <endpoint address="../Services/QuanLyUser/User.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_UserSVC" contract="UserSVC.UserSVC"
+                name="BasicHttpBinding_UserSVC" />
+            <endpoint address="../Services/QuanLyUser/UserGroup.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_UserGroupSVC" contract="UserGroupSVC.UserGroupSVC"
+                name="BasicHttpBinding_UserGroupSVC" />
+            <endpoint address="../Services/QuanLyPhong/Gia_Phong.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_Gia_PhongSVC" contract="Gia_PhongSVC.Gia_PhongSVC"
+                name="BasicHttpBinding_Gia_PhongSVC" />
+            <endpoint address="../Services/HoaDonDichVu/HoaDon_TraTruoc.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_HoaDon_TraTruocSVC"
                 contract="HoaDon_TraTruocSVC.HoaDon_TraTruocSVC" name="BasicHttpBinding_HoaDon_TraTruocSVC" />
-            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/Authentication/Authentication.svc"
+            <endpoint address="../Services/Authentication/Authentication.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_AuthenticationSVC"
                 contract="AuthenticationSVC.AuthenticationSVC" name="BasicHttpBinding_AuthenticationSVC" />
-            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/PhieuNhapKho.svc"
+            <endpoint address="../Services/HoaDonDichVu/PhieuNhapKho.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_PhieuNhapKhoSVC"
                 contract="PhieuNhapKhoSVC.PhieuNhapKhoSVC" name="BasicHttpBinding_PhieuNhapKhoSVC" />
-            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/ChiTietPhieuNhapKho.svc"
+            <endpoint address="../Services/HoaDonDichVu/ChiTietPhieuNhapKho.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ChiTietPhieuNhapKhoSVC"
                 contract="ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoSVC" name="BasicHttpBinding_ChiTietPhieuNhapKhoSVC" />
-            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyUser/Module.svc"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ModuleSVC"
-                contract="ModuleSVC.ModuleSVC" name="BasicHttpBinding_ModuleSVC" />
-            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKChiTieu.svc"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_TKChiTieuSVC"
-                contract="TKChiTieuSVC.TKChiTieuSVC" name="BasicHttpBinding_TKChiTieuSVC" />
-            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKDoanhThuDichVu.svc"
+            <endpoint address="../Services/QuanLyUser/Module.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_ModuleSVC" contract="ModuleSVC.ModuleSVC"
+                name="BasicHttpBinding_ModuleSVC" />
+            <endpoint address="../Services/ThongKeBaoCao/TKChiTieu.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_TKChiTieuSVC" contract="TKChiTieuSVC.TKChiTieuSVC"
+                name="BasicHttpBinding_TKChiTieuSVC" />
+            <endpoint address="../Services/ThongKeBaoCao/TKDoanhThuDichVu.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_TKDoanhThuDichVuSVC"
                 contract="TKDoanhThuDichVuSVC.TKDoanhThuDichVuSVC" name="BasicHttpBinding_TKDoanhThuDichVuSVC" />
-            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKDoanhThu.svc"
+            <endpoint address="../Services/ThongKeBaoCao/TKDoanhThu.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_TKDoanhThuSVC"
                 contract="TKDoanhThuSVC.TKDoanhThuSVC" name="BasicHttpBinding_TKDoanhThuSVC" />
         </client>

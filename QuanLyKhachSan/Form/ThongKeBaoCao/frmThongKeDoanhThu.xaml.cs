@@ -21,7 +21,8 @@ namespace QuanLyKhachSan.Form.ThongKeBaoCao
             InitializeComponent();
             Nam_Load();
             Thang_Load();
-            LoadingPanel.Visibility = Visibility.Visible;LoadingPanel.IsBusy = true;
+            LoadingPanel.Visibility = Visibility.Visible;
+            LoadingPanel.IsBusy = true;
             TKDoanhThuClient = new TKDoanhThuSVCClient();
             TKDoanhThuClient.HoaDon_GetItems_TheoNgayCompleted += new EventHandler<HoaDon_GetItems_TheoNgayCompletedEventArgs>(TKDoanhThuClient_HoaDon_GetItems_TheoNgayCompleted);
             TKDoanhThuClient.HoaDon_GetItems_TheoNgayAsync(int.Parse(DateTime.Now.ToString("yyyyMMdd")));

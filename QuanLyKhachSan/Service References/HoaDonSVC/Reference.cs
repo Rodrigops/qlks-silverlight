@@ -20,11 +20,13 @@ namespace QuanLyKhachSan.HoaDonSVC {
     [System.Runtime.Serialization.DataContractAttribute(Name="HoaDonInfo", Namespace="http://schemas.datacontract.org/2004/07/QuanLyKhachSan")]
     public partial class HoaDonInfo : object, System.ComponentModel.INotifyPropertyChanged {
         
+        private int CaField;
+        
         private int CreatedByUserField;
         
         private string CreatedDateField;
         
-        private int DatThanhToanField;
+        private int DaThanhToanField;
         
         private string GhiChuField;
         
@@ -37,6 +39,8 @@ namespace QuanLyKhachSan.HoaDonSVC {
         private decimal KhoanKhacField;
         
         private decimal KhuyenMaiField;
+        
+        private int LoaiThueField;
         
         private int ModifiedByUserField;
         
@@ -53,6 +57,19 @@ namespace QuanLyKhachSan.HoaDonSVC {
         private int PhutRaField;
         
         private int PhutVaoField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Ca {
+            get {
+                return this.CaField;
+            }
+            set {
+                if ((this.CaField.Equals(value) != true)) {
+                    this.CaField = value;
+                    this.RaisePropertyChanged("Ca");
+                }
+            }
+        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int CreatedByUser {
@@ -81,14 +98,14 @@ namespace QuanLyKhachSan.HoaDonSVC {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int DatThanhToan {
+        public int DaThanhToan {
             get {
-                return this.DatThanhToanField;
+                return this.DaThanhToanField;
             }
             set {
-                if ((this.DatThanhToanField.Equals(value) != true)) {
-                    this.DatThanhToanField = value;
-                    this.RaisePropertyChanged("DatThanhToan");
+                if ((this.DaThanhToanField.Equals(value) != true)) {
+                    this.DaThanhToanField = value;
+                    this.RaisePropertyChanged("DaThanhToan");
                 }
             }
         }
@@ -167,6 +184,19 @@ namespace QuanLyKhachSan.HoaDonSVC {
                 if ((this.KhuyenMaiField.Equals(value) != true)) {
                     this.KhuyenMaiField = value;
                     this.RaisePropertyChanged("KhuyenMai");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int LoaiThue {
+            get {
+                return this.LoaiThueField;
+            }
+            set {
+                if ((this.LoaiThueField.Equals(value) != true)) {
+                    this.LoaiThueField = value;
+                    this.RaisePropertyChanged("LoaiThue");
                 }
             }
         }
@@ -291,6 +321,8 @@ namespace QuanLyKhachSan.HoaDonSVC {
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:HoaDonSVC/HoaDon_Add", ReplyAction="urn:HoaDonSVC/HoaDon_AddResponse")]
         System.IAsyncResult BeginHoaDon_Add(
+                    int LoaiThue, 
+                    int Ca, 
                     string LoaiHoaDon, 
                     decimal KhuyenMai, 
                     string GhiChu, 
@@ -316,6 +348,11 @@ namespace QuanLyKhachSan.HoaDonSVC {
         System.IAsyncResult BeginHoaDon_GetItem(int HoaDonID, System.AsyncCallback callback, object asyncState);
         
         QuanLyKhachSan.HoaDonSVC.HoaDonInfo EndHoaDon_GetItem(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:HoaDonSVC/HoaDon_ThanhToan", ReplyAction="urn:HoaDonSVC/HoaDon_ThanhToanResponse")]
+        System.IAsyncResult BeginHoaDon_ThanhToan(int HoaDonID, decimal TongTien, System.AsyncCallback callback, object asyncState);
+        
+        void EndHoaDon_ThanhToan(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -356,6 +393,12 @@ namespace QuanLyKhachSan.HoaDonSVC {
         private EndOperationDelegate onEndHoaDon_GetItemDelegate;
         
         private System.Threading.SendOrPostCallback onHoaDon_GetItemCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginHoaDon_ThanhToanDelegate;
+        
+        private EndOperationDelegate onEndHoaDon_ThanhToanDelegate;
+        
+        private System.Threading.SendOrPostCallback onHoaDon_ThanhToanCompletedDelegate;
         
         private BeginOperationDelegate onBeginOpenDelegate;
         
@@ -414,12 +457,16 @@ namespace QuanLyKhachSan.HoaDonSVC {
         
         public event System.EventHandler<HoaDon_GetItemCompletedEventArgs> HoaDon_GetItemCompleted;
         
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> HoaDon_ThanhToanCompleted;
+        
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.IAsyncResult QuanLyKhachSan.HoaDonSVC.HoaDonSVC.BeginHoaDon_Add(
+                    int LoaiThue, 
+                    int Ca, 
                     string LoaiHoaDon, 
                     decimal KhuyenMai, 
                     string GhiChu, 
@@ -438,7 +485,7 @@ namespace QuanLyKhachSan.HoaDonSVC {
                     int UserID, 
                     System.AsyncCallback callback, 
                     object asyncState) {
-            return base.Channel.BeginHoaDon_Add(LoaiHoaDon, KhuyenMai, GhiChu, NgayVao, NgayVao_So, GioVao, PhutVao, ThangVao, NamVao, NgayRa, NgayRa_So, GioRa, PhutRa, ThangRa, NamRa, UserID, callback, asyncState);
+            return base.Channel.BeginHoaDon_Add(LoaiThue, Ca, LoaiHoaDon, KhuyenMai, GhiChu, NgayVao, NgayVao_So, GioVao, PhutVao, ThangVao, NamVao, NgayRa, NgayRa_So, GioRa, PhutRa, ThangRa, NamRa, UserID, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -447,23 +494,25 @@ namespace QuanLyKhachSan.HoaDonSVC {
         }
         
         private System.IAsyncResult OnBeginHoaDon_Add(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            string LoaiHoaDon = ((string)(inValues[0]));
-            decimal KhuyenMai = ((decimal)(inValues[1]));
-            string GhiChu = ((string)(inValues[2]));
-            string NgayVao = ((string)(inValues[3]));
-            int NgayVao_So = ((int)(inValues[4]));
-            int GioVao = ((int)(inValues[5]));
-            int PhutVao = ((int)(inValues[6]));
-            int ThangVao = ((int)(inValues[7]));
-            int NamVao = ((int)(inValues[8]));
-            string NgayRa = ((string)(inValues[9]));
-            int NgayRa_So = ((int)(inValues[10]));
-            int GioRa = ((int)(inValues[11]));
-            int PhutRa = ((int)(inValues[12]));
-            int ThangRa = ((int)(inValues[13]));
-            int NamRa = ((int)(inValues[14]));
-            int UserID = ((int)(inValues[15]));
-            return ((QuanLyKhachSan.HoaDonSVC.HoaDonSVC)(this)).BeginHoaDon_Add(LoaiHoaDon, KhuyenMai, GhiChu, NgayVao, NgayVao_So, GioVao, PhutVao, ThangVao, NamVao, NgayRa, NgayRa_So, GioRa, PhutRa, ThangRa, NamRa, UserID, callback, asyncState);
+            int LoaiThue = ((int)(inValues[0]));
+            int Ca = ((int)(inValues[1]));
+            string LoaiHoaDon = ((string)(inValues[2]));
+            decimal KhuyenMai = ((decimal)(inValues[3]));
+            string GhiChu = ((string)(inValues[4]));
+            string NgayVao = ((string)(inValues[5]));
+            int NgayVao_So = ((int)(inValues[6]));
+            int GioVao = ((int)(inValues[7]));
+            int PhutVao = ((int)(inValues[8]));
+            int ThangVao = ((int)(inValues[9]));
+            int NamVao = ((int)(inValues[10]));
+            string NgayRa = ((string)(inValues[11]));
+            int NgayRa_So = ((int)(inValues[12]));
+            int GioRa = ((int)(inValues[13]));
+            int PhutRa = ((int)(inValues[14]));
+            int ThangRa = ((int)(inValues[15]));
+            int NamRa = ((int)(inValues[16]));
+            int UserID = ((int)(inValues[17]));
+            return ((QuanLyKhachSan.HoaDonSVC.HoaDonSVC)(this)).BeginHoaDon_Add(LoaiThue, Ca, LoaiHoaDon, KhuyenMai, GhiChu, NgayVao, NgayVao_So, GioVao, PhutVao, ThangVao, NamVao, NgayRa, NgayRa_So, GioRa, PhutRa, ThangRa, NamRa, UserID, callback, asyncState);
         }
         
         private object[] OnEndHoaDon_Add(System.IAsyncResult result) {
@@ -479,6 +528,8 @@ namespace QuanLyKhachSan.HoaDonSVC {
         }
         
         public void HoaDon_AddAsync(
+                    int LoaiThue, 
+                    int Ca, 
                     string LoaiHoaDon, 
                     decimal KhuyenMai, 
                     string GhiChu, 
@@ -495,10 +546,12 @@ namespace QuanLyKhachSan.HoaDonSVC {
                     int ThangRa, 
                     int NamRa, 
                     int UserID) {
-            this.HoaDon_AddAsync(LoaiHoaDon, KhuyenMai, GhiChu, NgayVao, NgayVao_So, GioVao, PhutVao, ThangVao, NamVao, NgayRa, NgayRa_So, GioRa, PhutRa, ThangRa, NamRa, UserID, null);
+            this.HoaDon_AddAsync(LoaiThue, Ca, LoaiHoaDon, KhuyenMai, GhiChu, NgayVao, NgayVao_So, GioVao, PhutVao, ThangVao, NamVao, NgayRa, NgayRa_So, GioRa, PhutRa, ThangRa, NamRa, UserID, null);
         }
         
         public void HoaDon_AddAsync(
+                    int LoaiThue, 
+                    int Ca, 
                     string LoaiHoaDon, 
                     decimal KhuyenMai, 
                     string GhiChu, 
@@ -526,6 +579,8 @@ namespace QuanLyKhachSan.HoaDonSVC {
                 this.onHoaDon_AddCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnHoaDon_AddCompleted);
             }
             base.InvokeAsync(this.onBeginHoaDon_AddDelegate, new object[] {
+                        LoaiThue,
+                        Ca,
                         LoaiHoaDon,
                         KhuyenMai,
                         GhiChu,
@@ -588,6 +643,53 @@ namespace QuanLyKhachSan.HoaDonSVC {
             }
             base.InvokeAsync(this.onBeginHoaDon_GetItemDelegate, new object[] {
                         HoaDonID}, this.onEndHoaDon_GetItemDelegate, this.onHoaDon_GetItemCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult QuanLyKhachSan.HoaDonSVC.HoaDonSVC.BeginHoaDon_ThanhToan(int HoaDonID, decimal TongTien, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginHoaDon_ThanhToan(HoaDonID, TongTien, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        void QuanLyKhachSan.HoaDonSVC.HoaDonSVC.EndHoaDon_ThanhToan(System.IAsyncResult result) {
+            base.Channel.EndHoaDon_ThanhToan(result);
+        }
+        
+        private System.IAsyncResult OnBeginHoaDon_ThanhToan(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int HoaDonID = ((int)(inValues[0]));
+            decimal TongTien = ((decimal)(inValues[1]));
+            return ((QuanLyKhachSan.HoaDonSVC.HoaDonSVC)(this)).BeginHoaDon_ThanhToan(HoaDonID, TongTien, callback, asyncState);
+        }
+        
+        private object[] OnEndHoaDon_ThanhToan(System.IAsyncResult result) {
+            ((QuanLyKhachSan.HoaDonSVC.HoaDonSVC)(this)).EndHoaDon_ThanhToan(result);
+            return null;
+        }
+        
+        private void OnHoaDon_ThanhToanCompleted(object state) {
+            if ((this.HoaDon_ThanhToanCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.HoaDon_ThanhToanCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void HoaDon_ThanhToanAsync(int HoaDonID, decimal TongTien) {
+            this.HoaDon_ThanhToanAsync(HoaDonID, TongTien, null);
+        }
+        
+        public void HoaDon_ThanhToanAsync(int HoaDonID, decimal TongTien, object userState) {
+            if ((this.onBeginHoaDon_ThanhToanDelegate == null)) {
+                this.onBeginHoaDon_ThanhToanDelegate = new BeginOperationDelegate(this.OnBeginHoaDon_ThanhToan);
+            }
+            if ((this.onEndHoaDon_ThanhToanDelegate == null)) {
+                this.onEndHoaDon_ThanhToanDelegate = new EndOperationDelegate(this.OnEndHoaDon_ThanhToan);
+            }
+            if ((this.onHoaDon_ThanhToanCompletedDelegate == null)) {
+                this.onHoaDon_ThanhToanCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnHoaDon_ThanhToanCompleted);
+            }
+            base.InvokeAsync(this.onBeginHoaDon_ThanhToanDelegate, new object[] {
+                        HoaDonID,
+                        TongTien}, this.onEndHoaDon_ThanhToanDelegate, this.onHoaDon_ThanhToanCompletedDelegate, userState);
         }
         
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
@@ -667,6 +769,8 @@ namespace QuanLyKhachSan.HoaDonSVC {
             }
             
             public System.IAsyncResult BeginHoaDon_Add(
+                        int LoaiThue, 
+                        int Ca, 
                         string LoaiHoaDon, 
                         decimal KhuyenMai, 
                         string GhiChu, 
@@ -685,23 +789,25 @@ namespace QuanLyKhachSan.HoaDonSVC {
                         int UserID, 
                         System.AsyncCallback callback, 
                         object asyncState) {
-                object[] _args = new object[16];
-                _args[0] = LoaiHoaDon;
-                _args[1] = KhuyenMai;
-                _args[2] = GhiChu;
-                _args[3] = NgayVao;
-                _args[4] = NgayVao_So;
-                _args[5] = GioVao;
-                _args[6] = PhutVao;
-                _args[7] = ThangVao;
-                _args[8] = NamVao;
-                _args[9] = NgayRa;
-                _args[10] = NgayRa_So;
-                _args[11] = GioRa;
-                _args[12] = PhutRa;
-                _args[13] = ThangRa;
-                _args[14] = NamRa;
-                _args[15] = UserID;
+                object[] _args = new object[18];
+                _args[0] = LoaiThue;
+                _args[1] = Ca;
+                _args[2] = LoaiHoaDon;
+                _args[3] = KhuyenMai;
+                _args[4] = GhiChu;
+                _args[5] = NgayVao;
+                _args[6] = NgayVao_So;
+                _args[7] = GioVao;
+                _args[8] = PhutVao;
+                _args[9] = ThangVao;
+                _args[10] = NamVao;
+                _args[11] = NgayRa;
+                _args[12] = NgayRa_So;
+                _args[13] = GioRa;
+                _args[14] = PhutRa;
+                _args[15] = ThangRa;
+                _args[16] = NamRa;
+                _args[17] = UserID;
                 System.IAsyncResult _result = base.BeginInvoke("HoaDon_Add", _args, callback, asyncState);
                 return _result;
             }
@@ -722,6 +828,19 @@ namespace QuanLyKhachSan.HoaDonSVC {
                 object[] _args = new object[0];
                 QuanLyKhachSan.HoaDonSVC.HoaDonInfo _result = ((QuanLyKhachSan.HoaDonSVC.HoaDonInfo)(base.EndInvoke("HoaDon_GetItem", _args, result)));
                 return _result;
+            }
+            
+            public System.IAsyncResult BeginHoaDon_ThanhToan(int HoaDonID, decimal TongTien, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
+                _args[0] = HoaDonID;
+                _args[1] = TongTien;
+                System.IAsyncResult _result = base.BeginInvoke("HoaDon_ThanhToan", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public void EndHoaDon_ThanhToan(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                base.EndInvoke("HoaDon_ThanhToan", _args, result);
             }
         }
     }
