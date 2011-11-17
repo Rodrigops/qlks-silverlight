@@ -22,5 +22,11 @@ namespace QuanLyKhachSan
             HoaDonDAL doit = new HoaDonDAL();
             return doit.HoaDon_GetItem(HoaDonID);
         }
+        [OperationContract]
+        public void HoaDon_ThanhToan(int HoaDonID, decimal TongTien)
+        {
+            HoaDonDAL doit = new HoaDonDAL();
+            doit.HoaDon_ThanhToan(HoaDonID,TongTien);
+        }
     }
 }

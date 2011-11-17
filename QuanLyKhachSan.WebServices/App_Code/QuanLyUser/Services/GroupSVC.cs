@@ -46,6 +46,6 @@ namespace QuanLyKhachSan
         {
             GroupDAL doit = new GroupDAL();
             return doit.Group_GetActivedItems();
-        }
+        }        
     }
 }

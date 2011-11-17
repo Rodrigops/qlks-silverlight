@@ -54,9 +54,19 @@ namespace QuanLyKhachSan
                 item.KhuyenMai = decimal.Parse(rd["KhuyenMai"].ToString());
                 item.KhoanKhac = decimal.Parse(rd["KhoanKhac"].ToString());
                 item.GhiChu = rd["GhiChu"].ToString();
-                item.DaThanhToan = int.Parse(rd["DaThanhToan"].ToString());                
+                item.DaThanhToan = int.Parse(rd["DaThanhToan"].ToString());
+                item.LoaiThue = int.Parse(rd["LoaiThue"].ToString());
+                item.Ca = int.Parse(rd["Ca"].ToString());                
             }
             return item;
+        }
+        
+        public void HoaDon_ThanhToan(int HoaDonID,decimal TongTien)
+        {
+            SQLDataHelper SQLDB = new SQLDataHelper();
+            SQLDB.Addparameter("@HoaDonID", HoaDonID);
+            SQLDB.Addparameter("@TongTien", TongTien);
+            SQLDB.executenonquery("sp_HoaDon_ThanhToan", CommandType.StoredProcedure);            
         }
     }
 }
