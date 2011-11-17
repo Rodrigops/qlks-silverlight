@@ -84,7 +84,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
             {
                 TongTraTruoc += item.TraTruoc;
             }
-            txtTraTruoc.Text = Format_NumberVietnamese(TongTraTruoc.ToString());
+            //txtTraTruoc.Text = Format_NumberVietnamese(TongTraTruoc.ToString());
             
         }
         private decimal DichVu = 0;
@@ -95,13 +95,14 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
             foreach (HoaDonDichVuInfo item in lstDichVu)
             {
                 txtContent = new TextBlock();
-                txtContent.Text = "- Ngày : " + item.NgaySuDung + " đã sử dụng : " + item.DichVuName + " số lượng : "  + item.SoLuong + " thành tiền : " + Format_NumberVietnamese(item.TongTien.ToString());
+                txtContent.Text = Format_NumberVietnamese(item.TongTien.ToString()) + " [Ngày : " + item.NgaySuDung + " " +  item.SoLuong + "x" + item.DichVuName  +"]";
                 DichVu += item.TongTien;
                 SPDichVu.Children.Add(txtContent);
             }
 
         }
-
+        decimal TienTraTruoc = 0;
+        decimal KhoanKhac = 0;
         void HoaDon_HoaDon_GetItemCompleted(object sender, HoaDon_GetItemCompletedEventArgs e)
         {
             try
@@ -113,12 +114,39 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                 txtNgayRa.Text =DateToNumberConverter.Date2Vietnamese(item.NgayRa);
                 txtGioRa.Text = item.GioRa.ToString();
                 txtPhutRa.Text = item.PhutRa.ToString();
-                txtKhuyenMai.Text = item.KhuyenMai.ToString();
+                TienTraTruoc = item.KhuyenMai;
+                txtKhuyenMai.Text = Format_NumberVietnamese(item.KhuyenMai.ToString());
                 txtKhoanKhac.Text = item.KhoanKhac.ToString();
                 txtGhiChu.Text = item.GhiChu;
                 int GioVao_So = int.Parse(item.GioVao.ToString() + item.PhutVao.ToString());
                 int GioRa_So = int.Parse(item.GioRa.ToString() + item.PhutRa.ToString());
-                generateGiaPhong(item.NgayVao_So,item.NgayRa_So,GioVao_So,item.PhutVao,GioRa_So,item.PhutRa,item.GioVao,item.GioRa);
+                int LoaiThue = item.LoaiThue;
+                int Ca = item.Ca;
+                switch (LoaiThue)
+                { 
+                    case 0:
+                        TinhTienTheoGio(item.GioVao, item.PhutVao, item.GioRa, item.PhutRa,Ca);
+                        break;
+                    case 1:
+                        TinhTienTheoNgay(item.NgayVao_So, item.NgayRa_So);
+                        break;
+                    case 2:
+                        TinhTienQuaDem(item.NgayVao_So, item.NgayRa_So, item.GioRa, item.PhutRa);
+                        break;
+                    case 3:
+                        TinhTienTheoThang(item.NgayVao_So, item.NgayRa_So);
+                        break;
+                }
+                //Hien Thong Tin Hoa Don
+                if (txtKhoanKhac.Text == "")
+                {
+                    KhoanKhac = 0;
+                }
+                else
+                {
+                    KhoanKhac = decimal.Parse(txtKhoanKhac.Text.ToString());
+                }
+                txtTongThanhToan.Text = Format_NumberVietnamese((DichVu + TongTienPhong + KhoanKhac - TienTraTruoc).ToString());
             }
             catch (Exception ex)
             {
@@ -366,7 +394,197 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
             HoaDon_TraTruocClient.HoaDon_TraTruoc_GetItemsCompleted += new EventHandler<HoaDon_TraTruoc_GetItemsCompletedEventArgs>(HoaDon_TraTruocClient_HoaDon_TraTruoc_GetItemsCompleted);
             HoaDon_TraTruocClient.HoaDon_TraTruoc_GetItemsAsync(HoaDonID);
         }
+        #region TinhTien
+        decimal TongTienPhong = 0;
+        private void TinhTienTheoGio(int GioVao , int PhutVao, int GioRa, int PhutRa,int Ca)
+        {
+            try
+            {
+                decimal TongTien = 0;//20g15 23 = 45 + (23-21)= 2tieng 45 phut
+                int TongSoPhut = 0;// (GioRa - GioVao) * 60 + PhutVao + PhutRa;
+                if (GioRa == GioVao)
+                {
+                    TongSoPhut = PhutRa - PhutVao;
+                }
+                else
+                {
+                    if (PhutVao == 0)
+                    {
+                        TongSoPhut = (GioRa - GioVao) * 60 + PhutRa;
+                    }
+                    else
+                    {
 
+                        TongSoPhut = (60 - PhutVao) + (GioRa - (GioVao + 1)) * 60 + PhutRa;   
+                    }
+                }
+                if (Ca == 0)
+                {
+                    //Ca Ngay
+                    if (TongSoPhut <= 70)
+                    {
+                        TongTien = 50000;
+                    }
+                    else
+                    {
+                        int SoPhutDu = TongSoPhut - 70;
+                        int k = SoPhutDu / 30;
+                        TongTien = 50000 + k * 10000;
+                    }
+                }
+                else
+                { 
+                    //Ca Dem
+                    if (TongSoPhut <= 70)
+                    {
+                        TongTien = 60000;
+                    }
+                    else
+                    {
+                        int SoPhutDu = TongSoPhut - 70;
+                        int k = SoPhutDu / 30;
+                        TongTien = 60000 + k * 10000;
+                    }
+                }
+                Label txtGioDau = new Label();
+                txtGioDau.Content =  Format_NumberVietnamese(TongTien.ToString());
+                SPTienPhong.Children.Add(txtGioDau);
+                LoadingPanel.IsBusy = false;
+                TongTienPhong = TongTien;
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+        private void TinhTienQuaDem(int NgayVao_So, int NgayRa_So, int GioRa, int PhutRa)
+        {
+            try
+            {
+                decimal TongTien = 0;
+                decimal GiaPhong = itemNgay_Phong.GiaTuan;
+                if (NgayRa_So == NgayVao_So)
+                {
+                    TongTien = GiaPhong;
+                }
+                else
+                {
+                    if (GioRa > 12)
+                    {
+                        int SoPhutDu = (GioRa - 12) * 60 + PhutRa;
+                        if (SoPhutDu <= 70)
+                        {
+                            TongTien = GiaPhong + 20000;
+                        }
+                        else if (SoPhutDu > 70)
+                        {
+                            TongTien = GiaPhong + (SoPhutDu - 70) / 30 * 10000;
+                        }
+                    }
+                    else
+                    {
+                        TongTien = GiaPhong;
+                    }
+                }
+                Label txtGioDau = new Label();
+                txtGioDau.Content =  Format_NumberVietnamese(TongTien.ToString());
+                SPTienPhong.Children.Add(txtGioDau);
+                LoadingPanel.IsBusy = false;
+                TongTienPhong = TongTien;
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+        private void TinhTienTheoNgay(int NgayVao_So, int NgayRa_So)
+        {
+            try
+            {
+                decimal TongTien = 0;
+                decimal GiaNgay = itemNgay_Phong.GiaNgay;
+                if (NgayVao_So == NgayRa_So)
+                {
+                    TongTien = GiaNgay;
+                }
+                else
+                {
+                    TongTien = GiaNgay * (NgayRa_So - NgayVao_So);
+                }
+                Label txtGioDau = new Label();
+                txtGioDau.Content =  Format_NumberVietnamese(TongTien.ToString());
+                SPTienPhong.Children.Add(txtGioDau);
+                LoadingPanel.IsBusy = false;
+                TongTienPhong = TongTien;
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+        private void TinhTienTheoThang(int NgayVao_So, int NgayRa_So)
+        {
+            try
+            {
+                decimal TongTien = 0;
+                decimal GiaThang = itemNgay_Phong.GiaThang;
+                if (NgayVao_So == NgayRa_So)
+                {
+                    TongTien = GiaThang;
+                }
+                else
+                {
+                    TongTien = GiaThang * ((NgayRa_So - NgayVao_So) / 30 + 1);
+                }
+                Label txtGioDau = new Label();
+                txtGioDau.Content = Format_NumberVietnamese(TongTien.ToString());
+                SPTienPhong.Children.Add(txtGioDau);
+                LoadingPanel.IsBusy = false;
+                TongTienPhong = TongTien;
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+        #endregion
+
+        private void txtKhoanKhac_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtKhoanKhac.Text == "")
+            {
+                KhoanKhac = 0;
+            }
+            else
+            {
+                KhoanKhac = decimal.Parse(txtKhoanKhac.Text.ToString());
+            }
+            txtTongThanhToan.Text = Format_NumberVietnamese((DichVu + TongTienPhong + KhoanKhac - TienTraTruoc).ToString());
+        }
+
+        private void cmdThanhToan_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                decimal TongTien = decimal.Parse(txtTongThanhToan.Text.ToString());
+                HoaDon.HoaDon_ThanhToanCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(HoaDon_HoaDon_ThanhToanCompleted);
+                HoaDon.HoaDon_ThanhToanAsync(HoaDonID, TongTien);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+
+        void HoaDon_HoaDon_ThanhToanCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            this.DialogResult = true;
+        }
     }
 }
 

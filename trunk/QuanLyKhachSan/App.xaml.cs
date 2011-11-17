@@ -9,7 +9,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-
 namespace QuanLyKhachSan
 {
     public partial class App : Application
@@ -22,9 +21,9 @@ namespace QuanLyKhachSan
             this.UnhandledException += this.Application_UnhandledException;
 
             InitializeComponent();
-        }
+        }        
         private void Application_Startup(object sender, StartupEventArgs e)
-        {
+        {            
             this.RootVisual = new MainPage();
         }
         private void Application_Exit(object sender, EventArgs e)

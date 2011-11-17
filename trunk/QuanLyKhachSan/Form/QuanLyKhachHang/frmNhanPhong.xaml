@@ -125,15 +125,13 @@
         <sdk:Label Height="17" HorizontalAlignment="Left" Margin="73,7,0,0" Name="label6" VerticalAlignment="Top" Width="10" Grid.Column="2" Grid.Row="4" Content="h" />
         <sdk:Label Height="17" HorizontalAlignment="Left" Margin="7,4,0,0" Name="label7" VerticalAlignment="Top" Width="31" Grid.Row="4" Content="Ngày ra" />
         <sdk:Label Height="17" HorizontalAlignment="Left" Margin="7,5,0,0" Name="label8" VerticalAlignment="Top" Width="62" Grid.Row="5" Content="Trả trước" />
-        <sdk:Label Height="17" HorizontalAlignment="Left" Margin="7,4,0,0" Name="label9" VerticalAlignment="Top" Width="75" Grid.Row="6" Content="Khuyến mãi" />
         <sdk:Label Height="17" HorizontalAlignment="Left" Margin="7,8,0,0" Name="label10" VerticalAlignment="Top" Width="75" Grid.Row="2" Content="Phòng" />
         <telerik:RadComboBox DisplayMemberPath="TinhTrangPhongName" SelectedIndex="0" SelectedValuePath="PhongID"  telerik:StyleManager.Theme="Office_Blue" HorizontalAlignment="Left" Margin="8,6,0,0" Name="cbxPhong" VerticalAlignment="Top" Width="119" Grid.Column="1" Grid.Row="2">
             
         </telerik:RadComboBox>
-        <sdk:Label Content="Ghi chú" Height="17" HorizontalAlignment="Left" Margin="7,6,0,0" Name="label1" VerticalAlignment="Top" Width="62" Grid.Row="7" />
-        <TextBox Grid.Column="1" Grid.Row="7" Height="110" HorizontalAlignment="Left" Margin="10,6,0,0" Name="txtGhiChu" VerticalAlignment="Top" Width="305" Grid.ColumnSpan="2" Grid.RowSpan="4" />
+        <sdk:Label Content="Ghi chú" Height="17" HorizontalAlignment="Left" Margin="7,8,0,0" Name="label1" VerticalAlignment="Top" Width="62" Grid.Row="6" />
+        <TextBox Grid.Column="1" Grid.Row="6" Height="128" HorizontalAlignment="Left" Margin="10,7,0,0" Name="txtGhiChu" VerticalAlignment="Top" Width="389" Grid.ColumnSpan="3" Grid.RowSpan="5" />
         <TextBox Grid.Column="1" Grid.Row="5" Height="23" HorizontalAlignment="Left" Margin="9,4,0,0" Name="txtTraTruoc" VerticalAlignment="Top" Width="120" />
-        <TextBox Grid.Column="1" Grid.Row="6" Height="23" HorizontalAlignment="Left" Margin="10,4,0,0" Name="txtKhuyenMai" VerticalAlignment="Top" Width="120" />
         <sdk:Label Content="Thuê theo" Grid.ColumnSpan="2" Height="17" HorizontalAlignment="Left" Margin="137,8,0,0" Name="label11" VerticalAlignment="Top" Width="55" Grid.Column="1" Grid.Row="2" />
         <telerik:RadComboBox HorizontalAlignment="Left" SelectedValuePath="LoaiThueID" DisplayMemberPath="LoaiThue" Margin="28,6,0,0" SelectedIndex="0" Name="cbxLoaiThue" telerik:StyleManager.Theme="Office_Blue" VerticalAlignment="Top" Width="103" Grid.Column="2" Grid.Row="2">
             

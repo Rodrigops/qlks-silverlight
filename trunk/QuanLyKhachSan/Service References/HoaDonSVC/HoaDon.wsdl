@@ -19,6 +19,12 @@
   <wsdl:message name="HoaDonSVC_HoaDon_GetItem_OutputMessage">
     <wsdl:part name="parameters" element="HoaDon_GetItemResponse" />
   </wsdl:message>
+  <wsdl:message name="HoaDonSVC_HoaDon_ThanhToan_InputMessage">
+    <wsdl:part name="parameters" element="HoaDon_ThanhToan" />
+  </wsdl:message>
+  <wsdl:message name="HoaDonSVC_HoaDon_ThanhToan_OutputMessage">
+    <wsdl:part name="parameters" element="HoaDon_ThanhToanResponse" />
+  </wsdl:message>
   <wsdl:portType name="HoaDonSVC">
     <wsdl:operation name="HoaDon_Add">
       <wsdl:input wsaw:Action="urn:HoaDonSVC/HoaDon_Add" message="HoaDonSVC_HoaDon_Add_InputMessage" />
@@ -27,6 +33,10 @@
     <wsdl:operation name="HoaDon_GetItem">
       <wsdl:input wsaw:Action="urn:HoaDonSVC/HoaDon_GetItem" message="HoaDonSVC_HoaDon_GetItem_InputMessage" />
       <wsdl:output wsaw:Action="urn:HoaDonSVC/HoaDon_GetItemResponse" message="HoaDonSVC_HoaDon_GetItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HoaDon_ThanhToan">
+      <wsdl:input wsaw:Action="urn:HoaDonSVC/HoaDon_ThanhToan" message="HoaDonSVC_HoaDon_ThanhToan_InputMessage" />
+      <wsdl:output wsaw:Action="urn:HoaDonSVC/HoaDon_ThanhToanResponse" message="HoaDonSVC_HoaDon_ThanhToan_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

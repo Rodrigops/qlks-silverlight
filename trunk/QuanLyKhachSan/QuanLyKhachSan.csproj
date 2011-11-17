@@ -192,6 +192,8 @@
     <Compile Include="Form\QuanLyUser\frmUserGroupEdit.xaml.cs">
       <DependentUpon>frmUserGroupEdit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Form\ThongKeBaoCao\CaFormatter.cs" />
+    <Compile Include="Form\ThongKeBaoCao\LoaiThueFormatter.cs" />
     <Compile Include="Form\ThongKeBaoCao\frmThongKeChiTieu.xaml.cs">
       <DependentUpon>frmThongKeChiTieu.xaml</DependentUpon>
     </Compile>
@@ -310,6 +312,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Service References\TKDoanhThuDichVuSVC\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\TKDoanhThuSVC\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -856,6 +863,20 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\TKDoanhThuDichVuSVC\TKDoanhThuDichVuSVC.wsdl" />
+    <None Include="Service References\TKDoanhThuSVC\QuanLyKhachSan.TKDoanhThuSVC.TKDoanhThuInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TKDoanhThuSVC\TKDoanhThu.wsdl" />
+    <None Include="Service References\TKDoanhThuSVC\TKDoanhThu.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TKDoanhThuSVC\TKDoanhThu1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TKDoanhThuSVC\TKDoanhThu2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TKDoanhThuSVC\TKDoanhThuSVC.wsdl" />
     <None Include="Service References\UserGroupSVC\QuanLyKhachSan.UserGroupSVC.UserGroupInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -944,6 +965,18 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Resource Include="Images\PermissionUser.png" />
+    <Resource Include="Images\Users.png" />
+    <Resource Include="Images\ThongKeDoanhThu.png" />
+    <Resource Include="Images\ThongKeDoanhThuDichVu.png" />
+    <Resource Include="Images\ThongKeChiTieu.png" />
+    <None Include="Service References\TKDoanhThuSVC\TKDoanhThu.disco" />
+    <None Include="Service References\TKDoanhThuSVC\configuration91.svcinfo" />
+    <None Include="Service References\TKDoanhThuSVC\configuration.svcinfo" />
+    <None Include="Service References\TKDoanhThuSVC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="ServiceReferences.ClientConfig">
       <SubType>Designer</SubType>
     </Content>
@@ -1021,6 +1054,7 @@
     <WCFMetadataStorage Include="Service References\TienNghiSVC\" />
     <WCFMetadataStorage Include="Service References\TKChiTieuSVC\" />
     <WCFMetadataStorage Include="Service References\TKDoanhThuDichVuSVC\" />
+    <WCFMetadataStorage Include="Service References\TKDoanhThuSVC\" />
     <WCFMetadataStorage Include="Service References\UserGroupSVC\" />
     <WCFMetadataStorage Include="Service References\UserSVC\" />
   </ItemGroup>

@@ -42,14 +42,22 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
         {
             int LoaiThue=int.Parse(cbxLoaiThue.SelectedValue.ToString());
             int Ca = int.Parse(cbxCa.SelectedValue.ToString());
-            decimal KhuyenMai;
-            if (String.IsNullOrEmpty(txtKhuyenMai.Text))
+            decimal TraTruoc=0;
+            if (LoaiThue != 0)
             {
-                KhuyenMai=0;
+                if (txtTraTruoc.Text == "")
+                {
+                    MessageBox.Show("Vui lòng nhập trả trước!", "Thông báo", MessageBoxButton.OK);
+                    return;
+                }
+            }
+            if (String.IsNullOrEmpty(txtTraTruoc.Text))
+            {
+                TraTruoc = 0;
             }
             else
             {
-                KhuyenMai = decimal.Parse(txtKhuyenMai.Text.ToString());
+                TraTruoc = decimal.Parse(txtTraTruoc.Text.ToString());
             }
             string GhiChu = txtGhiChu.Text;
             string sNgayVao = "";            
@@ -86,7 +94,8 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
             iNamRa = DateToNumberConverter.Date2Year(sNgayRa);
             HoaDonSVCClient HoaDonClient = new HoaDonSVCClient();
             HoaDonClient.HoaDon_AddCompleted+=new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(HoaDonClient_HoaDon_AddCompleted);
-            HoaDonClient.HoaDon_AddAsync(LoaiThue,Ca, "NhanPhong", KhuyenMai, GhiChu, sNgayVao, iNgayVao_So, iGioVao, iPhutVao, iThangVao, iNamVao, sNgayRa, iNgayRa_So, iGiora, iPhutRa, iThangRa, iNamRa, 0);
+            HoaDonClient.HoaDon_AddAsync(LoaiThue, Ca, "NhanPhong", TraTruoc, GhiChu, sNgayVao, iNgayVao_So, iGioVao, iPhutVao, iThangVao, iNamVao, sNgayRa, iNgayRa_So, iGiora, iPhutRa, iThangRa, iNamRa, 0);
+
         }
 
         void HoaDonClient_HoaDon_AddCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
@@ -164,7 +173,20 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
             item.TenCa = "Ca đêm";
             listCa.Add(item);
             cbxCa.ItemsSource = listCa;    
-            
+            //
+            int Gio = DateTime.Now.Hour;
+            if (Gio >= 7 && Gio <= 19)
+            {
+                cbxCa.SelectedIndex = 0;
+            }
+            else
+            {
+                cbxCa.SelectedIndex = 1;
+            }
+            cbxGioVao.SelectedIndex = Gio;
+            cbxGioRa.SelectedIndex = Gio;          
+            calNgayVao.SelectedValue = DateTime.Now;
+            calNgayRa.SelectedValue = DateTime.Now;
         }
 
     }

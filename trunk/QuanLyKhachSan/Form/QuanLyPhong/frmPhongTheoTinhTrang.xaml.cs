@@ -215,6 +215,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                 case "TraPhong":
                     frmPhong_KhachHang_TraPhong DanhSachKhachHang_TraPhong = new frmPhong_KhachHang_TraPhong();
                     DanhSachKhachHang_TraPhong.LoadData(item.HoaDonID, item.PhongID);
+                    DanhSachKhachHang_TraPhong.Closed += new EventHandler(DanhSachKhachHang_TraPhong_Closed);
                     DanhSachKhachHang_TraPhong.Show();
                     break;
                 case "XemThemDichVu":
@@ -234,6 +235,12 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                     break;
             }
 
+        }
+
+        void DanhSachKhachHang_TraPhong_Closed(object sender, EventArgs e)
+        {
+            PhongClient.Phong_GetItems_ByTinhTrangCompleted += new EventHandler<Phong_GetItems_ByTinhTrangCompletedEventArgs>(PhongClient_Phong_GetItems_ByTinhTrangCompleted);
+            PhongClient.Phong_GetItems_ByTinhTrangAsync();
         }
 
         void ChiTietPhong_Closed(object sender, EventArgs e)

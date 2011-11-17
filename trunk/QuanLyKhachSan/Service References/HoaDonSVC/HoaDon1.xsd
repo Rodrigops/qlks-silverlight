@@ -4,6 +4,8 @@
   <xs:element name="HoaDon_Add">
     <xs:complexType>
       <xs:sequence>
+        <xs:element minOccurs="0" name="LoaiThue" type="xs:int" />
+        <xs:element minOccurs="0" name="Ca" type="xs:int" />
         <xs:element minOccurs="0" name="LoaiHoaDon" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="KhuyenMai" type="xs:decimal" />
         <xs:element minOccurs="0" name="GhiChu" nillable="true" type="xs:string" />
@@ -40,6 +42,19 @@
       <xs:sequence>
         <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" minOccurs="0" name="HoaDon_GetItemResult" nillable="true" type="q1:HoaDonInfo" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HoaDon_ThanhToan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HoaDonID" type="xs:int" />
+        <xs:element minOccurs="0" name="TongTien" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HoaDon_ThanhToanResponse">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
 </xs:schema>
