@@ -41,5 +41,11 @@ namespace QuanLyKhachSan
             UserGroupDAL doit = new UserGroupDAL();
             return doit.UserGroup_GetItems();
         }
+        [OperationContract]
+        public int GroupIDByUserName(string UserName)
+        {
+            UserGroupDAL doit = new UserGroupDAL();
+            return doit.GroupIDByUserName(UserName);
+        }
     }
 }

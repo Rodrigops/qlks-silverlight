@@ -88,6 +88,14 @@ namespace QuanLyKhachSan
             }
             return list;
         }
+        public int GroupIDByUserName(string UserName)
+        {
+            SQLDataHelper SQLDB = new SQLDataHelper();
+            SQLDB.Addparameter("@UserName", UserName);
+            object GroupID;
+            GroupID = SQLDB.executesalar("sp_GroupIDByUserName", CommandType.StoredProcedure);
+            return int.Parse(GroupID.ToString());
+        }
     }
 }
 
