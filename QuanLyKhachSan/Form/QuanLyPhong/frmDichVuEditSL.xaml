@@ -15,8 +15,8 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Button x:Name="CancelButton" Content="Cancel" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,0,68" Grid.Row="2" Grid.ColumnSpan="2" />
-        <Button x:Name="OKButton" Content="OK" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,79,68" Grid.Row="2" Grid.ColumnSpan="2" />
+        <Button x:Name="CancelButton" Content="Hủy bỏ" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,0,68" Grid.Row="2" Grid.ColumnSpan="2" />
+        <Button x:Name="OKButton" Content="Đồng ý" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,79,68" Grid.Row="2" Grid.ColumnSpan="2" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,12,0,0" Name="textBlock1" Text="Dịch vụ" VerticalAlignment="Top" Grid.RowSpan="2" />
         <TextBlock Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="12,10,0,0" Name="textBlock2" Text="Số lượng" VerticalAlignment="Top" Grid.RowSpan="2" />
         <telerik:RadComboBox Grid.Column="1" DisplayMemberPath="DichVuName" SelectedValuePath="DichVuID" telerik:StyleManager.Theme="Office_Blue" HorizontalAlignment="Left" Margin="2,6,0,0" Name="cbxDichVu" VerticalAlignment="Top" Width="120">

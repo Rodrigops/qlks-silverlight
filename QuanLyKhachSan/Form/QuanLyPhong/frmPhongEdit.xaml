@@ -18,8 +18,8 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Button x:Name="CancelButton" Content="Cancel" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,0,0" Grid.Row="1" />
-        <Button x:Name="OKButton" Content="OK" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,79,0" Grid.Row="1" />
+        <Button x:Name="CancelButton" Content="Hủy bỏ" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,0,0" Grid.Row="1" />
+        <Button x:Name="OKButton" Content="Đồng ý" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,79,0" Grid.Row="1" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,12,0,0" Name="textBlock1" Text="Loại phòng:" VerticalAlignment="Top" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,41,0,0" Name="textBlock2" Text="Tên phòng(*):" VerticalAlignment="Top" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,70,0,0" Name="textBlock3" Text="Tiện nghi:" VerticalAlignment="Top" />
