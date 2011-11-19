@@ -967,9 +967,6 @@
     </None>
     <Resource Include="Images\PermissionUser.png" />
     <Resource Include="Images\Users.png" />
-    <Resource Include="Images\ThongKeDoanhThu.png" />
-    <Resource Include="Images\ThongKeDoanhThuDichVu.png" />
-    <Resource Include="Images\ThongKeChiTieu.png" />
     <None Include="Service References\TKDoanhThuSVC\TKDoanhThu.disco" />
     <None Include="Service References\TKDoanhThuSVC\configuration91.svcinfo" />
     <None Include="Service References\TKDoanhThuSVC\configuration.svcinfo" />
@@ -977,6 +974,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Resource Include="Images\ThongKeChiTieu.png" />
+    <Resource Include="Images\ThongKeDoanhThu.png" />
+    <Resource Include="Images\ThongKeDoanhThuDichVu.png" />
     <Content Include="ServiceReferences.ClientConfig">
       <SubType>Designer</SubType>
     </Content>
