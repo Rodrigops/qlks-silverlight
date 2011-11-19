@@ -24,8 +24,8 @@
             <RowDefinition Height="367" />
         </Grid.RowDefinitions>
 
-        <Button x:Name="CancelButton" Content="Cancel" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Grid.Row="1" Margin="0,4" />
-        <Button x:Name="OKButton" Content="OK" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Left" Grid.Row="1" Margin="422,4,0,4" />
+        <Button x:Name="CancelButton" Content="Hủy bỏ" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Grid.Row="1" Margin="0,4" />
+        <Button x:Name="OKButton" Content="Đồng ý" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Left" Grid.Row="1" Margin="422,4,0,4" />
         <Button Content="Thêm sản phẩm" Height="23" Name="btnAddDichVu" Click="btnAddDichVu_Click" Width="106" Grid.Row="1" Margin="0,4,472,4" IsEnabled="False" />
         <telerik:GroupBox Height="62" HorizontalAlignment="Left" Margin="12,0,0,0" Name="grpPhieuNhap" VerticalAlignment="Top" Width="554" Header="Phiếu nhập kho">
             <Grid Name="grid1">
