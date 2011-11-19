@@ -6,13 +6,15 @@
            mc:Ignorable="d"
            xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
            xmlns:local="clr-namespace:QuanLyKhachSan.Form.ThongKeBaoCao"
-           Width="800" Height="600" 
+           Width="1000" Height="600" 
            xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
            Title="Thống Kê Doanh Thu" xmlns:my="clr-namespace:QuanLyKhachSan.Form.QuanLyPhong">
     <Grid x:Name="LayoutRoot">
-        <Grid Margin="10,10,8,25" Name="grid1" HorizontalAlignment="Center" VerticalAlignment="Top">
+        <Grid Name="grid1" HorizontalAlignment="Center" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="100"></ColumnDefinition>
+                <ColumnDefinition Width="20*"></ColumnDefinition>
+                <ColumnDefinition Width="100"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.Resources>
                 <my:NumberVietnameseFormater x:Key="NumberVietnameseFormater" />
@@ -24,7 +26,7 @@
                 <RowDefinition Height="10" />
                 <RowDefinition Height="384*" />
             </Grid.RowDefinitions>
-            <telerik:GroupBox Header="Thống kê phiếu nhập kho" Height="146" HorizontalAlignment="Center" Margin="12,0,0,0" Name="grFilter" VerticalAlignment="Top" Width="758">
+            <telerik:GroupBox Header="Thống kê phiếu nhập kho" Grid.Column="1" Height="146" HorizontalAlignment="Center" Margin="12,0,0,0" Name="grFilter" VerticalAlignment="Top" Width="758">
                 <Grid Height="125" HorizontalAlignment="Center" Name="grid2" VerticalAlignment="Top" Width="747">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="105*" />
@@ -52,7 +54,7 @@
                     <Button Click="btnThongKe_Click" Content="Thống kê" Grid.ColumnSpan="5" Grid.Row="1" Height="23" HorizontalAlignment="Center" Margin="10" Name="btnThongKe" VerticalAlignment="Bottom" Width="75" />
                 </Grid>
             </telerik:GroupBox>
-            <ScrollViewer Grid.Row="2" HorizontalAlignment="Center">
+            <ScrollViewer Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center">
                 <StackPanel>
                     <telerik:RadGridView AutoGenerateColumns="False" Margin="10,0,10,0" AutoExpandGroups="True" IsFilteringAllowed="False" Name="grvHoaDon" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" telerik:StyleManager.Theme="Office_Blue" Height="Auto">
                         <telerik:RadGridView.Columns>
