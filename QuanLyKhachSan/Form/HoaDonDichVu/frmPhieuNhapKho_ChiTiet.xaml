@@ -21,8 +21,8 @@
             <RowDefinition Height="9*" />
         </Grid.RowDefinitions>
 
-        <Button x:Name="CancelButton" Content="Cancel" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,0,0" Grid.Row="4" Grid.ColumnSpan="2" />
-        <Button x:Name="OKButton" Content="OK" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,79,0" Grid.Row="4" Grid.ColumnSpan="2" />
+        <Button x:Name="CancelButton" Content="Huỷ bỏ" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,0,0" Grid.Row="4" Grid.ColumnSpan="2" />
+        <Button x:Name="OKButton" Content="Đồng ý" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,79,0" Grid.Row="4" Grid.ColumnSpan="2" />
         <TextBlock Height="23" HorizontalAlignment="Left" Name="textBlock3" Text="Sản phẩm:" Margin="22,12,0,23" Grid.RowSpan="2" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,10,0,0" Name="textBlock4" Text="Số Lượng(*):" VerticalAlignment="Top" Grid.Row="1" Grid.RowSpan="2" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="34,10,0,0" Name="textBlock5" Text="Đơn Giá:" VerticalAlignment="Top" Grid.Row="2" Grid.RowSpan="2" />

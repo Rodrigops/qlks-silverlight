@@ -10,7 +10,7 @@
             <RowDefinition Height="29*" />
         </Grid.RowDefinitions>
 
-        <Button x:Name="btnCancelButton" Content="Cancel" Click="btnCancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,6,0,6" Grid.Row="1" />
+        <Button x:Name="btnCancelButton" Content="Hủy bỏ" Click="btnCancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,6,0,6" Grid.Row="1" />
         <Button x:Name="btnXoaPhieu" Content="Xóa phiếu" Click="btnXoaPhieu_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,6,79,6" Grid.Row="1" />
         <Button x:Name="btnTruKho" Content="Xóa phiếu (trừ kho)" Click="btnTruKho_Click" Width="123" Height="23" HorizontalAlignment="Right" Margin="0,9,160,9" Grid.Row="1" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,6,0,0" Name="textBlock1" Text="Bạn có muốn thực hiện thao tác này?" VerticalAlignment="Top" />

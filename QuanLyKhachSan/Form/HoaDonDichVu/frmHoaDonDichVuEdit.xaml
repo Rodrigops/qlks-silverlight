@@ -29,8 +29,8 @@
             <ColumnDefinition Width="125*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Button x:Name="CancelButton" Grid.Row="5" Grid.ColumnSpan="4" Content="Cancel" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,0,0" />
-        <Button x:Name="OKButton" Grid.Row="5" Grid.ColumnSpan="4" Content="Add" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,79,0" />
+        <Button x:Name="CancelButton" Grid.Row="5" Grid.ColumnSpan="4" Content="Hủy bỏ" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,0,0" />
+        <Button x:Name="OKButton" Grid.Row="5" Grid.ColumnSpan="4" Content="Thêm" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,79,0" />
 
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="28,10,0,0" Name="textBlock1" Text="Dịch Vụ:" VerticalAlignment="Top" Grid.RowSpan="2" />
         <TextBlock Grid.Column="2" Height="23" HorizontalAlignment="Left" Margin="19,10,0,0" Name="textBlock2" Text="Số Lượng(*):" VerticalAlignment="Top" Grid.RowSpan="2" />
