@@ -27,8 +27,8 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Button x:Name="CancelButton" Content="Cancel" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,6" Grid.Row="12" Grid.Column="2" />
-        <Button x:Name="OKButton" Content="OK" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,6,79,6" Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2" />
+        <Button x:Name="CancelButton" Content="Hủy bỏ" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,6" Grid.Row="12" Grid.Column="2" />
+        <Button x:Name="OKButton" Content="Đồng ý" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,6,79,6" Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2" />
         <sdk:Label Grid.ColumnSpan="2" Height="17" HorizontalAlignment="Left" Margin="7,12,0,0" VerticalAlignment="Top" Width="245" Content="Danh sách khách hàng" />
         <telerik:RadGridView Grid.ColumnSpan="4" Grid.Row="1" Height="Auto" VerticalAlignment="Stretch" AutoGenerateColumns="False" IsFilteringAllowed="False" ShowGroupPanel="False" Name="grvKhachHang" RowIndicatorVisibility="Collapsed" telerik:StyleManager.Theme="Office_Blue" Margin="7,0,42,0">
             <telerik:RadGridView.Columns>
