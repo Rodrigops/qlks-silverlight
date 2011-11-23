@@ -1,0 +1,39 @@
+C:\Program Files\Telerik\Reporting Q1 2011\Examples\CSharp\ReportLibrary\bin\Debug\CSharp.ReportLibrary.dll.config
+C:\Program Files\Telerik\Reporting Q1 2011\Examples\CSharp\ReportLibrary\bin\Debug\CSharp.ReportLibrary.dll
+C:\Program Files\Telerik\Reporting Q1 2011\Examples\CSharp\ReportLibrary\bin\Debug\CSharp.ReportLibrary.pdb
+C:\Program Files\Telerik\Reporting Q1 2011\Examples\CSharp\ReportLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Program Files\Telerik\Reporting Q1 2011\Examples\CSharp\ReportLibrary\obj\Debug\Telerik.Reporting.Examples.CSharp.BarcodesReport.resources
+C:\Program Files\Telerik\Reporting Q1 2011\Examples\CSharp\ReportLibrary\obj\Debug\Telerik.Reporting.Examples.CSharp.ProductSales.resources
+C:\Program Files\Telerik\Reporting Q1 2011\Examples\CSharp\ReportLibrary\obj\Debug\Telerik.Reporting.Examples.CSharp.DashBoard.resources
+C:\Program Files\Telerik\Reporting Q1 2011\Examples\CSharp\ReportLibrary\obj\Debug\Telerik.Reporting.Examples.CSharp.ListBoundReport.resources
+C:\Program Files\Telerik\Reporting Q1 2011\Examples\CSharp\ReportLibrary\obj\Debug\Telerik.Reporting.Examples.CSharp.EmployeeSalesSummary.resources
+C:\Program Files\Telerik\Reporting Q1 2011\Examples\CSharp\ReportLibrary\obj\Debug\Telerik.Reporting.Examples.CSharp.Invoice.resources
+C:\Program Files\Telerik\Reporting Q1 2011\Examples\CSharp\ReportLibrary\obj\Debug\Telerik.Reporting.Examples.CSharp.SalesOrderDetails.resources
+C:\Program Files\Telerik\Reporting Q1 2011\Examples\CSharp\ReportLibrary\obj\Debug\Telerik.Reporting.Examples.CSharp.ProductTagReport.resources
+C:\Program Files\Telerik\Reporting Q1 2011\Examples\CSharp\ReportLibrary\obj\Debug\Telerik.Reporting.Examples.CSharp.ProductCatalog.resources
+C:\Program Files\Telerik\Reporting Q1 2011\Examples\CSharp\ReportLibrary\obj\Debug\Telerik.Reporting.Examples.CSharp.ProductLineSales.resources
+C:\Program Files\Telerik\Reporting Q1 2011\Examples\CSharp\ReportLibrary\obj\Debug\Telerik.Reporting.Examples.CSharp.ReportCatalog.resources
+C:\Program Files\Telerik\Reporting Q1 2011\Examples\CSharp\ReportLibrary\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Program Files\Telerik\Reporting Q1 2011\Examples\CSharp\ReportLibrary\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Program Files\Telerik\Reporting Q1 2011\Examples\CSharp\ReportLibrary\obj\Debug\CSharp.ReportLibrary.dll
+C:\Program Files\Telerik\Reporting Q1 2011\Examples\CSharp\ReportLibrary\obj\Debug\CSharp.ReportLibrary.pdb
+D:\Works\Works\Outsource\anhMinh\QLKS20111123\ReportLibrary\bin\Debug\CSharp.ReportLibrary.dll.config
+D:\Works\Works\Outsource\anhMinh\QLKS20111123\ReportLibrary\bin\Debug\CSharp.ReportLibrary.dll
+D:\Works\Works\Outsource\anhMinh\QLKS20111123\ReportLibrary\bin\Debug\CSharp.ReportLibrary.pdb
+D:\Works\Works\Outsource\anhMinh\QLKS20111123\ReportLibrary\obj\Debug\ResolveAssemblyReference.cache
+D:\Works\Works\Outsource\anhMinh\QLKS20111123\ReportLibrary\obj\Debug\Telerik.Reporting.Examples.CSharp.BarcodesReport.resources
+D:\Works\Works\Outsource\anhMinh\QLKS20111123\ReportLibrary\obj\Debug\Telerik.Reporting.Examples.CSharp.ProductSales.resources
+D:\Works\Works\Outsource\anhMinh\QLKS20111123\ReportLibrary\obj\Debug\Telerik.Reporting.Examples.CSharp.DashBoard.resources
+D:\Works\Works\Outsource\anhMinh\QLKS20111123\ReportLibrary\obj\Debug\Telerik.Reporting.Examples.CSharp.ListBoundReport.resources
+D:\Works\Works\Outsource\anhMinh\QLKS20111123\ReportLibrary\obj\Debug\Telerik.Reporting.Examples.CSharp.EmployeeSalesSummary.resources
+D:\Works\Works\Outsource\anhMinh\QLKS20111123\ReportLibrary\obj\Debug\Telerik.Reporting.Examples.CSharp.Invoice.resources
+D:\Works\Works\Outsource\anhMinh\QLKS20111123\ReportLibrary\obj\Debug\Telerik.Reporting.Examples.CSharp.SalesOrderDetails.resources
+D:\Works\Works\Outsource\anhMinh\QLKS20111123\ReportLibrary\obj\Debug\Telerik.Reporting.Examples.CSharp.ProductTagReport.resources
+D:\Works\Works\Outsource\anhMinh\QLKS20111123\ReportLibrary\obj\Debug\Telerik.Reporting.Examples.CSharp.ProductCatalog.resources
+D:\Works\Works\Outsource\anhMinh\QLKS20111123\ReportLibrary\obj\Debug\Telerik.Reporting.Examples.CSharp.ProductLineSales.resources
+D:\Works\Works\Outsource\anhMinh\QLKS20111123\ReportLibrary\obj\Debug\Telerik.Reporting.Examples.CSharp.ReportCatalog.resources
+D:\Works\Works\Outsource\anhMinh\QLKS20111123\ReportLibrary\obj\Debug\GenerateResource-ResGen.read.1.tlog
+D:\Works\Works\Outsource\anhMinh\QLKS20111123\ReportLibrary\obj\Debug\GenerateResource-ResGen.write.1.tlog
+D:\Works\Works\Outsource\anhMinh\QLKS20111123\ReportLibrary\obj\Debug\CSharp.ReportLibrary.dll
+D:\Works\Works\Outsource\anhMinh\QLKS20111123\ReportLibrary\obj\Debug\CSharp.ReportLibrary.pdb
+D:\Works\Works\Outsource\anhMinh\QLKS20111123\ReportLibrary\obj\Debug\Telerik.Reporting.Examples.CSharp.ReportHoaDon.resources
