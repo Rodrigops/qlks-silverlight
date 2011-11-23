@@ -77,6 +77,9 @@
     <Reference Include="System.Windows.Browser" />
     <Reference Include="System.Xml.Linq, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Serialization, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.ReportViewer.Silverlight">
+      <HintPath>C:\Program Files\Telerik\Reporting Q1 2011\Bin\Telerik.ReportViewer.Silverlight.dll</HintPath>
+    </Reference>
     <Reference Include="Telerik.Windows.Controls, Version=2011.2.920.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7" />
     <Reference Include="Telerik.Windows.Controls.GridView, Version=2011.2.920.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7" />
     <Reference Include="Telerik.Windows.Controls.Input, Version=2011.2.920.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7" />
@@ -202,6 +205,9 @@
     </Compile>
     <Compile Include="Form\ThongKeBaoCao\frmThongKeDoanhThuDichVu.xaml.cs">
       <DependentUpon>frmThongKeDoanhThuDichVu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ThongKeBaoCao\rptHoaDon.xaml.cs">
+      <DependentUpon>rptHoaDon.xaml</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.xaml.cs">
       <DependentUpon>frmLogin.xaml</DependentUpon>
@@ -472,6 +478,10 @@
     <Page Include="Form\ThongKeBaoCao\frmThongKeDoanhThuDichVu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Form\ThongKeBaoCao\rptHoaDon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="frmLogin.xaml">
       <Generator>MSBuild:Compile</Generator>
