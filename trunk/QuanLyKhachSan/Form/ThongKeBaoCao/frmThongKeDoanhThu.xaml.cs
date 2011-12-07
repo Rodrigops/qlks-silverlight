@@ -193,10 +193,10 @@ namespace QuanLyKhachSan.Form.ThongKeBaoCao
             LoadingPanel.Visibility = Visibility.Collapsed;LoadingPanel.IsBusy = false;
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-            rptHoaDon HoaDon = new rptHoaDon();
-            HoaDon.Show();
-        }
+        //private void button1_Click(object sender, RoutedEventArgs e)
+        //{
+        //    rptHoaDon HoaDon = new rptHoaDon();
+        //    HoaDon.Show();
+        //}
     }
 }

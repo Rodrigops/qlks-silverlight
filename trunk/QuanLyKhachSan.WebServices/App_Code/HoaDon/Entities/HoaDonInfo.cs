@@ -23,6 +23,7 @@ namespace QuanLyKhachSan
         private string _ModifiedDate = string.Empty;
         private int _LoaiThue;
         private int _Ca;
+        private string _TenKhachHang;
         #region HoaDonInfo
         public int HoaDonID
         {
@@ -118,6 +119,11 @@ namespace QuanLyKhachSan
         {
             get { return _Ca; }
             set { _Ca = value; }
+        }
+        public string TenKhachHang
+        {
+            get { return _TenKhachHang; }
+            set { _TenKhachHang = value; }
         }
         #endregion
     }

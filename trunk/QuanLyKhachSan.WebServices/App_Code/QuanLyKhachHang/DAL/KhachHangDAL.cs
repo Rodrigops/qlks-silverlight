@@ -105,7 +105,14 @@ namespace QuanLyKhachSan
             {
                 item = new KhachHangInfo();
                 item.KhachHangID = int.Parse(rd["KhachHangID"].ToString());
-                item.HoTen = rd["HoTen"].ToString();
+                if (int.Parse(rd["TinhTrang"].ToString()) == 0)
+                {
+                    item.HoTen = rd["HoTen"].ToString();
+                }
+                else
+                {
+                    item.HoTen = rd["HoTen"].ToString() + " [Đã nhận phòng]";
+                }                
                 item.DiaChi = rd["DiaChi"].ToString();
                 item.DienThoai = rd["DienThoai"].ToString();
                 item.CMND = rd["CMND"].ToString();

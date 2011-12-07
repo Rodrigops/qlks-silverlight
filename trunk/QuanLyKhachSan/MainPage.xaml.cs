@@ -110,16 +110,16 @@ namespace QuanLyKhachSan
                     cmdTinhTrangPhong.IsEnabled = Permission;
                     break;
                 case "frmKhachHang":
-                    cmdKhachHang.IsEnabled = Permission;
+                    //cmdKhachHang.IsEnabled = Permission;
                     break;
                 case "frmDatPhong":
-                    cmdDatPhong.IsEnabled = Permission;
+                    //cmdDatPhong.IsEnabled = Permission;
                     break;
                 case "frmNhanPhong":
-                    cmdNhanPhong.IsEnabled = Permission;
+                    //cmdNhanPhong.IsEnabled = Permission;
                     break;
                 case "frmDichVuPhong":
-                    cmdDichVuPhong.IsEnabled = Permission;
+                    //cmdDichVuPhong.IsEnabled = Permission;
                     break;
                 case "frmThongTinPhong":
                     cmdThongTinPhong.IsEnabled = Permission;

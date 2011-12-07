@@ -56,7 +56,8 @@ namespace QuanLyKhachSan
                 item.GhiChu = rd["GhiChu"].ToString();
                 item.DaThanhToan = int.Parse(rd["DaThanhToan"].ToString());
                 item.LoaiThue = int.Parse(rd["LoaiThue"].ToString());
-                item.Ca = int.Parse(rd["Ca"].ToString());                
+                item.Ca = int.Parse(rd["Ca"].ToString());
+                item.TenKhachHang = rd["TenKhachHang"].ToString();
             }
             return item;
         }

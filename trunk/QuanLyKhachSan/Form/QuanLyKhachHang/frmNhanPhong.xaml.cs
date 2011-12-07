@@ -20,6 +20,7 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
     {
         PhongSVCClient PhongClient = new PhongSVCClient();
         private List<KhachHangInfo> listKhachHang;
+        private List<TinhTrang_PhongInfo> listTinhTrangPhong;
         public frmNhanPhong()
         {
             InitializeComponent();
@@ -36,10 +37,38 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
         void PhongClient_Phong_GetItems_ByTinhTrangCompleted(object sender, Phong_GetItems_ByTinhTrangCompletedEventArgs e)
         {
             cbxPhong.ItemsSource = e.Result;
+            listTinhTrangPhong = e.Result.ToList<TinhTrang_PhongInfo>();
         }
-
+        private bool CheckStatusInValid(int PhongID)
+        {
+            bool ret;
+            TinhTrang_PhongInfo itemCheck = null;
+            foreach (TinhTrang_PhongInfo item in listTinhTrangPhong)
+            {
+                if (item.PhongID == PhongID)
+                {
+                    itemCheck = item;
+                }
+            }
+            if (itemCheck.TinhTrangPhongID == 3)
+            {
+                ret = true;
+            }
+            else
+            {
+                ret = false;
+            }
+            return ret;
+        }
         private void OKButton_Click(object sender, RoutedEventArgs e)
         {
+            //Kiem Tra Tinh Trang Phong
+            object itemSelected = cbxPhong.SelectedValue;
+            if (CheckStatusInValid( int.Parse(itemSelected.ToString())))
+            {
+                MessageBox.Show("Phòng bạn chọn đã có người nhận.Vui lòng chọn phòng khác!","Thông báo",MessageBoxButton.OK);
+                return;
+            }
             int LoaiThue=int.Parse(cbxLoaiThue.SelectedValue.ToString());
             int Ca = int.Parse(cbxCa.SelectedValue.ToString());
             decimal TraTruoc=0;
@@ -175,7 +204,7 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
             cbxCa.ItemsSource = listCa;    
             //
             int Gio = DateTime.Now.Hour;
-            if (Gio >= 7 && Gio <= 19)
+            if (Gio >= 7 && Gio < 19)
             {
                 cbxCa.SelectedIndex = 0;
             }

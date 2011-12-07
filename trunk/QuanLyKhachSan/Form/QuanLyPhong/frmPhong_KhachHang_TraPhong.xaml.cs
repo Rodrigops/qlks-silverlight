@@ -22,6 +22,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
     {
         public int HoaDonID;
         public int PhongID;
+        private string TenKhachHang = "";
         private List<HoaDonDichVuInfo> lstDichVu = null; 
         private HoaDonSVCClient HoaDon = new HoaDonSVCClient();
         private HoaDonDichVuSVCClient HoaDon_DichVu = new HoaDonDichVuSVCClient();
@@ -118,6 +119,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                 txtKhuyenMai.Text = Format_NumberVietnamese(item.KhuyenMai.ToString());
                 txtKhoanKhac.Text = item.KhoanKhac.ToString();
                 txtGhiChu.Text = item.GhiChu;
+                TenKhachHang = item.TenKhachHang;
                 int GioVao_So = int.Parse(item.GioVao.ToString() + item.PhutVao.ToString());
                 int GioRa_So = int.Parse(item.GioRa.ToString() + item.PhutRa.ToString());
                 int LoaiThue = item.LoaiThue;
@@ -584,6 +586,25 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         void HoaDon_HoaDon_ThanhToanCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
             this.DialogResult = true;
+        }
+
+        private void cmdInHoaDon_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                rptHoaDon InHoaDon = new rptHoaDon();
+                InHoaDon.TenKhachHang = TenKhachHang;
+                InHoaDon.TienPhong =  Format_NumberVietnamese(TongTienPhong.ToString());
+                InHoaDon.TienDichVu = Format_NumberVietnamese(DichVu.ToString());
+                InHoaDon.TongTien = Format_NumberVietnamese(txtTongThanhToan.Text.ToString());
+                InHoaDon.TraTruoc = Format_NumberVietnamese(txtKhuyenMai.Text.ToString());
+                InHoaDon.Show();
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
         }
     }
 }

@@ -9,6 +9,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Telerik.Reporting.ReportParameter reportParameter1 = new Telerik.Reporting.ReportParameter();
+            Telerik.Reporting.ReportParameter reportParameter2 = new Telerik.Reporting.ReportParameter();
+            Telerik.Reporting.ReportParameter reportParameter3 = new Telerik.Reporting.ReportParameter();
+            Telerik.Reporting.ReportParameter reportParameter4 = new Telerik.Reporting.ReportParameter();
+            Telerik.Reporting.ReportParameter reportParameter5 = new Telerik.Reporting.ReportParameter();
+            Telerik.Reporting.ReportParameter reportParameter6 = new Telerik.Reporting.ReportParameter();
+            Telerik.Reporting.ReportParameter reportParameter7 = new Telerik.Reporting.ReportParameter();
+            Telerik.Reporting.ReportParameter reportParameter8 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.Drawing.StyleRule styleRule1 = new Telerik.Reporting.Drawing.StyleRule();
             Telerik.Reporting.Drawing.StyleRule styleRule2 = new Telerik.Reporting.Drawing.StyleRule();
             Telerik.Reporting.Drawing.DescendantSelector descendantSelector1 = new Telerik.Reporting.Drawing.DescendantSelector();
@@ -28,15 +36,17 @@
             this.txtMaKH = new Telerik.Reporting.TextBox();
             this.txtTienPhong = new Telerik.Reporting.TextBox();
             this.txtTienDV = new Telerik.Reporting.TextBox();
-            this.txtTongTien = new Telerik.Reporting.TextBox();
+            this.txtTraTruoc = new Telerik.Reporting.TextBox();
             this.Footer = new Telerik.Reporting.TextBox();
             this.pageHeaderSection1 = new Telerik.Reporting.PageHeaderSection();
             this.Header = new Telerik.Reporting.TextBox();
+            this.textBox1 = new Telerik.Reporting.TextBox();
+            this.txtTongTien = new Telerik.Reporting.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // detail
             // 
-            this.detail.Height = new Telerik.Reporting.Drawing.Unit(1.5000001192092896D, Telerik.Reporting.Drawing.UnitType.Inch);
+            this.detail.Height = new Telerik.Reporting.Drawing.Unit(1.8999608755111694D, Telerik.Reporting.Drawing.UnitType.Inch);
             this.detail.Items.AddRange(new Telerik.Reporting.ReportItemBase[] {
             this.lblMaKH,
             this.lblTienPhong,
@@ -51,8 +61,10 @@
             this.txtMaKH,
             this.txtTienPhong,
             this.txtTienDV,
-            this.txtTongTien,
-            this.Footer});
+            this.txtTraTruoc,
+            this.Footer,
+            this.textBox1,
+            this.txtTongTien});
             this.detail.Name = "detail";
             // 
             // lblMaKH
@@ -61,7 +73,7 @@
             this.lblMaKH.Name = "lblMaKH";
             this.lblMaKH.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(0.90000009536743164D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.lblMaKH.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.lblMaKH.Value = "Mã KH:";
+            this.lblMaKH.Value = "Tên KH:";
             // 
             // lblTienPhong
             // 
@@ -85,7 +97,7 @@
             this.lblTongTien.Name = "lblTongTien";
             this.lblTongTien.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(0.90000009536743164D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.20000012218952179D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.lblTongTien.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.lblTongTien.Value = "Tổng tiền:";
+            this.lblTongTien.Value = "Trả trước :";
             // 
             // lblNgay
             // 
@@ -162,17 +174,17 @@
             this.txtTienDV.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
             this.txtTienDV.Value = "=Fields.TienDV";
             // 
-            // txtTongTien
+            // txtTraTruoc
             // 
-            this.txtTongTien.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(1.0000792741775513D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(1.0000001192092896D, Telerik.Reporting.Drawing.UnitType.Inch));
-            this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(1.6999210119247437D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
-            this.txtTongTien.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.txtTongTien.Value = "=Fields.TongTien";
+            this.txtTraTruoc.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(1.0000792741775513D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(1.0000001192092896D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtTraTruoc.Name = "txtTraTruoc";
+            this.txtTraTruoc.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(1.6999210119247437D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtTraTruoc.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.txtTraTruoc.Value = "=Fields.TraTruoc";
             // 
             // Footer
             // 
-            this.Footer.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(3.9378803194267675E-05D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(1.2999999523162842D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.Footer.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(3.9378803194267675E-05D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(1.5999999046325684D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.Footer.Name = "Footer";
             this.Footer.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(2.7999212741851807D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19996070861816406D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.Footer.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
@@ -194,6 +206,22 @@
             this.Header.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
             this.Header.Value = "Công ty TNHH Khách sạn Cao Thăng";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(0.099999986588954926D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(1.2000001668930054D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(0.90000009536743164D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.20000012218952179D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.textBox1.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.textBox1.Value = "Tổng tiền:";
+            // 
+            // txtTongTien
+            // 
+            this.txtTongTien.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(1D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(1.2000000476837158D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(1.6999210119247437D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtTongTien.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            this.txtTongTien.Value = "=Fields.TongTien";
+            // 
             // ReportHoaDon
             // 
             this.Items.AddRange(new Telerik.Reporting.ReportItemBase[] {
@@ -205,6 +233,22 @@
             this.PageSettings.Margins.Right = new Telerik.Reporting.Drawing.Unit(1D, Telerik.Reporting.Drawing.UnitType.Inch);
             this.PageSettings.Margins.Top = new Telerik.Reporting.Drawing.Unit(1D, Telerik.Reporting.Drawing.UnitType.Inch);
             this.PageSettings.PaperKind = System.Drawing.Printing.PaperKind.Letter;
+            reportParameter1.Name = "Ngay";
+            reportParameter2.Name = "Thang";
+            reportParameter3.Name = "Nam";
+            reportParameter4.Name = "TenKhachHang";
+            reportParameter5.Name = "TienPhong";
+            reportParameter6.Name = "TienDichVu";
+            reportParameter7.Name = "TongTien";
+            reportParameter8.Name = "TraTruoc";
+            this.ReportParameters.Add(reportParameter1);
+            this.ReportParameters.Add(reportParameter2);
+            this.ReportParameters.Add(reportParameter3);
+            this.ReportParameters.Add(reportParameter4);
+            this.ReportParameters.Add(reportParameter5);
+            this.ReportParameters.Add(reportParameter6);
+            this.ReportParameters.Add(reportParameter7);
+            this.ReportParameters.Add(reportParameter8);
             this.Style.BackgroundColor = System.Drawing.Color.White;
             styleRule1.Selectors.AddRange(new Telerik.Reporting.Drawing.ISelector[] {
             new Telerik.Reporting.Drawing.StyleSelector(typeof(Telerik.Reporting.Table), "Normal.TableNormal")});
@@ -258,7 +302,9 @@
         private TextBox txtMaKH;
         private TextBox txtTienPhong;
         private TextBox txtTienDV;
-        private TextBox txtTongTien;
+        private TextBox txtTraTruoc;
         private Telerik.Reporting.DetailSection detail;
+        private TextBox textBox1;
+        private TextBox txtTongTien;
     }
 }

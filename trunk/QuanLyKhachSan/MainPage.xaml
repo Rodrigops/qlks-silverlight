@@ -17,34 +17,34 @@
                         </StackPanel>
                     </telerik:RadRibbonButton>
                 </telerik:RadRibbonGroup>
-                <telerik:RadRibbonGroup Header="Khách Hàng" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
+                <!--<telerik:RadRibbonGroup Header="Khách Hàng" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
                     <telerik:RadRibbonButton Name="cmdKhachHang" Click="cmdKhachHang_Click" >
                         <StackPanel>
                             <Image Source="Images/KhachHang.png"></Image>
                         </StackPanel>
                     </telerik:RadRibbonButton>
-                </telerik:RadRibbonGroup>
-                <telerik:RadRibbonGroup Header="Đặt Phòng" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
+                </telerik:RadRibbonGroup>-->
+                <!--<telerik:RadRibbonGroup Header="Đặt Phòng" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
                     <telerik:RadRibbonButton Name="cmdDatPhong" Click="cmdDatPhong_Click" >
                         <StackPanel>
                             <Image Source="Images/DatPhong.png"></Image>
                         </StackPanel>
                     </telerik:RadRibbonButton>
-                </telerik:RadRibbonGroup>
-                <telerik:RadRibbonGroup Header="Nhận Phòng" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
+                </telerik:RadRibbonGroup>-->
+                <!--<telerik:RadRibbonGroup Header="Khách Nhận Phòng" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
                         <telerik:RadRibbonButton Name="cmdNhanPhong" Click="cmdNhanPhong_Click" >
                             <StackPanel>
                                 <Image Source="Images/GiaoPhong.png"></Image>
                             </StackPanel>
                         </telerik:RadRibbonButton>
-                    </telerik:RadRibbonGroup>
-                <telerik:RadRibbonGroup Header="Dịch Vụ Phòng">
+                    </telerik:RadRibbonGroup>-->
+                <!--<telerik:RadRibbonGroup Header="Dịch Vụ Phòng">
                     <telerik:RadRibbonButton Name="cmdDichVuPhong" Click="cmdDichVuPhong_Click">
                         <StackPanel>
                             <Image Source="Images/DichVu.png"></Image>
                         </StackPanel>
                     </telerik:RadRibbonButton>
-                </telerik:RadRibbonGroup>
+                </telerik:RadRibbonGroup>-->
             </telerik:RadRibbonTab>
             <telerik:RadRibbonTab Header="Quản Lý Phòng">
                 <telerik:RadRibbonGroup Header="Thông Tin Phòng" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">                    
@@ -92,12 +92,12 @@
                     </telerik:RadRibbonButton>
                 </telerik:RadRibbonGroup>
             </telerik:RadRibbonTab>
-            <telerik:RadRibbonTab Header="Thông Tin">
+            <!--<telerik:RadRibbonTab Header="Thông Tin">
                 <telerik:RadRibbonGroup Header="RibbonGroup" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
 
                 </telerik:RadRibbonGroup>
-            </telerik:RadRibbonTab>
-            <telerik:RadRibbonTab Header="Admin">
+            </telerik:RadRibbonTab>-->
+            <telerik:RadRibbonTab Header="Quản trị hệ thống">
                 <telerik:RadRibbonGroup Header="Quản lý người dùng" Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
                     <telerik:RadRibbonButton Name="cmdQuanLyUser" Click="cmdQuanLyUser_Click">
                         <StackPanel>

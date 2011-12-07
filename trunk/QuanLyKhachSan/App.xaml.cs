@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using System.Net.Browser;
 namespace QuanLyKhachSan
 {
     public partial class App : Application
@@ -23,7 +24,8 @@ namespace QuanLyKhachSan
             InitializeComponent();
         }        
         private void Application_Startup(object sender, StartupEventArgs e)
-        {            
+        {
+            WebRequest.RegisterPrefix("http://", WebRequestCreator.ClientHttp);
             this.RootVisual = new MainPage();
         }
         private void Application_Exit(object sender, EventArgs e)

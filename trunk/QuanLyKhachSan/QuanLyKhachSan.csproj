@@ -77,7 +77,8 @@
     <Reference Include="System.Windows.Browser" />
     <Reference Include="System.Xml.Linq, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Serialization, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.ReportViewer.Silverlight">
+    <Reference Include="Telerik.ReportViewer.Silverlight, Version=5.0.11.316, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files\Telerik\Reporting Q1 2011\Bin\Telerik.ReportViewer.Silverlight.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Controls, Version=2011.2.920.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7" />
@@ -206,7 +207,7 @@
     <Compile Include="Form\ThongKeBaoCao\frmThongKeDoanhThuDichVu.xaml.cs">
       <DependentUpon>frmThongKeDoanhThuDichVu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Form\ThongKeBaoCao\rptHoaDon.xaml.cs">
+    <Compile Include="Form\QuanLyPhong\rptHoaDon.xaml.cs">
       <DependentUpon>rptHoaDon.xaml</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.xaml.cs">
@@ -479,7 +480,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Form\ThongKeBaoCao\rptHoaDon.xaml">
+    <Page Include="Form\QuanLyPhong\rptHoaDon.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

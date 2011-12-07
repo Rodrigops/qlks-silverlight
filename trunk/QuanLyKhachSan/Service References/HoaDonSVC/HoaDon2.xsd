@@ -21,6 +21,7 @@
       <xs:element minOccurs="0" name="NgayVao_So" type="xs:int" />
       <xs:element minOccurs="0" name="PhutRa" type="xs:int" />
       <xs:element minOccurs="0" name="PhutVao" type="xs:int" />
+      <xs:element minOccurs="0" name="TenKhachHang" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="HoaDonInfo" nillable="true" type="tns:HoaDonInfo" />

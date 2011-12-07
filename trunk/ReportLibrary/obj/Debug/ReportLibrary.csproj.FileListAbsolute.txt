@@ -18,3 +18,12 @@ D:\Works\Works\Outsource\anhMinh\QLKS20111123\ReportLibrary\bin\Debug\ReportLibr
 D:\Works\Works\Outsource\anhMinh\QLKS20111123\ReportLibrary\bin\Debug\ReportLibrary.pdb
 D:\Works\Works\Outsource\anhMinh\QLKS20111123\ReportLibrary\obj\Debug\ReportLibrary.dll
 D:\Works\Works\Outsource\anhMinh\QLKS20111123\ReportLibrary\obj\Debug\ReportLibrary.pdb
+F:\Projects\qlksprojects.SL\qlksSL\ReportLibrary\obj\Debug\ResolveAssemblyReference.cache
+F:\Projects\qlksprojects.SL\qlksSL\ReportLibrary\obj\Debug\GenerateResource-ResGen.read.1.tlog
+F:\Projects\qlksprojects.SL\qlksSL\ReportLibrary\obj\Debug\GenerateResource-ResGen.write.1.tlog
+F:\Projects\qlksprojects.SL\qlksSL\ReportLibrary\obj\Debug\ReportLibrary.dll
+F:\Projects\qlksprojects.SL\qlksSL\ReportLibrary\obj\Debug\ReportLibrary.pdb
+F:\Projects\qlksprojects.SL\qlksSL\ReportLibrary\bin\Debug\ReportLibrary.dll.config
+F:\Projects\qlksprojects.SL\qlksSL\ReportLibrary\bin\Debug\ReportLibrary.dll
+F:\Projects\qlksprojects.SL\qlksSL\ReportLibrary\bin\Debug\ReportLibrary.pdb
+F:\Projects\qlksprojects.SL\qlksSL\ReportLibrary\obj\Debug\Telerik.Reporting.ReportHoaDon.resources

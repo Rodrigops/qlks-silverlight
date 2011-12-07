@@ -11,6 +11,7 @@ namespace QuanLyKhachSan
 
         public SQLDataHelper()
         {
+            //string strSqlConnection = "Data Source=USER-PC1117oyx;Initial Catalog=ttewjkqv_qlks;User ID=kscaothang;Password=123654123";
             //string strSqlConnection = @"Data Source=NHOCCUNG-PC\SQLEXPRESS;Initial Catalog=ttewjkqv_qlks;User ID=sa;Password=ng0ctr@m!@#";
             string strSqlConnection = "Data Source=123.30.187.3;Initial Catalog=ttewjkqv_qlks;User ID=ttewjkqv_groupqlks;Password=gqlks@2011";
             //string strSqlConnection = @"Data Source=SE7EN-PC\SE7EN;Initial Catalog=ttewjkqv_qlks;User ID=sa;Password=123456";
