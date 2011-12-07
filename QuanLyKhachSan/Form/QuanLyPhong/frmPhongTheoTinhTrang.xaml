@@ -68,7 +68,7 @@
         <ScrollViewer Background="Transparent"  Grid.Row="3">
             <telerik:RadGridView AutoGenerateColumns="False" IsReadOnly="True" IsFilteringAllowed="False" Name="grvKhachHang" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" telerik:StyleManager.Theme="Office_Blue">
             <telerik:RadGridView.Columns>
-                <telerik:GridViewColumn CellTemplate="{StaticResource Template_grvKhachHang_HoTenCheckBox}" Header="Họ Tên" UniqueName="HoTen" Width="200" />
+                <telerik:GridViewColumn CellTemplate="{StaticResource Template_grvKhachHang_HoTenCheckBox}" Header="Họ Tên" UniqueName="HoTen" Width="300" />
                 <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=GioiTinh, Converter={StaticResource SexFormater}}" Header="Giới Tính" Width="100" />
                 <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=DiaChi}" Header="Địa Chỉ" Width="*" />
                 <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=CMND}" Header="CMND/PassPort" Width="100" />
@@ -79,9 +79,9 @@
         </ScrollViewer>
         <telerik:RadButton Content="Thêm Khách Hàng" Height="25" HorizontalAlignment="Right" Margin="0,47,4,5" Name="cmdThemKhachHang" telerik:StyleManager.Theme="Office_Blue" Width="111" Grid.Row="2" Click="cmdThemKhachHang_Click" />
         <telerik:RadComboBox Height="25" HorizontalAlignment="Left" Margin="1,46,0,6" Name="cbxThaoTac" telerik:StyleManager.Theme="Office_Blue" Width="121" Grid.Row="2">
-            <telerik:RadComboBoxItem Content="Đặt phòng" Tag="0" />
+            <!--<telerik:RadComboBoxItem Content="Đặt phòng" Tag="0" />-->
             <telerik:RadComboBoxItem Content="Nhận phòng" Tag="1" IsSelected="True" />
-            <telerik:RadComboBoxItem Content="Thêm vào phòng" Tag="2" />
+            <!--<telerik:RadComboBoxItem Content="Thêm vào phòng" Tag="2" />-->
         </telerik:RadComboBox>
         <telerik:RadButton Content="Thực hiện" Height="26" HorizontalAlignment="Left" Margin="130,46,0,0" Name="cmdThucHien" telerik:StyleManager.Theme="Office_Blue" VerticalAlignment="Top" Width="67" Grid.Row="2" Click="cmdThucHien_Click" />
         <Border CornerRadius="10" BorderBrush="Silver" Background="BlanchedAlmond"  BorderThickness="1" Grid.Row="2" Height="34" HorizontalAlignment="Stretch" Name="border1" VerticalAlignment="Top" Margin="1,8,803,0">

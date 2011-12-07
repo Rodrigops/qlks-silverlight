@@ -180,16 +180,16 @@ namespace QuanLyKhachSan.Form.QuanLyUser
                     mainParent.cmdTinhTrangPhong.IsEnabled = Permission;
                     break;
                 case "frmKhachHang":
-                    mainParent.cmdKhachHang.IsEnabled = Permission;
+                    //mainParent.cmdKhachHang.IsEnabled = Permission;
                     break;
                 case "frmDatPhong":
-                    mainParent.cmdDatPhong.IsEnabled = Permission;
+                    //mainParent.cmdDatPhong.IsEnabled = Permission;
                     break;
                 case "frmNhanPhong":
-                    mainParent.cmdNhanPhong.IsEnabled = Permission;
+                    //mainParent.cmdNhanPhong.IsEnabled = Permission;
                     break;
                 case "frmDichVuPhong":
-                    mainParent.cmdDichVuPhong.IsEnabled = Permission;
+                    //mainParent.cmdDichVuPhong.IsEnabled = Permission;
                     break;
                 case "frmThongTinPhong":
                     mainParent.cmdThongTinPhong.IsEnabled = Permission;

@@ -58,6 +58,8 @@ namespace QuanLyKhachSan.HoaDonSVC {
         
         private int PhutVaoField;
         
+        private string TenKhachHangField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Ca {
             get {
@@ -301,6 +303,19 @@ namespace QuanLyKhachSan.HoaDonSVC {
                 if ((this.PhutVaoField.Equals(value) != true)) {
                     this.PhutVaoField = value;
                     this.RaisePropertyChanged("PhutVao");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TenKhachHang {
+            get {
+                return this.TenKhachHangField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TenKhachHangField, value) != true)) {
+                    this.TenKhachHangField = value;
+                    this.RaisePropertyChanged("TenKhachHang");
                 }
             }
         }

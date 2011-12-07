@@ -99,8 +99,10 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
                     tungay = rdpTuNgay.SelectedDate.Value.ToString("MM/dd/yyyy");
                 if (!String.IsNullOrEmpty(rdpDenNgay.SelectedDate.ToString()))
                     denngay = rdpDenNgay.SelectedDate.Value.ToString("MM/dd/yyyy");
-                if (cbxGioiTinh.SelectedIndex == -1)
-                    gioitinh = int.Parse(cbxGioiTinh.SelectedIndex.ToString());
+                //if (cbxGioiTinh.SelectedIndex == -1)
+                //    gioitinh = int.Parse(cbxGioiTinh.SelectedIndex.ToString());
+                RadComboBoxItem SelectedItem = cbxGioiTinh.SelectedValue as RadComboBoxItem;
+                gioitinh = int.Parse(SelectedItem.Tag.ToString());
                 KhachHangClient = new KhachHangSVCClient();
                 if (KhachHangID == -1)
                 {

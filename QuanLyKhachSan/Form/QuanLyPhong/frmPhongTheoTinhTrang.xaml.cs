@@ -35,6 +35,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         void KhachHangClient_KhachHang_GetItemsCompleted(object sender, KhachHang_GetItemsCompletedEventArgs e)
         {
             grvKhachHang.ItemsSource = e.Result;
+            LoadingPanel.IsBusy = false;
         }
 
         void PhongClient_Phong_GetItems_ByTinhTrangCompleted(object sender, Phong_GetItems_ByTinhTrangCompletedEventArgs e)
@@ -239,8 +240,10 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
 
         void DanhSachKhachHang_TraPhong_Closed(object sender, EventArgs e)
         {
+            LoadingPanel.IsBusy = true;
             PhongClient.Phong_GetItems_ByTinhTrangCompleted += new EventHandler<Phong_GetItems_ByTinhTrangCompletedEventArgs>(PhongClient_Phong_GetItems_ByTinhTrangCompleted);
             PhongClient.Phong_GetItems_ByTinhTrangAsync();
+            KhachHangClient.KhachHang_GetItemsAsync(0);
         }
 
         void ChiTietPhong_Closed(object sender, EventArgs e)
@@ -391,11 +394,20 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         }
 
         void NhanPhong_Closed(object sender, EventArgs e)
-        {
+        {   
             frmNhanPhong NhanPhong = sender as frmNhanPhong;
             if (NhanPhong.DialogResult == true)
             {
+                LoadingPanel.IsBusy = true;
                 PhongClient.Phong_GetItems_ByTinhTrangAsync();
+                KhachHangClient.KhachHang_GetItemsAsync(0);
+                var cells = grvKhachHang.ChildrenOfType<GridViewCell>().Where(c => c.Column.UniqueName == "HoTen").ToList();
+                List<KhachHangInfo> listKhachHang = new List<KhachHangInfo>();
+                for (int i = 0; i < cells.Count; i++)
+                {
+                    CheckBox cbx = cells[i].ChildrenOfType<CheckBox>().First();
+                    cbx.IsChecked = false;
+                }
             }
         }
 

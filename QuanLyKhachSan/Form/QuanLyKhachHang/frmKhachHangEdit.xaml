@@ -41,8 +41,8 @@
         <telerik:RadComboBox HorizontalAlignment="Left" Margin="133,327,0,0" Name="cbxQuocTich" VerticalAlignment="Top" Width="120" DisplayMemberPath="TenQuocTich" SelectedValuePath="QuocTichID" telerik:StyleManager.Theme="Office_Blue">
         </telerik:RadComboBox>
         <telerik:RadComboBox HorizontalAlignment="Left" Margin="133,355,0,0" Name="cbxGioiTinh" VerticalAlignment="Top" Width="120" telerik:StyleManager.Theme="Office_Blue">
-            <telerik:RadComboBoxItem Content="Nam" />
-            <telerik:RadComboBoxItem Content="Nữ" />
+            <telerik:RadComboBoxItem Content="Nam" Tag="0" IsSelected="True" />
+            <telerik:RadComboBoxItem Content="Nữ" Tag="1" />
         </telerik:RadComboBox>
     </Grid>
 </controls:ChildWindow>
