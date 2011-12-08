@@ -1,38 +1,50 @@
 ﻿using System;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.ServiceModel.Activation;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
+using System.Linq;
+using System.Web;
+using System.Web.Services;
 namespace QuanLyKhachSan
 {
-    [ServiceContract(Namespace = "")]
-    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-    public class AuthenticationSVC
+    /// <summary>
+    /// Summary description for CurrentUser
+    /// </summary>
+    [WebService(Namespace = "http://tempuri.org/")]
+    [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
+    // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
+    // [System.Web.Script.Services.ScriptService]
+    public class AuthenticationSVC : System.Web.Services.WebService
     {
-        [OperationContract]
+
+        public AuthenticationSVC()
+        {
+
+            //Uncomment the following line if using designed components 
+            //InitializeComponent(); 
+        }
+
+        [WebMethod(EnableSession = true)]
         public void Authentication_SetSession(string UserName)
         {
             System.Web.HttpContext.Current.Session["username"] = UserName;
         }
-        [OperationContract]
-        public string Authentication_CheckAccount(string UserName,string PassWord)
+        [WebMethod(EnableSession = true)]
+        public string Authentication_CheckAccount(string UserName, string PassWord)
         {
             int result = UserBLL.Users_Login(UserName, PassWord);
-            if (result == 1)
+            if (result >= 1)
             {
                 System.Web.HttpContext.Current.Session["username"] = UserName;
-                return "Success";
+                return result.ToString();
             }
             else
             {
                 return "Fail";
             }
         }
-        [OperationContract]
+        [WebMethod(EnableSession = true)]
         public string Authentication_GetSession()
         {
+
             if (System.Web.HttpContext.Current.Session["username"] != null)
             {
                 return System.Web.HttpContext.Current.Session["username"].ToString();
@@ -44,3 +56,45 @@ namespace QuanLyKhachSan
         }
     }
 }
+//namespace QuanLyKhachSan
+//{
+//    [ServiceContract(Namespace = "")]
+//    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
+    
+    
+//    public class AuthenticationSVC
+//    {
+//        [OperationContract]
+//        public void Authentication_SetSession(string UserName)
+//        {
+//            System.Web.HttpContext.Current.Session["username"] = UserName;
+//        }
+//        [OperationContract]
+//        public string Authentication_CheckAccount(string UserName,string PassWord)
+//        {
+//            int result = UserBLL.Users_Login(UserName, PassWord);
+//            if (result == 1)
+//            {
+//                System.Web.HttpContext.Current.Session["username"] = UserName;
+//                return "Success";
+//            }
+//            else
+//            {
+//                return "Fail";
+//            }
+//        }
+//        [OperationContract]        
+//        public string Authentication_GetSession()
+//        {
+           
+//            if (System.Web.HttpContext.Current.Session["username"]!=null)
+//            {
+//                return System.Web.HttpContext.Current.Session["username"].ToString();
+//            }
+//            else
+//            {
+//                return "";
+//            }
+//        }
+//    }
+//}
