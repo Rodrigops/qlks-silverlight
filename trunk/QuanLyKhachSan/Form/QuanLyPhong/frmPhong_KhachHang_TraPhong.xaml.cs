@@ -584,8 +584,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         }
 
         void HoaDon_HoaDon_ThanhToanCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
-        {
-            MessageBox.Show(User.UserID);
+        {            
             this.DialogResult = true;
         }
 
