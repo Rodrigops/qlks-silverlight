@@ -1,98 +1,42 @@
 ﻿<configuration>
-    <system.serviceModel>
+    <system.serviceModel>        
         <bindings>
             <basicHttpBinding>
-                <binding name="BasicHttpBinding_TienNghiSVC" maxBufferSize="2147483647"
-                    maxReceivedMessageSize="2147483647">
-                    <security mode="None" />
-                </binding>
-                <binding name="BasicHttpBinding_PhongSVC" maxBufferSize="2147483647"
-                    maxReceivedMessageSize="2147483647">
-                    <security mode="None" />
-                </binding>
-                <binding name="BasicHttpBinding_DichVuSVC" maxBufferSize="2147483647"
-                    maxReceivedMessageSize="2147483647">
-                    <security mode="None" />
-                </binding>
-                <binding name="BasicHttpBinding_QuocTichSVC" maxBufferSize="2147483647"
-                    maxReceivedMessageSize="2147483647">
-                    <security mode="None" />
-                </binding>
-                <binding name="BasicHttpBinding_KhachHangSVC" maxBufferSize="2147483647"
-                    maxReceivedMessageSize="2147483647">
-                    <security mode="None" />
-                </binding>
-                <binding name="BasicHttpBinding_Ngay_PhongSVC" maxBufferSize="2147483647"
-                    maxReceivedMessageSize="2147483647">
-                    <security mode="None" />
-                </binding>
-                <binding name="BasicHttpBinding_Nguoi_PhongSVC" maxBufferSize="2147483647"
-                    maxReceivedMessageSize="2147483647">
-                    <security mode="None" />
-                </binding>
-                <binding name="BasicHttpBinding_Gio_PhongSVC" maxBufferSize="2147483647"
-                    maxReceivedMessageSize="2147483647">
-                    <security mode="None" />
-                </binding>
-                <binding name="BasicHttpBinding_HoaDonDichVuSVC" maxBufferSize="2147483647"
-                    maxReceivedMessageSize="2147483647">
-                    <security mode="None" />
-                </binding>
-                <binding name="BasicHttpBinding_HoaDon_KhachHangSVC" maxBufferSize="2147483647"
-                    maxReceivedMessageSize="2147483647">
-                    <security mode="None" />
-                </binding>
-                <binding name="BasicHttpBinding_GroupSVC" maxBufferSize="2147483647"
-                    maxReceivedMessageSize="2147483647">
-                    <security mode="None" />
-                </binding>
-                <binding name="BasicHttpBinding_UserSVC" maxBufferSize="2147483647"
-                    maxReceivedMessageSize="2147483647">
-                    <security mode="None" />
-                </binding>
-                <binding name="BasicHttpBinding_UserGroupSVC" maxBufferSize="2147483647"
-                    maxReceivedMessageSize="2147483647">
-                    <security mode="None" />
-                </binding>
-                <binding name="BasicHttpBinding_Gia_PhongSVC" maxBufferSize="2147483647"
-                    maxReceivedMessageSize="2147483647">
-                    <security mode="None" />
-                </binding>
-                <binding name="BasicHttpBinding_HoaDon_TraTruocSVC" maxBufferSize="2147483647"
-                    maxReceivedMessageSize="2147483647">
-                    <security mode="None" />
-                </binding>
-                <binding name="BasicHttpBinding_AuthenticationSVC" maxBufferSize="2147483647"
-                    maxReceivedMessageSize="2147483647">
-                    <security mode="None" />
-                </binding>
-                <binding name="BasicHttpBinding_PhieuNhapKhoSVC" maxBufferSize="2147483647"
-                    maxReceivedMessageSize="2147483647">
-                    <security mode="None" />
-                </binding>
-                <binding name="BasicHttpBinding_ChiTietPhieuNhapKhoSVC" maxBufferSize="2147483647"
-                    maxReceivedMessageSize="2147483647">
-                    <security mode="None" />
-                </binding>
-                <binding name="BasicHttpBinding_ModuleSVC" maxBufferSize="2147483647"
-                    maxReceivedMessageSize="2147483647">
-                    <security mode="None" />
-                </binding>
-                <binding name="BasicHttpBinding_TKChiTieuSVC" maxBufferSize="2147483647"
-                    maxReceivedMessageSize="2147483647">
-                    <security mode="None" />
-                </binding>
-                <binding name="BasicHttpBinding_TKDoanhThuDichVuSVC" maxBufferSize="2147483647"
-                    maxReceivedMessageSize="2147483647">
-                    <security mode="None" />
-                </binding>
-                <binding name="BasicHttpBinding_TKDoanhThuSVC" maxBufferSize="2147483647"
+                <binding name="AuthenticationSVCSoap" maxBufferSize="2147483647"
                     maxReceivedMessageSize="2147483647">
                     <security mode="None" />
                 </binding>
             </basicHttpBinding>
             <customBinding>
-                <binding name="CustomBinding_LoaiPhongSVC">
+                <binding name="CustomBinding_ChiTietPhieuNhapKhoSVC">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="CustomBinding_DichVuSVC">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="CustomBinding_Gia_PhongSVC">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="CustomBinding_Gio_PhongSVC">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="CustomBinding_GroupSVC">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="CustomBinding_HoaDon_KhachHangSVC">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="CustomBinding_HoaDon_TraTruocSVC">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="CustomBinding_HoaDonDichVuSVC">
                     <binaryMessageEncoding />
                     <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
                 </binding>
@@ -100,81 +44,137 @@
                     <binaryMessageEncoding />
                     <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
                 </binding>
+                <binding name="CustomBinding_KhachHangSVC">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="CustomBinding_LoaiPhongSVC">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="CustomBinding_ModuleSVC">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="CustomBinding_Ngay_PhongSVC">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="CustomBinding_Nguoi_PhongSVC">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="CustomBinding_PhieuNhapKhoSVC">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="CustomBinding_PhongSVC">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="CustomBinding_QuocTichSVC">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="CustomBinding_TienNghiSVC">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="CustomBinding_TKChiTieuSVC">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="CustomBinding_TKDoanhThuDichVuSVC">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="CustomBinding_TKDoanhThuSVC">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="CustomBinding_UserGroupSVC">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="CustomBinding_UserSVC">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
             </customBinding>
         </bindings>
         <client>
-            <endpoint address="../Services/QuanLyPhong/LoaiPhong.svc" binding="customBinding"
-                bindingConfiguration="CustomBinding_LoaiPhongSVC" contract="LoaiPhongSVC.LoaiPhongSVC"
-                name="CustomBinding_LoaiPhongSVC" />
-            <endpoint address="../Services/QuanLyPhong/TienNghi.svc" binding="basicHttpBinding"
-                bindingConfiguration="BasicHttpBinding_TienNghiSVC" contract="TienNghiSVC.TienNghiSVC"
-                name="BasicHttpBinding_TienNghiSVC" />
-            <endpoint address="../Services/QuanLyPhong/Phong.svc" binding="basicHttpBinding"
-                bindingConfiguration="BasicHttpBinding_PhongSVC" contract="PhongSVC.PhongSVC"
-                name="BasicHttpBinding_PhongSVC" />
-            <endpoint address="../Services/QuanLyPhong/DichVu.svc" binding="basicHttpBinding"
-                bindingConfiguration="BasicHttpBinding_DichVuSVC" contract="DichVuSVC.DichVuSVC"
-                name="BasicHttpBinding_DichVuSVC" />
-            <endpoint address="../Services/QuanLyKhachHang/KhachHang.svc"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_KhachHangSVC"
-                contract="KhachHangSVC.KhachHangSVC" name="BasicHttpBinding_KhachHangSVC" />
-            <endpoint address="../Services/QuanLyKhachHang/QuocTich.svc"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_QuocTichSVC"
-                contract="QuocTichSVC.QuocTichSVC" name="BasicHttpBinding_QuocTichSVC" />
-            <endpoint address="../Services/QuanLyPhong/Gio_Phong.svc" binding="basicHttpBinding"
-                bindingConfiguration="BasicHttpBinding_Gio_PhongSVC" contract="Gio_PhongSVC.Gio_PhongSVC"
-                name="BasicHttpBinding_Gio_PhongSVC" />
-            <endpoint address="../Services/QuanLyPhong/Ngay_Phong.svc" binding="basicHttpBinding"
-                bindingConfiguration="BasicHttpBinding_Ngay_PhongSVC" contract="Ngay_PhongSVC.Ngay_PhongSVC"
-                name="BasicHttpBinding_Ngay_PhongSVC" />
-            <endpoint address="../Services/QuanLyPhong/Nguoi_Phong.svc" binding="basicHttpBinding"
-                bindingConfiguration="BasicHttpBinding_Nguoi_PhongSVC" contract="Nguoi_PhongSVC.Nguoi_PhongSVC"
-                name="BasicHttpBinding_Nguoi_PhongSVC" />
-            <endpoint address="../Services/HoaDonDichVu/HoaDonDichVu.svc"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_HoaDonDichVuSVC"
-                contract="HoaDonDichVuSVC.HoaDonDichVuSVC" name="BasicHttpBinding_HoaDonDichVuSVC" />
-            <endpoint address="../Services/HoaDon/HoaDon_KhachHang.svc" binding="basicHttpBinding"
-                bindingConfiguration="BasicHttpBinding_HoaDon_KhachHangSVC"
-                contract="HoaDon_KhachHangSVC.HoaDon_KhachHangSVC" name="BasicHttpBinding_HoaDon_KhachHangSVC" />
-            <endpoint address="../Services/QuanLyUser/Group.svc" binding="basicHttpBinding"
-                bindingConfiguration="BasicHttpBinding_GroupSVC" contract="GroupSVC.GroupSVC"
-                name="BasicHttpBinding_GroupSVC" />
-            <endpoint address="../Services/QuanLyUser/User.svc" binding="basicHttpBinding"
-                bindingConfiguration="BasicHttpBinding_UserSVC" contract="UserSVC.UserSVC"
-                name="BasicHttpBinding_UserSVC" />
-            <endpoint address="../Services/QuanLyUser/UserGroup.svc" binding="basicHttpBinding"
-                bindingConfiguration="BasicHttpBinding_UserGroupSVC" contract="UserGroupSVC.UserGroupSVC"
-                name="BasicHttpBinding_UserGroupSVC" />
-            <endpoint address="../Services/QuanLyPhong/Gia_Phong.svc" binding="basicHttpBinding"
-                bindingConfiguration="BasicHttpBinding_Gia_PhongSVC" contract="Gia_PhongSVC.Gia_PhongSVC"
-                name="BasicHttpBinding_Gia_PhongSVC" />
-            <endpoint address="../Services/HoaDonDichVu/HoaDon_TraTruoc.svc"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_HoaDon_TraTruocSVC"
-                contract="HoaDon_TraTruocSVC.HoaDon_TraTruocSVC" name="BasicHttpBinding_HoaDon_TraTruocSVC" />
-            <endpoint address="../Services/Authentication/Authentication.svc"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_AuthenticationSVC"
-                contract="AuthenticationSVC.AuthenticationSVC" name="BasicHttpBinding_AuthenticationSVC" />
-            <endpoint address="../Services/HoaDonDichVu/PhieuNhapKho.svc"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_PhieuNhapKhoSVC"
-                contract="PhieuNhapKhoSVC.PhieuNhapKhoSVC" name="BasicHttpBinding_PhieuNhapKhoSVC" />
-            <endpoint address="../Services/HoaDonDichVu/ChiTietPhieuNhapKho.svc"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ChiTietPhieuNhapKhoSVC"
-                contract="ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoSVC" name="BasicHttpBinding_ChiTietPhieuNhapKhoSVC" />
-            <endpoint address="../Services/QuanLyUser/Module.svc" binding="basicHttpBinding"
-                bindingConfiguration="BasicHttpBinding_ModuleSVC" contract="ModuleSVC.ModuleSVC"
-                name="BasicHttpBinding_ModuleSVC" />
-            <endpoint address="../Services/ThongKeBaoCao/TKChiTieu.svc" binding="basicHttpBinding"
-                bindingConfiguration="BasicHttpBinding_TKChiTieuSVC" contract="TKChiTieuSVC.TKChiTieuSVC"
-                name="BasicHttpBinding_TKChiTieuSVC" />
-            <endpoint address="../Services/ThongKeBaoCao/TKDoanhThuDichVu.svc"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_TKDoanhThuDichVuSVC"
-                contract="TKDoanhThuDichVuSVC.TKDoanhThuDichVuSVC" name="BasicHttpBinding_TKDoanhThuDichVuSVC" />
-            <endpoint address="../Services/ThongKeBaoCao/TKDoanhThu.svc"
-                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_TKDoanhThuSVC"
-                contract="TKDoanhThuSVC.TKDoanhThuSVC" name="BasicHttpBinding_TKDoanhThuSVC" />
-            <endpoint address="../Services/HoaDon/HoaDon.svc" binding="customBinding"
-                bindingConfiguration="CustomBinding_HoaDonSVC" contract="HoaDonSVC.HoaDonSVC"
-                name="CustomBinding_HoaDonSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/ChiTietPhieuNhapKho.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_ChiTietPhieuNhapKhoSVC"
+                contract="ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoSVC" name="CustomBinding_ChiTietPhieuNhapKhoSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/DichVu.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_DichVuSVC"
+                contract="DichVuSVC.DichVuSVC" name="CustomBinding_DichVuSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Gia_Phong.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_Gia_PhongSVC"
+                contract="Gia_PhongSVC.Gia_PhongSVC" name="CustomBinding_Gia_PhongSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Gio_Phong.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_Gio_PhongSVC"
+                contract="Gio_PhongSVC.Gio_PhongSVC" name="CustomBinding_Gio_PhongSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyUser/Group.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_GroupSVC"
+                contract="GroupSVC.GroupSVC" name="CustomBinding_GroupSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDon/HoaDon_KhachHang.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_HoaDon_KhachHangSVC"
+                contract="HoaDon_KhachHangSVC.HoaDon_KhachHangSVC" name="CustomBinding_HoaDon_KhachHangSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDon_TraTruoc.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_HoaDon_TraTruocSVC"
+                contract="HoaDon_TraTruocSVC.HoaDon_TraTruocSVC" name="CustomBinding_HoaDon_TraTruocSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDonDichVu.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_HoaDonDichVuSVC"
+                contract="HoaDonDichVuSVC.HoaDonDichVuSVC" name="CustomBinding_HoaDonDichVuSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDon/HoaDon.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_HoaDonSVC"
+                contract="HoaDonSVC.HoaDonSVC" name="CustomBinding_HoaDonSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/KhachHang.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_KhachHangSVC"
+                contract="KhachHangSVC.KhachHangSVC" name="CustomBinding_KhachHangSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/LoaiPhong.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_LoaiPhongSVC"
+                contract="LoaiPhongSVC.LoaiPhongSVC" name="CustomBinding_LoaiPhongSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyUser/Module.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_ModuleSVC"
+                contract="ModuleSVC.ModuleSVC" name="CustomBinding_ModuleSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Ngay_Phong.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_Ngay_PhongSVC"
+                contract="Ngay_PhongSVC.Ngay_PhongSVC" name="CustomBinding_Ngay_PhongSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Nguoi_Phong.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_Nguoi_PhongSVC"
+                contract="Nguoi_PhongSVC.Nguoi_PhongSVC" name="CustomBinding_Nguoi_PhongSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/PhieuNhapKho.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_PhieuNhapKhoSVC"
+                contract="PhieuNhapKhoSVC.PhieuNhapKhoSVC" name="CustomBinding_PhieuNhapKhoSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Phong.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_PhongSVC"
+                contract="PhongSVC.PhongSVC" name="CustomBinding_PhongSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/QuocTich.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_QuocTichSVC"
+                contract="QuocTichSVC.QuocTichSVC" name="CustomBinding_QuocTichSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/TienNghi.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_TienNghiSVC"
+                contract="TienNghiSVC.TienNghiSVC" name="CustomBinding_TienNghiSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKChiTieu.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_TKChiTieuSVC"
+                contract="TKChiTieuSVC.TKChiTieuSVC" name="CustomBinding_TKChiTieuSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKDoanhThuDichVu.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_TKDoanhThuDichVuSVC"
+                contract="TKDoanhThuDichVuSVC.TKDoanhThuDichVuSVC" name="CustomBinding_TKDoanhThuDichVuSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKDoanhThu.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_TKDoanhThuSVC"
+                contract="TKDoanhThuSVC.TKDoanhThuSVC" name="CustomBinding_TKDoanhThuSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyUser/UserGroup.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_UserGroupSVC"
+                contract="UserGroupSVC.UserGroupSVC" name="CustomBinding_UserGroupSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyUser/User.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_UserSVC"
+                contract="UserSVC.UserSVC" name="CustomBinding_UserSVC" />
+            <endpoint address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/Authentication/Authentication.asmx"
+                binding="basicHttpBinding" bindingConfiguration="AuthenticationSVCSoap"
+                contract="AuthenticationSVC.AuthenticationSVCSoap" name="AuthenticationSVCSoap" />
         </client>
     </system.serviceModel>
 </configuration>

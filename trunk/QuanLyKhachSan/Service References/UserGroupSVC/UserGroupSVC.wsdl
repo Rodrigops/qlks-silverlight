@@ -1,67 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UserGroupSVC" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="CustomBinding_UserGroupSVC_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:import namespace="" location="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyUser/UserGroup.svc?wsdl=wsdl0" />
   <wsdl:types />
-  <wsdl:binding name="BasicHttpBinding_UserGroupSVC" type="UserGroupSVC">
-    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+  <wsdl:binding name="CustomBinding_UserGroupSVC" type="UserGroupSVC">
+    <wsp:PolicyReference URI="#CustomBinding_UserGroupSVC_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="UserGroup_Add">
-      <soap:operation soapAction="urn:UserGroupSVC/UserGroup_Add" style="document" />
+      <soap12:operation soapAction="urn:UserGroupSVC/UserGroup_Add" style="document" />
       <wsdl:input>
-        <soap:body use="literal" />
+        <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap:body use="literal" />
+        <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UserGroup_Edit">
-      <soap:operation soapAction="urn:UserGroupSVC/UserGroup_Edit" style="document" />
+      <soap12:operation soapAction="urn:UserGroupSVC/UserGroup_Edit" style="document" />
       <wsdl:input>
-        <soap:body use="literal" />
+        <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap:body use="literal" />
+        <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UserGroup_Delete">
-      <soap:operation soapAction="urn:UserGroupSVC/UserGroup_Delete" style="document" />
+      <soap12:operation soapAction="urn:UserGroupSVC/UserGroup_Delete" style="document" />
       <wsdl:input>
-        <soap:body use="literal" />
+        <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap:body use="literal" />
+        <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UserGroup_GetItem">
-      <soap:operation soapAction="urn:UserGroupSVC/UserGroup_GetItem" style="document" />
+      <soap12:operation soapAction="urn:UserGroupSVC/UserGroup_GetItem" style="document" />
       <wsdl:input>
-        <soap:body use="literal" />
+        <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap:body use="literal" />
+        <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UserGroup_GetItems">
-      <soap:operation soapAction="urn:UserGroupSVC/UserGroup_GetItems" style="document" />
+      <soap12:operation soapAction="urn:UserGroupSVC/UserGroup_GetItems" style="document" />
       <wsdl:input>
-        <soap:body use="literal" />
+        <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap:body use="literal" />
+        <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GroupIDByUserName">
-      <soap:operation soapAction="urn:UserGroupSVC/GroupIDByUserName" style="document" />
+      <soap12:operation soapAction="urn:UserGroupSVC/GroupIDByUserName" style="document" />
       <wsdl:input>
-        <soap:body use="literal" />
+        <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <soap:body use="literal" />
+        <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="UserGroupSVC">
-    <wsdl:port name="BasicHttpBinding_UserGroupSVC" binding="tns:BasicHttpBinding_UserGroupSVC">
-      <soap:address location="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyUser/UserGroup.svc" />
+    <wsdl:port name="CustomBinding_UserGroupSVC" binding="tns:CustomBinding_UserGroupSVC">
+      <soap12:address location="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyUser/UserGroup.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyUser/UserGroup.svc</wsa10:Address>
+      </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

@@ -213,7 +213,7 @@
     <Compile Include="frmLogin.xaml.cs">
       <DependentUpon>frmLogin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Libs\Authentication\Authentication.cs" />
+    <Compile Include="Libs\Authentication\User.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -496,13 +496,15 @@
   <ItemGroup>
     <None Include="Properties\AppManifest.xml" />
     <None Include="Service References\AuthenticationSVC\Authentication.wsdl" />
-    <None Include="Service References\AuthenticationSVC\Authentication.xsd">
-      <SubType>Designer</SubType>
+    <None Include="Service References\AuthenticationSVC\QuanLyKhachSan.AuthenticationSVC.Authentication_CheckAccountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\AuthenticationSVC\Authentication1.xsd">
-      <SubType>Designer</SubType>
+    <None Include="Service References\AuthenticationSVC\QuanLyKhachSan.AuthenticationSVC.Authentication_GetSessionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\AuthenticationSVC\AuthenticationSVC.wsdl" />
+    <None Include="Service References\AuthenticationSVC\QuanLyKhachSan.AuthenticationSVC.Authentication_SetSessionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ChiTietPhieuNhapKhoSVC\ChiTietPhieuNhapKho.wsdl" />
     <None Include="Service References\ChiTietPhieuNhapKhoSVC\ChiTietPhieuNhapKho.xsd">
       <SubType>Designer</SubType>
@@ -933,13 +935,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\AuthenticationSVC\Authentication.disco" />
-    <None Include="Service References\AuthenticationSVC\configuration91.svcinfo" />
-    <None Include="Service References\AuthenticationSVC\configuration.svcinfo" />
-    <None Include="Service References\AuthenticationSVC\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <Resource Include="Images\Login.png" />
     <None Include="Service References\PhieuNhapKhoSVC\PhieuNhapKho.disco" />
     <None Include="Service References\PhieuNhapKhoSVC\configuration91.svcinfo" />
@@ -988,6 +983,13 @@
     <Resource Include="Images\ThongKeChiTieu.png" />
     <Resource Include="Images\ThongKeDoanhThu.png" />
     <Resource Include="Images\ThongKeDoanhThuDichVu.png" />
+    <None Include="Service References\AuthenticationSVC\Authentication.disco" />
+    <None Include="Service References\AuthenticationSVC\configuration91.svcinfo" />
+    <None Include="Service References\AuthenticationSVC\configuration.svcinfo" />
+    <None Include="Service References\AuthenticationSVC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="ServiceReferences.ClientConfig">
       <SubType>Designer</SubType>
     </Content>

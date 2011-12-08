@@ -128,7 +128,7 @@ namespace QuanLyKhachSan.Form.QuanLyUser
             module.ModulePermission_AddAsync(GroupID, ListModulePermission);
         }
         private MainPage mainParent = null;
-        private AuthenticationSVCClient Authentication = new AuthenticationSVCClient();
+        private AuthenticationSVCSoapClient Authentication = new AuthenticationSVCSoapClient();
         private ModuleSVCClient Permission = new ModuleSVCClient();
         void module_ModulePermission_AddCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {          

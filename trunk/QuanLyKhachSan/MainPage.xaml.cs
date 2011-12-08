@@ -15,8 +15,8 @@ using QuanLyKhachSan.UserGroupSVC;
 namespace QuanLyKhachSan
 {
     public partial class MainPage : UserControl
-    {
-        private AuthenticationSVCClient Authentication = new AuthenticationSVCClient();
+    {        
+        private AuthenticationSVCSoapClient Authentication = new AuthenticationSVCSoapClient();
         private ModuleSVCClient Module = new ModuleSVCClient();
         public MainPage()
         {
@@ -36,19 +36,20 @@ namespace QuanLyKhachSan
             else
             {
                 cmdLogout.Visibility = System.Windows.Visibility.Visible;
-                cmdLogout.Content = "[" + e.Result.ToString() + " - Thoát]"; 
+                cmdLogout.Content = "[" + e.Result.ToString() + " - Thoát]";
+                redirect(KeyMapping);
                 //PhanQuyen
-                UserGroupSVCClient UserGroup = new UserGroupSVCClient();
-                UserGroup.GroupIDByUserNameCompleted += new EventHandler<GroupIDByUserNameCompletedEventArgs>(UserGroup_GroupIDByUserNameCompleted);
-                UserGroup.GroupIDByUserNameAsync(e.Result);        
-            
-            }            
+                //UserGroupSVCClient UserGroup = new UserGroupSVCClient();
+                //UserGroup.GroupIDByUserNameCompleted += new EventHandler<GroupIDByUserNameCompletedEventArgs>(UserGroup_GroupIDByUserNameCompleted);
+                //UserGroup.GroupIDByUserNameAsync(e.Result);
+
+            }
         }
 
         void UserGroup_GroupIDByUserNameCompleted(object sender, GroupIDByUserNameCompletedEventArgs e)
         {
             Module.Module_GetItemsCompleted += new EventHandler<Module_GetItemsCompletedEventArgs>(Module_Module_GetItemsCompleted);
-            Module.Module_GetItemsAsync(int.Parse(e.Result.ToString()));                
+            Module.Module_GetItemsAsync(int.Parse(e.Result.ToString()));
         }
 
         void Module_Module_GetItemsCompleted(object sender, Module_GetItemsCompletedEventArgs e)
@@ -105,7 +106,7 @@ namespace QuanLyKhachSan
         public void SetPermission(string ModuleKey, bool Permission)
         {
             switch (ModuleKey)
-            { 
+            {
                 case "frmTinhTrangPhong":
                     cmdTinhTrangPhong.IsEnabled = Permission;
                     break;
@@ -147,40 +148,84 @@ namespace QuanLyKhachSan
                     break;
             }
         }
+        private void redirect(string KeyMapping)
+        {
+            switch (KeyMapping)
+            {
+                case "ThongTinPhong":
+                    ContentFrame.Navigate(new Uri("ThongTinPhong", UriKind.Relative));
+                    break;
+                case "GiaPhong":
+                    ContentFrame.Navigate(new Uri("GiaPhong", UriKind.Relative));
+                    break;
+                case "CaiDatGia":
+                    ContentFrame.Navigate(new Uri("CaiDatGia", UriKind.Relative));
+                    break;
+                case "":
+                    ContentFrame.Navigate(new Uri("", UriKind.Relative));
+                    break;
+                case "KhachHang":
+                    ContentFrame.Navigate(new Uri("KhachHang", UriKind.Relative));
+                    break;
+                case "HoaDonDichVu":
+                    ContentFrame.Navigate(new Uri("HoaDonDichVu", UriKind.Relative));
+                    break;
+                case "QuanLyUser":
+                    ContentFrame.Navigate(new Uri("QuanLyUser", UriKind.Relative));
+                    break;
+                case "PhanQuyenUser":
+                    ContentFrame.Navigate(new Uri("PhanQuyenUser", UriKind.Relative));
+                    break;
+                case "ThongKeDoanhThu":
+                    ContentFrame.Navigate(new Uri("ThongKeDoanhThu", UriKind.Relative));
+                    break;
+                case "ThongKeChiTieu":
+                    ContentFrame.Navigate(new Uri("ThongKeChiTieu", UriKind.Relative));
+                    break;
+                case "ThongKeDoanhThuDichVu":
+                    ContentFrame.Navigate(new Uri("ThongKeDoanhThuDichVu", UriKind.Relative));
+                    break;
+            }
+        }
         private void cmdThongTinPhong_Click(object sender, RoutedEventArgs e)
         {
             KeyMapping = "ThongTinPhong";
-            Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
-            Authentication.Authentication_GetSessionAsync();
+            redirect(KeyMapping);
+            //Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
+            //Authentication.Authentication_GetSessionAsync();
         }
 
         private void cmdGiaPhong_Click(object sender, RoutedEventArgs e)
         {
             KeyMapping = "GiaPhong";
-            Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
-            Authentication.Authentication_GetSessionAsync();
+            redirect(KeyMapping);
+            //Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
+            //Authentication.Authentication_GetSessionAsync();
         }
 
         private void cmdCaiDatGia_Click(object sender, RoutedEventArgs e)
         {
             KeyMapping = "CaiDatGia";
-            Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
-            Authentication.Authentication_GetSessionAsync();
+            redirect(KeyMapping);
+            //Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
+            //Authentication.Authentication_GetSessionAsync();
         }
 
         private void cmdTinhTrangPhong_Click(object sender, RoutedEventArgs e)
         {
             KeyMapping = "";
-            Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
-            Authentication.Authentication_GetSessionAsync();
-            
+            redirect(KeyMapping);
+            //Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
+            //Authentication.Authentication_GetSessionAsync();
+
         }
 
         private void cmdKhachHang_Click(object sender, RoutedEventArgs e)
         {
             KeyMapping = "KhachHang";
-            Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
-            Authentication.Authentication_GetSessionAsync();        
+            redirect(KeyMapping);
+            //Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
+            //Authentication.Authentication_GetSessionAsync();
         }
 
         private void cmdDatPhong_Click(object sender, RoutedEventArgs e)
@@ -196,21 +241,24 @@ namespace QuanLyKhachSan
         private void cmdDichVuPhong_Click(object sender, RoutedEventArgs e)
         {
             KeyMapping = "HoaDonDichVu";
-            Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
-            Authentication.Authentication_GetSessionAsync();
+            redirect(KeyMapping);
+            //Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
+            //Authentication.Authentication_GetSessionAsync();
         }
 
         private void cmdQuanLyUser_Click(object sender, RoutedEventArgs e)
         {
-            KeyMapping = "QuanLyUser";            
-            Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
-            Authentication.Authentication_GetSessionAsync();
+            KeyMapping = "QuanLyUser";
+            redirect(KeyMapping);
+            //Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
+            //Authentication.Authentication_GetSessionAsync();
         }
         private void cmdPhanQuyenUser_Click(object sender, RoutedEventArgs e)
         {
             KeyMapping = "PhanQuyenUser";
-            Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
-            Authentication.Authentication_GetSessionAsync();
+            redirect(KeyMapping);
+            //Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
+            //Authentication.Authentication_GetSessionAsync();
         }
         private void cmdLogout_Click(object sender, RoutedEventArgs e)
         {
@@ -220,30 +268,33 @@ namespace QuanLyKhachSan
 
         void Authentication_Authentication_SetSessionCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
-            Authentication.Authentication_GetSessionAsync();   
+            Authentication.Authentication_GetSessionAsync();
         }
 
         private void cmdThongKeDoanhThu_Click(object sender, RoutedEventArgs e)
         {
             KeyMapping = "ThongKeDoanhThu";
-            Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
-            Authentication.Authentication_GetSessionAsync();
+            redirect(KeyMapping);
+            //Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
+            //Authentication.Authentication_GetSessionAsync();
         }
 
         private void cmdThongKeChiTieu_Click(object sender, RoutedEventArgs e)
         {
             KeyMapping = "ThongKeChiTieu";
-            Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
-            Authentication.Authentication_GetSessionAsync();
+            redirect(KeyMapping);
+            //Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
+            //Authentication.Authentication_GetSessionAsync();
         }
 
         private void cmdThongKeDoanhThuDichVu_Click(object sender, RoutedEventArgs e)
         {
             KeyMapping = "ThongKeDoanhThuDichVu";
-            Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
-            Authentication.Authentication_GetSessionAsync();
+            redirect(KeyMapping);
+            //Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
+            //Authentication.Authentication_GetSessionAsync();
         }
 
-        
+
     }
 }
