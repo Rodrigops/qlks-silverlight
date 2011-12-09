@@ -26,6 +26,7 @@
       <xs:element minOccurs="0" name="SoLuong" type="xs:int" />
       <xs:element minOccurs="0" name="ThangNhap" type="xs:int" />
       <xs:element minOccurs="0" name="TongTien" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TKChiTieuInfo" nillable="true" type="tns:TKChiTieuInfo" />
