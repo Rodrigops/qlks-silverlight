@@ -19,6 +19,8 @@ namespace QuanLyKhachSan
         private int _DichVuID;
         private string _DichVuName;
 
+        private string _UserName;
+
         private int _CreatedByUser;
         private string _CreatedDate;//DateTime
         private int _ModifiedByUser;
@@ -88,6 +90,12 @@ namespace QuanLyKhachSan
         {
             get { return _DichVuName; }
             set { _DichVuName = value; }
+        }
+
+        public string UserName
+        {
+            get { return _UserName; }
+            set { _UserName = value; }
         }
 
         public int CreatedByUser
