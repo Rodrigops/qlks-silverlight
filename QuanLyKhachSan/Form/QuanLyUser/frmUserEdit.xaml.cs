@@ -59,12 +59,12 @@ namespace QuanLyKhachSan.Form.QuanLyUser
                     if (UserID == -1)
                     {
                         UserClient.User_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(UserClient_User_AddCompleted);
-                        UserClient.User_AddAsync(txtUserName.Text, txtPassword.Password, txtFullName.Text, txtDisplayName.Text, IsActived, 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                        UserClient.User_AddAsync(txtUserName.Text, txtPassword.Password, txtFullName.Text, txtDisplayName.Text, IsActived, int.Parse(User.UserID), DateTime.Now.ToString("MM/dd/yyyy"));
                     }
                     else
                     {
                         UserClient.User_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(UserClient_User_EditCompleted);
-                        UserClient.User_EditAsync(UserID, txtUserName.Text, txtPassword.Password, txtFullName.Text, txtDisplayName.Text, IsActived, 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                        UserClient.User_EditAsync(UserID, txtUserName.Text, txtPassword.Password, txtFullName.Text, txtDisplayName.Text, IsActived, int.Parse(User.UserID), DateTime.Now.ToString("MM/dd/yyyy"));
                     }
                 }
                 else

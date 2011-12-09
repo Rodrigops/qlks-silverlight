@@ -37,7 +37,7 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
         {
             PhieuNhapKhoClient = new PhieuNhapKhoSVCClient();
             PhieuNhapKhoClient.PhieuNhapKho_DeleteCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(PhieuNhapKhoClient_PhieuNhapKho_DeleteCompleted);
-            PhieuNhapKhoClient.PhieuNhapKho_DeleteAsync(PhieuNhapID, 0, DateTime.Now.ToString("MM/dd/yyyy"));
+            PhieuNhapKhoClient.PhieuNhapKho_DeleteAsync(PhieuNhapID, int.Parse(User.UserID), DateTime.Now.ToString("MM/dd/yyyy"));
         }
         private void btnTruKho_Click(object sender, RoutedEventArgs e)
         {
@@ -47,7 +47,7 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
 
             PhieuNhapKhoClient = new PhieuNhapKhoSVCClient();
             PhieuNhapKhoClient.PhieuNhapKho_DeleteCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(PhieuNhapKhoClient_PhieuNhapKho_DeleteCompleted);
-            PhieuNhapKhoClient.PhieuNhapKho_DeleteAsync(PhieuNhapID, 0, DateTime.Now.ToString("MM/dd/yyyy"));
+            PhieuNhapKhoClient.PhieuNhapKho_DeleteAsync(PhieuNhapID, int.Parse(User.UserID), DateTime.Now.ToString("MM/dd/yyyy"));
         }
         void ChiTietClient_ChiTietPhieuNhapKho_GetItemsCompleted(object sender, ChiTietPhieuNhapKho_GetItemsCompletedEventArgs e)
         {

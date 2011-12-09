@@ -146,14 +146,14 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
                         HoaDonDichVuClient = new HoaDonDichVuSVCClient();
                         HoaDonDichVuClient.HoaDonDichVu_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(HoaDonDichVuClient_HoaDonDichVu_AddCompleted);
                         HoaDonDichVuClient.HoaDonDichVu_AddAsync(HoaDonID, PhongID, (int)cbxDichVu.SelectedValue, -1, ngaysudung, thang, nam, ngayso,
-                            int.Parse(txtSoLuong.Text.ToString()), decimal.Parse(txtDonGia.Text.ToString()), decimal.Parse(txtTongTien.Text.ToString()), 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                            int.Parse(txtSoLuong.Text.ToString()), decimal.Parse(txtDonGia.Text.ToString()), decimal.Parse(txtTongTien.Text.ToString()), int.Parse(User.UserID), DateTime.Now.ToString("MM/dd/yyyy"));
                     }
                     else
                     {
                         HoaDonDichVuClient = new HoaDonDichVuSVCClient();
                         HoaDonDichVuClient.HoaDonDichVu_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(HoaDonDichVuClient_HoaDonDichVu_EditCompleted);
                         HoaDonDichVuClient.HoaDonDichVu_EditAsync(HoaDonDichVuID, HoaDonID, PhongID, (int)cbxDichVu.SelectedValue, -1, ngaysudung, thang, nam, ngayso,
-                            int.Parse(txtSoLuong.Text.ToString()), decimal.Parse(txtDonGia.Text.ToString()), decimal.Parse(txtTongTien.Text.ToString()), 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                            int.Parse(txtSoLuong.Text.ToString()), decimal.Parse(txtDonGia.Text.ToString()), decimal.Parse(txtTongTien.Text.ToString()), int.Parse(User.UserID), DateTime.Now.ToString("MM/dd/yyyy"));
                     }
                 }
                 else

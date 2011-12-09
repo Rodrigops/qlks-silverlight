@@ -56,12 +56,12 @@ namespace QuanLyKhachSan.Form.QuanLyUser
                 if (GroupID == -1)
                 {
                     GroupClient.Group_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(GroupClient_Group_AddCompleted);
-                    GroupClient.Group_AddAsync(txtGroupName.Text.Trim(), txtDescriptions.Text, IsActived, 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                    GroupClient.Group_AddAsync(txtGroupName.Text.Trim(), txtDescriptions.Text, IsActived, int.Parse(User.UserID), DateTime.Now.ToString("MM/dd/yyyy"));
                 }
                 else
                 {
                     GroupClient.Group_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(GroupClient_Group_EditCompleted);
-                    GroupClient.Group_EditAsync(GroupID, txtGroupName.Text.Trim(), txtDescriptions.Text, IsActived, 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                    GroupClient.Group_EditAsync(GroupID, txtGroupName.Text.Trim(), txtDescriptions.Text, IsActived, int.Parse(User.UserID), DateTime.Now.ToString("MM/dd/yyyy"));
                 }
             }
             else
