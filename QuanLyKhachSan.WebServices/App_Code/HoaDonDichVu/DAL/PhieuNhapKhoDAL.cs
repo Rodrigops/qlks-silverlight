@@ -77,7 +77,7 @@ namespace QuanLyKhachSan
                 item.PhieuNhapKhoID = int.Parse(rd["PhieuNhapKhoID"].ToString());
                 item.NgayNhap = rd["NgayNhap"].ToString();
                 item.GhiChu = rd["GhiChu"].ToString();
-
+                item.UserName = rd["UserName"].ToString();
                 if (!String.IsNullOrEmpty(rd["TongTien"].ToString()))
                     item.TongTien = decimal.Parse(rd["TongTien"].ToString());
                 else
