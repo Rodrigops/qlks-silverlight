@@ -109,14 +109,14 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
                     KhachHangClient.KhachHang_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(KhachHangClient_KhachHang_AddCompleted);
                     KhachHangClient.KhachHang_AddAsync(txtHoTen.Text, txtDiaChi.Text, txtDienThoai.Text, txtCMND.Text, ngaysinh, txtNoiSinh.Text, txtSoVisa.Text,
                         thoihanvisa, txtNguoiTiepNhan.Text, ngaynhapcanh, tungay, denngay, int.Parse(cbxQuocTich.SelectedValue.ToString()),
-                        gioitinh, 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                        gioitinh, int.Parse(User.UserID), DateTime.Now.ToString("MM/dd/yyyy"));
                 }
                 else
                 {
                     KhachHangClient.KhachHang_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(KhachHangClient_KhachHang_EditCompleted);
                     KhachHangClient.KhachHang_EditAsync(KhachHangID, txtHoTen.Text, txtDiaChi.Text, txtDienThoai.Text, txtCMND.Text, ngaysinh, txtNoiSinh.Text, txtSoVisa.Text,
                         thoihanvisa, txtNguoiTiepNhan.Text, ngaynhapcanh, tungay, denngay, int.Parse(cbxQuocTich.SelectedValue.ToString()),
-                        gioitinh, 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                        gioitinh, int.Parse(User.UserID), DateTime.Now.ToString("MM/dd/yyyy"));
                 }
             }
             else

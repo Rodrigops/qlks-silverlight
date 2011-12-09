@@ -57,7 +57,7 @@
                         <telerik:RadGridView.Columns>
                             <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=NgayNhap}" Header="Ngày nhập" HeaderTextAlignment="Center" TextAlignment="Center" Width="200" />
                             <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=TongTien, Converter={StaticResource NumberVietnameseFormater}}" Header="Tổng tiền" HeaderTextAlignment="Center" TextAlignment="Center" Width="165" />
-                            <telerik:GridViewDataColumn Header="Người nhập" HeaderTextAlignment="Center" TextAlignment="Center" Width="160*" />
+                            <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=UserName}" Header="Người nhập" HeaderTextAlignment="Center" TextAlignment="Center" Width="160*" />
                             <telerik:GridViewDataColumn DataMemberBinding="{Binding Path=GhiChu}" Header="Ghi chú" HeaderTextAlignment="Center" TextAlignment="Left" Width="200*" />
                         </telerik:RadGridView.Columns>
                     </telerik:RadGridView>

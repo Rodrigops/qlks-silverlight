@@ -71,7 +71,7 @@
                     <telerik:RadGridView.Columns>
                         <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Ngày nhập" DataMemberBinding="{Binding Path=NgayNhap}" Width="175" ></telerik:GridViewDataColumn>
                         <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Tổng tiền" DataMemberBinding="{Binding Path=TongTien, Converter={StaticResource NumberVietnameseFormater}}" Width="150"></telerik:GridViewDataColumn>
-                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Người nhập" Width="120"></telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Người nhập" DataMemberBinding="{Binding Path=UserName}" Width="120"></telerik:GridViewDataColumn>
                         <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Left" Header="Ghi chú" DataMemberBinding="{Binding Path=GhiChu}" Width="200"></telerik:GridViewDataColumn>
                         <telerik:GridViewColumn Header="Chỉnh Sửa" Width="80" CellTemplate="{StaticResource Template_grvPhieuNhapKho_ColumnEdit}"></telerik:GridViewColumn>
                     </telerik:RadGridView.Columns>
