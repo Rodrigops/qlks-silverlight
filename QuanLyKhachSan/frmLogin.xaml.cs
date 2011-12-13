@@ -27,11 +27,15 @@ namespace QuanLyKhachSan
 
         private void radButton1_Click(object sender, RoutedEventArgs e)
         {
-            AuthenticationSVCSoapClient Authentication = new AuthenticationSVCSoapClient();
-            Authentication.Authentication_CheckAccountCompleted += new EventHandler<Authentication_CheckAccountCompletedEventArgs>(Authentication_Authentication_CheckAccountCompleted);
-            Authentication.Authentication_CheckAccountAsync(txtUserName.Text.Trim(), txtPassword.Password.Trim());          
+            Login();
         }
 
+        void Login()
+        {
+            AuthenticationSVCSoapClient Authentication = new AuthenticationSVCSoapClient();
+            Authentication.Authentication_CheckAccountCompleted += new EventHandler<Authentication_CheckAccountCompletedEventArgs>(Authentication_Authentication_CheckAccountCompleted);
+            Authentication.Authentication_CheckAccountAsync(txtUserName.Text.Trim(), txtPassword.Password.Trim());
+        }
         void Authentication_Authentication_CheckAccountCompleted(object sender, Authentication_CheckAccountCompletedEventArgs e)
         {
             if (e.Result.ToString() != "Fail")
@@ -74,6 +78,24 @@ namespace QuanLyKhachSan
             }
             return default(T);
 
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                Login();
+            }
+        }
+
+        private void txtUserName_GotFocus(object sender, System.Windows.RoutedEventArgs e)
+        {
+        	this.txtUserName.Text = String.Empty;
+        }
+
+        private void txtPassword_GotFocus(object sender, RoutedEventArgs e)
+        {
+            this.txtPassword.Password = String.Empty;
         }
     }
 }

@@ -8,10 +8,19 @@
            d:DesignWidth="1000" d:DesignHeight="800"
            Title="frmLogin Page" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
     <Grid x:Name="LayoutRoot">
-        <telerik:RadButton Content="Đăng nhập" Height="Auto" telerik:StyleManager.Theme="Metro" HorizontalAlignment="Left" Margin="535,313,0,0" Name="radButton1" VerticalAlignment="Top" Width="83" Click="radButton1_Click" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="468,255,0,0" Name="txtUserName" VerticalAlignment="Top" Width="216" TabIndex="0" />
-        <sdk:Label Height="28" HorizontalAlignment="Left" Margin="391,259,0,0" Name="label1" VerticalAlignment="Top" Width="71" Content="User Name" />
-        <sdk:Label Height="28" HorizontalAlignment="Left" Margin="391,288,0,0" Name="label2" VerticalAlignment="Top" Width="71" Content="Password" />
-        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="468,284,0,0" Name="txtPassword" TabIndex="1" VerticalAlignment="Top" Width="216" />
+        <Rectangle Height="152" Margin="342,117,307,0" Stroke="Black" VerticalAlignment="Top" RadiusY="23" RadiusX="23">
+        	<Rectangle.Fill>
+        		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+        			<GradientStop Color="#FFA8C1F1" Offset="0"/>
+        			<GradientStop Color="#FFACC4EB" Offset="1"/>
+        			<GradientStop Color="#FFF5F8FD" Offset="0.728"/>
+        		</LinearGradientBrush>
+        	</Rectangle.Fill>
+        </Rectangle>
+        <telerik:RadButton Content="Đăng nhập" Height="Auto" telerik:StyleManager.Theme="Metro" HorizontalAlignment="Left" Margin="409,229,0,0" x:Name="radButton1" VerticalAlignment="Top" Width="83" Click="radButton1_Click" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="409,152,0,0" x:Name="txtUserName" VerticalAlignment="Top" Width="216" TabIndex="0" GotFocus="txtUserName_GotFocus"/>
+        <sdk:Label Height="28" HorizontalAlignment="Left" Margin="409,181,0,0" x:Name="label2" VerticalAlignment="Top" Width="54" Content="Password" />
+        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="409,200,0,0" x:Name="txtPassword" TabIndex="1" VerticalAlignment="Top" Width="216" KeyDown="txtPassword_KeyDown" GotFocus="txtPassword_GotFocus" />
+        <sdk:Label Height="28" HorizontalAlignment="Left" Margin="409,133,0,0" x:Name="label1" VerticalAlignment="Top" Width="63" Content="User Name" />
     </Grid>
 </navigation:Page>
