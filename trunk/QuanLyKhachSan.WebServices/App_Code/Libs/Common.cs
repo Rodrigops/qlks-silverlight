@@ -8,6 +8,7 @@ using System.Text;
 using System.Security.Cryptography;
 using System.IO;
 using System.Web;
+using System.Configuration;
 
 namespace QuanLyKhachSan
 {
@@ -17,6 +18,34 @@ namespace QuanLyKhachSan
         {
             return int.Parse(HttpContext.Current.Session["UserID"].ToString());
         }
+        #region GetConnectionstring
+        /// <summary>
+        /// method to retrieve connection stringed in the web.config file
+        /// </summary>
+        /// <param name="str">Name of the connection</param>
+        /// <remarks>Need a reference to the System.Configuration Namespace</remarks>
+        /// <returns></returns>
+        /// 
+        public static string GetConnectionString(string str)
+        {
+            //variable to hold our return value
+            string conn = string.Empty;
+            //check if a value was provided
+            if (!string.IsNullOrEmpty(str))
+            {
+                //name provided so search for that connection
+                conn = ConfigurationManager.ConnectionStrings[str].ConnectionString;
+
+            }
+            else
+            //name not provided, get the 'default' connection
+            {
+                conn = ConfigurationManager.ConnectionStrings["YourConnName"].ConnectionString;
+            }
+            //return the value
+            return conn;
+        }
+        #endregion
         public string EncryptPasswordMD5(string Password)
         {
             try
