@@ -9,6 +9,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportHoaDon));
             Telerik.Reporting.ReportParameter reportParameter1 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.ReportParameter reportParameter2 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.ReportParameter reportParameter3 = new Telerik.Reporting.ReportParameter();
@@ -17,6 +18,10 @@
             Telerik.Reporting.ReportParameter reportParameter6 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.ReportParameter reportParameter7 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.ReportParameter reportParameter8 = new Telerik.Reporting.ReportParameter();
+            Telerik.Reporting.ReportParameter reportParameter9 = new Telerik.Reporting.ReportParameter();
+            Telerik.Reporting.ReportParameter reportParameter10 = new Telerik.Reporting.ReportParameter();
+            Telerik.Reporting.ReportParameter reportParameter11 = new Telerik.Reporting.ReportParameter();
+            Telerik.Reporting.ReportParameter reportParameter12 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.Drawing.StyleRule styleRule1 = new Telerik.Reporting.Drawing.StyleRule();
             Telerik.Reporting.Drawing.StyleRule styleRule2 = new Telerik.Reporting.Drawing.StyleRule();
             Telerik.Reporting.Drawing.DescendantSelector descendantSelector1 = new Telerik.Reporting.Drawing.DescendantSelector();
@@ -38,15 +43,21 @@
             this.txtTienDV = new Telerik.Reporting.TextBox();
             this.txtTraTruoc = new Telerik.Reporting.TextBox();
             this.Footer = new Telerik.Reporting.TextBox();
-            this.pageHeaderSection1 = new Telerik.Reporting.PageHeaderSection();
-            this.Header = new Telerik.Reporting.TextBox();
             this.textBox1 = new Telerik.Reporting.TextBox();
             this.txtTongTien = new Telerik.Reporting.TextBox();
+            this.textBox2 = new Telerik.Reporting.TextBox();
+            this.textBox3 = new Telerik.Reporting.TextBox();
+            this.txtNgayVao = new Telerik.Reporting.TextBox();
+            this.txtGioVao = new Telerik.Reporting.TextBox();
+            this.textBox6 = new Telerik.Reporting.TextBox();
+            this.txtGioRa = new Telerik.Reporting.TextBox();
+            this.txtNgayRa = new Telerik.Reporting.TextBox();
+            this.textBox11 = new Telerik.Reporting.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // detail
             // 
-            this.detail.Height = new Telerik.Reporting.Drawing.Unit(1.8999608755111694D, Telerik.Reporting.Drawing.UnitType.Inch);
+            this.detail.Height = new Telerik.Reporting.Drawing.Unit(2.2000000476837158D, Telerik.Reporting.Drawing.UnitType.Inch);
             this.detail.Items.AddRange(new Telerik.Reporting.ReportItemBase[] {
             this.lblMaKH,
             this.lblTienPhong,
@@ -64,183 +75,305 @@
             this.txtTraTruoc,
             this.Footer,
             this.textBox1,
-            this.txtTongTien});
+            this.txtTongTien,
+            this.textBox2,
+            this.textBox3,
+            this.txtNgayVao,
+            this.txtGioVao,
+            this.textBox6,
+            this.txtGioRa,
+            this.txtNgayRa,
+            this.textBox11});
             this.detail.Name = "detail";
+            this.detail.Style.Font.Name = "Arial";
+            this.detail.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(15D, Telerik.Reporting.Drawing.UnitType.Point);
             // 
             // lblMaKH
             // 
             this.lblMaKH.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(0.099999986588954926D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.40000000596046448D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.lblMaKH.Name = "lblMaKH";
-            this.lblMaKH.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(0.90000009536743164D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.lblMaKH.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(1.3000000715255737D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.lblMaKH.Style.Font.Name = "Arial";
+            this.lblMaKH.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(15D, Telerik.Reporting.Drawing.UnitType.Point);
             this.lblMaKH.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.lblMaKH.Value = "Tên KH:";
+            resources.ApplyResources(this.lblMaKH, "lblMaKH");
             // 
             // lblTienPhong
             // 
-            this.lblTienPhong.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(0.099999986588954926D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.60000008344650269D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.lblTienPhong.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(0.099999986588954926D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(1D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.lblTienPhong.Name = "lblTienPhong";
-            this.lblTienPhong.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(0.90000009536743164D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.lblTienPhong.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(1.3000003099441528D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.lblTienPhong.Style.Font.Name = "Arial";
+            this.lblTienPhong.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(15D, Telerik.Reporting.Drawing.UnitType.Point);
             this.lblTienPhong.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.lblTienPhong.Value = "Tiền phòng:";
+            resources.ApplyResources(this.lblTienPhong, "lblTienPhong");
             // 
             // lblTienDV
             // 
-            this.lblTienDV.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(0.099999986588954926D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.800000011920929D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.lblTienDV.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(0.099999986588954926D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(1.2000787258148193D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.lblTienDV.Name = "lblTienDV";
-            this.lblTienDV.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(0.90000009536743164D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.lblTienDV.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(1.3000000715255737D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.lblTienDV.Style.Font.Name = "Arial";
+            this.lblTienDV.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(15D, Telerik.Reporting.Drawing.UnitType.Point);
             this.lblTienDV.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.lblTienDV.Value = "Tiền dịch vụ:";
+            resources.ApplyResources(this.lblTienDV, "lblTienDV");
             // 
             // lblTongTien
             // 
-            this.lblTongTien.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(0.099999986588954926D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(1.0000001192092896D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.lblTongTien.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(0.099999986588954926D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(1.4001575708389282D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.lblTongTien.Name = "lblTongTien";
-            this.lblTongTien.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(0.90000009536743164D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.20000012218952179D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.lblTongTien.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(1.3000000715255737D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.20000012218952179D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.lblTongTien.Style.Font.Name = "Arial";
+            this.lblTongTien.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(15D, Telerik.Reporting.Drawing.UnitType.Point);
             this.lblTongTien.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.lblTongTien.Value = "Trả trước :";
+            resources.ApplyResources(this.lblTongTien, "lblTongTien");
             // 
             // lblNgay
             // 
-            this.lblNgay.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(0.10000002384185791D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.099999986588954926D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.lblNgay.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(0.70000004768371582D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.lblNgay.Name = "lblNgay";
-            this.lblNgay.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(0.40000009536743164D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.20000004768371582D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.lblNgay.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(0.59999996423721313D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.29992127418518066D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.lblNgay.Style.Font.Name = "Arial";
+            this.lblNgay.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(15D, Telerik.Reporting.Drawing.UnitType.Point);
             this.lblNgay.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.lblNgay.Value = "Ngày";
+            resources.ApplyResources(this.lblNgay, "lblNgay");
             // 
             // txtNgay
             // 
-            this.txtNgay.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(0.50007897615432739D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.099999986588954926D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtNgay.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(1.3000785112380981D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(7.8678131103515625E-05D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.txtNgay.Name = "txtNgay";
-            this.txtNgay.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(0.39992108941078186D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
-            this.txtNgay.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
+            this.txtNgay.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(0.29992136359214783D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.29984259605407715D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtNgay.Style.Font.Name = "Arial";
+            this.txtNgay.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(15D, Telerik.Reporting.Drawing.UnitType.Point);
+            this.txtNgay.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.txtNgay.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.txtNgay.Value = "=Fields.Ngay";
+            resources.ApplyResources(this.txtNgay, "txtNgay");
             // 
             // lblThang
             // 
-            this.lblThang.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(0.90007895231246948D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.1000000610947609D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.lblThang.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(1.600000262260437D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(7.8678131103515625E-05D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.lblThang.Name = "lblThang";
-            this.lblThang.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(0.5D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.lblThang.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(0.69992142915725708D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.29992136359214783D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.lblThang.Style.Font.Name = "Arial";
+            this.lblThang.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(15D, Telerik.Reporting.Drawing.UnitType.Point);
             this.lblThang.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.lblThang.Value = "Tháng";
+            resources.ApplyResources(this.lblThang, "lblThang");
             // 
             // txtThang
             // 
-            this.txtThang.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(1.4001578092575073D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.1000000610947609D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtThang.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(2.3000001907348633D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(7.8678131103515625E-05D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.txtThang.Name = "txtThang";
-            this.txtThang.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(0.39984226226806641D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
-            this.txtThang.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
+            this.txtThang.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(0.299999862909317D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.29992136359214783D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtThang.Style.Font.Name = "Arial";
+            this.txtThang.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(15D, Telerik.Reporting.Drawing.UnitType.Point);
+            this.txtThang.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.txtThang.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.txtThang.Value = "=Fields.Thang";
+            resources.ApplyResources(this.txtThang, "txtThang");
             // 
             // lblNam
             // 
-            this.lblNam.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(1.8000788688659668D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.099999986588954926D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.lblNam.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(2.6000003814697266D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(7.8678131103515625E-05D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.lblNam.Name = "lblNam";
-            this.lblNam.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(0.3999999463558197D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.lblNam.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(0.599999725818634D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.29992127418518066D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.lblNam.Style.Font.Name = "Arial";
+            this.lblNam.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(15D, Telerik.Reporting.Drawing.UnitType.Point);
             this.lblNam.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.lblNam.Value = "Năm";
+            resources.ApplyResources(this.lblNam, "lblNam");
             // 
             // txtNam
             // 
-            this.txtNam.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(2.2001574039459229D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.0999998226761818D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtNam.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(3.2000000476837158D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(7.8678131103515625E-05D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.txtNam.Name = "txtNam";
-            this.txtNam.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(0.49984297156333923D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.20000012218952179D, Telerik.Reporting.Drawing.UnitType.Inch));
-            this.txtNam.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
+            this.txtNam.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(0.99984234571456909D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.29992127418518066D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtNam.Style.Font.Name = "Arial";
+            this.txtNam.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(15D, Telerik.Reporting.Drawing.UnitType.Point);
+            this.txtNam.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
             this.txtNam.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.txtNam.Value = "=Fields.Nam";
+            resources.ApplyResources(this.txtNam, "txtNam");
             // 
             // txtMaKH
             // 
-            this.txtMaKH.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(1.0000789165496826D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.40000009536743164D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtMaKH.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(1.4000787734985352D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.40000009536743164D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(1.6999212503433228D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtMaKH.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(3.2999217510223389D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtMaKH.Style.Font.Name = "Arial";
+            this.txtMaKH.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(15D, Telerik.Reporting.Drawing.UnitType.Point);
             this.txtMaKH.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.txtMaKH.Value = "=Fields.MaKH";
+            resources.ApplyResources(this.txtMaKH, "txtMaKH");
             // 
             // txtTienPhong
             // 
-            this.txtTienPhong.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(1.0000792741775513D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.60000008344650269D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtTienPhong.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(1.4000000953674316D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(1D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.txtTienPhong.Name = "txtTienPhong";
-            this.txtTienPhong.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(1.6999210119247437D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtTienPhong.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(3.2999212741851807D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtTienPhong.Style.Font.Name = "Arial";
+            this.txtTienPhong.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(15D, Telerik.Reporting.Drawing.UnitType.Point);
             this.txtTienPhong.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.txtTienPhong.Value = "=Fields.TienPhong";
+            resources.ApplyResources(this.txtTienPhong, "txtTienPhong");
             // 
             // txtTienDV
             // 
-            this.txtTienDV.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(1.0000792741775513D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.800000011920929D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtTienDV.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(1.4000000953674316D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(1.2000787258148193D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.txtTienDV.Name = "txtTienDV";
-            this.txtTienDV.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(1.6999210119247437D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtTienDV.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(3.2999212741851807D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtTienDV.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(15D, Telerik.Reporting.Drawing.UnitType.Point);
             this.txtTienDV.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.txtTienDV.Value = "=Fields.TienDV";
+            resources.ApplyResources(this.txtTienDV, "txtTienDV");
             // 
             // txtTraTruoc
             // 
-            this.txtTraTruoc.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(1.0000792741775513D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(1.0000001192092896D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtTraTruoc.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(1.4000000953674316D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(1.4001579284667969D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.txtTraTruoc.Name = "txtTraTruoc";
-            this.txtTraTruoc.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(1.6999210119247437D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtTraTruoc.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(3.2999215126037598D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtTraTruoc.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(15D, Telerik.Reporting.Drawing.UnitType.Point);
             this.txtTraTruoc.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.txtTraTruoc.Value = "=Fields.TraTruoc";
+            resources.ApplyResources(this.txtTraTruoc, "txtTraTruoc");
             // 
             // Footer
             // 
-            this.Footer.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(3.9378803194267675E-05D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(1.5999999046325684D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.Footer.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(0.099999986588954926D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(1.9000000953674316D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.Footer.Name = "Footer";
-            this.Footer.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(2.7999212741851807D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19996070861816406D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.Footer.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(11.430000305175781D, Telerik.Reporting.Drawing.UnitType.Cm), new Telerik.Reporting.Drawing.Unit(0.299999862909317D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.Footer.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(15D, Telerik.Reporting.Drawing.UnitType.Point);
             this.Footer.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.Footer.Value = "Cám ơn, hẹn gặp lại quý khách";
-            // 
-            // pageHeaderSection1
-            // 
-            this.pageHeaderSection1.Height = new Telerik.Reporting.Drawing.Unit(0.20000004768371582D, Telerik.Reporting.Drawing.UnitType.Inch);
-            this.pageHeaderSection1.Items.AddRange(new Telerik.Reporting.ReportItemBase[] {
-            this.Header});
-            this.pageHeaderSection1.Name = "pageHeaderSection1";
-            // 
-            // Header
-            // 
-            this.Header.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(3.9378803194267675E-05D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(3.9378803194267675E-05D, Telerik.Reporting.Drawing.UnitType.Inch));
-            this.Header.Name = "Header";
-            this.Header.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(2.7999212741851807D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19996058940887451D, Telerik.Reporting.Drawing.UnitType.Inch));
-            this.Header.Style.LineWidth = new Telerik.Reporting.Drawing.Unit(1D, Telerik.Reporting.Drawing.UnitType.Point);
-            this.Header.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.Header.Value = "Công ty TNHH Khách sạn Cao Thăng";
+            this.Footer.Style.Visible = true;
+            resources.ApplyResources(this.Footer, "Footer");
             // 
             // textBox1
             // 
-            this.textBox1.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(0.099999986588954926D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(1.2000001668930054D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.textBox1.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(0.099999986588954926D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(1.6002365350723267D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(0.90000009536743164D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.20000012218952179D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.textBox1.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(1.3000000715255737D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.20000012218952179D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.textBox1.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(15D, Telerik.Reporting.Drawing.UnitType.Point);
             this.textBox1.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.textBox1.Value = "Tổng tiền:";
+            resources.ApplyResources(this.textBox1, "textBox1");
             // 
             // txtTongTien
             // 
-            this.txtTongTien.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(1D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(1.2000000476837158D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtTongTien.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(1.4000000953674316D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(1.6002370119094849D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(1.6999210119247437D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtTongTien.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(3.2999212741851807D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtTongTien.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(15D, Telerik.Reporting.Drawing.UnitType.Point);
             this.txtTongTien.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
-            this.txtTongTien.Value = "=Fields.TongTien";
+            resources.ApplyResources(this.txtTongTien, "txtTongTien");
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(0.099999986588954926D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.60000008344650269D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(1.3000003099441528D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.textBox2.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(15D, Telerik.Reporting.Drawing.UnitType.Point);
+            this.textBox2.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            resources.ApplyResources(this.textBox2, "textBox2");
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(2.7000000476837158D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.60000008344650269D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(0.59999990463256836D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.textBox3.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(15D, Telerik.Reporting.Drawing.UnitType.Point);
+            this.textBox3.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            resources.ApplyResources(this.textBox3, "textBox3");
+            // 
+            // txtNgayVao
+            // 
+            this.txtNgayVao.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(1.4000000953674316D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.60000008344650269D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtNgayVao.Name = "txtNgayVao";
+            this.txtNgayVao.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(1.3000000715255737D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtNgayVao.Style.Font.Name = "Arial";
+            this.txtNgayVao.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            resources.ApplyResources(this.txtNgayVao, "txtNgayVao");
+            // 
+            // txtGioVao
+            // 
+            this.txtGioVao.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(3.3000001907348633D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.60000008344650269D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtGioVao.Name = "txtGioVao";
+            this.txtGioVao.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(1.3999999761581421D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtGioVao.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            resources.ApplyResources(this.txtGioVao, "txtGioVao");
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(0.099999986588954926D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.800000011920929D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(1.3000003099441528D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.textBox6.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(15D, Telerik.Reporting.Drawing.UnitType.Point);
+            this.textBox6.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            resources.ApplyResources(this.textBox6, "textBox6");
+            // 
+            // txtGioRa
+            // 
+            this.txtGioRa.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(3.3000001907348633D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.800000011920929D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtGioRa.Name = "txtGioRa";
+            this.txtGioRa.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(1.3999999761581421D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtGioRa.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            resources.ApplyResources(this.txtGioRa, "txtGioRa");
+            // 
+            // txtNgayRa
+            // 
+            this.txtNgayRa.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(1.4000000953674316D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.800000011920929D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtNgayRa.Name = "txtNgayRa";
+            this.txtNgayRa.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(1.3000000715255737D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtNgayRa.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            resources.ApplyResources(this.txtNgayRa, "txtNgayRa");
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(2.7000000476837158D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.800000011920929D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(0.59999990463256836D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.textBox11.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(15D, Telerik.Reporting.Drawing.UnitType.Point);
+            this.textBox11.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            resources.ApplyResources(this.textBox11, "textBox11");
             // 
             // ReportHoaDon
             // 
+            this.Culture = new System.Globalization.CultureInfo("vi-VN");
             this.Items.AddRange(new Telerik.Reporting.ReportItemBase[] {
-            this.pageHeaderSection1,
             this.detail});
             this.PageSettings.Landscape = false;
-            this.PageSettings.Margins.Bottom = new Telerik.Reporting.Drawing.Unit(1D, Telerik.Reporting.Drawing.UnitType.Inch);
-            this.PageSettings.Margins.Left = new Telerik.Reporting.Drawing.Unit(1D, Telerik.Reporting.Drawing.UnitType.Inch);
-            this.PageSettings.Margins.Right = new Telerik.Reporting.Drawing.Unit(1D, Telerik.Reporting.Drawing.UnitType.Inch);
-            this.PageSettings.Margins.Top = new Telerik.Reporting.Drawing.Unit(1D, Telerik.Reporting.Drawing.UnitType.Inch);
-            this.PageSettings.PaperKind = System.Drawing.Printing.PaperKind.Letter;
+            this.PageSettings.Margins.Bottom = new Telerik.Reporting.Drawing.Unit(0D, Telerik.Reporting.Drawing.UnitType.Inch);
+            this.PageSettings.Margins.Left = new Telerik.Reporting.Drawing.Unit(0D, Telerik.Reporting.Drawing.UnitType.Inch);
+            this.PageSettings.Margins.Right = new Telerik.Reporting.Drawing.Unit(0D, Telerik.Reporting.Drawing.UnitType.Inch);
+            this.PageSettings.Margins.Top = new Telerik.Reporting.Drawing.Unit(0D, Telerik.Reporting.Drawing.UnitType.Inch);
+            this.PageSettings.PaperKind = System.Drawing.Printing.PaperKind.Custom;
+            this.PageSettings.PaperSize = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(12D, Telerik.Reporting.Drawing.UnitType.Cm), new Telerik.Reporting.Drawing.Unit(10D, Telerik.Reporting.Drawing.UnitType.Cm));
+            reportParameter1.AllowNull = true;
             reportParameter1.Name = "Ngay";
+            resources.ApplyResources(reportParameter1, "reportParameter1");
+            reportParameter2.AllowNull = true;
             reportParameter2.Name = "Thang";
+            resources.ApplyResources(reportParameter2, "reportParameter2");
+            reportParameter3.AllowNull = true;
             reportParameter3.Name = "Nam";
+            resources.ApplyResources(reportParameter3, "reportParameter3");
+            reportParameter4.AllowNull = true;
             reportParameter4.Name = "TenKhachHang";
+            resources.ApplyResources(reportParameter4, "reportParameter4");
+            reportParameter5.AllowNull = true;
             reportParameter5.Name = "TienPhong";
+            resources.ApplyResources(reportParameter5, "reportParameter5");
+            reportParameter6.AllowNull = true;
             reportParameter6.Name = "TienDichVu";
+            resources.ApplyResources(reportParameter6, "reportParameter6");
+            reportParameter7.AllowNull = true;
             reportParameter7.Name = "TongTien";
+            resources.ApplyResources(reportParameter7, "reportParameter7");
+            reportParameter8.AllowNull = true;
             reportParameter8.Name = "TraTruoc";
+            resources.ApplyResources(reportParameter8, "reportParameter8");
+            reportParameter9.AllowNull = true;
+            reportParameter9.Name = "GioVao";
+            resources.ApplyResources(reportParameter9, "reportParameter9");
+            reportParameter10.AllowNull = true;
+            reportParameter10.Name = "GioRa";
+            resources.ApplyResources(reportParameter10, "reportParameter10");
+            reportParameter11.AllowNull = true;
+            reportParameter11.Name = "NgayVao";
+            resources.ApplyResources(reportParameter11, "reportParameter11");
+            reportParameter12.AllowNull = true;
+            reportParameter12.Name = "NgayRa";
+            resources.ApplyResources(reportParameter12, "reportParameter12");
             this.ReportParameters.Add(reportParameter1);
             this.ReportParameters.Add(reportParameter2);
             this.ReportParameters.Add(reportParameter3);
@@ -249,7 +382,12 @@
             this.ReportParameters.Add(reportParameter6);
             this.ReportParameters.Add(reportParameter7);
             this.ReportParameters.Add(reportParameter8);
+            this.ReportParameters.Add(reportParameter9);
+            this.ReportParameters.Add(reportParameter10);
+            this.ReportParameters.Add(reportParameter11);
+            this.ReportParameters.Add(reportParameter12);
             this.Style.BackgroundColor = System.Drawing.Color.White;
+            this.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(14D, Telerik.Reporting.Drawing.UnitType.Cm);
             styleRule1.Selectors.AddRange(new Telerik.Reporting.Drawing.ISelector[] {
             new Telerik.Reporting.Drawing.StyleSelector(typeof(Telerik.Reporting.Table), "Normal.TableNormal")});
             styleRule1.Style.BackgroundColor = System.Drawing.Color.White;
@@ -280,15 +418,14 @@
             styleRule1,
             styleRule2,
             styleRule3});
-            this.Width = new Telerik.Reporting.Drawing.Unit(2.8000001907348633D, Telerik.Reporting.Drawing.UnitType.Inch);
+            this.UnitOfMeasure = Telerik.Reporting.Drawing.UnitType.Cm;
+            this.Width = new Telerik.Reporting.Drawing.Unit(12D, Telerik.Reporting.Drawing.UnitType.Cm);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
         #endregion
 
         private TextBox Footer;
-        private PageHeaderSection pageHeaderSection1;
-        private TextBox Header;
         private TextBox lblMaKH;
         private TextBox lblTienPhong;
         private TextBox lblTienDV;
@@ -306,5 +443,13 @@
         private Telerik.Reporting.DetailSection detail;
         private TextBox textBox1;
         private TextBox txtTongTien;
+        private TextBox textBox2;
+        private TextBox textBox3;
+        private TextBox txtNgayVao;
+        private TextBox txtGioVao;
+        private TextBox textBox6;
+        private TextBox txtGioRa;
+        private TextBox txtNgayRa;
+        private TextBox textBox11;
     }
 }

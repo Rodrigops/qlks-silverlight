@@ -31,6 +31,13 @@ namespace Telerik.Reporting
             txtThang.Value = this.ReportParameters["Thang"].Value.ToString();
             txtNam.Value = this.ReportParameters["Nam"].Value.ToString();
             txtMaKH.Value = this.ReportParameters["TenKhachHang"].Value.ToString();
+            
+            txtNgayVao.Value = this.ReportParameters["NgayVao"].Value.ToString();
+            txtGioVao.Value = this.ReportParameters["GioVao"].Value.ToString();
+
+            txtNgayRa.Value = this.ReportParameters["NgayRa"].Value.ToString();
+            txtGioRa.Value = this.ReportParameters["GioRa"].Value.ToString();
+
             txtTienPhong.Value = this.ReportParameters["TienPhong"].Value.ToString();
             txtTienDV.Value = this.ReportParameters["TienDichVu"].Value.ToString();
             txtTraTruoc.Value = this.ReportParameters["TraTruoc"].Value.ToString();
