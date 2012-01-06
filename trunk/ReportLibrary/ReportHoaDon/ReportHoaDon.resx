@@ -117,7 +117,88 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblNam.Value" xml:space="preserve">
+    <value>Năm</value>
+  </data>
+  <data name="lblTienDV.Value" xml:space="preserve">
+    <value>Tiền dịch vụ:</value>
+  </data>
+  <data name="txtGioVao.Value" xml:space="preserve">
+    <value>=Fields.TienPhong</value>
+  </data>
+  <data name="lblThang.Value" xml:space="preserve">
+    <value>Tháng</value>
+  </data>
+  <data name="textBox6.Value" xml:space="preserve">
+    <value>Ngày ra:</value>
+  </data>
+  <data name="textBox11.Value" xml:space="preserve">
+    <value>Giờ :</value>
+  </data>
+  <data name="txtTienPhong.Value" xml:space="preserve">
+    <value>=Fields.TienPhong</value>
+  </data>
+  <data name="txtNgayRa.Value" xml:space="preserve">
+    <value>=Fields.G</value>
+  </data>
+  <data name="txtTienDV.Value" xml:space="preserve">
+    <value>=Fields.TienDV</value>
+  </data>
+  <data name="txtTraTruoc.Value" xml:space="preserve">
+    <value>=Fields.TraTruoc</value>
+  </data>
+  <data name="textBox3.Value" xml:space="preserve">
+    <value>Giờ :</value>
+  </data>
+  <data name="textBox2.Value" xml:space="preserve">
+    <value>Ngày vào:</value>
+  </data>
+  <data name="Footer.Value" xml:space="preserve">
+    <value>Cám ơn, hẹn gặp lại quý khách</value>
+  </data>
+  <data name="lblTienPhong.Value" xml:space="preserve">
+    <value>Tiền phòng:</value>
+  </data>
+  <data name="txtMaKH.Value" xml:space="preserve">
+    <value>=Fields.MaKH</value>
+  </data>
+  <data name="txtNgay.Value" xml:space="preserve">
+    <value>=Fields.Ngay</value>
+  </data>
+  <data name="txtThang.Value" xml:space="preserve">
+    <value>=Fields.Thang</value>
+  </data>
+  <data name="txtTongTien.Value" xml:space="preserve">
+    <value>=Fields.TongTien</value>
+  </data>
+  <data name="textBox1.Value" xml:space="preserve">
+    <value>Tổng tiền:</value>
+  </data>
+  <data name="lblTongTien.Value" xml:space="preserve">
+    <value>Trả trước :</value>
+  </data>
+  <data name="txtNam.Value" xml:space="preserve">
+    <value>=Fields.Nam</value>
+  </data>
+  <data name="txtGioRa.Value" xml:space="preserve">
+    <value>=Fields.TienPhong</value>
+  </data>
+  <data name="txtNgayVao.Value" xml:space="preserve">
+    <value>=Fields.G</value>
+  </data>
+  <data name="lblMaKH.Value" xml:space="preserve">
+    <value>Tên KH:</value>
+  </data>
+  <data name="lblNgay.Value" xml:space="preserve">
+    <value>Ngày</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="$this.SnapGridSize" type="Telerik.Reporting.Drawing.Unit, Telerik.Reporting, Version=5.0.11.316, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
     <value>0.1in</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>vi-VN</value>
   </metadata>
 </root>
