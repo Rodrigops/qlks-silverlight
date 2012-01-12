@@ -70,9 +70,10 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
             HoaDonID = _HoaDonID;
             PhongID = _PhongID;
             HoaDon.HoaDon_GetItemCompleted += new EventHandler<HoaDon_GetItemCompletedEventArgs>(HoaDon_HoaDon_GetItemCompleted);
-            HoaDon.HoaDon_GetItemAsync(HoaDonID);
+            
             HoaDon_DichVu.HoaDonDichVu_GetItemsByIDCompleted += new EventHandler<HoaDonDichVu_GetItemsByIDCompletedEventArgs>(HoaDon_DichVu_HoaDonDichVu_GetItemsByIDCompleted);
             HoaDon_DichVu.HoaDonDichVu_GetItemsByIDAsync(HoaDonID, PhongID);
+
             HoaDon_TraTruocSVCClient HoaDon_TraTruocClient = new HoaDon_TraTruocSVCClient();
             HoaDon_TraTruocClient.HoaDon_TraTruoc_GetItemsCompleted += new EventHandler<HoaDon_TraTruoc_GetItemsCompletedEventArgs>(HoaDon_TraTruocClient_HoaDon_TraTruoc_GetItemsCompleted);
             HoaDon_TraTruocClient.HoaDon_TraTruoc_GetItemsAsync(HoaDonID);
@@ -100,7 +101,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                 DichVu += item.TongTien;
                 SPDichVu.Children.Add(txtContent);
             }
-
+            HoaDon.HoaDon_GetItemAsync(HoaDonID);
         }
         decimal TienTraTruoc = 0;
         decimal KhoanKhac = 0;
@@ -594,6 +595,12 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
             {
                 rptHoaDon InHoaDon = new rptHoaDon();
                 InHoaDon.TenKhachHang = TenKhachHang;
+                InHoaDon.NgayVao = txtNgayVao.Text;
+                InHoaDon.GioVao = txtGioVao.Text;
+                InHoaDon.PhutVao = txtPhutVao.Text;
+                InHoaDon.NgayRa = txtNgayRa.Text;
+                InHoaDon.GioRa = txtGioRa.Text;
+                InHoaDon.PhutRa = txtPhutRa.Text;
                 InHoaDon.TienPhong =  Format_NumberVietnamese(TongTienPhong.ToString());
                 InHoaDon.TienDichVu = Format_NumberVietnamese(DichVu.ToString());
                 InHoaDon.TongTien = Format_NumberVietnamese(txtTongThanhToan.Text.ToString());
