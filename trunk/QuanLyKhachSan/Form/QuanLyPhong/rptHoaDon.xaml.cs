@@ -20,6 +20,12 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         public string Thang = "";
         public string Nam = "";
         public string TenKhachHang = "";
+        public string NgayVao = "";
+        public string GioVao = "";
+        public string PhutVao = "";
+        public string NgayRa = "";
+        public string GioRa = "";
+        public string PhutRa = "";
         public string TienPhong = "";
         public string TienDichVu = "";
         public string TongTien = "";
@@ -39,6 +45,13 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
             args.ParameterValues.Add("Thang", Thang);
             args.ParameterValues.Add("Nam", Nam);
             args.ParameterValues.Add("TenKhachHang", TenKhachHang);
+            args.ParameterValues.Add("NgayVao", NgayVao);
+
+            args.ParameterValues.Add("GioVao", GioVao + "h" + PhutVao);
+
+            args.ParameterValues.Add("NgayRa", NgayRa);
+            args.ParameterValues.Add("GioRa", GioRa + "h" + PhutRa);
+
             args.ParameterValues.Add("TienPhong", TienPhong);
             args.ParameterValues.Add("TienDichVu", TienDichVu);
             args.ParameterValues.Add("TraTruoc", TraTruoc);
