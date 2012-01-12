@@ -142,7 +142,7 @@
             // 
             this.txtNgay.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(1.3000785112380981D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(7.8678131103515625E-05D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.txtNgay.Name = "txtNgay";
-            this.txtNgay.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(0.29992136359214783D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.29984259605407715D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtNgay.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(0.49984264373779297D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.29984259605407715D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.txtNgay.Style.Font.Name = "Arial";
             this.txtNgay.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(15D, Telerik.Reporting.Drawing.UnitType.Point);
             this.txtNgay.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Left;
@@ -151,7 +151,7 @@
             // 
             // lblThang
             // 
-            this.lblThang.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(1.600000262260437D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(7.8678131103515625E-05D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.lblThang.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(1.8000000715255737D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(7.8678131103515625E-05D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.lblThang.Name = "lblThang";
             this.lblThang.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(0.69992142915725708D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.29992136359214783D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.lblThang.Style.Font.Name = "Arial";
@@ -161,7 +161,7 @@
             // 
             // txtThang
             // 
-            this.txtThang.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(2.3000001907348633D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(7.8678131103515625E-05D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtThang.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(2.5D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(7.8678131103515625E-05D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.txtThang.Name = "txtThang";
             this.txtThang.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(0.299999862909317D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.29992136359214783D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.txtThang.Style.Font.Name = "Arial";
@@ -172,7 +172,7 @@
             // 
             // lblNam
             // 
-            this.lblNam.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(2.6000003814697266D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(7.8678131103515625E-05D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.lblNam.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(2.8000001907348633D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(7.8678131103515625E-05D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.lblNam.Name = "lblNam";
             this.lblNam.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(0.599999725818634D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.29992127418518066D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.lblNam.Style.Font.Name = "Arial";
@@ -182,7 +182,7 @@
             // 
             // txtNam
             // 
-            this.txtNam.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(3.2000000476837158D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(7.8678131103515625E-05D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtNam.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(3.4000003337860107D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(7.8678131103515625E-05D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.txtNam.Name = "txtNam";
             this.txtNam.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(0.99984234571456909D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.29992127418518066D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.txtNam.Style.Font.Name = "Arial";
