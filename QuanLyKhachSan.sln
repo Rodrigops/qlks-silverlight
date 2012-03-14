@@ -20,12 +20,15 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "QuanLyKhachSan.WebServices"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "6246"
+		VWDPort = "1109"
+		VWDDynamicPort = "false"
 		DefaultWebSiteLanguage = "Visual C#"
-		ProjOutputReferences = "{ED6A32E0-E930-4326-B111-030D1B02E5D4}|ClientBin|false;"
+		ProjOutputReferences = "{ED6A32E0-E930-4326-B111-030D1B02E5D4}|ClientBin|false;{5B2793C3-BFFF-4A4B-B5E0-EA84FAA2CEDF}|ClientBin|false;"
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportLibrary", "ReportLibrary\ReportLibrary.csproj", "{45DCEC9A-B73B-45F3-B199-DA974C511B6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyKhachSan.Login", "QuanLyKhachSan.Login\QuanLyKhachSan.Login.csproj", "{5B2793C3-BFFF-4A4B-B5E0-EA84FAA2CEDF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +48,10 @@ Global
 		{45DCEC9A-B73B-45F3-B199-DA974C511B6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45DCEC9A-B73B-45F3-B199-DA974C511B6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45DCEC9A-B73B-45F3-B199-DA974C511B6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B2793C3-BFFF-4A4B-B5E0-EA84FAA2CEDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B2793C3-BFFF-4A4B-B5E0-EA84FAA2CEDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B2793C3-BFFF-4A4B-B5E0-EA84FAA2CEDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B2793C3-BFFF-4A4B-B5E0-EA84FAA2CEDF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

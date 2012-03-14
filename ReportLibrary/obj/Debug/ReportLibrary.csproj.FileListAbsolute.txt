@@ -27,3 +27,12 @@ F:\Projects\qlksprojects.SL\qlksSL\ReportLibrary\bin\Debug\ReportLibrary.dll.con
 F:\Projects\qlksprojects.SL\qlksSL\ReportLibrary\bin\Debug\ReportLibrary.dll
 F:\Projects\qlksprojects.SL\qlksSL\ReportLibrary\bin\Debug\ReportLibrary.pdb
 F:\Projects\qlksprojects.SL\qlksSL\ReportLibrary\obj\Debug\Telerik.Reporting.ReportHoaDon.resources
+F:\Projects\2012\QLKS\ReportLibrary\bin\Debug\ReportLibrary.dll.config
+F:\Projects\2012\QLKS\ReportLibrary\bin\Debug\ReportLibrary.dll
+F:\Projects\2012\QLKS\ReportLibrary\bin\Debug\ReportLibrary.pdb
+F:\Projects\2012\QLKS\ReportLibrary\obj\Debug\ResolveAssemblyReference.cache
+F:\Projects\2012\QLKS\ReportLibrary\obj\Debug\Telerik.Reporting.ReportHoaDon.resources
+F:\Projects\2012\QLKS\ReportLibrary\obj\Debug\GenerateResource-ResGen.read.1.tlog
+F:\Projects\2012\QLKS\ReportLibrary\obj\Debug\GenerateResource-ResGen.write.1.tlog
+F:\Projects\2012\QLKS\ReportLibrary\obj\Debug\ReportLibrary.dll
+F:\Projects\2012\QLKS\ReportLibrary\obj\Debug\ReportLibrary.pdb

@@ -32,17 +32,17 @@ namespace QuanLyKhachSan
 
         void Login()
         {
-            AuthenticationSVCSoapClient Authentication = new AuthenticationSVCSoapClient();
-            Authentication.Authentication_CheckAccountCompleted += new EventHandler<Authentication_CheckAccountCompletedEventArgs>(Authentication_Authentication_CheckAccountCompleted);
-            Authentication.Authentication_CheckAccountAsync(txtUserName.Text.Trim(), txtPassword.Password.Trim());
+            //AuthenticationSVCSoapClient Authentication = new AuthenticationSVCSoapClient();
+            //Authentication.Authentication_CheckAccountCompleted += new EventHandler<Authentication_CheckAccountCompletedEventArgs>(Authentication_Authentication_CheckAccountCompleted);
+            //Authentication.Authentication_CheckAccountAsync(txtUserName.Text.Trim(), txtPassword.Password.Trim());
         }
         void Authentication_Authentication_CheckAccountCompleted(object sender, Authentication_CheckAccountCompletedEventArgs e)
         {
             if (e.Result.ToString() != "Fail")
             {               
-                AuthenticationSVCSoapClient Authentication = new AuthenticationSVCSoapClient();
-                Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
-                Authentication.Authentication_GetSessionAsync();
+                //AuthenticationSVCSoapClient Authentication = new AuthenticationSVCSoapClient();
+                //Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
+                //Authentication.Authentication_GetSessionAsync();
                 User.UserID = e.Result.ToString();
             }
             else
@@ -52,9 +52,9 @@ namespace QuanLyKhachSan
         }
         void Authentication_Authentication_SetSessionCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
-            AuthenticationSVCSoapClient Authentication = new AuthenticationSVCSoapClient();
-            Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
-            Authentication.Authentication_GetSessionAsync();
+            //AuthenticationSVCSoapClient Authentication = new AuthenticationSVCSoapClient();
+            //Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
+            //Authentication.Authentication_GetSessionAsync();
         }
         private MainPage mainParent = null;
         void Authentication_Authentication_GetSessionCompleted(object sender, Authentication_GetSessionCompletedEventArgs e)

@@ -5,84 +5,33 @@
            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
            mc:Ignorable="d"
            xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
-           d:DesignWidth="1000" d:DesignHeight="480"
-           xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
-           Title="frmQuanLyUser Page">
+           d:DesignWidth="1000" d:DesignHeight="800"
+           Title="frmQuanLyUser Page" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
     <Grid x:Name="LayoutRoot">
-        <Grid.Resources>
-            <DataTemplate x:Key="Template_grvUser_ColumnEdit">
-                <StackPanel Orientation="Horizontal">
-                    <HyperlinkButton CommandParameter="{Binding UserID}" Content="Sửa" Margin="2" Name="cmdSuaUser" Click="cmdSuaUser_Click"></HyperlinkButton>
-                    <TextBlock Text="|" Margin="2" />
-                    <HyperlinkButton CommandParameter="{Binding UserID}" Content="Xóa" Margin="2" Name="cmdXoaUser" Click="cmdXoaUser_Click"></HyperlinkButton>
-                </StackPanel>
-            </DataTemplate>
-            <DataTemplate x:Key="Template_grvGroup_ColumnEdit">
-                <StackPanel Orientation="Horizontal">
-                    <HyperlinkButton CommandParameter="{Binding GroupID}" Content="Sửa" Margin="2" Name="cmdSuaGroup" Click="cmdSuaGroup_Click"></HyperlinkButton>
-                    <TextBlock Text="|" Margin="2" />
-                    <HyperlinkButton CommandParameter="{Binding GroupID}" Content="Xóa" Margin="2" Name="cmdXoaGroup" Click="cmdXoaGroup_Click"></HyperlinkButton>
-                </StackPanel>
-            </DataTemplate>
-            <DataTemplate x:Key="Template_grvUserGroup_ColumnEdit">
-                <StackPanel Orientation="Horizontal">
-                    <HyperlinkButton CommandParameter="{Binding UserID}" Content="Sửa" Margin="2" Name="cmdSuaUserGroup" Click="cmdSuaUserGroup_Click"></HyperlinkButton>
-                    <TextBlock Text="|" Margin="2" />
-                    <HyperlinkButton CommandParameter="{Binding UserGroupID}" Content="Xóa" Margin="2" Name="cmdXoaUserGroup" Click="cmdXoaUserGroup_Click"></HyperlinkButton>
-                </StackPanel>
-            </DataTemplate>
-            <DataTemplate x:Key="Template_grvUserGroup_CheckBox">
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <CheckBox CommandParameter="{Binding IsTrialUsed}" IsChecked="{Binding IsTrialUsed}" IsEnabled="False"></CheckBox>
-                </StackPanel>
-            </DataTemplate>
-        </Grid.Resources>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="29" />
+            <RowDefinition Height="29" />
+            <RowDefinition Height="29" />
+            <RowDefinition Height="29" />
+            <RowDefinition Height="29" />
+            <RowDefinition Height="29" />
+            <RowDefinition Height="29" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250"></ColumnDefinition>
-            <ColumnDefinition Width="750*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <ScrollViewer Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
-            <StackPanel Grid.Row="0" Grid.Column="0">
-                <telerik:RadGridView IsReadOnly="True" Height="Auto" AutoGenerateColumns="False" IsFilteringAllowed="False" ShowGroupPanel="False" Name="grvGroup" RowIndicatorVisibility="Collapsed" telerik:StyleManager.Theme="Office_Blue">
-                    <telerik:RadGridView.Columns>
-                        <telerik:GridViewDataColumn Header="Tên Nhóm" DataMemberBinding="{Binding Path=GroupName}" Width="*"></telerik:GridViewDataColumn>
-                        <telerik:GridViewColumn Header="Chỉnh Sửa" Width="80" CellTemplate="{StaticResource Template_grvGroup_ColumnEdit}"></telerik:GridViewColumn>
-                    </telerik:RadGridView.Columns>
-                </telerik:RadGridView>
-                <telerik:RadButton Content="Thêm Nhóm" Height="20" Name="cmdThemGroup" Click="cmdThemGroup_Click" Width="100" telerik:StyleManager.Theme="Office_Blue" Margin="10" />
-
-                <telerik:RadGridView AutoGenerateColumns="False" IsReadOnly="True" Height="Auto" IsFilteringAllowed="False" Name="grvUser" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" telerik:StyleManager.Theme="Office_Blue">
-                    <telerik:RadGridView.Columns>
-                        <telerik:GridViewDataColumn Header="Tài Khoản" DataMemberBinding="{Binding Path=UserName}" Width="*" />
-                        <telerik:GridViewColumn CellTemplate="{StaticResource Template_grvUser_ColumnEdit}" Header="Chỉnh Sửa" Width="80" />
-                    </telerik:RadGridView.Columns>
-                </telerik:RadGridView>
-                <telerik:RadButton Content="Thêm User" Height="20" Name="cmdThemUser" Click="cmdThemUser_Click" telerik:StyleManager.Theme="Office_Blue" Width="100" Margin="10" />
-            </StackPanel>
-        </ScrollViewer>
-
-        <ScrollViewer Grid.Row="0" Grid.Column="1">
-            <StackPanel Grid.Row="0" Grid.Column="1" Margin="10,0,10,0">
-                <telerik:RadButton Content="Thêm Người Dùng vào Nhóm" Name="cmdThemUserGroup" Click="cmdThemUserGroup_Click" Height="25" Width="170" telerik:StyleManager.Theme="Office_Blue" HorizontalAlignment="Left" Margin="10"></telerik:RadButton>
-                <telerik:RadGridView AutoGenerateColumns="False" IsReadOnly="True" Margin="10,0,10,0" AutoExpandGroups="True" IsFilteringAllowed="False" Name="grvUserGroup" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" telerik:StyleManager.Theme="Office_Blue" Height="Auto">
-                    <telerik:RadGridView.GroupDescriptors>
-                        <telerik:GroupDescriptor Member="GroupName" DisplayContent="{Binding Path=GroupName}"></telerik:GroupDescriptor>
-                    </telerik:RadGridView.GroupDescriptors>
-                    <telerik:RadGridView.Columns>
-                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Left" Header="Tên tài khoản" DataMemberBinding="{Binding Path=UserName}" Width="135" ></telerik:GridViewDataColumn>
-                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Left" Header="Tên người dùng" DataMemberBinding="{Binding Path=FullName}" Width="150" ></telerik:GridViewDataColumn>
-                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Ngày bắt đầu" DataMemberBinding="{Binding Path=EffectiveDate}" Width="120"></telerik:GridViewDataColumn>
-                        <telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Ngày hết hạn" DataMemberBinding="{Binding Path=ExpiryDate}" Width="120"></telerik:GridViewDataColumn>
-                        <!--<telerik:GridViewDataColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Dùng thử" DataMemberBinding="{Binding Path=IsTrialUsed}" Width="70"></telerik:GridViewDataColumn>-->
-                        <telerik:GridViewColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Dùng thử" Width="70" CellTemplate="{StaticResource Template_grvUserGroup_CheckBox}" UniqueName="IsTrialUsed"></telerik:GridViewColumn>
-                        <telerik:GridViewColumn HeaderTextAlignment="Center" TextAlignment="Center" Header="Chỉnh Sửa" Width="80" CellTemplate="{StaticResource Template_grvUserGroup_ColumnEdit}"></telerik:GridViewColumn>
-                    </telerik:RadGridView.Columns>
-                </telerik:RadGridView>
-                <telerik:RadBusyIndicator Name="LoadingPanel" Height="300" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center" BusyContent="Đang tại dữ liệu.Vui lòng chờ..." telerik:StyleManager.Theme="Metro"/>
-            </StackPanel>
-        </ScrollViewer>
+        <telerik:RadButton Content="Thêm người dùng" Grid.Row="5" Height="Auto" HorizontalAlignment="Left" Margin="12,3,0,0" Name="cmdThemUser" telerik:StyleManager.Theme="Office_Blue" VerticalAlignment="Top" Width="117" Click="cmdThemUser_Click" />
+        <telerik:RadGridView AutoGenerateColumns="False" Grid.Row="6" Height="Auto" IsFilteringAllowed="False" Margin="12,0,455,0" Name="grvUser" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" telerik:StyleManager.Theme="Office_Blue">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewColumn Header="Tên tài khoản" Width="250" />
+                <telerik:GridViewColumn Header="Email" Width="200" />
+                <telerik:GridViewColumn Header="Chỉnh Sửa" Width="*" />
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+        <telerik:RadGridView AutoGenerateColumns="False" Height="Auto" IsFilteringAllowed="False" Margin="12,0,634,0" Name="radGridView1" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" telerik:StyleManager.Theme="Office_Blue" Grid.Row="3">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewColumn Header="Tên nhóm" Width="250" />
+                <telerik:GridViewColumn Header="Chỉnh Sửa" Width="*" />
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+        <telerik:RadButton Content="Thêm nhóm người dùng" Height="Auto" HorizontalAlignment="Left" Margin="12,3,0,0" Name="cmdThemNhom" telerik:StyleManager.Theme="Office_Blue" VerticalAlignment="Top" Width="142" Grid.Row="2" />
     </Grid>
 </navigation:Page>

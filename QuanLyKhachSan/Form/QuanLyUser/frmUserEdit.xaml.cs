@@ -9,90 +9,24 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using QuanLyKhachSan.UserSVC;
+
 namespace QuanLyKhachSan.Form.QuanLyUser
 {
     public partial class frmUserEdit : ChildWindow
     {
-        public int UserID = -1;
-        private UserSVCClient UserClient = null;
         public frmUserEdit()
         {
             InitializeComponent();
         }
 
-        public void User_Load(int _UserID)
-        {
-            if (_UserID > 0)
-            {
-                UserID = _UserID;
-                UserClient = new UserSVCClient();
-                UserClient.User_GetItemCompleted += new EventHandler<User_GetItemCompletedEventArgs>(UserClient_User_GetItemCompleted);
-                UserClient.User_GetItemAsync(UserID);
-            }
-        }
-
-        void UserClient_User_GetItemCompleted(object sender, User_GetItemCompletedEventArgs e)
-        {
-            UserInfo User = e.Result;
-
-            txtUserName.Text = User.UserName;
-            txtFullName.Text = User.FullName;
-            txtDisplayName.Text = User.DisplayName;
-            if (User.IsActived == 1)
-                chkIsActived.IsChecked = true;
-            else
-                chkIsActived.IsChecked = false;
-        }
-
         private void OKButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (!String.IsNullOrEmpty(txtUserName.Text.Trim()) && !String.IsNullOrEmpty(txtPassword.Password) && !String.IsNullOrEmpty(txtConfirm.Password))
-            {
-                UserClient = new UserSVCClient();
-
-                int IsActived = 0;
-                if ((bool)chkIsActived.IsChecked)
-                    IsActived = 1;
-                if (txtPassword.Password.CompareTo(txtConfirm.Password) == 0)
-                {
-                    if (UserID == -1)
-                    {
-                        UserClient.User_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(UserClient_User_AddCompleted);
-                        UserClient.User_AddAsync(txtUserName.Text, txtPassword.Password, txtFullName.Text, txtDisplayName.Text, IsActived, int.Parse(User.UserID), DateTime.Now.ToString("MM/dd/yyyy"));
-                    }
-                    else
-                    {
-                        UserClient.User_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(UserClient_User_EditCompleted);
-                        UserClient.User_EditAsync(UserID, txtUserName.Text, txtPassword.Password, txtFullName.Text, txtDisplayName.Text, IsActived, int.Parse(User.UserID), DateTime.Now.ToString("MM/dd/yyyy"));
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Mật khẩu không chính xác", "Thông báo", MessageBoxButton.OK);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Kiểm tra lại cái trường bắt buộc nhập", "Thông báo", MessageBoxButton.OK);
-            }
-        }
-
-        void UserClient_User_EditCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
-        {
-            UserID = -1;
-            this.DialogResult = true;
-        }
-
-        void UserClient_User_AddCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
             this.DialogResult = true;
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-            UserID = -1;
-            this.DialogResult = true;
+            this.DialogResult = false;
         }
     }
 }
