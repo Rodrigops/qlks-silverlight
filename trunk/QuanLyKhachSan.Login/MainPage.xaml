@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="QuanLyKhachSan.Login.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+    mc:Ignorable="d"
+    d:DesignHeight="800" d:DesignWidth="1024" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+
+    <Grid x:Name="LayoutRoot" >
+        <Grid.Background>
+            <ImageBrush ImageSource="/QuanLyKhachSan.Login;component/Images/LoginV2.png" />
+        </Grid.Background>
+        <telerik:RadButton HorizontalAlignment="Left" VerticalAlignment="Top" Content="Đăng nhập" Name="cmdLogin" telerik:StyleManager.Theme="Metro" Width="83"  Click="cmdLogin_Click" Margin="626,341,0,0" />
+        <TextBox  HorizontalAlignment="Left" VerticalAlignment="Top" Name="txtUserName" TabIndex="0" Margin="626,243,0,0" Width="281" KeyDown="txtUserName_KeyDown" />
+        <sdk:Label Content="Mật khẩu"  Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" Name="label2" Width="54" Margin="626,273,0,0" />
+        <PasswordBox  HorizontalAlignment="Left" VerticalAlignment="Top" Name="txtPassword" TabIndex="1" Margin="626,298,0,0" Width="281" KeyDown="txtPassword_KeyDown" />
+        <sdk:Label Content="Tên đăng nhập" Height="28" Name="label1" Width="82"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="626,222,0,0" />
+        <sdk:Label Content="Thông tin tài khoản không chính xác.Vui lòng kiểm tra lại!" FontSize="12" FontWeight="Bold" Foreground="Red"  HorizontalAlignment="Left" VerticalAlignment="Top" Name="lblError" Visibility="Collapsed" Margin="608,378,0,0" />
+    
+    </Grid>
+</UserControl>
