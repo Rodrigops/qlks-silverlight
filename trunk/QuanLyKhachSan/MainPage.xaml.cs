@@ -12,17 +12,35 @@ using System.Windows.Shapes;
 using QuanLyKhachSan.AuthenticationSVC;
 using QuanLyKhachSan.ModuleSVC;
 using QuanLyKhachSan.UserGroupSVC;
+using QuanLyKhachSan.AuthenticationService;
+using System.IO.IsolatedStorage;
+using QuanLyKhachSan.Libs.Common;
 namespace QuanLyKhachSan
 {
     public partial class MainPage : UserControl
     {        
-        private AuthenticationSVCSoapClient Authentication = new AuthenticationSVCSoapClient();
+        //private AuthenticationSVCSoapClient Authentication = new AuthenticationSVCSoapClient();
         private ModuleSVCClient Module = new ModuleSVCClient();
+        AuthenticationServiceClient ClientLogin = new AuthenticationServiceClient();
         public MainPage()
         {
-            InitializeComponent();
-            Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
-            Authentication.Authentication_GetSessionAsync();
+            InitializeComponent();            
+            ClientLogin.IsLoggedInCompleted += new EventHandler<IsLoggedInCompletedEventArgs>(ClientLogin_IsLoggedInCompleted);
+            ClientLogin.IsLoggedInAsync();
+            //Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
+            //Authentication.Authentication_GetSessionAsync();
+        }
+
+        void ClientLogin_IsLoggedInCompleted(object sender, IsLoggedInCompletedEventArgs e)
+        {
+            if (!e.Result)
+            {
+                System.Windows.Browser.HtmlPage.Window.Navigate(new Uri("Login.aspx", UriKind.Relative));
+            }
+            else
+            {
+                 txtUserName.Content = "Xin chào " + IsolatedStorageSettings.SiteSettings["UserName"].ToString();
+            }
         }
         public string KeyMapping = "";
         void Authentication_Authentication_GetSessionCompleted(object sender, Authentication_GetSessionCompletedEventArgs e)
@@ -262,13 +280,21 @@ namespace QuanLyKhachSan
         }
         private void cmdLogout_Click(object sender, RoutedEventArgs e)
         {
-            Authentication.Authentication_SetSessionCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(Authentication_Authentication_SetSessionCompleted);
-            Authentication.Authentication_SetSessionAsync("");
+            Common.ShowBusyIndicator();
+            ClientLogin.LogoutCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(ClientLogin_LogoutCompleted);
+            ClientLogin.LogoutAsync();
+        }
+
+        void ClientLogin_LogoutCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            //return Login.apsx
+            Common.CloseBusyIndicator();
+            System.Windows.Browser.HtmlPage.Window.Navigate(new Uri("Login.aspx", UriKind.Relative));
         }
 
         void Authentication_Authentication_SetSessionCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
-            Authentication.Authentication_GetSessionAsync();
+            //Authentication.Authentication_GetSessionAsync();
         }
 
         private void cmdThongKeDoanhThu_Click(object sender, RoutedEventArgs e)

@@ -96,6 +96,15 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Form\QuanLyUser\frmQuanLyUser.xaml.cs">
+      <DependentUpon>frmQuanLyUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\QuanLyUser\frmUserEdit.xaml.cs">
+      <DependentUpon>frmUserEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\UserControls\BusyIndicatorControl.xaml.cs">
+      <DependentUpon>BusyIndicatorControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Form\HoaDonDichVu\frmHoaDon_ThemTraTruoc.xaml.cs">
       <DependentUpon>frmHoaDon_ThemTraTruoc.xaml</DependentUpon>
     </Compile>
@@ -180,22 +189,6 @@
     </Compile>
     <Compile Include="Form\QuanLyPhong\GiaGioFormater.cs" />
     <Compile Include="Form\QuanLyPhong\NumberVietnameseFormater.cs" />
-    <Compile Include="Form\QuanLyUser\CheckBoxFormater.cs" />
-    <Compile Include="Form\QuanLyUser\frmGroupEdit.xaml.cs">
-      <DependentUpon>frmGroupEdit.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Form\QuanLyUser\frmPhanQuyenUser.xaml.cs">
-      <DependentUpon>frmPhanQuyenUser.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Form\QuanLyUser\frmQuanLyUser.xaml.cs">
-      <DependentUpon>frmQuanLyUser.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Form\QuanLyUser\frmUserEdit.xaml.cs">
-      <DependentUpon>frmUserEdit.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Form\QuanLyUser\frmUserGroupEdit.xaml.cs">
-      <DependentUpon>frmUserGroupEdit.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Form\ThongKeBaoCao\CaFormatter.cs" />
     <Compile Include="Form\ThongKeBaoCao\LoaiThueFormatter.cs" />
     <Compile Include="Form\ThongKeBaoCao\frmThongKeChiTieu.xaml.cs">
@@ -214,10 +207,16 @@
       <DependentUpon>frmLogin.xaml</DependentUpon>
     </Compile>
     <Compile Include="Libs\Authentication\User.cs" />
+    <Compile Include="Libs\Common\Common.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\AuthenticationService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\AuthenticationSVC\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -344,6 +343,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Form\QuanLyUser\frmQuanLyUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\QuanLyUser\frmUserEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\UserControls\BusyIndicatorControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Form\HoaDonDichVu\frmHoaDonDichVu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -448,26 +459,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Form\QuanLyUser\frmGroupEdit.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Form\QuanLyUser\frmPhanQuyenUser.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Form\QuanLyUser\frmQuanLyUser.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Form\QuanLyUser\frmUserEdit.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Form\QuanLyUser\frmUserGroupEdit.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Form\ThongKeBaoCao\frmThongKeChiTieu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -495,6 +486,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AppManifest.xml" />
+    <None Include="Service References\AuthenticationService\AuthenticationService.wsdl" />
+    <None Include="Service References\AuthenticationService\AuthenticationService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AuthenticationService\AuthenticationService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\AuthenticationSVC\Authentication.wsdl" />
     <None Include="Service References\AuthenticationSVC\QuanLyKhachSan.AuthenticationSVC.Authentication_CheckAccountResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -990,6 +988,14 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\AuthenticationService\AuthenticationService.disco" />
+    <None Include="Service References\AuthenticationService\configuration91.svcinfo" />
+    <None Include="Service References\AuthenticationService\configuration.svcinfo" />
+    <None Include="Service References\AuthenticationService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Properties\OutOfBrowserSettings.xml" />
     <Content Include="ServiceReferences.ClientConfig">
       <SubType>Designer</SubType>
     </Content>
@@ -1046,6 +1052,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AuthenticationService\" />
     <WCFMetadataStorage Include="Service References\AuthenticationSVC\" />
     <WCFMetadataStorage Include="Service References\ChiTietPhieuNhapKhoSVC\" />
     <WCFMetadataStorage Include="Service References\DichVuSVC\" />
