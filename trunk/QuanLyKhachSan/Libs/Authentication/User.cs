@@ -8,11 +8,12 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using System.IO.IsolatedStorage;
 
 namespace QuanLyKhachSan
 {
     public static class User
     {
-        public static string UserID;
+        public static string UserID = IsolatedStorageSettings.SiteSettings["UserName"].ToString();
     }   
 }
