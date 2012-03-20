@@ -12,13 +12,13 @@ namespace QuanLyKhachSan
     public class HoaDon_TraTruocSVC
     {
         [OperationContract]
-        public void HoaDon_TraTruoc_Add(int HoaDonID, string GhiChu, decimal TraTruoc, int CreatedByUser, string CreatedDate)
+        public void HoaDon_TraTruoc_Add(int HoaDonID, string GhiChu, decimal TraTruoc, string CreatedByUser, string CreatedDate)
         {
             HoaDon_TraTruocDAL doit = new HoaDon_TraTruocDAL();
             doit.HoaDon_TraTruoc_Add(HoaDonID, GhiChu, TraTruoc, CreatedByUser, CreatedDate);
         }
         [OperationContract]
-        public void HoaDon_TraTruoc_Edit(int HoaDon_TraTruocID, int HoaDonID, string GhiChu, decimal TraTruoc, int ModifiedByUser, string ModifiedDate)
+        public void HoaDon_TraTruoc_Edit(int HoaDon_TraTruocID, int HoaDonID, string GhiChu, decimal TraTruoc, string ModifiedByUser, string ModifiedDate)
         {
             HoaDon_TraTruocDAL doit = new HoaDon_TraTruocDAL();
             doit.HoaDon_TraTruoc_Edit(HoaDon_TraTruocID, HoaDonID, GhiChu, TraTruoc, ModifiedByUser, ModifiedDate);

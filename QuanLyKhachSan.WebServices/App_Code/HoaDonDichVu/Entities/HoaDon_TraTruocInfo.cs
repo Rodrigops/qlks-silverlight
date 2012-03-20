@@ -9,9 +9,9 @@ namespace QuanLyKhachSan
         private decimal _TraTruoc;
         private string _GhiChu;
 
-        private int _CreatedByUser;
+        private string _CreatedByUser;
         private string _CreatedDate;//DateTime
-        private int _ModifiedByUser;
+        private string _ModifiedByUser;
         private string _ModifiedDate;//DateTime
         
         #region HoaDonNgayVaoRaInfo
@@ -35,7 +35,7 @@ namespace QuanLyKhachSan
             get { return _GhiChu; }
             set { _GhiChu = value; }
         }
-        public int CreatedByUser
+        public string CreatedByUser
         {
             get { return _CreatedByUser; }
             set { _CreatedByUser = value; }
@@ -45,7 +45,7 @@ namespace QuanLyKhachSan
             get { return _CreatedDate; }
             set { _CreatedDate = value; }
         }
-        public int ModifiedByUser
+        public string ModifiedByUser
         {
             get { return _ModifiedByUser; }
             set { _ModifiedByUser = value; }

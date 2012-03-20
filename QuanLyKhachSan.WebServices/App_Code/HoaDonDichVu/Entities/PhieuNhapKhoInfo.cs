@@ -20,12 +20,12 @@ namespace QuanLyKhachSan
         private string _DichVuName;
 
         private string _UserName;
-        
-	    private int _CreatedByUser;
+
+        private string _CreatedByUser;
         private string _CreatedDate;//DateTime
-	    private int _ModifiedByUser;
+        private string _ModifiedByUser;
         private string _ModifiedDate;//DateTime
-        private int _DeletedByUser;
+        private string _DeletedByUser;
         private string _DeletedDate;//DateTime
 
         #region PhieuNhapKhoInfo
@@ -97,8 +97,8 @@ namespace QuanLyKhachSan
             get { return _UserName; }
             set { _UserName = value; }
         }
-        
-        public int CreatedByUser
+
+        public string CreatedByUser
         {
             get { return _CreatedByUser; }
             set { _CreatedByUser = value; }
@@ -108,7 +108,7 @@ namespace QuanLyKhachSan
             get { return _CreatedDate; }
             set { _CreatedDate = value; }
         }
-        public int ModifiedByUser
+        public string ModifiedByUser
         {
             get { return _ModifiedByUser; }
             set { _ModifiedByUser = value; }
@@ -118,7 +118,7 @@ namespace QuanLyKhachSan
             get { return _ModifiedDate; }
             set { _ModifiedDate = value; }
         }
-        public int DeletedByUser
+        public string DeletedByUser
         {
             get { return _DeletedByUser; }
             set { _DeletedByUser = value; }

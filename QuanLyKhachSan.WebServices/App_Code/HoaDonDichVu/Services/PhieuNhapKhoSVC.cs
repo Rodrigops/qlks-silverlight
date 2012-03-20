@@ -13,20 +13,20 @@ namespace QuanLyKhachSan
     {
         [OperationContract]
         public void PhieuNhapKho_Add(string NgayNhap, int ThangNhap, int NamNhap, int NgayNhapSo, string GhiChu,
-            int CreatedByUser, string CreatedDate)
+            string CreatedByUser, string CreatedDate)
         {
             PhieuNhapKhoDAL doit = new PhieuNhapKhoDAL();
             doit.PhieuNhapKho_Add(NgayNhap, ThangNhap, NamNhap, NgayNhapSo, GhiChu, CreatedByUser, CreatedDate);
         }
         [OperationContract]
         public void PhieuNhapKho_Edit(int PhieuNhapKhoID, string NgayNhap, int ThangNhap, int NamNhap, int NgayNhapSo, string GhiChu,
-            int ModifiedByUser, string ModifiedDate)
+            string ModifiedByUser, string ModifiedDate)
         {
             PhieuNhapKhoDAL doit = new PhieuNhapKhoDAL();
             doit.PhieuNhapKho_Edit(PhieuNhapKhoID, NgayNhap, ThangNhap, NamNhap, NgayNhapSo, GhiChu, ModifiedByUser, ModifiedDate);
         }
         [OperationContract]
-        public void PhieuNhapKho_Delete(int PhieuNhapKhoID, int DeletedByUser, string DeletedDate)
+        public void PhieuNhapKho_Delete(int PhieuNhapKhoID, string DeletedByUser, string DeletedDate)
         {
             PhieuNhapKhoDAL doit = new PhieuNhapKhoDAL();
             doit.PhieuNhapKho_Delete(PhieuNhapKhoID, DeletedByUser, DeletedDate);
