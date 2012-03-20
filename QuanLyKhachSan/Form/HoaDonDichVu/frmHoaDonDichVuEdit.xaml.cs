@@ -33,6 +33,7 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
             DichVuClient.DichVu_GetItemsCompleted += new EventHandler<DichVu_GetItemsCompletedEventArgs>(DichVuClient_DichVu_GetItemsCompleted);
             DichVuClient.DichVu_GetItemsAsync();
             cbxDichVu.SelectedIndex = 0;
+            rdpNgaySuDung.SelectedDate = DateTime.Now.Date;
 
             HoaDonID = _HoaDonID;
             PhongID = _PhongID;
@@ -86,7 +87,7 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
             cbxDichVu.SelectedIndex = 0;
 
             txtSoLuong.Text = String.Empty;
-            rdpNgaySuDung.SelectedDate = null;
+            rdpNgaySuDung.SelectedDate = DateTime.Now.Date;
 
             HoaDonDichVuClient = new HoaDonDichVuSVCClient();
             HoaDonDichVuClient.HoaDonDichVu_GetItemsByIDCompleted += new EventHandler<HoaDonDichVu_GetItemsByIDCompletedEventArgs>(HoaDonDichVuClient_HoaDonDichVu_GetItemsByIDCompleted);
@@ -146,14 +147,14 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
                         HoaDonDichVuClient = new HoaDonDichVuSVCClient();
                         HoaDonDichVuClient.HoaDonDichVu_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(HoaDonDichVuClient_HoaDonDichVu_AddCompleted);
                         HoaDonDichVuClient.HoaDonDichVu_AddAsync(HoaDonID, PhongID, (int)cbxDichVu.SelectedValue, -1, ngaysudung, thang, nam, ngayso,
-                            int.Parse(txtSoLuong.Text.ToString()), decimal.Parse(txtDonGia.Text.ToString()), decimal.Parse(txtTongTien.Text.ToString()), int.Parse(User.UserID), DateTime.Now.ToString("MM/dd/yyyy"));
+                            int.Parse(txtSoLuong.Text.ToString()), decimal.Parse(txtDonGia.Text.ToString()), decimal.Parse(txtTongTien.Text.ToString()), User.UserID, DateTime.Now.ToString("MM/dd/yyyy"));
                     }
                     else
                     {
                         HoaDonDichVuClient = new HoaDonDichVuSVCClient();
                         HoaDonDichVuClient.HoaDonDichVu_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(HoaDonDichVuClient_HoaDonDichVu_EditCompleted);
                         HoaDonDichVuClient.HoaDonDichVu_EditAsync(HoaDonDichVuID, HoaDonID, PhongID, (int)cbxDichVu.SelectedValue, -1, ngaysudung, thang, nam, ngayso,
-                            int.Parse(txtSoLuong.Text.ToString()), decimal.Parse(txtDonGia.Text.ToString()), decimal.Parse(txtTongTien.Text.ToString()), int.Parse(User.UserID), DateTime.Now.ToString("MM/dd/yyyy"));
+                            int.Parse(txtSoLuong.Text.ToString()), decimal.Parse(txtDonGia.Text.ToString()), decimal.Parse(txtTongTien.Text.ToString()), User.UserID, DateTime.Now.ToString("MM/dd/yyyy"));
                     }
                 }
                 else
