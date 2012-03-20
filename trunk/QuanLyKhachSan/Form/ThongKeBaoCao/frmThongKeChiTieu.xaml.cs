@@ -170,26 +170,73 @@ namespace QuanLyKhachSan.Form.ThongKeBaoCao
 
         void TKChiTieuClient_PhieuNhapKho_GetItems_TuNgayDenNgayCompleted(object sender, PhieuNhapKho_GetItems_TuNgayDenNgayCompletedEventArgs e)
         {
-            grvPhieuNhapKho.ItemsSource = e.Result;
+            List<TKChiTieuInfo> TKDoanhThu = new List<TKChiTieuInfo>();
+            TKDoanhThu = e.Result.ToList<TKChiTieuInfo>();
+
+            grvPhieuNhapKho.ItemsSource = TKDoanhThu;
+            TinhTong(TKDoanhThu);
             LoadingPanel.Visibility = Visibility.Collapsed;LoadingPanel.IsBusy = false;
         }
 
         void TKChiTieuClient_PhieuNhapKho_GetItems_TheoNamCompleted(object sender, PhieuNhapKho_GetItems_TheoNamCompletedEventArgs e)
         {
-            grvPhieuNhapKho.ItemsSource = e.Result;
+            List<TKChiTieuInfo> TKDoanhThu = new List<TKChiTieuInfo>();
+            TKDoanhThu = e.Result.ToList<TKChiTieuInfo>();
+
+            grvPhieuNhapKho.ItemsSource = TKDoanhThu;
+            TinhTong(TKDoanhThu);
             LoadingPanel.Visibility = Visibility.Collapsed;LoadingPanel.IsBusy = false;
         }
 
         void TKChiTieuClient_PhieuNhapKho_GetItems_TheoThangCompleted(object sender, PhieuNhapKho_GetItems_TheoThangCompletedEventArgs e)
         {
-            grvPhieuNhapKho.ItemsSource = e.Result;
+            List<TKChiTieuInfo> TKDoanhThu = new List<TKChiTieuInfo>();
+            TKDoanhThu = e.Result.ToList<TKChiTieuInfo>();
+
+            grvPhieuNhapKho.ItemsSource = TKDoanhThu;
+            TinhTong(TKDoanhThu);
             LoadingPanel.Visibility = Visibility.Collapsed;LoadingPanel.IsBusy = false;
         }
 
         void TKChiTieuClient_PhieuNhapKho_GetItems_TheoNgayCompleted(object sender, PhieuNhapKho_GetItems_TheoNgayCompletedEventArgs e)
         {
-            grvPhieuNhapKho.ItemsSource = e.Result;
+            List<TKChiTieuInfo> TKDoanhThu = new List<TKChiTieuInfo>();
+            TKDoanhThu = e.Result.ToList<TKChiTieuInfo>();
+
+            grvPhieuNhapKho.ItemsSource = TKDoanhThu;
+            TinhTong(TKDoanhThu);
             LoadingPanel.Visibility = Visibility.Collapsed;LoadingPanel.IsBusy = false;
+        }
+
+        void TinhTong(List<TKChiTieuInfo> TKDoanhThu)
+        {
+            decimal tong = 0;
+            foreach (TKChiTieuInfo TK in TKDoanhThu)
+            {
+                tong += TK.TongTien;
+            }
+            txtTongTien.Text = Format_NumberVietnamese(tong.ToString());
+        }
+
+        public string Format_NumberVietnamese(string Gia)
+        {
+            try
+            {
+                if (Gia.IndexOf("%") > 0 || Gia == "")
+                {
+                    return Gia;
+                }
+                else
+                {
+                    decimal value = decimal.Parse(Gia);
+                    string retGia = value.ToString("N", System.Globalization.CultureInfo.CurrentCulture);
+                    return retGia.Replace(".00", "");
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }
