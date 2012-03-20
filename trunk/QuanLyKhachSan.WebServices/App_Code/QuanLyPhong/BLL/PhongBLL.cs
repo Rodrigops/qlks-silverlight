@@ -52,5 +52,15 @@ namespace QuanLyKhachSan
             PhongDAL doit = new PhongDAL();
             doit.TinhTrang_Phong_Add(HoaDonID, PhongID, TinhTrangPhongID, NgayBatDau_So);
         }
+        /// <summary>
+        /// Dùng trong trường hợp chuyển phòng
+        /// </summary>
+        /// <param name="HoaDonID"></param>
+        /// <param name="PhongID"></param>
+        public static void TinhTrang_Phong_Edit(int HoaDonID, int PhongID)
+        {
+            PhongDAL doit = new PhongDAL();
+            doit.TinhTrang_Phong_Edit(HoaDonID, PhongID);
+        }
     }
 }

@@ -31,10 +31,11 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
             KhachHangClient.KhachHang_GetItemsCompleted += new EventHandler<KhachHang_GetItemsCompletedEventArgs>(KhachHangClient_KhachHang_GetItemsCompleted);
             KhachHangClient.KhachHang_GetItemsAsync(0);
         }
-
+        List<KhachHangInfo> lstKhachHang = new List<KhachHangInfo>();
         void KhachHangClient_KhachHang_GetItemsCompleted(object sender, KhachHang_GetItemsCompletedEventArgs e)
         {
-            grvKhachHang.ItemsSource = e.Result;
+            lstKhachHang = e.Result;
+            grvKhachHang.ItemsSource = lstKhachHang;
             LoadingPanel.IsBusy = false;
         }
 
@@ -232,10 +233,18 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                 case "ChuyenPhong":
                     frmKhachHang_ChuyenPhong KhachHang_ChuyenPhong = new frmKhachHang_ChuyenPhong();
                     KhachHang_ChuyenPhong.ChuyenPhong_Load(item.HoaDonID, item.PhongID);
+                    KhachHang_ChuyenPhong.Closed += new EventHandler(KhachHang_ChuyenPhong_Closed);
                     KhachHang_ChuyenPhong.Show();
                     break;
             }
 
+        }
+
+        void KhachHang_ChuyenPhong_Closed(object sender, EventArgs e)
+        {
+            LoadingPanel.IsBusy = true;
+            PhongClient.Phong_GetItems_ByTinhTrangCompleted += new EventHandler<Phong_GetItems_ByTinhTrangCompletedEventArgs>(PhongClient_Phong_GetItems_ByTinhTrangCompleted);
+            PhongClient.Phong_GetItems_ByTinhTrangAsync();
         }
 
         void DanhSachKhachHang_TraPhong_Closed(object sender, EventArgs e)
@@ -277,6 +286,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
             menuItem = new RadMenuItem();
             menuItem.Header = "Danh sách đặt phòng";
             menuItem.Tag = "DanhSachDatPhong";
+            menuItem.Visibility = System.Windows.Visibility.Collapsed;
             menuItem.CommandParameter = item;
             menuItem.Click += new Telerik.Windows.RadRoutedEventHandler(menuItem_Click);
             retContextMenu.Items.Add(menuItem);
@@ -420,5 +430,27 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
             }
         }
         #endregion
+
+        private void txtTimKiem_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                if (txtTimKiem.Text != "")
+                {
+                    var query = from KH in lstKhachHang
+                                where KH.HoTen.ToLower().Trim().Contains(txtTimKiem.Text.ToString().Trim())
+                                select KH;
+                    grvKhachHang.ItemsSource = query.ToList();
+                }
+                else {
+                    grvKhachHang.ItemsSource = lstKhachHang;
+                }
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
     }
 }

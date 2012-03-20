@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyKhachSan", "QuanLyKha
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "QuanLyKhachSan.WebServices", "QuanLyKhachSan.WebServices\", "{F143730D-06AC-424A-9E7C-A0DC9B15C8EC}"
 	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
 		Debug.AspNetCompiler.VirtualPath = "/QuanLyKhachSan.WebServices"
 		Debug.AspNetCompiler.PhysicalPath = "QuanLyKhachSan.WebServices\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\QuanLyKhachSan.WebServices\"

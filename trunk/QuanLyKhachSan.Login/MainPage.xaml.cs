@@ -13,6 +13,7 @@ using QuanLyKhachSan.Login.AuthenticationService;
 using System.ServiceModel;
 using System.IO.IsolatedStorage;
 using QuanLyKhachSan.Libs.Common;
+using System.Windows.Browser;
 
 namespace QuanLyKhachSan.Login
 {
@@ -21,7 +22,7 @@ namespace QuanLyKhachSan.Login
         AuthenticationServiceClient ClientLogin = new AuthenticationServiceClient();
         public MainPage()
         {
-            InitializeComponent();
+            InitializeComponent();            
             IsolatedStorageSettings.SiteSettings.Clear();
         }
 

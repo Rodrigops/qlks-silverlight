@@ -21,9 +21,9 @@
         <telerik:RadButton Content="Thêm người dùng" Grid.Row="5" Height="Auto" HorizontalAlignment="Left" Margin="12,3,0,0" Name="cmdThemUser" telerik:StyleManager.Theme="Office_Blue" VerticalAlignment="Top" Width="117" Click="cmdThemUser_Click" />
         <telerik:RadGridView AutoGenerateColumns="False" Grid.Row="6" Height="Auto" IsFilteringAllowed="False" Margin="12,0,455,0" Name="grvUser" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" telerik:StyleManager.Theme="Office_Blue">
             <telerik:RadGridView.Columns>
-                <telerik:GridViewColumn Header="Tên tài khoản" Width="250" />
-                <telerik:GridViewColumn Header="Email" Width="200" />
-                <telerik:GridViewColumn Header="Chỉnh Sửa" Width="*" />
+                <telerik:GridViewDataColumn Header="Tên tài khoản" DataMemberBinding="{Binding UserName}"  Width="250" />
+                <telerik:GridViewDataColumn Header="Email" DataMemberBinding="{Binding Email}" Width="200" />
+                <telerik:GridViewDataColumn Header="Chỉnh Sửa" Width="*" />
             </telerik:RadGridView.Columns>
         </telerik:RadGridView>
         <telerik:RadGridView AutoGenerateColumns="False" Height="Auto" IsFilteringAllowed="False" Margin="12,0,634,0" Name="radGridView1" RowIndicatorVisibility="Collapsed" ShowGroupPanel="False" telerik:StyleManager.Theme="Office_Blue" Grid.Row="3">

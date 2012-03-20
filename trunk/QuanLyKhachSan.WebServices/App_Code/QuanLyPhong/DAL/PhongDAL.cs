@@ -181,6 +181,18 @@ namespace QuanLyKhachSan
             SQLDB.Addparameter("@NgayBatDau_So", NgayBatDau_So);
             SQLDB.executenonquery("sp_TinhTrang_Phong_Add", CommandType.StoredProcedure);
         }
+        /// <summary>
+        /// Dùng trong trường hợp chuyển phòng
+        /// </summary>
+        /// <param name="HoaDonID"></param>
+        /// <param name="PhongID"></param>
+        public void TinhTrang_Phong_Edit(int HoaDonID,int PhongID)
+        {
+            SQLDataHelper SQLDB = new SQLDataHelper();
+            SQLDB.Addparameter("@HoaDonID", HoaDonID);
+            SQLDB.Addparameter("@PhongID", PhongID);
+            SQLDB.executenonquery("sp_TinhTrang_Phong_Edit", CommandType.StoredProcedure);
+        }
     }
 }
 

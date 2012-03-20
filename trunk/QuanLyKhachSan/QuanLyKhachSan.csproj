@@ -277,6 +277,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ManagementUserSVC\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\ModuleSVC\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -667,6 +672,23 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Service References\LoaiPhongSVC\LoaiPhong1.disco" />
+    <None Include="Service References\ManagementUserSVC\ManagementUser.wsdl" />
+    <None Include="Service References\ManagementUserSVC\ManagementUser.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagementUserSVC\ManagementUser1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagementUserSVC\ManagementUser2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagementUserSVC\ManagementUser21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ManagementUserSVC\ManagementUserSVC.wsdl" />
+    <None Include="Service References\ManagementUserSVC\QuanLyKhachSan.ManagementUserSVC.MembershipUserCollection.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ModuleSVC\Module.wsdl" />
     <None Include="Service References\ModuleSVC\Module.xsd">
       <SubType>Designer</SubType>
@@ -779,13 +801,6 @@
     <None Include="Service References\TienNghiSVC\configuration91.svcinfo" />
     <None Include="Service References\TienNghiSVC\configuration.svcinfo" />
     <None Include="Service References\TienNghiSVC\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Service References\PhongSVC\Phong.disco" />
-    <None Include="Service References\PhongSVC\configuration91.svcinfo" />
-    <None Include="Service References\PhongSVC\configuration.svcinfo" />
-    <None Include="Service References\PhongSVC\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -996,6 +1011,20 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Properties\OutOfBrowserSettings.xml" />
+    <None Include="Service References\ManagementUserSVC\ManagementUser.disco" />
+    <None Include="Service References\ManagementUserSVC\configuration91.svcinfo" />
+    <None Include="Service References\ManagementUserSVC\configuration.svcinfo" />
+    <None Include="Service References\ManagementUserSVC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\PhongSVC\Phong.disco" />
+    <None Include="Service References\PhongSVC\configuration91.svcinfo" />
+    <None Include="Service References\PhongSVC\configuration.svcinfo" />
+    <None Include="Service References\PhongSVC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="ServiceReferences.ClientConfig">
       <SubType>Designer</SubType>
     </Content>
@@ -1065,6 +1094,7 @@
     <WCFMetadataStorage Include="Service References\HoaDon_TraTruocSVC\" />
     <WCFMetadataStorage Include="Service References\KhachHangSVC\" />
     <WCFMetadataStorage Include="Service References\LoaiPhongSVC\" />
+    <WCFMetadataStorage Include="Service References\ManagementUserSVC\" />
     <WCFMetadataStorage Include="Service References\ModuleSVC\" />
     <WCFMetadataStorage Include="Service References\Ngay_PhongSVC\" />
     <WCFMetadataStorage Include="Service References\Nguoi_PhongSVC\" />
