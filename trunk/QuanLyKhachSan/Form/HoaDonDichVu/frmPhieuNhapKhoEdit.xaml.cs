@@ -139,12 +139,12 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
             {
                 PhieuNhapKhoClient = new PhieuNhapKhoSVCClient();
                 PhieuNhapKhoClient.PhieuNhapKho_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(PhieuNhapKhoClient_PhieuNhapKho_AddCompleted);
-                PhieuNhapKhoClient.PhieuNhapKho_AddAsync(ngaynhap, thangnhap, namnhap, ngaynhapso, txtGhiChu.Text.Trim(), int.Parse(User.UserID), DateTime.Now.ToString("MM/dd/yyyy"));
+                PhieuNhapKhoClient.PhieuNhapKho_AddAsync(ngaynhap, thangnhap, namnhap, ngaynhapso, txtGhiChu.Text.Trim(), User.UserID, DateTime.Now.ToString("MM/dd/yyyy"));
             }
             else
             {
                 PhieuNhapKhoClient = new PhieuNhapKhoSVCClient();
-                PhieuNhapKhoClient.PhieuNhapKho_EditAsync(PhieuNhapKhoID, ngaynhap, thangnhap, namnhap, ngaynhapso, txtGhiChu.Text.Trim(), int.Parse(User.UserID), DateTime.Now.ToString("MM/dd/yyyy"));
+                PhieuNhapKhoClient.PhieuNhapKho_EditAsync(PhieuNhapKhoID, ngaynhap, thangnhap, namnhap, ngaynhapso, txtGhiChu.Text.Trim(), User.UserID, DateTime.Now.ToString("MM/dd/yyyy"));
             }
         }
          void PhieuNhapKhoClient_PhieuNhapKho_AddCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)

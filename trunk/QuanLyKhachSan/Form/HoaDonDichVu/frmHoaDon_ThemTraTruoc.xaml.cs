@@ -39,7 +39,7 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
             {
                 HoaDon_TraTruocClient = new HoaDon_TraTruocSVCClient();
                 HoaDon_TraTruocClient.HoaDon_TraTruoc_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(HoaDon_TraTruocClient_HoaDon_TraTruoc_AddCompleted);
-                HoaDon_TraTruocClient.HoaDon_TraTruoc_AddAsync(HoaDonID, txtGhiChu.Text.Trim(), decimal.Parse(txtTraTruoc.Text.ToString()), int.Parse(User.UserID), DateTime.Now.ToString("MM/dd/yyyy"));
+                HoaDon_TraTruocClient.HoaDon_TraTruoc_AddAsync(HoaDonID, txtGhiChu.Text.Trim(), decimal.Parse(txtTraTruoc.Text.ToString()), User.UserID, DateTime.Now.ToString("MM/dd/yyyy"));
             }
             else
             {
