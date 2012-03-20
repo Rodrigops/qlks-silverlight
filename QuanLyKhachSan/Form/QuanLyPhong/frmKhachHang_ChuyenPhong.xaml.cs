@@ -74,39 +74,41 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         {
             if (cbxPhong.SelectedIndex != -1)
             {
+                //Edit Phong
                 HDKHClient = new HoaDon_KhachHangSVCClient();
                 HDKHClient.HoaDon_KhachHang_EditPhongCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(HDKHClient_HoaDon_KhachHang_EditPhongCompleted);
-                HDKHClient.HoaDon_KhachHang_EditPhongAsync(HoaDonID, (int)cbxPhong.SelectedValue);
+                HDKHClient.HoaDon_KhachHang_EditPhongAsync(HoaDonID, (int)cbxPhong.SelectedValue);                
 
-                TraTruocClient = new HoaDon_TraTruocSVCClient();
-                TraTruocClient.TinhTrang_Phong_EditIsActiveCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(TraTruocClient_TinhTrang_Phong_EditIsActiveCompleted);
-                TraTruocClient.TinhTrang_Phong_EditIsActiveAsync(HoaDonID);
-
-                HoaDonClient = new HoaDonSVCClient();
-                HoaDonClient.HoaDon_GetItemCompleted += new EventHandler<HoaDon_GetItemCompletedEventArgs>(HoaDonClient_HoaDon_GetItemCompleted);
-                HoaDonClient.HoaDon_GetItemAsync(HoaDonID);
+                
             }
-        }
-
-        void HoaDonClient_HoaDon_GetItemCompleted(object sender, HoaDon_GetItemCompletedEventArgs e)
-        {
-            HoaDonInfo HoaDon = e.Result;
-
-            PhongClient = new PhongSVCClient();
-            PhongClient.TinhTrang_Phong_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(PhongClient_TinhTrang_Phong_AddCompleted);
-            PhongClient.TinhTrang_Phong_AddAsync(HoaDonID,(int)cbxPhong.SelectedValue, 3, HoaDon.NgayVao_So);
-        }
-
-        void PhongClient_TinhTrang_Phong_AddCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
-        {
-            this.DialogResult = false;
-        }
-        void TraTruocClient_TinhTrang_Phong_EditIsActiveCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
-        {
         }
         void HDKHClient_HoaDon_KhachHang_EditPhongCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
+            //Edit TraTruoc
+            TraTruocClient = new HoaDon_TraTruocSVCClient();
+            TraTruocClient.TinhTrang_Phong_EditIsActiveCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(TraTruocClient_TinhTrang_Phong_EditIsActiveCompleted);
+            TraTruocClient.TinhTrang_Phong_EditIsActiveAsync(HoaDonID);
         }
+        void TraTruocClient_TinhTrang_Phong_EditIsActiveCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            //Edit TinhTrangPhong
+            HoaDonClient = new HoaDonSVCClient();
+            HoaDonClient.HoaDon_GetItemCompleted += new EventHandler<HoaDon_GetItemCompletedEventArgs>(HoaDonClient_HoaDon_GetItemCompleted);
+            HoaDonClient.HoaDon_GetItemAsync(HoaDonID);
+        }
+        void HoaDonClient_HoaDon_GetItemCompleted(object sender, HoaDon_GetItemCompletedEventArgs e)
+        {
+            HoaDonInfo HoaDon = e.Result;
+            PhongClient = new PhongSVCClient();
+            PhongClient.TinhTrang_Phong_EditCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(PhongClient_TinhTrang_Phong_EditCompleted);
+            PhongClient.TinhTrang_Phong_EditAsync(HoaDonID,(int)cbxPhong.SelectedValue);
+        }
+
+        void PhongClient_TinhTrang_Phong_EditCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            this.DialogResult = false;
+        }
+
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = false;

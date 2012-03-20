@@ -72,10 +72,6 @@
                     <binaryMessageEncoding />
                     <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
                 </binding>
-                <binding name="CustomBinding_PhongSVC">
-                    <binaryMessageEncoding />
-                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
-                </binding>
                 <binding name="CustomBinding_QuocTichSVC">
                     <binaryMessageEncoding />
                     <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
@@ -101,6 +97,14 @@
                     <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
                 </binding>
                 <binding name="CustomBinding_UserSVC">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="CustomBinding_ManagementUserSVC">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="CustomBinding_PhongSVC">
                     <binaryMessageEncoding />
                     <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
                 </binding>
@@ -152,9 +156,6 @@
             <endpoint address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/PhieuNhapKho.svc"
                 binding="customBinding" bindingConfiguration="CustomBinding_PhieuNhapKhoSVC"
                 contract="PhieuNhapKhoSVC.PhieuNhapKhoSVC" name="CustomBinding_PhieuNhapKhoSVC" />
-            <endpoint address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Phong.svc"
-                binding="customBinding" bindingConfiguration="CustomBinding_PhongSVC"
-                contract="PhongSVC.PhongSVC" name="CustomBinding_PhongSVC" />
             <endpoint address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/QuocTich.svc"
                 binding="customBinding" bindingConfiguration="CustomBinding_QuocTichSVC"
                 contract="QuocTichSVC.QuocTichSVC" name="CustomBinding_QuocTichSVC" />
@@ -182,6 +183,12 @@
             <endpoint address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/Authentication/AuthenticationService.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_AuthenticationService"
                 contract="AuthenticationService.AuthenticationService" name="BasicHttpBinding_AuthenticationService" />
+            <endpoint address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyUser/ManagementUser.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_ManagementUserSVC"
+                contract="ManagementUserSVC.ManagementUserSVC" name="CustomBinding_ManagementUserSVC" />
+            <endpoint address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Phong.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_PhongSVC"
+                contract="PhongSVC.PhongSVC" name="CustomBinding_PhongSVC" />
         </client>
     </system.serviceModel>
 </configuration>

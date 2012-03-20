@@ -14,6 +14,9 @@ namespace QuanLyKhachSan
 {
     public static class User
     {
-        public static string UserID = IsolatedStorageSettings.SiteSettings["UserName"].ToString();
+        /// <summary>
+        /// fix temp
+        /// </summary>
+        public static string UserID = "1";//IsolatedStorageSettings.SiteSettings["UserName"].ToString();
     }   
 }

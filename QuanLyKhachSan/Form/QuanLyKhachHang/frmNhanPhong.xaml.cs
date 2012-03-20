@@ -125,7 +125,7 @@ namespace QuanLyKhachSan.Form.QuanLyKhachHang
                 iNamRa = DateToNumberConverter.Date2Year(sNgayRa);                
                 HoaDonSVCClient HoaDonClient = new HoaDonSVCClient();
                 HoaDonClient.HoaDon_AddCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(HoaDonClient_HoaDon_AddCompleted);
-                HoaDonClient.HoaDon_AddAsync(LoaiThue, Ca, "NhanPhong", TraTruoc, GhiChu, sNgayVao, iNgayVao_So, iGioVao, iPhutVao, iThangVao, iNamVao, sNgayRa, iNgayRa_So, iGiora, iPhutRa, iThangRa, iNamRa,int.Parse(User.UserID));
+                HoaDonClient.HoaDon_AddAsync(LoaiThue, Ca, "NhanPhong", TraTruoc, GhiChu, sNgayVao, iNgayVao_So, iGioVao, iPhutVao, iThangVao, iNamVao, sNgayRa, iNgayRa_So, iGiora, iPhutRa, iThangRa, iNamRa,int.Parse( User.UserID));
             }
             catch (Exception ex)
             {
