@@ -171,32 +171,73 @@ namespace QuanLyKhachSan.Form.ThongKeBaoCao
 
         void TKDoanhThuClient_HoaDon_GetItems_TuNgayDenNgayCompleted(object sender, HoaDon_GetItems_TuNgayDenNgayCompletedEventArgs e)
         {
-            grvHoaDon.ItemsSource = e.Result;
+            List<TKDoanhThuInfo> TKDoanhThu = new List<TKDoanhThuInfo>();
+            TKDoanhThu = e.Result.ToList<TKDoanhThuInfo>();
+
+            grvHoaDon.ItemsSource = TKDoanhThu;
+            TinhTong(TKDoanhThu);
             LoadingPanel.Visibility = Visibility.Collapsed;LoadingPanel.IsBusy = false;
         }
 
         void TKDoanhThuClient_HoaDon_GetItems_TheoNamCompleted(object sender, HoaDon_GetItems_TheoNamCompletedEventArgs e)
         {
-            grvHoaDon.ItemsSource = e.Result;
+            List<TKDoanhThuInfo> TKDoanhThu = new List<TKDoanhThuInfo>();
+            TKDoanhThu = e.Result.ToList<TKDoanhThuInfo>();
+
+            grvHoaDon.ItemsSource = TKDoanhThu;
+            TinhTong(TKDoanhThu);
             LoadingPanel.Visibility = Visibility.Collapsed;LoadingPanel.IsBusy = false;
         }
 
         void TKDoanhThuClient_HoaDon_GetItems_TheoThangCompleted(object sender, HoaDon_GetItems_TheoThangCompletedEventArgs e)
         {
-            grvHoaDon.ItemsSource = e.Result;
+            List<TKDoanhThuInfo> TKDoanhThu = new List<TKDoanhThuInfo>();
+            TKDoanhThu = e.Result.ToList<TKDoanhThuInfo>();
+
+            grvHoaDon.ItemsSource = TKDoanhThu;
+            TinhTong(TKDoanhThu);
             LoadingPanel.Visibility = Visibility.Collapsed;LoadingPanel.IsBusy = false;
         }
 
         void TKDoanhThuClient_HoaDon_GetItems_TheoNgayCompleted(object sender, HoaDon_GetItems_TheoNgayCompletedEventArgs e)
         {
-            grvHoaDon.ItemsSource = e.Result;
+            List<TKDoanhThuInfo> TKDoanhThu = new List<TKDoanhThuInfo>();
+            TKDoanhThu = e.Result.ToList<TKDoanhThuInfo>();
+
+            grvHoaDon.ItemsSource = TKDoanhThu;
+            TinhTong(TKDoanhThu);
             LoadingPanel.Visibility = Visibility.Collapsed;LoadingPanel.IsBusy = false;
         }
 
-        //private void button1_Click(object sender, RoutedEventArgs e)
-        //{
-        //    rptHoaDon HoaDon = new rptHoaDon();
-        //    HoaDon.Show();
-        //}
+        void TinhTong(List<TKDoanhThuInfo> TKDoanhThu)
+        {
+            decimal tong = 0;
+            foreach (TKDoanhThuInfo TK in TKDoanhThu)
+            {
+                tong += TK.TongTien;
+            }
+            txtTongTien.Text = Format_NumberVietnamese(tong.ToString());
+        }
+
+        public string Format_NumberVietnamese(string Gia)
+        {
+            try
+            {
+                if (Gia.IndexOf("%") > 0 || Gia == "")
+                {
+                    return Gia;
+                }
+                else
+                {
+                    decimal value = decimal.Parse(Gia);
+                    string retGia = value.ToString("N", System.Globalization.CultureInfo.CurrentCulture);
+                    return retGia.Replace(".00", "");
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

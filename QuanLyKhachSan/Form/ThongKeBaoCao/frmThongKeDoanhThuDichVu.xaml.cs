@@ -171,30 +171,77 @@ namespace QuanLyKhachSan.Form.ThongKeBaoCao
 
         void TKDoanhThuDichVuClient_HoaDonDichVu_GetItems_TuNgayDenNgayCompleted(object sender, HoaDonDichVu_GetItems_TuNgayDenNgayCompletedEventArgs e)
         {
-            grvHoaDonDichVu.ItemsSource = e.Result;
+            List<TKDoanhThuDichVuInfo> TKDoanhThu = new List<TKDoanhThuDichVuInfo>();
+            TKDoanhThu = e.Result.ToList<TKDoanhThuDichVuInfo>();
+
+            grvHoaDonDichVu.ItemsSource = TKDoanhThu;
+            TinhTong(TKDoanhThu);
             LoadingPanel.Visibility = Visibility.Collapsed;
             LoadingPanel.IsBusy = false;
         }
 
         void TKDoanhThuDichVuClient_HoaDonDichVu_GetItems_TheoNamCompleted(object sender, HoaDonDichVu_GetItems_TheoNamCompletedEventArgs e)
         {
-            grvHoaDonDichVu.ItemsSource = e.Result;
+            List<TKDoanhThuDichVuInfo> TKDoanhThu = new List<TKDoanhThuDichVuInfo>();
+            TKDoanhThu = e.Result.ToList<TKDoanhThuDichVuInfo>();
+
+            grvHoaDonDichVu.ItemsSource = TKDoanhThu;
+            TinhTong(TKDoanhThu);
             LoadingPanel.Visibility = Visibility.Collapsed;
             LoadingPanel.IsBusy = false;
         }
 
         void TKDoanhThuDichVuClient_HoaDonDichVu_GetItems_TheoThangCompleted(object sender, HoaDonDichVu_GetItems_TheoThangCompletedEventArgs e)
         {
-            grvHoaDonDichVu.ItemsSource = e.Result;
+            List<TKDoanhThuDichVuInfo> TKDoanhThu = new List<TKDoanhThuDichVuInfo>();
+            TKDoanhThu = e.Result.ToList<TKDoanhThuDichVuInfo>();
+
+            grvHoaDonDichVu.ItemsSource = TKDoanhThu;
+            TinhTong(TKDoanhThu);
             LoadingPanel.Visibility = Visibility.Collapsed;
             LoadingPanel.IsBusy = false;
         }
 
         void TKDoanhThuDichVuClient_HoaDonDichVu_GetItems_TheoNgayCompleted(object sender, HoaDonDichVu_GetItems_TheoNgayCompletedEventArgs e)
         {
-            grvHoaDonDichVu.ItemsSource = e.Result;
+            List<TKDoanhThuDichVuInfo> TKDoanhThu = new List<TKDoanhThuDichVuInfo>();
+            TKDoanhThu = e.Result.ToList<TKDoanhThuDichVuInfo>();
+
+            grvHoaDonDichVu.ItemsSource = TKDoanhThu;
+            TinhTong(TKDoanhThu);
             LoadingPanel.Visibility = Visibility.Collapsed;
             LoadingPanel.IsBusy = false;
+        }
+
+        void TinhTong(List<TKDoanhThuDichVuInfo> TKDoanhThu)
+        {
+            decimal tong = 0;
+            foreach (TKDoanhThuDichVuInfo TK in TKDoanhThu)
+            {
+                tong += TK.TongTien;
+            }
+            txtTongTien.Text = Format_NumberVietnamese(tong.ToString());
+        }
+
+        public string Format_NumberVietnamese(string Gia)
+        {
+            try
+            {
+                if (Gia.IndexOf("%") > 0 || Gia == "")
+                {
+                    return Gia;
+                }
+                else
+                {
+                    decimal value = decimal.Parse(Gia);
+                    string retGia = value.ToString("N", System.Globalization.CultureInfo.CurrentCulture);
+                    return retGia.Replace(".00", "");
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }
