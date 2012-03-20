@@ -13,7 +13,7 @@ namespace QuanLyKhachSan
 
         }
         public void PhieuNhapKho_Add(string NgayNhap, int ThangNhap, int NamNhap, int NgayNhapSo, string GhiChu,
-            int CreatedByUser, string CreatedDate)
+            string CreatedByUser, string CreatedDate)
         {
             SQLDataHelper SQLDB = new SQLDataHelper();
             SQLDB.Addparameter("@NgayNhap", NgayNhap);
@@ -26,7 +26,7 @@ namespace QuanLyKhachSan
             SQLDB.executenonquery("sp_PhieuNhapKho_Add", CommandType.StoredProcedure);
         }
         public void PhieuNhapKho_Edit(int PhieuNhapKhoID, string NgayNhap, int ThangNhap, int NamNhap, int NgayNhapSo, string GhiChu,
-            int ModifiedByUser, string ModifiedDate)
+            string ModifiedByUser, string ModifiedDate)
         {
             SQLDataHelper SQLDB = new SQLDataHelper();
             SQLDB.Addparameter("@PhieuNhapKhoID", PhieuNhapKhoID);
@@ -39,7 +39,7 @@ namespace QuanLyKhachSan
             SQLDB.Addparameter("@ModifiedDate", ModifiedDate);
             SQLDB.executenonquery("sp_PhieuNhapKho_Edit", CommandType.StoredProcedure);
         }
-        public void PhieuNhapKho_Delete(int PhieuNhapKhoID, int DeletedByUser, string DeletedDate)
+        public void PhieuNhapKho_Delete(int PhieuNhapKhoID, string DeletedByUser, string DeletedDate)
         {
             SQLDataHelper SQLDB = new SQLDataHelper();
             SQLDB.Addparameter("@PhieuNhapKhoID", PhieuNhapKhoID);

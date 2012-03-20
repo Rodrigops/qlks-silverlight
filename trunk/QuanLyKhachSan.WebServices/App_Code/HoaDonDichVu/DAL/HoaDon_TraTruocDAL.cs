@@ -12,7 +12,7 @@ namespace QuanLyKhachSan
         {
 
         }
-        public void HoaDon_TraTruoc_Add(int HoaDonID, string GhiChu, decimal TraTruoc, int CreatedByUser, string CreatedDate)
+        public void HoaDon_TraTruoc_Add(int HoaDonID, string GhiChu, decimal TraTruoc, string CreatedByUser, string CreatedDate)
         {
             SQLDataHelper SQLDB = new SQLDataHelper();
             SQLDB.Addparameter("@HoaDonID", HoaDonID);
@@ -22,7 +22,7 @@ namespace QuanLyKhachSan
             SQLDB.Addparameter("@CreatedDate", CreatedDate);
             SQLDB.executenonquery("sp_HoaDon_TraTruoc_Add", CommandType.StoredProcedure);
         }
-        public void HoaDon_TraTruoc_Edit(int HoaDon_TraTruocID, int HoaDonID, string GhiChu, decimal TraTruoc, int ModifiedByUser, string ModifiedDate)
+        public void HoaDon_TraTruoc_Edit(int HoaDon_TraTruocID, int HoaDonID, string GhiChu, decimal TraTruoc, string ModifiedByUser, string ModifiedDate)
         {
             SQLDataHelper SQLDB = new SQLDataHelper();
             SQLDB.Addparameter("@HoaDon_TraTruocID", HoaDon_TraTruocID);
@@ -69,7 +69,7 @@ namespace QuanLyKhachSan
                 item.GhiChu = rd["GhiChu"].ToString();
                 item.TraTruoc = decimal.Parse(rd["TraTruoc"].ToString());
                 item.CreatedDate = rd["CreatedDate"].ToString();
-                item.CreatedByUser = int.Parse(rd["CreatedByUser"].ToString());
+                item.CreatedByUser = rd["CreatedByUser"].ToString();
                 item.GhiChu = rd["GhiChu"].ToString();
 
                 list.Add(item);

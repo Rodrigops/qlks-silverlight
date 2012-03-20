@@ -13,14 +13,14 @@ namespace QuanLyKhachSan
     {
         [OperationContract]
         public void HoaDonDichVu_Add(int HoaDonID, int PhongID, int DichVuID, int KhachHangID, string NgaySuDung, int Thang, int Nam, int NgaySo,
-            int SoLuong, decimal DonGia, decimal TongTien, int CreatedByUser, string CreatedDate)
+            int SoLuong, decimal DonGia, decimal TongTien, string CreatedByUser, string CreatedDate)
         {
             HoaDonDichVuDAL doit = new HoaDonDichVuDAL();
             doit.HoaDonDichVu_Add(HoaDonID, PhongID, DichVuID, KhachHangID, NgaySuDung, Thang, Nam, NgaySo, SoLuong, DonGia, TongTien, CreatedByUser, CreatedDate);
         }
         [OperationContract]
         public void HoaDonDichVu_Edit(int HoaDon_DichVuID, int HoaDonID, int PhongID, int DichVuID, int KhachHangID, string NgaySuDung, int Thang, int Nam, int NgaySo,
-            int SoLuong, decimal DonGia, decimal TongTien, int ModifiedByUser, string ModifiedDate)
+            int SoLuong, decimal DonGia, decimal TongTien, string ModifiedByUser, string ModifiedDate)
         {
             HoaDonDichVuDAL doit = new HoaDonDichVuDAL();
             doit.HoaDonDichVu_Edit(HoaDon_DichVuID, HoaDonID, PhongID, DichVuID, KhachHangID, NgaySuDung, Thang, Nam, NgaySo, SoLuong, DonGia, TongTien, ModifiedByUser, ModifiedDate);

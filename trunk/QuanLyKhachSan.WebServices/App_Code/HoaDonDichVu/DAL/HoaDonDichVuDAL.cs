@@ -13,7 +13,7 @@ namespace QuanLyKhachSan
 
         }
         public void HoaDonDichVu_Add(int HoaDonID, int PhongID, int DichVuID, int KhachHangID, string NgaySuDung, int Thang, int Nam, int NgaySo,
-            int SoLuong, decimal DonGia, decimal TongTien, int CreatedByUser, string CreatedDate)
+            int SoLuong, decimal DonGia, decimal TongTien, string CreatedByUser, string CreatedDate)
         {
             SQLDataHelper SQLDB = new SQLDataHelper();
             SQLDB.Addparameter("@HoaDonID", HoaDonID);
@@ -32,7 +32,7 @@ namespace QuanLyKhachSan
             SQLDB.executenonquery("sp_HoaDonDichVu_Add", CommandType.StoredProcedure);
         }
         public void HoaDonDichVu_Edit(int HoaDon_DichVuID, int HoaDonID, int PhongID, int DichVuID, int KhachHangID, string NgaySuDung, int Thang, int Nam, int NgaySo,
-            int SoLuong, decimal DonGia, decimal TongTien, int ModifiedByUser, string ModifiedDate)
+            int SoLuong, decimal DonGia, decimal TongTien, string ModifiedByUser, string ModifiedDate)
         {
             SQLDataHelper SQLDB = new SQLDataHelper();
             SQLDB.Addparameter("@HoaDon_DichVuID", HoaDon_DichVuID);

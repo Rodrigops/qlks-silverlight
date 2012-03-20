@@ -19,10 +19,10 @@ namespace QuanLyKhachSan
         private int _SoLuong;
         private decimal _DonGia;
         private decimal _TongTien;
-        
-	    private int _CreatedByUser;
+
+        private string _CreatedByUser;
         private string _CreatedDate;//DateTime
-	    private int _ModifiedByUser;
+        private string _ModifiedByUser;
         private string _ModifiedDate;//DateTime
 
         #region HoaDonDichVuInfo
@@ -101,7 +101,7 @@ namespace QuanLyKhachSan
             get { return _TongTien; }
             set { _TongTien = value; }
         }
-        public int CreatedByUser
+        public string CreatedByUser
         {
             get { return _CreatedByUser; }
             set { _CreatedByUser = value; }
@@ -111,7 +111,7 @@ namespace QuanLyKhachSan
             get { return _CreatedDate; }
             set { _CreatedDate = value; }
         }
-        public int ModifiedByUser
+        public string ModifiedByUser
         {
             get { return _ModifiedByUser; }
             set { _ModifiedByUser = value; }
