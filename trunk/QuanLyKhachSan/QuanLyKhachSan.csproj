@@ -102,6 +102,9 @@
     <Compile Include="Form\QuanLyUser\frmUserEdit.xaml.cs">
       <DependentUpon>frmUserEdit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Form\ThongKeBaoCao\rptHoaDon.xaml.cs">
+      <DependentUpon>rptHoaDon.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Form\UserControls\BusyIndicatorControl.xaml.cs">
       <DependentUpon>BusyIndicatorControl.xaml</DependentUpon>
     </Compile>
@@ -355,6 +358,10 @@
     <Page Include="Form\QuanLyUser\frmUserEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\ThongKeBaoCao\rptHoaDon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Form\UserControls\BusyIndicatorControl.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -832,13 +839,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\HoaDonDichVuSVC\HoaDonDichVu.disco" />
-    <None Include="Service References\HoaDonDichVuSVC\configuration91.svcinfo" />
-    <None Include="Service References\HoaDonDichVuSVC\configuration.svcinfo" />
-    <None Include="Service References\HoaDonDichVuSVC\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Service References\HoaDonSVC\HoaDon.disco" />
     <None Include="Service References\HoaDonSVC\configuration91.svcinfo" />
     <None Include="Service References\HoaDonSVC\configuration.svcinfo" />
@@ -941,21 +941,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\HoaDon_TraTruocSVC\HoaDon_TraTruoc.disco" />
-    <None Include="Service References\HoaDon_TraTruocSVC\configuration91.svcinfo" />
-    <None Include="Service References\HoaDon_TraTruocSVC\configuration.svcinfo" />
-    <None Include="Service References\HoaDon_TraTruocSVC\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <Resource Include="Images\Login.png" />
-    <None Include="Service References\PhieuNhapKhoSVC\PhieuNhapKho.disco" />
-    <None Include="Service References\PhieuNhapKhoSVC\configuration91.svcinfo" />
-    <None Include="Service References\PhieuNhapKhoSVC\configuration.svcinfo" />
-    <None Include="Service References\PhieuNhapKhoSVC\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Service References\ChiTietPhieuNhapKhoSVC\ChiTietPhieuNhapKho.disco" />
     <None Include="Service References\ChiTietPhieuNhapKhoSVC\configuration91.svcinfo" />
     <None Include="Service References\ChiTietPhieuNhapKhoSVC\configuration.svcinfo" />
@@ -1022,6 +1008,27 @@
     <None Include="Service References\PhongSVC\configuration91.svcinfo" />
     <None Include="Service References\PhongSVC\configuration.svcinfo" />
     <None Include="Service References\PhongSVC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\PhieuNhapKhoSVC\PhieuNhapKho.disco" />
+    <None Include="Service References\PhieuNhapKhoSVC\configuration91.svcinfo" />
+    <None Include="Service References\PhieuNhapKhoSVC\configuration.svcinfo" />
+    <None Include="Service References\PhieuNhapKhoSVC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\HoaDonDichVuSVC\HoaDonDichVu.disco" />
+    <None Include="Service References\HoaDonDichVuSVC\configuration91.svcinfo" />
+    <None Include="Service References\HoaDonDichVuSVC\configuration.svcinfo" />
+    <None Include="Service References\HoaDonDichVuSVC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\HoaDon_TraTruocSVC\HoaDon_TraTruoc.disco" />
+    <None Include="Service References\HoaDon_TraTruocSVC\configuration91.svcinfo" />
+    <None Include="Service References\HoaDon_TraTruocSVC\configuration.svcinfo" />
+    <None Include="Service References\HoaDon_TraTruocSVC\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

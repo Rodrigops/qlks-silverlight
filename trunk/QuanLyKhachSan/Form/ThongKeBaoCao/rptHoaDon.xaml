@@ -4,7 +4,8 @@
            xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
            Width="1000" Height="600" 
            Title="Hóa đơn thanh toán"
-           xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" xmlns:my="clr-namespace:Telerik.ReportViewer.Silverlight;assembly=Telerik.ReportViewer.Silverlight">
+           xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" 
+xmlns:my="clr-namespace:Telerik.ReportViewer.Silverlight;assembly=Telerik.ReportViewer.Silverlight">
     <Grid x:Name="LayoutRoot" Margin="2">
         <Grid.RowDefinitions>
             <RowDefinition />
@@ -16,7 +17,7 @@
         <my:ReportViewer Name="reportViewer1" telerik:StyleManager.Theme="Office_Blue" 
                          Height="526" Width="978" 
                          HorizontalAlignment="Left"  VerticalAlignment="Top"  
-                         ReportServiceUri="../Services/ThongKeBaoCao/ReportService.svc"
+                         ReportServiceUri="../ReportService.svc"
                          Report="Telerik.Reporting.ReportHoaDon, ReportLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
         </my:ReportViewer>
     </Grid>
