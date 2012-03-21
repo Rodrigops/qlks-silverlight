@@ -23,6 +23,7 @@ namespace QuanLyKhachSan.Form.ThongKeBaoCao
             Thang_Load();
             LoadingPanel.Visibility = Visibility.Visible;
             LoadingPanel.IsBusy = true;
+            rdbTheoNgay.IsChecked = true;
             TKDoanhThuDichVuClient = new TKDoanhThuDichVuSVCClient();
             TKDoanhThuDichVuClient.HoaDonDichVu_GetItems_TheoNgayCompleted += new EventHandler<HoaDonDichVu_GetItems_TheoNgayCompletedEventArgs>(TKDoanhThuDichVuClient_HoaDonDichVu_GetItems_TheoNgayCompleted);
             TKDoanhThuDichVuClient.HoaDonDichVu_GetItems_TheoNgayAsync(int.Parse(DateTime.Now.ToString("yyyyMMdd")));
@@ -43,6 +44,7 @@ namespace QuanLyKhachSan.Form.ThongKeBaoCao
                 cbxTheoNam.IsEnabled = false;
                 cbxTheoThang.IsEnabled = false;
                 cbxTheoThangNam.IsEnabled = false;
+                rdpTheoNgay.SelectedDate = DateTime.Now.Date;
             }
         }
         private void rdbTheoThang_Checked(object sender, RoutedEventArgs e)
@@ -82,6 +84,8 @@ namespace QuanLyKhachSan.Form.ThongKeBaoCao
                 cbxTheoNam.IsEnabled = false;
                 cbxTheoThang.IsEnabled = false;
                 cbxTheoThangNam.IsEnabled = false;
+                rdpTuNgay.SelectedDate = DateTime.Now.Date;
+                rdpDenNgay.SelectedDate = DateTime.Now.Date;
             }
         }
         private void Nam_Load()
@@ -237,6 +241,57 @@ namespace QuanLyKhachSan.Form.ThongKeBaoCao
                     string retGia = value.ToString("N", System.Globalization.CultureInfo.CurrentCulture);
                     return retGia.Replace(".00", "");
                 }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void btnInBaoCao_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                rptThongKeDoanhThuDichVu InBaoCao = new rptThongKeDoanhThuDichVu();
+                if ((bool)rdbTheoNgay.IsChecked)
+                {
+                    InBaoCao.Type = "1";
+                    if (!String.IsNullOrEmpty(rdpTheoNgay.SelectedDate.ToString()))
+                    {
+                        InBaoCao.Ngay = rdpTheoNgay.SelectedDate.Value.ToString("yyyyMMdd");
+                    }
+                }
+                else if ((bool)rdbTheoThang.IsChecked)
+                {
+                    InBaoCao.Type = "2";
+                    if (cbxTheoThang.SelectedIndex != -1 && cbxTheoThangNam.SelectedIndex != -1)
+                    {
+                        InBaoCao.Thang = cbxTheoThang.SelectedValue.ToString();
+                        InBaoCao.Nam = cbxTheoThangNam.SelectedValue.ToString();
+                    }
+                }
+                else if ((bool)rdbTheoNam.IsChecked)
+                {
+                    InBaoCao.Type = "3";
+                    if (cbxTheoNam.SelectedIndex != -1)
+                    {
+                        InBaoCao.Nam = cbxTheoNam.SelectedValue.ToString();
+                    }
+                }
+                else if ((bool)rdbTuNgay.IsChecked)
+                {
+                    InBaoCao.Type = "4";
+                    if (!String.IsNullOrEmpty(rdpTuNgay.SelectedDate.ToString()))
+                    {
+                        InBaoCao.TuNgay = rdpTuNgay.SelectedDate.Value.ToString("yyyyMMdd");
+                    }
+                    if (!String.IsNullOrEmpty(rdpDenNgay.SelectedDate.ToString()))
+                    {
+                        InBaoCao.DenNgay = rdpDenNgay.SelectedDate.Value.ToString("yyyyMMdd");
+                    }
+                }
+                InBaoCao.TongTien = txtTongTien.Text;
+                InBaoCao.Show();
             }
             catch (Exception)
             {
