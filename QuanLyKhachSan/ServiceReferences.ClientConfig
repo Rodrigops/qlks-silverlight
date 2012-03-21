@@ -36,14 +36,6 @@
                     <binaryMessageEncoding />
                     <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
                 </binding>
-                <binding name="CustomBinding_HoaDon_TraTruocSVC">
-                    <binaryMessageEncoding />
-                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
-                </binding>
-                <binding name="CustomBinding_HoaDonDichVuSVC">
-                    <binaryMessageEncoding />
-                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
-                </binding>
                 <binding name="CustomBinding_HoaDonSVC">
                     <binaryMessageEncoding />
                     <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
@@ -65,10 +57,6 @@
                     <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
                 </binding>
                 <binding name="CustomBinding_Nguoi_PhongSVC">
-                    <binaryMessageEncoding />
-                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
-                </binding>
-                <binding name="CustomBinding_PhieuNhapKhoSVC">
                     <binaryMessageEncoding />
                     <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
                 </binding>
@@ -108,6 +96,18 @@
                     <binaryMessageEncoding />
                     <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
                 </binding>
+                <binding name="CustomBinding_PhieuNhapKhoSVC">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="CustomBinding_HoaDonDichVuSVC">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+                <binding name="CustomBinding_HoaDon_TraTruocSVC">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
             </customBinding>
         </bindings>
         <client>
@@ -129,12 +129,6 @@
             <endpoint address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDon/HoaDon_KhachHang.svc"
                 binding="customBinding" bindingConfiguration="CustomBinding_HoaDon_KhachHangSVC"
                 contract="HoaDon_KhachHangSVC.HoaDon_KhachHangSVC" name="CustomBinding_HoaDon_KhachHangSVC" />
-            <endpoint address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDon_TraTruoc.svc"
-                binding="customBinding" bindingConfiguration="CustomBinding_HoaDon_TraTruocSVC"
-                contract="HoaDon_TraTruocSVC.HoaDon_TraTruocSVC" name="CustomBinding_HoaDon_TraTruocSVC" />
-            <endpoint address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDonDichVu.svc"
-                binding="customBinding" bindingConfiguration="CustomBinding_HoaDonDichVuSVC"
-                contract="HoaDonDichVuSVC.HoaDonDichVuSVC" name="CustomBinding_HoaDonDichVuSVC" />
             <endpoint address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDon/HoaDon.svc"
                 binding="customBinding" bindingConfiguration="CustomBinding_HoaDonSVC"
                 contract="HoaDonSVC.HoaDonSVC" name="CustomBinding_HoaDonSVC" />
@@ -153,9 +147,6 @@
             <endpoint address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Nguoi_Phong.svc"
                 binding="customBinding" bindingConfiguration="CustomBinding_Nguoi_PhongSVC"
                 contract="Nguoi_PhongSVC.Nguoi_PhongSVC" name="CustomBinding_Nguoi_PhongSVC" />
-            <endpoint address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/PhieuNhapKho.svc"
-                binding="customBinding" bindingConfiguration="CustomBinding_PhieuNhapKhoSVC"
-                contract="PhieuNhapKhoSVC.PhieuNhapKhoSVC" name="CustomBinding_PhieuNhapKhoSVC" />
             <endpoint address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/QuocTich.svc"
                 binding="customBinding" bindingConfiguration="CustomBinding_QuocTichSVC"
                 contract="QuocTichSVC.QuocTichSVC" name="CustomBinding_QuocTichSVC" />
@@ -189,6 +180,15 @@
             <endpoint address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Phong.svc"
                 binding="customBinding" bindingConfiguration="CustomBinding_PhongSVC"
                 contract="PhongSVC.PhongSVC" name="CustomBinding_PhongSVC" />
+            <endpoint address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/PhieuNhapKho.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_PhieuNhapKhoSVC"
+                contract="PhieuNhapKhoSVC.PhieuNhapKhoSVC" name="CustomBinding_PhieuNhapKhoSVC" />
+            <endpoint address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDonDichVu.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_HoaDonDichVuSVC"
+                contract="HoaDonDichVuSVC.HoaDonDichVuSVC" name="CustomBinding_HoaDonDichVuSVC" />
+            <endpoint address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDon_TraTruoc.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_HoaDon_TraTruocSVC"
+                contract="HoaDon_TraTruocSVC.HoaDon_TraTruocSVC" name="CustomBinding_HoaDon_TraTruocSVC" />
         </client>
     </system.serviceModel>
 </configuration>
