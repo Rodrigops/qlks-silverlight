@@ -199,6 +199,7 @@
             // 
             // textBox9
             // 
+            this.textBox9.Format = "{0:N0}";
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(1.7895635366439819D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.30000001192092896D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.textBox9.Style.Font.Name = "Arial";
