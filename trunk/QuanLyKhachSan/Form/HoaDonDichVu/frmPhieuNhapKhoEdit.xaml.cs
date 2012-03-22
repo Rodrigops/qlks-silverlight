@@ -26,6 +26,7 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
         }
         public void PhieuNhapKhoEdit_Load(int _PhieuNhapKhoID)
         {
+            rdpNgayNhap.SelectedDate = DateTime.Now.Date;
             if (_PhieuNhapKhoID != 0)
             {
                 LoadingPanel.IsBusy = true;
