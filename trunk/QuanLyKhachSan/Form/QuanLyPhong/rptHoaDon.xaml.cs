@@ -30,6 +30,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         public string TienDichVu = "";
         public string TongTien = "";
         public string TraTruoc = "";
+        public string KhoanKhac = "";
         public rptHoaDon()
         {
             InitializeComponent();
@@ -55,7 +56,9 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
             args.ParameterValues.Add("TienPhong", TienPhong);
             args.ParameterValues.Add("TienDichVu", TienDichVu);
             args.ParameterValues.Add("TraTruoc", TraTruoc);
-            args.ParameterValues.Add("TongTien", TongTien);            
+            args.ParameterValues.Add("TongTien", TongTien);
+            args.ParameterValues.Add("KhoanKhac", KhoanKhac);            
+
         }
 
         private void OKButton_Click(object sender, RoutedEventArgs e)

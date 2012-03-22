@@ -13,6 +13,7 @@ using QuanLyKhachSan.PhongSVC;
 using QuanLyKhachSan.HoaDon_KhachHangSVC;
 using QuanLyKhachSan.HoaDon_TraTruocSVC;
 using QuanLyKhachSan.HoaDonSVC;
+using QuanLyKhachSan.HoaDonDichVuSVC;
 namespace QuanLyKhachSan.Form.QuanLyPhong
 {
     public partial class frmKhachHang_ChuyenPhong : ChildWindow
@@ -105,6 +106,14 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         }
 
         void PhongClient_TinhTrang_Phong_EditCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            //Chuyen DichVu
+            HoaDonDichVuSVCClient HoaDonDichVuService = new HoaDonDichVuSVCClient();
+            HoaDonDichVuService.HoaDonDichVu_ChuyenPhongCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(HoaDonDichVuService_HoaDonDichVu_ChuyenPhongCompleted);
+            HoaDonDichVuService.HoaDonDichVu_ChuyenPhongAsync(HoaDonID,(int)cbxPhong.SelectedValue);         
+        }
+
+        void HoaDonDichVuService_HoaDonDichVu_ChuyenPhongCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
             this.DialogResult = false;
         }

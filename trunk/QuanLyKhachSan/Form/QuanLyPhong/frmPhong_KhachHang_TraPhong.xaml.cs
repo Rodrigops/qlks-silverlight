@@ -405,66 +405,92 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         {
             try
             {
-                if (PhutVao != 0)
+                if (GioVao == GioRa)
                 {
-                    PhutVao = 60 - PhutVao;
-                    GioVao = GioVao + 1;
-                }
-
-                int TongGio = 0;
-                int TongPhut = PhutRa + PhutVao;
-                int TiengDu = 0;
-                int PhutConLai = 0;
-                decimal TienCongThem = 0;
-                if (TongPhut == 60)
-                {
-                    TiengDu = 1;
-                    PhutConLai = 0;
-                }
-                else if (TongPhut > 60)
-                {
-                    TiengDu = TongPhut / 60;
-                    PhutConLai = TongPhut - 60 * TiengDu;
-                    if (PhutConLai >= 10 && PhutConLai <= 20)
+                    int PhutDu = PhutRa - PhutVao;
+                    decimal Tien = 0;
+                    if (PhutDu >= 10 && PhutDu <= 20)
                     {
-                        TienCongThem = 10000;
+                        Tien = 10000;
                     }
-                    else if (PhutConLai > 20)
+                    else if (PhutDu > 20)
                     {
-                        TienCongThem = 20000;
+                        Tien = 20000;
                     }
                     else
                     {
-                        TienCongThem = 0;
+                        Tien = 0;
                     }
+                    Label txtGioDau = new Label();
+                    txtGioDau.Content = Format_NumberVietnamese(Tien.ToString());
+                    SPTienPhong.Children.Add(txtGioDau);
+                    LoadingPanel.IsBusy = false;
+                    TongTienPhong = Tien;
                 }
-                else if (TongPhut < 60)
+                else
                 {
-                    PhutConLai = TongPhut;
-                    if (PhutConLai >= 10 && PhutConLai <= 20)
+                    if (PhutVao != 0)
                     {
-                        TienCongThem = 10000;
+                        PhutVao = 60 - PhutVao;
+                        GioVao = GioVao + 1;
                     }
-                    else if (PhutConLai > 20)
-                    {
-                        TienCongThem = 20000;
-                    }
-                    else
-                    {
-                        TienCongThem = 0;
-                    }
-                }
-                TongGio = (GioRa - GioVao) + TiengDu;
-                var query = (from Gia in listGio_Phong
-                            where Gia.GioPhongName.Trim() == TongGio.ToString().Trim()
-                            select Gia).FirstOrDefault();
 
-                decimal TongTien = query.GiaTien + TienCongThem;
-                Label txtGioDau = new Label();
-                txtGioDau.Content = Format_NumberVietnamese(TongTien.ToString()) + " [" + TongGio.ToString() + " tiếng " + PhutConLai.ToString() + " phút]";
-                SPTienPhong.Children.Add(txtGioDau);
-                LoadingPanel.IsBusy = false;
-                TongTienPhong = TongTien;
+                    int TongGio = 0;
+                    int TongPhut = PhutRa + PhutVao;
+                    int TiengDu = 0;
+                    int PhutConLai = 0;
+                    decimal TienCongThem = 0;
+                    if (TongPhut == 60)
+                    {
+                        TiengDu = 1;
+                        PhutConLai = 0;
+                    }
+                    else if (TongPhut > 60)
+                    {
+                        TiengDu = TongPhut / 60;
+                        PhutConLai = TongPhut - 60 * TiengDu;
+                        if (PhutConLai >= 10 && PhutConLai <= 20)
+                        {
+                            TienCongThem = 10000;
+                        }
+                        else if (PhutConLai > 20)
+                        {
+                            TienCongThem = 20000;
+                        }
+                        else
+                        {
+                            TienCongThem = 0;
+                        }
+                    }
+                    else if (TongPhut < 60)
+                    {
+                        PhutConLai = TongPhut;
+                        if (PhutConLai >= 10 && PhutConLai <= 20)
+                        {
+                            TienCongThem = 10000;
+                        }
+                        else if (PhutConLai > 20)
+                        {
+                            TienCongThem = 20000;
+                        }
+                        else
+                        {
+                            TienCongThem = 0;
+                        }
+                    }
+                    TongGio = (GioRa - GioVao) + TiengDu;
+                    var query = (from Gia in listGio_Phong
+                                 where Gia.GioPhongName.Trim() == TongGio.ToString().Trim()
+                                 select Gia).FirstOrDefault();
+
+                    decimal TongTien = query.GiaTien + TienCongThem;
+                    Label txtGioDau = new Label();
+                    txtGioDau.Content = Format_NumberVietnamese(TongTien.ToString()) + " [" + TongGio.ToString() + " tiếng " + PhutConLai.ToString() + " phút]";
+                    SPTienPhong.Children.Add(txtGioDau);
+                    LoadingPanel.IsBusy = false;
+                    TongTienPhong = TongTien;
+                }                
+                
             }
             catch (Exception)
             {
@@ -584,8 +610,19 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                 KhoanKhac = decimal.Parse(txtKhoanKhac.Text.ToString());
             }
             txtTongThanhToan.Text = Format_NumberVietnamese((DichVu + TongTienPhong + KhoanKhac - TienTraTruoc).ToString());
+        }        
+        private void txtKhuyenMai_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtKhuyenMai.Text == "")
+            {
+                TienTraTruoc = 0;
+            }
+            else
+            {
+                TienTraTruoc = decimal.Parse(txtKhuyenMai.Text.ToString());
+            }
+            txtTongThanhToan.Text = Format_NumberVietnamese((DichVu + TongTienPhong + KhoanKhac - TienTraTruoc).ToString());
         }
-
         private void cmdThanhToan_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -622,6 +659,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                 InHoaDon.TienDichVu = Format_NumberVietnamese(DichVu.ToString());
                 InHoaDon.TongTien = Format_NumberVietnamese(txtTongThanhToan.Text.ToString());
                 InHoaDon.TraTruoc = Format_NumberVietnamese(txtKhuyenMai.Text.ToString());
+                InHoaDon.KhoanKhac = Format_NumberVietnamese(txtKhoanKhac.Text.ToString());
                 InHoaDon.Show();
             }
             catch (Exception)
@@ -630,6 +668,50 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                 throw;
             }
         }
+
+        private void txtKhuyenMai_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Handle Shift case
+            if (Keyboard.Modifiers == ModifierKeys.Shift)
+            {
+                e.Handled = true;
+            }
+
+            // Handle all other cases
+            if (!e.Handled && (e.Key < Key.D0 || e.Key > Key.D9))
+            {
+                if (e.Key < Key.NumPad0 || e.Key > Key.NumPad9)
+                {
+                    if (e.Key != Key.Back)
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }           
+        }
+
+        private void txtKhoanKhac_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Handle Shift case
+            if (Keyboard.Modifiers == ModifierKeys.Shift)
+            {
+                e.Handled = true;
+            }
+
+            // Handle all other cases
+            if (!e.Handled && (e.Key < Key.D0 || e.Key > Key.D9))
+            {
+                if (e.Key < Key.NumPad0 || e.Key > Key.NumPad9)
+                {
+                    if (e.Key != Key.Back)
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }           
+        }
+
+        
     }
 }
 
