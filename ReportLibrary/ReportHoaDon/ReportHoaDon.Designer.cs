@@ -22,6 +22,7 @@
             Telerik.Reporting.ReportParameter reportParameter10 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.ReportParameter reportParameter11 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.ReportParameter reportParameter12 = new Telerik.Reporting.ReportParameter();
+            Telerik.Reporting.ReportParameter reportParameter13 = new Telerik.Reporting.ReportParameter();
             Telerik.Reporting.Drawing.StyleRule styleRule1 = new Telerik.Reporting.Drawing.StyleRule();
             Telerik.Reporting.Drawing.StyleRule styleRule2 = new Telerik.Reporting.Drawing.StyleRule();
             Telerik.Reporting.Drawing.DescendantSelector descendantSelector1 = new Telerik.Reporting.Drawing.DescendantSelector();
@@ -53,11 +54,12 @@
             this.txtGioRa = new Telerik.Reporting.TextBox();
             this.txtNgayRa = new Telerik.Reporting.TextBox();
             this.textBox11 = new Telerik.Reporting.TextBox();
+            this.txtKhoanKhac = new Telerik.Reporting.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // detail
             // 
-            this.detail.Height = new Telerik.Reporting.Drawing.Unit(2.2000000476837158D, Telerik.Reporting.Drawing.UnitType.Inch);
+            this.detail.Height = new Telerik.Reporting.Drawing.Unit(2.5D, Telerik.Reporting.Drawing.UnitType.Inch);
             this.detail.Items.AddRange(new Telerik.Reporting.ReportItemBase[] {
             this.lblMaKH,
             this.lblTienPhong,
@@ -83,7 +85,8 @@
             this.textBox6,
             this.txtGioRa,
             this.txtNgayRa,
-            this.textBox11});
+            this.textBox11,
+            this.txtKhoanKhac});
             this.detail.Name = "detail";
             this.detail.Style.Font.Name = "Arial";
             this.detail.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(15D, Telerik.Reporting.Drawing.UnitType.Point);
@@ -231,7 +234,7 @@
             // 
             // Footer
             // 
-            this.Footer.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(0.099999986588954926D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(1.9000000953674316D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.Footer.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(0.099999986588954926D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(2.1000001430511475D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.Footer.Name = "Footer";
             this.Footer.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(11.430000305175781D, Telerik.Reporting.Drawing.UnitType.Cm), new Telerik.Reporting.Drawing.Unit(0.299999862909317D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.Footer.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(15D, Telerik.Reporting.Drawing.UnitType.Point);
@@ -241,7 +244,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(0.099999986588954926D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(1.6002365350723267D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.textBox1.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(0.099999986588954926D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(1.7999995946884155D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(1.3000000715255737D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.20000012218952179D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.textBox1.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(15D, Telerik.Reporting.Drawing.UnitType.Point);
@@ -250,7 +253,7 @@
             // 
             // txtTongTien
             // 
-            this.txtTongTien.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(1.4000000953674316D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(1.6002370119094849D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtTongTien.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(1.4000000953674316D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(1.8000000715255737D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(3.2999212741851807D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
             this.txtTongTien.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(15D, Telerik.Reporting.Drawing.UnitType.Point);
@@ -326,6 +329,15 @@
             this.textBox11.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
             resources.ApplyResources(this.textBox11, "textBox11");
             // 
+            // txtKhoanKhac
+            // 
+            this.txtKhoanKhac.Location = new Telerik.Reporting.Drawing.PointU(new Telerik.Reporting.Drawing.Unit(0.10007842630147934D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(1.6002367734909058D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtKhoanKhac.Name = "txtKhoanKhac";
+            this.txtKhoanKhac.Size = new Telerik.Reporting.Drawing.SizeU(new Telerik.Reporting.Drawing.Unit(4.5998425483703613D, Telerik.Reporting.Drawing.UnitType.Inch), new Telerik.Reporting.Drawing.Unit(0.19999997317790985D, Telerik.Reporting.Drawing.UnitType.Inch));
+            this.txtKhoanKhac.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(15D, Telerik.Reporting.Drawing.UnitType.Point);
+            this.txtKhoanKhac.Style.VerticalAlign = Telerik.Reporting.Drawing.VerticalAlign.Middle;
+            resources.ApplyResources(this.txtKhoanKhac, "txtKhoanKhac");
+            // 
             // ReportHoaDon
             // 
             this.Culture = new System.Globalization.CultureInfo("vi-VN");
@@ -341,39 +353,54 @@
             reportParameter1.AllowNull = true;
             reportParameter1.Name = "Ngay";
             resources.ApplyResources(reportParameter1, "reportParameter1");
+            reportParameter1.Value = "123";
             reportParameter2.AllowNull = true;
             reportParameter2.Name = "Thang";
             resources.ApplyResources(reportParameter2, "reportParameter2");
+            reportParameter2.Value = "123";
             reportParameter3.AllowNull = true;
             reportParameter3.Name = "Nam";
             resources.ApplyResources(reportParameter3, "reportParameter3");
+            reportParameter3.Value = "123";
             reportParameter4.AllowNull = true;
             reportParameter4.Name = "TenKhachHang";
             resources.ApplyResources(reportParameter4, "reportParameter4");
+            reportParameter4.Value = "123";
             reportParameter5.AllowNull = true;
             reportParameter5.Name = "TienPhong";
             resources.ApplyResources(reportParameter5, "reportParameter5");
+            reportParameter5.Value = "123";
             reportParameter6.AllowNull = true;
             reportParameter6.Name = "TienDichVu";
             resources.ApplyResources(reportParameter6, "reportParameter6");
+            reportParameter6.Value = "123";
             reportParameter7.AllowNull = true;
             reportParameter7.Name = "TongTien";
             resources.ApplyResources(reportParameter7, "reportParameter7");
+            reportParameter7.Value = "123";
             reportParameter8.AllowNull = true;
             reportParameter8.Name = "TraTruoc";
             resources.ApplyResources(reportParameter8, "reportParameter8");
+            reportParameter8.Value = "123";
             reportParameter9.AllowNull = true;
             reportParameter9.Name = "GioVao";
             resources.ApplyResources(reportParameter9, "reportParameter9");
+            reportParameter9.Value = "123";
             reportParameter10.AllowNull = true;
             reportParameter10.Name = "GioRa";
             resources.ApplyResources(reportParameter10, "reportParameter10");
+            reportParameter10.Value = "123";
             reportParameter11.AllowNull = true;
             reportParameter11.Name = "NgayVao";
             resources.ApplyResources(reportParameter11, "reportParameter11");
+            reportParameter11.Value = "123";
             reportParameter12.AllowNull = true;
             reportParameter12.Name = "NgayRa";
             resources.ApplyResources(reportParameter12, "reportParameter12");
+            reportParameter12.Value = "123";
+            reportParameter13.Name = "KhoanKhac";
+            resources.ApplyResources(reportParameter13, "reportParameter13");
+            reportParameter13.Value = "123";
             this.ReportParameters.Add(reportParameter1);
             this.ReportParameters.Add(reportParameter2);
             this.ReportParameters.Add(reportParameter3);
@@ -386,6 +413,7 @@
             this.ReportParameters.Add(reportParameter10);
             this.ReportParameters.Add(reportParameter11);
             this.ReportParameters.Add(reportParameter12);
+            this.ReportParameters.Add(reportParameter13);
             this.Style.BackgroundColor = System.Drawing.Color.White;
             this.Style.Font.Size = new Telerik.Reporting.Drawing.Unit(14D, Telerik.Reporting.Drawing.UnitType.Cm);
             styleRule1.Selectors.AddRange(new Telerik.Reporting.Drawing.ISelector[] {
@@ -451,5 +479,6 @@
         private TextBox txtGioRa;
         private TextBox txtNgayRa;
         private TextBox textBox11;
+        private TextBox txtKhoanKhac;
     }
 }
