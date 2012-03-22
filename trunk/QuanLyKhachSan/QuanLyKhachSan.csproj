@@ -102,8 +102,14 @@
     <Compile Include="Form\QuanLyUser\frmUserEdit.xaml.cs">
       <DependentUpon>frmUserEdit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Form\ThongKeBaoCao\rptHoaDon.xaml.cs">
-      <DependentUpon>rptHoaDon.xaml</DependentUpon>
+    <Compile Include="Form\ThongKeBaoCao\rptThongKeChiTieu.xaml.cs">
+      <DependentUpon>rptThongKeChiTieu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ThongKeBaoCao\rptThongKeDoanhThu.xaml.cs">
+      <DependentUpon>rptThongKeDoanhThu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ThongKeBaoCao\rptThongKeDoanhThuDichVu.xaml.cs">
+      <DependentUpon>rptThongKeDoanhThuDichVu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Form\UserControls\BusyIndicatorControl.xaml.cs">
       <DependentUpon>BusyIndicatorControl.xaml</DependentUpon>
@@ -359,7 +365,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Form\ThongKeBaoCao\rptHoaDon.xaml">
+    <Page Include="Form\ThongKeBaoCao\rptThongKeChiTieu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Form\ThongKeBaoCao\rptThongKeDoanhThu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Form\ThongKeBaoCao\rptThongKeDoanhThuDichVu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
