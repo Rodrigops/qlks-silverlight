@@ -8,7 +8,7 @@ namespace QuanLyKhachSan
     {
         public static void KhachHang_Add(string HoTen, string DiaChi, string DienThoai, string CMND, string NgaySinh, string NoiSinh,
             string SoVisa, string ThoiHanVisa, string NguoiTiepNhan, string NgayNhapCanh, string TamTruTuNgay, string TamTruDenNgay,
-            int QuocTichID, int GioiTinh, int CreatedByUser, string CreatedDate)
+            int QuocTichID, int GioiTinh, string CreatedByUser, string CreatedDate)
         {
             KhachHangDAL doit = new KhachHangDAL();
             doit.KhachHang_Add(HoTen, DiaChi, DienThoai, CMND, NgaySinh, NoiSinh, SoVisa, ThoiHanVisa, NguoiTiepNhan, NgayNhapCanh,
@@ -16,13 +16,13 @@ namespace QuanLyKhachSan
         }
         public static void KhachHang_Edit(int KhachHangID, string HoTen, string DiaChi, string DienThoai, string CMND, string NgaySinh, string NoiSinh,
             string SoVisa, string ThoiHanVisa, string NguoiTiepNhan, string NgayNhapCanh, string TamTruTuNgay, string TamTruDenNgay,
-            int QuocTichID, int GioiTinh, int ModifiedByUser, string ModifiedDate)
+            int QuocTichID, int GioiTinh, string ModifiedByUser, string ModifiedDate)
         {
             KhachHangDAL doit = new KhachHangDAL();
             doit.KhachHang_Edit(KhachHangID, HoTen, DiaChi, DienThoai, CMND, NgaySinh, NoiSinh, SoVisa, ThoiHanVisa, NguoiTiepNhan, NgayNhapCanh,
                 TamTruTuNgay, TamTruDenNgay, QuocTichID, GioiTinh, ModifiedByUser, ModifiedDate);
         }
-        public static void KhachHang_Delete(int KhachHangID, int DeletedByUser, string DeletedDate)
+        public static void KhachHang_Delete(int KhachHangID, string DeletedByUser, string DeletedDate)
         {
             KhachHangDAL doit = new KhachHangDAL();
             doit.KhachHang_Delete(KhachHangID, DeletedByUser, DeletedDate);

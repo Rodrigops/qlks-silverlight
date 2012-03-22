@@ -14,7 +14,7 @@ namespace QuanLyKhachSan
         }
         public void KhachHang_Add(string HoTen, string DiaChi, string DienThoai, string CMND, string NgaySinh, string NoiSinh,
             string SoVisa, string ThoiHanVisa, string NguoiTiepNhan, string NgayNhapCanh, string TamTruTuNgay, string TamTruDenNgay,
-            int QuocTichID, int GioiTinh, int CreatedByUser, string CreatedDate)
+            int QuocTichID, int GioiTinh, string CreatedByUser, string CreatedDate)
         {
             SQLDataHelper SQLDB = new SQLDataHelper();
             SQLDB.Addparameter("@HoTen", HoTen);
@@ -37,7 +37,7 @@ namespace QuanLyKhachSan
         }
         public void KhachHang_Edit(int KhachHangID, string HoTen, string DiaChi, string DienThoai, string CMND, string NgaySinh, string NoiSinh,
             string SoVisa, string ThoiHanVisa, string NguoiTiepNhan, string NgayNhapCanh, string TamTruTuNgay, string TamTruDenNgay,
-            int QuocTichID, int GioiTinh, int ModifiedByUser, string ModifiedDate)
+            int QuocTichID, int GioiTinh, string ModifiedByUser, string ModifiedDate)
         {
             SQLDataHelper SQLDB = new SQLDataHelper();
             SQLDB.Addparameter("@KhachHangID", KhachHangID);
@@ -59,7 +59,7 @@ namespace QuanLyKhachSan
             SQLDB.Addparameter("@ModifiedDate", ModifiedDate);
             SQLDB.executenonquery("sp_KhachHang_Edit", CommandType.StoredProcedure);
         }
-        public void KhachHang_Delete(int KhachHangID, int DeletedByUser, string DeletedDate)
+        public void KhachHang_Delete(int KhachHangID, string DeletedByUser, string DeletedDate)
         {
             SQLDataHelper SQLDB = new SQLDataHelper();
             SQLDB.Addparameter("@KhachHangID", KhachHangID);
