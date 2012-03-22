@@ -7,6 +7,7 @@
     using Telerik.Reporting;
     using Telerik.Reporting.Drawing;
     using System.Globalization;
+    using System.Data;
 
     /// <summary>
     /// Summary description for ReportThongKeDoanhThu.
@@ -74,6 +75,9 @@
                     });
             }
             sqlDataSource.SelectCommandType = Telerik.Reporting.SqlDataSourceCommandType.StoredProcedure;
+            sqlDataSource.CalculatedFields.Add(new CalculatedField("Thue", typeof(string), "=iif(Fields.LoaiThue=0,'Theo giờ', iif(Fields.LoaiThue=1, 'Theo ngày', iif(Fields.LoaiThue=2, 'Qua đêm', 'Theo tháng')))"));
+            sqlDataSource.CalculatedFields.Add(new CalculatedField("LoaiCa", typeof(string), "=iif(Fields.Ca=0, 'Ca ngày', 'Ca đêm')"));
+
             txtTongTien.Value = _TongTien;
         }  
     }
