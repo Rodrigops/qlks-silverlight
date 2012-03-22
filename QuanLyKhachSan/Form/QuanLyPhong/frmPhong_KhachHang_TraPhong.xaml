@@ -44,9 +44,9 @@
         <sdk:Label Height="17" HorizontalAlignment="Left" Margin="9,8,0,0" Name="label8" VerticalAlignment="Top" Width="68" Grid.Row="8" Content="Ghi chú :" />
         <sdk:Label Height="17" HorizontalAlignment="Left" Margin="12,4,0,0" Name="label9" VerticalAlignment="Top" Width="65" Grid.Row="12" Content="Thanh toán" />
         <TextBox Grid.Column="1" Grid.Row="2" Height="23" HorizontalAlignment="Left" Name="txtNgayVao" VerticalAlignment="Top" Width="93" Margin="0,6,0,0" IsReadOnly="True" />
-        <TextBox Height="23" HorizontalAlignment="Left" Name="txtKhuyenMai" VerticalAlignment="Top" Width="169" Grid.Column="1" Grid.Row="6" Margin="0,4,0,0" />
+        <TextBox Height="23" HorizontalAlignment="Left" Name="txtKhuyenMai" KeyDown="txtKhuyenMai_KeyDown" TextChanged="txtKhuyenMai_TextChanged" VerticalAlignment="Top" Width="169" Grid.Column="1" Grid.Row="6" Margin="0,4,0,0" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="0,6,0,0" Name="txtNgayRa" VerticalAlignment="Top" Width="93" Grid.Column="1" Grid.Row="3" IsReadOnly="True" />
-        <TextBox Height="23" HorizontalAlignment="Left" Name="txtKhoanKhac" VerticalAlignment="Top" Width="169" Grid.Column="1" Grid.Row="7" Margin="0,4,0,0" TextChanged="txtKhoanKhac_TextChanged"  />
+        <TextBox Height="23" HorizontalAlignment="Left" Name="txtKhoanKhac" KeyDown="txtKhoanKhac_KeyDown" VerticalAlignment="Top" Width="169" Grid.Column="1" Grid.Row="7" Margin="0,4,0,0" TextChanged="txtKhoanKhac_TextChanged"  />
         <TextBox Height="106" HorizontalAlignment="Left" Name="txtGhiChu" VerticalAlignment="Top" Width="421" Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="3" Grid.RowSpan="4" Margin="0,4,0,0" />
         <TextBox Height="23" HorizontalAlignment="Left" Name="txtTongThanhToan" VerticalAlignment="Top" Width="169" Grid.Column="1" Grid.Row="12" IsReadOnly="True" />
         <sdk:Label Content="Giờ vào" Height="17" Margin="99,10,23,0" Name="label10" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" />
