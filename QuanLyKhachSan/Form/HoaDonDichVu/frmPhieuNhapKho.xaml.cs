@@ -22,7 +22,9 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
             InitializeComponent();
             Nam_Load();
             Thang_Load();
+            LoadingPanel.Visibility = Visibility.Visible;
             LoadingPanel.IsBusy = true;
+            rdbTheoNgay.IsChecked = true;
             PhieuNhapKhoClient = new PhieuNhapKhoSVCClient();
             PhieuNhapKhoClient.PhieuNhapKho_GetItemsCompleted += new EventHandler<PhieuNhapKho_GetItemsCompletedEventArgs>(PhieuNhapKhoClient_PhieuNhapKho_GetItemsCompleted);
             PhieuNhapKhoClient.PhieuNhapKho_GetItemsAsync();
@@ -30,6 +32,7 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
         void PhieuNhapKhoClient_PhieuNhapKho_GetItemsCompleted(object sender, PhieuNhapKho_GetItemsCompletedEventArgs e)
         {
             grvPhieuNhapKho.ItemsSource = e.Result;
+            LoadingPanel.Visibility = Visibility.Collapsed; 
             LoadingPanel.IsBusy = false;
         }
 
@@ -52,6 +55,7 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
                 cbxTheoNam.IsEnabled = false;
                 cbxTheoThang.IsEnabled = false;
                 cbxTheoThangNam.IsEnabled = false;
+                rdpTheoNgay.SelectedDate = DateTime.Now.Date;
             }
         }
         private void rdbTheoThang_Checked(object sender, RoutedEventArgs e)
@@ -91,6 +95,8 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
                 cbxTheoNam.IsEnabled = false;
                 cbxTheoThang.IsEnabled = false;
                 cbxTheoThangNam.IsEnabled = false;
+                rdpTuNgay.SelectedDate = DateTime.Now.Date;
+                rdpDenNgay.SelectedDate = DateTime.Now.Date;
             }
         }
         private void Nam_Load()
@@ -178,6 +184,7 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
             {
                 if (!String.IsNullOrEmpty(rdpTheoNgay.SelectedDate.ToString()))
                 {
+                    LoadingPanel.Visibility = Visibility.Collapsed; 
                     LoadingPanel.IsBusy = true;
                     TKChiTieuClient = new TKChiTieuSVCClient();
                     TKChiTieuClient.PhieuNhapKho_GetItems_TheoNgayCompleted += new EventHandler<PhieuNhapKho_GetItems_TheoNgayCompletedEventArgs>(TKChiTieuClient_PhieuNhapKho_GetItems_TheoNgayCompleted);
@@ -188,6 +195,7 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
             {
                 if (cbxTheoThang.SelectedIndex != -1 && cbxTheoThangNam.SelectedIndex != -1)
                 {
+                    LoadingPanel.Visibility = Visibility.Collapsed; 
                     LoadingPanel.IsBusy = true;
                     TKChiTieuClient = new TKChiTieuSVCClient();
                     TKChiTieuClient.PhieuNhapKho_GetItems_TheoThangCompleted += new EventHandler<PhieuNhapKho_GetItems_TheoThangCompletedEventArgs>(TKChiTieuClient_PhieuNhapKho_GetItems_TheoThangCompleted);
@@ -198,6 +206,7 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
             {
                 if (cbxTheoNam.SelectedIndex != -1)
                 {
+                    LoadingPanel.Visibility = Visibility.Collapsed; 
                     LoadingPanel.IsBusy = true;
                     TKChiTieuClient = new TKChiTieuSVCClient();
                     TKChiTieuClient.PhieuNhapKho_GetItems_TheoNamCompleted += new EventHandler<PhieuNhapKho_GetItems_TheoNamCompletedEventArgs>(TKChiTieuClient_PhieuNhapKho_GetItems_TheoNamCompleted);
@@ -210,6 +219,7 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
                 {
                     if (rdpTuNgay.SelectedDate < rdpDenNgay.SelectedDate)
                     {
+                        LoadingPanel.Visibility = Visibility.Collapsed; 
                         LoadingPanel.IsBusy = true;
                         TKChiTieuClient = new TKChiTieuSVCClient();
                         TKChiTieuClient.PhieuNhapKho_GetItems_TuNgayDenNgayCompleted += new EventHandler<PhieuNhapKho_GetItems_TuNgayDenNgayCompletedEventArgs>(TKChiTieuClient_PhieuNhapKho_GetItems_TuNgayDenNgayCompleted);
@@ -221,24 +231,25 @@ namespace QuanLyKhachSan.Form.HoaDonDichVu
         void TKChiTieuClient_PhieuNhapKho_GetItems_TuNgayDenNgayCompleted(object sender, PhieuNhapKho_GetItems_TuNgayDenNgayCompletedEventArgs e)
         {
             grvPhieuNhapKho.ItemsSource = e.Result;
+            LoadingPanel.Visibility = Visibility.Collapsed; 
             LoadingPanel.IsBusy = false;
         }
-
         void TKChiTieuClient_PhieuNhapKho_GetItems_TheoNamCompleted(object sender, PhieuNhapKho_GetItems_TheoNamCompletedEventArgs e)
         {
             grvPhieuNhapKho.ItemsSource = e.Result;
+            LoadingPanel.Visibility = Visibility.Collapsed;
             LoadingPanel.IsBusy = false;
         }
-
         void TKChiTieuClient_PhieuNhapKho_GetItems_TheoThangCompleted(object sender, PhieuNhapKho_GetItems_TheoThangCompletedEventArgs e)
         {
             grvPhieuNhapKho.ItemsSource = e.Result;
+            LoadingPanel.Visibility = Visibility.Collapsed; 
             LoadingPanel.IsBusy = false;
         }
-
         void TKChiTieuClient_PhieuNhapKho_GetItems_TheoNgayCompleted(object sender, PhieuNhapKho_GetItems_TheoNgayCompletedEventArgs e)
         {
             grvPhieuNhapKho.ItemsSource = e.Result;
+            LoadingPanel.Visibility = Visibility.Collapsed;
             LoadingPanel.IsBusy = false;
         }
     }
