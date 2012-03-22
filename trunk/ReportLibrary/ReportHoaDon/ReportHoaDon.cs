@@ -1,4 +1,4 @@
-namespace Telerik.Reporting
+﻿namespace Telerik.Reporting
 {
     using System;
     using System.ComponentModel;
@@ -41,6 +41,7 @@ namespace Telerik.Reporting
             txtTienPhong.Value = this.ReportParameters["TienPhong"].Value.ToString();
             txtTienDV.Value = this.ReportParameters["TienDichVu"].Value.ToString();
             txtTraTruoc.Value = this.ReportParameters["TraTruoc"].Value.ToString();
+            txtKhoanKhac.Value = "Khoản khác :  " + this.ReportParameters["KhoanKhac"].Value.ToString();
             txtTongTien.Value = this.ReportParameters["TongTien"].Value.ToString();
             
         }
