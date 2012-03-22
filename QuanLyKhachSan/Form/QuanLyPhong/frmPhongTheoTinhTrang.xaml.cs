@@ -352,7 +352,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
             if (msgResult == MessageBoxResult.OK)
             {
                 KhachHangClient.KhachHang_DeleteCompleted += new EventHandler<System.ComponentModel.AsyncCompletedEventArgs>(KhachHangClient_KhachHang_DeleteCompleted);
-                KhachHangClient.KhachHang_DeleteAsync(KhachHangID, 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                KhachHangClient.KhachHang_DeleteAsync(KhachHangID, User.UserID, DateTime.Now.ToString("MM/dd/yyyy"));
             }
         }
         void KhachHangClient_KhachHang_DeleteCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
