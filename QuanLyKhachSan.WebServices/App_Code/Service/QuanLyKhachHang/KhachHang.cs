@@ -27,7 +27,7 @@ namespace QuanLyKhachSan
         {
             try
             {
-                KhachHangBLL.KhachHang_Delete(int.Parse(KhachHangID), 0, DateTime.Now.ToString("MM/dd/yyyy"));
+                KhachHangBLL.KhachHang_Delete(int.Parse(KhachHangID), "0", DateTime.Now.ToString("MM/dd/yyyy"));
             }
             catch (Exception)
             {                
