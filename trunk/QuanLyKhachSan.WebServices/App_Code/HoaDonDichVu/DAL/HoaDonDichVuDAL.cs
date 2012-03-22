@@ -171,6 +171,13 @@ namespace QuanLyKhachSan
             SQLDB.Addparameter("@NamRa", NamRa);
             SQLDB.executenonquery("sp_HoaDonNgayRa_Add", CommandType.StoredProcedure);
         }
+        public void HoaDonDichVu_ChuyenPhong(int HoaDonID, int PhongID)
+        {
+            SQLDataHelper SQLDB = new SQLDataHelper();
+            SQLDB.Addparameter("@HoaDonID", HoaDonID);
+            SQLDB.Addparameter("@PhongID", PhongID);
+            SQLDB.executenonquery("sp_HoaDonDichVu_ChuyenPhong", CommandType.StoredProcedure);
+        }
     }
 }
 

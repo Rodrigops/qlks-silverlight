@@ -61,5 +61,11 @@ namespace QuanLyKhachSan
             HoaDonDichVuDAL doit = new HoaDonDichVuDAL();
             doit.HoaDonNgayRa_Add(HoaDonID, NgayRa, GioRa, PhutRa, NgayRa_So, ThangRa, NamRa);
         }
+        [OperationContract]
+        public void HoaDonDichVu_ChuyenPhong(int HoaDonID, int PhongID)
+        {
+            HoaDonDichVuDAL doit = new HoaDonDichVuDAL();
+            doit.HoaDonDichVu_ChuyenPhong(HoaDonID, PhongID);
+        }
     }
 }

@@ -33,5 +33,10 @@ namespace QuanLyKhachSan
             HoaDonDichVuDAL doit = new HoaDonDichVuDAL();
             return doit.HoaDonDichVu_GetItems(HoaDon_DichVuID);
         }
+        public static void HoaDonDichVu_ChuyenPhong(int HoaDonID, int PhongID)
+        {
+            HoaDonDichVuDAL doit = new HoaDonDichVuDAL();
+            doit.HoaDonDichVu_ChuyenPhong(HoaDonID, PhongID);
+        }
     }
 }
