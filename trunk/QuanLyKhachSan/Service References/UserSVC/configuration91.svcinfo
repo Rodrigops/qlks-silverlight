@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="BU1noGbJZLtckv5EOu8VRULNpLY=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="wMoK/7IRKNi50qZiYJOf1P7304I=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="customBinding" name="CustomBinding_UserSVC">
       <properties>
@@ -115,10 +115,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="CustomBinding_UserSVC" contract="UserSVC.UserSVC" bindingType="customBinding" address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyUser/User.svc" bindingConfiguration="CustomBinding_UserSVC">
+    <endpoint name="CustomBinding_UserSVC" contract="UserSVC.UserSVC" bindingType="customBinding" address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyUser/User.svc" bindingConfiguration="CustomBinding_UserSVC">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyUser/User.svc</serializedValue>
+          <serializedValue>http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyUser/User.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

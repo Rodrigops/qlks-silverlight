@@ -20,15 +20,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/LoaiPhong.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/LoaiPhong.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="LoaiPhong3.xsd" MetadataType="Schema" ID="efea2f82-e249-4682-9870-38bfce121278" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/LoaiPhong.svc?xsd=xsd0" />
-    <MetadataFile FileName="LoaiPhongSVC1.wsdl" MetadataType="Wsdl" ID="716e6577-afdb-4ec9-9413-2592a11ecf41" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/LoaiPhong.svc?wsdl" />
-    <MetadataFile FileName="LoaiPhong1.disco" MetadataType="Disco" ID="6a7e1650-ae37-4a60-90b2-bdbbf5052c5b" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/LoaiPhong.svc?disco" />
-    <MetadataFile FileName="LoaiPhong1.wsdl" MetadataType="Wsdl" ID="30728eb0-f0cd-4acf-bd69-169c87e953c9" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/LoaiPhong.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="LoaiPhong31.xsd" MetadataType="Schema" ID="2ebcded5-fa67-4e10-bf34-aee2d52d42f2" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/LoaiPhong.svc?xsd=xsd1" />
-    <MetadataFile FileName="LoaiPhong32.xsd" MetadataType="Schema" ID="4bacdb83-c79d-4404-a2c3-b463d6bcd13f" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/LoaiPhong.svc?xsd=xsd2" />
+    <MetadataFile FileName="LoaiPhong.wsdl" MetadataType="Wsdl" ID="ae82facf-b7a6-4116-a071-abeaf0f13db9" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/LoaiPhong.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="LoaiPhong.xsd" MetadataType="Schema" ID="f5b65749-58b7-418e-a7ab-b9c4a3390a10" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/LoaiPhong.svc?xsd=xsd1" />
+    <MetadataFile FileName="LoaiPhong1.xsd" MetadataType="Schema" ID="3aee21f0-8eff-445b-9403-05337964c5d2" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/LoaiPhong.svc?xsd=xsd0" />
+    <MetadataFile FileName="LoaiPhong.disco" MetadataType="Disco" ID="1607b499-c4de-4cdb-aa6b-11e2d4abb264" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/LoaiPhong.svc?disco" />
+    <MetadataFile FileName="LoaiPhong2.xsd" MetadataType="Schema" ID="3deb9d96-d5c4-4263-a2ef-3af722db894d" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/LoaiPhong.svc?xsd=xsd2" />
+    <MetadataFile FileName="LoaiPhongSVC.wsdl" MetadataType="Wsdl" ID="9649167e-216c-4906-af98-39a8effd001b" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/LoaiPhong.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

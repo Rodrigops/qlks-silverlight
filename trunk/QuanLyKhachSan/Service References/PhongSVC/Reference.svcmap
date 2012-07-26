@@ -20,16 +20,16 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Phong.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Phong.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Phong.xsd" MetadataType="Schema" ID="c2502ac2-1e20-4865-9c03-7981faccf166" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Phong.svc?xsd=xsd3" />
-    <MetadataFile FileName="Phong1.xsd" MetadataType="Schema" ID="fbcde45f-2dd8-4411-91bd-6b6529ef4c28" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Phong.svc?xsd=xsd2" />
-    <MetadataFile FileName="PhongSVC.wsdl" MetadataType="Wsdl" ID="c24a6c1c-f5d1-4901-90fb-159ea47fd1eb" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Phong.svc?wsdl" />
-    <MetadataFile FileName="Phong2.xsd" MetadataType="Schema" ID="95473d32-13fa-4610-bb0c-afd64d6f4b6c" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Phong.svc?xsd=xsd0" />
-    <MetadataFile FileName="Phong.disco" MetadataType="Disco" ID="a2921647-1868-40da-b2f4-df3bcd8ad0cc" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Phong.svc?disco" />
-    <MetadataFile FileName="Phong3.xsd" MetadataType="Schema" ID="293da9dc-ef3d-410e-acbd-812ef642c7e8" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Phong.svc?xsd=xsd1" />
-    <MetadataFile FileName="Phong.wsdl" MetadataType="Wsdl" ID="83c41d54-0b7a-4417-99f9-aeecaaac1825" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Phong.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Phong4.xsd" MetadataType="Schema" ID="d3c26dd6-9a17-4677-94a0-51ce4b29bd61" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Phong.svc?xsd=xsd1" />
+    <MetadataFile FileName="Phong1.wsdl" MetadataType="Wsdl" ID="e977d53d-0698-45f2-bde6-9f2585b80ca1" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Phong.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="PhongSVC1.wsdl" MetadataType="Wsdl" ID="4a01992d-771a-4908-86cc-d3aa2a40fc8c" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Phong.svc?wsdl" />
+    <MetadataFile FileName="Phong1.disco" MetadataType="Disco" ID="f919f008-9114-4ada-8ea8-f657253a0e15" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Phong.svc?disco" />
+    <MetadataFile FileName="Phong41.xsd" MetadataType="Schema" ID="f6fc3f8e-19ee-4c60-9e59-998e830953b2" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Phong.svc?xsd=xsd2" />
+    <MetadataFile FileName="Phong42.xsd" MetadataType="Schema" ID="4171983f-539f-4d54-b0e9-991c42c9e035" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Phong.svc?xsd=xsd0" />
+    <MetadataFile FileName="Phong43.xsd" MetadataType="Schema" ID="9b02319e-cd5f-4d8c-89b3-57be6d4943c5" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Phong.svc?xsd=xsd3" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

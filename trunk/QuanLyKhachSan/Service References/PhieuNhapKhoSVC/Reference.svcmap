@@ -20,15 +20,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/PhieuNhapKho.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/PhieuNhapKho.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="PhieuNhapKhoSVC.wsdl" MetadataType="Wsdl" ID="f7e5b258-6b1b-4bf6-a919-ec571c046d2b" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/PhieuNhapKho.svc?wsdl" />
-    <MetadataFile FileName="PhieuNhapKho.wsdl" MetadataType="Wsdl" ID="ea236273-9330-493e-97d3-067484cd0141" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/PhieuNhapKho.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="PhieuNhapKho.xsd" MetadataType="Schema" ID="22d4dc53-01cd-4dc7-8a87-d369010a18b2" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/PhieuNhapKho.svc?xsd=xsd1" />
-    <MetadataFile FileName="PhieuNhapKho1.xsd" MetadataType="Schema" ID="8c05b100-169e-4d41-b6fc-fb9e4020e7d6" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/PhieuNhapKho.svc?xsd=xsd0" />
-    <MetadataFile FileName="PhieuNhapKho.disco" MetadataType="Disco" ID="7378f507-7477-44d2-8ab5-94453ca44a37" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/PhieuNhapKho.svc?disco" />
-    <MetadataFile FileName="PhieuNhapKho2.xsd" MetadataType="Schema" ID="5333fb91-f73f-43af-9f53-0322e1c64f12" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/PhieuNhapKho.svc?xsd=xsd2" />
+    <MetadataFile FileName="PhieuNhapKho3.xsd" MetadataType="Schema" ID="6825b2db-6bab-4bcc-adee-2ee48ee182fa" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/PhieuNhapKho.svc?xsd=xsd1" />
+    <MetadataFile FileName="PhieuNhapKhoSVC1.wsdl" MetadataType="Wsdl" ID="a3e09c2e-a681-4f3c-baaa-1ba2299a99d9" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/PhieuNhapKho.svc?wsdl" />
+    <MetadataFile FileName="PhieuNhapKho31.xsd" MetadataType="Schema" ID="a53f608c-fc2f-430a-933f-175abda78d0c" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/PhieuNhapKho.svc?xsd=xsd2" />
+    <MetadataFile FileName="PhieuNhapKho1.disco" MetadataType="Disco" ID="e309e286-88d9-43ec-b782-f7cfb5e2856b" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/PhieuNhapKho.svc?disco" />
+    <MetadataFile FileName="PhieuNhapKho1.wsdl" MetadataType="Wsdl" ID="475f665a-6195-45ee-8df5-fd1c224e1c5e" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/PhieuNhapKho.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="PhieuNhapKho32.xsd" MetadataType="Schema" ID="cb99700a-1443-489b-903b-ed4c794ab105" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/PhieuNhapKho.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

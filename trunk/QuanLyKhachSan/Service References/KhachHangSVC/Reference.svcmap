@@ -20,15 +20,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/KhachHang.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/KhachHang.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="KhachHang.disco" MetadataType="Disco" ID="8a4f1d1f-1f28-4d63-962a-02d38cf22aa9" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/KhachHang.svc?disco" />
-    <MetadataFile FileName="KhachHang.xsd" MetadataType="Schema" ID="db855f99-2f8f-4cbe-85b2-f9aecc2409fc" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/KhachHang.svc?xsd=xsd1" />
-    <MetadataFile FileName="KhachHangSVC.wsdl" MetadataType="Wsdl" ID="2193d1f0-8fcb-41ef-8976-7d247c836a93" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/KhachHang.svc?wsdl" />
-    <MetadataFile FileName="KhachHang1.xsd" MetadataType="Schema" ID="2686b292-4961-47ae-a683-d0efebf68139" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/KhachHang.svc?xsd=xsd2" />
-    <MetadataFile FileName="KhachHang2.xsd" MetadataType="Schema" ID="f06b9ddd-334f-4041-84e4-5644b217e1c2" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/KhachHang.svc?xsd=xsd0" />
-    <MetadataFile FileName="KhachHang.wsdl" MetadataType="Wsdl" ID="91121495-ab59-42ef-a3b4-0bd8f2364ec9" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/KhachHang.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="KhachHang3.xsd" MetadataType="Schema" ID="5e4f3948-8a9d-49df-b791-7338a8501e11" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/KhachHang.svc?xsd=xsd2" />
+    <MetadataFile FileName="KhachHang1.wsdl" MetadataType="Wsdl" ID="3f17122b-e542-42ce-bf1d-b1fb17ec0c86" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/KhachHang.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="KhachHang1.disco" MetadataType="Disco" ID="57db3731-bfd7-430a-bf78-9992e71e8f6c" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/KhachHang.svc?disco" />
+    <MetadataFile FileName="KhachHangSVC1.wsdl" MetadataType="Wsdl" ID="43e6aa62-6830-4bc3-9da1-080d39fdbc16" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/KhachHang.svc?wsdl" />
+    <MetadataFile FileName="KhachHang31.xsd" MetadataType="Schema" ID="cef777dc-23be-4fe5-b364-cbf7eeb93681" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/KhachHang.svc?xsd=xsd1" />
+    <MetadataFile FileName="KhachHang32.xsd" MetadataType="Schema" ID="dd90a830-406c-431d-a78e-f6343f5d8eb2" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/KhachHang.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

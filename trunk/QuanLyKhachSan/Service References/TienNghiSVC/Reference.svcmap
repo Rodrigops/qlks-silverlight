@@ -20,15 +20,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/TienNghi.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/TienNghi.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="TienNghi.xsd" MetadataType="Schema" ID="97c39ade-36ce-4910-9946-e3ba295aceb6" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/TienNghi.svc?xsd=xsd1" />
-    <MetadataFile FileName="TienNghi1.xsd" MetadataType="Schema" ID="8c9ab6ce-5f54-4824-9eb6-ee331cba0064" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/TienNghi.svc?xsd=xsd0" />
-    <MetadataFile FileName="TienNghi.wsdl" MetadataType="Wsdl" ID="2c82c706-ff30-40d7-9eab-6f03fb5b853d" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/TienNghi.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="TienNghi2.xsd" MetadataType="Schema" ID="1913306f-635a-4436-9937-903b255ed72c" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/TienNghi.svc?xsd=xsd2" />
-    <MetadataFile FileName="TienNghi.disco" MetadataType="Disco" ID="cdcdece6-40ab-49d8-906a-73f39cf20a0c" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/TienNghi.svc?disco" />
-    <MetadataFile FileName="TienNghiSVC.wsdl" MetadataType="Wsdl" ID="b3ab4fe3-5d42-4006-9093-bbc2ada52578" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/TienNghi.svc?wsdl" />
+    <MetadataFile FileName="TienNghi3.xsd" MetadataType="Schema" ID="e7180aef-af42-47bb-bb39-639004152451" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/TienNghi.svc?xsd=xsd1" />
+    <MetadataFile FileName="TienNghiSVC1.wsdl" MetadataType="Wsdl" ID="1f4afa46-9d00-4865-b232-6ebf3ce7187c" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/TienNghi.svc?wsdl" />
+    <MetadataFile FileName="TienNghi31.xsd" MetadataType="Schema" ID="b6af182b-86e2-4c8c-b2be-c43e97c5b66d" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/TienNghi.svc?xsd=xsd0" />
+    <MetadataFile FileName="TienNghi1.disco" MetadataType="Disco" ID="326dc05b-14e9-4b62-99c0-ee0efd7ef53c" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/TienNghi.svc?disco" />
+    <MetadataFile FileName="TienNghi32.xsd" MetadataType="Schema" ID="d072fb23-8cce-4385-822d-9ff795ebca92" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/TienNghi.svc?xsd=xsd2" />
+    <MetadataFile FileName="TienNghi1.wsdl" MetadataType="Wsdl" ID="45e10a1a-44ee-4b3f-954b-5c907506ace8" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/TienNghi.svc?wsdl=wsdl0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

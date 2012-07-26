@@ -20,15 +20,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKChiTieu.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKChiTieu.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="GroupSVC.wsdl" MetadataType="Wsdl" ID="9f9bb3d0-62c2-4336-82c9-e4e85799f235" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKChiTieu.svc?wsdl" />
-    <MetadataFile FileName="TKChiTieu.xsd" MetadataType="Schema" ID="dfaac065-cfda-4af0-b344-5729ea0edf84" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKChiTieu.svc?xsd=xsd2" />
-    <MetadataFile FileName="TKChiTieu.wsdl" MetadataType="Wsdl" ID="fe601c83-ffdd-4288-b72e-5d5150dd4816" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKChiTieu.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="TKChiTieu1.xsd" MetadataType="Schema" ID="76b46f38-5bb0-486a-9a23-7651130792de" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKChiTieu.svc?xsd=xsd1" />
-    <MetadataFile FileName="TKChiTieu2.xsd" MetadataType="Schema" ID="ffea1fa6-1135-44e8-a1f9-1e6310c6f7a9" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKChiTieu.svc?xsd=xsd0" />
-    <MetadataFile FileName="TKChiTieu.disco" MetadataType="Disco" ID="8c74865b-8270-464a-a97b-000c0c059dda" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKChiTieu.svc?disco" />
+    <MetadataFile FileName="TKChiTieu3.xsd" MetadataType="Schema" ID="a09fe341-6b4f-4603-b77a-813bd9e3a230" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKChiTieu.svc?xsd=xsd2" />
+    <MetadataFile FileName="TKChiTieu1.wsdl" MetadataType="Wsdl" ID="5a387062-fc8b-4a11-a39b-974dd5cca5eb" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKChiTieu.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="TKChiTieu31.xsd" MetadataType="Schema" ID="aea51839-de29-4f00-8449-b87f363b8449" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKChiTieu.svc?xsd=xsd1" />
+    <MetadataFile FileName="TKChiTieu1.disco" MetadataType="Disco" ID="bebb8661-4b98-4669-abbb-67d04024892f" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKChiTieu.svc?disco" />
+    <MetadataFile FileName="TKChiTieu32.xsd" MetadataType="Schema" ID="a8d716d9-5842-4c6f-9db6-f5071646795c" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKChiTieu.svc?xsd=xsd0" />
+    <MetadataFile FileName="TKChiTieuSVC.wsdl" MetadataType="Wsdl" ID="60d002c9-3427-41a7-9a28-4e76a8c8111c" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKChiTieu.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

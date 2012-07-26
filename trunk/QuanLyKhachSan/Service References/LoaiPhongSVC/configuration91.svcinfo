@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="PdeNsoHrXNd91h8uZ91tDWF+oBw=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="qyZkBluW/de8b2jV1D2+ESccQOg=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="customBinding" name="CustomBinding_LoaiPhongSVC">
       <properties>
@@ -115,10 +115,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="CustomBinding_LoaiPhongSVC" contract="LoaiPhongSVC.LoaiPhongSVC" bindingType="customBinding" address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/LoaiPhong.svc" bindingConfiguration="CustomBinding_LoaiPhongSVC">
+    <endpoint name="CustomBinding_LoaiPhongSVC" contract="LoaiPhongSVC.LoaiPhongSVC" bindingType="customBinding" address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/LoaiPhong.svc" bindingConfiguration="CustomBinding_LoaiPhongSVC">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/LoaiPhong.svc</serializedValue>
+          <serializedValue>http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/LoaiPhong.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

@@ -20,15 +20,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/QuocTich.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/QuocTich.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="QuocTich.xsd" MetadataType="Schema" ID="db9cb250-275b-45e2-80be-6dfdee9cf426" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/QuocTich.svc?xsd=xsd2" />
-    <MetadataFile FileName="QuocTich.disco" MetadataType="Disco" ID="c74ac07c-3fd7-48c7-bfcf-b16ac2b4c1c0" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/QuocTich.svc?disco" />
-    <MetadataFile FileName="QuocTich.wsdl" MetadataType="Wsdl" ID="00bdf5b4-caa8-4734-9f42-5e7379d77678" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/QuocTich.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="QuocTich1.xsd" MetadataType="Schema" ID="260a8467-541c-4081-accf-329cc3e6db97" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/QuocTich.svc?xsd=xsd0" />
-    <MetadataFile FileName="QuocTich2.xsd" MetadataType="Schema" ID="6a323faf-cbc4-4dba-9c34-01da80609ddd" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/QuocTich.svc?xsd=xsd1" />
-    <MetadataFile FileName="QuocTichSVC.wsdl" MetadataType="Wsdl" ID="759819ed-08a1-452d-bd7c-4df6d793e2c5" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/QuocTich.svc?wsdl" />
+    <MetadataFile FileName="QuocTich3.xsd" MetadataType="Schema" ID="88b375ba-51de-4a03-bf46-cf54f28bd77d" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/QuocTich.svc?xsd=xsd2" />
+    <MetadataFile FileName="QuocTich31.xsd" MetadataType="Schema" ID="5e02e17f-bf2d-45f3-b35f-d396c4e052eb" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/QuocTich.svc?xsd=xsd1" />
+    <MetadataFile FileName="QuocTich1.wsdl" MetadataType="Wsdl" ID="6e139256-1a35-4557-89e8-6349e1273f11" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/QuocTich.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="QuocTich32.xsd" MetadataType="Schema" ID="e4231646-3d4c-46b4-8ff3-99a35975124d" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/QuocTich.svc?xsd=xsd0" />
+    <MetadataFile FileName="QuocTich1.disco" MetadataType="Disco" ID="5de7c31a-adb0-4977-b1c1-6da3f067e7a4" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/QuocTich.svc?disco" />
+    <MetadataFile FileName="QuocTichSVC1.wsdl" MetadataType="Wsdl" ID="51c718c7-7ada-4afd-9eb7-e12c2c8deb13" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyKhachHang/QuocTich.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

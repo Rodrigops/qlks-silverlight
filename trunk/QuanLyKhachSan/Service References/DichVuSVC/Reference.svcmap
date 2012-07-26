@@ -20,15 +20,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/DichVu.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/DichVu.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="DichVu.xsd" MetadataType="Schema" ID="6d6c652d-5917-427f-8786-66885f7d0dea" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/DichVu.svc?xsd=xsd1" />
-    <MetadataFile FileName="DichVu1.xsd" MetadataType="Schema" ID="e028b819-fa39-4e07-b89f-e0c29cfd4f1d" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/DichVu.svc?xsd=xsd0" />
-    <MetadataFile FileName="DichVu.wsdl" MetadataType="Wsdl" ID="b306dc1a-0397-455e-abf3-7bd67211e15a" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/DichVu.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="DichVu2.xsd" MetadataType="Schema" ID="fee520df-4749-4b79-8ceb-9fca1b26a089" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/DichVu.svc?xsd=xsd2" />
-    <MetadataFile FileName="DichVu.disco" MetadataType="Disco" ID="429b9ecf-08ce-4e41-b9c1-9bb1fce33dd5" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/DichVu.svc?disco" />
-    <MetadataFile FileName="DichVuSVC.wsdl" MetadataType="Wsdl" ID="78bc1a03-f526-4039-a0bc-d5fda4bd89d5" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/DichVu.svc?wsdl" />
+    <MetadataFile FileName="DichVu3.xsd" MetadataType="Schema" ID="5bf5e44e-1ed5-48f4-9208-3e7757f05064" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/DichVu.svc?xsd=xsd0" />
+    <MetadataFile FileName="DichVu1.disco" MetadataType="Disco" ID="c7658e39-e128-4d2c-b52d-ae1635f4cb36" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/DichVu.svc?disco" />
+    <MetadataFile FileName="DichVuSVC1.wsdl" MetadataType="Wsdl" ID="a67020f7-81fc-4455-bcd5-57f4dde19073" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/DichVu.svc?wsdl" />
+    <MetadataFile FileName="DichVu31.xsd" MetadataType="Schema" ID="b5804976-fa08-4210-ad38-ed2ffb99cebe" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/DichVu.svc?xsd=xsd1" />
+    <MetadataFile FileName="DichVu1.wsdl" MetadataType="Wsdl" ID="cb09104b-6a2e-47f3-8bd4-53c9d6c87844" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/DichVu.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="DichVu32.xsd" MetadataType="Schema" ID="fedc2165-a972-409b-b710-859349565cae" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/DichVu.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
