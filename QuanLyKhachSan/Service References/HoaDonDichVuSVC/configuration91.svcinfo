@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="TwUYxuYVv903aZoJZ9FIipPW4FU=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="BL44Rs7Rxp/EFT39IYfZ20Z0vuc=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="customBinding" name="CustomBinding_HoaDonDichVuSVC">
       <properties>
@@ -115,10 +115,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="CustomBinding_HoaDonDichVuSVC" contract="HoaDonDichVuSVC.HoaDonDichVuSVC" bindingType="customBinding" address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDonDichVu.svc" bindingConfiguration="CustomBinding_HoaDonDichVuSVC">
+    <endpoint name="CustomBinding_HoaDonDichVuSVC" contract="HoaDonDichVuSVC.HoaDonDichVuSVC" bindingType="customBinding" address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDonDichVu.svc" bindingConfiguration="CustomBinding_HoaDonDichVuSVC">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDonDichVu.svc</serializedValue>
+          <serializedValue>http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDonDichVu.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

@@ -20,15 +20,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDon_TraTruoc.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDon_TraTruoc.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="HoaDon_TraTruoc.wsdl" MetadataType="Wsdl" ID="9a7e51a6-be0e-4be9-a02a-4024ee3f521e" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDon_TraTruoc.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="HoaDon_TraTruoc.xsd" MetadataType="Schema" ID="017ff9fb-64ac-4d74-8cd6-4e47d9dd6623" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDon_TraTruoc.svc?xsd=xsd1" />
-    <MetadataFile FileName="HoaDon_TraTruocSVC.wsdl" MetadataType="Wsdl" ID="5b2c783d-15ab-45bc-b136-304559b54d9d" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDon_TraTruoc.svc?wsdl" />
-    <MetadataFile FileName="HoaDon_TraTruoc1.xsd" MetadataType="Schema" ID="5ff04595-eb69-4376-a9a2-e60f3039ae4f" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDon_TraTruoc.svc?xsd=xsd0" />
-    <MetadataFile FileName="HoaDon_TraTruoc.disco" MetadataType="Disco" ID="9315909b-8a4f-40cb-ba83-5107c0857b72" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDon_TraTruoc.svc?disco" />
-    <MetadataFile FileName="HoaDon_TraTruoc2.xsd" MetadataType="Schema" ID="8df7d702-c730-4b84-b234-db76a5f4aad0" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDon_TraTruoc.svc?xsd=xsd2" />
+    <MetadataFile FileName="HoaDon_TraTruoc1.wsdl" MetadataType="Wsdl" ID="af6fb254-b61b-4fc7-95a8-a32fa6cc8c90" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDon_TraTruoc.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="HoaDon_TraTruoc3.xsd" MetadataType="Schema" ID="10e8a8de-f58f-466d-ae2c-7c13442544b4" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDon_TraTruoc.svc?xsd=xsd2" />
+    <MetadataFile FileName="HoaDon_TraTruoc1.disco" MetadataType="Disco" ID="df88c73a-e456-44df-8c41-3252edf7b5c7" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDon_TraTruoc.svc?disco" />
+    <MetadataFile FileName="HoaDon_TraTruoc31.xsd" MetadataType="Schema" ID="deabf7c3-30ff-4c29-bc08-869303ac759c" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDon_TraTruoc.svc?xsd=xsd1" />
+    <MetadataFile FileName="HoaDon_TraTruoc32.xsd" MetadataType="Schema" ID="ed913a85-ef78-42a3-bcbb-0c48292a7701" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDon_TraTruoc.svc?xsd=xsd0" />
+    <MetadataFile FileName="HoaDon_TraTruocSVC1.wsdl" MetadataType="Wsdl" ID="9c30966d-e89a-4cb7-bbea-12a3a5354d9c" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDon_TraTruoc.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

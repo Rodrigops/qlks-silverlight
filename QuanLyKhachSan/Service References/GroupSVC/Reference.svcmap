@@ -20,15 +20,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyUser/Group.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyUser/Group.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Group.xsd" MetadataType="Schema" ID="11e84fbe-5aa5-419f-a698-78a83063cd31" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyUser/Group.svc?xsd=xsd1" />
-    <MetadataFile FileName="Group.disco" MetadataType="Disco" ID="d441006a-39cd-45a1-a793-11316ac3b287" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyUser/Group.svc?disco" />
-    <MetadataFile FileName="Group.wsdl" MetadataType="Wsdl" ID="47f76a78-26e3-4438-a271-b2172fea0af1" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyUser/Group.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="GroupSVC.wsdl" MetadataType="Wsdl" ID="12c3f169-041b-4cb7-ac94-96f226252002" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyUser/Group.svc?wsdl" />
-    <MetadataFile FileName="Group1.xsd" MetadataType="Schema" ID="eda103d4-30b6-4162-9b24-ca1ea44965f7" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyUser/Group.svc?xsd=xsd2" />
-    <MetadataFile FileName="Group2.xsd" MetadataType="Schema" ID="3ab5373b-fae0-4af7-bc25-cf84af531efd" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyUser/Group.svc?xsd=xsd0" />
+    <MetadataFile FileName="GroupSVC1.wsdl" MetadataType="Wsdl" ID="ee28832a-e490-4d19-a55a-3c35785bf97d" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyUser/Group.svc?wsdl" />
+    <MetadataFile FileName="Group3.xsd" MetadataType="Schema" ID="0f1694ad-175f-400b-9c48-2e822df8398e" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyUser/Group.svc?xsd=xsd2" />
+    <MetadataFile FileName="Group1.wsdl" MetadataType="Wsdl" ID="61f0f8ed-e7b2-4e26-8267-e88c2517f082" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyUser/Group.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Group31.xsd" MetadataType="Schema" ID="b20b69e0-c3ef-4ad9-bec4-13c664564286" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyUser/Group.svc?xsd=xsd1" />
+    <MetadataFile FileName="Group32.xsd" MetadataType="Schema" ID="28584019-219c-4a0c-9804-2cce60e6e556" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyUser/Group.svc?xsd=xsd0" />
+    <MetadataFile FileName="Group1.disco" MetadataType="Disco" ID="e270ddcc-a404-440d-81f9-c32b9cf29231" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyUser/Group.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

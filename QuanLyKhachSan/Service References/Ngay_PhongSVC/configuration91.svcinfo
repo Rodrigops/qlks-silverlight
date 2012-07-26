@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="grkqmJEgt9V/QPqIuHPh0+tqZM4=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="1AGL+0OHavnLF9CiQnB8xXKHE/k=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="customBinding" name="CustomBinding_Ngay_PhongSVC">
       <properties>
@@ -115,10 +115,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="CustomBinding_Ngay_PhongSVC" contract="Ngay_PhongSVC.Ngay_PhongSVC" bindingType="customBinding" address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Ngay_Phong.svc" bindingConfiguration="CustomBinding_Ngay_PhongSVC">
+    <endpoint name="CustomBinding_Ngay_PhongSVC" contract="Ngay_PhongSVC.Ngay_PhongSVC" bindingType="customBinding" address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Ngay_Phong.svc" bindingConfiguration="CustomBinding_Ngay_PhongSVC">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Ngay_Phong.svc</serializedValue>
+          <serializedValue>http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Ngay_Phong.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

@@ -20,15 +20,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKDoanhThu.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKDoanhThu.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="TKDoanhThu.disco" MetadataType="Disco" ID="de735a12-6e06-41b9-b04c-8adeaeb2804c" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKDoanhThu.svc?disco" />
-    <MetadataFile FileName="TKDoanhThu.xsd" MetadataType="Schema" ID="6561c22f-c6e6-442d-bfc1-db8fc082d450" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKDoanhThu.svc?xsd=xsd2" />
-    <MetadataFile FileName="TKDoanhThu.wsdl" MetadataType="Wsdl" ID="8d56308d-6ea4-4cbb-a6b8-7dff6f45d104" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKDoanhThu.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="TKDoanhThu1.xsd" MetadataType="Schema" ID="f7bce298-4591-4421-ae27-ef6531f6e5b7" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKDoanhThu.svc?xsd=xsd1" />
-    <MetadataFile FileName="TKDoanhThuSVC.wsdl" MetadataType="Wsdl" ID="78b37f57-7b0b-4ee1-8b53-5d0ee43cced1" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKDoanhThu.svc?wsdl" />
-    <MetadataFile FileName="TKDoanhThu2.xsd" MetadataType="Schema" ID="96dfcb0f-eeb8-4091-a13e-5715838496c9" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKDoanhThu.svc?xsd=xsd0" />
+    <MetadataFile FileName="TKDoanhThu3.xsd" MetadataType="Schema" ID="aa54a508-9a3d-4575-abdb-505f35190113" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKDoanhThu.svc?xsd=xsd0" />
+    <MetadataFile FileName="TKDoanhThu31.xsd" MetadataType="Schema" ID="d0284698-e7a5-4c1a-9696-6d3df442b302" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKDoanhThu.svc?xsd=xsd2" />
+    <MetadataFile FileName="TKDoanhThu1.wsdl" MetadataType="Wsdl" ID="6465a832-d7ef-43ad-a3f0-211e0c22f444" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKDoanhThu.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="TKDoanhThu32.xsd" MetadataType="Schema" ID="ed56c79e-e3dc-4443-9517-ea03d2afecb0" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKDoanhThu.svc?xsd=xsd1" />
+    <MetadataFile FileName="TKDoanhThu1.disco" MetadataType="Disco" ID="e54710ea-376d-4310-9c5e-d3cbe6b1311e" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKDoanhThu.svc?disco" />
+    <MetadataFile FileName="TKDoanhThuSVC1.wsdl" MetadataType="Wsdl" ID="d60b084e-2eb3-4030-8eb8-3701d067ef77" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/ThongKeBaoCao/TKDoanhThu.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

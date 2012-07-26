@@ -38,11 +38,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="Telerik.Reporting, Version=5.3.11.1116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Telerik\Reporting Q1 2011\Bin\Telerik.Reporting.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Reporting.Adomd, Version=5.3.11.1116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Telerik\Reporting Q1 2011\Bin\Telerik.Reporting.Adomd.dll</HintPath>
+      <HintPath>..\..\DLL_QLKS\Telerik.Reporting.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

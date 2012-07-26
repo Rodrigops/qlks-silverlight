@@ -79,7 +79,7 @@
     <Reference Include="System.Xml.Serialization, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Telerik.ReportViewer.Silverlight, Version=5.0.11.316, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Telerik\Reporting Q1 2011\Bin\Telerik.ReportViewer.Silverlight.dll</HintPath>
+      <HintPath>..\..\DLL_QLKS\Telerik.ReportViewer.Silverlight.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Controls, Version=2011.2.920.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7" />
     <Reference Include="Telerik.Windows.Controls.GridView, Version=2011.2.920.1040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7" />
@@ -529,162 +529,162 @@
     <None Include="Service References\AuthenticationSVC\QuanLyKhachSan.AuthenticationSVC.Authentication_SetSessionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ChiTietPhieuNhapKhoSVC\ChiTietPhieuNhapKho.wsdl" />
-    <None Include="Service References\ChiTietPhieuNhapKhoSVC\ChiTietPhieuNhapKho.xsd">
+    <None Include="Service References\ChiTietPhieuNhapKhoSVC\ChiTietPhieuNhapKho1.wsdl" />
+    <None Include="Service References\ChiTietPhieuNhapKhoSVC\ChiTietPhieuNhapKho3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ChiTietPhieuNhapKhoSVC\ChiTietPhieuNhapKho1.xsd">
+    <None Include="Service References\ChiTietPhieuNhapKhoSVC\ChiTietPhieuNhapKho31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ChiTietPhieuNhapKhoSVC\ChiTietPhieuNhapKho2.xsd">
+    <None Include="Service References\ChiTietPhieuNhapKhoSVC\ChiTietPhieuNhapKho32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ChiTietPhieuNhapKhoSVC\ChiTietPhieuNhapKhoSVC.wsdl" />
+    <None Include="Service References\ChiTietPhieuNhapKhoSVC\ChiTietPhieuNhapKhoSVC1.wsdl" />
     <None Include="Service References\ChiTietPhieuNhapKhoSVC\QuanLyKhachSan.ChiTietPhieuNhapKhoSVC.ChiTietPhieuNhapKhoInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\DichVuSVC\DichVu.wsdl" />
-    <None Include="Service References\DichVuSVC\DichVu.xsd">
+    <None Include="Service References\DichVuSVC\DichVu1.wsdl" />
+    <None Include="Service References\DichVuSVC\DichVu3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\DichVuSVC\DichVu1.xsd">
+    <None Include="Service References\DichVuSVC\DichVu31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\DichVuSVC\DichVu2.xsd">
+    <None Include="Service References\DichVuSVC\DichVu32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\DichVuSVC\DichVuSVC.wsdl" />
+    <None Include="Service References\DichVuSVC\DichVuSVC1.wsdl" />
     <None Include="Service References\DichVuSVC\QuanLyKhachSan.DichVuSVC.DichVuInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Gia_PhongSVC\Gia_Phong.wsdl" />
-    <None Include="Service References\Gia_PhongSVC\Gia_Phong.xsd">
+    <None Include="Service References\Gia_PhongSVC\Gia_Phong1.wsdl" />
+    <None Include="Service References\Gia_PhongSVC\Gia_Phong3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Gia_PhongSVC\Gia_Phong1.xsd">
+    <None Include="Service References\Gia_PhongSVC\Gia_Phong31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Gia_PhongSVC\Gia_Phong2.xsd">
+    <None Include="Service References\Gia_PhongSVC\Gia_Phong32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Gia_PhongSVC\Gia_PhongSVC.wsdl" />
+    <None Include="Service References\Gia_PhongSVC\Gia_PhongSVC1.wsdl" />
     <None Include="Service References\Gia_PhongSVC\QuanLyKhachSan.Gia_PhongSVC.Gia_PhongInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Gio_PhongSVC\Gio_Phong.wsdl" />
-    <None Include="Service References\Gio_PhongSVC\Gio_Phong.xsd">
+    <None Include="Service References\Gio_PhongSVC\Gio_Phong1.wsdl" />
+    <None Include="Service References\Gio_PhongSVC\Gio_Phong3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Gio_PhongSVC\Gio_Phong1.xsd">
+    <None Include="Service References\Gio_PhongSVC\Gio_Phong31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Gio_PhongSVC\Gio_Phong2.xsd">
+    <None Include="Service References\Gio_PhongSVC\Gio_Phong32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Gio_PhongSVC\Gio_PhongSVC.wsdl" />
+    <None Include="Service References\Gio_PhongSVC\Gio_PhongSVC1.wsdl" />
     <None Include="Service References\Gio_PhongSVC\QuanLyKhachSan.Gio_PhongSVC.Gio_PhongInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\GroupSVC\Group.wsdl" />
-    <None Include="Service References\GroupSVC\Group.xsd">
+    <None Include="Service References\GroupSVC\Group1.wsdl" />
+    <None Include="Service References\GroupSVC\Group3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\GroupSVC\Group1.xsd">
+    <None Include="Service References\GroupSVC\Group31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\GroupSVC\Group2.xsd">
+    <None Include="Service References\GroupSVC\Group32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\GroupSVC\GroupSVC.wsdl" />
+    <None Include="Service References\GroupSVC\GroupSVC1.wsdl" />
     <None Include="Service References\GroupSVC\QuanLyKhachSan.GroupSVC.GroupInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\HoaDonDichVuSVC\HoaDonDichVu.wsdl" />
-    <None Include="Service References\HoaDonDichVuSVC\HoaDonDichVu.xsd">
+    <None Include="Service References\HoaDonDichVuSVC\HoaDonDichVu1.wsdl" />
+    <None Include="Service References\HoaDonDichVuSVC\HoaDonDichVu3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\HoaDonDichVuSVC\HoaDonDichVu1.xsd">
+    <None Include="Service References\HoaDonDichVuSVC\HoaDonDichVu31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\HoaDonDichVuSVC\HoaDonDichVu2.xsd">
+    <None Include="Service References\HoaDonDichVuSVC\HoaDonDichVu32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\HoaDonDichVuSVC\HoaDonDichVuSVC.wsdl" />
+    <None Include="Service References\HoaDonDichVuSVC\HoaDonDichVuSVC1.wsdl" />
     <None Include="Service References\HoaDonDichVuSVC\QuanLyKhachSan.HoaDonDichVuSVC.HoaDonDichVuInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\HoaDonDichVuSVC\QuanLyKhachSan.HoaDonDichVuSVC.HoaDonNgayVaoRaInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\HoaDonSVC\HoaDon.wsdl" />
-    <None Include="Service References\HoaDonSVC\HoaDon.xsd">
+    <None Include="Service References\HoaDonSVC\HoaDon1.wsdl" />
+    <None Include="Service References\HoaDonSVC\HoaDon3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\HoaDonSVC\HoaDon1.xsd">
+    <None Include="Service References\HoaDonSVC\HoaDon31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\HoaDonSVC\HoaDon2.xsd">
+    <None Include="Service References\HoaDonSVC\HoaDon32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\HoaDonSVC\HoaDonSVC.wsdl" />
+    <None Include="Service References\HoaDonSVC\HoaDonSVC1.wsdl" />
     <None Include="Service References\HoaDonSVC\QuanLyKhachSan.HoaDonSVC.HoaDonInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\HoaDon_KhachHangSVC\HoaDon_KhachHang.wsdl" />
-    <None Include="Service References\HoaDon_KhachHangSVC\HoaDon_KhachHang.xsd">
+    <None Include="Service References\HoaDon_KhachHangSVC\HoaDon_KhachHang1.wsdl" />
+    <None Include="Service References\HoaDon_KhachHangSVC\HoaDon_KhachHang3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\HoaDon_KhachHangSVC\HoaDon_KhachHang1.xsd">
+    <None Include="Service References\HoaDon_KhachHangSVC\HoaDon_KhachHang31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\HoaDon_KhachHangSVC\HoaDon_KhachHang2.xsd">
+    <None Include="Service References\HoaDon_KhachHangSVC\HoaDon_KhachHang32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\HoaDon_KhachHangSVC\HoaDon_KhachHangSVC.wsdl" />
+    <None Include="Service References\HoaDon_KhachHangSVC\HoaDon_KhachHangSVC1.wsdl" />
     <None Include="Service References\HoaDon_KhachHangSVC\QuanLyKhachSan.HoaDon_KhachHangSVC.Phong_KhachHangInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\HoaDon_TraTruocSVC\HoaDon_TraTruoc.wsdl" />
-    <None Include="Service References\HoaDon_TraTruocSVC\HoaDon_TraTruoc.xsd">
+    <None Include="Service References\HoaDon_TraTruocSVC\HoaDon_TraTruoc1.wsdl" />
+    <None Include="Service References\HoaDon_TraTruocSVC\HoaDon_TraTruoc3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\HoaDon_TraTruocSVC\HoaDon_TraTruoc1.xsd">
+    <None Include="Service References\HoaDon_TraTruocSVC\HoaDon_TraTruoc31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\HoaDon_TraTruocSVC\HoaDon_TraTruoc2.xsd">
+    <None Include="Service References\HoaDon_TraTruocSVC\HoaDon_TraTruoc32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\HoaDon_TraTruocSVC\HoaDon_TraTruocSVC.wsdl" />
+    <None Include="Service References\HoaDon_TraTruocSVC\HoaDon_TraTruocSVC1.wsdl" />
     <None Include="Service References\HoaDon_TraTruocSVC\QuanLyKhachSan.HoaDon_TraTruocSVC.HoaDon_TraTruocInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\KhachHangSVC\KhachHang.wsdl" />
-    <None Include="Service References\KhachHangSVC\KhachHang.xsd">
+    <None Include="Service References\KhachHangSVC\KhachHang1.wsdl" />
+    <None Include="Service References\KhachHangSVC\KhachHang3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\KhachHangSVC\KhachHang1.xsd">
+    <None Include="Service References\KhachHangSVC\KhachHang31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\KhachHangSVC\KhachHang2.xsd">
+    <None Include="Service References\KhachHangSVC\KhachHang32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\KhachHangSVC\KhachHangSVC.wsdl" />
+    <None Include="Service References\KhachHangSVC\KhachHangSVC1.wsdl" />
     <None Include="Service References\KhachHangSVC\QuanLyKhachSan.KhachHangSVC.KhachHangInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\LoaiPhongSVC\configuration91.svcinfo" />
     <None Include="Service References\LoaiPhongSVC\configuration.svcinfo" />
-    <None Include="Service References\LoaiPhongSVC\LoaiPhong1.wsdl" />
-    <None Include="Service References\LoaiPhongSVC\LoaiPhong3.xsd">
+    <None Include="Service References\LoaiPhongSVC\LoaiPhong.wsdl" />
+    <None Include="Service References\LoaiPhongSVC\LoaiPhong.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\LoaiPhongSVC\LoaiPhong31.xsd">
+    <None Include="Service References\LoaiPhongSVC\LoaiPhong1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\LoaiPhongSVC\LoaiPhong32.xsd">
+    <None Include="Service References\LoaiPhongSVC\LoaiPhong2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\LoaiPhongSVC\LoaiPhongSVC1.wsdl" />
+    <None Include="Service References\LoaiPhongSVC\LoaiPhongSVC.wsdl" />
     <None Include="Service References\LoaiPhongSVC\QuanLyKhachSan.LoaiPhongSVC.LoaiPhongInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -692,7 +692,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\LoaiPhongSVC\LoaiPhong1.disco" />
     <None Include="Service References\ManagementUserSVC\ManagementUser.wsdl" />
     <None Include="Service References\ManagementUserSVC\ManagementUser.xsd">
       <SubType>Designer</SubType>
@@ -703,83 +702,83 @@
     <None Include="Service References\ManagementUserSVC\ManagementUser2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ManagementUserSVC\ManagementUser21.xsd">
+    <None Include="Service References\ManagementUserSVC\ManagementUser3.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ManagementUserSVC\ManagementUserSVC.wsdl" />
     <None Include="Service References\ManagementUserSVC\QuanLyKhachSan.ManagementUserSVC.MembershipUserCollection.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ModuleSVC\Module.wsdl" />
-    <None Include="Service References\ModuleSVC\Module.xsd">
+    <None Include="Service References\ModuleSVC\Module1.wsdl" />
+    <None Include="Service References\ModuleSVC\Module3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ModuleSVC\Module1.xsd">
+    <None Include="Service References\ModuleSVC\Module31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ModuleSVC\Module2.xsd">
+    <None Include="Service References\ModuleSVC\Module32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ModuleSVC\ModuleSVC.wsdl" />
+    <None Include="Service References\ModuleSVC\ModuleSVC1.wsdl" />
     <None Include="Service References\ModuleSVC\QuanLyKhachSan.ModuleSVC.ModuleInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Ngay_PhongSVC\Ngay_Phong.wsdl" />
-    <None Include="Service References\Ngay_PhongSVC\Ngay_Phong.xsd">
+    <None Include="Service References\Ngay_PhongSVC\Ngay_Phong1.wsdl" />
+    <None Include="Service References\Ngay_PhongSVC\Ngay_Phong3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Ngay_PhongSVC\Ngay_Phong1.xsd">
+    <None Include="Service References\Ngay_PhongSVC\Ngay_Phong31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Ngay_PhongSVC\Ngay_Phong2.xsd">
+    <None Include="Service References\Ngay_PhongSVC\Ngay_Phong32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Ngay_PhongSVC\Ngay_PhongSVC.wsdl" />
+    <None Include="Service References\Ngay_PhongSVC\Ngay_PhongSVC1.wsdl" />
     <None Include="Service References\Ngay_PhongSVC\QuanLyKhachSan.Ngay_PhongSVC.Ngay_PhongInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Nguoi_PhongSVC\Nguoi_Phong.wsdl" />
-    <None Include="Service References\Nguoi_PhongSVC\Nguoi_Phong.xsd">
+    <None Include="Service References\Nguoi_PhongSVC\Nguoi_Phong1.wsdl" />
+    <None Include="Service References\Nguoi_PhongSVC\Nguoi_Phong3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Nguoi_PhongSVC\Nguoi_Phong1.xsd">
+    <None Include="Service References\Nguoi_PhongSVC\Nguoi_Phong31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Nguoi_PhongSVC\Nguoi_Phong2.xsd">
+    <None Include="Service References\Nguoi_PhongSVC\Nguoi_Phong32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Nguoi_PhongSVC\Nguoi_PhongSVC.wsdl" />
+    <None Include="Service References\Nguoi_PhongSVC\Nguoi_PhongSVC1.wsdl" />
     <None Include="Service References\Nguoi_PhongSVC\QuanLyKhachSan.Nguoi_PhongSVC.Nguoi_PhongInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\PhieuNhapKhoSVC\PhieuNhapKho.wsdl" />
-    <None Include="Service References\PhieuNhapKhoSVC\PhieuNhapKho.xsd">
+    <None Include="Service References\PhieuNhapKhoSVC\PhieuNhapKho1.wsdl" />
+    <None Include="Service References\PhieuNhapKhoSVC\PhieuNhapKho3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\PhieuNhapKhoSVC\PhieuNhapKho1.xsd">
+    <None Include="Service References\PhieuNhapKhoSVC\PhieuNhapKho31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\PhieuNhapKhoSVC\PhieuNhapKho2.xsd">
+    <None Include="Service References\PhieuNhapKhoSVC\PhieuNhapKho32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\PhieuNhapKhoSVC\PhieuNhapKhoSVC.wsdl" />
+    <None Include="Service References\PhieuNhapKhoSVC\PhieuNhapKhoSVC1.wsdl" />
     <None Include="Service References\PhieuNhapKhoSVC\QuanLyKhachSan.PhieuNhapKhoSVC.PhieuNhapKhoInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\PhongSVC\Phong.wsdl" />
-    <None Include="Service References\PhongSVC\Phong.xsd">
+    <None Include="Service References\PhongSVC\Phong1.wsdl" />
+    <None Include="Service References\PhongSVC\Phong4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\PhongSVC\Phong1.xsd">
+    <None Include="Service References\PhongSVC\Phong41.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\PhongSVC\Phong2.xsd">
+    <None Include="Service References\PhongSVC\Phong42.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\PhongSVC\Phong3.xsd">
+    <None Include="Service References\PhongSVC\Phong43.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\PhongSVC\PhongSVC.wsdl" />
+    <None Include="Service References\PhongSVC\PhongSVC1.wsdl" />
     <None Include="Service References\PhongSVC\QuanLyKhachSan.PhongSVC.Phong_AddResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -804,151 +803,162 @@
     <None Include="Service References\QuocTichSVC\QuanLyKhachSan.QuocTichSVC.QuocTichInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\QuocTichSVC\QuocTich.wsdl" />
-    <None Include="Service References\QuocTichSVC\QuocTich.xsd">
+    <None Include="Service References\QuocTichSVC\QuocTich1.wsdl" />
+    <None Include="Service References\QuocTichSVC\QuocTich3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\QuocTichSVC\QuocTich1.xsd">
+    <None Include="Service References\QuocTichSVC\QuocTich31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\QuocTichSVC\QuocTich2.xsd">
+    <None Include="Service References\QuocTichSVC\QuocTich32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\QuocTichSVC\QuocTichSVC.wsdl" />
+    <None Include="Service References\QuocTichSVC\QuocTichSVC1.wsdl" />
     <None Include="Service References\TienNghiSVC\QuanLyKhachSan.TienNghiSVC.TienNghiInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\TienNghiSVC\TienNghi.disco" />
     <None Include="Service References\TienNghiSVC\configuration91.svcinfo" />
     <None Include="Service References\TienNghiSVC\configuration.svcinfo" />
     <None Include="Service References\TienNghiSVC\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\DichVuSVC\DichVu.disco" />
     <None Include="Service References\DichVuSVC\configuration91.svcinfo" />
     <None Include="Service References\DichVuSVC\configuration.svcinfo" />
     <None Include="Service References\DichVuSVC\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\Gio_PhongSVC\Gio_Phong.disco" />
     <None Include="Service References\Gio_PhongSVC\configuration91.svcinfo" />
     <None Include="Service References\Gio_PhongSVC\configuration.svcinfo" />
     <None Include="Service References\Gio_PhongSVC\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\Ngay_PhongSVC\Ngay_Phong.disco" />
     <None Include="Service References\Ngay_PhongSVC\configuration91.svcinfo" />
     <None Include="Service References\Ngay_PhongSVC\configuration.svcinfo" />
     <None Include="Service References\Ngay_PhongSVC\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\Nguoi_PhongSVC\Nguoi_Phong.disco" />
     <None Include="Service References\Nguoi_PhongSVC\configuration91.svcinfo" />
     <None Include="Service References\Nguoi_PhongSVC\configuration.svcinfo" />
     <None Include="Service References\Nguoi_PhongSVC\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\HoaDonSVC\HoaDon.disco" />
     <None Include="Service References\HoaDonSVC\configuration91.svcinfo" />
     <None Include="Service References\HoaDonSVC\configuration.svcinfo" />
     <None Include="Service References\HoaDonSVC\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\HoaDon_KhachHangSVC\HoaDon_KhachHang.disco" />
     <None Include="Service References\HoaDon_KhachHangSVC\configuration91.svcinfo" />
     <None Include="Service References\HoaDon_KhachHangSVC\configuration.svcinfo" />
     <None Include="Service References\HoaDon_KhachHangSVC\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\UserSVC\User1.wsdl" />
+    <None Include="Service References\UserSVC\User3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserSVC\User31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserSVC\User32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserSVC\UserSVC1.wsdl" />
     <Resource Include="Images\DichVu.png" />
-    <None Include="Service References\GroupSVC\Group.disco" />
     <None Include="Service References\GroupSVC\configuration91.svcinfo" />
     <None Include="Service References\GroupSVC\configuration.svcinfo" />
     <None Include="Service References\GroupSVC\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\TKChiTieuSVC\GroupSVC.wsdl" />
+    <None Include="Service References\TienNghiSVC\TienNghi1.wsdl" />
+    <None Include="Service References\TienNghiSVC\TienNghi3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TienNghiSVC\TienNghi31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TienNghiSVC\TienNghi32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TienNghiSVC\TienNghiSVC1.wsdl" />
     <None Include="Service References\TKChiTieuSVC\QuanLyKhachSan.TKChiTieuSVC.TKChiTieuInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\TKChiTieuSVC\TKChiTieu.wsdl" />
-    <None Include="Service References\TKChiTieuSVC\TKChiTieu.xsd">
+    <None Include="Service References\TKChiTieuSVC\TKChiTieu1.wsdl" />
+    <None Include="Service References\TKChiTieuSVC\TKChiTieu3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\TKChiTieuSVC\TKChiTieu1.xsd">
+    <None Include="Service References\TKChiTieuSVC\TKChiTieu31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\TKChiTieuSVC\TKChiTieu2.xsd">
+    <None Include="Service References\TKChiTieuSVC\TKChiTieu32.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\TKChiTieuSVC\TKChiTieuSVC.wsdl" />
     <None Include="Service References\TKDoanhThuDichVuSVC\QuanLyKhachSan.TKDoanhThuDichVuSVC.TKDoanhThuDichVuInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\TKDoanhThuDichVuSVC\TKDoanhThuDichVu.wsdl" />
-    <None Include="Service References\TKDoanhThuDichVuSVC\TKDoanhThuDichVu.xsd">
+    <None Include="Service References\TKDoanhThuDichVuSVC\TKDoanhThuDichVu1.wsdl" />
+    <None Include="Service References\TKDoanhThuDichVuSVC\TKDoanhThuDichVu3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\TKDoanhThuDichVuSVC\TKDoanhThuDichVu1.xsd">
+    <None Include="Service References\TKDoanhThuDichVuSVC\TKDoanhThuDichVu31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\TKDoanhThuDichVuSVC\TKDoanhThuDichVu2.xsd">
+    <None Include="Service References\TKDoanhThuDichVuSVC\TKDoanhThuDichVu32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\TKDoanhThuDichVuSVC\TKDoanhThuDichVuSVC.wsdl" />
+    <None Include="Service References\TKDoanhThuDichVuSVC\TKDoanhThuDichVuSVC1.wsdl" />
     <None Include="Service References\TKDoanhThuSVC\QuanLyKhachSan.TKDoanhThuSVC.TKDoanhThuInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\TKDoanhThuSVC\TKDoanhThu.wsdl" />
-    <None Include="Service References\TKDoanhThuSVC\TKDoanhThu.xsd">
+    <None Include="Service References\TKDoanhThuSVC\TKDoanhThu1.wsdl" />
+    <None Include="Service References\TKDoanhThuSVC\TKDoanhThu3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\TKDoanhThuSVC\TKDoanhThu1.xsd">
+    <None Include="Service References\TKDoanhThuSVC\TKDoanhThu31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\TKDoanhThuSVC\TKDoanhThu2.xsd">
+    <None Include="Service References\TKDoanhThuSVC\TKDoanhThu32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\TKDoanhThuSVC\TKDoanhThuSVC.wsdl" />
+    <None Include="Service References\TKDoanhThuSVC\TKDoanhThuSVC1.wsdl" />
     <None Include="Service References\UserGroupSVC\QuanLyKhachSan.UserGroupSVC.UserGroupInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\UserGroupSVC\UserGroup.wsdl" />
-    <None Include="Service References\UserGroupSVC\UserGroup.xsd">
+    <None Include="Service References\UserGroupSVC\UserGroup1.wsdl" />
+    <None Include="Service References\UserGroupSVC\UserGroup3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\UserGroupSVC\UserGroup1.xsd">
+    <None Include="Service References\UserGroupSVC\UserGroup31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\UserGroupSVC\UserGroup2.xsd">
+    <None Include="Service References\UserGroupSVC\UserGroup32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\UserGroupSVC\UserGroupSVC.wsdl" />
+    <None Include="Service References\UserGroupSVC\UserGroupSVC1.wsdl" />
     <None Include="Service References\UserSVC\QuanLyKhachSan.UserSVC.UserInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\UserSVC\User.disco" />
     <None Include="Service References\UserSVC\configuration91.svcinfo" />
     <None Include="Service References\UserSVC\configuration.svcinfo" />
     <None Include="Service References\UserSVC\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\UserGroupSVC\UserGroup.disco" />
     <None Include="Service References\UserGroupSVC\configuration91.svcinfo" />
     <None Include="Service References\UserGroupSVC\configuration.svcinfo" />
     <None Include="Service References\UserGroupSVC\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\Gia_PhongSVC\Gia_Phong.disco" />
     <None Include="Service References\Gia_PhongSVC\configuration91.svcinfo" />
     <None Include="Service References\Gia_PhongSVC\configuration.svcinfo" />
     <None Include="Service References\Gia_PhongSVC\Reference.svcmap">
@@ -956,28 +966,24 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Resource Include="Images\Login.png" />
-    <None Include="Service References\ChiTietPhieuNhapKhoSVC\ChiTietPhieuNhapKho.disco" />
     <None Include="Service References\ChiTietPhieuNhapKhoSVC\configuration91.svcinfo" />
     <None Include="Service References\ChiTietPhieuNhapKhoSVC\configuration.svcinfo" />
     <None Include="Service References\ChiTietPhieuNhapKhoSVC\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\ModuleSVC\Module.disco" />
     <None Include="Service References\ModuleSVC\configuration91.svcinfo" />
     <None Include="Service References\ModuleSVC\configuration.svcinfo" />
     <None Include="Service References\ModuleSVC\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\TKChiTieuSVC\TKChiTieu.disco" />
     <None Include="Service References\TKChiTieuSVC\configuration91.svcinfo" />
     <None Include="Service References\TKChiTieuSVC\configuration.svcinfo" />
     <None Include="Service References\TKChiTieuSVC\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\TKDoanhThuDichVuSVC\TKDoanhThuDichVu.disco" />
     <None Include="Service References\TKDoanhThuDichVuSVC\configuration91.svcinfo" />
     <None Include="Service References\TKDoanhThuDichVuSVC\configuration.svcinfo" />
     <None Include="Service References\TKDoanhThuDichVuSVC\Reference.svcmap">
@@ -986,7 +992,6 @@
     </None>
     <Resource Include="Images\PermissionUser.png" />
     <Resource Include="Images\Users.png" />
-    <None Include="Service References\TKDoanhThuSVC\TKDoanhThu.disco" />
     <None Include="Service References\TKDoanhThuSVC\configuration91.svcinfo" />
     <None Include="Service References\TKDoanhThuSVC\configuration.svcinfo" />
     <None Include="Service References\TKDoanhThuSVC\Reference.svcmap">
@@ -996,10 +1001,28 @@
     <Resource Include="Images\ThongKeChiTieu.png" />
     <Resource Include="Images\ThongKeDoanhThu.png" />
     <Resource Include="Images\ThongKeDoanhThuDichVu.png" />
-    <None Include="Service References\AuthenticationSVC\Authentication.disco" />
-    <None Include="Service References\AuthenticationSVC\configuration91.svcinfo" />
-    <None Include="Service References\AuthenticationSVC\configuration.svcinfo" />
-    <None Include="Service References\AuthenticationSVC\Reference.svcmap">
+    <None Include="Properties\OutOfBrowserSettings.xml" />
+    <None Include="Service References\PhongSVC\configuration91.svcinfo" />
+    <None Include="Service References\PhongSVC\configuration.svcinfo" />
+    <None Include="Service References\PhongSVC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\PhieuNhapKhoSVC\configuration91.svcinfo" />
+    <None Include="Service References\PhieuNhapKhoSVC\configuration.svcinfo" />
+    <None Include="Service References\PhieuNhapKhoSVC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\HoaDonDichVuSVC\configuration91.svcinfo" />
+    <None Include="Service References\HoaDonDichVuSVC\configuration.svcinfo" />
+    <None Include="Service References\HoaDonDichVuSVC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\HoaDon_TraTruocSVC\configuration91.svcinfo" />
+    <None Include="Service References\HoaDon_TraTruocSVC\configuration.svcinfo" />
+    <None Include="Service References\HoaDon_TraTruocSVC\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -1010,7 +1033,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Properties\OutOfBrowserSettings.xml" />
     <None Include="Service References\ManagementUserSVC\ManagementUser.disco" />
     <None Include="Service References\ManagementUserSVC\configuration91.svcinfo" />
     <None Include="Service References\ManagementUserSVC\configuration.svcinfo" />
@@ -1018,77 +1040,55 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\PhongSVC\Phong.disco" />
-    <None Include="Service References\PhongSVC\configuration91.svcinfo" />
-    <None Include="Service References\PhongSVC\configuration.svcinfo" />
-    <None Include="Service References\PhongSVC\Reference.svcmap">
+    <None Include="Service References\AuthenticationSVC\Authentication.disco" />
+    <None Include="Service References\AuthenticationSVC\configuration91.svcinfo" />
+    <None Include="Service References\AuthenticationSVC\configuration.svcinfo" />
+    <None Include="Service References\AuthenticationSVC\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\PhieuNhapKhoSVC\PhieuNhapKho.disco" />
-    <None Include="Service References\PhieuNhapKhoSVC\configuration91.svcinfo" />
-    <None Include="Service References\PhieuNhapKhoSVC\configuration.svcinfo" />
-    <None Include="Service References\PhieuNhapKhoSVC\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Service References\HoaDonDichVuSVC\HoaDonDichVu.disco" />
-    <None Include="Service References\HoaDonDichVuSVC\configuration91.svcinfo" />
-    <None Include="Service References\HoaDonDichVuSVC\configuration.svcinfo" />
-    <None Include="Service References\HoaDonDichVuSVC\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Service References\HoaDon_TraTruocSVC\HoaDon_TraTruoc.disco" />
-    <None Include="Service References\HoaDon_TraTruocSVC\configuration91.svcinfo" />
-    <None Include="Service References\HoaDon_TraTruocSVC\configuration.svcinfo" />
-    <None Include="Service References\HoaDon_TraTruocSVC\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+    <None Include="Service References\ChiTietPhieuNhapKhoSVC\ChiTietPhieuNhapKho1.disco" />
+    <None Include="Service References\DichVuSVC\DichVu1.disco" />
+    <None Include="Service References\Gia_PhongSVC\Gia_Phong1.disco" />
+    <None Include="Service References\Gio_PhongSVC\Gio_Phong1.disco" />
+    <None Include="Service References\GroupSVC\Group1.disco" />
+    <None Include="Service References\HoaDon_KhachHangSVC\HoaDon_KhachHang1.disco" />
+    <None Include="Service References\HoaDon_TraTruocSVC\HoaDon_TraTruoc1.disco" />
+    <None Include="Service References\HoaDonDichVuSVC\HoaDonDichVu1.disco" />
+    <None Include="Service References\HoaDonSVC\HoaDon1.disco" />
+    <None Include="Service References\KhachHangSVC\KhachHang1.disco" />
+    <None Include="Service References\LoaiPhongSVC\LoaiPhong.disco" />
+    <None Include="Service References\ModuleSVC\Module1.disco" />
+    <None Include="Service References\Ngay_PhongSVC\Ngay_Phong1.disco" />
+    <None Include="Service References\Nguoi_PhongSVC\Nguoi_Phong1.disco" />
+    <None Include="Service References\PhieuNhapKhoSVC\PhieuNhapKho1.disco" />
+    <None Include="Service References\PhongSVC\Phong1.disco" />
+    <None Include="Service References\QuocTichSVC\QuocTich1.disco" />
+    <None Include="Service References\TienNghiSVC\TienNghi1.disco" />
+    <None Include="Service References\TKChiTieuSVC\TKChiTieu1.disco" />
+    <None Include="Service References\TKDoanhThuDichVuSVC\TKDoanhThuDichVu1.disco" />
+    <None Include="Service References\TKDoanhThuSVC\TKDoanhThu1.disco" />
+    <None Include="Service References\UserGroupSVC\UserGroup1.disco" />
+    <None Include="Service References\UserSVC\User1.disco" />
     <Content Include="ServiceReferences.ClientConfig">
       <SubType>Designer</SubType>
     </Content>
-    <None Include="Service References\UserSVC\User.wsdl" />
-    <None Include="Service References\UserSVC\User.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\UserSVC\User1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\UserSVC\User2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\UserSVC\UserSVC.wsdl" />
     <Resource Include="Images\DatPhong.png" />
     <Resource Include="Images\GiaoPhong.png" />
     <Resource Include="Images\KhachHang.png" />
     <Resource Include="Images\TinhTrang.png" />
-    <None Include="Service References\KhachHangSVC\KhachHang.disco" />
     <None Include="Service References\KhachHangSVC\configuration91.svcinfo" />
     <None Include="Service References\KhachHangSVC\configuration.svcinfo" />
     <None Include="Service References\KhachHangSVC\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\QuocTichSVC\QuocTich.disco" />
     <None Include="Service References\QuocTichSVC\configuration91.svcinfo" />
     <None Include="Service References\QuocTichSVC\configuration.svcinfo" />
     <None Include="Service References\QuocTichSVC\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\TienNghiSVC\TienNghi.wsdl" />
-    <None Include="Service References\TienNghiSVC\TienNghi.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\TienNghiSVC\TienNghi1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\TienNghiSVC\TienNghi2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\TienNghiSVC\TienNghiSVC.wsdl" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

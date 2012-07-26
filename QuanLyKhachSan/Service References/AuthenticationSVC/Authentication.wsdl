@@ -1,41 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
-    <xsd:schema targetNamespace="/Imports">
-      <xsd:import schemaLocation="http://localhost:6246/QuanLyKhachSan.WebServices/Services/Authentication/Authentication.svc?xsd=xsd0" />
-      <xsd:import schemaLocation="http://localhost:6246/QuanLyKhachSan.WebServices/Services/Authentication/Authentication.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-    </xsd:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Authentication_SetSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Authentication_SetSessionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Authentication_CheckAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PassWord" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Authentication_CheckAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Authentication_CheckAccountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Authentication_GetSession">
+        <s:complexType />
+      </s:element>
+      <s:element name="Authentication_GetSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Authentication_GetSessionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
   </wsdl:types>
-  <wsdl:message name="AuthenticationSVC_Authentication_SetSession_InputMessage">
-    <wsdl:part name="parameters" element="Authentication_SetSession" />
+  <wsdl:message name="Authentication_SetSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:Authentication_SetSession" />
   </wsdl:message>
-  <wsdl:message name="AuthenticationSVC_Authentication_SetSession_OutputMessage">
-    <wsdl:part name="parameters" element="Authentication_SetSessionResponse" />
+  <wsdl:message name="Authentication_SetSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:Authentication_SetSessionResponse" />
   </wsdl:message>
-  <wsdl:message name="AuthenticationSVC_Authentication_CheckAccount_InputMessage">
-    <wsdl:part name="parameters" element="Authentication_CheckAccount" />
+  <wsdl:message name="Authentication_CheckAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:Authentication_CheckAccount" />
   </wsdl:message>
-  <wsdl:message name="AuthenticationSVC_Authentication_CheckAccount_OutputMessage">
-    <wsdl:part name="parameters" element="Authentication_CheckAccountResponse" />
+  <wsdl:message name="Authentication_CheckAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:Authentication_CheckAccountResponse" />
   </wsdl:message>
-  <wsdl:message name="AuthenticationSVC_Authentication_GetSession_InputMessage">
-    <wsdl:part name="parameters" element="Authentication_GetSession" />
+  <wsdl:message name="Authentication_GetSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:Authentication_GetSession" />
   </wsdl:message>
-  <wsdl:message name="AuthenticationSVC_Authentication_GetSession_OutputMessage">
-    <wsdl:part name="parameters" element="Authentication_GetSessionResponse" />
+  <wsdl:message name="Authentication_GetSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:Authentication_GetSessionResponse" />
   </wsdl:message>
-  <wsdl:portType name="AuthenticationSVC">
+  <wsdl:portType name="AuthenticationSVCSoap">
     <wsdl:operation name="Authentication_SetSession">
-      <wsdl:input wsaw:Action="urn:AuthenticationSVC/Authentication_SetSession" message="AuthenticationSVC_Authentication_SetSession_InputMessage" />
-      <wsdl:output wsaw:Action="urn:AuthenticationSVC/Authentication_SetSessionResponse" message="AuthenticationSVC_Authentication_SetSession_OutputMessage" />
+      <wsdl:input message="tns:Authentication_SetSessionSoapIn" />
+      <wsdl:output message="tns:Authentication_SetSessionSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="Authentication_CheckAccount">
-      <wsdl:input wsaw:Action="urn:AuthenticationSVC/Authentication_CheckAccount" message="AuthenticationSVC_Authentication_CheckAccount_InputMessage" />
-      <wsdl:output wsaw:Action="urn:AuthenticationSVC/Authentication_CheckAccountResponse" message="AuthenticationSVC_Authentication_CheckAccount_OutputMessage" />
+      <wsdl:input message="tns:Authentication_CheckAccountSoapIn" />
+      <wsdl:output message="tns:Authentication_CheckAccountSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="Authentication_GetSession">
-      <wsdl:input wsaw:Action="urn:AuthenticationSVC/Authentication_GetSession" message="AuthenticationSVC_Authentication_GetSession_InputMessage" />
-      <wsdl:output wsaw:Action="urn:AuthenticationSVC/Authentication_GetSessionResponse" message="AuthenticationSVC_Authentication_GetSession_OutputMessage" />
+      <wsdl:input message="tns:Authentication_GetSessionSoapIn" />
+      <wsdl:output message="tns:Authentication_GetSessionSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
+  <wsdl:binding name="AuthenticationSVCSoap" type="tns:AuthenticationSVCSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Authentication_SetSession">
+      <soap:operation soapAction="http://tempuri.org/Authentication_SetSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authentication_CheckAccount">
+      <soap:operation soapAction="http://tempuri.org/Authentication_CheckAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authentication_GetSession">
+      <soap:operation soapAction="http://tempuri.org/Authentication_GetSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AuthenticationSVCSoap12" type="tns:AuthenticationSVCSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Authentication_SetSession">
+      <soap12:operation soapAction="http://tempuri.org/Authentication_SetSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authentication_CheckAccount">
+      <soap12:operation soapAction="http://tempuri.org/Authentication_CheckAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authentication_GetSession">
+      <soap12:operation soapAction="http://tempuri.org/Authentication_GetSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AuthenticationSVC">
+    <wsdl:port name="AuthenticationSVCSoap" binding="tns:AuthenticationSVCSoap">
+      <soap:address location="http://localhost:1109/QuanLyKhachSan.WebServices/Services/Authentication/Authentication.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AuthenticationSVCSoap12" binding="tns:AuthenticationSVCSoap12">
+      <soap12:address location="http://localhost:1109/QuanLyKhachSan.WebServices/Services/Authentication/Authentication.asmx" />
+    </wsdl:port>
+  </wsdl:service>
 </wsdl:definitions>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="VyaO1RsfEJXoEF7Mggoqo8luyvc=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="AR9mXSntseGUukuuY5ZnXdrRXiE=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="customBinding" name="CustomBinding_DichVuSVC">
       <properties>
@@ -115,10 +115,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="CustomBinding_DichVuSVC" contract="DichVuSVC.DichVuSVC" bindingType="customBinding" address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/DichVu.svc" bindingConfiguration="CustomBinding_DichVuSVC">
+    <endpoint name="CustomBinding_DichVuSVC" contract="DichVuSVC.DichVuSVC" bindingType="customBinding" address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/DichVu.svc" bindingConfiguration="CustomBinding_DichVuSVC">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:6246/QuanLyKhachSan.WebServices/Services/QuanLyPhong/DichVu.svc</serializedValue>
+          <serializedValue>http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/DichVu.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

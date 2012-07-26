@@ -20,15 +20,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDonDichVu.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDonDichVu.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="HoaDonDichVu.xsd" MetadataType="Schema" ID="d49144cc-6a0f-4c7f-a7ab-967b1ec68eff" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDonDichVu.svc?xsd=xsd1" />
-    <MetadataFile FileName="HoaDonDichVuSVC.wsdl" MetadataType="Wsdl" ID="833605da-b51f-4931-ab86-1afbf74f3cb7" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDonDichVu.svc?wsdl" />
-    <MetadataFile FileName="HoaDonDichVu.wsdl" MetadataType="Wsdl" ID="3d2e42ba-fd5a-4eb6-9ab2-b242f2c5a32b" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDonDichVu.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="HoaDonDichVu1.xsd" MetadataType="Schema" ID="73067a77-9fd3-461e-a389-75998fd3facd" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDonDichVu.svc?xsd=xsd0" />
-    <MetadataFile FileName="HoaDonDichVu2.xsd" MetadataType="Schema" ID="2bf8eaf8-02fc-47a9-9b37-a150b070f7f2" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDonDichVu.svc?xsd=xsd2" />
-    <MetadataFile FileName="HoaDonDichVu.disco" MetadataType="Disco" ID="bbc7af4a-b386-49f6-b61e-3cc61b63efe7" SourceId="1" SourceUrl="http://localhost:6246/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDonDichVu.svc?disco" />
+    <MetadataFile FileName="HoaDonDichVu3.xsd" MetadataType="Schema" ID="bb24b77b-4a44-4d4f-9738-8d35732b9ebd" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDonDichVu.svc?xsd=xsd1" />
+    <MetadataFile FileName="HoaDonDichVuSVC1.wsdl" MetadataType="Wsdl" ID="8c778e13-a629-45c0-82f1-0dde65e59a5d" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDonDichVu.svc?wsdl" />
+    <MetadataFile FileName="HoaDonDichVu1.wsdl" MetadataType="Wsdl" ID="8f49aa5a-ca2a-479d-920d-cc576babbbca" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDonDichVu.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="HoaDonDichVu31.xsd" MetadataType="Schema" ID="210bed8b-34e7-4ba6-a6b5-522809543bd4" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDonDichVu.svc?xsd=xsd0" />
+    <MetadataFile FileName="HoaDonDichVu1.disco" MetadataType="Disco" ID="5b5def74-33e6-48ed-92dc-0eb2eaf39ea7" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDonDichVu.svc?disco" />
+    <MetadataFile FileName="HoaDonDichVu32.xsd" MetadataType="Schema" ID="9ac7e83c-5d6a-47b1-855d-1b61953bdcdf" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/HoaDonDichVu/HoaDonDichVu.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -36,3 +36,13 @@ F:\Projects\2012\QLKS\ReportLibrary\obj\Debug\GenerateResource-ResGen.read.1.tlo
 F:\Projects\2012\QLKS\ReportLibrary\obj\Debug\GenerateResource-ResGen.write.1.tlog
 F:\Projects\2012\QLKS\ReportLibrary\obj\Debug\ReportLibrary.dll
 F:\Projects\2012\QLKS\ReportLibrary\obj\Debug\ReportLibrary.pdb
+F:\Projects\2012\QuanLyKhachSan\ReportLibrary\obj\Debug\ResolveAssemblyReference.cache
+F:\Projects\2012\QuanLyKhachSan\ReportLibrary\obj\Debug\GenerateResource-ResGen.read.1.tlog
+F:\Projects\2012\QuanLyKhachSan\ReportLibrary\obj\Debug\GenerateResource-ResGen.write.1.tlog
+F:\Projects\2012\QuanLyKhachSan\ReportLibrary\obj\Debug\ReportLibrary.dll
+F:\Projects\2012\QuanLyKhachSan\ReportLibrary\obj\Debug\ReportLibrary.pdb
+F:\Projects\2012\QuanLyKhachSan\ReportLibrary\bin\Debug\ReportLibrary.dll.config
+F:\Projects\2012\QuanLyKhachSan\ReportLibrary\bin\Debug\ReportLibrary.dll
+F:\Projects\2012\QuanLyKhachSan\ReportLibrary\bin\Debug\ReportLibrary.pdb
+F:\Projects\2012\QuanLyKhachSan\ReportLibrary\bin\Debug\Telerik.Reporting.dll
+F:\Projects\2012\QuanLyKhachSan\ReportLibrary\obj\Debug\Telerik.Reporting.ReportHoaDon.resources
