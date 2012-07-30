@@ -8,7 +8,7 @@
         xmlns:uriMapper="clr-namespace:System.Windows.Navigation;assembly=System.Windows.Controls.Navigation"
 		mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="800" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
 	<Grid x:Name="LayoutRoot">
-        <telerik:RadRibbonBar Height="146" HorizontalAlignment="Stretch" Name="mainRibbonBar" ApplicationName="Khách Sạn Cao Thăng" VerticalAlignment="Top" Width="Auto" telerik:StyleManager.Theme="Vista">
+        <telerik:RadRibbonBar Height="146" HorizontalAlignment="Stretch" Name="mainRibbonBar" ApplicationName="Khách Sạn Cao Thăng - 20120728" VerticalAlignment="Top" Width="Auto" telerik:StyleManager.Theme="Vista">
             <telerik:RadRibbonTab Header="Trang Chủ">
                 <telerik:RadRibbonGroup Header="Tình Trạng Phòng"  Icon="/Telerik.Windows.Controls.RibbonBar;component/RibbonGroupCollapsedIcon.png">
                     <telerik:RadRibbonButton Name="cmdTinhTrangPhong" Click="cmdTinhTrangPhong_Click" >
@@ -114,10 +114,10 @@
                 </telerik:RadRibbonGroup>
             </telerik:RadRibbonTab>
         </telerik:RadRibbonBar>
-        <navigation:Frame Height="Auto" HorizontalAlignment="Left" Name="ContentFrame" VerticalAlignment="Top" Width="Auto" Margin="0,144,0,0">
+        <navigation:Frame Height="Auto" HorizontalAlignment="Left" Name="ContentFrame" VerticalAlignment="Top" Width="Auto" Margin="0,144,0,0" JournalOwnership="OwnsJournal">
             <navigation:Frame.UriMapper>
                 <uriMapper:UriMapper>
-                    <uriMapper:UriMapping Uri="" MappedUri="/Form/QuanLyPhong/frmPhongTheoTinhTrang.xaml"/>
+                    <uriMapper:UriMapping Uri="PhongTheoTinhTrang" MappedUri="/Form/QuanLyPhong/frmPhongTheoTinhTrang.xaml"/>
                     <uriMapper:UriMapping Uri="ThongTinPhong" MappedUri="/Form/QuanLyPhong/frmThongTinPhong.xaml"/>
                     <uriMapper:UriMapping Uri="GiaPhong" MappedUri="/Form/QuanLyPhong/frmGiaPhong.xaml"/>
                     <uriMapper:UriMapping Uri="CaiDatGia" MappedUri="/Form/QuanLyPhong/frmCaiDatGia.xaml"/>

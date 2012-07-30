@@ -39,7 +39,8 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
         {
             try
             {                
-                LoadingPanel.Visibility = Visibility.Visible;LoadingPanel.IsBusy = true;
+                LoadingPanel.Visibility = Visibility.Visible;
+                LoadingPanel.IsBusy = true;
                 Gia_PhongClient.Phong_GiaPhongCompleted += new EventHandler<Phong_GiaPhongCompletedEventArgs>(Gia_PhongClient_Phong_GiaPhongCompleted);
                 Gia_PhongClient.Phong_GiaPhongAsync();
             }

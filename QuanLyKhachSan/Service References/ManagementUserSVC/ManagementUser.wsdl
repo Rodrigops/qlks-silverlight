@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="/Imports">
+      <xsd:import schemaLocation="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyUser/ManagementUser.svc?xsd=xsd0" />
+      <xsd:import schemaLocation="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyUser/ManagementUser.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyUser/ManagementUser.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Web.Security" />
+      <xsd:import schemaLocation="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyUser/ManagementUser.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ManagementUserSVC_GetAllUsers_InputMessage">
+    <wsdl:part name="parameters" element="GetAllUsers" />
+  </wsdl:message>
+  <wsdl:message name="ManagementUserSVC_GetAllUsers_OutputMessage">
+    <wsdl:part name="parameters" element="GetAllUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ManagementUserSVC_CreateUser_InputMessage">
+    <wsdl:part name="parameters" element="CreateUser" />
+  </wsdl:message>
+  <wsdl:message name="ManagementUserSVC_CreateUser_OutputMessage">
+    <wsdl:part name="parameters" element="CreateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ManagementUserSVC_UpdateUser_InputMessage">
+    <wsdl:part name="parameters" element="UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="ManagementUserSVC_UpdateUser_OutputMessage">
+    <wsdl:part name="parameters" element="UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ManagementUserSVC_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="ManagementUserSVC_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ManagementUserSVC">
+    <wsdl:operation name="GetAllUsers">
+      <wsdl:input wsaw:Action="urn:ManagementUserSVC/GetAllUsers" message="ManagementUserSVC_GetAllUsers_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ManagementUserSVC/GetAllUsersResponse" message="ManagementUserSVC_GetAllUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <wsdl:input wsaw:Action="urn:ManagementUserSVC/CreateUser" message="ManagementUserSVC_CreateUser_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ManagementUserSVC/CreateUserResponse" message="ManagementUserSVC_CreateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsaw:Action="urn:ManagementUserSVC/UpdateUser" message="ManagementUserSVC_UpdateUser_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ManagementUserSVC/UpdateUserResponse" message="ManagementUserSVC_UpdateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="urn:ManagementUserSVC/DeleteUser" message="ManagementUserSVC_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ManagementUserSVC/DeleteUserResponse" message="ManagementUserSVC_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

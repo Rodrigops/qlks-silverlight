@@ -9,7 +9,7 @@
             </basicHttpBinding>
         </bindings>
         <client>
-            <endpoint address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/Authentication/AuthenticationService.svc"
+            <endpoint address="http://localhost:7777/Services/Authentication/AuthenticationService.svc"
                 binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_AuthenticationService"
                 contract="AuthenticationService.AuthenticationService" name="BasicHttpBinding_AuthenticationService" />
         </client>

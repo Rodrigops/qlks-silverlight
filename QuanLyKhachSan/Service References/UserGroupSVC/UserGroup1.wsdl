@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="/Imports">
+      <xsd:import schemaLocation="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyUser/UserGroup.svc?xsd=xsd0" />
+      <xsd:import schemaLocation="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyUser/UserGroup.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyUser/UserGroup.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="UserGroupSVC_UserGroup_Add_InputMessage">
+    <wsdl:part name="parameters" element="UserGroup_Add" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupSVC_UserGroup_Add_OutputMessage">
+    <wsdl:part name="parameters" element="UserGroup_AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupSVC_UserGroup_Edit_InputMessage">
+    <wsdl:part name="parameters" element="UserGroup_Edit" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupSVC_UserGroup_Edit_OutputMessage">
+    <wsdl:part name="parameters" element="UserGroup_EditResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupSVC_UserGroup_Delete_InputMessage">
+    <wsdl:part name="parameters" element="UserGroup_Delete" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupSVC_UserGroup_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="UserGroup_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupSVC_UserGroup_GetItem_InputMessage">
+    <wsdl:part name="parameters" element="UserGroup_GetItem" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupSVC_UserGroup_GetItem_OutputMessage">
+    <wsdl:part name="parameters" element="UserGroup_GetItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupSVC_UserGroup_GetItems_InputMessage">
+    <wsdl:part name="parameters" element="UserGroup_GetItems" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupSVC_UserGroup_GetItems_OutputMessage">
+    <wsdl:part name="parameters" element="UserGroup_GetItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupSVC_GroupIDByUserName_InputMessage">
+    <wsdl:part name="parameters" element="GroupIDByUserName" />
+  </wsdl:message>
+  <wsdl:message name="UserGroupSVC_GroupIDByUserName_OutputMessage">
+    <wsdl:part name="parameters" element="GroupIDByUserNameResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UserGroupSVC">
+    <wsdl:operation name="UserGroup_Add">
+      <wsdl:input wsaw:Action="urn:UserGroupSVC/UserGroup_Add" message="UserGroupSVC_UserGroup_Add_InputMessage" />
+      <wsdl:output wsaw:Action="urn:UserGroupSVC/UserGroup_AddResponse" message="UserGroupSVC_UserGroup_Add_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserGroup_Edit">
+      <wsdl:input wsaw:Action="urn:UserGroupSVC/UserGroup_Edit" message="UserGroupSVC_UserGroup_Edit_InputMessage" />
+      <wsdl:output wsaw:Action="urn:UserGroupSVC/UserGroup_EditResponse" message="UserGroupSVC_UserGroup_Edit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserGroup_Delete">
+      <wsdl:input wsaw:Action="urn:UserGroupSVC/UserGroup_Delete" message="UserGroupSVC_UserGroup_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="urn:UserGroupSVC/UserGroup_DeleteResponse" message="UserGroupSVC_UserGroup_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserGroup_GetItem">
+      <wsdl:input wsaw:Action="urn:UserGroupSVC/UserGroup_GetItem" message="UserGroupSVC_UserGroup_GetItem_InputMessage" />
+      <wsdl:output wsaw:Action="urn:UserGroupSVC/UserGroup_GetItemResponse" message="UserGroupSVC_UserGroup_GetItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserGroup_GetItems">
+      <wsdl:input wsaw:Action="urn:UserGroupSVC/UserGroup_GetItems" message="UserGroupSVC_UserGroup_GetItems_InputMessage" />
+      <wsdl:output wsaw:Action="urn:UserGroupSVC/UserGroup_GetItemsResponse" message="UserGroupSVC_UserGroup_GetItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupIDByUserName">
+      <wsdl:input wsaw:Action="urn:UserGroupSVC/GroupIDByUserName" message="UserGroupSVC_GroupIDByUserName_InputMessage" />
+      <wsdl:output wsaw:Action="urn:UserGroupSVC/GroupIDByUserNameResponse" message="UserGroupSVC_GroupIDByUserName_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

@@ -16,6 +16,7 @@ using QuanLyKhachSan.KhachHangSVC;
 using QuanLyKhachSan.Form.QuanLyKhachHang;
 using Telerik.Windows.Controls.GridView;
 using QuanLyKhachSan.Form.HoaDonDichVu;
+using System.IO.IsolatedStorage;
 namespace QuanLyKhachSan.Form.QuanLyPhong
 {
     public partial class frmPhongTheoTinhTrang : Page
