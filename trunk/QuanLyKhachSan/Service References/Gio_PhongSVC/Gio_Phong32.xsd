@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyPhong/Gio_Phong.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" />
+  <xs:element name="Gio_Phong_Add">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ListPhongID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ListGioPhongName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PhanTram" type="xs:int" />
+        <xs:element minOccurs="0" name="ListGiaTien" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Gio_Phong_AddResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Gio_Phong_Edit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Gio_PhongID" type="xs:int" />
+        <xs:element minOccurs="0" name="PhongID" type="xs:int" />
+        <xs:element minOccurs="0" name="GioPhongName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PhanTram" type="xs:int" />
+        <xs:element minOccurs="0" name="GiaTien" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Gio_Phong_EditResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Gio_Phong_Delete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Gio_PhongID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Gio_Phong_DeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Gio_Phong_GetItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Gio_PhongID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Gio_Phong_GetItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" minOccurs="0" name="Gio_Phong_GetItemResult" nillable="true" type="q1:Gio_PhongInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Gio_Phong_GetItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PhongID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Gio_Phong_GetItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" minOccurs="0" name="Gio_Phong_GetItemsResult" nillable="true" type="q2:ArrayOfGio_PhongInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Gio_Phong_GiaGoc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PhongID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Gio_Phong_GiaGocResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Gio_Phong_GiaGocResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Gio_Phong_KiemTraStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PhongID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Gio_Phong_KiemTraStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Gio_Phong_KiemTraStatusResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Gio_Phong_GetItemByPhongID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PhongID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Gio_Phong_GetItemByPhongIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" minOccurs="0" name="Gio_Phong_GetItemByPhongIDResult" nillable="true" type="q3:ArrayOfGio_PhongInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

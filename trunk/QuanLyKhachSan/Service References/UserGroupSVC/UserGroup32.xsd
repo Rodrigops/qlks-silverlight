@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyUser/UserGroup.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" />
+  <xs:element name="UserGroup_Add">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserID" type="xs:int" />
+        <xs:element minOccurs="0" name="ListGroupID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ExpiryDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="EffectiveDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IsTrialUsed" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserGroup_AddResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserGroup_Edit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserGroupID" type="xs:int" />
+        <xs:element minOccurs="0" name="UserID" type="xs:int" />
+        <xs:element minOccurs="0" name="ListGroupID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ExpiryDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="EffectiveDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IsTrialUsed" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserGroup_EditResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserGroup_Delete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserGroupID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserGroup_DeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserGroup_GetItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserGroup_GetItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" minOccurs="0" name="UserGroup_GetItemResult" nillable="true" type="q1:ArrayOfUserGroupInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserGroup_GetItems">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserGroup_GetItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" minOccurs="0" name="UserGroup_GetItemsResult" nillable="true" type="q2:ArrayOfUserGroupInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GroupIDByUserName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GroupIDByUserNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GroupIDByUserNameResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

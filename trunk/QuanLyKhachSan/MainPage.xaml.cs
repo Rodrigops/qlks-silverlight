@@ -40,6 +40,8 @@ namespace QuanLyKhachSan
             else
             {
                  txtUserName.Content = "Xin chào " + IsolatedStorageSettings.SiteSettings["UserName"].ToString();
+                 KeyMapping = "PhongTheoTinhTrang";
+                 redirect(KeyMapping);
             }
         }
         public string KeyMapping = "";
@@ -89,8 +91,8 @@ namespace QuanLyKhachSan
                 case "CaiDatGia":
                     ContentFrame.Navigate(new Uri("CaiDatGia", UriKind.Relative));
                     break;
-                case "":
-                    ContentFrame.Navigate(new Uri("", UriKind.Relative));
+                case "PhongTheoTinhTrang":
+                    ContentFrame.Navigate(new Uri("PhongTheoTinhTrang", UriKind.Relative));
                     break;
                 case "KhachHang":
                     ContentFrame.Navigate(new Uri("KhachHang", UriKind.Relative));
@@ -168,41 +170,48 @@ namespace QuanLyKhachSan
         }
         private void redirect(string KeyMapping)
         {
-            switch (KeyMapping)
-            {
-                case "ThongTinPhong":
-                    ContentFrame.Navigate(new Uri("ThongTinPhong", UriKind.Relative));
-                    break;
-                case "GiaPhong":
-                    ContentFrame.Navigate(new Uri("GiaPhong", UriKind.Relative));
-                    break;
-                case "CaiDatGia":
-                    ContentFrame.Navigate(new Uri("CaiDatGia", UriKind.Relative));
-                    break;
-                case "":
-                    ContentFrame.Navigate(new Uri("", UriKind.Relative));
-                    break;
-                case "KhachHang":
-                    ContentFrame.Navigate(new Uri("KhachHang", UriKind.Relative));
-                    break;
-                case "HoaDonDichVu":
-                    ContentFrame.Navigate(new Uri("HoaDonDichVu", UriKind.Relative));
-                    break;
-                case "QuanLyUser":
-                    ContentFrame.Navigate(new Uri("QuanLyUser", UriKind.Relative));
-                    break;
-                case "PhanQuyenUser":
-                    ContentFrame.Navigate(new Uri("PhanQuyenUser", UriKind.Relative));
-                    break;
-                case "ThongKeDoanhThu":
-                    ContentFrame.Navigate(new Uri("ThongKeDoanhThu", UriKind.Relative));
-                    break;
-                case "ThongKeChiTieu":
-                    ContentFrame.Navigate(new Uri("ThongKeChiTieu", UriKind.Relative));
-                    break;
-                case "ThongKeDoanhThuDichVu":
-                    ContentFrame.Navigate(new Uri("ThongKeDoanhThuDichVu", UriKind.Relative));
-                    break;
+            try
+            {                
+                switch (KeyMapping)
+                {
+                    case "ThongTinPhong":
+                        ContentFrame.Navigate(new Uri("ThongTinPhong", UriKind.Relative));
+                        break;
+                    case "GiaPhong":
+                        ContentFrame.Navigate(new Uri("GiaPhong", UriKind.Relative));
+                        break;
+                    case "CaiDatGia":
+                        ContentFrame.Navigate(new Uri("CaiDatGia", UriKind.Relative));
+                        break;
+                    case "PhongTheoTinhTrang":
+                        ContentFrame.Navigate(new Uri("PhongTheoTinhTrang", UriKind.Relative));
+                        break;
+                    case "KhachHang":
+                        ContentFrame.Navigate(new Uri("KhachHang", UriKind.Relative));
+                        break;
+                    case "HoaDonDichVu":
+                        ContentFrame.Navigate(new Uri("HoaDonDichVu", UriKind.Relative));
+                        break;
+                    case "QuanLyUser":
+                        ContentFrame.Navigate(new Uri("QuanLyUser", UriKind.Relative));
+                        break;
+                    case "PhanQuyenUser":
+                        ContentFrame.Navigate(new Uri("PhanQuyenUser", UriKind.Relative));
+                        break;
+                    case "ThongKeDoanhThu":
+                        ContentFrame.Navigate(new Uri("ThongKeDoanhThu", UriKind.Relative));
+                        break;
+                    case "ThongKeChiTieu":
+                        ContentFrame.Navigate(new Uri("ThongKeChiTieu", UriKind.Relative));
+                        break;
+                    case "ThongKeDoanhThuDichVu":
+                        ContentFrame.Navigate(new Uri("ThongKeDoanhThuDichVu", UriKind.Relative));
+                        break;
+                }
+            }
+            catch (Exception)
+            {                
+                throw;
             }
         }
         private void cmdThongTinPhong_Click(object sender, RoutedEventArgs e)
@@ -231,7 +240,7 @@ namespace QuanLyKhachSan
 
         private void cmdTinhTrangPhong_Click(object sender, RoutedEventArgs e)
         {
-            KeyMapping = "";
+            KeyMapping = "PhongTheoTinhTrang";
             redirect(KeyMapping);
             //Authentication.Authentication_GetSessionCompleted += new EventHandler<Authentication_GetSessionCompletedEventArgs>(Authentication_Authentication_GetSessionCompleted);
             //Authentication.Authentication_GetSessionAsync();

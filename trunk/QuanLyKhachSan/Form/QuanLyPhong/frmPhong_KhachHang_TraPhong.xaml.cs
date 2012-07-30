@@ -409,13 +409,25 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                 {
                     int PhutDu = PhutRa - PhutVao;
                     decimal Tien = 0;
-                    if (PhutDu >= 10 && PhutDu <= 20)
+                    //if (PhutDu >= 10 && PhutDu <= 20)
+                    //{
+                    //    // Duoi 20 phut khong tinh tien
+                    //    Tien = 10000;
+                    //}
+                    //else if (PhutDu > 20)
+                    //{
+                    //    Tien = 20000;
+                    //}
+                    //else
+                    //{
+                    //    Tien = 0;
+                    //}
+                    if (PhutDu >= 20)
                     {
-                        Tien = 10000;
-                    }
-                    else if (PhutDu > 20)
-                    {
-                        Tien = 20000;
+                        var query = (from Gia in listGio_Phong
+                                     where Gia.GioPhongName.Trim() == "1"
+                                     select Gia).FirstOrDefault();
+                        Tien = query.GiaTien;
                     }
                     else
                     {
@@ -440,6 +452,7 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                     int TiengDu = 0;
                     int PhutConLai = 0;
                     decimal TienCongThem = 0;
+                    int GioThem = 0;//Gio Them Do So Phut Lon Hon 20
                     if (TongPhut == 60)
                     {
                         TiengDu = 1;
@@ -449,43 +462,51 @@ namespace QuanLyKhachSan.Form.QuanLyPhong
                     {
                         TiengDu = TongPhut / 60;
                         PhutConLai = TongPhut - 60 * TiengDu;
-                        if (PhutConLai >= 10 && PhutConLai <= 20)
+                        //if (PhutConLai >= 10 && PhutConLai <= 20)
+                        //{
+                        //    TienCongThem = 10000;
+                        //}
+                        //else if (PhutConLai > 20)
+                        //{
+                        //    TienCongThem = 20000;
+                        //}
+                        //else
+                        //{
+                        //    TienCongThem = 0;
+                        //}
+                        if (PhutConLai >= 20)
                         {
-                            TienCongThem = 10000;
-                        }
-                        else if (PhutConLai > 20)
-                        {
-                            TienCongThem = 20000;
-                        }
-                        else
-                        {
-                            TienCongThem = 0;
+                            GioThem = 1;
                         }
                     }
                     else if (TongPhut < 60)
                     {
                         PhutConLai = TongPhut;
-                        if (PhutConLai >= 10 && PhutConLai <= 20)
+                        //if (PhutConLai >= 10 && PhutConLai <= 20)
+                        //{
+                        //    TienCongThem = 10000;
+                        //}
+                        //else if (PhutConLai > 20)
+                        //{
+                        //    TienCongThem = 20000;
+                        //}
+                        //else
+                        //{
+                        //    TienCongThem = 0;
+                        //}
+                        if (PhutConLai >= 20)
                         {
-                            TienCongThem = 10000;
-                        }
-                        else if (PhutConLai > 20)
-                        {
-                            TienCongThem = 20000;
-                        }
-                        else
-                        {
-                            TienCongThem = 0;
+                            GioThem = 1;
                         }
                     }
-                    TongGio = (GioRa - GioVao) + TiengDu;
+                    TongGio = (GioRa - GioVao) + TiengDu + GioThem;
                     var query = (from Gia in listGio_Phong
                                  where Gia.GioPhongName.Trim() == TongGio.ToString().Trim()
                                  select Gia).FirstOrDefault();
 
                     decimal TongTien = query.GiaTien + TienCongThem;
                     Label txtGioDau = new Label();
-                    txtGioDau.Content = Format_NumberVietnamese(TongTien.ToString()) + " [" + TongGio.ToString() + " tiếng " + PhutConLai.ToString() + " phút]";
+                    txtGioDau.Content = Format_NumberVietnamese(TongTien.ToString()) + " [" + (TongGio -GioThem) .ToString() + " tiếng " + PhutConLai.ToString() + " phút]";
                     SPTienPhong.Children.Add(txtGioDau);
                     LoadingPanel.IsBusy = false;
                     TongTienPhong = TongTien;

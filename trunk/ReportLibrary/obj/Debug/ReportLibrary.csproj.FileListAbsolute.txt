@@ -44,5 +44,4 @@ F:\Projects\2012\QuanLyKhachSan\ReportLibrary\obj\Debug\ReportLibrary.pdb
 F:\Projects\2012\QuanLyKhachSan\ReportLibrary\bin\Debug\ReportLibrary.dll.config
 F:\Projects\2012\QuanLyKhachSan\ReportLibrary\bin\Debug\ReportLibrary.dll
 F:\Projects\2012\QuanLyKhachSan\ReportLibrary\bin\Debug\ReportLibrary.pdb
-F:\Projects\2012\QuanLyKhachSan\ReportLibrary\bin\Debug\Telerik.Reporting.dll
 F:\Projects\2012\QuanLyKhachSan\ReportLibrary\obj\Debug\Telerik.Reporting.ReportHoaDon.resources

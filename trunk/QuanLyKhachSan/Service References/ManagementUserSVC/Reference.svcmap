@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a0e0d351-a1db-4c83-918f-81c821152ea3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyUser/ManagementUser.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ManagementUserSVC.wsdl" MetadataType="Wsdl" ID="5ae4434a-c266-4c63-8bb8-d5ff09d1ae45" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyUser/ManagementUser.svc?wsdl" />
+    <MetadataFile FileName="ManagementUser.xsd" MetadataType="Schema" ID="dfdf9524-c635-4d31-bfd0-8e5d7c799fe2" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyUser/ManagementUser.svc?xsd=xsd1" />
+    <MetadataFile FileName="ManagementUser1.xsd" MetadataType="Schema" ID="81531ead-187a-42ab-9223-2b6cc357cb41" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyUser/ManagementUser.svc?xsd=xsd3" />
+    <MetadataFile FileName="ManagementUser.wsdl" MetadataType="Wsdl" ID="4625bfd7-fa9e-4055-89e8-e5f5c02c61c9" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyUser/ManagementUser.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ManagementUser2.xsd" MetadataType="Schema" ID="f387e326-6e58-419a-8e47-40fc6e67d0ef" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyUser/ManagementUser.svc?xsd=xsd0" />
+    <MetadataFile FileName="ManagementUser.disco" MetadataType="Disco" ID="ad80ce9c-78ee-465d-9e36-76ccc4a182b1" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyUser/ManagementUser.svc?disco" />
+    <MetadataFile FileName="ManagementUser3.xsd" MetadataType="Schema" ID="6478d120-3310-4615-be90-1a380f2e94c0" SourceId="1" SourceUrl="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyUser/ManagementUser.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

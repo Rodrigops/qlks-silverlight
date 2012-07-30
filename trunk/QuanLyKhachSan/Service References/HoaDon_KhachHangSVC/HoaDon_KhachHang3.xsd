@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfPhong_KhachHangInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Phong_KhachHangInfo" nillable="true" type="tns:Phong_KhachHangInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPhong_KhachHangInfo" nillable="true" type="tns:ArrayOfPhong_KhachHangInfo" />
+  <xs:complexType name="Phong_KhachHangInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CMND" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HoTen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HoaDonID" type="xs:int" />
+      <xs:element minOccurs="0" name="KhachHangID" type="xs:int" />
+      <xs:element minOccurs="0" name="NgayBatDau" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NgayKetThuc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhongID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Phong_KhachHangInfo" nillable="true" type="tns:Phong_KhachHangInfo" />
+</xs:schema>

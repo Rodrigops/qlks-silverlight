@@ -40,6 +40,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\DLL_QLKS\Telerik.Reporting.dll</HintPath>
     </Reference>
+    <Reference Include="Telerik.Reporting.Adomd">
+      <HintPath>..\..\DLL_QLKS\Telerik.Reporting.Adomd.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

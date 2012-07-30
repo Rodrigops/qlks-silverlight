@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1109/QuanLyKhachSan.WebServices/Services/QuanLyUser/Module.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" />
+  <xs:element name="Module_GetItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GroupID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Module_GetItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/QuanLyKhachSan" minOccurs="0" name="Module_GetItemsResult" nillable="true" type="q1:ArrayOfModuleInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModulePermission_Add">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GroupID" type="xs:int" />
+        <xs:element minOccurs="0" name="ListModulePermission" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModulePermission_AddResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
